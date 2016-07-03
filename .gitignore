@@ -1,0 +1,6 @@
+**/( xcbuild )
+**/( xcbuild_ffi )
+**/( build )
+**/build/*
+**/DerivedData
+**/*.tar
