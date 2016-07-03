@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>MartenSelectorItemDescription</key>
+	<string>Search for term using Apple Developer Connection on the internet.</string>
+	<key>MartenSelectorItemIcon</key>
+	<string>adcicon</string>
+	<key>MartenSelectorItemName</key>
+	<string>Search ADC Online</string>
+	<key>MartenSelectorType</key>
+	<string>URL</string>
+	<key>MartenSelectorURLTerm</key>
+	<string>http://developer.apple.com/cgi-bin/search.pl?q=%name%&amp;num=10&amp;ie=utf8&amp;oe=utf8&amp;lr=lang_en&amp;simp=1</string>
+</dict>
+</plist>

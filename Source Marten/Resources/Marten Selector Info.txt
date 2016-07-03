@@ -1,0 +1,23 @@
+Default Keys:
+
+%name%	- the name of the item selected, multiple items are separated by commas.
+%Help_Book_Name% - the name of the help book
+
+Required Properties:
+
+MartenSelectorItemName			A string name to be displayed to the user.
+MartenSelectorItemDescription		A string containing a brief description of the selector.
+MartenSelectorItemIcon			The filename (no extension) of the .icns file.
+
+URL Selector:
+
+Key					Value
+MartenSelectorType			"URL"
+MartenSelectorURLTerm			fully qualified url to "open".
+
+Script Selector:
+
+Key					Value
+MartenSelectorType			"Script"
+MartenSelectorScriptFile		full name of script file in Resources folder.
+MartenSelectorScriptType		[optional] OSA Component Type (integer)

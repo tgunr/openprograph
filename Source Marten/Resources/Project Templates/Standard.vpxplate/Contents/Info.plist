@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>MartenProjectInlineForm</key>
+	<string>Project_Export_C_Inline.form.txt</string>
+	<key>MartenProjectInlineKeys</key>
+	<string>Project_Export_C_Inline.keys.txt</string>
+	<key>MartenProjectRuntimeForm</key>
+	<string>Project_Export_C_Runtime.form.txt</string>
+	<key>MartenProjectRuntimeKeys</key>
+	<string>Project_Export_C_Runtime.keys.txt</string>
+	<key>MartenTemplateID</key>
+	<string>com.andescotia.marten.template.project.empty</string>
+	<key>MartenTemplateItemCategory</key>
+	<string>Application</string>
+	<key>MartenTemplateItemDescription</key>
+	<string>Empty application template.</string>
+	<key>MartenTemplateItemName</key>
+	<string>Standard Application</string>
+	<key>MartenTemplateVersion</key>
+	<string>1.0</string>
+</dict>
+</plist>
