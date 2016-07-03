@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<string>UltimateAnswer</string>
+		<integer>42</integer>
+	</array>
+	<array>
+		<string>Jack's Favorite</string>
+		<integer>22</integer>
+	</array>
+	<array>
+		<string>MartenMen</string>
+		<string>Scott &amp; Jack</string>
+	</array>
+</array>
+</plist>

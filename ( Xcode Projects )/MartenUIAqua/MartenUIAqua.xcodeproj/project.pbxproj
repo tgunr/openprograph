@@ -1,0 +1,370 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84CF1A8C0AAF8E54000F7FB6 /* CarbonMacVPL.c in Sources */ = {isa = PBXBuildFile; fileRef = 84CF1A870AAF8E54000F7FB6 /* CarbonMacVPL.c */; };
+		84CF1A8D0AAF8E54000F7FB6 /* CarbonMacVPL.h in Headers */ = {isa = PBXBuildFile; fileRef = 84CF1A880AAF8E54000F7FB6 /* CarbonMacVPL.h */; };
+		84CF1A8E0AAF8E54000F7FB6 /* VPX_PrimitivesFiles.c in Sources */ = {isa = PBXBuildFile; fileRef = 84CF1A890AAF8E54000F7FB6 /* VPX_PrimitivesFiles.c */; };
+		84CF1A8F0AAF8E54000F7FB6 /* VPX_PrimitivesGraphics.c in Sources */ = {isa = PBXBuildFile; fileRef = 84CF1A8A0AAF8E54000F7FB6 /* VPX_PrimitivesGraphics.c */; };
+		84CF1A900AAF8E54000F7FB6 /* VPX_PrimitivesUI.c in Sources */ = {isa = PBXBuildFile; fileRef = 84CF1A8B0AAF8E54000F7FB6 /* VPX_PrimitivesUI.c */; };
+		84CF1A960AAF8E60000F7FB6 /* VPXUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF1A950AAF8E60000F7FB6 /* VPXUI.nib */; };
+		84CF1AA10AAF8E75000F7FB6 /* MartenUIAqua Exports.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84CF1AA00AAF8E75000F7FB6 /* MartenUIAqua Exports.txt */; };
+		84CF1AA30AAF8EDB000F7FB6 /* MartenEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CF1AA20AAF8EDB000F7FB6 /* MartenEngine.framework */; };
+		8D07F2BE0486CC7A007CD1D0 /* MartenUIAqua_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32BAE0B70371A74B00C91783 /* MartenUIAqua_Prefix.pch */; };
+		8D07F2C00486CC7A007CD1D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
+		8D07F2C40486CC7A007CD1D0 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB77AAFE841565C02AAC07 /* Carbon.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		08FB77AAFE841565C02AAC07 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		32BAE0B70371A74B00C91783 /* MartenUIAqua_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MartenUIAqua_Prefix.pch; sourceTree = "<group>"; };
+		84CF1A870AAF8E54000F7FB6 /* CarbonMacVPL.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = CarbonMacVPL.c; path = ../../Source/Bundles/CarbonMacVPL.c; sourceTree = SOURCE_ROOT; };
+		84CF1A880AAF8E54000F7FB6 /* CarbonMacVPL.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = CarbonMacVPL.h; path = ../../Source/Bundles/CarbonMacVPL.h; sourceTree = SOURCE_ROOT; };
+		84CF1A890AAF8E54000F7FB6 /* VPX_PrimitivesFiles.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = VPX_PrimitivesFiles.c; path = ../../Source/Primitives/VPX_PrimitivesFiles.c; sourceTree = SOURCE_ROOT; };
+		84CF1A8A0AAF8E54000F7FB6 /* VPX_PrimitivesGraphics.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = VPX_PrimitivesGraphics.c; path = ../../Source/Primitives/VPX_PrimitivesGraphics.c; sourceTree = SOURCE_ROOT; };
+		84CF1A8B0AAF8E54000F7FB6 /* VPX_PrimitivesUI.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = VPX_PrimitivesUI.c; path = ../../Source/Primitives/VPX_PrimitivesUI.c; sourceTree = SOURCE_ROOT; };
+		84CF1A950AAF8E60000F7FB6 /* VPXUI.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = VPXUI.nib; path = ../../Source/Data/VPXUI.nib; sourceTree = SOURCE_ROOT; };
+		84CF1AA00AAF8E75000F7FB6 /* MartenUIAqua Exports.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "MartenUIAqua Exports.txt"; sourceTree = SOURCE_ROOT; };
+		84CF1AA20AAF8EDB000F7FB6 /* MartenEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MartenEngine.framework; path = "../( xcbuild )/Marten Release/MartenEngine.framework"; sourceTree = SOURCE_ROOT; };
+		8D07F2C70486CC7A007CD1D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D07F2C80486CC7A007CD1D0 /* MartenUIAqua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MartenUIAqua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D07F2C30486CC7A007CD1D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D07F2C40486CC7A007CD1D0 /* Carbon.framework in Frameworks */,
+				84CF1AA30AAF8EDB000F7FB6 /* MartenEngine.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DDFF38A45A11DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D07F2C80486CC7A007CD1D0 /* MartenUIAqua.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* MartenUIAqua */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77ACFE841707C02AAC07 /* Source */,
+				089C1665FE841158C02AAC07 /* Resources */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DDFF38A45A11DB9C8B /* Products */,
+			);
+			name = MartenUIAqua;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				84CF1AA20AAF8EDB000F7FB6 /* MartenEngine.framework */,
+				08FB77AAFE841565C02AAC07 /* Carbon.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84CF1A950AAF8E60000F7FB6 /* VPXUI.nib */,
+				8D07F2C70486CC7A007CD1D0 /* Info.plist */,
+				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77ACFE841707C02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				84CF1AA00AAF8E75000F7FB6 /* MartenUIAqua Exports.txt */,
+				32BAE0B70371A74B00C91783 /* MartenUIAqua_Prefix.pch */,
+				84CF1A860AAF8E2F000F7FB6 /* Primitives */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		84CF1A860AAF8E2F000F7FB6 /* Primitives */ = {
+			isa = PBXGroup;
+			children = (
+				84CF1A870AAF8E54000F7FB6 /* CarbonMacVPL.c */,
+				84CF1A880AAF8E54000F7FB6 /* CarbonMacVPL.h */,
+				84CF1A890AAF8E54000F7FB6 /* VPX_PrimitivesFiles.c */,
+				84CF1A8A0AAF8E54000F7FB6 /* VPX_PrimitivesGraphics.c */,
+				84CF1A8B0AAF8E54000F7FB6 /* VPX_PrimitivesUI.c */,
+			);
+			name = Primitives;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8D07F2BD0486CC7A007CD1D0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D07F2BE0486CC7A007CD1D0 /* MartenUIAqua_Prefix.pch in Headers */,
+				84CF1A8D0AAF8E54000F7FB6 /* CarbonMacVPL.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8D07F2BC0486CC7A007CD1D0 /* MartenUIAqua */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FADC24208B4156D00ABE55E /* Build configuration list for PBXNativeTarget "MartenUIAqua" */;
+			buildPhases = (
+				8D07F2BD0486CC7A007CD1D0 /* Headers */,
+				8D07F2BF0486CC7A007CD1D0 /* Resources */,
+				8D07F2C10486CC7A007CD1D0 /* Sources */,
+				8D07F2C30486CC7A007CD1D0 /* Frameworks */,
+				8D07F2C50486CC7A007CD1D0 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MartenUIAqua;
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = MartenUIAqua;
+			productReference = 8D07F2C80486CC7A007CD1D0 /* MartenUIAqua.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4FADC24608B4156D00ABE55E /* Build configuration list for PBXProject "MartenUIAqua" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* MartenUIAqua */;
+			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D07F2BC0486CC7A007CD1D0 /* MartenUIAqua */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D07F2BF0486CC7A007CD1D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D07F2C00486CC7A007CD1D0 /* InfoPlist.strings in Resources */,
+				84CF1A960AAF8E60000F7FB6 /* VPXUI.nib in Resources */,
+				84CF1AA10AAF8E75000F7FB6 /* MartenUIAqua Exports.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		8D07F2C50486CC7A007CD1D0 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D07F2C10486CC7A007CD1D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84CF1A8C0AAF8E54000F7FB6 /* CarbonMacVPL.c in Sources */,
+				84CF1A8E0AAF8E54000F7FB6 /* VPX_PrimitivesFiles.c in Sources */,
+				84CF1A8F0AAF8E54000F7FB6 /* VPX_PrimitivesGraphics.c in Sources */,
+				84CF1A900AAF8E54000F7FB6 /* VPX_PrimitivesUI.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1667FE841158C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4FADC24308B4156D00ABE55E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXPORTED_SYMBOLS_FILE = "MartenUIAqua Exports.txt";
+				FRAMEWORK_SEARCH_PATHS = "$[ROOT]/Library/Frameworks/";
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MartenUIAqua_Prefix.pch;
+				GCC_USE_GCC3_PFE_SUPPORT = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = MartenUIAqua;
+				STRIP_INSTALLED_PRODUCT = NO;
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		4FADC24408B4156D00ABE55E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXPORTED_SYMBOLS_FILE = "MartenUIAqua Exports.txt";
+				FRAMEWORK_SEARCH_PATHS = "$[ROOT]/Library/Frameworks/";
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MartenUIAqua_Prefix.pch;
+				GCC_USE_GCC3_PFE_SUPPORT = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = MartenUIAqua;
+				STRIP_INSTALLED_PRODUCT = NO;
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		4FADC24708B4156D00ABE55E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_VERSION = 4.0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		4FADC24808B4156D00ABE55E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_VERSION = 4.0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+		5CE48FCA0AB0E87D0084C34D /* Marten Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXPORTED_SYMBOLS_FILE = "MartenUIAqua Exports.txt";
+				FRAMEWORK_VERSION = A;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MartenUIAqua_Prefix.pch;
+				GCC_USE_GCC3_PFE_SUPPORT = NO;
+				INFOPLIST_FILE = Info.plist;
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = MartenUIAqua;
+				STRIP_INSTALLED_PRODUCT = NO;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = "Marten Release";
+		};
+		5CE48FCB0AB0E87D0084C34D /* Marten Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
+				GCC_VERSION = 4.0;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SKIP_INSTALL = YES;
+				SYMROOT = "../( xcbuild )";
+			};
+			name = "Marten Release";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FADC24208B4156D00ABE55E /* Build configuration list for PBXNativeTarget "MartenUIAqua" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FADC24308B4156D00ABE55E /* Debug */,
+				4FADC24408B4156D00ABE55E /* Release */,
+				5CE48FCA0AB0E87D0084C34D /* Marten Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Marten Release";
+		};
+		4FADC24608B4156D00ABE55E /* Build configuration list for PBXProject "MartenUIAqua" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FADC24708B4156D00ABE55E /* Debug */,
+				4FADC24808B4156D00ABE55E /* Release */,
+				5CE48FCB0AB0E87D0084C34D /* Marten Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Marten Release";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

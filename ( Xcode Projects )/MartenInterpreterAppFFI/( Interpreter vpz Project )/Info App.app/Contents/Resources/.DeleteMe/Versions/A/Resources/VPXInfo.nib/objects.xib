@@ -1,0 +1,143 @@
+<?xml version="1.0" standalone="yes"?>
+<object class="NSIBObjectData">
+  <string name="targetFramework">IBCarbonFramework</string>
+  <object name="rootObject" class="NSCustomObject" id="1">
+    <string name="customClass">NSApplication</string>
+  </object>
+  <array count="9" name="allObjects">
+    <object class="IBCarbonWindow" id="166">
+      <string name="windowRect">489 284 697 714 </string>
+      <string name="title"></string>
+      <object name="rootControl" class="IBCarbonRootControl" id="167">
+        <string name="bounds">0 0 208 430 </string>
+        <string name="viewFrame">0 0 430 208 </string>
+        <array count="7" name="subviews">
+          <object class="IBCarbonButton" id="181">
+            <string name="bounds">168 299 188 410 </string>
+            <string name="viewFrame">299 168 111 20 </string>
+            <ostype name="controlSignature">VPXu</ostype>
+            <int name="controlID">2</int>
+            <string name="title">OK</string>
+            <ostype name="command">ok  </ostype>
+            <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+              <int name="bindingTopKind">2</int>
+              <int name="bindingLeftKind">2</int>
+              <int name="bindingBottomKind">2</int>
+              <int name="bindingRightKind">2</int>
+            </object>
+            <int name="buttonType">1</int>
+          </object>
+          <object class="IBCarbonButton" id="220">
+            <string name="bounds">168 151 188 279 </string>
+            <string name="viewFrame">151 168 128 20 </string>
+            <ostype name="controlSignature">VPXu</ostype>
+            <int name="controlID">11</int>
+            <boolean name="hidden">TRUE</boolean>
+            <string name="title">Buy Now!</string>
+            <ostype name="command">VPlk</ostype>
+            <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+              <int name="bindingTopKind">2</int>
+              <int name="bindingLeftKind">2</int>
+              <int name="bindingBottomKind">2</int>
+              <int name="bindingRightKind">2</int>
+            </object>
+          </object>
+          <object class="IBCarbonRoundButton" id="221">
+            <string name="bounds">169 20 187 41 </string>
+            <string name="viewFrame">20 169 21 18 </string>
+            <ostype name="controlSignature">VPXu</ostype>
+            <int name="controlID">12</int>
+            <ostype name="command">VAlk</ostype>
+            <int name="contentType">132</int>
+            <int name="iconType">1751477360</int>
+          </object>
+          <object class="IBCarbonStaticText" id="217">
+            <string name="bounds">135 168 148 410 </string>
+            <string name="viewFrame">168 135 242 13 </string>
+            <ostype name="controlSignature">VPXu</ostype>
+            <int name="controlID">6</int>
+            <boolean name="small">TRUE</boolean>
+            <int name="controlSize">1</int>
+            <string name="title">www.andescotia.com</string>
+            <ostype name="command">VAlk</ostype>
+            <string name="foreColor">0 0 65535 </string>
+            <int name="justification">1</int>
+          </object>
+          <object class="IBCarbonStaticText" id="216">
+            <string name="bounds">20 168 36 410 </string>
+            <string name="viewFrame">168 20 242 16 </string>
+            <ostype name="controlSignature">VPXu</ostype>
+            <int name="controlID">4</int>
+            <int name="fontStyle">4</int>
+            <string name="title">Marten Interpreter</string>
+            <int name="justification">1</int>
+          </object>
+          <object class="IBCarbonStaticText" id="218">
+            <string name="bounds">114 168 127 410 </string>
+            <string name="viewFrame">168 114 242 13 </string>
+            <ostype name="controlSignature">VPXu</ostype>
+            <int name="controlID">5</int>
+            <boolean name="small">TRUE</boolean>
+            <int name="controlSize">1</int>
+            <string name="title">©2006 Andescotia, LLC.</string>
+            <int name="justification">1</int>
+          </object>
+          <object class="IBCarbonStaticText" id="180">
+            <string name="bounds">44 168 106 410 </string>
+            <string name="viewFrame">168 44 242 62 </string>
+            <ostype name="controlSignature">VPXu</ostype>
+            <int name="controlID">1</int>
+            <boolean name="small">TRUE</boolean>
+            <int name="controlSize">1</int>
+            <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+              <int name="bindingTopKind">1</int>
+              <int name="bindingLeftKind">1</int>
+              <int name="bindingBottomKind">2</int>
+              <int name="bindingRightKind">2</int>
+            </object>
+            <int name="justification">1</int>
+          </object>
+        </array>
+      </object>
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="hasCloseBox">FALSE</boolean>
+      <boolean name="hasHorizontalZoom">FALSE</boolean>
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="hasVerticalZoom">FALSE</boolean>
+      <boolean name="metal">TRUE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="windowPosition">7</int>
+      <boolean name="asyncDrag">TRUE</boolean>
+      <int name="scalingMode">1048576</int>
+      <boolean name="noMetalContentSeparatorKey">TRUE</boolean>
+    </object>
+    <reference idRef="167"/>
+    <reference idRef="180"/>
+    <reference idRef="181"/>
+    <reference idRef="216"/>
+    <reference idRef="217"/>
+    <reference idRef="218"/>
+    <reference idRef="220"/>
+    <reference idRef="221"/>
+  </array>
+  <array count="9" name="allParents">
+    <reference idRef="1"/>
+    <reference idRef="166"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+  </array>
+  <dictionary count="3" name="nameTable">
+    <string>File&apos;s Owner</string>
+    <reference idRef="1"/>
+    <string>Info</string>
+    <reference idRef="166"/>
+    <string>NSCustomView111</string>
+    <reference idRef="221"/>
+  </dictionary>
+  <unsigned_int name="nextObjectID">222</unsigned_int>
+</object>

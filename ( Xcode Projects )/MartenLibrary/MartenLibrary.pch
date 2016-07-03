@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'MartenLibraryFramework' target in the 'MartenLibrary' project.
+//
+
+#include <MartenEngine/MartenEngine.h>
+#include <CoreFoundation/CoreFoundation.h>
+#include "MacOSX AMLib.h"
+

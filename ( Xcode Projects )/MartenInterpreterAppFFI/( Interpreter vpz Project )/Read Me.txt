@@ -1,0 +1,6 @@
+The "Info App.app" application bundle here contains the current .vpz file used in the building of the interpreter.  
+
+DO NOT DELETE IT!
+
+If you update that file, please change the interpreter version number!
+

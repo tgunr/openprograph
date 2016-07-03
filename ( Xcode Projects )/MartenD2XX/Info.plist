@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>MartenD2XX</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string>com.polymicrosystems.frameworks.d2xx.generic</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>mVPL</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>CSResourcesFileMapped</key>
+	<true/>
+	<key>MartenItemName</key>
+	<string>FTDI D2XX Driver</string>
+	<key>MartenLinkFrameworks</key>
+	<array>
+		<string>libftd2xx.dylib</string>
+		<string>libftchipid.dylib</string>
+	</array>
+	<key>MartenLinkHeaders</key>
+	<array>
+		<string>#define _OSX_ 1</string>
+		<string>#include &lt;MartenD2XX/ftd2xx.h&gt;</string>
+		<string>#include &lt;MartenD2XX/FTChipID.h&gt;</string>
+	</array>
+	<key>MartenLinkIsPrivate</key>
+	<true/>
+	<key>MartenLoadFunction</key>
+	<string>load_D2XX</string>
+</dict>
+</plist>

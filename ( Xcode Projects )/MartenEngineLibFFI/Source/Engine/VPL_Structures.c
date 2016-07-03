@@ -1,0 +1,356 @@
+/*
+	
+	VPL_Structures.c
+	Copyright 2000 Scott B. Anderson, All Rights Reserved.
+	
+*/
+#include <stdlib.h>
+#include <stdio.h>
+
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+#include "VPL_Structures.h"
+
+extern Nat4 addToHeap( V_Object ptrA , V_Environment environment);
+extern V_String create_string( Int1 *string , V_Environment environment );
+extern V_List clone_list(Nat4 fromOffset,Nat4 toOffset,V_List fromList,Nat4 length,V_Environment environment);
+
+extern V_Undefined create_undefined(V_Environment environment);
+extern V_None create_none(V_Environment environment);
+extern V_Integer int_to_integer( Int4 value , V_Environment environment);
+extern V_Real float_to_real( Real10 value , V_Environment environment);
+extern Nat4 increment_count(V_Object ptrO);
+extern Int4 instance_compare( V_Instance instanceA , V_Instance instanceB , Int1 *attribute, V_Environment environment);
+
+
+Int4 boolean_compare( V_Boolean objectA , V_Boolean objectB );
+Int4 integer_compare( V_Integer objectA , V_Integer objectB );
+Int4 real_compare( V_Real objectA , V_Real objectB );
+Int4 string_compare( V_String stringA , V_String stringB );
+Int4 list_compare( V_List listA , V_List listB );
+Int4 external_compare( V_ExternalBlock objectA , V_ExternalBlock objectB );
+
+Int1 *left_justify( Int1 *string )
+{
+	Int1	*tempString = string;
+	
+	while( *tempString != '\0' && isspace(*tempString++) != 0) {}
+	return --tempString;;
+}
+
+Bool object_identity( V_Object objectA , V_Object objectB )
+{
+	if(objectA == NULL){
+		if(objectB == NULL) return kTRUE;
+		else return kFALSE;
+	}
+	if(objectB == NULL) return kFALSE;
+	switch(objectA->type){
+		case kObject:
+			return kFALSE;
+		case kUndefined:
+			if(objectB->type != kUndefined) return kFALSE;
+			return kTRUE;
+		case kNone:
+			if(objectB->type != kNone) return kFALSE;
+			return kTRUE;
+		case kBoolean:
+			if(objectB->type == kBoolean){
+				return boolean_identity((V_Boolean) objectA , (V_Boolean) objectB );
+			} else if(objectB->type == kInteger){
+				if(((V_Boolean) objectA)->value == ((V_Integer) objectB)->value) return kTRUE;
+				else return kFALSE;
+			} else return kFALSE;
+		case kInteger:
+			if(objectB->type != kInteger) return kFALSE;
+			return integer_identity((V_Integer) objectA , (V_Integer) objectB );
+		case kReal:
+			if(objectB->type != kReal) return kFALSE;
+			return real_identity((V_Real) objectA , (V_Real) objectB );
+		case kString:
+			if(objectB->type != kString) return kFALSE;
+			return string_identity((V_String) objectA , (V_String) objectB );
+		case kList:
+			if(objectB->type != kList) return kFALSE;
+			return list_identity((V_List) objectA , (V_List) objectB );
+		case kInstance:
+			if(objectB->type != kInstance) return kFALSE;
+			return instance_identity((V_Instance) objectA , (V_Instance) objectB );
+		case kExternalBlock:
+			if(objectB->type != kExternalBlock) return kFALSE;
+			return external_identity((V_ExternalBlock) objectA , (V_ExternalBlock) objectB );
+	}
+
+	return kFALSE;
+}
+
+Bool boolean_identity( V_Boolean objectA , V_Boolean objectB )
+{
+	if(objectA->value == objectB->value) return kTRUE;
+
+	return kFALSE;
+}
+
+Bool integer_identity( V_Integer objectA , V_Integer objectB )
+{
+	if(objectA->value == objectB->value) return kTRUE;
+
+	return kFALSE;
+}
+
+Bool real_identity( V_Real objectA , V_Real objectB )
+{
+	if(objectA->value == objectB->value) return kTRUE;
+
+	return kFALSE;
+}
+
+Bool string_identity( V_String stringA , V_String stringB )
+{
+	if(stringA->length != stringB->length) return kFALSE;
+	if(0 == strcmp(stringA->string,stringB->string) ) return kTRUE;
+
+	return kFALSE;
+}
+
+Bool list_identity( V_List listA , V_List listB )
+{
+	Nat4	counter = 0;
+	
+	if(listA->listLength != listB->listLength) return kFALSE;
+	for(counter = 0;counter<listA->listLength;counter++){
+		if( kFALSE == object_identity(listA->objectList[counter],listB->objectList[counter]) ) return kFALSE;
+	}
+	return kTRUE;
+}
+
+Bool instance_identity( V_Instance instanceA , V_Instance instanceB )
+{
+	if(instanceA == instanceB) return kTRUE;
+
+	return kFALSE;
+}
+
+Bool external_identity( V_ExternalBlock objectA , V_ExternalBlock objectB )
+{
+	Nat4 pointerA = *((Nat4 *) objectA->blockPtr);
+	Nat4 pointerB = *((Nat4 *) objectB->blockPtr);
+	if(pointerA == pointerB) return kTRUE;
+
+	return kFALSE;
+}
+
+Int4 object_compare( V_Object objectA , V_Object objectB, Int1 *attribute, V_Environment environment )
+{
+	if(objectA == NULL){
+		if(objectB == NULL) return 0;
+		else return -1;
+	}
+	if(objectB == NULL) return 1;
+
+	switch(objectA->type){
+		case kObject:
+			return kFALSE;
+		case kUndefined:
+			if(objectB->type == kUndefined) return 0;
+			else return 1;
+		case kNone:
+			if(objectB->type < kNone) return 1;
+			else if(objectB->type == kNone) return 0;
+			else return -1;
+		case kBoolean:
+			if(objectB->type < kBoolean) return 1;
+			else if(objectB->type == kBoolean) return boolean_compare((V_Boolean) objectA,(V_Boolean) objectB);
+			else return -1;
+		case kInteger:
+			if(objectB->type < kInteger) return 1;
+			else if(objectB->type == kInteger) return integer_compare((V_Integer) objectA,(V_Integer) objectB);
+			else return -1;
+		case kReal:
+			if(objectB->type < kReal) return 1;
+			else if(objectB->type == kReal) return real_compare((V_Real) objectA,(V_Real) objectB);
+			else return -1;
+		case kString:
+			if(objectB->type < kString) return 1;
+			else if(objectB->type == kString) return string_compare((V_String) objectA,(V_String) objectB);
+			else return -1;
+		case kList:
+			if(objectB->type < kList) return 1;
+			else if(objectB->type == kList) return list_compare((V_List) objectA,(V_List) objectB);
+			else return -1;
+		case kInstance:
+			if(objectB->type < kInstance) return 1;
+			else if(objectB->type == kInstance) return instance_compare((V_Instance) objectA,(V_Instance) objectB,attribute,environment);
+			else return -1;
+		case kExternalBlock:
+			if(objectB->type < kExternalBlock) return 1;
+			else if(objectB->type == kExternalBlock) return external_compare((V_ExternalBlock) objectA,(V_ExternalBlock) objectB);
+			else return -1;
+	}
+
+	return kFALSE;
+}
+
+Int4 boolean_compare( V_Boolean objectA , V_Boolean objectB )
+{
+	if(objectA->value == objectB->value) return kTRUE;
+
+	return kFALSE;
+}
+
+Int4 integer_compare( V_Integer objectA , V_Integer objectB )
+{
+	if(objectA->value < objectB->value) return -1;
+	else if(objectA->value == objectB->value) return 0;
+	else return 1;
+
+	return kFALSE;
+}
+
+Int4 real_compare( V_Real objectA , V_Real objectB )
+{
+	if(objectA->value < objectB->value) return -1;
+	else if(objectA->value == objectB->value) return 0;
+	else return 1;
+
+	return kFALSE;
+}
+
+Int4 string_compare( V_String stringA , V_String stringB )
+{
+	return strcmp(stringA->string,stringB->string);
+}
+
+Int4 list_compare( V_List listA , V_List listB )
+{
+	if(listA->listLength < listB->listLength) return -1;
+	else if(listA->listLength == listB->listLength) return 0;
+	else return 1;
+}
+
+Int4 external_compare( V_ExternalBlock objectA , V_ExternalBlock objectB )
+{
+	if(objectA < objectB) return -1;
+	else if(objectA == objectB) return 0;
+	else return 1;
+}
+
+Int1 *integer2string( Int4 integer ) /* "integer->string" */
+{
+	Real10		realInt = 0;
+	Nat4		length = 0;
+	Int1		*tempString;
+	Nat4		counter = 0;
+
+		realInt = labs(integer);
+		while((realInt = realInt/10) >= 1) length++;
+		length++;
+		tempString = (Int1 *)calloc(length+2,sizeof(Int1));
+		counter = sprintf(tempString,"%d",(int)integer);
+		tempString[counter] = '\0';
+		return	tempString;
+}
+
+Int1 *real2string( Real10 number ) /* "real->string" */
+{
+	Real10		realInt = 0;
+	Nat4		length = 0;
+	Int1		*tempString;
+	Nat4		counter = 0;
+
+		realInt = fabs(number);
+		while((realInt = realInt/10) >= 1) length++;
+		length++;
+		tempString = (Int1 *)calloc(length+3+4,sizeof(Int1));
+		counter = sprintf(tempString,"%.4f",number);
+		tempString[counter] = '\0';
+		return	tempString;
+
+}
+
+
+bool object_coerce_boolean( V_Object someObject )
+{
+	bool	returnValue = kFALSE;
+	
+	if( someObject == NULL ) return returnValue;
+	if( someObject->type == kBoolean ) returnValue = ((V_Boolean)someObject)->value;
+	else if( someObject->type == kInteger ) returnValue = (((V_Integer)someObject)->value != 0l);
+	else if( someObject->type == kReal ) returnValue = (((V_Real)someObject)->value != 0.0f);
+	else if( someObject->type == kString ) returnValue = (((V_String)someObject)->length != 0);
+	else if( someObject->type == kList ) returnValue = (((V_List)someObject)->listLength != 0);
+	else if( someObject->type == kExternalBlock ) returnValue = (((V_ExternalBlock)someObject)->size != 0);
+	else if( someObject->type == kInstance ) returnValue = kTRUE;
+	
+	return returnValue;
+}
+
+Nat4 object_coerce_integer( V_Object someObject )
+{
+	Nat4	returnValue = 0;
+	
+	if( someObject == NULL ) return returnValue;
+	if( someObject->type == kBoolean ) returnValue = (((V_Boolean)someObject)->value ? 1l : 0l);
+	else if( someObject->type == kInteger ) returnValue = ((V_Integer)someObject)->value;
+	else if( someObject->type == kReal ) returnValue = (Nat4)(((V_Real)someObject)->value);
+	else if( someObject->type == kString ) returnValue = atol(((V_String)someObject)->string);
+	else if( someObject->type == kList ) returnValue = ((V_List)someObject)->listLength;
+	else if( someObject->type == kExternalBlock ) returnValue = ((V_ExternalBlock)someObject)->size;
+	else if( someObject->type == kInstance ) returnValue = (Nat4)someObject;
+	
+	return returnValue;
+}
+
+Real10 object_coerce_real( V_Object someObject )
+{
+	Real10	returnValue = 0.0;
+	
+	if( someObject == NULL ) return returnValue;
+	if( someObject->type == kBoolean ) returnValue = (((V_Boolean)someObject)->value ? 1.0f : 0.0f);
+	else if( someObject->type == kInteger ) returnValue = (Real10)(((V_Integer)someObject)->value);
+	else if( someObject->type == kReal ) returnValue = ((V_Real)someObject)->value;
+	else if( someObject->type == kString ) returnValue = atof(((V_String)someObject)->string);
+	else if( someObject->type == kList ) returnValue = (((V_List)someObject)->listLength);
+	else if( someObject->type == kExternalBlock ) returnValue = (Real10)(((V_ExternalBlock)someObject)->size);
+//	else if( someObject->type == kInstance ) returnValue = (Real10*)someObject;
+	
+	return returnValue;
+}
+
+Int1* object_coerce_string( V_Object someObject, V_Environment environment )
+	{	return (Int1*)object_to_string( someObject, environment);	}
+
+
+Nat4 object_coerce_listlength( V_Object someObject )
+{
+	Nat4	returnValue = 0;
+	
+	if( someObject == NULL ) return returnValue;
+	if( someObject->type == kBoolean ) returnValue = (((V_Boolean)someObject)->value ? 1l : 0l);
+	else if( someObject->type == kInteger ) returnValue = ((V_Integer)someObject)->value;
+	else if( someObject->type == kReal ) returnValue = (Nat4)(((V_Real)someObject)->value);
+	else if( someObject->type == kString ) returnValue = atol(((V_String)someObject)->string);
+	else if( someObject->type == kList ) returnValue = ((V_List)someObject)->listLength;
+	else if( someObject->type == kExternalBlock ) returnValue = ((V_ExternalBlock)someObject)->size;
+	else if( someObject->type == kInstance ) returnValue = ((V_Instance)someObject)->listLength;
+	
+	return returnValue;
+}
+
+void* object_coerce_blockPtr( V_Object someObject )
+{
+	void*	returnValue = NULL;
+	
+	if( someObject == NULL ) return returnValue;
+	if( someObject->type == kExternalBlock )
+		externalBlock_coercePtr((V_ExternalBlock)someObject, &returnValue);
+	else returnValue = (void*)someObject;
+	
+	return returnValue;
+}
+
+
+
+

@@ -1,0 +1,29 @@
+//
+// Prefix header for all source files of the 'MartenEngine' target in the 'MartenEngine' project.
+//
+
+
+#define __VPL_PLATFORM_DARWIN__		1
+//#define __VPL_PLATFORM_WINDOWS__		0
+//#define __VPL_PLATFORM_LINUX__		0
+//#define __VPL_PLATFORM_HAIKU__		0
+//#define __VPL_PLATFORM_UBUNTU__		0
+
+#if __VPL_PLATFORM_DARWIN__
+	#include <CoreFoundation/CoreFoundation.h>
+#endif // __VPL_PLATFORM_DARWIN__
+
+#define __VPL_DISATCH_USES_FFI__	1
+
+#if __VPL_DISATCH_USES_FFI__ 
+
+	#if __VPL_PLATFORM_DARWIN__
+		#define MACOSX 1
+	#endif // __VPL_PLATFORM_DARWIN__
+
+	#include "ffi.h"
+
+#endif // __VPL_DISATCH_USES_FFI__
+
+
+

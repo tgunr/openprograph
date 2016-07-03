@@ -1,0 +1,30 @@
+//
+// Prefix header for all source files of the 'MartenMacOSCocoa' target in the 'MartenMacOSCocoa' project.
+//
+
+//#include <Carbon/Carbon.h>
+//#include <CoreServices/CoreServices.h>
+//#include "UnixStandard.h"
+
+//#include <objc/objc.h>
+//#include <Cocoa/Cocoa.h>
+
+
+// #include <objc/objc-runtime.h>
+// #include <objc/objc-load.h>
+// #include <objc/objc-exception.h>
+// #include <objc/objc-sync.h>
+
+#include <machine/limits.h>
+#include "stddef.h"
+#include "stdarg.h"
+
+#include <objc/objc.h>
+#include <MartenEngine/MartenEngine.h>
+
+// #import <objc/objc.h>
+// #import <objc/objc-class.h>
+// #import <objc/objc-runtime.h>
+// #import <objc/objc-load.h>
+// #import <objc/objc-exception.h>
+// #import <objc/objc-sync.h>
