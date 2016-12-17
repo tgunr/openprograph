@@ -11,9 +11,9 @@ extern const char *object_getClassName(id obj);
 extern void *object_getIndexedIvars(id obj);
 extern int objc_sync_enter(id obj);
 extern int objc_sync_exit(id obj);
-extern int objc_sync_wait(id obj, long long milliSecondsMaxWait);
-extern int objc_sync_notify(id obj);
-extern int objc_sync_notifyAll(id obj);
+//extern int objc_sync_wait(id obj, long long milliSecondsMaxWait);
+//extern int objc_sync_notify(id obj);
+//extern int objc_sync_notifyAll(id obj);
 enum {
 OBJC_SYNC_SUCCESS = 0,
 OBJC_SYNC_NOT_OWNING_THREAD_ERROR = -1,
