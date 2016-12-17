@@ -245,6 +245,10 @@ typedef struct VPL_Class
 	Nat4			numberOfSuperClasses;
 	Int1			**superClassNames;
 	Nat4			classIndex;
+	Nat4			numberOfChildren;
+	Int1			**childrenNames;
+	Nat4			numberOfDescendants;
+	Int1			**descendantNames;
 }	VPL_Class;
 
 typedef struct VPL_ExtConstant

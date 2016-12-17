@@ -7806,8 +7806,73 @@ OUTPUT(0,TERMINAL(1))
 FOOTERSINGLECASE(2)
 }
 
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex);
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex)
+{
+HEADER(2)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"Skip DoubleDash Folders?",ROOT(0));
+
+result = vpx_method_CFPrefs_20_Get_20_App_20_Value(PARAMETERS,TERMINAL(0),ROOT(1));
+TERMINATEONFAILURE
+
+result = vpx_match(PARAMETERS,"FALSE",TERMINAL(1));
+FAILONSUCCESS
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_1_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_1_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Full_20_Path,1,1,TERMINAL(0),ROOT(1));
+TERMINATEONFAILURE
+
+result = vpx_constant(PARAMETERS,"\"Skipping search folder: \"",ROOT(2));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_log_2D_error,2,0,TERMINAL(2),TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(3)
+}
+
 enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
 enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+{
+HEADER(6)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_1_local_2(PARAMETERS);
+NEXTCASEONFAILURE
+
+result = vpx_constant(PARAMETERS,"2",ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_prefix,2,2,TERMINAL(2),TERMINAL(3),ROOT(4),ROOT(5));
+
+result = vpx_match(PARAMETERS,"--",TERMINAL(4));
+NEXTCASEONFAILURE
+
+result = vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_1_local_6(PARAMETERS,TERMINAL(1));
+
+result = kSuccess;
+FAILONSUCCESS
+
+FOOTER(6)
+}
+
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
 {
 HEADER(8)
 INPUT(0,0)
@@ -7833,8 +7898,8 @@ FAILONSUCCESS
 FOOTER(8)
 }
 
-enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
-enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
 {
 HEADERWITHNONE(8)
 INPUT(0,0)
@@ -7860,8 +7925,8 @@ FAILONSUCCESS
 FOOTERWITHNONE(8)
 }
 
-enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_3_local_2_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_3_local_2_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4_local_2_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4_local_2_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADER(4)
 INPUT(0,0)
@@ -7882,8 +7947,8 @@ OUTPUT(0,TERMINAL(3))
 FOOTER(4)
 }
 
-enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_3_local_2_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_3_local_2_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4_local_2_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4_local_2_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADER(2)
 INPUT(0,0)
@@ -7897,17 +7962,17 @@ OUTPUT(0,TERMINAL(1))
 FOOTER(2)
 }
 
-enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_3_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_3_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 enum opTrigger outcome = kSuccess;
-if(vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_3_local_2_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
-vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_3_local_2_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+if(vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4_local_2_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4_local_2_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
 return outcome;
 }
 
-enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
-enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
 {
 HEADER(6)
 INPUT(0,0)
@@ -7915,7 +7980,7 @@ INPUT(1,1)
 INPUT(2,2)
 result = kSuccess;
 
-result = vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_3_local_2(PARAMETERS,TERMINAL(1),ROOT(3));
+result = vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4_local_2(PARAMETERS,TERMINAL(1),ROOT(3));
 
 result = vpx_constant(PARAMETERS,"\"/System/Library/Frameworks\"",ROOT(4));
 
@@ -7929,8 +7994,8 @@ result = kSuccess;
 FOOTER(6)
 }
 
-enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
-enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_5(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
+enum opTrigger vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_5(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
 {
 HEADER(3)
 INPUT(0,0)
@@ -7949,7 +8014,8 @@ enum opTrigger outcome = kSuccess;
 if(vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2))
 if(vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2))
 if(vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2))
-vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2);
+if(vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_4(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2))
+vpx_method_Folder_20_Search_2F_Valid_20_Subfolder_3F__case_5(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2);
 return outcome;
 }
 

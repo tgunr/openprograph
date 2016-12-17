@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
@@ -226,7 +226,7 @@
 	<key>CFBundleExecutable</key>
 	<string>Marten</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Marten, Copyright ©2008 by Andescotia LLC. All rights reserved.</string>
+	<string>Marten - Version 1.4.6, Copyright ©2010 by Andescotia LLC. All rights reserved.</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>Marten Help</string>
 	<key>CFBundleHelpBookName</key>
@@ -242,7 +242,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.4.2</string>
+	<string>1.4.6</string>
 	<key>CFBundleSignature</key>
 	<string>mVPL</string>
 	<key>CFBundleURLTypes</key>
@@ -258,22 +258,22 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.4.2</string>
+	<string>1.4.6</string>
 	<key>CSResourcesFileMapped</key>
 	<true/>
 	<key>LSMinimumSystemVersion</key>
 	<string>10.4</string>
 	<key>MartenAboutCopyright</key>
-	<string>Marten, Copyright © 2004 - 2008
+	<string>Marten, Copyright © 2004 - 2010
 by Andescotia LLC. All rights reserved.</string>
 	<key>MartenAboutIDEBuild</key>
-	<string>Build 057.04.2</string>
+	<string>Build 057.04.6</string>
 	<key>MartenAboutIDEVersion</key>
-	<string>Version 1.4.2</string>
+	<string>Version 1.4.6</string>
 	<key>MartenAboutInterpreterBuild</key>
-	<string>Interpreter Build 057.04.2</string>
+	<string>Interpreter Build 057.04.6</string>
 	<key>MartenAboutInterpreterVersion</key>
-	<string>Interpreter Version 1.4.2</string>
+	<string>Interpreter Version 1.4.6</string>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
