@@ -14,7 +14,6 @@
 			);
 			dependencies = (
 				5C48462D0B293406005A3959 /* PBXTargetDependency */,
-				5C48462B0B293402005A3959 /* PBXTargetDependency */,
 			);
 			name = "All Known Projects";
 			productName = "All Known Projects";
@@ -115,17 +114,6 @@
 			name = "Other 3rdParty Frameworks";
 			productName = "Other 3rdParty Frameworks";
 		};
-		5CFDCAB90AB2605D00F8B191 /* PPC Only Frameworks */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 5CFDCAC00AB2609400F8B191 /* Build configuration list for PBXAggregateTarget "PPC Only Frameworks" */;
-			buildPhases = (
-			);
-			dependencies = (
-				5CFDCABB0AB2606C00F8B191 /* PBXTargetDependency */,
-			);
-			name = "PPC Only Frameworks";
-			productName = "PPC Only";
-		};
 		5CFDCAC50AB2612300F8B191 /* All Universal Frameworks */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 5CFDCAC60AB2614100F8B191 /* Build configuration list for PBXAggregateTarget "All Universal Frameworks" */;
@@ -154,13 +142,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXContainerItemProxy section */
-		5C48462A0B293402005A3959 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5CFDCAB90AB2605D00F8B191;
-			remoteInfo = "PPC Only Frameworks";
-		};
 		5C48462C0B293406005A3959 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
@@ -476,13 +457,6 @@
 			remoteGlobalIDString = 8D07F2BC0486CC7A007CD1D0;
 			remoteInfo = "MartenSQLite Framework";
 		};
-		5CFDCABA0AB2606C00F8B191 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDCAAB0AB25FD200F8B191 /* MartenMySQL.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D07F2BC0486CC7A007CD1D0;
-			remoteInfo = "MartenMySQL Framework";
-		};
 		5CFDCAC30AB260C000F8B191 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CFDC97B0AB2596100F8B191 /* MartenInfo.xcodeproj */;
@@ -757,6 +731,8 @@
 /* Begin PBXProject section */
 		5CFDC9480AB258E600F8B191 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 5CFDC9490AB258E600F8B191 /* Build configuration list for PBXProject "Marten Top" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
@@ -859,7 +835,6 @@
 				5CFDCA590AB25EA800F8B191 /* Other MacOS Frameworks */,
 				5CFDCA8F0AB25F8F00F8B191 /* Other 3rdParty Frameworks */,
 				5CFDCAC50AB2612300F8B191 /* All Universal Frameworks */,
-				5CFDCAB90AB2605D00F8B191 /* PPC Only Frameworks */,
 				5CFDC9D20AB25AD900F8B191 /* Interpreter */,
 				5CFDCACF0AB261AE00F8B191 /* Universal IDE */,
 				5CCB1BFA0AB265AE00734F24 /* All Universal */,
@@ -1019,11 +994,6 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXTargetDependency section */
-		5C48462B0B293402005A3959 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5CFDCAB90AB2605D00F8B191 /* PPC Only Frameworks */;
-			targetProxy = 5C48462A0B293402005A3959 /* PBXContainerItemProxy */;
-		};
 		5C48462D0B293406005A3959 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5CCB1BFA0AB265AE00734F24 /* All Universal */;
@@ -1149,11 +1119,6 @@
 			name = "MartenSQLite Framework";
 			targetProxy = 5CFDCAB70AB2601400F8B191 /* PBXContainerItemProxy */;
 		};
-		5CFDCABB0AB2606C00F8B191 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "MartenMySQL Framework";
-			targetProxy = 5CFDCABA0AB2606C00F8B191 /* PBXContainerItemProxy */;
-		};
 		5CFDCAC40AB260C000F8B191 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "MartenInfo Framework";
@@ -1253,14 +1218,20 @@
 		5CFDC94A0AB258E600F8B191 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
+				SDKROOT = macosx10.7;
+				SYMROOT = "../( xcbuild )";
 			};
 			name = Debug;
 		};
 		5CFDC94B0AB258E600F8B191 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
+				SDKROOT = macosx10.7;
+				SYMROOT = "../( xcbuild )";
 			};
 			name = Release;
 		};
@@ -1396,28 +1367,6 @@
 			};
 			name = Release;
 		};
-		5CFDCAC10AB2609400F8B191 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "PPC Only";
-			};
-			name = Debug;
-		};
-		5CFDCAC20AB2609400F8B191 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				PRODUCT_NAME = "PPC Only";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
 		5CFDCAC70AB2614100F8B191 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1528,17 +1477,6 @@
 			};
 			name = "Marten Release";
 		};
-		5CFDCB270AB2644C00F8B191 /* Marten Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				PRODUCT_NAME = "PPC Only";
-				ZERO_LINK = NO;
-			};
-			name = "Marten Release";
-		};
 		5CFDCB280AB2644C00F8B191 /* Marten Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1564,7 +1502,10 @@
 		5CFDCB2A0AB2644C00F8B191 /* Marten Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
+				SDKROOT = macosx10.7;
+				SYMROOT = "../( xcbuild )";
 			};
 			name = "Marten Release";
 		};
@@ -1657,16 +1598,6 @@
 				5CFDCA910AB25FAE00F8B191 /* Debug */,
 				5CFDCA920AB25FAE00F8B191 /* Release */,
 				5CFDCB250AB2644C00F8B191 /* Marten Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Marten Release";
-		};
-		5CFDCAC00AB2609400F8B191 /* Build configuration list for PBXAggregateTarget "PPC Only Frameworks" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5CFDCAC10AB2609400F8B191 /* Debug */,
-				5CFDCAC20AB2609400F8B191 /* Release */,
-				5CFDCB270AB2644C00F8B191 /* Marten Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Marten Release";
