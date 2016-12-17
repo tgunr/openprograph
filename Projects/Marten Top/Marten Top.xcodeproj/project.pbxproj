@@ -13,6 +13,15 @@
 			buildPhases = (
 			);
 			dependencies = (
+				75BD76BB1E01A81300D522A0 /* PBXTargetDependency */,
+				75BD76BD1E01A81500D522A0 /* PBXTargetDependency */,
+				75BD76BF1E01A81700D522A0 /* PBXTargetDependency */,
+				75BD76C11E01A81900D522A0 /* PBXTargetDependency */,
+				75BD76C31E01A81C00D522A0 /* PBXTargetDependency */,
+				75BD76C51E01A82000D522A0 /* PBXTargetDependency */,
+				75BD76C71E01A82300D522A0 /* PBXTargetDependency */,
+				75BD76C91E01A82500D522A0 /* PBXTargetDependency */,
+				75BD76CB1E01A82800D522A0 /* PBXTargetDependency */,
 			);
 			name = "All Known Projects";
 			productName = "All Known Projects";
@@ -80,7 +89,6 @@
 			);
 			dependencies = (
 				5CFDCAB40AB2601400F8B191 /* PBXTargetDependency */,
-				5CFDCAB60AB2601400F8B191 /* PBXTargetDependency */,
 			);
 			name = "Other 3rdParty Frameworks";
 			productName = "Other 3rdParty Frameworks";
@@ -128,6 +136,7 @@
 			buildPhases = (
 			);
 			dependencies = (
+				75BD76B71E00CAFE00D522A0 /* PBXTargetDependency */,
 				752748F41E0065D500E00F3A /* PBXTargetDependency */,
 			);
 			name = Marten;
@@ -353,26 +362,12 @@
 			remoteGlobalIDString = 8D07F2C80486CC7A007CD1D0;
 			remoteInfo = "MartenLIBC Framework";
 		};
-		5CFDCA9D0AB25FB900F8B191 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDCA990AB25FB900F8B191 /* MartenCGIC.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8D07F2C80486CC7A007CD1D0;
-			remoteInfo = MartenCGIC;
-		};
 		5CFDCAB30AB2601400F8B191 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CFDCA930AB25FB000F8B191 /* MartenLIBC.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 8D07F2BC0486CC7A007CD1D0;
 			remoteInfo = "MartenLIBC Framework";
-		};
-		5CFDCAB50AB2601400F8B191 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDCA990AB25FB900F8B191 /* MartenCGIC.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D07F2BC0486CC7A007CD1D0;
-			remoteInfo = MartenCGIC;
 		};
 		5CFDCAC30AB260C000F8B191 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -437,6 +432,83 @@
 			remoteGlobalIDString = 5CFDC9F20AB25D8500F8B191;
 			remoteInfo = "IDE Frameworks";
 		};
+		75BD76A31E00CA7C00D522A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75BD769F1E00CA7C00D522A0 /* Marten.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D0C4E970486CD37000505A6;
+			remoteInfo = Marten;
+		};
+		75BD76B61E00CAFE00D522A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75BD769F1E00CA7C00D522A0 /* Marten.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D0C4E890486CD37000505A6;
+			remoteInfo = Marten;
+		};
+		75BD76BA1E01A81300D522A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 752748EA1E0065A700E00F3A;
+			remoteInfo = Marten;
+		};
+		75BD76BC1E01A81500D522A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 752748DE1E00645000E00F3A;
+			remoteInfo = Interpreter;
+		};
+		75BD76BE1E01A81700D522A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CFDCACF0AB261AE00F8B191;
+			remoteInfo = "Universal IDE";
+		};
+		75BD76C01E01A81900D522A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CFDCAC50AB2612300F8B191;
+			remoteInfo = "All Universal Frameworks";
+		};
+		75BD76C21E01A81C00D522A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CFDCA8F0AB25F8F00F8B191;
+			remoteInfo = "Other 3rdParty Frameworks";
+		};
+		75BD76C41E01A82000D522A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CFDCA590AB25EA800F8B191;
+			remoteInfo = "Other MacOS Frameworks";
+		};
+		75BD76C61E01A82300D522A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CFDC9F20AB25D8500F8B191;
+			remoteInfo = "IDE Frameworks";
+		};
+		75BD76C81E01A82500D522A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CFDC9830AB2599D00F8B191;
+			remoteInfo = "Standard Frameworks";
+		};
+		75BD76CA1E01A82800D522A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CFDC96E0AB2593E00F8B191;
+			remoteInfo = Engine;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -455,7 +527,7 @@
 		5CFDCA4D0AB25E8100F8B191 /* MartenMacOSCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MartenMacOSCocoa.xcodeproj; path = ../MartenMacOSCocoa/MartenMacOSCocoa.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5CFDCA530AB25E8B00F8B191 /* MartenMacOSABookC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MartenMacOSABookC.xcodeproj; path = ../MartenMacOSABookC/MartenMacOSABookC.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5CFDCA930AB25FB000F8B191 /* MartenLIBC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MartenLIBC.xcodeproj; path = ../MartenLIBC/MartenLIBC.xcodeproj; sourceTree = SOURCE_ROOT; };
-		5CFDCA990AB25FB900F8B191 /* MartenCGIC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MartenCGIC.xcodeproj; path = ../MartenCGIC/MartenCGIC.xcodeproj; sourceTree = SOURCE_ROOT; };
+		75BD769F1E00CA7C00D522A0 /* Marten.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Marten.xcodeproj; path = "../Marten IDE/Marten.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -478,6 +550,7 @@
 		5CFDC9460AB258E600F8B191 = {
 			isa = PBXGroup;
 			children = (
+				75BD769F1E00CA7C00D522A0 /* Marten.xcodeproj */,
 				5CFDC95E0AB2590F00F8B191 /* MartenEngine.xcodeproj */,
 				5CFDC9680AB2591D00F8B191 /* MartenInterpreterApp.xcodeproj */,
 				5CFDC97B0AB2596100F8B191 /* MartenInfo.xcodeproj */,
@@ -492,7 +565,6 @@
 				5CD2E3DE0DF0A8D20022DE75 /* MartenMacOSOpenGL.xcodeproj */,
 				5CFDCA410AB25E6500F8B191 /* MartenMacOSWebKit.xcodeproj */,
 				5CFDCA930AB25FB000F8B191 /* MartenLIBC.xcodeproj */,
-				5CFDCA990AB25FB900F8B191 /* MartenCGIC.xcodeproj */,
 				5C882A910D889A3300A90DC5 /* MartenLibrary.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -602,10 +674,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5CFDCA9A0AB25FB900F8B191 /* Products */ = {
+		75BD76A01E00CA7C00D522A0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CFDCA9E0AB25FB900F8B191 /* MartenCGIC.framework */,
+				75BD76A41E00CA7C00D522A0 /* Marten.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -638,12 +710,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 5CFDCA090AB25DE800F8B191 /* Products */;
-					ProjectRef = 5CFDCA080AB25DE800F8B191 /* MartenBSD.xcodeproj */;
+					ProductGroup = 75BD76A01E00CA7C00D522A0 /* Products */;
+					ProjectRef = 75BD769F1E00CA7C00D522A0 /* Marten.xcodeproj */;
 				},
 				{
-					ProductGroup = 5CFDCA9A0AB25FB900F8B191 /* Products */;
-					ProjectRef = 5CFDCA990AB25FB900F8B191 /* MartenCGIC.xcodeproj */;
+					ProductGroup = 5CFDCA090AB25DE800F8B191 /* Products */;
+					ProjectRef = 5CFDCA080AB25DE800F8B191 /* MartenBSD.xcodeproj */;
 				},
 				{
 					ProductGroup = 5CFDC95F0AB2590F00F8B191 /* Products */;
@@ -831,11 +903,11 @@
 			remoteRef = 5CFDCA970AB25FB000F8B191 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5CFDCA9E0AB25FB900F8B191 /* MartenCGIC.framework */ = {
+		75BD76A41E00CA7C00D522A0 /* Marten.app */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MartenCGIC.framework;
-			remoteRef = 5CFDCA9D0AB25FB900F8B191 /* PBXContainerItemProxy */;
+			fileType = wrapper.application;
+			path = Marten.app;
+			remoteRef = 75BD76A31E00CA7C00D522A0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -921,11 +993,6 @@
 			name = "MartenLIBC Framework";
 			targetProxy = 5CFDCAB30AB2601400F8B191 /* PBXContainerItemProxy */;
 		};
-		5CFDCAB60AB2601400F8B191 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MartenCGIC;
-			targetProxy = 5CFDCAB50AB2601400F8B191 /* PBXContainerItemProxy */;
-		};
 		5CFDCAC40AB260C000F8B191 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "MartenInfo Framework";
@@ -971,6 +1038,56 @@
 			target = 5CFDC9F20AB25D8500F8B191 /* IDE Frameworks */;
 			targetProxy = 752748F31E0065D500E00F3A /* PBXContainerItemProxy */;
 		};
+		75BD76B71E00CAFE00D522A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Marten;
+			targetProxy = 75BD76B61E00CAFE00D522A0 /* PBXContainerItemProxy */;
+		};
+		75BD76BB1E01A81300D522A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 752748EA1E0065A700E00F3A /* Marten */;
+			targetProxy = 75BD76BA1E01A81300D522A0 /* PBXContainerItemProxy */;
+		};
+		75BD76BD1E01A81500D522A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 752748DE1E00645000E00F3A /* Interpreter */;
+			targetProxy = 75BD76BC1E01A81500D522A0 /* PBXContainerItemProxy */;
+		};
+		75BD76BF1E01A81700D522A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CFDCACF0AB261AE00F8B191 /* Universal IDE */;
+			targetProxy = 75BD76BE1E01A81700D522A0 /* PBXContainerItemProxy */;
+		};
+		75BD76C11E01A81900D522A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CFDCAC50AB2612300F8B191 /* All Universal Frameworks */;
+			targetProxy = 75BD76C01E01A81900D522A0 /* PBXContainerItemProxy */;
+		};
+		75BD76C31E01A81C00D522A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CFDCA8F0AB25F8F00F8B191 /* Other 3rdParty Frameworks */;
+			targetProxy = 75BD76C21E01A81C00D522A0 /* PBXContainerItemProxy */;
+		};
+		75BD76C51E01A82000D522A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CFDCA590AB25EA800F8B191 /* Other MacOS Frameworks */;
+			targetProxy = 75BD76C41E01A82000D522A0 /* PBXContainerItemProxy */;
+		};
+		75BD76C71E01A82300D522A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CFDC9F20AB25D8500F8B191 /* IDE Frameworks */;
+			targetProxy = 75BD76C61E01A82300D522A0 /* PBXContainerItemProxy */;
+		};
+		75BD76C91E01A82500D522A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CFDC9830AB2599D00F8B191 /* Standard Frameworks */;
+			targetProxy = 75BD76C81E01A82500D522A0 /* PBXContainerItemProxy */;
+		};
+		75BD76CB1E01A82800D522A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CFDC96E0AB2593E00F8B191 /* Engine */;
+			targetProxy = 75BD76CA1E01A82800D522A0 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -982,6 +1099,7 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				PRODUCT_NAME = "All Known Projects";
+				SDKROOT = macosx10.6;
 			};
 			name = Debug;
 		};
@@ -992,6 +1110,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "All Known Projects";
+				SDKROOT = macosx10.6;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1000,6 +1119,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "All Known Projects";
+				SDKROOT = macosx10.6;
 			};
 			name = "Marten Release";
 		};
