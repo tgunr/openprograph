@@ -436,7 +436,6 @@
 				SDKROOT = macosx10.7;
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = all;
-				SYMROOT = "../( xcbuild )";
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Marten Release";
