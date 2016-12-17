@@ -9,6 +9,7 @@
 #elif __GNUC__
 #include <MartenEngine/MartenEngine.h>
 #endif	
+#include <Carbon/Carbon.h>
 
 /* --------------------- Start User created functions -------------------------------- */
 

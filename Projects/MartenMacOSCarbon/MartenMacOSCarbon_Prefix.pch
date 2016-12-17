@@ -2,14 +2,14 @@
 // Prefix header for all source files of the 'MartenMacOSCarbon' target in the 'MartenMacOSCarbon' project.
 //
 
-#ifdef __ppc__
-#define MAC_OS_X_VERSION_MIN_REQUIRED 1030
-#define MAC_OS_X_VERSION_MAX_ALLOWED  1050
-#endif
-#ifdef __i386__
-#define MAC_OS_X_VERSION_MIN_REQUIRED 1030
-#define MAC_OS_X_VERSION_MAX_ALLOWED  1050
-#endif
+//#ifdef __ppc__
+//#define MAC_OS_X_VERSION_MIN_REQUIRED 1030
+//#define MAC_OS_X_VERSION_MAX_ALLOWED  1050
+//#endif
+//#ifdef __i386__
+//#define MAC_OS_X_VERSION_MIN_REQUIRED 1030
+//#define MAC_OS_X_VERSION_MAX_ALLOWED  1050
+//#endif
 
 #include "/usr/include/AvailabilityMacros.h"
 

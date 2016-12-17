@@ -1432,6 +1432,7 @@
 				752748EE1E0065A700E00F3A /* Marten Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Marten Release";
 		};
 /* End XCConfigurationList section */
 	};

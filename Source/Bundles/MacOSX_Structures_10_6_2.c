@@ -6758,9 +6758,9 @@
 	VPL_ExtField _VPXStruct_FSAliasInfo_13 = { "volumeCreateDate",offsetof(struct FSAliasInfo,volumeCreateDate),sizeof(struct UTCDateTime),kStructureType,"NULL",0,0,"UTCDateTime",&_VPXStruct_FSAliasInfo_12};
 	VPL_ExtStructure _VPXStruct_FSAliasInfo_S = {"FSAliasInfo",&_VPXStruct_FSAliasInfo_13,sizeof(struct FSAliasInfo)};
 
-	VPL_ExtField _VPXStruct_AliasRecord_1 = { "aliasSize",offsetof(struct AliasRecord,aliasSize),sizeof(unsigned short),kUnsignedType,"NULL",0,0,"unsigned short",NULL};
-	VPL_ExtField _VPXStruct_AliasRecord_2 = { "userType",offsetof(struct AliasRecord,userType),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_AliasRecord_1};
-	VPL_ExtStructure _VPXStruct_AliasRecord_S = {"AliasRecord",&_VPXStruct_AliasRecord_2,sizeof(struct AliasRecord)};
+//	VPL_ExtField _VPXStruct_AliasRecord_1 = { "aliasSize",offsetof(struct AliasRecord,aliasSize),sizeof(unsigned short),kUnsignedType,"NULL",0,0,"unsigned short",NULL};
+//	VPL_ExtField _VPXStruct_AliasRecord_2 = { "userType",offsetof(struct AliasRecord,userType),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_AliasRecord_1};
+//	VPL_ExtStructure _VPXStruct_AliasRecord_S = {"AliasRecord",&_VPXStruct_AliasRecord_2,sizeof(struct AliasRecord)};
 
 	VPL_ExtField _VPXStruct_CFragSystem7InitBlock_1 = { "reservedA",offsetof(struct CFragSystem7InitBlock,reservedA),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
 	VPL_ExtField _VPXStruct_CFragSystem7InitBlock_2 = { "libName",offsetof(struct CFragSystem7InitBlock,libName),sizeof(void *),kPointerType,"unsigned char",1,1,"T*",&_VPXStruct_CFragSystem7InitBlock_1};
@@ -10546,7 +10546,7 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"LocaleAndVariant",&_VPXStruct_LocaleAndVariant_S},
 	{"OpaqueLocaleRef",&_VPXStruct_OpaqueLocaleRef_S},
 	{"FSAliasInfo",&_VPXStruct_FSAliasInfo_S},
-	{"AliasRecord",&_VPXStruct_AliasRecord_S},
+//	{"AliasRecord",&_VPXStruct_AliasRecord_S},
 	{"CFragSystem7InitBlock",&_VPXStruct_CFragSystem7InitBlock_S},
 	{"CFragSystem7Locator",&_VPXStruct_CFragSystem7Locator_S},
 	{"CFragCFBundleLocator",&_VPXStruct_CFragCFBundleLocator_S},
