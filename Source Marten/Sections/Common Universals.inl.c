@@ -140,10 +140,10 @@ FOOTER(1)
 
 enum opTrigger vpx_method_Make_20_Class(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
-enum opTrigger outcome = kSuccess;
-if(vpx_method_Make_20_Class_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
-vpx_method_Make_20_Class_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
-return outcome;
+    enum opTrigger outcome =  vpx_method_Make_20_Class_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+        if(outcome == kSuccess)
+            outcome = vpx_method_Make_20_Class_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+    return outcome;
 }
 
 enum opTrigger vpx_method_Make_20_Count_case_1_local_2_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);

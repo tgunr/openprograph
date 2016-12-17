@@ -1221,7 +1221,7 @@ vpl_Status VPLEnvironmentInit( V_Environment theEnv, vpl_StringPtr initMethod )
 
 	if( theEnv->postLoad == kFALSE ) {
 		result = post_load(theEnv);
-		sort_dictionaries(theEnv);
+//		sort_dictionaries(theEnv);
 	}
 	
 	if( result == kNOERROR ) {

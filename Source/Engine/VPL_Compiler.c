@@ -82,8 +82,14 @@ enum opTrigger vpx_instantiate(V_Environment environment, enum boolType *repeat,
 #pragma unused(contextClassIndex)
 	enum opTrigger	result = kSuccess;
 	V_ClassEntry	theClassEntry = environment->classIndexTable->classes[pClassConstantToIndex[classConstant]];
-	V_Class			tempClass = theClassEntry->theClass;
-	V_Object		tempObject = (V_Object) construct_instance(tempClass,environment);
+    V_Class			tempClass;
+    V_Object		tempObject;
+    
+    if (tempClass = theClassEntry->theClass)
+        tempObject = (V_Object) construct_instance(tempClass,environment);
+    else
+        return kFailure;
+        
 
 	Nat4			counter = 0;
 	V_Object		*root = NULL;
@@ -862,8 +868,10 @@ enum opTrigger vpx_call_data_method(V_Environment environment, enum boolType *in
 		theMethod = theClassEntry->methods[pMethodConstantToIndex[methodConstant]];
 	}
 	
-	if(theClassEntry->theClass) contextClassIndex = theClassEntry->theClass->classIndex;
-	else contextClassIndex = 0;
+	if(theClassEntry->theClass)
+        contextClassIndex = theClassEntry->theClass->classIndex;
+	else
+        contextClassIndex = 0;
 
 	gprCounter = 0;
 	tempInt = (Nat4) environment;
@@ -4118,8 +4126,11 @@ V_Object vpx_flatten_listRootNodes(V_Environment environment, V_ListRootNode nod
 Int4 vpx_class_map(V_Environment environment, Int4	classConstant, Int1 *className)
 {
 	V_Class	tempClass = get_class(environment->classTable,className);
-	pClassConstantToIndex[classConstant] = tempClass->classIndex;
-	return kNOERROR;
+    if (tempClass != NULL) {
+        pClassConstantToIndex[classConstant] = tempClass->classIndex;
+        return kNOERROR;
+    }
+    return kERROR;
 }
 
 Int4 vpx_method_map(V_Environment environment, Int4	methodConstant, Int1 *methodName)

@@ -136,8 +136,9 @@
 			buildPhases = (
 			);
 			dependencies = (
-				75BD76B71E00CAFE00D522A0 /* PBXTargetDependency */,
+				755290461E01F5AE00DA3D41 /* PBXTargetDependency */,
 				752748F41E0065D500E00F3A /* PBXTargetDependency */,
+				75BD76B71E00CAFE00D522A0 /* PBXTargetDependency */,
 			);
 			name = Marten;
 			productName = Marten;
@@ -431,6 +432,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5CFDC9F20AB25D8500F8B191;
 			remoteInfo = "IDE Frameworks";
+		};
+		755290451E01F5AE00DA3D41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 752748DE1E00645000E00F3A;
+			remoteInfo = Interpreter;
 		};
 		75BD76A31E00CA7C00D522A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1037,6 +1045,11 @@
 			isa = PBXTargetDependency;
 			target = 5CFDC9F20AB25D8500F8B191 /* IDE Frameworks */;
 			targetProxy = 752748F31E0065D500E00F3A /* PBXContainerItemProxy */;
+		};
+		755290461E01F5AE00DA3D41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 752748DE1E00645000E00F3A /* Interpreter */;
+			targetProxy = 755290451E01F5AE00DA3D41 /* PBXContainerItemProxy */;
 		};
 		75BD76B71E00CAFE00D522A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

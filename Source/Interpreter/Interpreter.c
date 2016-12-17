@@ -496,7 +496,8 @@ int main(int argc, char *argv[])
 	
 	V_Environment				environment = createEnvironment();
 	
-	if( environment == NULL ) printf("BOGUS ENVIRONS!!\n"); 
+	if( environment == NULL )
+        printf("BOGUS ENVIRONS!!\n");
 	
 	GetCurrentProcess(&thisProcess);
 	theProcessInfoRecord.processInfoLength = sizeof(ProcessInfoRec);

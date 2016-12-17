@@ -86,12 +86,41 @@ inline void X_free(void *block)
 	if(block) free(block);
 }
 
-int dictionary_compare( const void *elementA , const void *elementB );
-int dictionary_compare( const void *elementA , const void *elementB )
-{
-	V_DictionaryNode nodeA = *((V_DictionaryNode *) elementA);
-	V_DictionaryNode nodeB = *((V_DictionaryNode *) elementB);
+int strlcmp(const char *s1, const char *s2);
+int strlcmp(const char *s1, const char *s2) {
+    //compare 2 strings ignoring differences in length
+    if (!s1 || !s2)
+        return true;
+    char c1, c2;
+    do {
+        //need to ensure the last 2 compared chars are in the correct values
+        c1 = *s1++;
+        c2 = *s2++;
+    } while (c1 && c1 == c2);
+    //if both c1 and c2 are non-zero it means that:
+    //the end of the strings was not met before a difference was found
+    //thus return the difference
+    // < 0 indicates that c1 < c2 and s1 < s2
+    // > 0 indicates that c1 > c2 and s1 > s2
+    //however, if one or both of the chars is zero
+    //it indicates that the end of one or both of the strings was met
+    //so return zero indicating that the strings (ignoring length) are equal
+    //note that a > A and thus a > B
+    int r = c1 && c2 ? c1 - c2 : 0;
+    return r;
+}
 
+int dictionary_compare( const V_DictionaryNode *elementA , const V_DictionaryNode *elementB );
+int dictionary_compare( const V_DictionaryNode *elementA , const V_DictionaryNode *elementB )
+{
+	V_DictionaryNode nodeA = *elementA;
+	V_DictionaryNode nodeB = *elementB;
+
+    if (nodeA->object == NULL)
+        return -1;
+    if (nodeB->object == NULL)
+        return 1;
+    
 	return strcmp(nodeA->name,nodeB->name);
 }
 
@@ -116,6 +145,8 @@ void *get_node( V_Dictionary dictionary, Int1 *name )
 	
 	for(counter = 0;counter < dictionary->numberOfNodes;counter++){
 		nodePtr = dictionary->nodes[counter];
+        if (nodePtr->object == NULL)
+            continue;
 		if(strcmp(name,nodePtr->name) == 0) {
 			return nodePtr->object;
 		}

@@ -198,18 +198,18 @@
 //	VPL_ExtField _VPXStruct_ucontext64_1 = { "uc_onstack",offsetof(struct ucontext64,uc_onstack),sizeof(int),kIntType,"ucontext64",1,32,"int",&_VPXStruct_ucontext64_2};
 //	VPL_ExtStructure _VPXStruct_ucontext64_S = {"ucontext64",&_VPXStruct_ucontext64_1,sizeof(struct ucontext64)};
 
-	VPL_ExtField _VPXStruct_ucontext_6 = { "uc_mcontext",offsetof(struct ucontext,uc_mcontext),sizeof(void *),kPointerType,"mcontext",1,0,"T*",NULL};
-	VPL_ExtField _VPXStruct_ucontext_5 = { "uc_mcsize",offsetof(struct ucontext,uc_mcsize),sizeof(unsigned long),kUnsignedType,"mcontext",1,0,"unsigned long",&_VPXStruct_ucontext_6};
-	VPL_ExtField _VPXStruct_ucontext_4 = { "uc_link",offsetof(struct ucontext,uc_link),sizeof(void *),kPointerType,"ucontext",1,32,"T*",&_VPXStruct_ucontext_5};
-	VPL_ExtField _VPXStruct_ucontext_3 = { "uc_stack",offsetof(struct ucontext,uc_stack),sizeof(struct sigaltstack),kStructureType,"ucontext",1,32,"sigaltstack",&_VPXStruct_ucontext_4};
-	VPL_ExtField _VPXStruct_ucontext_2 = { "uc_sigmask",offsetof(struct ucontext,uc_sigmask),sizeof(unsigned int),kUnsignedType,"ucontext",1,32,"unsigned int",&_VPXStruct_ucontext_3};
-	VPL_ExtField _VPXStruct_ucontext_1 = { "uc_onstack",offsetof(struct ucontext,uc_onstack),sizeof(int),kIntType,"ucontext",1,32,"int",&_VPXStruct_ucontext_2};
-	VPL_ExtStructure _VPXStruct_ucontext_S = {"ucontext",&_VPXStruct_ucontext_1,sizeof(struct ucontext)};
-
-	VPL_ExtField _VPXStruct_sigaltstack_3 = { "ss_flags",offsetof(struct sigaltstack,ss_flags),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
-	VPL_ExtField _VPXStruct_sigaltstack_2 = { "ss_size",offsetof(struct sigaltstack,ss_size),sizeof(unsigned long),kUnsignedType,"NULL",0,0,"unsigned long",&_VPXStruct_sigaltstack_3};
-	VPL_ExtField _VPXStruct_sigaltstack_1 = { "ss_sp",offsetof(struct sigaltstack,ss_sp),sizeof(void *),kPointerType,"void",1,0,"T*",&_VPXStruct_sigaltstack_2};
-	VPL_ExtStructure _VPXStruct_sigaltstack_S = {"sigaltstack",&_VPXStruct_sigaltstack_1,sizeof(struct sigaltstack)};
+//	VPL_ExtField _VPXStruct_ucontext_6 = { "uc_mcontext",offsetof(struct ucontext,uc_mcontext),sizeof(void *),kPointerType,"mcontext",1,0,"T*",NULL};
+//	VPL_ExtField _VPXStruct_ucontext_5 = { "uc_mcsize",offsetof(struct ucontext,uc_mcsize),sizeof(unsigned long),kUnsignedType,"mcontext",1,0,"unsigned long",&_VPXStruct_ucontext_6};
+//	VPL_ExtField _VPXStruct_ucontext_4 = { "uc_link",offsetof(struct ucontext,uc_link),sizeof(void *),kPointerType,"ucontext",1,32,"T*",&_VPXStruct_ucontext_5};
+//	VPL_ExtField _VPXStruct_ucontext_3 = { "uc_stack",offsetof(struct ucontext,uc_stack),sizeof(struct sigaltstack),kStructureType,"ucontext",1,32,"sigaltstack",&_VPXStruct_ucontext_4};
+//	VPL_ExtField _VPXStruct_ucontext_2 = { "uc_sigmask",offsetof(struct ucontext,uc_sigmask),sizeof(unsigned int),kUnsignedType,"ucontext",1,32,"unsigned int",&_VPXStruct_ucontext_3};
+//	VPL_ExtField _VPXStruct_ucontext_1 = { "uc_onstack",offsetof(struct ucontext,uc_onstack),sizeof(int),kIntType,"ucontext",1,32,"int",&_VPXStruct_ucontext_2};
+//	VPL_ExtStructure _VPXStruct_ucontext_S = {"ucontext",&_VPXStruct_ucontext_1,sizeof(struct ucontext)};
+//
+//	VPL_ExtField _VPXStruct_sigaltstack_3 = { "ss_flags",offsetof(struct sigaltstack,ss_flags),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
+//	VPL_ExtField _VPXStruct_sigaltstack_2 = { "ss_size",offsetof(struct sigaltstack,ss_size),sizeof(unsigned long),kUnsignedType,"NULL",0,0,"unsigned long",&_VPXStruct_sigaltstack_3};
+//	VPL_ExtField _VPXStruct_sigaltstack_1 = { "ss_sp",offsetof(struct sigaltstack,ss_sp),sizeof(void *),kPointerType,"void",1,0,"T*",&_VPXStruct_sigaltstack_2};
+//	VPL_ExtStructure _VPXStruct_sigaltstack_S = {"sigaltstack",&_VPXStruct_sigaltstack_1,sizeof(struct sigaltstack)};
 
 	VPL_ExtField _VPXStruct__opaque_pthread_t_3 = { "__opaque",offsetof(struct _opaque_pthread_t,__opaque),sizeof(char[596]),kPointerType,"char",0,1,NULL,NULL};
 	VPL_ExtField _VPXStruct__opaque_pthread_t_2 = { "__cleanup_stack",offsetof(struct _opaque_pthread_t,__cleanup_stack),sizeof(void *),kPointerType,"__darwin_pthread_handler_rec",1,12,"T*",&_VPXStruct__opaque_pthread_t_3};
@@ -278,10 +278,10 @@
 
 	VPL_ExtProcedure _tzsetwall_F = {"tzsetwall",tzsetwall,NULL,NULL};
 
-	VPL_Parameter _timezone_R = { kPointerType,1,"char",1,0,NULL};
-	VPL_Parameter _timezone_2 = { kIntType,4,NULL,0,0,NULL};
-	VPL_Parameter _timezone_1 = { kIntType,4,NULL,0,0,&_timezone_2};
-	VPL_ExtProcedure _timezone_F = {"timezone",timezone,&_timezone_1,&_timezone_R};
+//	VPL_Parameter _timezone_R = { kPointerType,1,"char",1,0,NULL};
+//	VPL_Parameter _timezone_2 = { kIntType,4,NULL,0,0,NULL};
+//	VPL_Parameter _timezone_1 = { kIntType,4,NULL,0,0,&_timezone_2};
+//	VPL_ExtProcedure _timezone_F = {"timezone",timezone,&_timezone_1,&_timezone_R};
 
 	VPL_Parameter _posix2time_R = { kIntType,4,NULL,0,0,NULL};
 	VPL_Parameter _posix2time_1 = { kIntType,4,NULL,0,0,NULL};
@@ -2675,8 +2675,8 @@ VPL_DictionaryNode VPX_UNIX_Structures[] =	{
 	{"exception",&_VPXStruct_exception_S},
 	{"lconv",&_VPXStruct_lconv_S},
 //	{"ucontext64",&_VPXStruct_ucontext64_S},
-	{"ucontext",&_VPXStruct_ucontext_S},
-	{"sigaltstack",&_VPXStruct_sigaltstack_S},
+//	{"ucontext",&_VPXStruct_ucontext_S},
+//	{"sigaltstack",&_VPXStruct_sigaltstack_S},
 	{"_opaque_pthread_t",&_VPXStruct__opaque_pthread_t_S},
 	{"_opaque_pthread_rwlockattr_t",&_VPXStruct__opaque_pthread_rwlockattr_t_S},
 	{"_opaque_pthread_rwlock_t",&_VPXStruct__opaque_pthread_rwlock_t_S},
@@ -2696,7 +2696,7 @@ VPL_DictionaryNode VPX_UNIX_Procedures[] =	{
 	{"timelocal",&_timelocal_F},
 	{"time2posix",&_time2posix_F},
 	{"tzsetwall",&_tzsetwall_F},
-	{"timezone",&_timezone_F},
+//	{"timezone",&_timezone_F},
 	{"posix2time",&_posix2time_F},
 	{"localtime_r",&_localtime_r_F},
 	{"gmtime_r",&_gmtime_r_F},
