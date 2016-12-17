@@ -13,22 +13,9 @@
 			buildPhases = (
 			);
 			dependencies = (
-				5C48462D0B293406005A3959 /* PBXTargetDependency */,
 			);
 			name = "All Known Projects";
 			productName = "All Known Projects";
-		};
-		5CCB1BFA0AB265AE00734F24 /* All Universal */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 5CCB1C010AB265F800734F24 /* Build configuration list for PBXAggregateTarget "All Universal" */;
-			buildPhases = (
-			);
-			dependencies = (
-				5CCB1BFE0AB265B600734F24 /* PBXTargetDependency */,
-				5CCB1BFC0AB265B600734F24 /* PBXTargetDependency */,
-			);
-			name = "All Universal";
-			productName = "All Universal";
 		};
 		5CFDC96E0AB2593E00F8B191 /* Engine */ = {
 			isa = PBXAggregateTarget;
@@ -55,19 +42,6 @@
 			);
 			name = "Standard Frameworks";
 			productName = Standard;
-		};
-		5CFDC9D20AB25AD900F8B191 /* Interpreter */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 5CFDC9DC0AB25B1700F8B191 /* Build configuration list for PBXAggregateTarget "Interpreter" */;
-			buildPhases = (
-			);
-			dependencies = (
-				5CFDC9D40AB25AE500F8B191 /* PBXTargetDependency */,
-				5CFDC9D80AB25AE500F8B191 /* PBXTargetDependency */,
-				5CFDC9D60AB25AE500F8B191 /* PBXTargetDependency */,
-			);
-			name = Interpreter;
-			productName = Interpreter;
 		};
 		5CFDC9F20AB25D8500F8B191 /* IDE Frameworks */ = {
 			isa = PBXAggregateTarget;
@@ -107,9 +81,6 @@
 			dependencies = (
 				5CFDCAB40AB2601400F8B191 /* PBXTargetDependency */,
 				5CFDCAB60AB2601400F8B191 /* PBXTargetDependency */,
-				5CFDCAB80AB2601400F8B191 /* PBXTargetDependency */,
-				5CFDCAFC0AB2631C00F8B191 /* PBXTargetDependency */,
-				5C882A9F0D889ADC00A90DC5 /* PBXTargetDependency */,
 			);
 			name = "Other 3rdParty Frameworks";
 			productName = "Other 3rdParty Frameworks";
@@ -134,34 +105,43 @@
 			);
 			dependencies = (
 				5CFDCAD50AB261E800F8B191 /* PBXTargetDependency */,
-				5CFDCAD10AB261CB00F8B191 /* PBXTargetDependency */,
 			);
 			name = "Universal IDE";
 			productName = "Universal IDE";
 		};
+		752748DE1E00645000E00F3A /* Interpreter */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 752748E51E00645000E00F3A /* Build configuration list for PBXAggregateTarget "Interpreter" */;
+			buildPhases = (
+			);
+			dependencies = (
+				752748DF1E00645000E00F3A /* PBXTargetDependency */,
+				752748E11E00645000E00F3A /* PBXTargetDependency */,
+				752748E31E00645000E00F3A /* PBXTargetDependency */,
+			);
+			name = Interpreter;
+			productName = Interpreter;
+		};
+		752748EA1E0065A700E00F3A /* Marten */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 752748EB1E0065A700E00F3A /* Build configuration list for PBXAggregateTarget "Marten" */;
+			buildPhases = (
+			);
+			dependencies = (
+				752748F41E0065D500E00F3A /* PBXTargetDependency */,
+			);
+			name = Marten;
+			productName = Marten;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXContainerItemProxy section */
-		5C48462C0B293406005A3959 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5CCB1BFA0AB265AE00734F24;
-			remoteInfo = "All Universal";
-		};
 		5C882A440D886BC600A90DC5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CFDC9680AB2591D00F8B191 /* MartenInterpreterApp.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5C1E87FA0D5AA0D000AF2F2E;
 			remoteInfo = marten;
-		};
-		5C882A8F0D889A1600A90DC5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5C882A880D889A1600A90DC5 /* MartenSparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8D07F2C80486CC7A007CD1D0;
-			remoteInfo = "MartenSparkle Framework";
 		};
 		5C882A980D889A3300A90DC5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -176,27 +156,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8D07F2BC0486CC7A007CD1D0;
 			remoteInfo = "MartenLibrary Framework";
-		};
-		5C882A9E0D889ADC00A90DC5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5C882A880D889A1600A90DC5 /* MartenSparkle.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D07F2BC0486CC7A007CD1D0;
-			remoteInfo = "MartenSparkle Framework";
-		};
-		5CCB1BFB0AB265B600734F24 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5CFDCAC50AB2612300F8B191;
-			remoteInfo = "All Universal Frameworks";
-		};
-		5CCB1BFD0AB265B600734F24 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5CFDCACF0AB261AE00F8B191;
-			remoteInfo = "Universal IDE";
 		};
 		5CD2E3E50DF0A8D20022DE75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -288,27 +247,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8D07F2BC0486CC7A007CD1D0;
 			remoteInfo = MartenUIAqua;
-		};
-		5CFDC9D30AB25AE500F8B191 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5CFDC96E0AB2593E00F8B191;
-			remoteInfo = Core;
-		};
-		5CFDC9D50AB25AE500F8B191 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDC9680AB2591D00F8B191 /* MartenInterpreterApp.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D0C4E890486CD37000505A6;
-			remoteInfo = MartenInterpreterApp;
-		};
-		5CFDC9D70AB25AE500F8B191 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDC97B0AB2596100F8B191 /* MartenInfo.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D07F2BC0486CC7A007CD1D0;
-			remoteInfo = "MartenInfo Framework";
 		};
 		5CFDC9E70AB25BA600F8B191 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -422,20 +360,6 @@
 			remoteGlobalIDString = 8D07F2C80486CC7A007CD1D0;
 			remoteInfo = MartenCGIC;
 		};
-		5CFDCAA30AB25FC300F8B191 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDCA9F0AB25FC300F8B191 /* MartenSQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8D07F2C80486CC7A007CD1D0;
-			remoteInfo = "MartenSQLite Framework";
-		};
-		5CFDCAAF0AB25FD200F8B191 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDCAAB0AB25FD200F8B191 /* MartenMySQL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8D07F2C80486CC7A007CD1D0;
-			remoteInfo = "MartenMySQL Framework";
-		};
 		5CFDCAB30AB2601400F8B191 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CFDCA930AB25FB000F8B191 /* MartenLIBC.xcodeproj */;
@@ -449,13 +373,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8D07F2BC0486CC7A007CD1D0;
 			remoteInfo = MartenCGIC;
-		};
-		5CFDCAB70AB2601400F8B191 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDCA9F0AB25FC300F8B191 /* MartenSQLite.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D07F2BC0486CC7A007CD1D0;
-			remoteInfo = "MartenSQLite Framework";
 		};
 		5CFDCAC30AB260C000F8B191 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -485,13 +402,6 @@
 			remoteGlobalIDString = 5CFDCA8F0AB25F8F00F8B191;
 			remoteInfo = "Other 3rdParty Frameworks";
 		};
-		5CFDCAD00AB261CB00F8B191 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5CFDC9D20AB25AD900F8B191;
-			remoteInfo = Interpreter;
-		};
 		5CFDCAD40AB261E800F8B191 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
@@ -499,24 +409,37 @@
 			remoteGlobalIDString = 5CFDC9F20AB25D8500F8B191;
 			remoteInfo = "IDE Frameworks";
 		};
-		5CFDCAF90AB262E200F8B191 /* PBXContainerItemProxy */ = {
+		752748E01E00645000E00F3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDCAF50AB262E200F8B191 /* MartenBioInfo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8D07F2C80486CC7A007CD1D0;
-			remoteInfo = "MartenBioInfo Framework";
+			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CFDC96E0AB2593E00F8B191;
+			remoteInfo = Core;
 		};
-		5CFDCAFB0AB2631C00F8B191 /* PBXContainerItemProxy */ = {
+		752748E21E00645000E00F3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5CFDCAF50AB262E200F8B191 /* MartenBioInfo.xcodeproj */;
+			containerPortal = 5CFDC97B0AB2596100F8B191 /* MartenInfo.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 8D07F2BC0486CC7A007CD1D0;
-			remoteInfo = "MartenBioInfo Framework";
+			remoteInfo = "MartenInfo Framework";
+		};
+		752748E41E00645000E00F3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CFDC9680AB2591D00F8B191 /* MartenInterpreterApp.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D0C4E890486CD37000505A6;
+			remoteInfo = MartenInterpreterApp;
+		};
+		752748F31E0065D500E00F3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CFDC9F20AB25D8500F8B191;
+			remoteInfo = "IDE Frameworks";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5C882A880D889A1600A90DC5 /* MartenSparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MartenSparkle.xcodeproj; path = ../MartenSparkle/MartenSparkle.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5C882A910D889A3300A90DC5 /* MartenLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MartenLibrary.xcodeproj; path = ../MartenLibrary/MartenLibrary.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5CD2E3DE0DF0A8D20022DE75 /* MartenMacOSOpenGL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MartenMacOSOpenGL.xcodeproj; path = ../MartenMacOSOpenGL/MartenMacOSOpenGL.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5CFDC95E0AB2590F00F8B191 /* MartenEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MartenEngine.xcodeproj; path = ../MartenEngine/MartenEngine.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -533,20 +456,9 @@
 		5CFDCA530AB25E8B00F8B191 /* MartenMacOSABookC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MartenMacOSABookC.xcodeproj; path = ../MartenMacOSABookC/MartenMacOSABookC.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5CFDCA930AB25FB000F8B191 /* MartenLIBC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MartenLIBC.xcodeproj; path = ../MartenLIBC/MartenLIBC.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5CFDCA990AB25FB900F8B191 /* MartenCGIC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MartenCGIC.xcodeproj; path = ../MartenCGIC/MartenCGIC.xcodeproj; sourceTree = SOURCE_ROOT; };
-		5CFDCA9F0AB25FC300F8B191 /* MartenSQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MartenSQLite.xcodeproj; path = ../MartenSQLite/MartenSQLite.xcodeproj; sourceTree = SOURCE_ROOT; };
-		5CFDCAAB0AB25FD200F8B191 /* MartenMySQL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MartenMySQL.xcodeproj; path = ../MartenMySQL/MartenMySQL.xcodeproj; sourceTree = SOURCE_ROOT; };
-		5CFDCAF50AB262E200F8B191 /* MartenBioInfo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MartenBioInfo.xcodeproj; path = ../MartenBioinfo/MartenBioInfo.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		5C882A890D889A1600A90DC5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5C882A900D889A1600A90DC5 /* MartenMacOSWebKit.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		5C882A920D889A3300A90DC5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,10 +493,6 @@
 				5CFDCA410AB25E6500F8B191 /* MartenMacOSWebKit.xcodeproj */,
 				5CFDCA930AB25FB000F8B191 /* MartenLIBC.xcodeproj */,
 				5CFDCA990AB25FB900F8B191 /* MartenCGIC.xcodeproj */,
-				5CFDCA9F0AB25FC300F8B191 /* MartenSQLite.xcodeproj */,
-				5CFDCAAB0AB25FD200F8B191 /* MartenMySQL.xcodeproj */,
-				5CFDCAF50AB262E200F8B191 /* MartenBioInfo.xcodeproj */,
-				5C882A880D889A1600A90DC5 /* MartenSparkle.xcodeproj */,
 				5C882A910D889A3300A90DC5 /* MartenLibrary.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -702,36 +610,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5CFDCAA00AB25FC300F8B191 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5CFDCAA40AB25FC300F8B191 /* MartenSQLite.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5CFDCAAC0AB25FD200F8B191 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5CFDCAB00AB25FD200F8B191 /* MartenMySQL.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5CFDCAF60AB262E200F8B191 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5CFDCAFA0AB262E200F8B191 /* MartenBioInfo.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXProject section */
 		5CFDC9480AB258E600F8B191 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				TargetAttributes = {
+					752748EA1E0065A700E00F3A = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = NL3267E99V;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 5CFDC9490AB258E600F8B191 /* Build configuration list for PBXProject "Marten Top" */;
 			compatibilityVersion = "Xcode 2.4";
@@ -746,10 +637,6 @@
 			mainGroup = 5CFDC9460AB258E600F8B191;
 			projectDirPath = "";
 			projectReferences = (
-				{
-					ProductGroup = 5CFDCAF60AB262E200F8B191 /* Products */;
-					ProjectRef = 5CFDCAF50AB262E200F8B191 /* MartenBioInfo.xcodeproj */;
-				},
 				{
 					ProductGroup = 5CFDCA090AB25DE800F8B191 /* Products */;
 					ProjectRef = 5CFDCA080AB25DE800F8B191 /* MartenBSD.xcodeproj */;
@@ -803,18 +690,6 @@
 					ProjectRef = 5CFDCA410AB25E6500F8B191 /* MartenMacOSWebKit.xcodeproj */;
 				},
 				{
-					ProductGroup = 5CFDCAAC0AB25FD200F8B191 /* Products */;
-					ProjectRef = 5CFDCAAB0AB25FD200F8B191 /* MartenMySQL.xcodeproj */;
-				},
-				{
-					ProductGroup = 5C882A890D889A1600A90DC5 /* Products */;
-					ProjectRef = 5C882A880D889A1600A90DC5 /* MartenSparkle.xcodeproj */;
-				},
-				{
-					ProductGroup = 5CFDCAA00AB25FC300F8B191 /* Products */;
-					ProjectRef = 5CFDCA9F0AB25FC300F8B191 /* MartenSQLite.xcodeproj */;
-				},
-				{
 					ProductGroup = 5CFDC9B30AB25A0C00F8B191 /* Products */;
 					ProjectRef = 5CFDC9B20AB25A0C00F8B191 /* MartenStandard.xcodeproj */;
 				},
@@ -835,9 +710,9 @@
 				5CFDCA590AB25EA800F8B191 /* Other MacOS Frameworks */,
 				5CFDCA8F0AB25F8F00F8B191 /* Other 3rdParty Frameworks */,
 				5CFDCAC50AB2612300F8B191 /* All Universal Frameworks */,
-				5CFDC9D20AB25AD900F8B191 /* Interpreter */,
 				5CFDCACF0AB261AE00F8B191 /* Universal IDE */,
-				5CCB1BFA0AB265AE00734F24 /* All Universal */,
+				752748DE1E00645000E00F3A /* Interpreter */,
+				752748EA1E0065A700E00F3A /* Marten */,
 				5C4846290B2933F3005A3959 /* All Known Projects */,
 			);
 		};
@@ -849,13 +724,6 @@
 			fileType = "compiled.mach-o.executable";
 			path = marten;
 			remoteRef = 5C882A440D886BC600A90DC5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5C882A900D889A1600A90DC5 /* MartenMacOSWebKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MartenMacOSWebKit.framework;
-			remoteRef = 5C882A8F0D889A1600A90DC5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5C882A990D889A3300A90DC5 /* MartenABookC.framework */ = {
@@ -970,54 +838,13 @@
 			remoteRef = 5CFDCA9D0AB25FB900F8B191 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5CFDCAA40AB25FC300F8B191 /* MartenSQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MartenSQLite.framework;
-			remoteRef = 5CFDCAA30AB25FC300F8B191 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CFDCAB00AB25FD200F8B191 /* MartenMySQL.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MartenMySQL.framework;
-			remoteRef = 5CFDCAAF0AB25FD200F8B191 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5CFDCAFA0AB262E200F8B191 /* MartenBioInfo.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MartenBioInfo.framework;
-			remoteRef = 5CFDCAF90AB262E200F8B191 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXTargetDependency section */
-		5C48462D0B293406005A3959 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5CCB1BFA0AB265AE00734F24 /* All Universal */;
-			targetProxy = 5C48462C0B293406005A3959 /* PBXContainerItemProxy */;
-		};
 		5C882A9D0D889AB200A90DC5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "MartenLibrary Framework";
 			targetProxy = 5C882A9C0D889AB200A90DC5 /* PBXContainerItemProxy */;
-		};
-		5C882A9F0D889ADC00A90DC5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "MartenSparkle Framework";
-			targetProxy = 5C882A9E0D889ADC00A90DC5 /* PBXContainerItemProxy */;
-		};
-		5CCB1BFC0AB265B600734F24 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5CFDCAC50AB2612300F8B191 /* All Universal Frameworks */;
-			targetProxy = 5CCB1BFB0AB265B600734F24 /* PBXContainerItemProxy */;
-		};
-		5CCB1BFE0AB265B600734F24 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5CFDCACF0AB261AE00F8B191 /* Universal IDE */;
-			targetProxy = 5CCB1BFD0AB265B600734F24 /* PBXContainerItemProxy */;
 		};
 		5CD2E3E80DF0A95A0022DE75 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1048,21 +875,6 @@
 			isa = PBXTargetDependency;
 			name = MartenUIAqua;
 			targetProxy = 5CFDC9D00AB25A9700F8B191 /* PBXContainerItemProxy */;
-		};
-		5CFDC9D40AB25AE500F8B191 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5CFDC96E0AB2593E00F8B191 /* Engine */;
-			targetProxy = 5CFDC9D30AB25AE500F8B191 /* PBXContainerItemProxy */;
-		};
-		5CFDC9D60AB25AE500F8B191 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MartenInterpreterApp;
-			targetProxy = 5CFDC9D50AB25AE500F8B191 /* PBXContainerItemProxy */;
-		};
-		5CFDC9D80AB25AE500F8B191 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "MartenInfo Framework";
-			targetProxy = 5CFDC9D70AB25AE500F8B191 /* PBXContainerItemProxy */;
 		};
 		5CFDC9F40AB25D9600F8B191 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1114,11 +926,6 @@
 			name = MartenCGIC;
 			targetProxy = 5CFDCAB50AB2601400F8B191 /* PBXContainerItemProxy */;
 		};
-		5CFDCAB80AB2601400F8B191 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "MartenSQLite Framework";
-			targetProxy = 5CFDCAB70AB2601400F8B191 /* PBXContainerItemProxy */;
-		};
 		5CFDCAC40AB260C000F8B191 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "MartenInfo Framework";
@@ -1139,20 +946,30 @@
 			target = 5CFDCA8F0AB25F8F00F8B191 /* Other 3rdParty Frameworks */;
 			targetProxy = 5CFDCACD0AB2614100F8B191 /* PBXContainerItemProxy */;
 		};
-		5CFDCAD10AB261CB00F8B191 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5CFDC9D20AB25AD900F8B191 /* Interpreter */;
-			targetProxy = 5CFDCAD00AB261CB00F8B191 /* PBXContainerItemProxy */;
-		};
 		5CFDCAD50AB261E800F8B191 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5CFDC9F20AB25D8500F8B191 /* IDE Frameworks */;
 			targetProxy = 5CFDCAD40AB261E800F8B191 /* PBXContainerItemProxy */;
 		};
-		5CFDCAFC0AB2631C00F8B191 /* PBXTargetDependency */ = {
+		752748DF1E00645000E00F3A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "MartenBioInfo Framework";
-			targetProxy = 5CFDCAFB0AB2631C00F8B191 /* PBXContainerItemProxy */;
+			target = 5CFDC96E0AB2593E00F8B191 /* Engine */;
+			targetProxy = 752748E01E00645000E00F3A /* PBXContainerItemProxy */;
+		};
+		752748E11E00645000E00F3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MartenInfo Framework";
+			targetProxy = 752748E21E00645000E00F3A /* PBXContainerItemProxy */;
+		};
+		752748E31E00645000E00F3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MartenInterpreterApp;
+			targetProxy = 752748E41E00645000E00F3A /* PBXContainerItemProxy */;
+		};
+		752748F41E0065D500E00F3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CFDC9F20AB25D8500F8B191 /* IDE Frameworks */;
+			targetProxy = 752748F31E0065D500E00F3A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1183,35 +1000,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "All Known Projects";
-			};
-			name = "Marten Release";
-		};
-		5CCB1C020AB265F800734F24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "All Universal";
-			};
-			name = Debug;
-		};
-		5CCB1C030AB265F800734F24 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				PRODUCT_NAME = "All Universal";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		5CCB1C040AB265F800734F24 /* Marten Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "All Universal";
 			};
 			name = "Marten Release";
 		};
@@ -1275,28 +1063,6 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = Standard;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		5CFDC9DD0AB25B1700F8B191 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = Interpreter;
-			};
-			name = Debug;
-		};
-		5CFDC9DE0AB25B1700F8B191 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				PRODUCT_NAME = Interpreter;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1477,17 +1243,6 @@
 			};
 			name = "Marten Release";
 		};
-		5CFDCB280AB2644C00F8B191 /* Marten Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				PRODUCT_NAME = Interpreter;
-				ZERO_LINK = NO;
-			};
-			name = "Marten Release";
-		};
 		5CFDCB290AB2644C00F8B191 /* Marten Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1509,6 +1264,63 @@
 			};
 			name = "Marten Release";
 		};
+		752748E61E00645000E00F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		752748E71E00645000E00F3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		752748E81E00645000E00F3A /* Marten Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				ZERO_LINK = NO;
+			};
+			name = "Marten Release";
+		};
+		752748EC1E0065A700E00F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = NL3267E99V;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		752748ED1E0065A700E00F3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = NL3267E99V;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		752748EE1E0065A700E00F3A /* Marten Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = NL3267E99V;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Marten Release";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1518,16 +1330,6 @@
 				5C4846310B293434005A3959 /* Debug */,
 				5C4846320B293434005A3959 /* Release */,
 				5C4846330B293434005A3959 /* Marten Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Marten Release";
-		};
-		5CCB1C010AB265F800734F24 /* Build configuration list for PBXAggregateTarget "All Universal" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5CCB1C020AB265F800734F24 /* Debug */,
-				5CCB1C030AB265F800734F24 /* Release */,
-				5CCB1C040AB265F800734F24 /* Marten Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Marten Release";
@@ -1558,16 +1360,6 @@
 				5CFDC9850AB259A700F8B191 /* Debug */,
 				5CFDC9860AB259A700F8B191 /* Release */,
 				5CFDCB220AB2644C00F8B191 /* Marten Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "Marten Release";
-		};
-		5CFDC9DC0AB25B1700F8B191 /* Build configuration list for PBXAggregateTarget "Interpreter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5CFDC9DD0AB25B1700F8B191 /* Debug */,
-				5CFDC9DE0AB25B1700F8B191 /* Release */,
-				5CFDCB280AB2644C00F8B191 /* Marten Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Marten Release";
@@ -1621,6 +1413,25 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Marten Release";
+		};
+		752748E51E00645000E00F3A /* Build configuration list for PBXAggregateTarget "Interpreter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				752748E61E00645000E00F3A /* Debug */,
+				752748E71E00645000E00F3A /* Release */,
+				752748E81E00645000E00F3A /* Marten Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Marten Release";
+		};
+		752748EB1E0065A700E00F3A /* Build configuration list for PBXAggregateTarget "Marten" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				752748EC1E0065A700E00F3A /* Debug */,
+				752748ED1E0065A700E00F3A /* Release */,
+				752748EE1E0065A700E00F3A /* Marten Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
