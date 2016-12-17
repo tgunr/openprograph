@@ -528,6 +528,7 @@ outputList = (V_List)create_list(1,environment);spawnPtr = environment->stackSpa
 
 #define HEADER(x) 	Nat4 repeatLimit = 0; enum boolType	repeat = kFALSE; Nat4 counter = 0;  Bool nextCase = kFALSE; enum opTrigger theOutcome = kSuccess; enum opTrigger result = kSuccess; Nat4 contextClassIndex = contextIndex; V_Object root[x]; for(counter=0;counter<x;counter++) root[counter] = NULL; counter = 0;
 #define HEADERWITHNONE(x) 	Nat4 repeatLimit = 0; enum boolType	repeat = kFALSE; Nat4 counter = 0;  Bool nextCase = kFALSE; enum opTrigger theOutcome = kSuccess; enum opTrigger result = kSuccess; Nat4 contextClassIndex = contextIndex; V_Object vpx_none = NULL; V_Object	root[x]; for(counter=0;counter<x;counter++) root[counter] = NULL; counter = 0; vpx_none = (V_Object) create_none(environment);
+#define CLASSCONTEXT(x) 	contextIndex = pClassConstantToIndex[kVPXClass_ ## x];
 
 #define DECREMENT(x) 	for(counter=0;counter<x;counter++) decrement_count(environment,root[counter]); counter = 0;
 #define FOOTER(x) 	THEFINISH: DECREMENT(x) *outcome = theOutcome; return nextCase;
@@ -706,7 +707,7 @@ V_Object		VPLEnvironmentCallbackDispose( V_Environment environment, V_CallbackCo
 V_CallbackCodeSegment	VPLEnvironmentCallbackRetain( V_CallbackCodeSegment theCallback );
 void					VPLEnvironmentCallbackRelease( V_CallbackCodeSegment theCallback );
 
-vpl_StringPtr	VPLStringCoerceEncoding( vpl_StringPtr inString, vpl_StringLen inStringLength, vpl_StringEncoding inEncoding, vpl_StringEncoding outEncoding, V_Environment environment );
+vpl_StringPtr	VPLStringCoerceEncoding( vpl_StringPtr inString, vpl_StringEncoding inEncoding, vpl_StringEncoding outEncoding, V_Environment environment );
 
 #pragma mark * Engine Functions *
 
