@@ -1,0 +1,1 @@
+( ( "%vpl_loadprojectfunction%" "load_project_%vpl_projectname_encoded%" ) ( "%vpl_initprojectfunction%" "init_project_%vpl_projectname_encoded%" ) ( "%vpl_mapprojectfunction%" "map_project_%vpl_projectname_encoded%" ) ( "%vpl_projectenvironment%" "gVPL%vpl_projectname_encoded%_Environment" ) )

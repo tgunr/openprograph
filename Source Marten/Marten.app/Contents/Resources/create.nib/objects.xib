@@ -1,0 +1,157 @@
+<?xml version="1.0" standalone="yes"?>
+<object class="NSIBObjectData">
+  <string name="targetFramework">IBCarbonFramework</string>
+  <object name="rootObject" class="NSCustomObject" id="1">
+    <string name="customClass">NSApplication</string>
+  </object>
+  <array count="13" name="allObjects">
+    <object class="IBCarbonWindow" id="166">
+      <string name="windowRect">520 456 680 919 </string>
+      <string name="title">Create New Class</string>
+      <object name="rootControl" class="IBCarbonRootControl" id="167">
+        <string name="bounds">0 0 160 463 </string>
+        <string name="viewFrame">0 0 463 160 </string>
+        <array count="9" name="subviews">
+          <object class="IBCarbonStaticText" id="180">
+            <string name="bounds">24 92 40 197 </string>
+            <string name="viewFrame">92 24 105 16 </string>
+            <string name="title">Class Name:</string>
+            <int name="justification">-1</int>
+          </object>
+          <object class="IBCarbonEditText" id="181">
+            <string name="bounds">25 208 41 440 </string>
+            <string name="viewFrame">208 25 232 16 </string>
+            <ostype name="controlSignature">CCls</ostype>
+            <int name="controlID">1</int>
+            <string name="title">My Window</string>
+            <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+              <int name="bindingLeftKind">1</int>
+              <int name="bindingRightKind">2</int>
+            </object>
+            <boolean name="isUnicode">TRUE</boolean>
+            <boolean name="isSingleLine">TRUE</boolean>
+          </object>
+          <object class="IBCarbonStaticText" id="182">
+            <string name="bounds">53 92 69 197 </string>
+            <string name="viewFrame">92 53 105 16 </string>
+            <string name="title">Class Parent:</string>
+            <int name="justification">-1</int>
+          </object>
+          <object class="IBCarbonComboBox" id="197">
+            <string name="bounds">52 205 72 443 </string>
+            <string name="viewFrame">205 52 238 20 </string>
+            <ostype name="controlSignature">CCls</ostype>
+            <int name="controlID">2</int>
+            <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+              <int name="bindingLeftKind">1</int>
+              <int name="bindingRightKind">2</int>
+            </object>
+            <array count="0" name="list">
+            </array>
+          </object>
+          <object class="IBCarbonStaticText" id="188">
+            <string name="bounds">81 92 97 197 </string>
+            <string name="viewFrame">92 81 105 16 </string>
+            <string name="title">Class Section:</string>
+            <int name="justification">-1</int>
+          </object>
+          <object class="IBCarbonPopupButton" id="189">
+            <string name="bounds">80 205 100 443 </string>
+            <string name="viewFrame">205 80 238 20 </string>
+            <ostype name="controlSignature">CCls</ostype>
+            <int name="controlID">3</int>
+            <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+              <int name="bindingLeftKind">1</int>
+              <int name="bindingRightKind">2</int>
+            </object>
+            <object name="menu" class="IBCarbonMenu" id="190">
+              <string name="title">Popup</string>
+              <array count="1" name="items">
+                <object class="IBCarbonMenuItem" id="192">
+                  <boolean name="checked">TRUE</boolean>
+                  <boolean name="updateSingleItem">TRUE</boolean>
+                  <string name="title">Workspace</string>
+                </object>
+              </array>
+            </object>
+          </object>
+          <object class="IBCarbonButton" id="194">
+            <string name="bounds">120 373 140 443 </string>
+            <string name="viewFrame">373 120 70 20 </string>
+            <string name="title">OK</string>
+            <ostype name="command">ok  </ostype>
+            <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+              <int name="bindingLeftKind">2</int>
+              <int name="bindingRightKind">2</int>
+            </object>
+            <int name="buttonType">1</int>
+          </object>
+          <object class="IBCarbonButton" id="195">
+            <string name="bounds">120 291 140 361 </string>
+            <string name="viewFrame">291 120 70 20 </string>
+            <string name="title">Cancel</string>
+            <ostype name="command">not!</ostype>
+            <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+              <int name="bindingLeftKind">2</int>
+              <int name="bindingRightKind">2</int>
+            </object>
+            <int name="buttonType">2</int>
+          </object>
+          <object class="IBCarbonIcon" id="196">
+            <string name="bounds">22 20 86 84 </string>
+            <string name="viewFrame">20 22 64 64 </string>
+            <int name="contentResID">1095782476</int>
+            <int name="contentType">132</int>
+            <int name="creator">1834373196</int>
+          </object>
+        </array>
+      </object>
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="liveResize">TRUE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">4</int>
+      <int name="windowPosition">7</int>
+      <boolean name="isConstrained">FALSE</boolean>
+      <int name="WindowMaxWidth">600</int>
+      <int name="WindowMinWidth">463</int>
+      <int name="WindowMaxHeight">161</int>
+      <int name="WindowMinHeight">160</int>
+    </object>
+    <reference idRef="167"/>
+    <reference idRef="180"/>
+    <reference idRef="181"/>
+    <reference idRef="182"/>
+    <reference idRef="188"/>
+    <reference idRef="189"/>
+    <reference idRef="190"/>
+    <reference idRef="192"/>
+    <reference idRef="194"/>
+    <reference idRef="195"/>
+    <reference idRef="196"/>
+    <reference idRef="197"/>
+  </array>
+  <array count="13" name="allParents">
+    <reference idRef="1"/>
+    <reference idRef="166"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="189"/>
+    <reference idRef="190"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+  </array>
+  <dictionary count="3" name="nameTable">
+    <string>Create Class</string>
+    <reference idRef="166"/>
+    <string>File&apos;s Owner</string>
+    <reference idRef="1"/>
+    <string>View</string>
+    <reference idRef="197"/>
+  </dictionary>
+  <unsigned_int name="nextObjectID">199</unsigned_int>
+</object>

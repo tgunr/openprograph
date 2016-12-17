@@ -1,0 +1,566 @@
+<?xml version="1.0" standalone="yes"?>
+<object class="NSIBObjectData">
+  <object name="rootObject" class="NSCustomObject" id="1">
+  </object>
+  <array count="54" name="allObjects">
+    <object class="IBCarbonStaticText" id="195">
+      <int name="controlSize">1</int>
+      <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+        <int name="bindingTopKind">1</int>
+        <int name="bindingLeftKind">1</int>
+        <int name="bindingBottomKind">1</int>
+        <int name="bindingRightKind">2</int>
+      </object>
+      <string name="title">Bundle Identifier</string>
+      <string name="viewFrame">16 45 102 16 </string>
+      <string name="bounds">195 62 211 164 </string>
+    </object>
+    <object class="IBCarbonRootControl" id="167">
+      <string name="viewFrame">0 0 469 335 </string>
+      <array count="15" name="subviews">
+        <object class="IBCarbonEditText" id="182">
+          <ostype name="controlSignature">Name</ostype>
+          <int name="controlID">1</int>
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingLeftKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <boolean name="isUnicode">TRUE</boolean>
+          <boolean name="isSingleLine">TRUE</boolean>
+          <string name="title">My Product</string>
+          <string name="viewFrame">125 23 321 16 </string>
+          <string name="bounds">23 125 39 446 </string>
+        </object>
+        <object class="IBCarbonPopupButton" id="230">
+          <ostype name="controlSignature">Root</ostype>
+          <int name="controlID">1</int>
+          <ostype name="command">rSDK</ostype>
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingLeftKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <object name="menu" class="IBCarbonMenu" id="231">
+            <string name="title">Popup</string>
+            <array count="4" name="items">
+              <object class="IBCarbonMenuItem" id="234">
+                <string name="title">Current</string>
+                <boolean name="checked">TRUE</boolean>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="235">
+                <boolean name="separator">TRUE</boolean>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="233">
+                <string name="title">MacOS X 10.4u</string>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="232">
+                <string name="title">MacOS X 10.3</string>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+            </array>
+          </object>
+          <string name="viewFrame">122 50 327 20 </string>
+          <string name="bounds">50 122 70 449 </string>
+        </object>
+        <object class="IBCarbonPopupButton" id="221">
+          <ostype name="controlSignature">Arch</ostype>
+          <int name="controlID">1</int>
+          <ostype name="command">aTyp</ostype>
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingLeftKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <int name="selectedItem">4</int>
+          <object name="menu" class="IBCarbonMenu" id="222">
+            <string name="title">Popup</string>
+            <array count="4" name="items">
+              <object class="IBCarbonMenuItem" id="223">
+                <string name="title">PowerPC</string>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="225">
+                <string name="title">Intel</string>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="229">
+                <boolean name="separator">TRUE</boolean>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="228">
+                <string name="title">Universal</string>
+                <boolean name="disabled">TRUE</boolean>
+                <boolean name="checked">TRUE</boolean>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+            </array>
+          </object>
+          <string name="viewFrame">122 80 155 20 </string>
+          <string name="bounds">80 122 100 277 </string>
+        </object>
+        <object class="IBCarbonPopupButton" id="184">
+          <ostype name="controlSignature">Type</ostype>
+          <int name="controlID">1</int>
+          <ostype name="command">pTyp</ostype>
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingLeftKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <object name="menu" class="IBCarbonMenu" id="185">
+            <string name="title">Popup</string>
+            <array count="4" name="items">
+              <object class="IBCarbonMenuItem" id="205">
+                <string name="title">Standard Platform Binary</string>
+                <boolean name="checked">TRUE</boolean>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="186">
+                <string name="title">MacOS Application</string>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="210">
+                <boolean name="separator">TRUE</boolean>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="211">
+                <string name="title">Modifty this menu...</string>
+                <boolean name="disabled">TRUE</boolean>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+            </array>
+          </object>
+          <string name="viewFrame">122 110 327 20 </string>
+          <string name="bounds">110 122 130 449 </string>
+        </object>
+        <object class="IBCarbonGroupBox" id="201">
+          <ostype name="controlSignature">bPck</ostype>
+          <int name="controlID">1</int>
+          <boolean name="enabled">FALSE</boolean>
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingLeftKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <string name="viewFrame">46 150 376 129 </string>
+          <array count="11" name="subviews">
+            <object class="IBCarbonStaticText" id="193">
+              <int name="controlSize">1</int>
+              <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+                <int name="bindingTopKind">1</int>
+                <int name="bindingLeftKind">1</int>
+                <int name="bindingBottomKind">1</int>
+                <int name="bindingRightKind">2</int>
+              </object>
+              <string name="title">Creator Code</string>
+              <string name="viewFrame">16 19 102 15 </string>
+              <string name="bounds">169 62 184 164 </string>
+            </object>
+            <object class="IBCarbonEditText" id="192">
+              <ostype name="controlSignature">mCrt</ostype>
+              <int name="controlID">1</int>
+              <int name="controlSize">1</int>
+              <boolean name="isUnicode">TRUE</boolean>
+              <boolean name="isSingleLine">TRUE</boolean>
+              <string name="title">????</string>
+              <string name="viewFrame">129 19 41 12 </string>
+              <string name="bounds">169 175 181 216 </string>
+            </object>
+            <object class="IBCarbonCheckBox" id="196">
+              <ostype name="controlSignature">PrvF</ostype>
+              <int name="controlID">1</int>
+              <int name="controlSize">1</int>
+              <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+                <int name="bindingLeftKind">2</int>
+                <int name="bindingRightKind">2</int>
+              </object>
+              <int name="initialState">1</int>
+              <string name="title">Include Private Frameworks</string>
+              <string name="viewFrame">188 17 172 17 </string>
+              <string name="bounds">167 234 184 406 </string>
+            </object>
+            <reference idRef="195"/>
+            <object class="IBCarbonEditText" id="194">
+              <ostype name="controlSignature">Bndl</ostype>
+              <int name="controlID">1</int>
+              <int name="controlSize">1</int>
+              <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+                <int name="bindingLeftKind">1</int>
+                <int name="bindingRightKind">2</int>
+              </object>
+              <boolean name="isUnicode">TRUE</boolean>
+              <boolean name="isSingleLine">TRUE</boolean>
+              <string name="title">com.mycompany.myproduct</string>
+              <string name="viewFrame">129 45 228 13 </string>
+              <string name="bounds">195 175 208 403 </string>
+            </object>
+            <object class="IBCarbonStaticText" id="219">
+              <int name="controlSize">1</int>
+              <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+                <int name="bindingTopKind">1</int>
+                <int name="bindingLeftKind">1</int>
+                <int name="bindingBottomKind">1</int>
+                <int name="bindingRightKind">2</int>
+              </object>
+              <string name="title">Bundle Version</string>
+              <string name="viewFrame">16 72 102 15 </string>
+              <string name="bounds">222 62 237 164 </string>
+            </object>
+            <object class="IBCarbonEditText" id="220">
+              <ostype name="controlSignature">Bndv</ostype>
+              <int name="controlID">1</int>
+              <int name="controlSize">1</int>
+              <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+                <int name="bindingLeftKind">1</int>
+                <int name="bindingRightKind">2</int>
+              </object>
+              <boolean name="isUnicode">TRUE</boolean>
+              <boolean name="isSingleLine">TRUE</boolean>
+              <string name="title">1</string>
+              <string name="viewFrame">129 72 105 12 </string>
+              <string name="bounds">222 175 234 280 </string>
+            </object>
+            <object class="IBCarbonStaticText" id="237">
+              <int name="controlSize">1</int>
+              <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+                <int name="bindingTopKind">1</int>
+                <int name="bindingLeftKind">1</int>
+                <int name="bindingBottomKind">1</int>
+                <int name="bindingRightKind">2</int>
+              </object>
+              <string name="title">Release Version</string>
+              <string name="viewFrame">16 98 102 15 </string>
+              <string name="bounds">248 62 263 164 </string>
+            </object>
+            <object class="IBCarbonEditText" id="238">
+              <ostype name="controlSignature">Rlsv</ostype>
+              <int name="controlID">1</int>
+              <int name="controlSize">1</int>
+              <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+                <int name="bindingLeftKind">1</int>
+                <int name="bindingRightKind">2</int>
+              </object>
+              <boolean name="isUnicode">TRUE</boolean>
+              <boolean name="isSingleLine">TRUE</boolean>
+              <string name="title">1.0</string>
+              <string name="viewFrame">129 98 105 12 </string>
+              <string name="bounds">248 175 260 280 </string>
+            </object>
+            <object class="IBCarbonImageWell" id="248">
+              <ostype name="controlSignature">bIcn</ostype>
+              <int name="controlID">1</int>
+              <boolean name="enabled">FALSE</boolean>
+              <boolean name="hidden">TRUE</boolean>
+              <ostype name="command">bIcn</ostype>
+              <int name="contentType">0</int>
+              <boolean name="dropTarget">TRUE</boolean>
+              <string name="viewFrame">312 69 48 48 </string>
+              <string name="bounds">219 358 267 406 </string>
+            </object>
+            <object class="IBCarbonStaticText" id="249">
+              <boolean name="enabled">FALSE</boolean>
+              <boolean name="hidden">TRUE</boolean>
+              <int name="controlSize">1</int>
+              <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+                <int name="bindingTopKind">1</int>
+                <int name="bindingLeftKind">1</int>
+                <int name="bindingBottomKind">1</int>
+                <int name="bindingRightKind">2</int>
+              </object>
+              <string name="title">Icon</string>
+              <int name="justification">-1</int>
+              <string name="viewFrame">245 72 59 15 </string>
+              <string name="bounds">222 291 237 350 </string>
+            </object>
+          </array>
+          <string name="bounds">150 46 279 422 </string>
+        </object>
+        <object class="IBCarbonButton" id="207">
+          <ostype name="command">ok  </ostype>
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingLeftKind">2</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <int name="buttonType">1</int>
+          <string name="title">OK</string>
+          <string name="viewFrame">376 295 73 20 </string>
+          <string name="bounds">295 376 315 449 </string>
+        </object>
+        <object class="IBCarbonButton" id="208">
+          <ostype name="command">not!</ostype>
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingLeftKind">2</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <int name="buttonType">2</int>
+          <string name="title">Cancel</string>
+          <string name="viewFrame">291 295 73 20 </string>
+          <string name="bounds">295 291 315 364 </string>
+        </object>
+        <object class="IBCarbonPopupButton" id="213">
+          <ostype name="controlSignature">Expo</ostype>
+          <int name="controlID">1</int>
+          <boolean name="enabled">FALSE</boolean>
+          <boolean name="hidden">TRUE</boolean>
+          <ostype name="command">Expo</ostype>
+          <object name="menu" class="IBCarbonMenu" id="214">
+            <string name="title">Popup</string>
+            <array count="4" name="items">
+              <object class="IBCarbonMenuItem" id="217">
+                <string name="title">Export As Needed</string>
+                <boolean name="checked">TRUE</boolean>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="216">
+                <string name="title">Export Project</string>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="215">
+                <string name="title">Export Sections</string>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="218">
+                <string name="title">Export All</string>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+            </array>
+          </object>
+          <string name="viewFrame">104 295 160 20 </string>
+          <string name="bounds">295 104 315 264 </string>
+        </object>
+        <object class="IBCarbonStaticText" id="183">
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingTopKind">1</int>
+            <int name="bindingLeftKind">1</int>
+            <int name="bindingBottomKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <string name="title">Product Name</string>
+          <string name="viewFrame">20 23 94 16 </string>
+          <string name="bounds">23 20 39 114 </string>
+        </object>
+        <object class="IBCarbonStaticText" id="189">
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingTopKind">1</int>
+            <int name="bindingLeftKind">1</int>
+            <int name="bindingBottomKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <string name="title">Package Type</string>
+          <string name="viewFrame">20 112 94 16 </string>
+          <string name="bounds">112 20 128 114 </string>
+        </object>
+        <object class="IBCarbonStaticText" id="227">
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingTopKind">1</int>
+            <int name="bindingLeftKind">1</int>
+            <int name="bindingBottomKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <string name="title">Architecture</string>
+          <string name="viewFrame">20 81 94 16 </string>
+          <string name="bounds">81 20 97 114 </string>
+        </object>
+        <object class="IBCarbonStaticText" id="236">
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingTopKind">1</int>
+            <int name="bindingLeftKind">1</int>
+            <int name="bindingBottomKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <string name="title">System Root</string>
+          <string name="viewFrame">20 52 94 16 </string>
+          <string name="bounds">52 20 68 114 </string>
+        </object>
+        <object class="IBCarbonPopupButton" id="239">
+          <ostype name="controlSignature">MnOS</ostype>
+          <int name="controlID">1</int>
+          <ostype name="command">MnOS</ostype>
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingLeftKind">2</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <object name="menu" class="IBCarbonMenu" id="240">
+            <string name="title">Popup</string>
+            <array count="5" name="items">
+              <object class="IBCarbonMenuItem" id="244">
+                <string name="title">Current</string>
+                <boolean name="checked">TRUE</boolean>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="247">
+                <boolean name="separator">TRUE</boolean>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="246">
+                <string name="title">10.3.9</string>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="243">
+                <string name="title">10.4</string>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+              <object class="IBCarbonMenuItem" id="242">
+                <string name="title">10.5</string>
+                <boolean name="updateSingleItem">TRUE</boolean>
+              </object>
+            </array>
+          </object>
+          <string name="viewFrame">343 80 106 20 </string>
+          <string name="bounds">80 343 100 449 </string>
+        </object>
+        <object class="IBCarbonStaticText" id="245">
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingTopKind">1</int>
+            <int name="bindingLeftKind">2</int>
+            <int name="bindingBottomKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <string name="title">Min OS</string>
+          <int name="justification">-1</int>
+          <string name="viewFrame">285 82 50 16 </string>
+          <string name="bounds">82 285 98 335 </string>
+        </object>
+        <object class="IBCarbonCheckBox" id="212">
+          <ostype name="controlSignature">Clen</ostype>
+          <int name="controlID">1</int>
+          <string name="title">Clean?</string>
+          <string name="viewFrame">20 296 76 18 </string>
+          <string name="bounds">296 20 314 96 </string>
+        </object>
+      </array>
+      <string name="bounds">0 0 335 469 </string>
+    </object>
+    <reference idRef="230"/>
+    <reference idRef="185"/>
+    <reference idRef="219"/>
+    <reference idRef="248"/>
+    <reference idRef="182"/>
+    <reference idRef="243"/>
+    <reference idRef="233"/>
+    <reference idRef="220"/>
+    <reference idRef="189"/>
+    <reference idRef="221"/>
+    <object class="IBCarbonWindow" id="166">
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="liveResize">TRUE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <boolean name="asyncDrag">TRUE</boolean>
+      <boolean name="isConstrained">FALSE</boolean>
+      <boolean name="doesNotCycle">TRUE</boolean>
+      <int name="carbonWindowClass">11</int>
+      <string name="title">Project Build Settings</string>
+      <reference name="rootControl" idRef="167"/>
+      <string name="windowRect">217 495 552 964 </string>
+      <string name="ScreenRectAtEncodeTime">4 0 878 1440 </string>
+      <int name="WindowMaxWidth">800</int>
+      <int name="WindowMinWidth">469</int>
+      <int name="WindowMaxHeight">335</int>
+      <int name="WindowMinHeight">335</int>
+    </object>
+    <reference idRef="245"/>
+    <reference idRef="223"/>
+    <reference idRef="238"/>
+    <reference idRef="216"/>
+    <reference idRef="210"/>
+    <reference idRef="208"/>
+    <reference idRef="244"/>
+    <reference idRef="222"/>
+    <reference idRef="249"/>
+    <reference idRef="193"/>
+    <reference idRef="225"/>
+    <reference idRef="213"/>
+    <reference idRef="240"/>
+    <reference idRef="211"/>
+    <reference idRef="235"/>
+    <reference idRef="237"/>
+    <reference idRef="192"/>
+    <reference idRef="227"/>
+    <reference idRef="246"/>
+    <reference idRef="207"/>
+    <reference idRef="201"/>
+    <reference idRef="215"/>
+    <reference idRef="218"/>
+    <reference idRef="242"/>
+    <reference idRef="214"/>
+    <reference idRef="228"/>
+    <reference idRef="196"/>
+    <reference idRef="194"/>
+    <reference idRef="229"/>
+    <reference idRef="247"/>
+    <reference idRef="239"/>
+    <reference idRef="183"/>
+    <reference idRef="217"/>
+    <reference idRef="205"/>
+    <reference idRef="236"/>
+    <reference idRef="184"/>
+    <reference idRef="186"/>
+    <reference idRef="212"/>
+    <reference idRef="231"/>
+    <reference idRef="232"/>
+    <reference idRef="234"/>
+  </array>
+  <array count="54" name="allParents">
+    <reference idRef="201"/>
+    <reference idRef="166"/>
+    <reference idRef="167"/>
+    <reference idRef="184"/>
+    <reference idRef="201"/>
+    <reference idRef="201"/>
+    <reference idRef="167"/>
+    <reference idRef="240"/>
+    <reference idRef="231"/>
+    <reference idRef="201"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="1"/>
+    <reference idRef="167"/>
+    <reference idRef="222"/>
+    <reference idRef="201"/>
+    <reference idRef="214"/>
+    <reference idRef="185"/>
+    <reference idRef="167"/>
+    <reference idRef="240"/>
+    <reference idRef="221"/>
+    <reference idRef="201"/>
+    <reference idRef="201"/>
+    <reference idRef="222"/>
+    <reference idRef="167"/>
+    <reference idRef="239"/>
+    <reference idRef="185"/>
+    <reference idRef="231"/>
+    <reference idRef="201"/>
+    <reference idRef="201"/>
+    <reference idRef="167"/>
+    <reference idRef="240"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="214"/>
+    <reference idRef="214"/>
+    <reference idRef="240"/>
+    <reference idRef="213"/>
+    <reference idRef="222"/>
+    <reference idRef="201"/>
+    <reference idRef="201"/>
+    <reference idRef="222"/>
+    <reference idRef="240"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="214"/>
+    <reference idRef="185"/>
+    <reference idRef="167"/>
+    <reference idRef="167"/>
+    <reference idRef="185"/>
+    <reference idRef="167"/>
+    <reference idRef="230"/>
+    <reference idRef="231"/>
+    <reference idRef="231"/>
+  </array>
+  <dictionary count="2" name="nameTable">
+    <string>Build Settings</string>
+    <reference idRef="166"/>
+    <string>File&apos;s Owner</string>
+    <reference idRef="1"/>
+  </dictionary>
+  <string name="targetFramework">IBCarbonFramework</string>
+  <unsigned_int name="nextObjectID">272</unsigned_int>
+</object>

@@ -1,0 +1,47 @@
+/* A Marten Project Source File */
+/*
+
+%vpl_projectname_cfilename%
+Copyright: 2005 Andescotia LLC
+
+*/
+
+#define vpl_MAIN %vpl_projectname_mainmethod%
+#define vpl_INIT %vpl_projectname_initmethod%
+
+V_Environment %vpl_projectenvironment% = NULL;
+
+%vpl_prims_declare%
+
+%vpl_sections_declare%
+
+vpl_Status %vpl_loadprojectfunction%(V_Environment environment);
+vpl_Status %vpl_loadprojectfunction%(V_Environment environment)
+{
+	Int4	result = 0;
+
+%vpl_prims_load%
+
+%vpl_sections_load%
+
+    return kNOERROR;
+}
+
+void %vpl_initprojectfunction%(void);
+void %vpl_initprojectfunction%(void)
+{
+    if( %vpl_projectenvironment% == NULL ){
+        %vpl_projectenvironment% = VPLEnvironmentCreate(%vpl_projectname_escapec%, kvpl_StackRuntime, kTRUE);
+
+        %vpl_loadprojectfunction%(%vpl_projectenvironment%);
+
+        VPLEnvironmentInit(%vpl_projectenvironment%, vpl_INIT);
+    }
+}
+
+int main(int argc,char *argv[])
+{
+    %vpl_initprojectfunction%();
+        
+    return VPLEnvironmentMain(%vpl_projectenvironment%,vpl_MAIN,argc,argv);
+}

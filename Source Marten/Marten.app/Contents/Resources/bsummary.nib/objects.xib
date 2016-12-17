@@ -1,0 +1,97 @@
+<?xml version="1.0" standalone="yes"?>
+<object class="NSIBObjectData">
+  <string name="targetFramework">IBCarbonFramework</string>
+  <object name="rootObject" class="NSCustomObject" id="1">
+    <null name="customClass"/>
+  </object>
+  <array count="7" name="allObjects">
+    <object class="IBCarbonWindow" id="3">
+      <string name="windowRect">300 300 508 796 </string>
+      <string name="title">Window</string>
+      <object name="rootControl" class="IBCarbonRootControl" id="4">
+        <string name="bounds">0 0 208 496 </string>
+        <string name="viewFrame">0 0 496 208 </string>
+        <array count="5" name="subviews">
+          <object class="IBCarbonIcon" id="5">
+            <string name="bounds">20 20 148 148 </string>
+            <string name="viewFrame">20 20 128 128 </string>
+            <ostype name="controlSignature">sIcn</ostype>
+            <int name="controlID">1</int>
+            <int name="contentResID">0</int>
+            <int name="contentType">0</int>
+            <int name="creator">0</int>
+          </object>
+          <object class="IBCarbonStaticText" id="6">
+            <string name="bounds">20 156 57 481 </string>
+            <string name="viewFrame">156 20 325 37 </string>
+            <ostype name="controlSignature">sTxt</ostype>
+            <int name="controlID">1</int>
+            <int name="fontStyle">107</int>
+            <int name="controlSize">2</int>
+            <string name="title">Build Failed</string>
+            <int name="justification">1</int>
+          </object>
+          <object class="IBCarbonStaticText" id="7">
+            <string name="bounds">65 156 148 481 </string>
+            <string name="viewFrame">156 65 325 83 </string>
+            <ostype name="controlSignature">sTxt</ostype>
+            <int name="controlID">2</int>
+            <int name="fontStyle">0</int>
+            <int name="controlSize">2</int>
+            <string name="title">The binary could not be built.&#10;Please check the console log for more details.</string>
+            <int name="justification">1</int>
+          </object>
+          <object class="IBCarbonButton" id="9">
+            <string name="bounds">168 168 188 313 </string>
+            <string name="viewFrame">168 168 145 20 </string>
+            <ostype name="controlSignature">sBtn</ostype>
+            <int name="controlID">2</int>
+            <string name="title">Open Console</string>
+            <ostype name="command">sBtn</ostype>
+            <int name="iconPosition">0</int>
+          </object>
+          <object class="IBCarbonButton" id="10">
+            <string name="bounds">168 411 188 481 </string>
+            <string name="viewFrame">411 168 70 20 </string>
+            <ostype name="controlSignature">sBtn</ostype>
+            <int name="controlID">1</int>
+            <string name="title">OK</string>
+            <ostype name="command">ok  </ostype>
+            <int name="buttonType">1</int>
+            <int name="iconPosition">0</int>
+          </object>
+        </array>
+      </object>
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="isResizable">FALSE</boolean>
+      <boolean name="liveResize">TRUE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">11</int>
+      <int name="scalingMode">1048576</int>
+      <boolean name="doesNotCycle">TRUE</boolean>
+      <boolean name="inWindowMenu">FALSE</boolean>
+    </object>
+    <reference idRef="4"/>
+    <reference idRef="5"/>
+    <reference idRef="6"/>
+    <reference idRef="7"/>
+    <reference idRef="9"/>
+    <reference idRef="10"/>
+  </array>
+  <array count="7" name="allParents">
+    <reference idRef="1"/>
+    <reference idRef="3"/>
+    <reference idRef="4"/>
+    <reference idRef="4"/>
+    <reference idRef="4"/>
+    <reference idRef="4"/>
+    <reference idRef="4"/>
+  </array>
+  <dictionary count="2" name="nameTable">
+    <string>File&apos;s Owner</string>
+    <reference idRef="1"/>
+    <string>Window</string>
+    <reference idRef="3"/>
+  </dictionary>
+  <unsigned_int name="nextObjectID">11</unsigned_int>
+</object>

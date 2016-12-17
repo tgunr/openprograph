@@ -1,0 +1,1 @@
+/* Alert strings */VPLClassCreate = "Das Kategorie %s besteht nicht. Möhten Sie es verursachen?";VPLPersistentCreate = "Das hartnäckige %s besteht nicht.  Möchten Sie es verursachen?";VPLUniversalCreate = "Das Universalmethode %s besteht nicht.  Möchten Sie es verursachen?";VPLDuplicateAttribute = "Ein Attribut, das %s bestehen genannt wird bereits.";

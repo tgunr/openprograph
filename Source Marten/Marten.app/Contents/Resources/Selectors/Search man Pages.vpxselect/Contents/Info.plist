@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>MartenSelectorItemDescription</key>
+	<string>Search for term in man pages using Termal application.</string>
+	<key>MartenSelectorItemIcon</key>
+	<string>termicon</string>
+	<key>MartenSelectorItemName</key>
+	<string>Search man Pages</string>
+	<key>MartenSelectorType</key>
+	<string>URL</string>
+	<key>MartenSelectorURLTerm</key>
+	<string>x-man-page://%name%</string>
+</dict>
+</plist>

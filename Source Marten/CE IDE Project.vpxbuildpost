@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#
+#	Copy Interpreter.app into Marten.app builds
+#				      v. 1.0	
+#
+#				for Andescotia, LLC.
+#
+#	Jack Small						June 5, 2008
+#
+
+CMDPATH="`dirname "$0"`"
+PROJECTNAME=$1
+PROJECTPATH=$2
+BUILDPATH=$3
+
+MARTENAPPNAME=$PROJECTNAME
+MARTENINTERPNAME="Interpreter_d.app"
+MARTENRES="$BUILDPATH/Contents/Resources"
+
+if [[ -e "$MARTENRES/$MARTENINTERPNAME" ]] ; then
+	echo "Removing existing $MARTENINTERPNAME from $MARTENAPPNAME"
+	rm -R "$MARTENRES/$MARTENINTERPNAME"
+fi
+
+echo "Moving $MARTENINTERPNAME into $MARTENAPPNAME"
+cp -R "$CMDPATH/../( Xcode Projects )/( xcbuild )/Marten Release/$MARTENINTERPNAME" "$MARTENRES"
+
+

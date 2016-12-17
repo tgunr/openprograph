@@ -1,0 +1,185 @@
+<?xml version="1.0" standalone="yes"?>
+<object class="NSIBObjectData">
+  <object name="rootObject" class="NSCustomObject" id="1">
+  </object>
+  <array count="11" name="allObjects">
+    <object class="IBCarbonChasingArrows" id="24">
+      <ostype name="controlSignature">Spin</ostype>
+      <boolean name="hidden">TRUE</boolean>
+      <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+        <int name="bindingTopKind">1</int>
+        <int name="bindingLeftKind">2</int>
+        <int name="bindingBottomKind">1</int>
+        <int name="bindingRightKind">2</int>
+      </object>
+      <string name="viewFrame">508 20 16 16 </string>
+      <string name="bounds">20 508 36 524 </string>
+    </object>
+    <object class="IBCarbonRootControl" id="4">
+      <string name="viewFrame">0 0 541 249 </string>
+      <array count="7" name="subviews">
+        <object class="IBCarbonStaticText" id="7">
+          <int name="fontStyle">4</int>
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingTopKind">1</int>
+            <int name="bindingLeftKind">1</int>
+            <int name="bindingBottomKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <string name="title">Select the machine you want to use to run your project</string>
+          <string name="viewFrame">20 20 482 16 </string>
+          <string name="bounds">20 20 36 502 </string>
+        </object>
+        <object class="IBCarbonButton" id="10">
+          <ostype name="controlSignature">GoRo</ostype>
+          <ostype name="command">GoRo</ostype>
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingTopKind">1</int>
+            <int name="bindingLeftKind">2</int>
+            <int name="bindingBottomKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <int name="buttonType">1</int>
+          <int name="iconPosition">0</int>
+          <string name="title">Connect</string>
+          <string name="viewFrame">426 181 76 20 </string>
+          <string name="bounds">181 426 201 502 </string>
+        </object>
+        <object class="IBCarbonButton" id="19">
+          <ostype name="command">not!</ostype>
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingTopKind">1</int>
+            <int name="bindingLeftKind">2</int>
+            <int name="bindingBottomKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <int name="buttonType">2</int>
+          <int name="iconPosition">0</int>
+          <string name="title">Cancel</string>
+          <string name="viewFrame">344 181 70 20 </string>
+          <string name="bounds">181 344 201 414 </string>
+        </object>
+        <object class="IBCarbonStaticText" id="20">
+          <ostype name="controlSignature">sTxt</ostype>
+          <int name="fontStyle">1</int>
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingTopKind">1</int>
+            <int name="bindingLeftKind">1</int>
+            <int name="bindingBottomKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <string name="title">You have selected to provide a manual address for the remote host.</string>
+          <string name="viewFrame">32 177 262 28 </string>
+          <string name="bounds">177 32 205 294 </string>
+        </object>
+        <object class="IBCarbonCheckBox" id="23">
+          <ostype name="controlSignature">aSav</ostype>
+          <int name="controlSize">1</int>
+          <ostype name="command">aSav</ostype>
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingTopKind">1</int>
+            <int name="bindingLeftKind">1</int>
+            <int name="bindingBottomKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <string name="title">Automatically use these settings next time this project opens.</string>
+          <string name="viewFrame">31 211 471 18 </string>
+          <string name="bounds">211 31 229 502 </string>
+        </object>
+        <reference idRef="24"/>
+        <object class="IBCarbonGroupBox" id="32">
+          <int name="fontStyle">0</int>
+          <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+            <int name="bindingTopKind">1</int>
+            <int name="bindingLeftKind">1</int>
+            <int name="bindingBottomKind">1</int>
+            <int name="bindingRightKind">2</int>
+          </object>
+          <boolean name="autoToggle">FALSE</boolean>
+          <boolean name="primary">FALSE</boolean>
+          <int name="selectedItem">0</int>
+          <string name="viewFrame">19 44 502 125 </string>
+          <array count="1" name="subviews">
+            <object class="IBCarbonScrollView" id="5">
+              <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+                <int name="bindingTopKind">1</int>
+                <int name="bindingLeftKind">1</int>
+                <int name="bindingBottomKind">1</int>
+                <int name="bindingRightKind">2</int>
+              </object>
+              <boolean name="scrollVertically">FALSE</boolean>
+              <boolean name="autoHideScrollBars">TRUE</boolean>
+              <boolean name="fillGrowArea">TRUE</boolean>
+              <string name="viewFrame">1 1 500 119 </string>
+              <array count="1" name="subviews">
+                <object class="IBCarbonHIView" id="6">
+                  <ostype name="controlSignature">IcVw</ostype>
+                  <object name="layoutInfo" class="IBCarbonHILayoutInfo">
+                    <int name="bindingTopKind">1</int>
+                    <int name="bindingLeftKind">1</int>
+                    <int name="bindingBottomKind">2</int>
+                    <int name="bindingRightKind">2</int>
+                  </object>
+                  <string name="classID">com.andescotia.scrollable.idehosts</string>
+                  <string name="viewFrame">0 0 500 106 </string>
+                  <string name="bounds">45 20 151 520 </string>
+                </object>
+              </array>
+              <string name="bounds">45 20 164 520 </string>
+            </object>
+          </array>
+          <string name="bounds">44 19 169 521 </string>
+        </object>
+      </array>
+      <string name="bounds">0 0 249 541 </string>
+    </object>
+    <reference idRef="6"/>
+    <reference idRef="5"/>
+    <reference idRef="20"/>
+    <reference idRef="19"/>
+    <object class="IBCarbonWindow" id="3">
+      <boolean name="autoDragTracking">TRUE</boolean>
+      <boolean name="hasCloseBox">FALSE</boolean>
+      <boolean name="hasCollapseBox">FALSE</boolean>
+      <boolean name="hasHorizontalZoom">FALSE</boolean>
+      <boolean name="hasVerticalZoom">FALSE</boolean>
+      <boolean name="liveResize">TRUE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <int name="carbonWindowClass">11</int>
+      <int name="scalingMode">1048576</int>
+      <string name="title">Remotes</string>
+      <reference name="rootControl" idRef="4"/>
+      <string name="windowRect">300 300 549 841 </string>
+      <string name="ScreenRectAtEncodeTime">48 0 1177 1920 </string>
+      <int name="WindowMaxWidth">1024</int>
+      <int name="WindowMaxHeight">249</int>
+      <int name="WindowMinWidth">541</int>
+      <int name="WindowMinHeight">249</int>
+    </object>
+    <reference idRef="32"/>
+    <reference idRef="23"/>
+    <reference idRef="7"/>
+    <reference idRef="10"/>
+  </array>
+  <array count="11" name="allParents">
+    <reference idRef="4"/>
+    <reference idRef="3"/>
+    <reference idRef="5"/>
+    <reference idRef="32"/>
+    <reference idRef="4"/>
+    <reference idRef="4"/>
+    <reference idRef="1"/>
+    <reference idRef="4"/>
+    <reference idRef="4"/>
+    <reference idRef="4"/>
+    <reference idRef="4"/>
+  </array>
+  <dictionary count="2" name="nameTable">
+    <string>File&apos;s Owner</string>
+    <reference idRef="1"/>
+    <string>remotes</string>
+    <reference idRef="3"/>
+  </dictionary>
+  <string name="targetFramework">IBCarbonFramework</string>
+  <unsigned_int name="nextObjectID">33</unsigned_int>
+</object>

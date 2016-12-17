@@ -1,0 +1,83 @@
+<?xml version="1.0" standalone="yes"?>
+<object class="NSIBObjectData">
+  <string name="targetFramework">IBCarbonFramework</string>
+  <object name="rootObject" class="NSCustomObject" id="1">
+    <string name="customClass">NSApplication</string>
+  </object>
+  <array count="7" name="allObjects">
+    <object class="IBCarbonWindow" id="166">
+      <string name="windowRect">106 195 198 676 </string>
+      <string name="title">LocateItemsView</string>
+      <object name="rootControl" class="IBCarbonRootControl" id="167">
+        <string name="bounds">0 0 92 481 </string>
+        <string name="viewFrame">0 0 481 92 </string>
+        <array count="1" name="subviews">
+          <object class="IBCarbonUserPane" id="180">
+            <string name="bounds">0 0 92 481 </string>
+            <string name="viewFrame">0 0 481 92 </string>
+            <array count="4" name="subviews">
+              <object class="IBCarbonButton" id="181">
+                <string name="bounds">52 20 72 123 </string>
+                <string name="viewFrame">20 52 103 20 </string>
+                <ostype name="controlSignature">pshb</ostype>
+                <int name="controlID">1</int>
+                <string name="title">Cancel</string>
+                <ostype name="command">not!</ostype>
+              </object>
+              <object class="IBCarbonButton" id="182">
+                <string name="bounds">20 20 40 123 </string>
+                <string name="viewFrame">20 20 103 20 </string>
+                <ostype name="controlSignature">pshb</ostype>
+                <int name="controlID">2</int>
+                <string name="title">Search Here</string>
+                <ostype name="command">SrcH</ostype>
+              </object>
+              <object class="IBCarbonIcon" id="183">
+                <string name="bounds">20 131 40 152 </string>
+                <string name="viewFrame">131 20 21 20 </string>
+                <int name="contentResID">1718379634</int>
+                <int name="contentType">132</int>
+              </object>
+              <object class="IBCarbonStaticText" id="184">
+                <string name="bounds">22 160 71 461 </string>
+                <string name="viewFrame">160 22 301 49 </string>
+                <ostype name="controlSignature">LNam</ostype>
+                <int name="controlID">1</int>
+                <string name="title">Location Name</string>
+              </object>
+            </array>
+            <ostype name="controlSignature">usrb</ostype>
+            <int name="controlID">100</int>
+            <int name="featureBits">2</int>
+          </object>
+        </array>
+      </object>
+      <boolean name="receiveUpdates">FALSE</boolean>
+      <boolean name="liveResize">TRUE</boolean>
+      <boolean name="compositing">TRUE</boolean>
+      <boolean name="isConstrained">FALSE</boolean>
+    </object>
+    <reference idRef="167"/>
+    <reference idRef="180"/>
+    <reference idRef="181"/>
+    <reference idRef="182"/>
+    <reference idRef="183"/>
+    <reference idRef="184"/>
+  </array>
+  <array count="7" name="allParents">
+    <reference idRef="1"/>
+    <reference idRef="166"/>
+    <reference idRef="167"/>
+    <reference idRef="180"/>
+    <reference idRef="180"/>
+    <reference idRef="180"/>
+    <reference idRef="180"/>
+  </array>
+  <dictionary count="2" name="nameTable">
+    <string>File&apos;s Owner</string>
+    <reference idRef="1"/>
+    <string>LocateItemsView</string>
+    <reference idRef="166"/>
+  </dictionary>
+  <unsigned_int name="nextObjectID">185</unsigned_int>
+</object>

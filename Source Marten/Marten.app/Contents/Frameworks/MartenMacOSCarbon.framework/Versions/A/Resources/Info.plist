@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>MartenMacOSCarbon</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.andescotia.frameworks.macos.carbon</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleSignature</key>
+	<string>mVPL</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>CSResourcesFileMapped</key>
+	<true/>
+	<key>MartenItemName</key>
+	<string>MacOS Carbon.framework</string>
+	<key>MartenLinkFrameworks</key>
+	<array>
+		<string>Carbon</string>
+	</array>
+	<key>MartenLinkHeaders</key>
+	<array>
+		<string>#include &lt;Carbon/Carbon.h&gt;</string>
+	</array>
+	<key>MartenLinkIsPrivate</key>
+	<true/>
+	<key>MartenLoadFunction</key>
+	<string>load_MacOSX</string>
+</dict>
+</plist>

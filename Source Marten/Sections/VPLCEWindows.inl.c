@@ -1,0 +1,5091 @@
+/* A VPL Section File */
+/*
+
+VPLCEWindows.inl.c
+Copyright: 2004 Andescotia LLC
+
+*/
+
+#include "MartenInlineProject.h"
+
+enum opTrigger vpx_method_Get_20_Port(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0)
+{
+HEADERWITHNONE(1)
+result = kSuccess;
+
+GetPort( GETPOINTER(0,OpaqueGrafPtr,**,ROOT(0),NONE));
+result = kSuccess;
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(0))
+FOOTERSINGLECASEWITHNONE(1)
+}
+
+enum opTrigger vpx_method_Set_20_Port(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(0));
+TERMINATEONSUCCESS
+
+SetPort( GETPOINTER(0,OpaqueGrafPtr,*,ROOT(1),TERMINAL(0)));
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_Set_20_Target(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_method_Get_20_Application(PARAMETERS,ROOT(1));
+
+result = vpx_set(PARAMETERS,kVPXValue_Target,TERMINAL(1),TERMINAL(0),ROOT(2));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_Get_20_Target_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0);
+enum opTrigger vpx_method_Get_20_Target_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0)
+{
+HEADER(3)
+result = kSuccess;
+
+result = vpx_method_Get_20_Application(PARAMETERS,ROOT(0));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(0));
+NEXTCASEONFAILURE
+
+result = vpx_get(PARAMETERS,kVPXValue_Target,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTER(3)
+}
+
+enum opTrigger vpx_method_Get_20_Target_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0);
+enum opTrigger vpx_method_Get_20_Target_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0)
+{
+HEADER(1)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"NULL",ROOT(0));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(0))
+FOOTER(1)
+}
+
+enum opTrigger vpx_method_Get_20_Target(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_Get_20_Target_case_1(environment, &outcome, inputRepeat, contextIndex,root0))
+vpx_method_Get_20_Target_case_2(environment, &outcome, inputRepeat, contextIndex,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_Clear_20_Target(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(6)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_method_Get_20_Application(PARAMETERS,ROOT(1));
+
+result = vpx_get(PARAMETERS,kVPXValue_Target,TERMINAL(1),ROOT(2),ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__3D_,2,0,TERMINAL(3),TERMINAL(0));
+TERMINATEONFAILURE
+
+result = vpx_constant(PARAMETERS,"NULL",ROOT(4));
+
+result = vpx_set(PARAMETERS,kVPXValue_Target,TERMINAL(1),TERMINAL(4),ROOT(5));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(6)
+}
+
+enum opTrigger vpx_method_Change_20_Target_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
+enum opTrigger vpx_method_Change_20_Target_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+{
+HEADER(5)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Target,TERMINAL(0),ROOT(3),ROOT(4));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(4));
+TERMINATEONFAILURE
+
+result = vpx_call_primitive(PARAMETERS,VPLP__3D_,2,0,TERMINAL(4),TERMINAL(1));
+FAILONSUCCESS
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Exit,2,0,TERMINAL(4),TERMINAL(2));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(5)
+}
+
+enum opTrigger vpx_method_Change_20_Target_case_1_local_7(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_Change_20_Target_case_1_local_7(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Target,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(2));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Enter,1,0,TERMINAL(2));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_Change_20_Target(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(6)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_method_Default_20_NULL(PARAMETERS,TERMINAL(0),ROOT(2));
+
+result = vpx_method_Default_20_TRUE(PARAMETERS,TERMINAL(1),ROOT(3));
+
+result = vpx_method_Get_20_Application(PARAMETERS,ROOT(4));
+
+result = vpx_method_Change_20_Target_case_1_local_5(PARAMETERS,TERMINAL(4),TERMINAL(2),TERMINAL(3));
+TERMINATEONFAILURE
+
+result = vpx_set(PARAMETERS,kVPXValue_Target,TERMINAL(4),TERMINAL(2),ROOT(5));
+
+result = vpx_method_Change_20_Target_case_1_local_7(PARAMETERS,TERMINAL(5));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(6)
+}
+
+
+
+
+	Nat4 tempAttribute_VPLCEWindow_2F_Name[] = {
+0000000000, 0X00000038, 0X00000018, 0X00000001, 0X00000014, 0X0000002C, 0X00000006, 0000000000,
+0000000000, 0000000000, 0000000000, 0X00000034, 0X18000000, 0X556E7469, 0X746C6564, 0X20446F63,
+0X756D656E, 0X74205769, 0X6E646F77, 0000000000
+	};
+	Nat4 tempAttribute_VPLCEWindow_2F_Window_20_Event_20_Handler[] = {
+0000000000, 0X000007B8, 0X00000174, 0X00000058, 0X00000014, 0X000008F8, 0X000008F4, 0X000008EC,
+0X00000490, 0X000008A4, 0X000008A0, 0X00000898, 0X0000048C, 0X00000850, 0X0000084C, 0X00000844,
+0X00000488, 0X000007FC, 0X000007F8, 0X000007F0, 0X00000484, 0X000007A8, 0X000007A4, 0X0000079C,
+0X00000480, 0X00000754, 0X00000750, 0X00000748, 0X0000047C, 0X00000700, 0X000006FC, 0X000006F4,
+0X00000478, 0X000006AC, 0X000006A8, 0X000006A0, 0X00000474, 0X00000658, 0X00000654, 0X0000064C,
+0X00000470, 0X00000604, 0X00000600, 0X000005F8, 0X0000046C, 0X000005B0, 0X000005AC, 0X000005A4,
+0X00000468, 0X0000055C, 0X00000558, 0X00000550, 0X00000464, 0X00000508, 0X00000504, 0X000004FC,
+0X00000460, 0X000004B4, 0X000004B0, 0X000004A8, 0X0000045C, 0X00000454, 0X000001E0, 0X000001DC,
+0X0000040C, 0X000001C8, 0X000003E0, 0X000001C4, 0X000003B4, 0X0000039C, 0X00000374, 0X0000037C,
+0X0000035C, 0X00000354, 0X000001BC, 0X0000032C, 0X00000314, 0X000002EC, 0X000002F4, 0X00000270,
+0X000002C8, 0X000002B0, 0X00000288, 0X00000290, 0X0000026C, 0X00000264, 0X000001B8, 0X00000234,
+0X000001B4, 0X00000204, 0X000001AC, 0X00000188, 0X00000190, 0X27000008, 0000000000, 0000000000,
+0000000000, 0000000000, 0X000001AC, 0X00000011, 0X00000194, 0X43617262, 0X6F6E2045, 0X76656E74,
+0X2043616C, 0X6C626163, 0X6B000000, 0X000001F0, 0000000000, 0X00000220, 0X00000250, 0X00000340,
+0000000000, 0X000003CC, 0X000003F8, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000428,
+0X00000440, 0000000000, 0000000000, 0000000000, 0X00000006, 0000000000, 0000000000, 0000000000,
+0000000000, 0X0000020C, 0X11000000, 0X6B457665, 0X6E745769, 0X6E646F77, 0X436C6173, 0X73000000,
+0X00000006, 0000000000, 0000000000, 0000000000, 0000000000, 0X0000023C, 0X10000000, 0X2F434520,
+0X48616E64, 0X6C652045, 0X76656E74, 0000000000, 0X00000007, 0000000000, 0000000000, 0000000000,
+0000000000, 0X0000026C, 0X00000002, 0X00000274, 0X000002D8, 0X15000008, 0000000000, 0000000000,
+0000000000, 0000000000, 0X000002B0, 0X00000001, 0X00000294, 0X41747472, 0X69627574, 0X6520496E,
+0X70757420, 0X53706563, 0X69666965, 0X72000000, 0X000002B4, 0X00000006, 0000000000, 0000000000,
+0000000000, 0000000000, 0X000002D0, 0X05000000, 0X4F776E65, 0X72000000, 0X15000008, 0000000000,
+0000000000, 0000000000, 0000000000, 0X00000314, 0X00000001, 0X000002F8, 0X41747472, 0X69627574,
+0X6520496E, 0X70757420, 0X53706563, 0X69666965, 0X72000000, 0X00000318, 0X00000006, 0000000000,
+0000000000, 0000000000, 0000000000, 0X00000334, 0X09000000, 0X54686520, 0X4576656E, 0X74000000,
+0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0X0000035C, 0X00000001, 0X00000360,
+0X16000008, 0000000000, 0000000000, 0000000000, 0000000000, 0X0000039C, 0X00000001, 0X00000380,
+0X41747472, 0X69627574, 0X65204F75, 0X74707574, 0X20537065, 0X63696669, 0X65720000, 0X000003A0,
+0X00000006, 0000000000, 0000000000, 0000000000, 0000000000, 0X000003BC, 0X0F000000, 0X43616C6C,
+0X6261636B, 0X20526573, 0X756C7400, 0X00000006, 0000000000, 0000000000, 0000000000, 0000000000,
+0X000003E8, 0X0F000000, 0X2F446F20, 0X43452043, 0X616C6C62, 0X61636B00, 0X00000006, 0000000000,
+0000000000, 0000000000, 0000000000, 0X00000414, 0X13000000, 0X4576656E, 0X7448616E, 0X646C6572,
+0X50726F63, 0X50747200, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0000000000,
+0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0X0000045C, 0X0000000E, 0X00000494,
+0X000004E8, 0X0000053C, 0X00000590, 0X000005E4, 0X00000638, 0X0000068C, 0X000006E0, 0X00000734,
+0X00000788, 0X000007DC, 0X00000830, 0X00000884, 0X000008D8, 0X00000007, 0000000000, 0000000000,
+0000000000, 0000000000, 0X000004B0, 0X00000002, 0X000004B8, 0X000004D0, 0X00000004, 0000000000,
+0000000000, 0000000000, 0000000000, 0X636D6473, 0X00000004, 0000000000, 0000000000, 0000000000,
+0000000000, 0X00000001, 0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000504,
+0X00000002, 0X0000050C, 0X00000524, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000,
+0X636D6473, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000002, 0X00000007,
+0000000000, 0000000000, 0000000000, 0000000000, 0X00000558, 0X00000002, 0X00000560, 0X00000578,
+0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X77696E64, 0X00000004, 0000000000,
+0000000000, 0000000000, 0000000000, 0X00000048, 0X00000007, 0000000000, 0000000000, 0000000000,
+0000000000, 0X000005AC, 0X00000002, 0X000005B4, 0X000005CC, 0X00000004, 0000000000, 0000000000,
+0000000000, 0000000000, 0X77696E64, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000,
+0X00000005, 0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000600, 0X00000002,
+0X00000608, 0X00000620, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X77696E64,
+0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000006, 0X00000007, 0000000000,
+0000000000, 0000000000, 0000000000, 0X00000654, 0X00000002, 0X0000065C, 0X00000674, 0X00000004,
+0000000000, 0000000000, 0000000000, 0000000000, 0X77696E64, 0X00000004, 0000000000, 0000000000,
+0000000000, 0000000000, 0X00000002, 0X00000007, 0000000000, 0000000000, 0000000000, 0000000000,
+0X000006A8, 0X00000002, 0X000006B0, 0X000006C8, 0X00000004, 0000000000, 0000000000, 0000000000,
+0000000000, 0X77696E64, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X0000001B,
+0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0X000006FC, 0X00000002, 0X00000704,
+0X0000071C, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X77696E64, 0X00000004,
+0000000000, 0000000000, 0000000000, 0000000000, 0X00000050, 0X02910007, 0000000000, 0000000000,
+0000000000, 0000000000, 0X00000750, 0X00000002, 0X00000758, 0X00000770, 0X02960004, 0000000000,
+0000000000, 0000000000, 0000000000, 0X77696E64, 0X02950004, 0000000000, 0000000000, 0000000000,
+0000000000, 0X00000025, 0X06160007, 0000000000, 0000000000, 0000000000, 0000000000, 0X000007A4,
+0X00000002, 0X000007AC, 0X000007C4, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000,
+0X6B657962, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000001, 0X00000007,
+0000000000, 0000000000, 0000000000, 0000000000, 0X000007F8, 0X00000002, 0X00000800, 0X00000818,
+0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X6B657962, 0X00000004, 0000000000,
+0000000000, 0000000000, 0000000000, 0X00000002, 0X03520007, 0000000000, 0000000000, 0000000000,
+0000000000, 0X0000084C, 0X00000002, 0X00000854, 0X0000086C, 0X03560004, 0000000000, 0000000000,
+0000000000, 0000000000, 0X6D6F7573, 0X03500004, 0000000000, 0000000000, 0000000000, 0000000000,
+0X00000001, 0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0X000008A0, 0X00000002,
+0X000008A8, 0X000008C0, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X77696E64,
+0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X0000001D, 0X00000007, 0000000000,
+0000000000, 0000000000, 0000000000, 0X000008F4, 0X00000002, 0X000008FC, 0X00000914, 0X00000004,
+0000000000, 0000000000, 0000000000, 0000000000, 0X77696E64, 0X00000004, 0000000000, 0000000000,
+0000000000, 0000000000, 0X0000001F
+	};
+	Nat4 tempAttribute_VPLCEWindow_2F_Drawers[] = {
+0000000000, 0X0000001C, 0X00000014, 0000000000, 0X00000014, 0X00000007, 0000000000, 0000000000,
+0000000000, 0000000000, 0000000000, 0000000000
+	};
+	Nat4 tempAttribute_VPLCEWindow_2F_Frame[] = {
+0000000000, 0X0000008C, 0X00000028, 0X00000005, 0X00000014, 0X00000050, 0X0000004C, 0X00000048,
+0X00000044, 0X0000003C, 0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000044,
+0X00000004, 0X00000054, 0X0000006C, 0X00000084, 0X0000009C, 0X00000004, 0000000000, 0000000000,
+0000000000, 0000000000, 0X00000032, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000,
+0X00000032, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X000000C8, 0X00000004,
+0000000000, 0000000000, 0000000000, 0000000000, 0X00000258
+	};
+	Nat4 tempAttribute_VPLCEWindow_2F_Window_20_Pasteboard_20_Handler[] = {
+0000000000, 0X00000084, 0X00000024, 0X00000004, 0X00000014, 0X00000068, 0X00000064, 0X00000038,
+0X00000040, 0X3F000008, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000060, 0X00000004,
+0X00000044, 0X57696E64, 0X6F772050, 0X61737465, 0X626F6172, 0X64204861, 0X6E646C65, 0X72000000,
+0000000000, 0X00000070, 0X0000008C, 0000000000, 0X00000007, 0000000000, 0000000000, 0000000000,
+0000000000, 0000000000, 0000000000, 0X00000007, 0000000000, 0000000000, 0000000000, 0000000000,
+0000000000, 0000000000
+	};
+	Nat4 tempAttribute_VPLWindow_2F_Name[] = {
+0000000000, 0X00000038, 0X00000018, 0X00000001, 0X00000014, 0X0000002C, 0X00000006, 0000000000,
+0000000000, 0000000000, 0000000000, 0X00000034, 0X18000000, 0X556E7469, 0X746C6564, 0X20446F63,
+0X756D656E, 0X74205769, 0X6E646F77, 0000000000
+	};
+	Nat4 tempAttribute_VPLWindow_2F_Window_20_Event_20_Handler[] = {
+0000000000, 0X00000760, 0X00000164, 0X00000054, 0X00000014, 0X00000890, 0X0000088C, 0X00000884,
+0X0000047C, 0X0000083C, 0X00000838, 0X00000830, 0X00000478, 0X000007E8, 0X000007E4, 0X000007DC,
+0X00000474, 0X00000794, 0X00000790, 0X00000788, 0X00000470, 0X00000740, 0X0000073C, 0X00000734,
+0X0000046C, 0X000006EC, 0X000006E8, 0X000006E0, 0X00000468, 0X00000698, 0X00000694, 0X0000068C,
+0X00000464, 0X00000644, 0X00000640, 0X00000638, 0X00000460, 0X000005F0, 0X000005EC, 0X000005E4,
+0X0000045C, 0X0000059C, 0X00000598, 0X00000590, 0X00000458, 0X00000548, 0X00000544, 0X0000053C,
+0X00000454, 0X000004F4, 0X000004F0, 0X000004E8, 0X00000450, 0X000004A0, 0X0000049C, 0X00000494,
+0X0000044C, 0X00000444, 0X000001D0, 0X000001CC, 0X000003FC, 0X000001B8, 0X000003D0, 0X000001B4,
+0X000003A4, 0X0000038C, 0X00000364, 0X0000036C, 0X0000034C, 0X00000344, 0X000001AC, 0X0000031C,
+0X00000304, 0X000002DC, 0X000002E4, 0X00000260, 0X000002B8, 0X000002A0, 0X00000278, 0X00000280,
+0X0000025C, 0X00000254, 0X000001A8, 0X00000224, 0X000001A4, 0X000001F4, 0X0000019C, 0X00000178,
+0X00000180, 0X27000008, 0000000000, 0000000000, 0000000000, 0000000000, 0X0000019C, 0X00000011,
+0X00000184, 0X43617262, 0X6F6E2045, 0X76656E74, 0X2043616C, 0X6C626163, 0X6B000000, 0X000001E0,
+0000000000, 0X00000210, 0X00000240, 0X00000330, 0000000000, 0X000003BC, 0X000003E8, 0000000000,
+0000000000, 0000000000, 0000000000, 0X00000418, 0X00000430, 0000000000, 0000000000, 0000000000,
+0X00000006, 0000000000, 0000000000, 0000000000, 0000000000, 0X000001FC, 0X11000000, 0X6B457665,
+0X6E745769, 0X6E646F77, 0X436C6173, 0X73000000, 0X00000006, 0000000000, 0000000000, 0000000000,
+0000000000, 0X0000022C, 0X10000000, 0X2F434520, 0X48616E64, 0X6C652045, 0X76656E74, 0000000000,
+0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0X0000025C, 0X00000002, 0X00000264,
+0X000002C8, 0X15000008, 0000000000, 0000000000, 0000000000, 0000000000, 0X000002A0, 0X00000001,
+0X00000284, 0X41747472, 0X69627574, 0X6520496E, 0X70757420, 0X53706563, 0X69666965, 0X72000000,
+0X000002A4, 0X00000006, 0000000000, 0000000000, 0000000000, 0000000000, 0X000002C0, 0X05000000,
+0X4F776E65, 0X72000000, 0X15000008, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000304,
+0X00000001, 0X000002E8, 0X41747472, 0X69627574, 0X6520496E, 0X70757420, 0X53706563, 0X69666965,
+0X72000000, 0X00000308, 0X00000006, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000324,
+0X09000000, 0X54686520, 0X4576656E, 0X74000000, 0X00000007, 0000000000, 0000000000, 0000000000,
+0000000000, 0X0000034C, 0X00000001, 0X00000350, 0X16000008, 0000000000, 0000000000, 0000000000,
+0000000000, 0X0000038C, 0X00000001, 0X00000370, 0X41747472, 0X69627574, 0X65204F75, 0X74707574,
+0X20537065, 0X63696669, 0X65720000, 0X00000390, 0X00000006, 0000000000, 0000000000, 0000000000,
+0000000000, 0X000003AC, 0X0F000000, 0X43616C6C, 0X6261636B, 0X20526573, 0X756C7400, 0X00000006,
+0000000000, 0000000000, 0000000000, 0000000000, 0X000003D8, 0X0F000000, 0X2F446F20, 0X43452043,
+0X616C6C62, 0X61636B00, 0X00000006, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000404,
+0X13000000, 0X4576656E, 0X7448616E, 0X646C6572, 0X50726F63, 0X50747200, 0X00000004, 0000000000,
+0000000000, 0000000000, 0000000000, 0000000000, 0X00000007, 0000000000, 0000000000, 0000000000,
+0000000000, 0X0000044C, 0X0000000D, 0X00000480, 0X000004D4, 0X00000528, 0X0000057C, 0X000005D0,
+0X00000624, 0X00000678, 0X000006CC, 0X00000720, 0X00000774, 0X000007C8, 0X0000081C, 0X00000870,
+0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0X0000049C, 0X00000002, 0X000004A4,
+0X000004BC, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X636D6473, 0X00000004,
+0000000000, 0000000000, 0000000000, 0000000000, 0X00000001, 0X00000007, 0000000000, 0000000000,
+0000000000, 0000000000, 0X000004F0, 0X00000002, 0X000004F8, 0X00000510, 0X00000004, 0000000000,
+0000000000, 0000000000, 0000000000, 0X636D6473, 0X00000004, 0000000000, 0000000000, 0000000000,
+0000000000, 0X00000002, 0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000544,
+0X00000002, 0X0000054C, 0X00000564, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000,
+0X77696E64, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000048, 0X00000007,
+0000000000, 0000000000, 0000000000, 0000000000, 0X00000598, 0X00000002, 0X000005A0, 0X000005B8,
+0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X77696E64, 0X00000004, 0000000000,
+0000000000, 0000000000, 0000000000, 0X0000004A, 0X00000007, 0000000000, 0000000000, 0000000000,
+0000000000, 0X000005EC, 0X00000002, 0X000005F4, 0X0000060C, 0X00000004, 0000000000, 0000000000,
+0000000000, 0000000000, 0X77696E64, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000,
+0X00000005, 0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000640, 0X00000002,
+0X00000648, 0X00000660, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X77696E64,
+0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000006, 0X00000007, 0000000000,
+0000000000, 0000000000, 0000000000, 0X00000694, 0X00000002, 0X0000069C, 0X000006B4, 0X00000004,
+0000000000, 0000000000, 0000000000, 0000000000, 0X77696E64, 0X00000004, 0000000000, 0000000000,
+0000000000, 0000000000, 0X00000002, 0X00000007, 0000000000, 0000000000, 0000000000, 0000000000,
+0X000006E8, 0X00000002, 0X000006F0, 0X00000708, 0X00000004, 0000000000, 0000000000, 0000000000,
+0000000000, 0X77696E64, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X0000001B,
+0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0X0000073C, 0X00000002, 0X00000744,
+0X0000075C, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X77696E64, 0X00000004,
+0000000000, 0000000000, 0000000000, 0000000000, 0X00000050, 0X02910007, 0000000000, 0000000000,
+0000000000, 0000000000, 0X00000790, 0X00000002, 0X00000798, 0X000007B0, 0X02960004, 0000000000,
+0000000000, 0000000000, 0000000000, 0X77696E64, 0X02950004, 0000000000, 0000000000, 0000000000,
+0000000000, 0X00000025, 0X06160007, 0000000000, 0000000000, 0000000000, 0000000000, 0X000007E4,
+0X00000002, 0X000007EC, 0X00000804, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000,
+0X6B657962, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000001, 0X00000007,
+0000000000, 0000000000, 0000000000, 0000000000, 0X00000838, 0X00000002, 0X00000840, 0X00000858,
+0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X6B657962, 0X00000004, 0000000000,
+0000000000, 0000000000, 0000000000, 0X00000002, 0X03520007, 0000000000, 0000000000, 0000000000,
+0000000000, 0X0000088C, 0X00000002, 0X00000894, 0X000008AC, 0X03560004, 0000000000, 0000000000,
+0000000000, 0000000000, 0X6D6F7573, 0X03500004, 0000000000, 0000000000, 0000000000, 0000000000,
+0X00000001
+	};
+	Nat4 tempAttribute_VPLWindow_2F_Drawers[] = {
+0000000000, 0X0000001C, 0X00000014, 0000000000, 0X00000014, 0X00000007, 0000000000, 0000000000,
+0000000000, 0000000000, 0000000000, 0000000000
+	};
+	Nat4 tempAttribute_VPLWindow_2F_Frame[] = {
+0000000000, 0X0000008C, 0X00000028, 0X00000005, 0X00000014, 0X00000050, 0X0000004C, 0X00000048,
+0X00000044, 0X0000003C, 0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000044,
+0X00000004, 0X00000054, 0X0000006C, 0X00000084, 0X0000009C, 0X00000004, 0000000000, 0000000000,
+0000000000, 0000000000, 0X00000032, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000,
+0X00000032, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X000000C8, 0X00000004,
+0000000000, 0000000000, 0000000000, 0000000000, 0X00000258
+	};
+	Nat4 tempAttribute_VPLEvent_2F_Shut_20_Down_3F_[] = {
+0000000000, 0X00000018, 0X00000014, 0000000000, 0X00000014, 0X00000003, 0000000000, 0000000000,
+0000000000, 0000000000, 0000000000
+	};
+	Nat4 tempAttribute_VPLEvent_2F_Double_20_Down[] = {
+0000000000, 0X00000018, 0X00000014, 0000000000, 0X00000014, 0X00000003, 0000000000, 0000000000,
+0000000000, 0000000000, 0000000000
+	};
+	Nat4 tempAttribute_VPLEvent_2F_Contextual_20_Menu_3F_[] = {
+0000000000, 0X00000018, 0X00000014, 0000000000, 0X00000014, 0X00000003, 0000000000, 0000000000,
+0000000000, 0000000000, 0X00002850
+	};
+
+
+Nat4 VPLC_VPLCEWindow_class_load(V_Class tempClass,V_Environment environment);
+Nat4 VPLC_VPLCEWindow_class_load(V_Class tempClass,V_Environment environment)
+{
+	V_Value	tempAttribute = NULL;
+
+/* Start Attributes: { 410 200 }{ 220 420 } */
+	tempAttribute = attribute_add("Name",tempClass,tempAttribute_VPLCEWindow_2F_Name,environment);
+	tempAttribute = attribute_add("WindowRef",tempClass,NULL,environment);
+	tempAttribute = attribute_add("Window Event Handler",tempClass,tempAttribute_VPLCEWindow_2F_Window_20_Event_20_Handler,environment);
+	tempAttribute = attribute_add("Drawers",tempClass,tempAttribute_VPLCEWindow_2F_Drawers,environment);
+	tempAttribute = attribute_add("View",tempClass,NULL,environment);
+	tempAttribute = attribute_add("Frame",tempClass,tempAttribute_VPLCEWindow_2F_Frame,environment);
+	tempAttribute = attribute_add("Target",tempClass,NULL,environment);
+	tempAttribute = attribute_add("Title",tempClass,NULL,environment);
+	tempAttribute = attribute_add("Window Pasteboard Handler",tempClass,tempAttribute_VPLCEWindow_2F_Window_20_Pasteboard_20_Handler,environment);
+	tempAttribute = attribute_add("Window Printing Handler",tempClass,NULL,environment);
+/* Stop Attributes */
+
+	class_superClass_to(tempClass,environment,"Document Window");
+	return kNOERROR;
+}
+
+/* Start Universals: { 68 487 }{ 828 332 } */
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Open(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Open_case_1_local_2(PARAMETERS,TERMINAL(0),TERMINAL(1));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Create_20_Window,1,0,TERMINAL(0));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Open_20_Controls,1,0,TERMINAL(0));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Show,1,0,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_With_20_Data_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_With_20_Data_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(5)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_WindowRef,1,1,TERMINAL(0),ROOT(2));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(2));
+NEXTCASEONSUCCESS
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Install_20_Data,2,0,TERMINAL(0),TERMINAL(1));
+
+result = vpx_get(PARAMETERS,kVPXValue_View,TERMINAL(0),ROOT(3),ROOT(4));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Target_20_Self,1,0,TERMINAL(4));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Refresh,1,0,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTER(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_With_20_Data_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_With_20_Data_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Install_20_Data,2,0,TERMINAL(0),TERMINAL(1));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Create_20_Window,1,0,TERMINAL(0));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Open_20_Controls,1,0,TERMINAL(0));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Show,1,0,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_With_20_Data(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Open_20_With_20_Data_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
+vpx_method_VPLCEWindow_2F_Open_20_With_20_Data_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Create_20_Window(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(5)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_extconstant(PARAMETERS,kDocumentWindowClass,ROOT(1));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Creation_20_Attributes,1,1,TERMINAL(0),ROOT(2));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Frame,1,1,TERMINAL(0),ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Rect,1,1,TERMINAL(3),ROOT(4));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Create_20_Window_20_Class,4,0,TERMINAL(0),TERMINAL(1),TERMINAL(2),TERMINAL(4));
+TERMINATEONFAILURE
+
+result = kSuccess;
+
+FOOTERSINGLECASE(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Creation_20_Attributes(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(7)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_extconstant(PARAMETERS,kWindowStandardDocumentAttributes,ROOT(1));
+
+result = vpx_extconstant(PARAMETERS,kWindowCompositingAttribute,ROOT(2));
+
+result = vpx_extconstant(PARAMETERS,kWindowInWindowMenuAttribute,ROOT(3));
+
+result = vpx_extconstant(PARAMETERS,kWindowLiveResizeAttribute,ROOT(4));
+
+result = vpx_extconstant(PARAMETERS,kWindowStandardHandlerAttribute,ROOT(5));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__2B2B_,4,1,TERMINAL(1),TERMINAL(3),TERMINAL(4),TERMINAL(5),ROOT(6));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(6))
+FOOTERSINGLECASE(7)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_Controls_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_Controls_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(4)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_View,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(2));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Open,2,0,TERMINAL(2),TERMINAL(1));
+
+result = vpx_set(PARAMETERS,kVPXValue_Target,TERMINAL(1),TERMINAL(2),ROOT(3));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_Controls(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Open_20_Controls_case_1_local_2(PARAMETERS,TERMINAL(0));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Open_20_Pasteboard_20_Handler,1,0,TERMINAL(0));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Open_20_Printing_20_Handler,1,0,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1_local_5_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1_local_5_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(6)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Port,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(1));
+NEXTCASEONSUCCESS
+
+PUTPOINTER(OpaqueRgnHandle,*,NewRgn(),2);
+result = kSuccess;
+
+PUTPOINTER(OpaqueRgnHandle,*,GetPortVisibleRegion( GETPOINTER(0,OpaqueGrafPtr,*,ROOT(4),TERMINAL(1)),GETPOINTER(0,OpaqueRgnHandle,*,ROOT(5),TERMINAL(2))),3);
+result = kSuccess;
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(5))
+FOOTER(6)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1_local_5_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1_local_5_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"NULL",ROOT(1));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Draw_case_1_local_5_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+vpx_method_VPLCEWindow_2F_Draw_case_1_local_5_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1_local_7(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1_local_7(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+{
+HEADER(10)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_View,TERMINAL(0),ROOT(3),ROOT(4));
+
+result = vpx_get(PARAMETERS,kVPXValue_Target,TERMINAL(0),ROOT(5),ROOT(6));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__3D_,2,0,TERMINAL(6),TERMINAL(4));
+TERMINATEONSUCCESS
+
+result = vpx_constant(PARAMETERS,"Item Edit Text",ROOT(7));
+
+result = vpx_method_Is_20_Or_20_Is_20_Descendant_3F_(PARAMETERS,TERMINAL(6),TERMINAL(7));
+TERMINATEONFAILURE
+
+result = vpx_get(PARAMETERS,kVPXValue_Text_20_Editor,TERMINAL(6),ROOT(8),ROOT(9));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(9));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Draw_20_Event_20_CG,3,0,TERMINAL(6),TERMINAL(1),TERMINAL(2));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(10)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1_local_8_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex);
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1_local_8_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex)
+{
+HEADER(2)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"FALSE",ROOT(0));
+
+result = vpx_constant(PARAMETERS,"( 10 4 )",ROOT(1));
+
+result = vpx_method_Is_20_MacOS_3F_(PARAMETERS,TERMINAL(1),TERMINAL(0));
+FAILONSUCCESS
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1_local_8(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1_local_8(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Draw_case_1_local_8_case_1_local_2(PARAMETERS);
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Flush,1,0,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1_local_10(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1_local_10(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(0));
+TERMINATEONSUCCESS
+
+DisposeRgn( GETPOINTER(0,OpaqueRgnHandle,*,ROOT(1),TERMINAL(0)));
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(6)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_View,TERMINAL(0),ROOT(2),ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(3));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Begin_20_CGContext,1,1,TERMINAL(0),ROOT(4));
+NEXTCASEONFAILURE
+
+result = vpx_method_VPLCEWindow_2F_Draw_case_1_local_5(PARAMETERS,TERMINAL(0),ROOT(5));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Draw_20_Event_20_CG,3,0,TERMINAL(3),TERMINAL(5),TERMINAL(4));
+
+result = vpx_method_VPLCEWindow_2F_Draw_case_1_local_7(PARAMETERS,TERMINAL(0),TERMINAL(5),TERMINAL(4));
+
+result = vpx_method_VPLCEWindow_2F_Draw_case_1_local_8(PARAMETERS,TERMINAL(4));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_End_20_CGContext,2,0,TERMINAL(0),TERMINAL(4));
+
+result = vpx_method_VPLCEWindow_2F_Draw_case_1_local_10(PARAMETERS,TERMINAL(5));
+
+result = kSuccess;
+
+FOOTER(6)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(5)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_View,TERMINAL(0),ROOT(2),ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(3));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Port_20_Bounds,1,1,TERMINAL(0),ROOT(4));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Draw,2,0,TERMINAL(3),TERMINAL(4));
+
+result = kSuccess;
+
+FOOTER(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Draw(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Draw_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
+vpx_method_VPLCEWindow_2F_Draw_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Idle(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Initialize_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Initialize_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Title,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_string_3F_,1,0,TERMINAL(2));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Title,2,0,TERMINAL(1),TERMINAL(2));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Initialize(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_context_super_method(PARAMETERS,kVPXMethod_Initialize,1,0,TERMINAL(0));
+
+result = vpx_method_VPLCEWindow_2F_Initialize_case_1_local_3(PARAMETERS,TERMINAL(0));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Constrain_20_Window,1,0,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Constrain_20_Window_case_1_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Constrain_20_Window_case_1_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0)
+{
+HEADER(3)
+result = kSuccess;
+
+result = vpx_extconstant(PARAMETERS,kWindowConstrainMayResize,ROOT(0));
+
+result = vpx_extconstant(PARAMETERS,kWindowConstrainMoveRegardlessOfFit,ROOT(1));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__2B2B_,2,1,TERMINAL(0),TERMINAL(1),ROOT(2));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Constrain_20_Window_case_1_local_8(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Constrain_20_Window_case_1_local_8(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Window_20_Bounds,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Change_20_Frame,2,0,TERMINAL(0),TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Constrain_20_Window(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(8)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_WindowRef,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(1));
+TERMINATEONFAILURE
+
+result = vpx_extconstant(PARAMETERS,kWindowContentRgn,ROOT(2));
+
+result = vpx_constant(PARAMETERS,"NULL",ROOT(3));
+
+result = vpx_method_VPLCEWindow_2F_Constrain_20_Window_case_1_local_6(PARAMETERS,ROOT(4));
+
+PUTINTEGER(ConstrainWindowToScreen( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(6),TERMINAL(1)),GETINTEGER(TERMINAL(2)),GETINTEGER(TERMINAL(4)),GETCONSTPOINTER(Rect,*,TERMINAL(3)),GETPOINTER(8,Rect,*,ROOT(7),TERMINAL(3))),5);
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Constrain_20_Window_case_1_local_8(PARAMETERS,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(8)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Frame(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Frame,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Set_20_Frame_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Set_20_Frame_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1)
+{
+HEADER(16)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_primitive(PARAMETERS,VPLP_unpack,1,4,TERMINAL(1),ROOT(2),ROOT(3),ROOT(4),ROOT(5));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_unpack,1,4,TERMINAL(0),ROOT(6),ROOT(7),ROOT(8),ROOT(9));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_iminus,2,1,TERMINAL(8),TERMINAL(6),ROOT(10));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_iminus,2,1,TERMINAL(9),TERMINAL(7),ROOT(11));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_iminus,2,1,TERMINAL(4),TERMINAL(2),ROOT(12));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_iminus,2,1,TERMINAL(5),TERMINAL(3),ROOT(13));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_iminus,2,1,TERMINAL(12),TERMINAL(10),ROOT(14));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_iminus,2,1,TERMINAL(13),TERMINAL(11),ROOT(15));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(14))
+OUTPUT(1,TERMINAL(15))
+FOOTERSINGLECASE(16)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Set_20_Frame(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(10)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Frame,TERMINAL(0),ROOT(2),ROOT(3));
+
+result = vpx_set(PARAMETERS,kVPXValue_Frame,TERMINAL(2),TERMINAL(1),ROOT(4));
+
+result = vpx_method_VPLCEWindow_2F_Set_20_Frame_case_1_local_4(PARAMETERS,TERMINAL(3),TERMINAL(1),ROOT(5),ROOT(6));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_pack,2,1,TERMINAL(5),TERMINAL(6),ROOT(7));
+
+result = vpx_match(PARAMETERS,"( 0 0 )",TERMINAL(7));
+TERMINATEONSUCCESS
+
+result = vpx_get(PARAMETERS,kVPXValue_View,TERMINAL(4),ROOT(8),ROOT(9));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Resize,2,0,TERMINAL(9),TERMINAL(7));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(10)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Change_20_Frame(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Frame,2,0,TERMINAL(0),TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Port_20_Bounds_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Port_20_Bounds_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADERWITHNONE(6)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_WindowRef,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(1));
+NEXTCASEONSUCCESS
+
+PUTPOINTER(Rect,*,GetWindowPortBounds( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(3),TERMINAL(1)),GETPOINTER(8,Rect,*,ROOT(4),NONE)),2);
+result = kSuccess;
+
+result = vpx_call_primitive(PARAMETERS,VPLP_Rect_2D_to_2D_list,1,1,TERMINAL(4),ROOT(5));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(5))
+FOOTERWITHNONE(6)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Port_20_Bounds_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Port_20_Bounds_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"( 0 0 0 0 )",ROOT(1));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Port_20_Bounds(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Get_20_Port_20_Bounds_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+vpx_method_VPLCEWindow_2F_Get_20_Port_20_Bounds_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Refresh(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Port_20_Bounds,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Rect,1,1,TERMINAL(1),ROOT(2));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Invalidate_20_Rect,2,0,TERMINAL(0),TERMINAL(2));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Set_20_Target_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Set_20_Target_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Target,TERMINAL(0),ROOT(2),ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(3));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Exit,2,0,TERMINAL(3),TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Set_20_Target_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Set_20_Target_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Target,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(2));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Enter,1,0,TERMINAL(2));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Set_20_Target(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Set_20_Target_case_1_local_2(PARAMETERS,TERMINAL(0),TERMINAL(2));
+
+result = vpx_set(PARAMETERS,kVPXValue_Target,TERMINAL(0),TERMINAL(1),ROOT(3));
+
+result = vpx_method_VPLCEWindow_2F_Set_20_Target_case_1_local_4(PARAMETERS,TERMINAL(3));
+
+result = vpx_method_Set_20_Target(PARAMETERS,TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Is_20_Front_20_Window_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Is_20_Front_20_Window_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(8)
+INPUT(0,0)
+result = kSuccess;
+
+PUTPOINTER(OpaqueWindowPtr,*,ActiveNonFloatingWindow(),1);
+result = kSuccess;
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(1));
+NEXTCASEONSUCCESS
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_WindowRef,1,1,TERMINAL(0),ROOT(2));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(2));
+NEXTCASEONSUCCESS
+
+result = vpx_call_primitive(PARAMETERS,VPLP_from_2D_pointer,1,1,TERMINAL(2),ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_from_2D_pointer,1,1,TERMINAL(1),ROOT(4));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__3D_,2,0,TERMINAL(3),TERMINAL(4));
+NEXTCASEONFAILURE
+
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(5));
+
+PUTPOINTER(OpaqueWindowPtr,*,GetUserFocusWindow(),6);
+result = kSuccess;
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(6));
+NEXTCASEONSUCCESS
+
+result = vpx_call_primitive(PARAMETERS,VPLP_from_2D_pointer,1,1,TERMINAL(6),ROOT(7));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__3D_,2,0,TERMINAL(3),TERMINAL(7));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(5))
+FOOTER(8)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Is_20_Front_20_Window_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Is_20_Front_20_Window_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"FALSE",ROOT(1));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Is_20_Front_20_Window(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Is_20_Front_20_Window_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+vpx_method_VPLCEWindow_2F_Is_20_Front_20_Window_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Set_20_Port(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_WindowRef,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(1));
+TERMINATEONSUCCESS
+
+SetPortWindowPort( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(2),TERMINAL(1)));
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Port(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_CGrafPtr,1,1,TERMINAL(0),ROOT(1));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Select_20_Window_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Select_20_Window_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADERWITHNONE(12)
+INPUT(0,0)
+result = kSuccess;
+
+PUTINTEGER(GetFrontProcess( GETPOINTER(8,ProcessSerialNumber,*,ROOT(2),NONE)),1);
+result = kSuccess;
+
+PUTINTEGER(GetCurrentProcess( GETPOINTER(8,ProcessSerialNumber,*,ROOT(4),NONE)),3);
+result = kSuccess;
+
+PUTINTEGER(SameProcess( GETCONSTPOINTER(ProcessSerialNumber,*,TERMINAL(2)),GETCONSTPOINTER(ProcessSerialNumber,*,TERMINAL(4)),GETPOINTER(1,unsigned char,*,ROOT(6),NONE)),5);
+result = kSuccess;
+
+result = vpx_method_Get_20_UInt8(PARAMETERS,TERMINAL(6),NONE,ROOT(7),ROOT(8));
+
+result = vpx_method_Boolean_20_To_20_Integer(PARAMETERS,TERMINAL(8),ROOT(9));
+
+result = vpx_match(PARAMETERS,"TRUE",TERMINAL(9));
+TERMINATEONSUCCESS
+
+result = vpx_extconstant(PARAMETERS,kSetFrontProcessFrontWindowOnly,ROOT(10));
+
+PUTINTEGER(SetFrontProcessWithOptions( GETCONSTPOINTER(ProcessSerialNumber,*,TERMINAL(4)),GETINTEGER(TERMINAL(10))),11);
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERSINGLECASEWITHNONE(12)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Select_20_Window_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Select_20_Window_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(4)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_WindowRef,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(1));
+TERMINATEONSUCCESS
+
+PUTINTEGER(SetUserFocusWindow( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(3),TERMINAL(1))),2);
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERSINGLECASE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Select_20_Window(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Select_20_Window_case_1_local_2(PARAMETERS,TERMINAL(0));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Select,1,0,TERMINAL(0));
+
+result = vpx_method_VPLCEWindow_2F_Select_20_Window_case_1_local_4(PARAMETERS,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Is_20_Front_20_Window,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_match(PARAMETERS,"TRUE",TERMINAL(1));
+TERMINATEONSUCCESS
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Select_20_Window,1,0,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex);
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex)
+{
+HEADER(2)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"FALSE",ROOT(0));
+
+result = vpx_constant(PARAMETERS,"( 10 4 )",ROOT(1));
+
+result = vpx_method_Is_20_MacOS_3F_(PARAMETERS,TERMINAL(1),TERMINAL(0));
+FAILONSUCCESS
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3_case_1_local_3_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3_case_1_local_3_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADERWITHNONE(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Target,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(2));
+NEXTCASEONFAILURE
+
+result = vpx_method_Change_20_Target(PARAMETERS,TERMINAL(2),NONE);
+
+result = kSuccess;
+
+FOOTERWITHNONE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3_case_1_local_3_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3_case_1_local_3_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_View,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Target_20_Self,1,0,TERMINAL(2));
+
+result = kSuccess;
+
+FOOTER(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3_case_1_local_3_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0))
+vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3_case_1_local_3_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3_case_1_local_2(PARAMETERS);
+TERMINATEONFAILURE
+
+result = vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3_case_1_local_3(PARAMETERS,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_2(PARAMETERS,TERMINAL(0));
+
+result = vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2_case_1_local_3(PARAMETERS,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Mouse_20_Down(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Mouse_20_Down_case_1_local_2(PARAMETERS,TERMINAL(0));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Port,1,0,TERMINAL(0));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Up_20_Drawing,1,0,TERMINAL(0));
+
+result = vpx_get(PARAMETERS,kVPXValue_View,TERMINAL(0),ROOT(2),ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(3));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Mouse_20_Down,2,0,TERMINAL(3),TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Key_20_Down(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = kSuccess;
+FAILONSUCCESS
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Hilite_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Hilite_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_WindowRef,1,1,TERMINAL(0),ROOT(2));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(2));
+TERMINATEONSUCCESS
+
+HiliteWindow( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(3),TERMINAL(2)),GETINTEGER(TERMINAL(1)));
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERSINGLECASE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Hilite_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Hilite_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_View,TERMINAL(0),ROOT(2),ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(3));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Hilite,2,0,TERMINAL(3),TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Hilite(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Hilite_case_1_local_2(PARAMETERS,TERMINAL(0),TERMINAL(1));
+
+result = vpx_method_VPLCEWindow_2F_Hilite_case_1_local_3(PARAMETERS,TERMINAL(0),TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Window_20_Origin(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"( 0 0 )",ROOT(1));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Window(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(0))
+FOOTERSINGLECASE(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Application(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_method_Get_20_Application(PARAMETERS,ROOT(1));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Close_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Close_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(4)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Target,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(2));
+TERMINATEONFAILURE
+
+result = vpx_method_Clear_20_Target(PARAMETERS,TERMINAL(2));
+
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(3));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Exit,2,0,TERMINAL(2),TERMINAL(3));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Close_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Close_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_View,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(2));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Close,1,0,TERMINAL(2));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Close(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Close_20_Pasteboard_20_Handler,1,0,TERMINAL(0));
+
+result = vpx_method_VPLCEWindow_2F_Close_case_1_local_3(PARAMETERS,TERMINAL(0));
+
+result = vpx_call_context_super_method(PARAMETERS,kVPXMethod_Close,1,0,TERMINAL(0));
+
+result = vpx_method_VPLCEWindow_2F_Close_case_1_local_5(PARAMETERS,TERMINAL(0));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Close_20_Printing_20_Handler,1,0,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Set_20_Up_20_Drawing(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"0",ROOT(1));
+
+SetOrigin( GETINTEGER(TERMINAL(1)),GETINTEGER(TERMINAL(1)));
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Setup_20_Drawing_20_CG_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Setup_20_Drawing_20_CG_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(8)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"0.0",ROOT(2));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Size,1,1,TERMINAL(0),ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_unpack,1,2,TERMINAL(3),ROOT(4),ROOT(5));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Translate_20_CTM,3,0,TERMINAL(1),TERMINAL(2),TERMINAL(4));
+
+result = vpx_constant(PARAMETERS,"1.0",ROOT(6));
+
+result = vpx_constant(PARAMETERS,"-1.0",ROOT(7));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Scale_20_CTM,3,0,TERMINAL(1),TERMINAL(6),TERMINAL(7));
+
+result = kSuccess;
+
+FOOTER(8)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Setup_20_Drawing_20_CG_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Setup_20_Drawing_20_CG_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Setup_20_Drawing_20_CG_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Setup_20_Drawing_20_CG_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Up_20_Drawing,1,0,TERMINAL(0));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Sync_20_CGContext_20_Origin,2,0,TERMINAL(0),TERMINAL(1));
+
+result = kSuccess;
+
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Setup_20_Drawing_20_CG(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Setup_20_Drawing_20_CG_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
+if(vpx_method_VPLCEWindow_2F_Setup_20_Drawing_20_CG_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
+vpx_method_VPLCEWindow_2F_Setup_20_Drawing_20_CG_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTER(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_2_local_6_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object terminal4,V_Object terminal5,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_2_local_6_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object terminal4,V_Object terminal5,V_Object *root0)
+{
+HEADER(15)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+INPUT(3,3)
+INPUT(4,4)
+INPUT(5,5)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"CGAffineTransform",ROOT(6));
+
+result = vpx_constant(PARAMETERS,"24",ROOT(7));
+
+result = vpx_constant(PARAMETERS,"0",ROOT(8));
+
+result = vpx_method_Create_20_Block_20_Type(PARAMETERS,TERMINAL(6),TERMINAL(7),TERMINAL(8),ROOT(9));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_pack,6,1,TERMINAL(0),TERMINAL(1),TERMINAL(2),TERMINAL(3),TERMINAL(4),TERMINAL(5),ROOT(10));
+
+result = vpx_constant(PARAMETERS,"0",ROOT(11));
+
+result = vpx_constant(PARAMETERS,"4",ROOT(12));
+
+if( (repeatLimit = vpx_multiplex(1,TERMINAL(10))) ){
+REPEATBEGINWITHCOUNTER
+LOOPTERMINALBEGIN(2)
+LOOPTERMINAL(0,9,13)
+LOOPTERMINAL(1,11,14)
+result = vpx_call_primitive(PARAMETERS,VPLP_put_2D_real,4,2,LOOP(0),LOOP(1),TERMINAL(12),LIST(10),ROOT(13),ROOT(14));
+REPEATFINISH
+} else {
+ROOTNULL(13,TERMINAL(9))
+ROOTNULL(14,TERMINAL(11))
+}
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(13))
+FOOTER(15)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_2_local_6_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object terminal4,V_Object terminal5,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_2_local_6_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object terminal4,V_Object terminal5,V_Object *root0)
+{
+HEADER(16)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+INPUT(3,3)
+INPUT(4,4)
+INPUT(5,5)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"CGAffineTransform",ROOT(6));
+
+result = vpx_constant(PARAMETERS,"24",ROOT(7));
+
+result = vpx_constant(PARAMETERS,"0",ROOT(8));
+
+result = vpx_method_Create_20_Block_20_Type(PARAMETERS,TERMINAL(6),TERMINAL(7),TERMINAL(8),ROOT(9));
+
+result = vpx_extset(PARAMETERS,"a",2,1,TERMINAL(9),TERMINAL(0),ROOT(10));
+
+result = vpx_extset(PARAMETERS,"b",2,1,TERMINAL(10),TERMINAL(1),ROOT(11));
+
+result = vpx_extset(PARAMETERS,"c",2,1,TERMINAL(11),TERMINAL(2),ROOT(12));
+
+result = vpx_extset(PARAMETERS,"d",2,1,TERMINAL(12),TERMINAL(3),ROOT(13));
+
+result = vpx_extset(PARAMETERS,"tx",2,1,TERMINAL(13),TERMINAL(4),ROOT(14));
+
+result = vpx_extset(PARAMETERS,"ty",2,1,TERMINAL(14),TERMINAL(5),ROOT(15));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(9))
+FOOTER(16)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_2_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object terminal4,V_Object terminal5,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_2_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object terminal4,V_Object terminal5,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_2_local_6_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,terminal4,terminal5,root0))
+vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_2_local_6_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,terminal4,terminal5,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(6)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_CGContextRef,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(1));
+TERMINATEONSUCCESS
+
+result = vpx_constant(PARAMETERS,"1.0",ROOT(2));
+
+result = vpx_constant(PARAMETERS,"0.0",ROOT(3));
+
+result = vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_2_local_6(PARAMETERS,TERMINAL(2),TERMINAL(3),TERMINAL(3),TERMINAL(2),TERMINAL(3),TERMINAL(3),ROOT(4));
+
+CGContextSetTextMatrix( GETPOINTER(0,CGContext,*,ROOT(5),TERMINAL(1)),GETSTRUCTURE(24,CGAffineTransform,TERMINAL(4)));
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTER(6)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0))
+vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADERWITHNONE(12)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Port,1,1,TERMINAL(0),ROOT(2));
+
+PUTPOINTER(Rect,*,GetPortBounds( GETPOINTER(0,OpaqueGrafPtr,*,ROOT(4),TERMINAL(2)),GETPOINTER(8,Rect,*,ROOT(5),NONE)),3);
+result = kSuccess;
+
+result = vpx_method_Rect_20_Size(PARAMETERS,TERMINAL(5),ROOT(6));
+
+result = vpx_extget(PARAMETERS,"v",1,2,TERMINAL(6),ROOT(7),ROOT(8));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Sync_20_Origin_20_With_20_CGrafPort,2,0,TERMINAL(1),TERMINAL(2));
+
+result = vpx_constant(PARAMETERS,"0.0",ROOT(9));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Translate_20_CTM,3,0,TERMINAL(1),TERMINAL(9),TERMINAL(8));
+
+result = vpx_constant(PARAMETERS,"1.0",ROOT(10));
+
+result = vpx_constant(PARAMETERS,"-1.0",ROOT(11));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Scale_20_CTM,3,0,TERMINAL(1),TERMINAL(10),TERMINAL(11));
+
+result = vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1_local_12(PARAMETERS,TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERWITHNONE(12)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
+vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Click_20_Content_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Click_20_Content_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADERWITHNONE(4)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_instantiate(PARAMETERS,kVPXClass_VPLEvent,1,1,NONE,ROOT(2));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Convert_20_Mouse_20_EventRef,2,0,TERMINAL(2),TERMINAL(1));
+FAILONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Mouse_20_Down,2,0,TERMINAL(0),TERMINAL(2));
+
+result = vpx_extconstant(PARAMETERS,noErr,ROOT(3));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+FOOTERWITHNONE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Click_20_Content_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Click_20_Content_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Return_20_Event_20_Not_20_Handled,1,1,TERMINAL(1),ROOT(2));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTER(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Click_20_Content(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Click_20_Content_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
+vpx_method_VPLCEWindow_2F_Click_20_Content_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(5)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Event_20_Class,1,1,TERMINAL(1),ROOT(2));
+
+result = vpx_extmatch(PARAMETERS,kEventClassKeyboard,TERMINAL(2));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Event_20_Kind,1,1,TERMINAL(1),ROOT(3));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Keyboard_20_Event,3,1,TERMINAL(0),TERMINAL(3),TERMINAL(1),ROOT(4));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(4))
+FOOTER(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(5)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Event_20_Class,1,1,TERMINAL(1),ROOT(2));
+
+result = vpx_extmatch(PARAMETERS,kEventClassMouse,TERMINAL(2));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Event_20_Kind,1,1,TERMINAL(1),ROOT(3));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Mouse_20_Event,3,1,TERMINAL(0),TERMINAL(3),TERMINAL(1),ROOT(4));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(4))
+FOOTER(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(5)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Event_20_Class,1,1,TERMINAL(1),ROOT(2));
+
+result = vpx_match(PARAMETERS,"\'gest\'",TERMINAL(2));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Event_20_Kind,1,1,TERMINAL(1),ROOT(3));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Gesture_20_Event,3,1,TERMINAL(0),TERMINAL(3),TERMINAL(1),ROOT(4));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(4))
+FOOTER(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_context_super_method(PARAMETERS,kVPXMethod_CE_20_Handle_20_Event,2,1,TERMINAL(0),TERMINAL(1),ROOT(2));
+FAILONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTER(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
+if(vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
+if(vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
+vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_4(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_extmatch(PARAMETERS,kEventMouseDown,TERMINAL(1));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Click_20_Content,2,1,TERMINAL(0),TERMINAL(2),ROOT(3));
+FAILONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_extmatch(PARAMETERS,kEventMouseMoved,TERMINAL(1));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Mouse_20_Moved,2,1,TERMINAL(0),TERMINAL(2),ROOT(3));
+FAILONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_extmatch(PARAMETERS,kEventMouseWheelMoved,TERMINAL(1));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Mouse_20_Wheel_20_Moved,2,1,TERMINAL(0),TERMINAL(2),ROOT(3));
+FAILONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_extmatch(PARAMETERS,kEventMouseScroll,TERMINAL(1));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Mouse_20_Scrolled,2,1,TERMINAL(0),TERMINAL(2),ROOT(3));
+FAILONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_5(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_5(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Return_20_Event_20_Not_20_Handled,1,1,TERMINAL(2),ROOT(3));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
+if(vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
+if(vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
+if(vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_4(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
+vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_5(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Moved(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Return_20_Event_20_Not_20_Handled,1,1,TERMINAL(1),ROOT(2));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Wheel_20_Moved(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Return_20_Event_20_Not_20_Handled,1,1,TERMINAL(1),ROOT(2));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Scrolled(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Return_20_Event_20_Not_20_Handled,1,1,TERMINAL(1),ROOT(2));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_extmatch(PARAMETERS,kEventRawKeyModifiersChanged,TERMINAL(1));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Raw_20_Key_20_Modifiers_20_Changed,2,1,TERMINAL(0),TERMINAL(2),ROOT(3));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_extmatch(PARAMETERS,kEventRawKeyDown,TERMINAL(1));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Raw_20_Key_20_Down,2,1,TERMINAL(0),TERMINAL(2),ROOT(3));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_extmatch(PARAMETERS,kEventRawKeyRepeat,TERMINAL(1));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Raw_20_Key_20_Repeat,2,1,TERMINAL(0),TERMINAL(2),ROOT(3));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Return_20_Event_20_Not_20_Handled,1,1,TERMINAL(2),ROOT(3));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
+if(vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
+if(vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
+vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event_case_4(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Down_case_1_local_2_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Down_case_1_local_2_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Target,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(2));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTER(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Down_case_1_local_2_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Down_case_1_local_2_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_View,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTER(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Down_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Down_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Down_case_1_local_2_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Down_case_1_local_2_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Down(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADERWITHNONE(5)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Down_case_1_local_2(PARAMETERS,TERMINAL(0),ROOT(2));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(2));
+FAILONFAILURE
+
+result = vpx_instantiate(PARAMETERS,kVPXClass_VPLEvent,1,1,NONE,ROOT(3));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Convert_20_Key_20_EventRef,2,0,TERMINAL(3),TERMINAL(1));
+FAILONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Key_20_Down,2,0,TERMINAL(2),TERMINAL(3));
+FAILONFAILURE
+
+result = vpx_extconstant(PARAMETERS,noErr,ROOT(4));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(4))
+FOOTERSINGLECASEWITHNONE(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Repeat(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Raw_20_Key_20_Down,2,1,TERMINAL(0),TERMINAL(1),ROOT(2));
+FAILONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Modifiers_20_Changed(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Return_20_Event_20_Not_20_Handled,1,1,TERMINAL(1),ROOT(2));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_4_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_4_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(5)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Target,TERMINAL(0),ROOT(2),ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__3D_,2,0,TERMINAL(3),TERMINAL(1));
+NEXTCASEONSUCCESS
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(3));
+NEXTCASEONFAILURE
+
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(4));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Target,3,0,TERMINAL(0),TERMINAL(1),TERMINAL(4));
+
+result = kSuccess;
+
+FOOTER(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_4_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_4_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADERWITHNONE(5)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"Case Window",ROOT(2));
+
+result = vpx_method_Is_20_Or_20_Is_20_Descendant_3F_(PARAMETERS,TERMINAL(0),TERMINAL(2));
+NEXTCASEONFAILURE
+
+result = vpx_get(PARAMETERS,kVPXValue_Target,TERMINAL(0),ROOT(3),ROOT(4));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Redraw,2,0,TERMINAL(4),NONE);
+
+result = kSuccess;
+
+FOOTERWITHNONE(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_4_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_4_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Target_20_Self,1,0,TERMINAL(1));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Refresh,1,0,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_4_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
+if(vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_4_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
+vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_4_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERSINGLECASE(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_View,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(2));
+TERMINATEONSUCCESS
+
+result = vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_4(PARAMETERS,TERMINAL(0),TERMINAL(2));
+
+result = vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3_case_1_local_5(PARAMETERS,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADERWITHNONE(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Window_20_Bounds,2,1,TERMINAL(0),NONE,ROOT(1));
+
+result = vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1_local_3(PARAMETERS,TERMINAL(0));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Change_20_Frame,2,0,TERMINAL(0),TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERWITHNONE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = kSuccess;
+FAILONSUCCESS
+
+FOOTER(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Adjust_20_Frame(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0))
+vpx_method_VPLCEWindow_2F_Adjust_20_Frame_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Activate_case_1_local_4_case_1_local_5_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Activate_case_1_local_4_case_1_local_5_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_match(PARAMETERS,"TRUE",TERMINAL(1));
+NEXTCASEONFAILURE
+
+result = vpx_method_Set_20_Target(PARAMETERS,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Activate_case_1_local_4_case_1_local_5_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Activate_case_1_local_4_case_1_local_5_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Target_20_Self,1,0,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Activate_case_1_local_4_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Activate_case_1_local_4_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Activate_case_1_local_4_case_1_local_5_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
+vpx_method_VPLCEWindow_2F_Activate_case_1_local_4_case_1_local_5_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Activate_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Activate_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Target,TERMINAL(0),ROOT(2),ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(3));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Activate,2,0,TERMINAL(3),TERMINAL(1));
+
+result = vpx_method_VPLCEWindow_2F_Activate_case_1_local_4_case_1_local_5(PARAMETERS,TERMINAL(3),TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Activate(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Up_20_Drawing,1,0,TERMINAL(0));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Hilite,2,0,TERMINAL(0),TERMINAL(1));
+
+result = vpx_method_VPLCEWindow_2F_Activate_case_1_local_4(PARAMETERS,TERMINAL(0),TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Activated(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(1));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Activate,2,0,TERMINAL(0),TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Deactivated(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"FALSE",ROOT(1));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Activate,2,0,TERMINAL(0),TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Set_20_Title(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(3)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_context_super_method(PARAMETERS,kVPXMethod_Set_20_Title,2,0,TERMINAL(0),TERMINAL(1));
+
+result = vpx_set(PARAMETERS,kVPXValue_Title,TERMINAL(0),TERMINAL(1),ROOT(2));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Begin_20_CGContext(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(4)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Port,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_method_CG_20_Context_2F_Begin_20_For_20_CGrafPort(PARAMETERS,TERMINAL(1),ROOT(2),ROOT(3));
+
+result = vpx_extmatch(PARAMETERS,noErr,TERMINAL(2));
+FAILONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Setup_20_Drawing_20_CG,2,0,TERMINAL(0),TERMINAL(3));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+FOOTERSINGLECASE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_End_20_CGContext(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Port,1,1,TERMINAL(0),ROOT(2));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_End_20_For_20_CGrafPort,2,1,TERMINAL(1),TERMINAL(2),ROOT(3));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Size(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(10)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Frame,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_unpack,1,4,TERMINAL(2),ROOT(3),ROOT(4),ROOT(5),ROOT(6));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_iminus,2,1,TERMINAL(6),TERMINAL(4),ROOT(7));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_iminus,2,1,TERMINAL(5),TERMINAL(3),ROOT(8));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_pack,2,1,TERMINAL(8),TERMINAL(7),ROOT(9));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(9))
+FOOTERSINGLECASE(10)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Window_20_Drag_20_Completed(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_extconstant(PARAMETERS,noErr,ROOT(2));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Adjust_20_Frame,1,0,TERMINAL(0));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Window_20_Resize_20_Completed(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_extconstant(PARAMETERS,noErr,ROOT(2));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Adjust_20_Frame,1,0,TERMINAL(0));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Resized(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Adjust_20_Frame,1,0,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Show_20_Drag_20_Hilite_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0,V_Object *root1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Show_20_Drag_20_Hilite_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0,V_Object *root1)
+{
+HEADERWITHNONE(10)
+INPUT(0,0)
+result = kSuccess;
+
+PUTPOINTER(OpaqueRgnHandle,*,NewRgn(),1);
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_WindowRef,1,1,TERMINAL(0),ROOT(2));
+
+PUTPOINTER(Rect,*,GetWindowPortBounds( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(4),TERMINAL(2)),GETPOINTER(8,Rect,*,ROOT(5),NONE)),3);
+result = kSuccess;
+
+RectRgn( GETPOINTER(0,OpaqueRgnHandle,*,ROOT(6),TERMINAL(1)),GETCONSTPOINTER(Rect,*,TERMINAL(3)));
+result = kSuccess;
+
+PUTINTEGER(GetDragHiliteColor( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(8),TERMINAL(2)),GETPOINTER(8,RGBColor,*,ROOT(9),NONE)),7);
+result = kSuccess;
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(6))
+OUTPUT(1,TERMINAL(9))
+FOOTERSINGLECASEWITHNONE(10)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Show_20_Drag_20_Hilite_case_1_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Show_20_Drag_20_Hilite_case_1_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+RGBForeColor( GETCONSTPOINTER(RGBColor,*,TERMINAL(1)));
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"2",ROOT(2));
+
+PenSize( GETINTEGER(TERMINAL(2)),GETINTEGER(TERMINAL(2)));
+result = kSuccess;
+
+FrameRgn( GETPOINTER(0,OpaqueRgnHandle,*,ROOT(3),TERMINAL(0)));
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERSINGLECASE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Show_20_Drag_20_Hilite_case_1_local_8(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Show_20_Drag_20_Hilite_case_1_local_8(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+RGBForeColor( GETCONSTPOINTER(RGBColor,*,TERMINAL(0)));
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"1",ROOT(1));
+
+PenSize( GETINTEGER(TERMINAL(1)),GETINTEGER(TERMINAL(1)));
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Show_20_Drag_20_Hilite(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADERWITHNONE(5)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Port,1,0,TERMINAL(0));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Up_20_Drawing,1,0,TERMINAL(0));
+
+GetForeColor( GETPOINTER(8,RGBColor,*,ROOT(1),NONE));
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Show_20_Drag_20_Hilite_case_1_local_5(PARAMETERS,TERMINAL(0),ROOT(2),ROOT(3));
+
+result = vpx_method_VPLCEWindow_2F_Show_20_Drag_20_Hilite_case_1_local_6(PARAMETERS,TERMINAL(2),TERMINAL(3));
+
+DisposeRgn( GETPOINTER(0,OpaqueRgnHandle,*,ROOT(4),TERMINAL(2)));
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Show_20_Drag_20_Hilite_case_1_local_8(PARAMETERS,TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASEWITHNONE(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Hide_20_Drag_20_Hilite_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Hide_20_Drag_20_Hilite_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERSINGLECASE(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Hide_20_Drag_20_Hilite(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Refresh,1,0,TERMINAL(0));
+
+result = vpx_method_VPLCEWindow_2F_Hide_20_Drag_20_Hilite_case_1_local_3(PARAMETERS,TERMINAL(0));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Close_20_Pasteboard_20_Handler(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Window_20_Pasteboard_20_Handler,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(1));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Close,1,0,TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_Pasteboard_20_Handler_case_1_local_4_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_Pasteboard_20_Handler_case_1_local_4_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_View,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(2));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTER(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_Pasteboard_20_Handler_case_1_local_4_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_Pasteboard_20_Handler_case_1_local_4_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(0))
+FOOTER(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_Pasteboard_20_Handler_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_Pasteboard_20_Handler_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Open_20_Pasteboard_20_Handler_case_1_local_4_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+vpx_method_VPLCEWindow_2F_Open_20_Pasteboard_20_Handler_case_1_local_4_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_Pasteboard_20_Handler(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Window_20_Pasteboard_20_Handler,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(1));
+TERMINATEONFAILURE
+
+result = vpx_method_VPLCEWindow_2F_Open_20_Pasteboard_20_Handler_case_1_local_4(PARAMETERS,TERMINAL(0),ROOT(2));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Open,2,0,TERMINAL(1),TERMINAL(2));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+{
+HEADER(3)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTER(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_2_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_2_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Extracted_20_Value,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_string_3F_,1,0,TERMINAL(1));
+FINISHONSUCCESS
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Flavors,1,1,TERMINAL(0),ROOT(1));
+
+if( (repeatLimit = vpx_multiplex(1,TERMINAL(1))) ){
+REPEATBEGINWITHCOUNTER
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_2_case_1_local_3(PARAMETERS,LIST(1),ROOT(2));
+REPEATFINISH
+} else {
+ROOTNULL(2,NULL)
+}
+
+result = vpx_call_primitive(PARAMETERS,VPLP_string_3F_,1,0,TERMINAL(2));
+FINISHONSUCCESS
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1)
+{
+HEADER(6)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Drag_20_Mouse,1,2,TERMINAL(0),ROOT(2),ROOT(3));
+FAILONFAILURE
+
+GlobalToLocal( GETPOINTER(4,Point,*,ROOT(4),TERMINAL(2)));
+result = kSuccess;
+
+result = vpx_call_primitive(PARAMETERS,VPLP_Point_2D_to_2D_list,1,1,TERMINAL(4),ROOT(5));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(5))
+OUTPUT(1,TERMINAL(1))
+FOOTER(6)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0,V_Object *root1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0,V_Object *root1)
+{
+HEADER(5)
+INPUT(0,0)
+result = kSuccess;
+
+GlobalToLocal( GETPOINTER(4,Point,*,ROOT(1),TERMINAL(0)));
+result = kSuccess;
+
+result = vpx_call_primitive(PARAMETERS,VPLP_Point_2D_to_2D_list,1,1,TERMINAL(1),ROOT(2));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_unpack,1,2,TERMINAL(2),ROOT(3),ROOT(4));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+OUTPUT(1,TERMINAL(4))
+FOOTERSINGLECASE(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_4_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_4_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADERWITHNONE(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = kSuccess;
+
+OUTPUT(0,NONE)
+FOOTERSINGLECASEWITHNONE(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_4_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_4_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1)
+{
+HEADER(10)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_4_case_1_local_2(PARAMETERS,TERMINAL(0),ROOT(2));
+
+result = vpx_extget(PARAMETERS,"h",1,2,TERMINAL(2),ROOT(3),ROOT(4));
+
+result = vpx_constant(PARAMETERS,"2",ROOT(5));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__2B2B_,2,1,TERMINAL(4),TERMINAL(5),ROOT(6));
+
+result = vpx_extget(PARAMETERS,"v",1,2,TERMINAL(2),ROOT(7),ROOT(8));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__2B2B_,2,1,TERMINAL(8),TERMINAL(5),ROOT(9));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(9))
+OUTPUT(1,TERMINAL(6))
+FOOTER(10)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_4_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_4_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"256",ROOT(2));
+
+result = vpx_constant(PARAMETERS,"16",ROOT(3));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+OUTPUT(1,TERMINAL(2))
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_4_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0,root1))
+vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_4_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0,root1);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(11)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_2(PARAMETERS,TERMINAL(0),ROOT(2),ROOT(3));
+
+result = vpx_constant(PARAMETERS,"16",ROOT(4));
+
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3_case_1_local_4(PARAMETERS,TERMINAL(1),TERMINAL(4),ROOT(5),ROOT(6));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__2B2B_,2,1,TERMINAL(3),TERMINAL(6),ROOT(7));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__2B2B_,2,1,TERMINAL(2),TERMINAL(5),ROOT(8));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_pack,4,1,TERMINAL(2),TERMINAL(3),TERMINAL(8),TERMINAL(7),ROOT(9));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Rect,1,1,TERMINAL(9),ROOT(10));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(10))
+FOOTERSINGLECASE(11)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_5_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_5_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTER(1)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_5_case_2_local_8(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_5_case_2_local_8(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(14)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Drag_20_Mouse,1,2,TERMINAL(0),ROOT(2),ROOT(3));
+TERMINATEONFAILURE
+
+result = vpx_call_primitive(PARAMETERS,VPLP_Point_2D_to_2D_list,1,1,TERMINAL(3),ROOT(4));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_to_2D_string,1,1,TERMINAL(4),ROOT(5));
+
+result = vpx_constant(PARAMETERS,"Pinned",ROOT(6));
+
+result = vpx_constant(PARAMETERS,"Location",ROOT(7));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_Point_2D_to_2D_list,1,1,TERMINAL(2),ROOT(8));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_to_2D_string,1,1,TERMINAL(8),ROOT(9));
+
+result = vpx_method_Debug_20_OSError(PARAMETERS,TERMINAL(7),TERMINAL(9));
+
+result = vpx_method_Debug_20_OSError(PARAMETERS,TERMINAL(6),TERMINAL(5));
+
+SubPt( GETSTRUCTURE(4,Point,TERMINAL(3)),GETPOINTER(4,Point,*,ROOT(10),TERMINAL(2)));
+result = kSuccess;
+
+result = vpx_call_primitive(PARAMETERS,VPLP_Point_2D_to_2D_list,1,1,TERMINAL(1),ROOT(11));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_to_2D_string,1,1,TERMINAL(11),ROOT(12));
+
+result = vpx_constant(PARAMETERS,"Bound",ROOT(13));
+
+result = vpx_method_Debug_20_OSError(PARAMETERS,TERMINAL(13),TERMINAL(12));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(14)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_5_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_5_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(10)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"1",ROOT(1));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Item_20_Bounds,2,1,TERMINAL(0),TERMINAL(1),ROOT(2));
+FAILONFAILURE
+
+result = vpx_call_primitive(PARAMETERS,VPLP_Rect_2D_to_2D_list,1,1,TERMINAL(2),ROOT(3));
+
+result = vpx_constant(PARAMETERS,"2",ROOT(4));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_split_2D_nth,2,2,TERMINAL(3),TERMINAL(4),ROOT(5),ROOT(6));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Point,1,1,TERMINAL(5),ROOT(7));
+
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_5_case_2_local_8(PARAMETERS,TERMINAL(0),TERMINAL(7));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_to_2D_string,1,1,TERMINAL(3),ROOT(8));
+
+result = vpx_constant(PARAMETERS,"Item Bound",ROOT(9));
+
+result = vpx_method_Debug_20_OSError(PARAMETERS,TERMINAL(9),TERMINAL(8));
+
+result = kSuccess;
+
+FOOTER(10)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_5_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0))
+vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_5_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1)
+{
+HEADERWITHNONE(6)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Drag_20_Mouse,1,2,TERMINAL(0),ROOT(2),ROOT(3));
+FAILONFAILURE
+
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2_local_3(PARAMETERS,TERMINAL(2),TERMINAL(1),ROOT(4));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_pack,1,1,TERMINAL(4),ROOT(5));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(5))
+OUTPUT(1,NONE)
+FOOTERWITHNONE(6)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_3_local_5_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0,V_Object *root1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_3_local_5_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0,V_Object *root1)
+{
+HEADER(10)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_primitive(PARAMETERS,VPLP_Rect_2D_to_2D_list,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_unpack,1,2,TERMINAL(1),ROOT(2),ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_pack,2,1,TERMINAL(2),TERMINAL(3),ROOT(4));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Point,1,1,TERMINAL(4),ROOT(5));
+
+GlobalToLocal( GETPOINTER(4,Point,*,ROOT(6),TERMINAL(5)));
+result = kSuccess;
+
+result = vpx_call_primitive(PARAMETERS,VPLP_Point_2D_to_2D_list,1,1,TERMINAL(6),ROOT(7));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_unpack,1,2,TERMINAL(7),ROOT(8),ROOT(9));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(8))
+OUTPUT(1,TERMINAL(9))
+FOOTERSINGLECASE(10)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_3_local_5_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_3_local_5_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+PUTINTEGER(StringWidth( GETCONSTPOINTER(unsigned char,*,TERMINAL(0))),2);
+result = kSuccess;
+
+result = vpx_call_primitive(PARAMETERS,VPLP__2B2B_,2,1,TERMINAL(2),TERMINAL(1),ROOT(3));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+FOOTERSINGLECASE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_3_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_3_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(10)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_3_local_5_case_1_local_2(PARAMETERS,TERMINAL(0),ROOT(2),ROOT(3));
+
+result = vpx_constant(PARAMETERS,"16",ROOT(4));
+
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_3_local_5_case_1_local_4(PARAMETERS,TERMINAL(1),TERMINAL(4),ROOT(5));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__2B2B_,2,1,TERMINAL(3),TERMINAL(5),ROOT(6));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__2B2B_,2,1,TERMINAL(2),TERMINAL(4),ROOT(7));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_pack,4,1,TERMINAL(2),TERMINAL(3),TERMINAL(7),TERMINAL(6),ROOT(8));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Rect,1,1,TERMINAL(8),ROOT(9));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(9))
+FOOTERSINGLECASE(10)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1)
+{
+HEADERWITHNONE(6)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Count_20_Drag_20_Items,1,1,TERMINAL(0),ROOT(2));
+FAILONFAILURE
+
+result = vpx_method_Make_20_Count(PARAMETERS,TERMINAL(2),ROOT(3));
+
+if( (repeatLimit = vpx_multiplex(1,TERMINAL(3))) ){
+LISTROOTBEGIN(1)
+REPEATBEGINWITHCOUNTER
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Item_20_Bounds,2,1,TERMINAL(0),LIST(3),ROOT(4));
+LISTROOT(4,0)
+REPEATFINISH
+LISTROOTFINISH(4,0)
+LISTROOTEND
+} else {
+ROOTEMPTY(4)
+}
+
+if( (repeatLimit = vpx_multiplex(1,TERMINAL(4))) ){
+LISTROOTBEGIN(1)
+REPEATBEGINWITHCOUNTER
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_3_local_5(PARAMETERS,LIST(4),TERMINAL(1),ROOT(5));
+LISTROOT(5,0)
+REPEATFINISH
+LISTROOTFINISH(5,0)
+LISTROOTEND
+} else {
+ROOTEMPTY(5)
+}
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(5))
+OUTPUT(1,NONE)
+FOOTERWITHNONE(6)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0,root1))
+if(vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0,root1))
+vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0,root1);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+HEADERWITHNONE(10)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Helper_20_Name,TERMINAL(0),ROOT(3),ROOT(4));
+
+result = vpx_call_inject_instance(PARAMETERS,INJECT(4),1,1,NONE,ROOT(5));
+
+result = vpx_instantiate(PARAMETERS,kVPXClass_Item_20_Data,1,1,NONE,ROOT(6));
+
+result = vpx_set(PARAMETERS,kVPXValue_Parent,TERMINAL(6),TERMINAL(3),ROOT(7));
+
+result = vpx_constant(PARAMETERS,"universal",ROOT(8));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Initial_20_What,3,0,TERMINAL(5),TERMINAL(8),TERMINAL(1));
+FAILONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Install_20_Helper,2,0,TERMINAL(7),TERMINAL(5));
+
+result = vpx_set(PARAMETERS,kVPXValue_Owner,TERMINAL(5),TERMINAL(7),ROOT(9));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Initialize_20_Item_20_Data,2,0,TERMINAL(9),TERMINAL(7));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Add_20_To_20_List_20_Data,2,0,TERMINAL(9),TERMINAL(3));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(9))
+FOOTERSINGLECASEWITHNONE(10)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_9_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_9_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+{
+HEADER(7)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Up_20_Drawing,1,0,TERMINAL(0));
+
+result = vpx_get(PARAMETERS,kVPXValue_Owner,TERMINAL(1),ROOT(3),ROOT(4));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Select_20_Data,2,1,TERMINAL(0),TERMINAL(4),ROOT(5));
+
+result = vpx_match(PARAMETERS,"( )",TERMINAL(5));
+TERMINATEONSUCCESS
+
+result = vpx_call_primitive(PARAMETERS,VPLP_unpack,1,1,TERMINAL(5),ROOT(6));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Auto_20_Type,3,0,TERMINAL(6),TERMINAL(1),TERMINAL(2));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Target_20_Text,1,0,TERMINAL(6));
+TERMINATEONFAILURE
+
+result = kSuccess;
+
+FOOTERSINGLECASE(7)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_9(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_9(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+{
+HEADER(5)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_View,TERMINAL(0),ROOT(3),ROOT(4));
+
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_9_case_1_local_3(PARAMETERS,TERMINAL(4),TERMINAL(1),TERMINAL(2));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+{
+HEADER(9)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+if( (repeatLimit = vpx_multiplex(1,TERMINAL(2))) ){
+REPEATBEGINWITHCOUNTER
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_2(PARAMETERS,LIST(2),ROOT(3));
+REPEATFINISH
+} else {
+ROOTNULL(3,NULL)
+}
+
+result = vpx_call_primitive(PARAMETERS,VPLP_string_3F_,1,0,TERMINAL(3));
+TERMINATEONFAILURE
+
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_4(PARAMETERS,TERMINAL(1),TERMINAL(3),ROOT(4),ROOT(5));
+TERMINATEONFAILURE
+
+result = vpx_get(PARAMETERS,kVPXValue_Data,TERMINAL(0),ROOT(6),ROOT(7));
+
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_6(PARAMETERS,TERMINAL(7),TERMINAL(4),TERMINAL(5),ROOT(8));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Send_20_Refresh,1,0,TERMINAL(7));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Make_20_Dirty,1,0,TERMINAL(8));
+
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2_local_9(PARAMETERS,TERMINAL(0),TERMINAL(8),TERMINAL(5));
+
+result = kSuccess;
+
+FOOTER(9)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_3_local_2_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_3_local_2_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Extracted_20_Value,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_string_3F_,1,0,TERMINAL(1));
+FINISHONSUCCESS
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_3_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_3_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Flavors,1,1,TERMINAL(0),ROOT(1));
+
+if( (repeatLimit = vpx_multiplex(1,TERMINAL(1))) ){
+REPEATBEGINWITHCOUNTER
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_3_local_2_case_1_local_3(PARAMETERS,LIST(1),ROOT(2));
+REPEATFINISH
+} else {
+ROOTNULL(2,NULL)
+}
+
+result = vpx_call_primitive(PARAMETERS,VPLP_string_3F_,1,0,TERMINAL(2));
+FINISHONSUCCESS
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_3_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_3_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"( \'Text\' 1 )",ROOT(2));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Find_20_Control,2,1,TERMINAL(0),TERMINAL(2),ROOT(3));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Text,2,0,TERMINAL(3),TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+if( (repeatLimit = vpx_multiplex(1,TERMINAL(2))) ){
+REPEATBEGINWITHCOUNTER
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_3_local_2(PARAMETERS,LIST(2),ROOT(3));
+REPEATFINISH
+} else {
+ROOTNULL(3,NULL)
+}
+
+result = vpx_call_primitive(PARAMETERS,VPLP_string_3F_,1,0,TERMINAL(3));
+TERMINATEONFAILURE
+
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_3_local_4(PARAMETERS,TERMINAL(0),TERMINAL(3));
+
+result = kSuccess;
+
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_4_local_6_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_4_local_6_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Extracted_20_Value,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(1));
+FINISHONSUCCESS
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_4_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_4_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Flavors,1,1,TERMINAL(0),ROOT(1));
+
+if( (repeatLimit = vpx_multiplex(1,TERMINAL(1))) ){
+REPEATBEGINWITHCOUNTER
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_4_local_6_case_1_local_3(PARAMETERS,LIST(1),ROOT(2));
+REPEATFINISH
+} else {
+ROOTNULL(2,NULL)
+}
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(2));
+FINISHONSUCCESS
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_4_local_8(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0,V_Object *root1);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_4_local_8(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0,V_Object *root1)
+{
+HEADER(9)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Drag_20_Mouse,1,2,TERMINAL(0),ROOT(1),ROOT(2));
+FAILONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Drag_20_Origin,1,1,TERMINAL(0),ROOT(3));
+FAILONFAILURE
+
+SubPt( GETSTRUCTURE(4,Point,TERMINAL(3)),GETPOINTER(4,Point,*,ROOT(4),TERMINAL(1)));
+result = kSuccess;
+
+result = vpx_extget(PARAMETERS,"h",1,2,TERMINAL(4),ROOT(5),ROOT(6));
+
+result = vpx_extget(PARAMETERS,"v",1,2,TERMINAL(4),ROOT(7),ROOT(8));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(6))
+OUTPUT(1,TERMINAL(8))
+FOOTERSINGLECASE(9)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+{
+HEADER(8)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Inside_20_Sender_20_Window_3F_,1,1,TERMINAL(1),ROOT(3));
+
+result = vpx_match(PARAMETERS,"TRUE",TERMINAL(3));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Drag_20_Drop_20_Action,1,1,TERMINAL(1),ROOT(4));
+NEXTCASEONFAILURE
+
+result = vpx_extmatch(PARAMETERS,kDragActionCopy,TERMINAL(4));
+NEXTCASEONSUCCESS
+
+if( (repeatLimit = vpx_multiplex(1,TERMINAL(2))) ){
+REPEATBEGINWITHCOUNTER
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_4_local_6(PARAMETERS,LIST(2),ROOT(5));
+REPEATFINISH
+} else {
+ROOTNULL(5,NULL)
+}
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(5));
+NEXTCASEONFAILURE
+
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_4_local_8(PARAMETERS,TERMINAL(1),ROOT(6),ROOT(7));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Move_20_By,3,0,TERMINAL(5),TERMINAL(6),TERMINAL(7));
+
+result = kSuccess;
+
+FOOTER(8)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_5_local_6_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_5_local_6_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Extracted_20_Value,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(1));
+FINISHONSUCCESS
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_5_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_5_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Flavors,1,1,TERMINAL(0),ROOT(1));
+
+if( (repeatLimit = vpx_multiplex(1,TERMINAL(1))) ){
+REPEATBEGINWITHCOUNTER
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_5_local_6_case_1_local_3(PARAMETERS,LIST(1),ROOT(2));
+REPEATFINISH
+} else {
+ROOTNULL(2,NULL)
+}
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(2));
+FINISHONSUCCESS
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_5(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_5(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+{
+HEADER(6)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Inside_20_Sender_20_Application_3F_,1,1,TERMINAL(1),ROOT(3));
+
+result = vpx_match(PARAMETERS,"TRUE",TERMINAL(3));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Drag_20_Drop_20_Action,1,1,TERMINAL(1),ROOT(4));
+NEXTCASEONFAILURE
+
+result = vpx_extmatch(PARAMETERS,kDragActionCopy,TERMINAL(4));
+NEXTCASEONSUCCESS
+
+if( (repeatLimit = vpx_multiplex(1,TERMINAL(2))) ){
+REPEATBEGINWITHCOUNTER
+result = vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_5_local_6(PARAMETERS,LIST(2),ROOT(5));
+REPEATFINISH
+} else {
+ROOTNULL(5,NULL)
+}
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(5));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Close,1,0,TERMINAL(5));
+
+result = kSuccess;
+NEXTCASEONSUCCESS
+
+FOOTER(6)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Accept_20_Flavors(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2))
+if(vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2))
+if(vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2))
+if(vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_4(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2))
+vpx_method_VPLCEWindow_2F_Accept_20_Flavors_case_5(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Window_20_Pasteboard_20_Handler(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Window_20_Pasteboard_20_Handler,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Set_20_Window_20_Pasteboard_20_Handler(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(3)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_set(PARAMETERS,kVPXValue_Window_20_Pasteboard_20_Handler,TERMINAL(0),TERMINAL(1),ROOT(2));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Window_20_Printing_20_Handler(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Window_20_Printing_20_Handler,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Set_20_Window_20_Printing_20_Handler(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(3)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_set(PARAMETERS,kVPXValue_Window_20_Printing_20_Handler,TERMINAL(0),TERMINAL(1),ROOT(2));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Close_20_Printing_20_Handler(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Window_20_Printing_20_Handler,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(1));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Close,1,0,TERMINAL(1));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_Printing_20_Handler(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Window_20_Printing_20_Handler,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(1));
+TERMINATEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Open,2,0,TERMINAL(1),TERMINAL(0));
+
+result = kSuccess;
+
+FOOTERSINGLECASE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_match(PARAMETERS,"5",TERMINAL(1));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Swipe_20_Event,2,1,TERMINAL(0),TERMINAL(2),ROOT(3));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+HEADER(4)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Return_20_Event_20_Not_20_Handled,1,1,TERMINAL(2),ROOT(3));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(3))
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
+vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0,V_Object *root1);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0,V_Object *root1)
+{
+HEADER(8)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"\'swip\'",ROOT(1));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_EP_20_HIPoint,2,2,TERMINAL(0),TERMINAL(1),ROOT(2),ROOT(3));
+
+result = vpx_match(PARAMETERS,"0",TERMINAL(2));
+FAILONFAILURE
+
+result = vpx_extget(PARAMETERS,"y",1,2,TERMINAL(3),ROOT(4),ROOT(5));
+
+result = vpx_extget(PARAMETERS,"x",1,2,TERMINAL(3),ROOT(6),ROOT(7));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(7))
+OUTPUT(1,TERMINAL(5))
+FOOTERSINGLECASE(8)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0)
+{
+HEADER(5)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+INPUT(3,3)
+result = kSuccess;
+
+result = vpx_match(PARAMETERS,"1.0",TERMINAL(2));
+NEXTCASEONFAILURE
+
+result = vpx_match(PARAMETERS,"0.0",TERMINAL(3));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Swipe_20_Left,2,1,TERMINAL(0),TERMINAL(1),ROOT(4));
+FAILONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(4))
+FOOTER(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0)
+{
+HEADER(5)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+INPUT(3,3)
+result = kSuccess;
+
+result = vpx_match(PARAMETERS,"-1.0",TERMINAL(2));
+NEXTCASEONFAILURE
+
+result = vpx_match(PARAMETERS,"0.0",TERMINAL(3));
+NEXTCASEONFAILURE
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Swipe_20_Right,2,1,TERMINAL(0),TERMINAL(1),ROOT(4));
+FAILONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(4))
+FOOTER(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0)
+{
+HEADERWITHNONE(4)
+INPUT(0,0)
+INPUT(1,1)
+INPUT(2,2)
+INPUT(3,3)
+result = kSuccess;
+
+result = kSuccess;
+FAILONSUCCESS
+
+OUTPUT(0,NONE)
+FOOTERWITHNONE(4)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,root0))
+if(vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,root0))
+vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(5)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_2(PARAMETERS,TERMINAL(1),ROOT(2),ROOT(3));
+NEXTCASEONFAILURE
+
+result = vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3(PARAMETERS,TERMINAL(0),TERMINAL(1),TERMINAL(2),TERMINAL(3),ROOT(4));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(4))
+FOOTER(5)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Return_20_Event_20_Not_20_Handled,1,1,TERMINAL(1),ROOT(2));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTER(3)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
+vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Left(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADERWITHNONE(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = kSuccess;
+FAILONSUCCESS
+
+OUTPUT(0,NONE)
+FOOTERSINGLECASEWITHNONE(2)
+}
+
+enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Right(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADERWITHNONE(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = kSuccess;
+FAILONSUCCESS
+
+OUTPUT(0,NONE)
+FOOTERSINGLECASEWITHNONE(2)
+}
+
+/* Stop Universals */
+
+
+
+Nat4 VPLC_VPLWindow_class_load(V_Class tempClass,V_Environment environment);
+Nat4 VPLC_VPLWindow_class_load(V_Class tempClass,V_Environment environment)
+{
+	V_Value	tempAttribute = NULL;
+
+/* Start Attributes: { 60 60 }{ 200 300 } */
+	tempAttribute = attribute_add("Name",tempClass,tempAttribute_VPLWindow_2F_Name,environment);
+	tempAttribute = attribute_add("WindowRef",tempClass,NULL,environment);
+	tempAttribute = attribute_add("Window Event Handler",tempClass,tempAttribute_VPLWindow_2F_Window_20_Event_20_Handler,environment);
+	tempAttribute = attribute_add("Drawers",tempClass,tempAttribute_VPLWindow_2F_Drawers,environment);
+	tempAttribute = attribute_add("View",tempClass,NULL,environment);
+	tempAttribute = attribute_add("Frame",tempClass,tempAttribute_VPLWindow_2F_Frame,environment);
+	tempAttribute = attribute_add("Target",tempClass,NULL,environment);
+	tempAttribute = attribute_add("Title",tempClass,NULL,environment);
+	tempAttribute = attribute_add("Window Pasteboard Handler",tempClass,NULL,environment);
+	tempAttribute = attribute_add("Window Printing Handler",tempClass,NULL,environment);
+/* Stop Attributes */
+
+	class_superClass_to(tempClass,environment,"VPLCEWindow");
+	return kNOERROR;
+}
+
+/* Start Universals: { 60 60 }{ 200 300 } */
+/* Stop Universals */
+
+
+
+Nat4 VPLC_VPLEvent_class_load(V_Class tempClass,V_Environment environment);
+Nat4 VPLC_VPLEvent_class_load(V_Class tempClass,V_Environment environment)
+{
+	V_Value	tempAttribute = NULL;
+
+/* Start Attributes: { 312 338 }{ 200 300 } */
+	tempAttribute = attribute_add("Event Record",tempClass,NULL,environment);
+	tempAttribute = attribute_add("Part",tempClass,NULL,environment);
+	tempAttribute = attribute_add("Window Record",tempClass,NULL,environment);
+	tempAttribute = attribute_add("Shut Down?",tempClass,tempAttribute_VPLEvent_2F_Shut_20_Down_3F_,environment);
+	tempAttribute = attribute_add("Double Down",tempClass,tempAttribute_VPLEvent_2F_Double_20_Down,environment);
+	tempAttribute = attribute_add("Contextual Menu?",tempClass,tempAttribute_VPLEvent_2F_Contextual_20_Menu_3F_,environment);
+/* Stop Attributes */
+
+/* NULL SUPER CLASS */
+	return kNOERROR;
+}
+
+/* Start Universals: { 552 181 }{ 253 408 } */
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Active_20_Flag_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Active_20_Flag_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(7)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Event_20_Record,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_extget(PARAMETERS,"modifiers",1,2,TERMINAL(2),ROOT(3),ROOT(4));
+
+result = vpx_extconstant(PARAMETERS,activeFlag,ROOT(5));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_test_2D_one_3F_,2,0,TERMINAL(4),TERMINAL(5));
+NEXTCASEONFAILURE
+
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(6));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(6))
+FOOTER(7)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Active_20_Flag_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Active_20_Flag_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"FALSE",ROOT(1));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Active_20_Flag(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLEvent_2F_Get_20_Active_20_Flag_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+vpx_method_VPLEvent_2F_Get_20_Active_20_Flag_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Command_20_Key_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Command_20_Key_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(7)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Event_20_Record,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_extget(PARAMETERS,"modifiers",1,2,TERMINAL(2),ROOT(3),ROOT(4));
+
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(5));
+
+result = vpx_extconstant(PARAMETERS,cmdKey,ROOT(6));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_test_2D_one_3F_,2,0,TERMINAL(4),TERMINAL(6));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(5))
+FOOTER(7)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Command_20_Key_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Command_20_Key_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"FALSE",ROOT(1));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Command_20_Key(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLEvent_2F_Get_20_Command_20_Key_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+vpx_method_VPLEvent_2F_Get_20_Command_20_Key_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Control_20_Key_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Control_20_Key_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(7)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Event_20_Record,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_extget(PARAMETERS,"modifiers",1,2,TERMINAL(2),ROOT(3),ROOT(4));
+
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(5));
+
+result = vpx_extconstant(PARAMETERS,controlKey,ROOT(6));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_test_2D_one_3F_,2,0,TERMINAL(4),TERMINAL(6));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(5))
+FOOTER(7)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Control_20_Key_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Control_20_Key_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"FALSE",ROOT(1));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Control_20_Key(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLEvent_2F_Get_20_Control_20_Key_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+vpx_method_VPLEvent_2F_Get_20_Control_20_Key_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Local_20_Where_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Local_20_Where_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(7)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Event_20_Record,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(2));
+NEXTCASEONSUCCESS
+
+result = vpx_extget(PARAMETERS,"where",1,2,TERMINAL(2),ROOT(3),ROOT(4));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_global_2D_to_2D_local,1,1,TERMINAL(4),ROOT(5));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_Point_2D_to_2D_list,1,1,TERMINAL(5),ROOT(6));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(6))
+FOOTER(7)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Local_20_Where_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Local_20_Where_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"( 0 0 )",ROOT(1));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Local_20_Where(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLEvent_2F_Get_20_Local_20_Where_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+vpx_method_VPLEvent_2F_Get_20_Local_20_Where_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Option_20_Key_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Option_20_Key_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(7)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Event_20_Record,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(2));
+NEXTCASEONSUCCESS
+
+result = vpx_extget(PARAMETERS,"modifiers",1,2,TERMINAL(2),ROOT(3),ROOT(4));
+
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(5));
+
+result = vpx_extconstant(PARAMETERS,optionKey,ROOT(6));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_test_2D_one_3F_,2,0,TERMINAL(4),TERMINAL(6));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(5))
+FOOTER(7)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Option_20_Key_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Option_20_Key_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"FALSE",ROOT(1));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Option_20_Key(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLEvent_2F_Get_20_Option_20_Key_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+vpx_method_VPLEvent_2F_Get_20_Option_20_Key_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Shift_20_Key_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Shift_20_Key_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(7)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Event_20_Record,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_extget(PARAMETERS,"modifiers",1,2,TERMINAL(2),ROOT(3),ROOT(4));
+
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(5));
+
+result = vpx_extconstant(PARAMETERS,shiftKey,ROOT(6));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_test_2D_one_3F_,2,0,TERMINAL(4),TERMINAL(6));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(5))
+FOOTER(7)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Shift_20_Key_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Shift_20_Key_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"FALSE",ROOT(1));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Shift_20_Key(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLEvent_2F_Get_20_Shift_20_Key_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+vpx_method_VPLEvent_2F_Get_20_Shift_20_Key_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Key(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(7)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Event_20_Record,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(2));
+FAILONSUCCESS
+
+result = vpx_extget(PARAMETERS,"message",1,2,TERMINAL(2),ROOT(3),ROOT(4));
+
+result = vpx_extconstant(PARAMETERS,charCodeMask,ROOT(5));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_bit_2D_and,2,1,TERMINAL(4),TERMINAL(5),ROOT(6));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(6))
+FOOTERSINGLECASE(7)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Convert_20_Mouse_20_EventRef_case_1_local_4_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLEvent_2F_Convert_20_Mouse_20_EventRef_case_1_local_4_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(8)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_extconstant(PARAMETERS,kEventParamClickCount,ROOT(2));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_EP_20_UInt32,2,2,TERMINAL(1),TERMINAL(2),ROOT(3),ROOT(4));
+
+result = vpx_extmatch(PARAMETERS,noErr,TERMINAL(3));
+TERMINATEONFAILURE
+
+result = vpx_constant(PARAMETERS,"2",ROOT(5));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__3D_,2,1,TERMINAL(4),TERMINAL(5),ROOT(6));
+
+result = vpx_set(PARAMETERS,kVPXValue_Double_20_Down,TERMINAL(0),TERMINAL(6),ROOT(7));
+
+result = kSuccess;
+
+FOOTER(8)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Convert_20_Mouse_20_EventRef_case_1_local_4_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLEvent_2F_Convert_20_Mouse_20_EventRef_case_1_local_4_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADER(2)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Convert_20_Mouse_20_EventRef_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLEvent_2F_Convert_20_Mouse_20_EventRef_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLEvent_2F_Convert_20_Mouse_20_EventRef_case_1_local_4_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
+vpx_method_VPLEvent_2F_Convert_20_Mouse_20_EventRef_case_1_local_4_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Convert_20_Mouse_20_EventRef(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADERWITHNONE(18)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Event_20_Reference,1,1,TERMINAL(1),ROOT(2));
+
+PUTINTEGER(ConvertEventRefToEventRecord( GETPOINTER(0,OpaqueEventRef,*,ROOT(4),TERMINAL(2)),GETPOINTER(20,EventRecord,*,ROOT(5),NONE)),3);
+result = kSuccess;
+
+result = vpx_method_VPLEvent_2F_Convert_20_Mouse_20_EventRef_case_1_local_4(PARAMETERS,TERMINAL(0),TERMINAL(1));
+
+PUTINTEGER(GetCurrentKeyModifiers(),6);
+result = kSuccess;
+
+result = vpx_extset(PARAMETERS,"modifiers",2,1,TERMINAL(5),TERMINAL(6),ROOT(7));
+
+result = vpx_set(PARAMETERS,kVPXValue_Event_20_Record,TERMINAL(0),TERMINAL(5),ROOT(8));
+
+result = vpx_extget(PARAMETERS,"where",1,2,TERMINAL(7),ROOT(9),ROOT(10));
+
+PUTINTEGER(FindWindow( GETSTRUCTURE(4,Point,TERMINAL(10)),GETPOINTER(0,OpaqueWindowPtr,**,ROOT(12),NONE)),11);
+result = kSuccess;
+
+result = vpx_set(PARAMETERS,kVPXValue_Part,TERMINAL(8),TERMINAL(11),ROOT(13));
+
+result = vpx_extmatch(PARAMETERS,inContent,TERMINAL(11));
+FAILONFAILURE
+
+PUTINTEGER(IsShowContextualMenuEvent( GETPOINTER(0,OpaqueEventRef,*,ROOT(15),TERMINAL(2))),14);
+result = kSuccess;
+
+result = vpx_method_Integer_20_To_20_Boolean(PARAMETERS,TERMINAL(14),ROOT(16));
+
+result = vpx_set(PARAMETERS,kVPXValue_Contextual_20_Menu_3F_,TERMINAL(13),TERMINAL(16),ROOT(17));
+
+result = kSuccess;
+
+FOOTERSINGLECASEWITHNONE(18)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Convert_20_Key_20_EventRef(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADERWITHNONE(7)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Event_20_Reference,1,1,TERMINAL(1),ROOT(2));
+
+PUTINTEGER(ConvertEventRefToEventRecord( GETPOINTER(0,OpaqueEventRef,*,ROOT(4),TERMINAL(2)),GETPOINTER(20,EventRecord,*,ROOT(5),NONE)),3);
+result = kSuccess;
+
+result = vpx_set(PARAMETERS,kVPXValue_Event_20_Record,TERMINAL(0),TERMINAL(5),ROOT(6));
+
+result = kSuccess;
+
+FOOTERSINGLECASEWITHNONE(7)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Local_20_WhereQD(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(6)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Event_20_Record,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(2));
+FAILONSUCCESS
+
+result = vpx_extget(PARAMETERS,"where",1,2,TERMINAL(2),ROOT(3),ROOT(4));
+
+GlobalToLocal( GETPOINTER(4,Point,*,ROOT(5),TERMINAL(4)));
+result = kSuccess;
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(5))
+FOOTERSINGLECASE(6)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_WhereQD(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(5)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Event_20_Record,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(2));
+FAILONSUCCESS
+
+result = vpx_extget(PARAMETERS,"where",1,2,TERMINAL(2),ROOT(3),ROOT(4));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(4))
+FOOTERSINGLECASE(5)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Contextual_20_Menu_20_Event_3F__case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Contextual_20_Menu_20_Event_3F__case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(3)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Contextual_20_Menu_3F_,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_match(PARAMETERS,"TRUE",TERMINAL(2));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTER(3)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Contextual_20_Menu_20_Event_3F__case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Contextual_20_Menu_20_Event_3F__case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(5)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_get(PARAMETERS,kVPXValue_Event_20_Record,TERMINAL(0),ROOT(1),ROOT(2));
+
+result = vpx_match(PARAMETERS,"NULL",TERMINAL(2));
+NEXTCASEONSUCCESS
+
+PUTINTEGER(IsShowContextualMenuClick( GETCONSTPOINTER(EventRecord,*,TERMINAL(2))),3);
+result = kSuccess;
+
+result = vpx_method_Integer_20_To_20_Boolean(PARAMETERS,TERMINAL(3),ROOT(4));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(4))
+FOOTER(5)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Contextual_20_Menu_20_Event_3F__case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Contextual_20_Menu_20_Event_3F__case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(2)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"FALSE",ROOT(1));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(1))
+FOOTER(2)
+}
+
+enum opTrigger vpx_method_VPLEvent_2F_Get_20_Contextual_20_Menu_20_Event_3F_(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLEvent_2F_Get_20_Contextual_20_Menu_20_Event_3F__case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+if(vpx_method_VPLEvent_2F_Get_20_Contextual_20_Menu_20_Event_3F__case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+vpx_method_VPLEvent_2F_Get_20_Contextual_20_Menu_20_Event_3F__case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+return outcome;
+}
+
+/* Stop Universals */
+
+
+
+
+
+
+Nat4	loadClasses_VPLCEWindows(V_Environment environment);
+Nat4	loadClasses_VPLCEWindows(V_Environment environment)
+{
+	V_Class result = NULL;
+
+	result = class_new("VPLCEWindow",environment);
+	if(result == NULL) return kERROR;
+	VPLC_VPLCEWindow_class_load(result,environment);
+	result = class_new("VPLWindow",environment);
+	if(result == NULL) return kERROR;
+	VPLC_VPLWindow_class_load(result,environment);
+	result = class_new("VPLEvent",environment);
+	if(result == NULL) return kERROR;
+	VPLC_VPLEvent_class_load(result,environment);
+	return kNOERROR;
+
+}
+
+Nat4	loadUniversals_VPLCEWindows(V_Environment environment);
+Nat4	loadUniversals_VPLCEWindows(V_Environment environment)
+{
+	V_Method result = NULL;
+
+	result = method_new("Get Port",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_Get_20_Port,NULL);
+
+	result = method_new("Set Port",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_Set_20_Port,NULL);
+
+	result = method_new("Set Target",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_Set_20_Target,NULL);
+
+	result = method_new("Get Target",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_Get_20_Target,NULL);
+
+	result = method_new("Clear Target",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_Clear_20_Target,NULL);
+
+	result = method_new("Change Target",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_Change_20_Target,NULL);
+
+	result = method_new("VPLCEWindow/Open",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Open,NULL);
+
+	result = method_new("VPLCEWindow/Open With Data",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Open_20_With_20_Data,NULL);
+
+	result = method_new("VPLCEWindow/Create Window",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Create_20_Window,NULL);
+
+	result = method_new("VPLCEWindow/Get Creation Attributes",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Get_20_Creation_20_Attributes,NULL);
+
+	result = method_new("VPLCEWindow/Open Controls",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Open_20_Controls,NULL);
+
+	result = method_new("VPLCEWindow/Draw",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Draw,NULL);
+
+	result = method_new("VPLCEWindow/Idle",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Idle,NULL);
+
+	result = method_new("VPLCEWindow/Initialize",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Initialize,NULL);
+
+	result = method_new("VPLCEWindow/Constrain Window",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Constrain_20_Window,NULL);
+
+	result = method_new("VPLCEWindow/Get Frame",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Get_20_Frame,NULL);
+
+	result = method_new("VPLCEWindow/Set Frame",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Set_20_Frame,NULL);
+
+	result = method_new("VPLCEWindow/Change Frame",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Change_20_Frame,NULL);
+
+	result = method_new("VPLCEWindow/Get Port Bounds",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Get_20_Port_20_Bounds,NULL);
+
+	result = method_new("VPLCEWindow/Refresh",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Refresh,NULL);
+
+	result = method_new("VPLCEWindow/Set Target",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Set_20_Target,NULL);
+
+	result = method_new("VPLCEWindow/Is Front Window",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Is_20_Front_20_Window,NULL);
+
+	result = method_new("VPLCEWindow/Set Port",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Set_20_Port,NULL);
+
+	result = method_new("VPLCEWindow/Get Port",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Get_20_Port,NULL);
+
+	result = method_new("VPLCEWindow/Select Window",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Select_20_Window,NULL);
+
+	result = method_new("VPLCEWindow/Mouse Down",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Mouse_20_Down,NULL);
+
+	result = method_new("VPLCEWindow/Key Down",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Key_20_Down,NULL);
+
+	result = method_new("VPLCEWindow/Hilite",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Hilite,NULL);
+
+	result = method_new("VPLCEWindow/Get Window Origin",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Get_20_Window_20_Origin,NULL);
+
+	result = method_new("VPLCEWindow/Get Window",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Get_20_Window,NULL);
+
+	result = method_new("VPLCEWindow/Get Application",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Get_20_Application,NULL);
+
+	result = method_new("VPLCEWindow/Close",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Close,NULL);
+
+	result = method_new("VPLCEWindow/Set Up Drawing",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Set_20_Up_20_Drawing,NULL);
+
+	result = method_new("VPLCEWindow/Setup Drawing CG",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Setup_20_Drawing_20_CG,NULL);
+
+	result = method_new("VPLCEWindow/Sync CGContext Origin",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Sync_20_CGContext_20_Origin,NULL);
+
+	result = method_new("VPLCEWindow/Click Content",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Click_20_Content,NULL);
+
+	result = method_new("VPLCEWindow/CE Handle Event",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event,NULL);
+
+	result = method_new("VPLCEWindow/CE Mouse Event",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event,NULL);
+
+	result = method_new("VPLCEWindow/CE Mouse Moved",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Moved,NULL);
+
+	result = method_new("VPLCEWindow/CE Mouse Wheel Moved",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Wheel_20_Moved,NULL);
+
+	result = method_new("VPLCEWindow/CE Mouse Scrolled",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Scrolled,NULL);
+
+	result = method_new("VPLCEWindow/CE Keyboard Event",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event,NULL);
+
+	result = method_new("VPLCEWindow/CE Raw Key Down",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Down,NULL);
+
+	result = method_new("VPLCEWindow/CE Raw Key Repeat",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Repeat,NULL);
+
+	result = method_new("VPLCEWindow/CE Raw Key Modifiers Changed",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Modifiers_20_Changed,NULL);
+
+	result = method_new("VPLCEWindow/Adjust Frame",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Adjust_20_Frame,NULL);
+
+	result = method_new("VPLCEWindow/Activate",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Activate,NULL);
+
+	result = method_new("VPLCEWindow/Activated",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Activated,NULL);
+
+	result = method_new("VPLCEWindow/Deactivated",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Deactivated,NULL);
+
+	result = method_new("VPLCEWindow/Set Title",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Set_20_Title,NULL);
+
+	result = method_new("VPLCEWindow/Begin CGContext",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Begin_20_CGContext,NULL);
+
+	result = method_new("VPLCEWindow/End CGContext",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_End_20_CGContext,NULL);
+
+	result = method_new("VPLCEWindow/Get Size",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Get_20_Size,NULL);
+
+	result = method_new("VPLCEWindow/CE Window Drag Completed",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Window_20_Drag_20_Completed,NULL);
+
+	result = method_new("VPLCEWindow/CE Window Resize Completed",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Window_20_Resize_20_Completed,NULL);
+
+	result = method_new("VPLCEWindow/Resized",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Resized,NULL);
+
+	result = method_new("VPLCEWindow/Show Drag Hilite",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Show_20_Drag_20_Hilite,NULL);
+
+	result = method_new("VPLCEWindow/Hide Drag Hilite",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Hide_20_Drag_20_Hilite,NULL);
+
+	result = method_new("VPLCEWindow/Close Pasteboard Handler",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Close_20_Pasteboard_20_Handler,NULL);
+
+	result = method_new("VPLCEWindow/Open Pasteboard Handler",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Open_20_Pasteboard_20_Handler,NULL);
+
+	result = method_new("VPLCEWindow/Accept Flavors",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Accept_20_Flavors,NULL);
+
+	result = method_new("VPLCEWindow/Get Window Pasteboard Handler",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Get_20_Window_20_Pasteboard_20_Handler,NULL);
+
+	result = method_new("VPLCEWindow/Set Window Pasteboard Handler",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Set_20_Window_20_Pasteboard_20_Handler,NULL);
+
+	result = method_new("VPLCEWindow/Get Window Printing Handler",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Get_20_Window_20_Printing_20_Handler,NULL);
+
+	result = method_new("VPLCEWindow/Set Window Printing Handler",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Set_20_Window_20_Printing_20_Handler,NULL);
+
+	result = method_new("VPLCEWindow/Close Printing Handler",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Close_20_Printing_20_Handler,NULL);
+
+	result = method_new("VPLCEWindow/Open Printing Handler",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Open_20_Printing_20_Handler,NULL);
+
+	result = method_new("VPLCEWindow/CE Gesture Event",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event,NULL);
+
+	result = method_new("VPLCEWindow/CE Swipe Event",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event,NULL);
+
+	result = method_new("VPLCEWindow/CE Swipe Left",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Left,NULL);
+
+	result = method_new("VPLCEWindow/CE Swipe Right",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Right,NULL);
+
+	result = method_new("VPLEvent/Get Active Flag",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLEvent_2F_Get_20_Active_20_Flag,NULL);
+
+	result = method_new("VPLEvent/Get Command Key",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLEvent_2F_Get_20_Command_20_Key,NULL);
+
+	result = method_new("VPLEvent/Get Control Key",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLEvent_2F_Get_20_Control_20_Key,NULL);
+
+	result = method_new("VPLEvent/Get Local Where",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLEvent_2F_Get_20_Local_20_Where,NULL);
+
+	result = method_new("VPLEvent/Get Option Key",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLEvent_2F_Get_20_Option_20_Key,NULL);
+
+	result = method_new("VPLEvent/Get Shift Key",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLEvent_2F_Get_20_Shift_20_Key,NULL);
+
+	result = method_new("VPLEvent/Get Key",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLEvent_2F_Get_20_Key,NULL);
+
+	result = method_new("VPLEvent/Convert Mouse EventRef",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLEvent_2F_Convert_20_Mouse_20_EventRef,NULL);
+
+	result = method_new("VPLEvent/Convert Key EventRef",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLEvent_2F_Convert_20_Key_20_EventRef,NULL);
+
+	result = method_new("VPLEvent/Get Local WhereQD",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLEvent_2F_Get_20_Local_20_WhereQD,NULL);
+
+	result = method_new("VPLEvent/Get WhereQD",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLEvent_2F_Get_20_WhereQD,NULL);
+
+	result = method_new("VPLEvent/Get Contextual Menu Event?",environment);
+	if(result == NULL) return kERROR;
+	vpx_method_initialize(environment,result,vpx_method_VPLEvent_2F_Get_20_Contextual_20_Menu_20_Event_3F_,NULL);
+
+	return kNOERROR;
+
+}
+
+
+
+Nat4	loadPersistents_VPLCEWindows(V_Environment environment);
+Nat4	loadPersistents_VPLCEWindows(V_Environment environment)
+{
+	V_Value tempPersistent = NULL;
+	V_Dictionary dictionary = environment->persistentsTable;
+
+	tempPersistent = create_persistentNode("VPLCEWindow/Toolbar",NULL,environment);
+	add_node(dictionary,tempPersistent->objectName,tempPersistent);
+
+	tempPersistent = create_persistentNode("VPLWindow/Toolbar",NULL,environment);
+	add_node(dictionary,tempPersistent->objectName,tempPersistent);
+
+	return kNOERROR;
+
+}
+
+Nat4	load_VPLCEWindows(V_Environment environment);
+Nat4	load_VPLCEWindows(V_Environment environment)
+{
+
+	loadClasses_VPLCEWindows(environment);
+	loadUniversals_VPLCEWindows(environment);
+	loadPersistents_VPLCEWindows(environment);
+	return kNOERROR;
+
+}
+
