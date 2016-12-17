@@ -67,7 +67,7 @@ vpl_Status		VPLEngineRecordArityError( vpl_Arity wantArity, vpl_Status err, vpl_
 	tempString = X_malloc( tempLength );
 	if (tempString != NULL) {
 		if(primName && fillString) sprintf( tempString, "%s%s%d", primName, fillString, (int) wantArity );
-		else sprintf( tempString, "Unknown primName %s and fillString %s - arity = %d", primName, fillString, (int) wantArity );
+		else sprintf( tempString, "Unknown primName and fillString - arity = %d", primName, fillString, (int) wantArity );
 		err = record_error( tempString, moduleName, err, environment );
 		X_free(tempString );
 	}
@@ -2045,7 +2045,6 @@ which would leave stackZ pointing to non-existent stackB and stackC pointing bac
 		
 */
 	
-
 #ifdef _POSIX_THREADS
 	pthread_mutex_lock(&gStackLock);
 #endif
@@ -2059,7 +2058,6 @@ which would leave stackZ pointing to non-existent stackB and stackC pointing bac
 	if(environment->stack == stack){
 				environment->stack = ( V_Stack) stack->nextStack;
 	}
-
 
 #ifdef _POSIX_THREADS
 	pthread_mutex_unlock(&gStackLock);
@@ -2221,11 +2219,11 @@ Int4 destroy_environment(V_Environment environment, Bool printFlag, Bool interpr
 	}
 */
 	X_free(environment);
-
 #ifdef _POSIX_THREADS
 	pthread_mutex_destroy(&gHeapLock);
 	pthread_mutex_destroy(&gStackLock);
 	pthread_mutex_destroy(&gCallbackLock);
+	pthread_mutex_destroy(&gThreadsLock);
 #endif
 	return result;
 }

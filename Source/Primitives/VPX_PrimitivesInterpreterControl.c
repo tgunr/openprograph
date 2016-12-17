@@ -9,70 +9,7 @@
 #include "VPL_Compiler.h"
 #elif __GNUC__
 #include <MartenEngine/MartenEngine.h>
-typedef struct VPL_Frame *V_Frame;
 
-typedef struct VPL_Stack
-{
-	V_Stack		previousStack;
-	V_Stack		nextStack;
-	Int4		stackDepth;
-	Nat4		maxStackDepth;
-	V_Frame		currentFrame;
-	V_Object	vplStack;		/* For use in the interpreter */
-}	VPL_Stack;
-
-typedef struct VPL_Root
-{
-	Nat4			mode;
-	Nat4			index;
-	V_Operation		operation;
-	V_Object		tempObject;
-}	VPL_Root;
-
-typedef struct VPL_Operation
-{
-	Int1	*objectName;	/* Used by Persistent, Universal, Instantiate, Get, Set, Constant, Match, ExtConstant, ExtMatch, ExtProcedure */
-	Nat4	classIndex;
-	Nat4	columnIndex;
-	Nat4	inarity;
-	Nat4	outarity;
-	Nat4	numberOfCases;	/* Used by Local, Universal */
-	V_Case	*casesList;	/* Used by Local, Universal */
-	V_Case	owner;
-	Nat4	index;
-	Nat4	type;
-	V_Terminal	*inputList;
-	V_Root	*outputList;
-	Bool	repeat;
-	Nat2	action;
-	Bool	trigger;
-	Bool	breakPoint;
-	V_Object	object; 	/* Used by Constant, Match */
-	Int4	integer; 		/* Used by ExtConstant, ExtMatch */
-	Nat4	inject;			/* Used by Persistent, Universal, Instantiate, Get, Set - is index, not offset */ 
-	void	*functionPtr;	/* Used by Primitive, ExtProcedure */
-	Bool	callSuper;		/* Used by Universal */
-	Nat4	valueType;		/* enum opValue type */
-	Nat4	vplOperation;	/* Stores address of editor version of operation */
-}	VPL_Operation;
-
-typedef struct VPL_Case
-{
-	V_Method	parentMethod;
-	Nat4		numberOfOperations;
-	V_Operation	*operationsList;
-	Nat4		vplCase;	/* Stores address of editor version of case */
-}	VPL_Case;
-	
-typedef union {
-	long inputInt;
-	float inputFloat;
-	double inputDouble;
-} VPL_Input, *V_Input;
-
-typedef struct {
-	V_Input *inputs;
-} VPL_InputList, *V_InputList;
 
 V_Stack createStack(void);
 Nat4 addStack(V_Environment ptrE, V_Stack stack);
@@ -83,6 +20,8 @@ V_Case *X_obtain_cases_by_name( V_Environment environment,V_Dictionary universal
 V_Object X_increment_count( V_Object object);
 enum errorType X_execute_stack( V_Environment environment,V_Stack stack);
 Int4 destroy_stack(V_Environment environment, V_Stack ptrZ);
+
+
 #endif	
 
 #pragma mark ------- General Routines -------
@@ -141,6 +80,19 @@ long VPL_TestCallbackVariableArg(long input, const void *functionPtr)
 	VPL_ExtField _VPL_Parameter_2 = { "size",4,4,kUnsignedType,"char",1,1,"unsigned long",&_VPL_Parameter_3};
 	VPL_ExtField _VPL_Parameter_1 = { "type",0,4,kUnsignedType,"char",1,1,"unsigned long",&_VPL_Parameter_2};
 	VPL_ExtStructure _VPL_Parameter_S = {"VPL_Parameter",&_VPL_Parameter_1};
+
+	VPL_Parameter _vpl_WatchpointGetCallbackProc_4 = { kPointerType,0,"V_Object",1,1,NULL};
+	VPL_Parameter _vpl_WatchpointGetCallbackProc_3 = { kPointerType,0,"char",1,1,&_vpl_WatchpointGetCallbackProc_4};
+	VPL_Parameter _vpl_WatchpointGetCallbackProc_2 = { kPointerType,0,"V_Instance",1,1,&_vpl_WatchpointGetCallbackProc_3};
+	VPL_Parameter _vpl_WatchpointGetCallbackProc_1 = { kPointerType,0,"void",1,1,&_vpl_WatchpointGetCallbackProc_2};
+	VPL_ExtProcedure _vpl_WatchpointGetCallbackProc_F = {"vpl_WatchpointGetCallbackProc",NULL,&_vpl_WatchpointGetCallbackProc_1,NULL};
+
+	VPL_Parameter _vpl_WatchpointSetCallbackProc_5 = { kPointerType,0,"V_Object",1,1,NULL};
+	VPL_Parameter _vpl_WatchpointSetCallbackProc_4 = { kPointerType,0,"V_Object",1,1,&_vpl_WatchpointSetCallbackProc_5};
+	VPL_Parameter _vpl_WatchpointSetCallbackProc_3 = { kPointerType,0,"char",1,1,&_vpl_WatchpointSetCallbackProc_4};
+	VPL_Parameter _vpl_WatchpointSetCallbackProc_2 = { kPointerType,0,"V_Instance",1,1,&_vpl_WatchpointSetCallbackProc_3};
+	VPL_Parameter _vpl_WatchpointSetCallbackProc_1 = { kPointerType,0,"void",1,1,&_vpl_WatchpointSetCallbackProc_2};
+	VPL_ExtProcedure _vpl_WatchpointSetCallbackProc_F = {"vpl_WatchpointSetCallbackProc",NULL,&_vpl_WatchpointSetCallbackProc_1,NULL};
 
 	VPL_Parameter _TestCallbackVariableProc_R = { kLongType,4,NULL,0,0,NULL};
 	VPL_Parameter _TestCallbackVariableProc_2 = { kVoidType,0,NULL,0,0,NULL};
@@ -1867,6 +1819,106 @@ Int4 VPLP_switch_2D_to_2D_editor( V_Environment environment, enum opTrigger *tri
 	return kNOERROR;
 }
 
+Int4 VPLP_add_2D_attribute_2D_observer( V_Environment environment, enum opTrigger *trigger, Nat4 primInArity, Nat4 primOutArity, vpl_PrimitiveInputs primitive );
+Int4 VPLP_add_2D_attribute_2D_observer( V_Environment environment, enum opTrigger *trigger, Nat4 primInArity, Nat4 primOutArity, vpl_PrimitiveInputs primitive )
+{
+	Int4				result = 0;
+	Int1				*primName = "add-attribute-observer";
+	
+	Int4					addResult = kERROR;
+	V_Instance				addInstance = NULL;
+	vpl_StringPtr			addAttributeName = NULL;
+	vpl_BlockPtr			addGetCallback = NULL;
+	vpl_BlockPtr			addGetUserData = NULL;
+	vpl_BlockPtr			addSetCallback = NULL;
+	vpl_BlockPtr			addSetUserData = NULL;
+	V_WatchpointObserver	outObserver = NULL;
+
+#ifdef VPL_VERBOSE_ENGINE
+	result = VPLPrimCheckInputArity( environment, primName, primInArity, 6 );
+	if( result != kNOERROR ) return result;
+	
+	result = VPLPrimCheckOutputArity( environment, primName, primOutArity, 2 );
+	if( result != kNOERROR ) return result;
+#endif
+	
+	result = VPLPrimGetInputObjectCheckType( (V_Object*)&addInstance, kInstance, 0, primName, primitive, environment );
+	if( result != kNOERROR ) return result;
+
+	result = VPLPrimGetInputObjectStringCoerceCopy( &addAttributeName, 1, primName, primitive, environment );
+	if( result != kNOERROR ) return result;
+	
+	if( (VPLPrimGetInputObjectType( kExternalBlock, 2, primitive, environment ) == kNOERROR ) )
+		result = VPLPrimGetInputObjectEBlockPtrCoerce( &addGetCallback, "VPL_CallbackCodeSegment", 2, primName, primitive, environment );
+	
+	if( (VPLPrimGetInputObjectType( kExternalBlock, 3, primitive, environment ) == kNOERROR ) )
+		result = VPLPrimGetInputObjectEBlockPtrCoerce( &addGetUserData, NULL, 3, primName, primitive, environment );
+
+	if( (VPLPrimGetInputObjectType( kExternalBlock, 4, primitive, environment ) == kNOERROR ) )
+		result = VPLPrimGetInputObjectEBlockPtrCoerce( &addSetCallback, "VPL_CallbackCodeSegment", 4, primName, primitive, environment );
+	
+	if( (VPLPrimGetInputObjectType( kExternalBlock, 5, primitive, environment ) == kNOERROR ) )
+		result = VPLPrimGetInputObjectEBlockPtrCoerce( &addSetUserData, NULL, 5, primName, primitive, environment );
+	
+//	fprintf(stdout, "add observer instance: %p, att: %s\n\tgetCB: %p, getD: %p\n\tsetCB: %p, setD: %p\n",
+//			addInstance, addAttributeName, addGetCallback, addGetUserData, addSetCallback, addSetUserData );
+	
+	addResult = VPLWatchpointObserverCreate( environment, addInstance, addAttributeName,
+											(V_CallbackCodeSegment)addGetCallback, addGetUserData, addSetCallback, addSetUserData,
+											&outObserver );
+	
+	if( addAttributeName ) X_free( addAttributeName );
+	
+	result = VPLPrimSetOutputObjectInteger( environment, primInArity, 0, primitive, addResult );
+	result = VPLPrimSetOutputObjectEBlockPtr( environment, primInArity, 1, primitive, outObserver, "VPL_WatchpointObserver", sizeof(VPL_WatchpointObserver), 1 );
+	
+	*trigger = kSuccess;	
+	return kNOERROR;
+}
+
+Int4 VPLP_remove_2D_attribute_2D_observer( V_Environment environment, enum opTrigger *trigger, Nat4 primInArity, Nat4 primOutArity, vpl_PrimitiveInputs primitive );
+Int4 VPLP_remove_2D_attribute_2D_observer( V_Environment environment, enum opTrigger *trigger, Nat4 primInArity, Nat4 primOutArity, vpl_PrimitiveInputs primitive )
+{
+	Int4				result = 0;
+	Int1				*primName = "remove-attribute-observer";
+	
+	Nat4					remResult = kERROR;
+	V_Instance				oldInstance = NULL;
+	vpl_StringPtr			oldAttributeName = NULL;
+	V_WatchpointObserver	oldObserver = NULL;
+	
+#ifdef VPL_VERBOSE_ENGINE
+	result = VPLPrimCheckInputArity( environment, primName, primInArity, 3 );
+	if( result != kNOERROR ) return result;
+	
+	result = VPLPrimCheckOutputArity( environment, primName, primOutArity, 1 );
+	if( result != kNOERROR ) return result;
+#endif
+	
+	result = VPLPrimGetInputObjectCheckType( (V_Object*)&oldInstance, kInstance, 0, primName, primitive, environment );
+	if( result != kNOERROR ) return result;
+	
+	result = VPLPrimGetInputObjectStringCoerceCopy( &oldAttributeName, 1, primName, primitive, environment );
+	if( result != kNOERROR ) return result;
+	
+	if( (VPLPrimGetInputObjectType( kExternalBlock, 2, primitive, environment ) == kNOERROR ) )
+		result = VPLPrimGetInputObjectEBlockPtrCoerce( (vpl_BlockPtr*)&oldObserver, "VPL_WatchpointObserver", 2, primName, primitive, environment );
+
+	if( oldInstance && oldAttributeName && oldObserver )
+		remResult = VPLWatchpointObserverRemove( environment, oldInstance, oldAttributeName, oldObserver );
+
+	if( oldAttributeName ) X_free( oldAttributeName );
+	
+	result = VPLPrimSetOutputObjectInteger( environment, primInArity, 0, primitive, remResult );
+	
+	*trigger = kSuccess;	
+	return kNOERROR;
+}
+
+	
+	
+	
+	
 
 
 #pragma mark --------------- Load Routines ---------------
@@ -1886,6 +1938,8 @@ VPL_DictionaryNode VPX_InterpreterControl_Constants[] =	{
 };
 
 VPL_DictionaryNode VPX_InterpreterControl_Procedures[] =	{
+	{"vpl_WatchpointGetCallbackProc",&_vpl_WatchpointGetCallbackProc_F},
+	{"vpl_WatchpointSetCallbackProc",&_vpl_WatchpointSetCallbackProc_F},
 	{"VPL_TestExtProcedure",&_TestExtProcedure_F},
 	{"TestCallbackProc",&_TestCallbackProc_F},
 	{"VPL_TestCallback",&_TestCallback_F},
@@ -1899,7 +1953,7 @@ VPL_DictionaryNode VPX_InterpreterControl_Structures[] =	{
 };
 
 Nat4	VPX_InterpreterControl_Constants_Number = 11;
-Nat4	VPX_InterpreterControl_Procedures_Number = 5;
+Nat4	VPX_InterpreterControl_Procedures_Number = 7;
 Nat4	VPX_InterpreterControl_Structures_Number = 2;
 
 
@@ -1960,7 +2014,10 @@ Nat4	loadPrimitives_VPX_PrimitivesInterpreterControl(V_Environment environment,c
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"function-pointer",dictionary,3,1,VPLP_function_2D_pointer)) == NULL) return kERROR;
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"switch-to-editor",dictionary,0,0,VPLP_switch_2D_to_2D_editor)) == NULL) return kERROR;
 
-        return kNOERROR;
+        if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"add-attribute-observer",dictionary,6,2,VPLP_add_2D_attribute_2D_observer)) == NULL) return kERROR;
+		if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"remove-attribute-observer",dictionary,3,1,VPLP_remove_2D_attribute_2D_observer)) == NULL) return kERROR;
+
+		return kNOERROR;
 
 }
 

@@ -2802,20 +2802,8 @@ enum opTrigger vpx_call_inject_procedure(V_Environment environment, enum boolTyp
 						case kInteger:	tempInput->inputInt = (long) ((V_Integer) object)->value; inputSizes[argument] = 4; break;
 						case kReal:		tempInput->inputDouble = (double) ((V_Real) object)->value; inputSizes[argument] = 8; break;
 						case kString:	tempInput->inputInt = (long) ((V_String) object)->string; inputSizes[argument] = 4; break;
-						case kExternalBlock:	
-							externalBlock = (V_ExternalBlock) object;
-							if(externalBlock->levelOfIndirection == 0){
-								tempInput->inputInt = (long) ((V_ExternalBlock) object)->blockPtr; 
-								inputSizes[argument] = 4; 
-							}else if(externalBlock->levelOfIndirection == 1){
-								tempInput->inputInt = *((Nat4 *) externalBlock->blockPtr);			
-								inputSizes[argument] = 4; 
-							}else if(externalBlock->levelOfIndirection == 2){
-								tempInput->inputInt = **((Nat4 **) externalBlock->blockPtr);			
-								inputSizes[argument] = 4; 
-							}
-							break;
-							
+						case kExternalBlock:	tempInput->inputInt = (long) ((V_ExternalBlock) object)->blockPtr; inputSizes[argument] = 4; break;
+						
 						default:
 							break;
 					}
@@ -3016,7 +3004,7 @@ enum opTrigger vpx_call_inject_procedure(V_Environment environment, enum boolTyp
 				*(parameterArea + gprCounter++) = tempInt;
 				break;
 
-			case kStructureType:
+		case kStructureType:
 				tempStructPointer = (Nat4 *) tempInput->inputInt;
 				do{
 					tempInt = *tempStructPointer;
@@ -3025,13 +3013,8 @@ enum opTrigger vpx_call_inject_procedure(V_Environment environment, enum boolTyp
 				} while((Nat4)tempStructPointer - (Nat4)tempInput->inputInt < tempParameter->size);
 			break;
 
-			case kVoidType:
-				tempInt = tempInput->inputInt;
-				*(parameterArea + gprCounter++) = tempInt;
-				break;
-				
 			default:
-				printf("Unhandled parameter type %u\n",(unsigned int) theParameterType);
+				printf("Unhandled parameter type %i\n",theParameterType);
 				break;
 		}
 		if(tempParameter->type != kVoidType) tempParameter = tempParameter->next;

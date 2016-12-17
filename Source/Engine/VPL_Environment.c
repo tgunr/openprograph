@@ -97,6 +97,196 @@ enum opTrigger record_fault(V_Environment environment, enum faultCode faultCode,
 	return kHalt;
 }
 
+#ifdef _POSIX_THREADS
+void __VPLExitThread(void* space)
+{
+	V_ThreadSpace	theThread = (V_ThreadSpace)space;
+	
+	if (theThread) {
+		V_ThreadSpace	lastThread = theThread->previousThread;
+		V_ThreadSpace	replaceThread = theThread->nextThread;
+		
+		pthread_mutex_lock(&gThreadsLock);
+
+		if( lastThread == NULL )
+			theThread->threadEnvironment->threads = replaceThread;
+		else {
+			lastThread->nextThread = replaceThread;
+			replaceThread->previousThread = lastThread;
+		}
+
+		pthread_mutex_unlock(&gThreadsLock);
+		
+		/* TODO: Merge in lists to main? */
+		
+		X_free( theThread );
+	}
+}
+#endif
+
+V_ThreadSpace createThread(V_Environment environment)
+{
+	V_ThreadSpace	theThread = (V_ThreadSpace) X_malloc(sizeof(VPL_ThreadSpace));
+	Nat4			theThreadID = 0;
+	
+	if( theThread ) {
+#ifdef _POSIX_THREADS
+		theThreadID = (Nat4)pthread_self();
+#endif
+	
+		theThread->thisThread = theThreadID;
+		theThread->theFault = NULL;
+		theThread->lastError = NULL;
+		theThread->heap = createHeap();
+		theThread->stack = NULL;
+		theThread->segments = NULL;
+		theThread->stopNext = kFALSE;
+		theThread->threadEnvironment = environment;
+		theThread->previousThread = NULL;
+		theThread->nextThread = NULL;
+
+#ifdef _POSIX_THREADS
+	pthread_cleanup_push( __VPLExitThread, theThread )
+
+		return theThread;
+			
+	pthread_cleanup_pop( FALSE )
+#endif
+	}
+	return theThread;
+}
+
+V_ThreadSpace acquireThread(V_Environment environment)
+{
+	V_ThreadSpace	outSpace = environment->threads;
+	
+#ifdef _POSIX_THREADS
+{
+	Nat4			ourID = (Nat4) pthread_self();
+	V_ThreadSpace	workThread = outSpace;
+	V_ThreadSpace	foundThread = NULL;
+	
+	/* First try and find our thread */
+
+	while( (foundThread == NULL) && (workThread != NULL)) 
+	{
+		if( workThread->thisThread == ourID )
+			foundThread = workThread;
+		else
+			workThread = workThread->nextThread;
+	}
+	
+	/* Didn't find it so make and insert a new one */
+	
+	if (foundThread == NULL)
+	{
+		foundThread = createThread(environment);
+		workThread = outSpace;
+		
+		pthread_mutex_lock(&gThreadsLock);
+		
+		while (workThread != NULL) 
+			if (workThread->nextThread == NULL) {
+				workThread->nextThread = foundThread;
+				foundThread->previousThread = workThread;
+				workThread == NULL;
+			} else 
+				workThread = workThread->nextThread;
+
+		pthread_mutex_unlock(&gThreadsLock);
+	}
+	
+	outSpace = foundThread;
+}	
+#endif
+	
+	return outSpace;
+}
+
+typedef int *vpl_IterateHeapProc(V_ThreadSpace theSpace, V_Heap theHeap, void* procData);
+int	iterateHeaps( V_Environment	environment, int doReversed, vpl_IterateHeapProc* doProc, void* procData );
+
+int	iterateHeaps( V_Environment	environment, int doReversed, vpl_IterateHeapProc* doProc, void* procData )
+{
+	int				outStatus = 1;
+	int				procStatus = 0;
+	V_ThreadSpace	thisSpace = acquireThread(environment);
+	V_ThreadSpace	currentSpace = thisSpace;
+	V_Heap			currentHeap = currentSpace->heap;
+	V_Heap			workHeap = currentHeap;
+	int				doNext = 1;
+	int				firstPass = 1;
+	
+	if( doProc == NULL ) return procStatus;
+	
+	if( doReversed ) {
+		while (workHeap != NULL) {
+			currentHeap = (V_Heap)workHeap->next;
+			if (currentHeap == NULL) {
+				currentHeap = workHeap;
+				workHeap = NULL;
+			} else 
+				workHeap = currentHeap;
+		}
+		currentHeap = workHeap;
+	}
+	
+	while( (procStatus == 0) && (currentSpace) )
+	{
+		if( currentHeap )
+			procStatus = (int)doProc( currentSpace, currentHeap, procData );
+		
+		if( procStatus == 0 )
+		{
+			if (doReversed && currentHeap)
+				currentHeap = (V_Heap)currentHeap->previous;
+			else 
+				currentHeap = (V_Heap)currentHeap->next;
+			
+			if (currentHeap == NULL) {
+				if (firstPass) {
+					firstPass = 0;
+
+					pthread_mutex_lock(&gThreadsLock);
+
+					currentSpace = environment->threads;
+					currentHeap = currentSpace->heap;
+				} else {
+					currentSpace = currentSpace->nextThread;
+					if (currentSpace == NULL)
+						currentHeap = NULL;
+					else 
+						currentHeap = currentSpace->heap;
+					
+					if( currentSpace == thisSpace )
+						currentHeap = NULL;
+				}
+				
+				workHeap = currentHeap;
+				
+				if( doReversed ) {
+					while (workHeap != NULL) {
+						currentHeap = (V_Heap)workHeap->next;
+						if (currentHeap == NULL) {
+							currentHeap = workHeap;
+							workHeap = NULL;
+						} else 
+							workHeap = currentHeap;
+					}
+					currentHeap = workHeap;
+				}
+			}
+		}
+		outStatus = procStatus;
+	}
+	
+	if (!firstPass) 
+		pthread_mutex_unlock(&gThreadsLock);
+	
+	return outStatus;
+}
+
+
 V_Stack createStack(void)
 {
 	V_Stack ptrA = (V_Stack) X_malloc(sizeof (VPL_Stack));
@@ -149,12 +339,13 @@ V_Environment createEnvironment(void)
 	ptrE->interpreterThreadID = 0;
 	ptrE->pipeWriteFileDescriptor = 0;
 	ptrE->pipeReadFileDescriptor = 0;
+	ptrE->threads = createThread(ptrE);
 	
-
 #ifdef _POSIX_THREADS
 	pthread_mutex_init(&gHeapLock, NULL);
 	pthread_mutex_init(&gStackLock, NULL);
 	pthread_mutex_init(&gCallbackLock, NULL);
+	pthread_mutex_init(&gThreadsLock, NULL);
 #endif
 
 	return ptrE;
@@ -178,7 +369,6 @@ which would leave stackA pointing to stackC but stackC pointing back to stackB!
 		
 */
 	
-
 #ifdef _POSIX_THREADS
 	pthread_mutex_lock(&gStackLock);
 #endif
@@ -193,7 +383,6 @@ which would leave stackA pointing to stackC but stackC pointing back to stackB!
 		ptrE->stack = stack;
 		stack->previousStack = NULL;
 	}
-
 
 #ifdef _POSIX_THREADS
 	pthread_mutex_unlock(&gStackLock);
@@ -249,5 +438,4 @@ Nat4 sort_dictionaries(V_Environment ptrE )
 
 	return 0;
 }
-
 

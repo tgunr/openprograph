@@ -1059,28 +1059,25 @@
 	VPL_Parameter _wait_1 = { kPointerType,4,"int",1,0,NULL};
 	VPL_ExtProcedure _wait_F = {"wait",wait,&_wait_1,&_wait_R};
 
-//Not Available in Mac OS X 10.6
-#if 0
 	VPL_Parameter _htonl_R = { kUnsignedType,4,NULL,0,0,NULL};
 	VPL_Parameter _htonl_1 = { kUnsignedType,4,NULL,0,0,NULL};
-//	VPL_ExtProcedure _htonl_F = {"htonl",NULL,&_htonl_1,&_htonl_R};
-	VPL_ExtProcedure _htonl_F = {"htonl",htonl,&_htonl_1,&_htonl_R};
+	VPL_ExtProcedure _htonl_F = {"htonl",NULL,&_htonl_1,&_htonl_R};
+//	VPL_ExtProcedure _htonl_F = {"htonl",htonl,&_htonl_1,&_htonl_R};
 
 	VPL_Parameter _ntohl_R = { kUnsignedType,4,NULL,0,0,NULL};
 	VPL_Parameter _ntohl_1 = { kUnsignedType,4,NULL,0,0,NULL};
-//	VPL_ExtProcedure _ntohl_F = {"ntohl",NULL,&_ntohl_1,&_ntohl_R};
-	VPL_ExtProcedure _ntohl_F = {"ntohl",ntohl,&_ntohl_1,&_ntohl_R};
+	VPL_ExtProcedure _ntohl_F = {"ntohl",NULL,&_ntohl_1,&_ntohl_R};
+//	VPL_ExtProcedure _ntohl_F = {"ntohl",ntohl,&_ntohl_1,&_ntohl_R};
 
 	VPL_Parameter _htons_R = { kUnsignedType,2,NULL,0,0,NULL};
 	VPL_Parameter _htons_1 = { kUnsignedType,2,NULL,0,0,NULL};
-//	VPL_ExtProcedure _htons_F = {"htons",NULL,&_htons_1,&_htons_R};
-	VPL_ExtProcedure _htons_F = {"htons",htons,&_htons_1,&_htons_R};
+	VPL_ExtProcedure _htons_F = {"htons",NULL,&_htons_1,&_htons_R};
+//	VPL_ExtProcedure _htons_F = {"htons",htons,&_htons_1,&_htons_R};
 
 	VPL_Parameter _ntohs_R = { kUnsignedType,2,NULL,0,0,NULL};
 	VPL_Parameter _ntohs_1 = { kUnsignedType,2,NULL,0,0,NULL};
-//	VPL_ExtProcedure _ntohs_F = {"ntohs",NULL,&_ntohs_1,&_ntohs_R};
-	VPL_ExtProcedure _ntohs_F = {"ntohs",ntohs,&_ntohs_1,&_ntohs_R};
-#endif
+	VPL_ExtProcedure _ntohs_F = {"ntohs",NULL,&_ntohs_1,&_ntohs_R};
+//	VPL_ExtProcedure _ntohs_F = {"ntohs",ntohs,&_ntohs_1,&_ntohs_R};
 
 	VPL_Parameter _setrlimit_R = { kIntType,4,NULL,0,0,NULL};
 	VPL_Parameter _setrlimit_2 = { kPointerType,8,"rlimit",1,1,NULL};
@@ -2636,7 +2633,7 @@ VPL_DictionaryNode VPX_UNIX_Constants[] =	{
 	{"P_PGID", &_P_PGID_C},
 	{"P_PID", &_P_PID_C},
 	{"P_ALL", &_P_ALL_C},
-//Not Available in Mac OS X 10.6
+    //Not Available in Mac OS X 10.6
 #if 0
 	{"_FP_SUPERNORMAL", &__FP_SUPERNORMAL_C},
 	{"_FP_SUBNORMAL", &__FP_SUBNORMAL_C},
@@ -2859,10 +2856,10 @@ VPL_DictionaryNode VPX_UNIX_Procedures[] =	{
 	{"wait3",&_wait3_F},
 	{"waitpid",&_waitpid_F},
 	{"wait",&_wait_F},
-//	{"htonl",&_htonl_F},
-//	{"ntohl",&_ntohl_F},
-//	{"htons",&_htons_F},
-//	{"ntohs",&_ntohs_F},
+	{"htonl",&_htonl_F},
+	{"ntohl",&_ntohl_F},
+	{"htons",&_htons_F},
+	{"ntohs",&_ntohs_F},
 	{"setrlimit",&_setrlimit_F},
 	{"setpriority",&_setpriority_F},
 	{"getrusage",&_getrusage_F},
@@ -3214,9 +3211,9 @@ VPL_DictionaryNode VPX_UNIX_Procedures[] =	{
 //	{"__assert_rtn",&___assert_rtn_F},
 };
 
-Nat4	VPX_UNIX_Constants_Number = 22 - 16;    //	 16 removed for 10.6 (sigcontext & ucontext64)
+Nat4	VPX_UNIX_Constants_Number = 22;
 Nat4	VPX_UNIX_Structures_Number = 29 - 2;	//	 two removed for 10.6 (sigcontext & ucontext64)
-Nat4	VPX_UNIX_Procedures_Number = 522 - 17;
+Nat4	VPX_UNIX_Procedures_Number = 522 - 1 - 12;
 
 #pragma export on
 

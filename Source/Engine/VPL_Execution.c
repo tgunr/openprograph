@@ -9,12 +9,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-#ifdef OBJCADDITIONS
-#include <objc/objc-runtime.h>
-#include <objc/message.h>
-#endif
-
-#define	PARAMETERAREASIZE 8
+Int4	execute_watchpoint_get( V_Environment environment, vpl_StringPtr moduleName, V_ClassEntry thisClass, V_Instance thisInstance, Nat4 attIndex, V_Object attributeValue );
+Int4	execute_watchpoint_set( V_Environment environment, vpl_StringPtr moduleName, V_ClassEntry thisClass, V_Instance thisInstance, Nat4 attIndex, V_Object newValue );
 
 Int4 attribute_offset( V_Class tempClass , Int1 *tempOString )
 {
@@ -84,6 +80,8 @@ Int4 execute_get( V_Environment environment,V_Stack stack)
 		if(theClassIndex != -1){
 			theClassEntry = environment->classIndexTable->classes[theClassIndex];
 			if(theClassEntry->values[currentOperation->columnIndex]) {
+				
+				/*
 				V_WatchpointNode	tempWatchpointNode = theClassEntry->values[currentOperation->columnIndex]->watchpointList;
 				
 				if(!environment->compiled && !environment->stopNext && theClassIndex != (Nat4) -1){
@@ -95,13 +93,18 @@ Int4 execute_get( V_Environment environment,V_Stack stack)
 						tempWatchpointNode = tempWatchpointNode->previous;
 					}
 				}
-
+				 */
+				
 				if(theClassEntry->values[currentOperation->columnIndex]->type == kAttributeNode){
 					counter = theClassEntry->values[currentOperation->columnIndex]->attributeOffset;
 					tempObject = tempInstance->objectList[counter];
 				} else {
 					tempObject = theClassEntry->values[currentOperation->columnIndex]->value->value;
 				}
+				
+				counter = execute_watchpoint_get( environment, moduleName, theClassEntry, tempInstance, currentOperation->columnIndex, tempObject );
+				if (counter == kHalt) return kHalt;
+
 				increment_count(tempObject);
 				X_set_frame_root_object(environment,currentFrame,1,tempObject);
 			
@@ -115,7 +118,7 @@ Int4 execute_get( V_Environment environment,V_Stack stack)
 /*----------*/
 	
 	if(currentOperation->inject == 0){
-		record_error("get: Non-inject operation! Current Operation Column Index not set",tempOString,kERROR,environment);
+		record_error("obtain_universal: Non-inject operation!",tempOString,kERROR,environment);
 	}
 	if( possibleInstance->type == kInstance){
 		tempInstance = (V_Instance) possibleInstance;
@@ -183,16 +186,16 @@ Int4 execute_get( V_Environment environment,V_Stack stack)
 				return kHalt;
 			}
 		}
-		if(environment->compiled && possibleInstance->type != kInstance){
+		if(possibleInstance->type != kInstance){
 				record_error("get: Attribute: ",tempOString,kERROR,environment);
-				record_error("get: Attempted to get attribute as default for instance: ",tempClassName,kERROR,environment);
-				record_error("get: Attribute not fetched in module since running compiled: ",moduleName,kERROR,environment);
+				record_error("get: Attribute not found for instance: ",tempClassName,kERROR,environment);
+				record_error("get: Attribute not found in module: ",moduleName,kERROR,environment);
 				record_fault(environment,kIncorrectType,"Instance","NULL",primName,moduleName);
 				X_free(tempOString);
 				return kHalt;
 		}
 		tempDictionary = tempClass->attributes;
-		if(possibleInstance->type == kInstance && tempDictionary != NULL && tempDictionary->numberOfNodes != tempInstance->listLength){
+		if(tempDictionary != NULL && tempDictionary->numberOfNodes != tempInstance->listLength){
 			record_error("get: Attribute: ",tempOString,kERROR,environment);
 			record_error("get: Attribute out of range for: ",tempClassName,kERROR,environment);
 			record_error("get: Attribute out of range in module: ",moduleName,kERROR,environment);
@@ -219,25 +222,15 @@ Int4 execute_get( V_Environment environment,V_Stack stack)
 			}	
 		}
 		
-		if(possibleInstance->type == kInstance){
-			tempObject = tempInstance->objectList[counter];
-			increment_count(tempObject);
-			X_set_frame_root_object(environment,currentFrame,1,tempObject);
-		} else {
-			V_DictionaryNode	tempNode = NULL;
-			V_Value				tempValue = NULL;
-			tempNode = tempDictionary->nodes[counter];
-			tempValue = (V_Value) tempNode->object;
-			tempObject = tempValue->value;
-			increment_count(tempObject);
-			X_set_frame_root_object(environment,currentFrame,1,tempObject);
-		}
+		tempObject = tempInstance->objectList[counter];
+		increment_count(tempObject);
+		X_set_frame_root_object(environment,currentFrame,1,tempObject);
 		
 		increment_count(possibleInstance);
 		X_set_frame_root_object(environment,currentFrame,0,possibleInstance);
 
 		return kSuccess;
-	}else{ // tempClass == NULL
+	}else{
 		record_error("get: Class not found: ",moduleName,kERROR,environment);
 		return record_fault(environment,kNonexistentClass,tempClassName,"NULL",primName,moduleName);
 	}
@@ -296,7 +289,10 @@ Int4 execute_set( V_Environment environment,V_Stack stack)
 		} else theClassIndex = -1;
 		if(theClassIndex != -1){
 			theClassEntry = environment->classIndexTable->classes[theClassIndex];
+			
 			if(theClassEntry && theClassEntry->values[currentOperation->columnIndex]) {
+			/*
+			
 				V_WatchpointNode	tempWatchpointNode = theClassEntry->values[currentOperation->columnIndex]->watchpointList;
 				
 				if(!environment->compiled && !environment->stopNext){
@@ -308,7 +304,11 @@ Int4 execute_set( V_Environment environment,V_Stack stack)
 						tempWatchpointNode = tempWatchpointNode->previous;
 					}
 				}
+			*/
 
+				counter = execute_watchpoint_set( environment, moduleName, theClassEntry, tempInstance, currentOperation->columnIndex, tempObject );
+				if (counter == kHalt) return kHalt;
+			
 				if(theClassEntry->values[currentOperation->columnIndex]->type == kAttributeNode){
 					counter = theClassEntry->values[currentOperation->columnIndex]->attributeOffset;
 					previousObject = tempInstance->objectList[counter];
@@ -332,7 +332,7 @@ Int4 execute_set( V_Environment environment,V_Stack stack)
 /*----------*/
 
 	if(currentOperation->inject == 0){
-		record_error("set: Non-inject operation! Current Operation Column Index not set",tempOString,kERROR,environment);
+		record_error("obtain_universal: Non-inject operation!",tempOString,kERROR,environment);
 	}
 	if( possibleInstance->type == kInstance){
 		tempInstance = (V_Instance) possibleInstance;
@@ -401,16 +401,16 @@ Int4 execute_set( V_Environment environment,V_Stack stack)
 				return kHalt;
 			}
 		}
-		if(environment->compiled && possibleInstance->type != kInstance){
+		if(possibleInstance->type != kInstance){
 				record_error("set: Attribute: ",tempOString,kERROR,environment);
-				record_error("set: Attempted to set attribute as default for instance: ",tempClassName,kERROR,environment);
-				record_error("set: Attribute not set in module since running compiled: ",moduleName,kERROR,environment);
+				record_error("set: Attribute not found for instance: ",tempClassName,kERROR,environment);
+				record_error("set: Attribute not found in module: ",moduleName,kERROR,environment);
 				record_fault(environment,kIncorrectType,"Instance","NULL",primName,moduleName);
 				X_free(tempOString);
 				return kHalt;
 		}
 		tempDictionary = tempClass->attributes;
-		if(possibleInstance->type == kInstance && tempDictionary != NULL && tempDictionary->numberOfNodes != tempInstance->listLength){
+		if(tempDictionary != NULL && tempDictionary->numberOfNodes != tempInstance->listLength){
 			record_error("set: Attribute: ",tempOString,kERROR,environment);
 			record_error("set: Attribute out of range for: ",tempClassName,kERROR,environment);
 			record_error("set: Attribute out of range in module: ",moduleName,kERROR,environment);
@@ -437,27 +437,16 @@ Int4 execute_set( V_Environment environment,V_Stack stack)
 			}	
 		}
 
-		if(possibleInstance->type == kInstance){
-			previousObject = tempInstance->objectList[counter];
-			increment_count(tempObject);
-			decrement_count(environment,previousObject);
-			tempInstance->objectList[counter] = tempObject;
-		} else {
-			V_DictionaryNode	tempNode = NULL;
-			V_Value				tempValue = NULL;
-			tempNode = tempDictionary->nodes[counter];
-			tempValue = (V_Value) tempNode->object;
-			previousObject = tempValue->value;
-			increment_count(tempObject);
-			decrement_count(environment,previousObject);
-			tempValue->value = tempObject;
-		}
+		previousObject = tempInstance->objectList[counter];
+		increment_count(tempObject);
+		decrement_count(environment,previousObject);
+		tempInstance->objectList[counter] = tempObject;
 
 		increment_count(possibleInstance);
 		X_set_frame_root_object(environment,currentFrame,0,possibleInstance);
 
 		return kSuccess;	
-	}else{ // tempClass == NULL
+	}else{
 		record_error("set: Class not found: ",moduleName,kERROR,environment);
 		return record_fault(environment,kNonexistentClass,tempClassName,"NULL",primName,moduleName);
 	}
@@ -514,121 +503,7 @@ Int4 execute_extget( V_Environment environment,V_Stack stack)
 	}
 		
 	tempStructure = (V_ExternalBlock) possibleStructure;
-
-#ifdef OBJCADDITIONS
-	if(tempStructure != NULL && strcmp(tempStructure->name,"objc_object") == 0){
-		Ivar	theIvar;
-		id		theReturnObject;
-		char tempCode = 0;
-		const char *theCode = NULL;
-		
-		if(tempStructure->levelOfIndirection == 0) pointer = (Nat4) tempStructure->blockPtr;
-		else if(tempStructure->levelOfIndirection == 1) pointer = *(Nat4 *) tempStructure->blockPtr;
-		else if(tempStructure->levelOfIndirection == 2) pointer = **(Nat4 **) tempStructure->blockPtr;
-
-		tempOString = X_operation_name(environment,stack->currentFrame);
-		if(tempOString == NULL){
-			record_error("extget: NULL Operation name: ",moduleName,kERROR,environment);
-			return kHalt;
-		}
-		
-		theIvar = object_getInstanceVariable((id) pointer, tempOString, NULL);
-		if(theIvar == NULL){
-			X_set_frame_root_object(environment,currentFrame,1,NULL);
-			
-			increment_count(possibleStructure);
-			X_set_frame_root_object(environment,currentFrame,0,possibleStructure);
-			return kSuccess;
-		}
-
-		theReturnObject = object_getIvar((id) pointer,theIvar);
-		theCode = ivar_getTypeEncoding(theIvar);
-		tempCode = theCode[0];
-		
-		switch (tempCode) {
-			case 'c':
-			case 'i':
-			case 's':
-			case 'l':
-			case 'q':
-			case 'C':
-			case 'I':
-			case 'S':
-			case 'L':
-			case 'Q':
-				tempObject = (V_Object) int_to_integer((Int4)theReturnObject,environment);
-				break;
-			case 'f':
-				tempObject = (V_Object) float_to_real(*(float *) theReturnObject,environment);
-				break;
-			case 'd':
-				tempObject = (V_Object) float_to_real(*(double *) theReturnObject,environment);
-				break;
-			case 'B':
-				tempObject = (V_Object) bool_to_boolean(*(Bool *) theReturnObject,environment);
-				break;
-			case '*':
-				tempObject = (V_Object) create_string((char *) theReturnObject,environment);
-				break;
-			case '#':
-				size = sizeof("objc_class *");
-				outStructure = create_externalBlock("objc_class",size,environment);
-				outStructure->blockPtr = X_malloc(size);
-				*(Nat4 *) outStructure->blockPtr = (Nat4)theReturnObject;
-				outStructure->levelOfIndirection = 1;
-				
-				// The following doesn't seem to work with objc_msgSend
-				// 		outStructure->blockPtr = (void *) theReturnObject;
-				//		outStructure->levelOfIndirection = 0;
-				
-				tempObject = (V_Object) outStructure;
-				break;
-			case ':':
-				tempObject = (V_Object) create_string((Int1 *) sel_getName((SEL) theReturnObject),environment);
-				break;
-			case '{':
-			case '^':
-			case 'v':
-				size = sizeof("void *");
-				outStructure = create_externalBlock("void",size,environment);
-				outStructure->blockPtr = X_malloc(size);
-				*(Nat4 *) outStructure->blockPtr = (Nat4)theReturnObject;
-				outStructure->levelOfIndirection = 1;
-				
-				// The following doesn't seem to work with objc_msgSend
-				// 		outStructure->blockPtr = (void *) theReturnObject;
-				//		outStructure->levelOfIndirection = 0;
-				
-				tempObject = (V_Object) outStructure;
-				break;
-			case '@':
-				objc_msgSend(theReturnObject, sel_getUid("retain"));
-
-				size = sizeof("objc_object *");
-				outStructure = create_externalBlock("objc_object",size,environment);
-				outStructure->blockPtr = X_malloc(size);
-				*(Nat4 *) outStructure->blockPtr = (Nat4)theReturnObject;
-				outStructure->levelOfIndirection = 1;
-				
-				// The following doesn't seem to work with objc_msgSend
-				// 		outStructure->blockPtr = (void *) theReturnObject;
-				//		outStructure->levelOfIndirection = 0;
-				
-				tempObject = (V_Object) outStructure;
-				break;
-			default:
-				break;
-		}
-
-		X_set_frame_root_object(environment,currentFrame,1,tempObject);
-		
-		increment_count(possibleStructure);
-		X_set_frame_root_object(environment,currentFrame,0,possibleStructure);
-		
-		return kSuccess;
-	}
-#endif
-
+	
 	extStructure = get_extStructure(environment->externalStructsTable,tempStructure->name);
 
 	if(extStructure != NULL){
@@ -817,73 +692,6 @@ Int4 execute_extset( V_Environment environment,V_Stack stack)
 	}
 	
 	tempStructure = (V_ExternalBlock) possibleStructure;
-
-#ifdef OBJCADDITIONS
-	if(tempStructure != NULL && strcmp(tempStructure->name,"objc_object") == 0){
-		Ivar	theIvar;
-		id		theReturnObject;
-		Nat4	objcPointer = 0;
-		char tempCode = 0;
-		const char *theCode = NULL;
-		
-		if(tempStructure->levelOfIndirection == 0) pointer = (Nat4) tempStructure->blockPtr;
-		else if(tempStructure->levelOfIndirection == 1) pointer = *(Nat4 *) tempStructure->blockPtr;
-		else if(tempStructure->levelOfIndirection == 2) pointer = **(Nat4 **) tempStructure->blockPtr;
-		
-		tempOString = X_operation_name(environment,stack->currentFrame);
-		if(tempOString == NULL){
-			record_error("extset: NULL Operation name: ",moduleName,kERROR,environment);
-			return kHalt;
-		}
-		
-		theIvar = object_getInstanceVariable((id) pointer, tempOString, NULL);
-		if(theIvar == NULL){
-			increment_count(possibleStructure);
-			X_set_frame_root_object(environment,currentFrame,0,possibleStructure);
-			return kSuccess;
-		}
-		
-		theCode = ivar_getTypeEncoding(theIvar);
-		tempCode = theCode[0];
-
-		if (block == NULL) {
-			object_setInstanceVariable((id) pointer,tempOString,NULL);
-		} else if(block->type == kExternalBlock && strcmp(((V_ExternalBlock) block)->name,"objc_object") == 0){
-			
-			V_ExternalBlock objcStructure = (V_ExternalBlock) block;
-			
-			if(objcStructure->levelOfIndirection == 0) objcPointer = (Nat4) objcStructure->blockPtr;
-			else if(objcStructure->levelOfIndirection == 1) objcPointer = *(Nat4 *) objcStructure->blockPtr;
-			else if(objcStructure->levelOfIndirection == 2) objcPointer = **(Nat4 **) objcStructure->blockPtr;
-			
-			if(tempCode == '@' || tempCode == '#') {
-				SEL	theSelector = sel_getUid("retain");
-				objc_msgSend((id) objcPointer, theSelector);
-			}
-			
-		} else if(block->type == kInteger){
-			objcPointer = (Nat4) ((V_Integer) block)->value;
-		} else if(block->type == kReal){
-			*((float *) &objcPointer) = ((V_Real) block)->value;
-		} else if(block->type == kBoolean){
-			objcPointer = (Nat4) ((V_Boolean) block)->value;
-		}
-				
-		if(tempCode == '@' || tempCode == '#') {
-			SEL	theSelector = sel_getUid("release");
-			theReturnObject = object_getIvar((id) pointer,theIvar);
-			objc_msgSend(theReturnObject, theSelector);
-		}
-		
-		object_setIvar((id) pointer,theIvar,(id) objcPointer);
-		
-		increment_count(possibleStructure);
-		X_set_frame_root_object(environment,currentFrame,0,possibleStructure);
-		
-		return kSuccess;
-	}
-#endif
-	
 	extStructure = get_extStructure(environment->externalStructsTable,tempStructure->name);
 
 	if(extStructure != NULL){
@@ -1085,6 +893,8 @@ Int4 execute_extset( V_Environment environment,V_Stack stack)
 	}
 }
 
+#pragma mark ## execute_extprocedure setup ##
+
 long ExternalDummyCall(	long intA, long intB, long intc, long intd, long inte, long intf, long intg, long inth,
 						long int1, long int2, long int3, long int4, long int5, long int6, long int7, long int8,
 						long int9, long int10, long int11, long int12, long int13, long int14, long int15, long int16);
@@ -1102,6 +912,7 @@ long ExternalDummyCall(	long intA, long intB, long intc, long intd, long inte, l
 	
 }
 
+#pragma mark ## x86 execute_extprocedure ##
 
 #if __i386__
 Int4 execute_extprocedure( V_Environment environment,V_Stack stack)
@@ -1145,467 +956,11 @@ Int4 execute_extprocedure( V_Environment environment,V_Stack stack)
 	Nat4 procedureInarity = 0;
 	Nat4 procedureOutarity = 0;
 	Int1		*operationName = NULL;
-
-	Method theMethod = NULL;
-	Nat4 objcPointer = 0;
-	SEL theSelector = NULL;
-	Nat4 index = 0;
-	char	backslash[] = "\\";
-	Nat4	argumentOffset = 0;
 	
 	asm( "movl %%esp,%0" : "=r" (tempInt) : /* No inputs */ );	// Get the stack pointer
 	parameterArea = (Nat4 *) tempInt;		// Set the initial parameter area to the stack pointer
 	tempInt = ExternalDummyCall(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24);	/* Force the compiler to allocate 24 words in the parameter area*/
 
-#ifdef OBJCADDITIONS
-//	object = VPLEngineGetInputObject(0,currentFrame,environment);
-	operationName = X_operation_name(environment,stack->currentFrame);
-	index = strcspn(operationName,backslash);
-//	index = strcspn(operationName,"\");
-	if(index < strlen(operationName)){
-		id tempClass = NULL;
-		char *tempCString = (Int1 *)X_malloc((index + 1)*sizeof(Int1));
-		tempCString = strncpy(tempCString,operationName,index);
-		tempCString[index] = '\0';
-		tempClass = objc_getClass(tempCString);
-		if(tempClass == NULL) {
-			record_error("execute_extprocedure: Could not obtain Objc class!",operationName,kERROR,environment);
-			X_free(tempCString);
-			X_free(operationName);
-			return kHalt;
-		}
-		X_free(tempCString);
-		tempCString = operationName + index + 1;
-
-		theSelector = sel_getUid(tempCString);
-			
-		theMethod = class_getClassMethod((Class) tempClass,theSelector);
-		objcPointer = (Nat4) tempClass;
-		argumentOffset = 2;
-		
-		free(operationName);
-
-	} else if( (object = VPLEngineGetInputObject(0,currentFrame,environment)) != NULL && object->type == kExternalBlock && strcmp(((V_ExternalBlock) object)->name,"objc_object") == 0){
-		V_ExternalBlock objcObject = (V_ExternalBlock) object;
-		Class theClass = NULL;
-		
-		if(objcObject->levelOfIndirection == 0) objcPointer = (Nat4) objcObject->blockPtr;
-		else if(objcObject->levelOfIndirection == 1) objcPointer = *(Nat4 *) objcObject->blockPtr;
-		else if(objcObject->levelOfIndirection == 2) objcPointer = **(Nat4 **) objcObject->blockPtr;
-		
-		operationName = X_operation_name(environment,stack->currentFrame);
-		
-		theSelector = sel_getUid(operationName);
-		
-		theClass = object_getClass((id) objcPointer);
-		
-		theMethod = class_getInstanceMethod(theClass,theSelector);
-		
-		argumentOffset = 1;
-
-		free(operationName);
-		
-}
-		
-	if(theMethod != NULL) {
-		struct objc_super	tempSuper;
-		unsigned numberOfArguments = 0;
-		unsigned counter = 0;
-		id theResult = NULL;
-		
-		numberOfArguments = method_getNumberOfArguments(theMethod);
-		tempInputList.inputs = VPXMALLOC(numberOfArguments,V_Input);
-		for(counter = 2; counter < numberOfArguments; counter++){
-			char tempCode = 0;
-			char *theCode = NULL;
-			theCode = method_copyArgumentType(theMethod,counter);
-			tempCode = theCode[0];
-			if(tempCode == 'r' || tempCode == 'R' || tempCode == 'n' || tempCode == 'N' || tempCode == 'o' || tempCode == 'O'
-			    || tempCode == 'V') tempCode = theCode[1];
-			
-			if(tempCode == 'c') theParameterType = kCharType;
-			else if(tempCode == 'i') theParameterType = kIntType;
-			else if(tempCode == 's') theParameterType = kShortType;
-			else if(tempCode == 'l') theParameterType = kLongType;
-			else if(tempCode == 'q') theParameterType = kLongLongType;
-			else if(tempCode == 'C') theParameterType = kUnsignedCharType;
-			else if(tempCode == 'I') theParameterType = kUnsignedIntType;
-			else if(tempCode == 'S') theParameterType = kUnsignedShortType;
-			else if(tempCode == 'L') theParameterType = kUnsignedLongType;
-			else if(tempCode == 'Q') theParameterType = kUnsignedLongLongType;
-			else if(tempCode == 'f') theParameterType = kFloatType;
-			else if(tempCode == 'd') theParameterType = kDoubleType;
-			else if(tempCode == 'B') theParameterType = kBoolType;
-			else if(tempCode == 'v') theParameterType = kVoidType;
-			else if(tempCode == '*') theParameterType = kCharStringType;
-			else if(tempCode == '@') theParameterType = kObjectType;
-			else if(tempCode == '#') theParameterType = kClassType;
-			else if(tempCode == ':') theParameterType = kSelectorType;
-			else if(tempCode == '{') theParameterType = kStructureType;
-			else if(tempCode == '^') theParameterType = kPointerType;
-
-			free(theCode);
-
-			tempInput = (V_Input) X_malloc(sizeof(VPL_Input));
-			tempInputList.inputs[counter] = tempInput;
-			object = VPLEngineGetInputObject(counter - argumentOffset,currentFrame,environment); // Skip the selector
-			switch(theParameterType){
-				case kVoidType:
-					if(object == NULL){
-						tempInput->inputInt = 0;
-					}else{
-						switch(object->type){
-							case kBoolean:	tempInput->inputInt = (long) ((V_Boolean) object)->value; inputSizes[argument] = 4; break;
-							case kInteger:	tempInput->inputInt = (long) ((V_Integer) object)->value; inputSizes[argument] = 4; break;
-							case kReal:		tempInput->inputDouble = (double) ((V_Real) object)->value; inputSizes[argument] = 8; break;
-							case kString:	tempInput->inputInt = (long) ((V_String) object)->string; inputSizes[argument] = 4; break;
-							case kExternalBlock:	
-								externalBlock = (V_ExternalBlock) object;
-								if(externalBlock->levelOfIndirection == 0){
-									tempInput->inputInt = (long) ((V_ExternalBlock) object)->blockPtr; 
-									inputSizes[argument] = 4; 
-								}else if(externalBlock->levelOfIndirection == 1){
-									tempInput->inputInt = *((Nat4 *) externalBlock->blockPtr);			
-									inputSizes[argument] = 4; 
-								}else if(externalBlock->levelOfIndirection == 2){
-									tempInput->inputInt = **((Nat4 **) externalBlock->blockPtr);			
-									inputSizes[argument] = 4; 
-								}
-								break;
-								
-							default:
-								record_error("extprocedure: VoidType input is not appropriate! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-								record_fault(environment,kIncorrectType,currentOperation->objectName,"NULL","NULL",currentFrame->methodName);
-								return kHalt;
-								break;
-						}
-					}
-					break;
-					
-				case kUnsignedType:
-				case kLongType:
-				case kShortType:
-				case kCharType:
-				case kEnumType:
-				case kIntType:
-				case kUnsignedCharType:
-				case kUnsignedIntType:
-				case kUnsignedShortType:
-				case kUnsignedLongType:
-				case kUnsignedLongLongType:
-					if(object == NULL){
-						tempInput->inputInt = 0;
-					}else{
-						switch(object->type){
-							case kInteger:	tempInput->inputInt = ((V_Integer) object)->value; break;
-							case kBoolean:	tempInput->inputInt = ((V_Boolean) object)->value; break;
-							case kReal:		tempInput->inputInt = ((V_Real) object)->value; break;
-								
-							default:
-								record_error("extprocedure: IntegerType input is not integer! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-								record_fault(environment,kIncorrectType,currentOperation->objectName,"NULL","NULL",currentFrame->methodName);
-								return kHalt;
-								break;
-						}
-					}
-					break;
-					
-				case kFloatType:
-					if(object == NULL){
-						record_error("extprocedure: FloatType input is null! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-						record_fault(environment,kIncorrectType,currentOperation->objectName,"NULL","NULL",currentFrame->methodName);
-						return kHalt;
-					}
-					switch(object->type){
-						case kInteger:	tempInput->inputFloat = ((V_Integer) object)->value; break;
-						case kBoolean:	tempInput->inputFloat = ((V_Boolean) object)->value; break;
-						case kReal:		tempInput->inputFloat = ((V_Real) object)->value; break;
-							
-						default:
-							record_error("extprocedure: FloatType input is not real! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-							record_fault(environment,kIncorrectType,currentOperation->objectName,"NULL","NULL",currentFrame->methodName);
-							return kHalt;
-							break;
-					}
-					break;
-					
-				case kDoubleType:
-					if(object == NULL){
-						record_error("extprocedure: DoubleType input is null! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-						record_fault(environment,kIncorrectType,currentOperation->objectName,"NULL","NULL",currentFrame->methodName);
-						return kHalt;
-					}
-					switch(object->type){
-						case kInteger:	tempInput->inputDouble = ((V_Integer) object)->value; break;
-						case kBoolean:	tempInput->inputDouble = ((V_Boolean) object)->value; break;
-						case kReal:		tempInput->inputDouble = ((V_Real) object)->value; break;
-							
-						default:
-							record_error("extprocedure: DoubleType input is not real! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-							record_fault(environment,kIncorrectType,currentOperation->objectName,"NULL","NULL",currentFrame->methodName);
-							return kHalt;
-							break;
-					}
-					break;
-
-				case kStructureType:
-					if(object == NULL){
-						tempInput->inputInt = 0;
-					} else if(object->type == kExternalBlock){
-						externalBlock = (V_ExternalBlock) object;
-						if( externalBlock->levelOfIndirection == 0 && strcmp("void",externalBlock->name) == 0 ){
-							tempInput->inputInt = (long) externalBlock->blockPtr;
-						}else if(1 - externalBlock->levelOfIndirection == -1) {
-							tempInput->inputInt = **((Nat4 **) externalBlock->blockPtr);
-						}else if(1 - externalBlock->levelOfIndirection == 0) {
-							tempInput->inputInt = *((Nat4 *) externalBlock->blockPtr);
-						}else if(1 - externalBlock->levelOfIndirection == 1) {
-							tempInput->inputInt = (long) externalBlock->blockPtr;
-						}else{
-							record_error("extprocedure: Input level of indirection too high! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-							record_fault(environment,kIncorrectType,currentOperation->objectName,"NULL","NULL",currentFrame->methodName);
-							return kHalt;
-						}
-					} else {
-						record_error("extprocedure: Input is not valid structure! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-						record_fault(environment,kIncorrectType,currentOperation->objectName,"NULL","NULL",currentFrame->methodName);
-						return kHalt;
-					}
-					break;
-					
-				case kObjectType:
-					if(object == NULL){
-						tempInput->inputInt = 0;
-					} else if(object->type == kExternalBlock){
-						externalBlock = (V_ExternalBlock) object;
-						if( externalBlock->levelOfIndirection == 0 && strcmp("void",externalBlock->name) == 0 ){
-							tempInput->inputInt = (long) externalBlock->blockPtr;
-						}else if(1 - externalBlock->levelOfIndirection == -1) {
-							tempInput->inputInt = **((Nat4 **) externalBlock->blockPtr);
-						}else if(1 - externalBlock->levelOfIndirection == 0 ||
-								 strcmp("VPL_CallbackCodeSegment",externalBlock->name) == 0) {
-							tempInput->inputInt = *((Nat4 *) externalBlock->blockPtr);
-						}else if(1 - externalBlock->levelOfIndirection == 1) {
-							tempInput->inputInt = (long) externalBlock->blockPtr;
-						}else{
-							record_error("extprocedure: Input level of indirection too high! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-							record_fault(environment,kIncorrectType,currentOperation->objectName,"NULL","NULL",currentFrame->methodName);
-							return kHalt;
-						}
-					} else if(object->type == kInteger){
-						tempInput->inputInt = ((V_Integer) object)->value;
-					} else if(object->type == kString){										// Allow strings as pointers
-						CFStringRef	theNSString = NULL;
-						pointerString = (V_String) object;									// Added by Jack 5/13/05
-						theNSString = CFStringCreateWithCString(NULL,pointerString->string,kCFStringEncodingUTF8);
-						tempInput->inputInt = (long) theNSString;
-					} else {
-						record_error("extprocedure: Input is not valid pointer! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-						record_fault(environment,kIncorrectType,currentOperation->objectName,"NULL","NULL",currentFrame->methodName);
-						return kHalt;
-					}
-					break;
-
-				case kCharStringType:
-				case kPointerType:
-				case kClassType:
-				case kSelectorType:
-					if(object == NULL){
-						tempInput->inputInt = 0;
-					} else if(object->type == kExternalBlock){
-						externalBlock = (V_ExternalBlock) object;
-						if( externalBlock->levelOfIndirection == 0 && strcmp("void",externalBlock->name) == 0 ){
-								tempInput->inputInt = (long) externalBlock->blockPtr;
-						}else if(1 - externalBlock->levelOfIndirection == -1) {
-								tempInput->inputInt = **((Nat4 **) externalBlock->blockPtr);
-						}else if(1 - externalBlock->levelOfIndirection == 0 ||
-								 strcmp("VPL_CallbackCodeSegment",externalBlock->name) == 0) {
-								tempInput->inputInt = *((Nat4 *) externalBlock->blockPtr);
-						}else if(1 - externalBlock->levelOfIndirection == 1) {
-								tempInput->inputInt = (long) externalBlock->blockPtr;
-						}else{
-							record_error("extprocedure: Input level of indirection too high! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-							record_fault(environment,kIncorrectType,currentOperation->objectName,"NULL","NULL",currentFrame->methodName);
-							return kHalt;
-						}
-					} else if(object->type == kInteger){
-							tempInput->inputInt = ((V_Integer) object)->value;
-					} else if(object->type == kString){										// Allow strings as pointers
-						pointerString = (V_String) object;									// Added by Jack 5/13/05
-							tempInput->inputInt = (long) pointerString->string;
-					} else {
-						record_error("extprocedure: Input is not valid pointer! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-						record_fault(environment,kIncorrectType,currentOperation->objectName,"NULL","NULL",currentFrame->methodName);
-						return kHalt;
-					}
-					break;
-					
-			}
-					
-		}
-		
-		if(currentOperation->callSuper == TRUE){
-			Class currentClass = object_getClass((id) objcPointer);
-			Class currentSuperClass = class_getSuperclass(currentClass);
-			tempSuper.receiver = (id) objcPointer;
-			tempSuper.class = currentSuperClass;
-		}
-		
-		
-		switch (numberOfArguments) {
-			case 2:
-				if(currentOperation->callSuper == FALSE) theResult = objc_msgSend((id) objcPointer, theSelector);
-				else theResult = objc_msgSendSuper(&tempSuper, theSelector);
-				break;
-
-			case 3:
-				if(currentOperation->callSuper == FALSE) theResult = objc_msgSend((id) objcPointer, theSelector,tempInputList.inputs[2]->inputInt);
-				else theResult = objc_msgSendSuper(&tempSuper, theSelector,tempInputList.inputs[2]->inputInt);
-				break;
-				
-			case 4:
-				if(currentOperation->callSuper == FALSE) theResult = objc_msgSend((id) objcPointer, theSelector,tempInputList.inputs[2]->inputInt,tempInputList.inputs[3]->inputInt);
-				else theResult = objc_msgSendSuper(&tempSuper, theSelector,tempInputList.inputs[2]->inputInt,tempInputList.inputs[3]->inputInt);
-				break;
-				
-			case 5:
-				if(currentOperation->callSuper == FALSE) theResult = objc_msgSend((id) objcPointer, theSelector,tempInputList.inputs[2]->inputInt,tempInputList.inputs[3]->inputInt,tempInputList.inputs[4]->inputInt);
-				else theResult = objc_msgSendSuper(&tempSuper, theSelector,tempInputList.inputs[2]->inputInt,tempInputList.inputs[3]->inputInt,tempInputList.inputs[4]->inputInt);
-				break;
-				
-			case 6:
-				if(currentOperation->callSuper == FALSE) theResult = objc_msgSend((id) objcPointer, theSelector,tempInputList.inputs[2]->inputInt,tempInputList.inputs[3]->inputInt,tempInputList.inputs[4]->inputInt,tempInputList.inputs[5]->inputInt);
-				else theResult = objc_msgSendSuper(&tempSuper, theSelector,tempInputList.inputs[2]->inputInt,tempInputList.inputs[3]->inputInt,tempInputList.inputs[4]->inputInt,tempInputList.inputs[5]->inputInt);
-				break;
-				
-			case 7:
-				if(currentOperation->callSuper == FALSE) theResult = objc_msgSend((id) objcPointer, theSelector,tempInputList.inputs[2]->inputInt,tempInputList.inputs[3]->inputInt,tempInputList.inputs[4]->inputInt,tempInputList.inputs[5]->inputInt,tempInputList.inputs[6]->inputInt);
-				else theResult = objc_msgSendSuper(&tempSuper, theSelector,tempInputList.inputs[2]->inputInt,tempInputList.inputs[3]->inputInt,tempInputList.inputs[4]->inputInt,tempInputList.inputs[5]->inputInt,tempInputList.inputs[6]->inputInt);
-				break;
-				
-			default:
-				return kHalt;
-				break;
-		}
-			
-		if(theResult == NULL){
-			X_set_frame_root_object(environment,currentFrame,0,NULL);
-		} else {
-			char tempCode = 0;
-			char *theCode = NULL;
-			theCode = method_copyReturnType(theMethod);
-			tempCode = theCode[0];
-			if(tempCode == 'r' || tempCode == 'R' || tempCode == 'n' || tempCode == 'N' || tempCode == 'o' || tempCode == 'O'
-			   || tempCode == 'V') tempCode = theCode[1];
-			
-			if(tempCode == 'c') theParameterType = kCharType;
-			else if(tempCode == 'i') theParameterType = kIntType;
-			else if(tempCode == 's') theParameterType = kShortType;
-			else if(tempCode == 'l') theParameterType = kLongType;
-			else if(tempCode == 'q') theParameterType = kLongLongType;
-			else if(tempCode == 'C') theParameterType = kUnsignedCharType;
-			else if(tempCode == 'I') theParameterType = kUnsignedIntType;
-			else if(tempCode == 'S') theParameterType = kUnsignedShortType;
-			else if(tempCode == 'L') theParameterType = kUnsignedLongType;
-			else if(tempCode == 'Q') theParameterType = kUnsignedLongLongType;
-			else if(tempCode == 'f') theParameterType = kFloatType;
-			else if(tempCode == 'd') theParameterType = kDoubleType;
-			else if(tempCode == 'B') theParameterType = kBoolType;
-			else if(tempCode == 'v') theParameterType = kVoidType;
-			else if(tempCode == '*') theParameterType = kCharStringType;
-			else if(tempCode == '@') theParameterType = kObjectType;
-			else if(tempCode == '#') theParameterType = kClassType;
-			else if(tempCode == ':') theParameterType = kSelectorType;
-			else if(tempCode == '{') theParameterType = kStructureType;
-			else if(tempCode == '^') theParameterType = kPointerType;
-			
-			free(theCode);
-			
-			switch(theParameterType){
-				case kVoidType:
-					X_set_frame_root_object(environment,currentFrame,0,NULL);
-					break;
-				
-				
-				case kUnsignedType:
-				case kLongType:
-				case kShortType:
-				case kCharType:
-				case kEnumType:
-				case kIntType:
-				case kUnsignedCharType:
-				case kUnsignedIntType:
-				case kUnsignedShortType:
-				case kUnsignedLongType:
-				case kUnsignedLongLongType:
-				case kBoolType:
-					X_set_frame_root_object(environment,currentFrame,0,(V_Object) int_to_integer((Nat4) theResult,environment));
-					break;
-					
-				case kCharStringType:
-				case kClassType:
-				case kSelectorType:
-				case kStructureType:
-				case kPointerType:
-					if(tempInt == 0){
-						X_set_frame_root_object(environment,currentFrame,0,NULL);
-					} else {
-						tempPointer = (Nat4 *) X_malloc(sizeof(Nat4));
-						*((Nat4 *)tempPointer) = (Nat4) theResult;
-						outputBlock = create_externalBlock("objc_object",sizeof("objc_object *"),environment);
-						outputBlock->blockPtr = tempPointer;
-						outputBlock->levelOfIndirection = 1;
-						X_set_frame_root_object(environment,currentFrame,0,(V_Object) outputBlock);
-					}
-					break;
-					
-				case kObjectType:
-					if(tempInt == 0){
-						X_set_frame_root_object(environment,currentFrame,0,NULL);
-					} else {
-						if(strcmp("alloc",sel_getName(theSelector)) != 0) {
-						   objc_msgSend(theResult, sel_getUid("retain"));
-						}
-
-						tempPointer = (Nat4 *) X_malloc(sizeof(Nat4));
-						*((Nat4 *)tempPointer) = (Nat4) theResult;
-						outputBlock = create_externalBlock("objc_object",sizeof("objc_object *"),environment);
-						outputBlock->blockPtr = tempPointer;
-						outputBlock->levelOfIndirection = 1;
-						X_set_frame_root_object(environment,currentFrame,0,(V_Object) outputBlock);
-					}
-					break;
-					
-				case kFloatType:
-					record_error("objc procedure: float return type! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-					return kHalt;
-//					X_set_frame_root_object(environment,currentFrame,0,(V_Object) float_to_real((float) theResult,environment));
-					break;
-					
-				case kDoubleType:
-					record_error("objc procedure: double return type! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-					return kHalt;
-//					X_set_frame_root_object(environment,currentFrame,0,(V_Object) float_to_real((float) theResult,environment));
-					break;
-					
-				default:
-					record_error("extprocedure: Unrecognized return type! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
-					return kHalt;
-					break;
-			}
-
-		}
-
-		for(argument = 0; argument < numberOfArguments; argument++){
-			X_free(tempInputList.inputs[argument]);
-		}
-		X_free(tempInputList.inputs);
-			
-		return kSuccess;
-	} // If the method isn't NULL
-		
-#endif
-	
 	if (currentOperation->inject != 0){
 		V_Object	tempObject = NULL;
 		Int4		result = 0;
@@ -1706,22 +1061,10 @@ Int4 execute_extprocedure( V_Environment environment,V_Stack stack)
 						case kInteger:	tempInput->inputInt = (long) ((V_Integer) object)->value; inputSizes[argument] = 4; break;
 						case kReal:		tempInput->inputDouble = (double) ((V_Real) object)->value; inputSizes[argument] = 8; break;
 						case kString:	tempInput->inputInt = (long) ((V_String) object)->string; inputSizes[argument] = 4; break;
-						case kExternalBlock:	
-							externalBlock = (V_ExternalBlock) object;
-							if(externalBlock->levelOfIndirection == 0){
-								tempInput->inputInt = (long) ((V_ExternalBlock) object)->blockPtr; 
-								inputSizes[argument] = 4; 
-							}else if(externalBlock->levelOfIndirection == 1){
-								tempInput->inputInt = *((Nat4 *) externalBlock->blockPtr);			
-								inputSizes[argument] = 4; 
-							}else if(externalBlock->levelOfIndirection == 2){
-								tempInput->inputInt = **((Nat4 **) externalBlock->blockPtr);			
-								inputSizes[argument] = 4; 
-							}
-							break;
+						case kExternalBlock:	tempInput->inputInt = (long) ((V_ExternalBlock) object)->blockPtr; inputSizes[argument] = 4; break;
 						
 						default:
-							record_error("extprocedure: VoidType input is not appropriate! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
+							record_error("extprocedure: IntegerType input is not integer nor real! - ",currentOperation->objectName,kWRONGINPUTTYPE,environment);
 							record_fault(environment,kIncorrectType,currentOperation->objectName,"NULL","NULL",currentFrame->methodName);
 							return kHalt;
 						break;
@@ -1979,7 +1322,7 @@ Int4 execute_extprocedure( V_Environment environment,V_Stack stack)
 				*(parameterArea + gprCounter++) = tempInt;
 				break;
 
-			case kStructureType:
+		case kStructureType:
 				tempStructPointer = (Nat4 *) tempInput->inputInt;
 				do{
 					tempInt = *tempStructPointer;
@@ -1988,13 +1331,8 @@ Int4 execute_extprocedure( V_Environment environment,V_Stack stack)
 				} while((Nat4)tempStructPointer - (Nat4)tempInput->inputInt < tempParameter->size);
 			break;
 
-			case kVoidType:
-				tempInt = tempInput->inputInt;
-				*(parameterArea + gprCounter++) = tempInt;
-				break;
-				
 			default:
-				printf("Unhandled parameter type %u\n",(unsigned int) theParameterType);
+				printf("Unhandled parameter type %i\n",theParameterType);
 				break;
 		}
 		if(tempParameter->type != kVoidType) tempParameter = tempParameter->next;
@@ -2085,6 +1423,8 @@ Int4 execute_extprocedure( V_Environment environment,V_Stack stack)
 	return kSuccess;
 }
 #endif
+
+#pragma mark ## ppc execute_extprocedure ##
 
 #if __ppc__
 Int4 execute_extprocedure( V_Environment environment,V_Stack stack)
@@ -2940,7 +2280,84 @@ Int1 *full_name( V_Operation operation , V_Environment environment )
 #pragma unused(environment)
 #pragma unused(operation)
 
-	Int1		*fullName = "FullName";
+	Int1		*fullName = "Method Name Not Implemented!";
+
+	V_Frame		thisFrame = NULL;
+	V_Operation	thisOperation = operation;
+	V_Method	thisMethod = NULL;
+	Int1*		thisCaseName = NULL;
+	Int1*		theFrameMethodName = NULL;
+	Int1*		theOpMethodName = NULL;
+	Bool		isByFrame = (operation == NULL);
+	Bool		isTopCase = TRUE;
+	Int1		thisCase = 0;
+	Int1		caseCount = 0;
+	Int1		loop;
+	
+	thisFrame = environment->stack->currentFrame;
+	thisOperation = thisFrame->operation;
+	operation = thisOperation;
+	
+	isByFrame = FALSE;
+	
+	fprintf( stderr, "Traversing by %s\n", (isByFrame ? "Frame" : "Operation") );
+	
+	if( isByFrame ) {
+		thisFrame = environment->stack->currentFrame;
+		theFrameMethodName = thisFrame->methodName;
+		thisOperation = thisFrame->operation;
+	}
+
+	thisMethod = thisOperation->owner->parentMethod;
+	theOpMethodName = thisMethod->objectName;
+		
+	if( isByFrame ) thisCaseName = theFrameMethodName;
+	else thisCaseName = theOpMethodName;
+	
+	fprintf( stderr, "Operation Case Name: %s\n", thisCaseName );
+
+	// Find top, count, and case number
+
+	while( thisCaseName != NULL ) {
+		if( isByFrame ) thisMethod = thisFrame->frameCase->parentMethod;
+		else thisMethod = thisOperation->owner->parentMethod;
+		if( thisMethod != NULL ) {
+			isTopCase = (thisMethod->columnIndex > 0);
+			caseCount = thisMethod->numberOfCases;
+			for( loop=0; loop<caseCount; loop++ )
+				if( thisMethod->casesList[loop] == thisFrame->frameCase ) {
+					thisCase = loop + 1;
+					break;
+				}
+		} else {
+			isTopCase = TRUE;
+			thisCase = 0;
+			caseCount = 0;
+			break;
+		}
+		
+		fprintf( stderr, "\tFrame %s: %s %i:%i\n", (isTopCase ? "Method" : "Local"), thisCaseName, thisCase, caseCount );
+		fprintf( stderr, "\tFrame Count: %i, Finished: %s\n", thisFrame->repeatCounter, (thisFrame->stopNext) ? "Yes" : "No" );
+
+		if( isByFrame ) {
+			thisFrame = thisFrame->previousFrame;
+			if( thisFrame != NULL ) thisCaseName = thisFrame->methodName;
+		} else {
+			if( isTopCase ) thisCaseName = NULL;
+			else {
+				if( thisOperation->owner != NULL ) thisOperation = (V_Operation)((V_Operation)thisMethod)->owner->parentMethod;
+				if( thisOperation != NULL ) thisCaseName = thisOperation->objectName;
+				else thisCaseName = NULL;
+			}
+		}
+	}
+
+
+//	if( theFrameMethodName != NULL ) fullName = theFrameMethodName;
+//	else if( theOpMethodName != NULL ) fullName = theOpMethodName;
+
+	if( theOpMethodName != NULL ) fullName = theOpMethodName;
+
 	return fullName;
 }
 
@@ -2954,6 +2371,9 @@ void MacVPLCallbackHandler(void)
 	asm( "movl %%edx,%0" : "=r" (result) : /* No inputs */ );	// Get the structure block
 	asm( "movl %%ebp,%0" : "=r" (stackPointer) : /* No inputs */ );	// Get the stack pointer
 
+	VPL_GPRegisters theRegisters;
+	V_GPRegisters theRegistersPtr = &theRegisters;
+	
 	Nat4 counter = 0;
 	Nat4 inputCounter = 0;
 	V_CallbackCodeSegment currentSegment = NULL;
@@ -2964,8 +2384,6 @@ void MacVPLCallbackHandler(void)
 	V_List				outputList = NULL;
 	V_ExternalBlock		outputBlock = NULL;
 	V_Object			block = NULL;
-	V_List				varagList = NULL;
-	V_ExternalBlock		externalBlock = NULL;
 
 	V_ExtProcedure	tempProcedure = NULL;
 	V_Parameter		tempParameter = NULL;
@@ -2973,13 +2391,16 @@ void MacVPLCallbackHandler(void)
 	Nat4			theParameterType = 0;
 
 	register long tempInt = 0;
+	register float tempFloat = 0.0;
+	register double tempDouble = 0.0;
 
 	Nat4 gprCounter = 0;
-	Nat4 varargCounter = 0;
+	Nat4 fpCounter = 0;
 	
-	Nat4 parameterArea[PARAMETERAREASIZE];
+	Nat4 parameterArea[8] = { 0,0,0,0,0,0,0,0 };
 	void *tempPointer = NULL;
 	VPL_Input	tempInput;
+	V_Input		tempInputPtr = &tempInput;
 
 	Int4	(*spawnPtr)(V_Environment,char *,V_List , V_List ,Int4 *);
 
@@ -2989,246 +2410,6 @@ void MacVPLCallbackHandler(void)
 	stackPointer = *((Nat4 *)stackPointer);
 	stackPointer += 8;	//Calling through the code segment has subtracted 12 bytes from the original stack pointer
 
-	for(varargCounter = 0; varargCounter < PARAMETERAREASIZE; varargCounter++) parameterArea[varargCounter] = 0;
-	
-	if(strcmp(tempProcedure->name,"IMP") == 0){
-		id					tempObjcObject = *(id *) stackPointer;
-		Class				tempClass = NULL;
-		Method				*tempMethodList = NULL;
-		unsigned int		count = 0;
-		Nat4				parameterCounter = 0;
-		Nat4				numberOfParameters = 0;
-		Method				tempMethod = NULL;
-		IMP					tempIMP = NULL;
-		
-		tempClass = object_getClass(tempObjcObject);
-		
-		while(tempClass != NULL) {
-			tempMethodList = class_copyMethodList(tempClass, &count);
-			for(counter = 0; counter < count; counter++){
-				tempMethod = tempMethodList[counter];
-				tempIMP = method_getImplementation(tempMethod);
-				
-				if(tempIMP == (IMP) currentSegment ) break;
-				tempMethod = NULL;
-			}
-			if(tempMethodList) free(tempMethodList);
-			if(tempIMP == (IMP) currentSegment ) break;
-			tempClass = class_getSuperclass(tempClass);
-		}
-		
-		if(tempMethod != NULL) {
-			V_ExtProcedure effectiveProcedure = NULL;
-			
-			effectiveProcedure = create_extProcedure(tempProcedure->name);
-			numberOfParameters = method_getNumberOfArguments(tempMethod);
-			
-			for(parameterCounter = 0; parameterCounter < numberOfParameters; parameterCounter++){
-				//				Nat4 size = 0;
-				//				Int1 *name = NULL;
-				//				Nat4 indirection = 0;
-				//				Nat4 constantFlag = 0;
-				//				Nat4 theParameterType = 0;
-				
-				char tempCode = 0;
-				char *theCode = NULL;
-				
-				theCode = method_copyArgumentType(tempMethod,parameterCounter);
-				tempCode = theCode[0];
-				if(tempCode == 'r' || tempCode == 'R' || tempCode == 'n' || tempCode == 'N' || tempCode == 'o' || tempCode == 'O'
-				   || tempCode == 'V') tempCode = theCode[1];
-				
-				/*
-				 if(tempCode == 'c') theParameterType = kCharType;
-				 else if(tempCode == 'i') theParameterType = kIntType;
-				 else if(tempCode == 's') theParameterType = kShortType;
-				 else if(tempCode == 'l') theParameterType = kLongType;
-				 else if(tempCode == 'q') theParameterType = kLongLongType;
-				 else if(tempCode == 'C') theParameterType = kUnsignedCharType;
-				 else if(tempCode == 'I') theParameterType = kUnsignedIntType;
-				 else if(tempCode == 'S') theParameterType = kUnsignedShortType;
-				 else if(tempCode == 'L') theParameterType = kUnsignedLongType;
-				 else if(tempCode == 'Q') theParameterType = kUnsignedLongLongType;
-				 else if(tempCode == 'f') theParameterType = kFloatType;
-				 else if(tempCode == 'd') theParameterType = kDoubleType;
-				 else if(tempCode == 'B') theParameterType = kBoolType;
-				 else if(tempCode == 'v') theParameterType = kVoidType;
-				 else if(tempCode == '*') theParameterType = kCharStringType;
-				 else if(tempCode == '@') theParameterType = kObjectType;
-				 else if(tempCode == '#') theParameterType = kClassType;
-				 else if(tempCode == ':') theParameterType = kSelectorType;
-				 else if(tempCode == '{') theParameterType = kStructureType;
-				 else if(tempCode == '^') theParameterType = kPointerType;
-				 */				
-				switch (tempCode) {
-					case 'c':
-						extProcedure_add_parameter(effectiveProcedure,kCharType,1,NULL,0,0);
-						break;
-					case 'i':
-						extProcedure_add_parameter(effectiveProcedure,kIntType,4,NULL,0,0);
-						break;
-					case 's':
-						extProcedure_add_parameter(effectiveProcedure,kShortType,2,NULL,0,0);
-						break;
-					case 'l':
-						extProcedure_add_parameter(effectiveProcedure,kLongType,4,NULL,0,0);
-						break;
-					case 'q':
-						extProcedure_add_parameter(effectiveProcedure,kLongType,8,NULL,0,0);
-						break;
-					case 'C':
-						extProcedure_add_parameter(effectiveProcedure,kUnsignedType,4,NULL,0,0);
-						break;
-					case 'I':
-						extProcedure_add_parameter(effectiveProcedure,kUnsignedType,4,NULL,0,0);
-						break;
-					case 'S':
-						extProcedure_add_parameter(effectiveProcedure,kUnsignedType,4,NULL,0,0);
-						break;
-					case 'L':
-						extProcedure_add_parameter(effectiveProcedure,kUnsignedType,4,NULL,0,0);
-						break;
-					case 'Q':
-						extProcedure_add_parameter(effectiveProcedure,kUnsignedType,4,NULL,0,0);
-						break;
-					case 'f':
-						extProcedure_add_parameter(effectiveProcedure,kFloatType,4,NULL,0,0);
-						break;
-					case 'd':
-						extProcedure_add_parameter(effectiveProcedure,kDoubleType,8,NULL,0,0);
-						break;
-					case 'B':
-						extProcedure_add_parameter(effectiveProcedure,kIntType,4,NULL,0,0);
-						break;
-					case 'v':
-						extProcedure_add_parameter(effectiveProcedure,kVoidType,4,NULL,0,0);
-						break;
-					case '*':
-						extProcedure_add_parameter(effectiveProcedure,kPointerType,4,"char",1,0);
-						break;
-					case '@':
-						extProcedure_add_parameter(effectiveProcedure,kPointerType,4,"objc_object",1,0);
-						break;
-					case '#':
-						extProcedure_add_parameter(effectiveProcedure,kPointerType,4,"objc_class",1,0);
-						break;
-					case ':':
-						extProcedure_add_parameter(effectiveProcedure,kPointerType,4,"objc_selector",1,0);
-						break;
-					case '{':
-						extProcedure_add_parameter(effectiveProcedure,kStructureType,8,NULL,0,0);
-						break;
-					case '^':
-						extProcedure_add_parameter(effectiveProcedure,kPointerType,4,"void",0,0);
-						break;
-					default:
-						break;
-				}
-				
-				free(theCode);
-			}
-			{				
-				char tempCode = 0;
-				char *theCode = NULL;
-				
-				theCode = method_copyReturnType(tempMethod);
-				tempCode = theCode[0];
-				if(tempCode == 'r' || tempCode == 'R' || tempCode == 'n' || tempCode == 'N' || tempCode == 'o' || tempCode == 'O'
-				   || tempCode == 'V') tempCode = theCode[1];
-				
-				/*
-				 if(tempCode == 'c') theParameterType = kCharType;
-				 else if(tempCode == 'i') theParameterType = kIntType;
-				 else if(tempCode == 's') theParameterType = kShortType;
-				 else if(tempCode == 'l') theParameterType = kLongType;
-				 else if(tempCode == 'q') theParameterType = kLongLongType;
-				 else if(tempCode == 'C') theParameterType = kUnsignedCharType;
-				 else if(tempCode == 'I') theParameterType = kUnsignedIntType;
-				 else if(tempCode == 'S') theParameterType = kUnsignedShortType;
-				 else if(tempCode == 'L') theParameterType = kUnsignedLongType;
-				 else if(tempCode == 'Q') theParameterType = kUnsignedLongLongType;
-				 else if(tempCode == 'f') theParameterType = kFloatType;
-				 else if(tempCode == 'd') theParameterType = kDoubleType;
-				 else if(tempCode == 'B') theParameterType = kBoolType;
-				 else if(tempCode == 'v') theParameterType = kVoidType;
-				 else if(tempCode == '*') theParameterType = kCharStringType;
-				 else if(tempCode == '@') theParameterType = kObjectType;
-				 else if(tempCode == '#') theParameterType = kClassType;
-				 else if(tempCode == ':') theParameterType = kSelectorType;
-				 else if(tempCode == '{') theParameterType = kStructureType;
-				 else if(tempCode == '^') theParameterType = kPointerType;
-				 */				
-				switch (tempCode) {
-					case 'c':
-						extProcedure_add_return(effectiveProcedure,kCharType,1,NULL,0);
-						break;
-					case 'i':
-						extProcedure_add_return(effectiveProcedure,kIntType,4,NULL,0);
-						break;
-					case 's':
-						extProcedure_add_return(effectiveProcedure,kShortType,2,NULL,0);
-						break;
-					case 'l':
-						extProcedure_add_return(effectiveProcedure,kLongType,4,NULL,0);
-						break;
-					case 'q':
-						extProcedure_add_return(effectiveProcedure,kLongType,8,NULL,0);
-						break;
-					case 'C':
-						extProcedure_add_return(effectiveProcedure,kUnsignedType,4,NULL,0);
-						break;
-					case 'I':
-						extProcedure_add_return(effectiveProcedure,kUnsignedType,4,NULL,0);
-						break;
-					case 'S':
-						extProcedure_add_return(effectiveProcedure,kUnsignedType,4,NULL,0);
-						break;
-					case 'L':
-						extProcedure_add_return(effectiveProcedure,kUnsignedType,4,NULL,0);
-						break;
-					case 'Q':
-						extProcedure_add_return(effectiveProcedure,kUnsignedType,4,NULL,0);
-						break;
-					case 'f':
-						extProcedure_add_return(effectiveProcedure,kFloatType,4,NULL,0);
-						break;
-					case 'd':
-						extProcedure_add_return(effectiveProcedure,kDoubleType,8,NULL,0);
-						break;
-					case 'B':
-						extProcedure_add_return(effectiveProcedure,kIntType,4,NULL,0);
-						break;
-					case 'v':
-						//						extProcedure_add_parameter(effectiveProcedure,kVoidType,4,NULL,0,0);
-						break;
-					case '*':
-						extProcedure_add_return(effectiveProcedure,kPointerType,4,"char",1);
-						break;
-					case '@':
-						extProcedure_add_return(effectiveProcedure,kPointerType,4,"objc_object",1);
-						break;
-					case '#':
-						extProcedure_add_return(effectiveProcedure,kPointerType,4,"objc_class",1);
-						break;
-					case ':':
-						extProcedure_add_return(effectiveProcedure,kPointerType,4,"objc_selector",1);
-						break;
-					case '{':
-						extProcedure_add_return(effectiveProcedure,kStructureType,8,NULL,0);
-						break;
-					case '^':
-						extProcedure_add_return(effectiveProcedure,kPointerType,4,"void",0);
-						break;
-					default:
-						break;
-				}
-				
-				free(theCode);
-			}
-			tempProcedure = effectiveProcedure;
-		}
-	}
-	
 	tempParameter = tempProcedure->parameters;
 	while( tempParameter != NULL ) {
 		procedureInarity++;
@@ -3246,13 +2427,6 @@ void MacVPLCallbackHandler(void)
 			stackPointer +=4;
 			break;
 
-		case kVoidType:
-			for(varargCounter = 0; varargCounter < PARAMETERAREASIZE - procedureInarity + 1; varargCounter++){
-				parameterArea[gprCounter++] = *((Nat4 *) stackPointer);
-				stackPointer += sizeof(Nat4 *);
-			}
-			break;
-			
 	}
 		tempParameter = tempParameter->next;
 	} // End For(argument) Loop
@@ -3313,11 +2487,6 @@ void MacVPLCallbackHandler(void)
 				outputBlock->blockPtr = tempPointer;
 				outputBlock->levelOfIndirection = tempParameter->indirection;
 				*(parameterList->objectList + inputCounter++) = (V_Object) outputBlock;
-				if(strcmp(tempParameter->name,"objc_object") == 0){
-					id	tempObjcObject = *(id *) tempPointer;
-					SEL	theSelector = sel_getUid("retain");
-					objc_msgSend(tempObjcObject, theSelector);
-				}
 				break;
 
 			case kStructureType:
@@ -3334,11 +2503,7 @@ void MacVPLCallbackHandler(void)
 				break;
 
 			case kVoidType:
-				varagList = create_list(PARAMETERAREASIZE - procedureInarity + 1,theEnvironment);
-				*(parameterList->objectList + inputCounter++) = (V_Object) varagList;
-				for(varargCounter = 0; varargCounter < PARAMETERAREASIZE - procedureInarity + 1; varargCounter++){
-					*(varagList->objectList + varargCounter) = (V_Object) int_to_integer(parameterArea[counter + varargCounter],theEnvironment);;
-				}				
+				*(parameterList->objectList + inputCounter++) = (V_Object) int_to_integer((Int4) &parameterArea[counter],theEnvironment);
 				break;
 
 			default:
@@ -3384,30 +2549,13 @@ void MacVPLCallbackHandler(void)
 				if(block == NULL) tempInput.inputInt = 0;
 				else{
 					switch(block->type){
-						case kBoolean:
-							tempInput.inputInt = ((V_Boolean) block)->value;
-							break;
-							
-						case kInteger:
-							tempInput.inputInt = (Nat4) ((V_Integer) block)->value;
-							break;
-							
 						case kExternalBlock:
-							externalBlock = (V_ExternalBlock) block;
-							if(tempParameter->indirection - externalBlock->levelOfIndirection == -1) {
-								tempInput.inputInt = **((Nat4 **) externalBlock->blockPtr);
-							}else if(tempParameter->indirection - externalBlock->levelOfIndirection == 0 ) {
-								tempInput.inputInt = *((Nat4 *) externalBlock->blockPtr);
-							}else if(tempParameter->indirection - externalBlock->levelOfIndirection == 1) {
-								tempInput.inputInt = (long) externalBlock->blockPtr;
-							}else{
-								tempInput.inputInt = (Nat4) ((V_ExternalBlock) block)->blockPtr;
-							}
-							break;
+						tempInput.inputInt = (Nat4) ((V_ExternalBlock) block)->blockPtr;
+						break;
 						
 						case kString:
-							tempInput.inputInt = (Nat4) ((V_String) block)->string;
-							break;
+						tempInput.inputInt = (Nat4) ((V_String) block)->string;
+						break;
 						
 					}
 				}
@@ -4136,6 +3284,341 @@ Int4 execute_evaluate( V_Environment environment,V_Stack stack)
 	return kSuccess;
 
 }
+
+
+#pragma mark ## watchpoint implementations ##
+
+Int4	execute_watchpoint_get( V_Environment environment, vpl_StringPtr moduleName, V_ClassEntry thisClass, V_Instance thisInstance, Nat4 attIndex, V_Object attributeValue )
+{
+	Int4			outStatus = kNoAction;
+	V_ValueNode		attNode = thisClass->values[attIndex];
+	
+	if( attNode ) {
+		V_WatchpointNode		tempWatchpointNode = attNode->watchpointList;
+		V_WatchpointNode		foundWatchpointNode = NULL;
+		Nat4					theClassIndex = thisInstance->instanceIndex;
+		V_WatchpointObserver	workObserver = NULL;
+		
+		while( (foundWatchpointNode == NULL) && (tempWatchpointNode != NULL) ) 
+		{
+			if( tempWatchpointNode->theInstance == thisInstance )
+				foundWatchpointNode = tempWatchpointNode;
+			else
+				tempWatchpointNode = tempWatchpointNode->previous;
+		}
+		
+		if (foundWatchpointNode == NULL) return outStatus;
+		
+		workObserver = foundWatchpointNode->theObserverList;
+		
+		if( workObserver != NULL ) {
+			/* Do Observer Get Callback */
+			
+			Int1*							theAttName = thisClass->theClass->attributes->nodes[attIndex]->name;
+			void*							theUserData = NULL;
+			void (*theProc)(const void*, const V_Instance, const char*, const V_Object);
+			
+			while (workObserver != NULL)
+			{
+				theUserData = workObserver->theGetUserData;
+
+#if __VPL_DISPATCH_USES_FFI__
+				theProc = (void*)workObserver->theGetCallback->ffiseg_closure;
+#else
+				theProc = (void*)workObserver->theGetCallback;
+#endif
+				if( theProc )
+					theProc( theUserData, thisInstance, theAttName, attributeValue );
+				
+				workObserver = workObserver->nextObserver;
+			}
+	
+			outStatus = kSuccess;
+		} 
+		
+		if(foundWatchpointNode->doFault && !environment->compiled && !environment->stopNext && theClassIndex != (Nat4) -1) {
+			record_fault(environment,kWatchpoint,"NULL","NULL","NULL",moduleName);
+			outStatus = kHalt;
+		}
+	}
+	
+	return outStatus;
+}
+
+Int4	execute_watchpoint_set( V_Environment environment, vpl_StringPtr moduleName, V_ClassEntry thisClass, V_Instance thisInstance, Nat4 attIndex, V_Object newValue )
+{
+	Int4			outStatus = kNoAction;
+	V_ValueNode		attNode = thisClass->values[attIndex];
+	
+	if( attNode ) {
+		V_WatchpointNode		tempWatchpointNode = attNode->watchpointList;
+		V_WatchpointNode		foundWatchpointNode = NULL;
+		Nat4					theClassIndex = thisInstance->instanceIndex;
+		V_WatchpointObserver	workObserver = NULL;
+		
+		while( (foundWatchpointNode == NULL) && (tempWatchpointNode != NULL) )
+		{
+			if( tempWatchpointNode->theInstance == thisInstance )
+				foundWatchpointNode = tempWatchpointNode;
+			else
+				tempWatchpointNode = tempWatchpointNode->previous;
+		}
+		
+		if (foundWatchpointNode == NULL) return outStatus;
+		
+		workObserver = foundWatchpointNode->theObserverList;
+		
+		if( workObserver != NULL ) {
+			/* Do Observer Set Callback */
+			
+			Int1*								theAttName = thisClass->theClass->attributes->nodes[attIndex]->name;
+			V_Object							theAttValue = thisInstance->objectList[attIndex];
+			const void*							theUserData = NULL;
+			void (*theProc)(const void*, const V_Instance, const char*, const V_Object, const V_Object);
+			
+			while (workObserver != NULL)
+			{
+				theUserData = workObserver->theSetUserData;
+
+#if __VPL_DISPATCH_USES_FFI__
+				theProc = (void*)workObserver->theGetCallback->ffiseg_closure;
+#else
+				theProc = (void*)workObserver->theSetCallback;
+#endif				
+				//fprintf(stdout, "call observer instance: %p, att: %s\n\tgetCB: %p, getD: %p\n\tsetCB: %p, setD: %p\n",
+				//		thisInstance, theAttName, NULL, NULL, theProc, theUserData );
+
+				if( theProc )
+					theProc( theUserData, thisInstance, theAttName, theAttValue, newValue );
+				
+				workObserver = workObserver->nextObserver;
+			}
+			
+			outStatus = kSuccess;
+		} 
+		
+		if(foundWatchpointNode->doFault && !environment->compiled && !environment->stopNext && theClassIndex != (Nat4) -1) {
+			record_fault(environment,kWatchpoint,"NULL","NULL","NULL",moduleName);
+			outStatus = kHalt;
+		}
+	}
+	
+	return outStatus;
+}
+
+#pragma mark ## watchpoint utilities ##
+
+V_WatchpointNode	VPLWatchpointFind( V_Environment environment, V_Instance watchInstance, vpl_StringPtr watchAttribute )
+{
+	Nat4				thisClassIndex = watchInstance->instanceIndex;
+	V_ClassEntry		thisClassEntry = environment->classIndexTable->classes[thisClassIndex];
+	Int4				thisAttributeOffset = attribute_offset( thisClassEntry->theClass, watchAttribute );
+	V_WatchpointNode	thisWatchpointNode = NULL;
+	
+	if( thisAttributeOffset == -1 ) return thisWatchpointNode;
+	
+	thisWatchpointNode = thisClassEntry->values[thisAttributeOffset]->watchpointList;
+	
+	return thisWatchpointNode;
+}	
+
+Int4	VPLWatchpointCreate( V_Environment environment, V_Instance watchInstance, vpl_StringPtr watchAttribute, Nat4 recordFault, V_WatchpointNode* newWatchpoint )
+{
+	Int4				outStatus = kERROR;
+	
+	Nat4				thisClassIndex = watchInstance->instanceIndex;
+	V_ClassEntry		thisClassEntry = environment->classIndexTable->classes[thisClassIndex];
+	Int4				thisAttributeOffset = attribute_offset( thisClassEntry->theClass, watchAttribute );
+	V_WatchpointNode	tempWatchpointNode = NULL;
+	V_WatchpointNode	newWatchpointNode = NULL;
+	
+	if( thisAttributeOffset == -1 ) return kWRONGINPUTTYPE;
+	
+	tempWatchpointNode = thisClassEntry->values[thisAttributeOffset]->watchpointList;
+	
+	if( tempWatchpointNode ) {
+		tempWatchpointNode->doFault = recordFault;
+		if( newWatchpoint ) *newWatchpoint = tempWatchpointNode;
+		return kNOERROR;
+	}
+	
+	newWatchpointNode = (V_WatchpointNode)X_malloc(sizeof(VPL_WatchpointNode));
+	if( newWatchpointNode ) {
+		newWatchpointNode->theInstance = watchInstance;
+		newWatchpointNode->doFault = recordFault;
+		newWatchpointNode->theObserverList = NULL;
+		newWatchpointNode->previous = NULL;
+		
+		if(tempWatchpointNode) {
+			newWatchpointNode->next = tempWatchpointNode;
+			tempWatchpointNode->previous = newWatchpointNode;
+		} else
+			newWatchpointNode->next = NULL;
+		
+		thisClassEntry->values[thisAttributeOffset]->watchpointList = newWatchpointNode;
+		
+		if( newWatchpoint )
+			*newWatchpoint = newWatchpointNode;
+		
+		outStatus = kNOERROR;
+	}
+	
+	return outStatus;
+}
+
+void	VPLWatchpointDispose( V_WatchpointNode oldWatchpoint )
+{
+	Int4					outStatus = kWRONGINPUTTYPE;
+	V_WatchpointNode		workNode = oldWatchpoint;
+	V_WatchpointNode		freeNode = oldWatchpoint;
+	V_WatchpointObserver	workObserver = NULL;
+	V_WatchpointObserver	freeObserver = NULL;
+	
+	if( oldWatchpoint ) {
+		while(workNode) 							/* release the nodes */
+		{
+			freeNode = workNode;
+			workObserver = freeNode->theObserverList;
+			
+			while(workObserver){
+				freeObserver = workObserver;
+				if( freeObserver->theGetCallback )
+					VPLEnvironmentCallbackRelease( freeObserver->theGetCallback );
+				if( workObserver->theSetCallback )
+					VPLEnvironmentCallbackRelease( freeObserver->theSetCallback );
+
+				workObserver = freeObserver->nextObserver;
+				X_free( freeObserver );
+			}
+			
+			workNode = freeNode->next;
+			X_free( freeNode );
+		}
+		
+		X_free( oldWatchpoint );
+		outStatus = kNOERROR;
+	}
+	
+	return;
+}
+
+Nat4	VPLWatchpointGetRecordFault( V_WatchpointNode watchNode )
+{
+	Nat4	recordFault = 0;
+	
+	if( watchNode )	recordFault = watchNode->doFault;
+	
+	return recordFault;
+}
+
+void	VPLWatchpointChangeRecordFault( V_WatchpointNode watchNode, Nat4 recordFault )
+{
+	if( watchNode )
+		watchNode->doFault = recordFault;
+	return;
+}	
+
+Nat4	VPLWatchpointObserverCreate( V_Environment environment, V_Instance watchInstance, vpl_StringPtr watchAttribute,
+									V_CallbackCodeSegment getCallback, void* getUserData, 
+									V_CallbackCodeSegment setCallback, void* setUserData,
+									V_WatchpointObserver* newObserver ) 
+{
+	Nat4					outStatus = kERROR;
+	
+	V_WatchpointNode		watchNode = VPLWatchpointFind( environment, watchInstance, watchAttribute );
+	V_WatchpointObserver	watchObserver = NULL;
+	V_WatchpointObserver	previousObserver = NULL;
+	
+	if (!watchNode) {
+		outStatus = VPLWatchpointCreate( environment, watchInstance, watchAttribute, 0, &watchNode );
+		if( outStatus != kNOERROR ) return outStatus;
+	} else 
+		previousObserver = watchNode->theObserverList;
+	
+	watchObserver = (V_WatchpointObserver)X_malloc(sizeof(VPL_WatchpointObserver));
+	if( watchObserver ) 
+	{
+		watchObserver->theGetCallback = getCallback;
+		watchObserver->theGetUserData = getUserData;
+		watchObserver->theSetCallback = setCallback;
+		watchObserver->theSetUserData = setUserData;
+		
+		if( watchObserver->theGetCallback )
+			VPLEnvironmentCallbackRetain( watchObserver->theGetCallback );
+		if( watchObserver->theSetCallback )
+			VPLEnvironmentCallbackRetain( watchObserver->theSetCallback );
+
+		watchObserver->nextObserver = previousObserver;
+		watchObserver->previousObserver = NULL;
+		
+		watchNode->theObserverList = watchObserver;
+		
+		if( newObserver ) *newObserver = watchObserver;
+		outStatus = kNOERROR;
+	}
+
+	return outStatus;	
+}
+
+Nat4	VPLWatchpointObserverRemove( V_Environment environment, V_Instance watchInstance, vpl_StringPtr watchAttribute, V_WatchpointObserver watchObserver )
+{
+	Nat4					outStatus = kERROR;
+	V_WatchpointNode		watchNode = VPLWatchpointFind( environment, watchInstance, watchAttribute );
+	V_WatchpointObserver	theNextOb = NULL;
+	V_WatchpointObserver	theLastOb = NULL;
+	
+	if (watchNode && watchObserver) {
+		theNextOb = watchObserver->nextObserver;
+		theLastOb = watchObserver->previousObserver;
+		
+		if( watchNode->theObserverList == watchObserver )
+			watchNode->theObserverList = theNextOb;
+		else if( theLastOb ) {
+			theLastOb->nextObserver = theNextOb;
+			if( theNextOb )
+				theNextOb->previousObserver = theLastOb;
+		}
+		
+		if( watchObserver->theGetCallback )
+			VPLEnvironmentCallbackRelease( watchObserver->theGetCallback );
+		if( watchObserver->theSetCallback )
+			VPLEnvironmentCallbackRelease( watchObserver->theSetCallback );
+		
+		X_free( watchObserver );
+		
+		outStatus = kNOERROR;
+	}
+	
+	return outStatus;	
+}
+
+void	VPLWatchpointObserverChangeGetCallback( V_WatchpointObserver watchObserver, V_CallbackCodeSegment getCallback, void* getUserData )
+{
+	if( watchObserver )
+	{
+		if( watchObserver->theGetCallback )
+			VPLEnvironmentCallbackRelease( watchObserver->theGetCallback );
+		
+		watchObserver->theGetCallback = getCallback;
+		watchObserver->theGetUserData = getUserData;
+	}
+	return;
+}	
+
+void	VPLWatchpointObserverChangeSetCallback( V_WatchpointObserver watchObserver, V_CallbackCodeSegment setCallback, void* setUserData )
+{
+	if( watchObserver )
+	{
+		if( watchObserver->theSetCallback )
+			VPLEnvironmentCallbackRelease( watchObserver->theSetCallback );
+		
+		watchObserver->theSetCallback = setCallback;
+		watchObserver->theSetUserData = setUserData;
+	}
+	return;
+}	
+
+
 
 
 

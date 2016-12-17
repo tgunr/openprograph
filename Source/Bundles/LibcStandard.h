@@ -8,6 +8,8 @@
 #include <libc.h>
 #include <netdb.h>
 #include <util.h>
+#include <regex.h>
+#include <arpa/inet.h>
 #ifdef __MWERKS__
 #include "VPL_Compiler.h"
 #elif __GNUC__

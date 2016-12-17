@@ -4,14 +4,11 @@
 	Copyright 2000 Scott B. Anderson, All Rights Reserved.
 	
 */
+#include "InterpreterPlatform.h"
 #include "InterpreterRoutines.h"
+
+#if __VPL_TRAP_INTERPRETER_SIGNALS__
 #include <signal.h>
-
-#include <objc/runtime.h>
-
-
-
-#define	PARAMETERAREASIZE 8
 
 /* This list MUST be kept in sync with enum faultCode in VPL_Environment.h */
 
@@ -102,120 +99,25 @@ Int1* signalNames[] = {
 	"User Signal 1",
 	"User Signal 2",
 };
-
-Int1 dockDrawCommands[] = {
-	kCommandNoop,
-	kCommandExecute,
-	kCommandEnvironmentPostLoad,
-	kCommandEnvironmentStep,
-	kCommandStackAdvance,
-	kCommandFrameStepOut,
-};
-
-const Int1 dockDrawCommandCount = 5;
-
-// This function is internal to CoreFoundation framework and not defined in the standard headers.
-// It is used when the bundle Resources folder has been modified.
-
-extern void _CFBundleFlushCaches( void );
-
+#endif // __VPL_TRAP_INTERPRETER_SIGNALS__
 
 #pragma mark ------- Globals -------
 
 Int4			readFileDescriptor = 0;
 Int4			writeFileDescriptor = 0;
+
+#if __VPL_TRAP_INTERPRETER_SIGNALS__
 sigjmp_buf		jumpBuffer;
 vpl_Boolean		signalJump = kFALSE;		// if kTRUE, it's OK to jump to our buffer.
 Int1*			signalName = NULL;
 // int				signalID = 0;
+#else
+#warning __VPL_TRAP_INTERPRETER_SIGNALS__ is 0
+#endif // __VPL_TRAP_INTERPRETER_SIGNALS__
 
 Boolean			gPrintPedanticDebug = FALSE;
 Boolean			gFirstCommandPass = TRUE;
 Boolean			gSwapPipeBytes = FALSE;
-Boolean			gDrawCommandBadge = FALSE;
-
-Int1			gLastDrawCommand = kvpl_CommandNone;
-Boolean			gLoadDrawCommand = TRUE;
-//Boolean			gStopDrawCommand = FALSE;
-const float		k90DegreesRad = 1.0; // 90 * (M_PI/180);
-
-#pragma mark ------- UI Enhancements -------
-
-void EnableCommandBadge( Boolean drawBadge )
-{
-	gDrawCommandBadge = drawBadge;
-	return;
-}
-
-void DrawCommandBadge( Int1 CommandState, Int1 theCommand, V_Environment environment );
-void DrawCommandBadge( Int1 CommandState, Int1 theCommand, V_Environment environment )
-{
-	CGContextRef	docktileContext;
-	float			badgeX		= 10.0;
-	float			badgeY		= 10.0;
-	float			badgeWidth	= 40.0;
-	float			badgeHeight	= 40.0;
-	CGRect			badgeFrame = CGRectMake( badgeX, badgeY, badgeWidth, badgeHeight );
-	CGRect			badgeFrameInset = CGRectInset(badgeFrame, (badgeWidth/10), (badgeHeight/10));
-	
-	Int1			checkIndex = 0;
-	Boolean			checkNow = FALSE;
-	Boolean			drawStop = TRUE;
-				
-	if( gLastDrawCommand == CommandState ) return;
-	for( checkIndex = 0; checkIndex < dockDrawCommandCount; checkIndex++ )
-		if( dockDrawCommands[checkIndex] == theCommand ) {
-			checkNow = TRUE;
-			break;
-		}
-		
-	if( !checkNow ) return;
-	gLastDrawCommand = CommandState;
-	
-	if( gLoadDrawCommand )
-		if( theCommand == kCommandEnvironmentPostLoad ) gLoadDrawCommand = FALSE;
-	
-	if( environment->stack )
-		drawStop = ( environment->stack->currentFrame == NULL );
-		
-	RestoreApplicationDockTileImage();
-	docktileContext = BeginCGContextForApplicationDockTile();
-	
-	switch(CommandState) 
-	{
-		case kvpl_CommandReading:
-			if( gLoadDrawCommand )	{
-				CGContextSetRGBFillColor( docktileContext, 0.1, 0.1, 0.78, 0.8 );	// Blue
-				CGContextAddRect( docktileContext, badgeFrameInset );
-			} else if( drawStop )	{
-				CGContextSetRGBFillColor( docktileContext, 0.78, 0.1, 0.1, 0.8 );	// Red
-				CGContextMoveToPoint( docktileContext, badgeX+(badgeWidth/2), badgeY );
-				CGContextAddLineToPoint( docktileContext, badgeX, badgeY+(badgeHeight/2) );
-				CGContextAddLineToPoint( docktileContext, badgeX+(badgeWidth/2), badgeY+badgeHeight );
-				CGContextAddLineToPoint( docktileContext, badgeX+badgeWidth, badgeY+(badgeHeight/2) );
-				CGContextClosePath( docktileContext );
-			} else 					{
-				CGContextSetRGBFillColor( docktileContext, 1.0, 1.0, 0.0, 0.8 );	// Yellow
-				CGContextAddEllipseInRect( docktileContext, badgeFrame );
-			};
-			break;
-	
-		default:
-			CGContextSetRGBFillColor( docktileContext, 0.1, 0.78, 0.1, 0.8 );								// Green
-			CGContextMoveToPoint( docktileContext, badgeX, badgeY );
-			CGContextAddLineToPoint( docktileContext, badgeX, badgeY+badgeHeight );
-			CGContextAddLineToPoint( docktileContext, badgeX+badgeWidth, badgeY+(badgeHeight/2) );
-			CGContextClosePath( docktileContext );
-			break;
-	}
-	CGContextSetRGBStrokeColor( docktileContext, 0.0, 0.0, 0.0, 1.0 );
-	CGContextDrawPath( docktileContext, kCGPathFillStroke );
-
-	CGContextFlush( docktileContext );
-	EndCGContextForApplicationDockTile( docktileContext );
-		
-	return;
-}	
 
 #pragma mark ------- Interpreter routines -------
 
@@ -1522,6 +1424,7 @@ enum opTrigger persistent_rename(V_Environment environment, Int1 *oldName, Int1 
 	return interpreterResult;
 }
 
+/*
 OSErr FindApplicationPackageDirectory(short *theVRefNum, long *theParID)
 {
 	OSErr theErr;
@@ -1536,30 +1439,31 @@ OSErr FindApplicationPackageDirectory(short *theVRefNum, long *theParID)
 	theInfo.processName = NULL;
 	theInfo.processAppSpec = &theSpec;
 	
-	/* Find the application FSSpec */
+//	Find the application FSSpec 
 	theErr = GetProcessInformation(&thePSN, &theInfo);
 	
-	/* Find the "Contents" (the parent of the "MacOS" directory) */
+//	Find the "Contents" (the parent of the "MacOS" directory) 
 	if (theErr == noErr)
 		theErr = FSMakeFSSpec(theSpec.vRefNum, theSpec.parID, "\p", &theSpec);
 	
-	/* Find the parent Bundle folder (the parent of the "Contents" directory) */
+//	Find the parent Bundle folder (the parent of the "Contents" directory) 
 	if (theErr == noErr)
 		theErr = FSMakeFSSpec(theSpec.vRefNum, theSpec.parID, "\p", &theSpec);
 	
-	/* Find the parent of the Bundle folder */
+//	Find the parent of the Bundle folder 
 	if (theErr == noErr)
 		theErr = FSMakeFSSpec(theSpec.vRefNum, theSpec.parID, "\p", &theSpec);
 	
 	if (theErr == noErr)
 	{
-		/* Return the folder which contains the application package */
+//		Return the folder which contains the application package 
 		*theVRefNum = theSpec.vRefNum;
 		*theParID = theSpec.parID;
 	}
 	
 	return theErr;
 }
+*/
 
 enum opTrigger stack_create(V_Environment environment, Int1* theMethod, V_List inputList,V_Stack *stack,V_List *outputList)
 {
@@ -1612,21 +1516,22 @@ enum opTrigger stack_create(V_Environment environment, Int1* theMethod, V_List i
 	return kSuccess;
 }
 
+/*
 OSErr CreateBundleFromFSSpec(FSSpec *theSpec, CFBundleRef *theBundle)
 {
 	OSErr theErr;
 	FSRef theRef;
 	CFURLRef theBundleURL;
 	
-	/* Turn the FSSpec pointing to the Bundle into a FSRef */
+//	Turn the FSSpec pointing to the Bundle into a FSRef
 	theErr = FSpMakeFSRef(theSpec, &theRef);
 	
-	/* Turn the FSRef into a CFURL */
+//	Turn the FSRef into a CFURL
 	theBundleURL = CFURLCreateFromFSRef(kCFAllocatorSystemDefault, &theRef);
 	
 	if (theBundleURL != NULL)
 	{
-		/* Turn the CFURL into a bundle reference */
+//		Turn the CFURL into a bundle reference
 		*theBundle = CFBundleCreate(kCFAllocatorSystemDefault, theBundleURL);
 		
 		CFRelease(theBundleURL);
@@ -1692,120 +1597,21 @@ enum opTrigger environment_load_bundles(V_Environment environment, FSSpec *fsspe
 //    if(myBundle) CFRelease( myBundle );
 	return kSuccess;
 }
+*/
 
-OSErr CreateBundleFromFilePath(vpl_StringPtr thePath, CFBundleRef *theBundle)
-{
-	OSErr theErr;
-	CFURLRef theBundleURL;
-		
-	/* Turn the file path into a CFURL */
-	theBundleURL = CFURLCreateFromFileSystemRepresentation(kCFAllocatorSystemDefault, (UInt8*)thePath, strlen(thePath), TRUE);
-	
-	if (theBundleURL != NULL)
-	{
-		/* Turn the CFURL into a bundle reference */
-		*theBundle = CFBundleCreate(kCFAllocatorSystemDefault, theBundleURL);
-		
-		CFRelease(theBundleURL);
-	}
-	
-	return theErr;
-}
-
+/*
 enum opTrigger environment_load_bundles_path(V_Environment environment, Int1 *filePath, Int1 *newString)
 {
-    // Typedef for the function pointer.
-    typedef Nat4 (*LoadPrimitiveFunctionPtr)(V_Environment); 
+	platformLoadLibraryAtPath( newString, filePath, environment );
 
-    // Function pointer.
-    LoadPrimitiveFunctionPtr loadPrimitive = NULL;
-
-    // Flag that indicates the status returned when 
-    //  attempting to load a bundleÕs executable code.
-    Boolean didLoad = false;
-	
-    // Value returned from the loaded function.
-    long result;
-
-    CFBundleRef myBundle = NULL;
-    
-	CFStringRef	tempCFString;
-
-    result = CreateBundleFromFilePath(filePath, &myBundle);
-
-    // Try to load the executable from my bundle.
-    if(myBundle) didLoad = CFBundleLoadExecutable( myBundle );
-    else printf("Could not create bundle from file path: %s\n", filePath);
-
-    // If the code was successfully loaded, look for our function.
-    if (didLoad) {
-        // Now that the code is loaded, search for 
-        // the function we want by name.
-
-		tempCFString = CFBundleGetValueForInfoDictionaryKey( myBundle, CFSTR("MartenLoadFunction") );
-        if( tempCFString == NULL ) tempCFString = CFStringCreateWithCString(NULL,newString,kCFStringEncodingUTF8);
-
-        if(tempCFString) loadPrimitive = (void*)CFBundleGetFunctionPointerForName(myBundle, tempCFString );
-//    	else printf("Could not create CFString from C string\n");
-    	
-        // If our function was found in the loaded code, 
-        // call it.
-        if (loadPrimitive) {
-            result = loadPrimitive ( environment );
-            sort_dictionaries(environment);
-        }
-    	else printf("Interpreter could not get function pointer for symbol: %s\n", newString);
-
-        
-        // Unload the bundleÕs executable code. 
-//        CFBundleUnloadExecutable( myBundle );
-        if(tempCFString) CFRelease(tempCFString);
-    }
-	else printf("Could not load executable from bundle\n");
-
-
-    // Any CF objects returned from functions with "create" or 
-    // "copy" in their names must be released by us!
-//    if(myBundle) CFRelease( myBundle );
 	return kSuccess;
 }
+*/
 
 Nat4 user_cancel(void)
 {
-	return (Nat4)CheckEventQueueForUserCancel();
+	return platformCheckForUserCancel();
 }
-
-/*
-	KeyMap		myKeyMap;
-	short		byteIndex = 0;
-	short		keyCode = 0;
-	char		theByte;
-	char		theBit;
-	char		theAnd;
-	char		*thePointer = NULL;
-	short		theCommandKey = 55;
-	short		thePeriodKey = 47;
-	
-	GetKeys(myKeyMap);
-	if(myKeyMap[1] == 8421376) return kTRUE;
-	byteIndex = theCommandKey >> 3;
-	thePointer = (char *)&myKeyMap[0];
-	theByte = *(char *)(thePointer + byteIndex);
-	theBit = 1L<<(keyCode&7);
-	theAnd = theByte & theBit;
-	if(theAnd != 0){
-		byteIndex = thePeriodKey >> 3;
-		thePointer = (char *)&myKeyMap[0];
-		theByte = *(char *)(thePointer + byteIndex);
-		theBit = 1L<<(keyCode&7);
-		theAnd = theByte & theBit;
-		if(theAnd != 0){
-			return kTRUE;
-		}else
-			return kFALSE;
-	}else
-		return kFALSE;
-*/
 
 Nat4 stack_advance(V_Environment environment, V_Stack stack)
 {
@@ -1828,6 +1634,7 @@ Nat4 stack_advance(V_Environment environment, V_Stack stack)
 		}
 
 //		result = X_call_operation(environment,stack);							// No Exception handling
+#if __VPL_TRAP_INTERPRETER_SIGNALS__
 		signalJump = kTRUE;
 		if(sigsetjmp(jumpBuffer, TRUE) == 0) result = X_call_operation(environment,stack);
 		else {
@@ -1842,6 +1649,7 @@ Nat4 stack_advance(V_Environment environment, V_Stack stack)
 			return kFALSE;
 		}
 		signalJump = kFALSE;
+#endif
 		
 		if(result == kHalt) return kFALSE;
 		
@@ -1903,6 +1711,8 @@ void pr_mask(const char *string)
 }
 */
 
+#if __VPL_TRAP_INTERPRETER_SIGNALS__
+
 static void interrupt_handler(int signo);
 static void interrupt_handler(int signo){
 
@@ -1951,6 +1761,7 @@ static void interrupt_handler(int signo){
 	if( doExit ) exit(0);
 	return;
 }
+#endif // __VPL_TRAP_INTERPRETER_SIGNALS__
 
 #pragma mark --------- Callback Handler ---------
 
@@ -1972,8 +1783,6 @@ void InterpreterCallbackHandler(void)
 	V_List				outputList = NULL;
 	V_ExternalBlock		outputBlock = NULL;
 	V_Object			block = NULL;
-	V_List				varagList = NULL;
-	V_ExternalBlock		externalBlock = NULL;
 
 	V_ExtProcedure	tempProcedure = NULL;
 	V_Parameter		tempParameter = NULL;
@@ -1983,9 +1792,8 @@ void InterpreterCallbackHandler(void)
 	register long tempInt = 0;
 
 	Nat4 gprCounter = 0;
-	Nat4 varargCounter = 0;
 	
-	Nat4 parameterArea[PARAMETERAREASIZE];
+	Nat4 parameterArea[8] = { 0,0,0,0,0,0,0,0 };
 	void *tempPointer = NULL;
 	VPL_Input	tempInput;
 
@@ -1996,248 +1804,7 @@ void InterpreterCallbackHandler(void)
 	theEnvironment = currentSegment->theEnvironment;
 	stackPointer = *((Nat4 *)stackPointer);
 	stackPointer += 8;	//Calling through the code segment has subtracted 12 bytes from the original stack pointer
-	
-	for(varargCounter = 0; varargCounter < PARAMETERAREASIZE; varargCounter++) parameterArea[varargCounter] = 0;
-	
-	if(strcmp(tempProcedure->name,"IMP") == 0){
-		id					tempObjcObject = *(id *) stackPointer;
-		Class				tempClass = NULL;
-		Method				*tempMethodList = NULL;
-		unsigned int		count = 0;
-		Nat4				parameterCounter = 0;
-		Nat4				numberOfParameters = 0;
-		Method				tempMethod = NULL;
-		IMP					tempIMP = NULL;
-		
-		tempClass = object_getClass(tempObjcObject);
-		
-		while(tempClass != NULL) {
-			tempMethodList = class_copyMethodList(tempClass, &count);
-			for(counter = 0; counter < count; counter++){
-				tempMethod = tempMethodList[counter];
-				tempIMP = method_getImplementation(tempMethod);
-			
-				if(tempIMP == (IMP) currentSegment ) break;
-				tempMethod = NULL;
-			}
-			if(tempMethodList) free(tempMethodList);
-			if(tempIMP == (IMP) currentSegment ) break;
-			tempClass = class_getSuperclass(tempClass);
-		}
 
-		if(tempMethod != NULL) {
-			V_ExtProcedure effectiveProcedure = NULL;
-			
-			effectiveProcedure = create_extProcedure(tempProcedure->name);
-			numberOfParameters = method_getNumberOfArguments(tempMethod);
-		
-			for(parameterCounter = 0; parameterCounter < numberOfParameters; parameterCounter++){
-//				Nat4 size = 0;
-//				Int1 *name = NULL;
-//				Nat4 indirection = 0;
-//				Nat4 constantFlag = 0;
-//				Nat4 theParameterType = 0;
-			
-				char tempCode = 0;
-				char *theCode = NULL;
-			
-				theCode = method_copyArgumentType(tempMethod,parameterCounter);
-				tempCode = theCode[0];
-				if(tempCode == 'r' || tempCode == 'R' || tempCode == 'n' || tempCode == 'N' || tempCode == 'o' || tempCode == 'O'
-				   || tempCode == 'V') tempCode = theCode[1];
-
-/*
-				if(tempCode == 'c') theParameterType = kCharType;
-				else if(tempCode == 'i') theParameterType = kIntType;
-				else if(tempCode == 's') theParameterType = kShortType;
-				else if(tempCode == 'l') theParameterType = kLongType;
-				else if(tempCode == 'q') theParameterType = kLongLongType;
-				else if(tempCode == 'C') theParameterType = kUnsignedCharType;
-				else if(tempCode == 'I') theParameterType = kUnsignedIntType;
-				else if(tempCode == 'S') theParameterType = kUnsignedShortType;
-				else if(tempCode == 'L') theParameterType = kUnsignedLongType;
-				else if(tempCode == 'Q') theParameterType = kUnsignedLongLongType;
-				else if(tempCode == 'f') theParameterType = kFloatType;
-				else if(tempCode == 'd') theParameterType = kDoubleType;
-				else if(tempCode == 'B') theParameterType = kBoolType;
-				else if(tempCode == 'v') theParameterType = kVoidType;
-				else if(tempCode == '*') theParameterType = kCharStringType;
-				else if(tempCode == '@') theParameterType = kObjectType;
-				else if(tempCode == '#') theParameterType = kClassType;
-				else if(tempCode == ':') theParameterType = kSelectorType;
-				else if(tempCode == '{') theParameterType = kStructureType;
-				else if(tempCode == '^') theParameterType = kPointerType;
-*/				
-				switch (tempCode) {
-					case 'c':
-						extProcedure_add_parameter(effectiveProcedure,kCharType,1,NULL,0,0);
-						break;
-					case 'i':
-						extProcedure_add_parameter(effectiveProcedure,kIntType,4,NULL,0,0);
-						break;
-					case 's':
-						extProcedure_add_parameter(effectiveProcedure,kShortType,2,NULL,0,0);
-						break;
-					case 'l':
-						extProcedure_add_parameter(effectiveProcedure,kLongType,4,NULL,0,0);
-						break;
-					case 'q':
-						extProcedure_add_parameter(effectiveProcedure,kLongType,8,NULL,0,0);
-						break;
-					case 'C':
-						extProcedure_add_parameter(effectiveProcedure,kUnsignedType,4,NULL,0,0);
-						break;
-					case 'I':
-						extProcedure_add_parameter(effectiveProcedure,kUnsignedType,4,NULL,0,0);
-						break;
-					case 'S':
-						extProcedure_add_parameter(effectiveProcedure,kUnsignedType,4,NULL,0,0);
-						break;
-					case 'L':
-						extProcedure_add_parameter(effectiveProcedure,kUnsignedType,4,NULL,0,0);
-						break;
-					case 'Q':
-						extProcedure_add_parameter(effectiveProcedure,kUnsignedType,4,NULL,0,0);
-						break;
-					case 'f':
-						extProcedure_add_parameter(effectiveProcedure,kFloatType,4,NULL,0,0);
-						break;
-					case 'd':
-						extProcedure_add_parameter(effectiveProcedure,kDoubleType,8,NULL,0,0);
-						break;
-					case 'B':
-						extProcedure_add_parameter(effectiveProcedure,kIntType,4,NULL,0,0);
-						break;
-					case 'v':
-						extProcedure_add_parameter(effectiveProcedure,kVoidType,4,NULL,0,0);
-						break;
-					case '*':
-						extProcedure_add_parameter(effectiveProcedure,kPointerType,4,"char",1,0);
-						break;
-					case '@':
-						extProcedure_add_parameter(effectiveProcedure,kPointerType,4,"objc_object",1,0);
-						break;
-					case '#':
-						extProcedure_add_parameter(effectiveProcedure,kPointerType,4,"objc_class",1,0);
-						break;
-					case ':':
-						extProcedure_add_parameter(effectiveProcedure,kPointerType,4,"objc_selector",1,0);
-						break;
-					case '{':
-						extProcedure_add_parameter(effectiveProcedure,kStructureType,8,NULL,0,0);
-						break;
-					case '^':
-						extProcedure_add_parameter(effectiveProcedure,kPointerType,4,"void",0,0);
-						break;
-					default:
-						break;
-				}
-			
-				free(theCode);
-			}
-			{				
-				char tempCode = 0;
-				char *theCode = NULL;
-				
-				theCode = method_copyReturnType(tempMethod);
-				tempCode = theCode[0];
-				if(tempCode == 'r' || tempCode == 'R' || tempCode == 'n' || tempCode == 'N' || tempCode == 'o' || tempCode == 'O'
-				   || tempCode == 'V') tempCode = theCode[1];
-				
-				/*
-				 if(tempCode == 'c') theParameterType = kCharType;
-				 else if(tempCode == 'i') theParameterType = kIntType;
-				 else if(tempCode == 's') theParameterType = kShortType;
-				 else if(tempCode == 'l') theParameterType = kLongType;
-				 else if(tempCode == 'q') theParameterType = kLongLongType;
-				 else if(tempCode == 'C') theParameterType = kUnsignedCharType;
-				 else if(tempCode == 'I') theParameterType = kUnsignedIntType;
-				 else if(tempCode == 'S') theParameterType = kUnsignedShortType;
-				 else if(tempCode == 'L') theParameterType = kUnsignedLongType;
-				 else if(tempCode == 'Q') theParameterType = kUnsignedLongLongType;
-				 else if(tempCode == 'f') theParameterType = kFloatType;
-				 else if(tempCode == 'd') theParameterType = kDoubleType;
-				 else if(tempCode == 'B') theParameterType = kBoolType;
-				 else if(tempCode == 'v') theParameterType = kVoidType;
-				 else if(tempCode == '*') theParameterType = kCharStringType;
-				 else if(tempCode == '@') theParameterType = kObjectType;
-				 else if(tempCode == '#') theParameterType = kClassType;
-				 else if(tempCode == ':') theParameterType = kSelectorType;
-				 else if(tempCode == '{') theParameterType = kStructureType;
-				 else if(tempCode == '^') theParameterType = kPointerType;
-				 */				
-				switch (tempCode) {
-					case 'c':
-						extProcedure_add_return(effectiveProcedure,kCharType,1,NULL,0);
-						break;
-					case 'i':
-						extProcedure_add_return(effectiveProcedure,kIntType,4,NULL,0);
-						break;
-					case 's':
-						extProcedure_add_return(effectiveProcedure,kShortType,2,NULL,0);
-						break;
-					case 'l':
-						extProcedure_add_return(effectiveProcedure,kLongType,4,NULL,0);
-						break;
-					case 'q':
-						extProcedure_add_return(effectiveProcedure,kLongType,8,NULL,0);
-						break;
-					case 'C':
-						extProcedure_add_return(effectiveProcedure,kUnsignedType,4,NULL,0);
-						break;
-					case 'I':
-						extProcedure_add_return(effectiveProcedure,kUnsignedType,4,NULL,0);
-						break;
-					case 'S':
-						extProcedure_add_return(effectiveProcedure,kUnsignedType,4,NULL,0);
-						break;
-					case 'L':
-						extProcedure_add_return(effectiveProcedure,kUnsignedType,4,NULL,0);
-						break;
-					case 'Q':
-						extProcedure_add_return(effectiveProcedure,kUnsignedType,4,NULL,0);
-						break;
-					case 'f':
-						extProcedure_add_return(effectiveProcedure,kFloatType,4,NULL,0);
-						break;
-					case 'd':
-						extProcedure_add_return(effectiveProcedure,kDoubleType,8,NULL,0);
-						break;
-					case 'B':
-						extProcedure_add_return(effectiveProcedure,kIntType,4,NULL,0);
-						break;
-					case 'v':
-//						extProcedure_add_parameter(effectiveProcedure,kVoidType,4,NULL,0,0);
-						break;
-					case '*':
-						extProcedure_add_return(effectiveProcedure,kPointerType,4,"char",1);
-						break;
-					case '@':
-						extProcedure_add_return(effectiveProcedure,kPointerType,4,"objc_object",1);
-						break;
-					case '#':
-						extProcedure_add_return(effectiveProcedure,kPointerType,4,"objc_class",1);
-						break;
-					case ':':
-						extProcedure_add_return(effectiveProcedure,kPointerType,4,"objc_selector",1);
-						break;
-					case '{':
-						extProcedure_add_return(effectiveProcedure,kStructureType,8,NULL,0);
-						break;
-					case '^':
-						extProcedure_add_return(effectiveProcedure,kPointerType,4,"void",0);
-						break;
-					default:
-						break;
-				}
-				
-				free(theCode);
-			}
-			tempProcedure = effectiveProcedure;
-		}
-	}
-	
-	
 	tempParameter = tempProcedure->parameters;
 	while( tempParameter != NULL ) {
 		procedureInarity++;
@@ -2255,13 +1822,6 @@ void InterpreterCallbackHandler(void)
 			stackPointer +=4;
 			break;
 
-		case kVoidType:
-			for(varargCounter = 0; varargCounter < PARAMETERAREASIZE - procedureInarity + 1; varargCounter++){
-				parameterArea[gprCounter++] = *((Nat4 *) stackPointer);
-				stackPointer += sizeof(Nat4 *);
-			}
-			break;
-			
 	}
 		tempParameter = tempParameter->next;
 	} // End For(argument) Loop
@@ -2320,11 +1880,6 @@ void InterpreterCallbackHandler(void)
 				outputBlock->blockPtr = tempPointer;
 				outputBlock->levelOfIndirection = tempParameter->indirection;
 				*(parameterList->objectList + inputCounter++) = (V_Object) outputBlock;
-				if(strcmp(tempParameter->name,"objc_object") == 0){
-					id	tempObjcObject = *(id *) tempPointer;
-					SEL	theSelector = sel_getUid("retain");
-					objc_msgSend(tempObjcObject, theSelector);
-				}
 				break;
 
 			case kStructureType:
@@ -2341,11 +1896,7 @@ void InterpreterCallbackHandler(void)
 				break;
 
 			case kVoidType:
-				varagList = create_list(PARAMETERAREASIZE - procedureInarity + 1,theEnvironment);
-				*(parameterList->objectList + inputCounter++) = (V_Object) varagList;
-				for(varargCounter = 0; varargCounter < PARAMETERAREASIZE - procedureInarity + 1; varargCounter++){
-					*(varagList->objectList + varargCounter) = (V_Object) int_to_integer(parameterArea[counter + varargCounter],theEnvironment);;
-				}				
+				*(parameterList->objectList + inputCounter++) = (V_Object) int_to_integer((Int4) &parameterArea[counter],theEnvironment);
 				break;
 
 			default:
@@ -2391,30 +1942,13 @@ void InterpreterCallbackHandler(void)
 				if(block == NULL) tempInput.inputInt = 0;
 				else{
 					switch(block->type){
-						case kBoolean:
-							tempInput.inputInt = ((V_Boolean) block)->value;
-							break;
-							
-						case kInteger:
-							tempInput.inputInt = (Nat4) ((V_Integer) block)->value;
-							break;
-							
 						case kExternalBlock:
-							externalBlock = (V_ExternalBlock) block;
-							if(tempParameter->indirection - externalBlock->levelOfIndirection == -1) {
-								tempInput.inputInt = **((Nat4 **) externalBlock->blockPtr);
-							}else if(tempParameter->indirection - externalBlock->levelOfIndirection == 0 ) {
-								tempInput.inputInt = *((Nat4 *) externalBlock->blockPtr);
-							}else if(tempParameter->indirection - externalBlock->levelOfIndirection == 1) {
-								tempInput.inputInt = (long) externalBlock->blockPtr;
-							}else{
-								tempInput.inputInt = (Nat4) ((V_ExternalBlock) block)->blockPtr;
-							}
-							break;
+						tempInput.inputInt = (Nat4) ((V_ExternalBlock) block)->blockPtr;
+						break;
 						
 						case kString:
-							tempInput.inputInt = (Nat4) ((V_String) block)->string;
-							break;
+						tempInput.inputInt = (Nat4) ((V_String) block)->string;
+						break;
 						
 					}
 				}
@@ -3665,9 +3199,69 @@ void InterpreterCallbackHandler(void)
 
 #pragma mark ------- Byte Swapping Funcs -------
 
+typedef enum __vpx_ByteOrder {
+    vpx_ByteOrderUnknown,
+    vpx_ByteOrderLittleEndian,
+    vpx_ByteOrderBigEndian
+} vpx_ByteOrder;
+
+inline vpx_ByteOrder vpx_ByteOrderGetCurrent(void) {
+    uint32_t x = (vpx_ByteOrderBigEndian << 24) | vpx_ByteOrderLittleEndian;
+    return (vpx_ByteOrder)*((uint8_t *)&x);
+}
+
+inline uint16_t vpx_SwapInt16(uint16_t arg) {
+#if defined(__i386__) && defined(__GNUC__)
+    __asm__("xchgb %b0, %h0" : "+q" (arg));
+    return arg;
+#elif defined(__ppc__) && defined(__GNUC__)
+    uint16_t result;
+    __asm__("lhbrx %0,0,%1" : "=r" (result) : "r" (&arg), "m" (arg));
+    return result;
+#else
+    uint16_t result;
+    result = ((arg << 8) & 0xFF00) | ((arg >> 8) & 0xFF);
+    return result;
+#endif
+}
+
+inline uint32_t vpx_SwapInt32(uint32_t arg) {
+#if defined(__i386__) && defined(__GNUC__)
+    __asm__("bswap %0" : "+r" (arg));
+    return arg;
+#elif defined(__ppc__) && defined(__GNUC__)
+    uint32_t result;
+    __asm__("lwbrx %0,0,%1" : "=r" (result) : "r" (&arg), "m" (arg));
+    return result;
+#else
+    uint32_t result;
+    result = ((arg & 0xFF) << 24) | ((arg & 0xFF00) << 8) | ((arg >> 8) & 0xFF00) | ((arg >> 24) & 0xFF);
+    return result;
+#endif
+}
+
+inline uint64_t vpx_SwapInt64(uint64_t arg) {
+    union vpx_Swap {
+        uint64_t sv;
+        uint32_t ul[2];
+    } tmp, result;
+    tmp.sv = arg;
+    result.ul[0] = vpx_SwapInt32(tmp.ul[1]); 
+    result.ul[1] = vpx_SwapInt32(tmp.ul[0]);
+    return result.sv;
+}
+
+uint32_t vpx_SwapInt32HostToBig(uint32_t arg) 
+{
+	if( vpx_ByteOrderGetCurrent() == vpx_ByteOrderBigEndian )
+		return arg;
+	else
+		return vpx_SwapInt32(arg);
+}
+
 UInt8	vpx_SwapInt8HostToBig( UInt8 swapInt )
 {
-	if( CFByteOrderGetCurrent() == CFByteOrderBigEndian )
+	if( vpx_ByteOrderGetCurrent() == vpx_ByteOrderBigEndian )
 		return swapInt;
 	else
 		return 256 - swapInt;
@@ -3675,7 +3269,7 @@ UInt8	vpx_SwapInt8HostToBig( UInt8 swapInt )
 
 UInt8	vpx_SwapInt8( UInt8 swapInt )
 {
-	if( CFByteOrderGetCurrent() == CFByteOrderBigEndian )
+	if( vpx_ByteOrderGetCurrent() == vpx_ByteOrderBigEndian )
 		return 256 - swapInt;
 	else
 		return swapInt - 256;
@@ -3699,9 +3293,9 @@ void	vpx_ipc_swap_block(void* block,Nat4 blockSize, Int1 byteSize)
 //		if( byteSize == 4 )
 		if( byteSize != 0 )
 			for( swapByte=0; (swapByte*byteSize) < blockSize; swapByte++ ) {
-				if( byteSize == 8 ) if( swapTwoWordBlock[swapByte] ) swapTwoWordBlock[swapByte] = CFSwapInt64(swapTwoWordBlock[swapByte]);
-				if( byteSize == 4 ) if( swapOneWordBlock[swapByte] ) swapOneWordBlock[swapByte] = CFSwapInt32(swapOneWordBlock[swapByte]);
-				if( byteSize == 2 ) if( swapTwoByteBlock[swapByte] ) swapTwoByteBlock[swapByte] = CFSwapInt16(swapTwoByteBlock[swapByte]);
+				if( byteSize == 8 ) if( swapTwoWordBlock[swapByte] ) swapTwoWordBlock[swapByte] = vpx_SwapInt64(swapTwoWordBlock[swapByte]);
+				if( byteSize == 4 ) if( swapOneWordBlock[swapByte] ) swapOneWordBlock[swapByte] = vpx_SwapInt32(swapOneWordBlock[swapByte]);
+				if( byteSize == 2 ) if( swapTwoByteBlock[swapByte] ) swapTwoByteBlock[swapByte] = vpx_SwapInt16(swapTwoByteBlock[swapByte]);
 				if( byteSize == 1 ) if( swapOneByteBlock[swapByte] ) swapOneByteBlock[swapByte] = vpx_SwapInt8(swapOneByteBlock[swapByte]);
 			}
 	}
@@ -3745,13 +3339,13 @@ Int4	vpx_ipc_read_byteorder(V_Environment environment,enum whichThread theThread
 
 /* In the future, when the MartenInterpreter.framework is compiled universal binary, we want to use the above two lines
 	but for now we will simulate the data */
-//	idChars = CFSwapInt32HostToBig( 'mVPL' );
+//	idChars = vpx_SwapInt32HostToBig( 'mVPL' );
 
 	if ( idChars != 'mVPL' ) gSwapPipeBytes = TRUE;
 	
 	if( gSwapPipeBytes ) {
 		char*		modeString = (char*)X_malloc( 512 );
-		Boolean		modeIsBig = (CFByteOrderGetCurrent() == CFByteOrderBigEndian);
+		Boolean		modeIsBig = (vpx_ByteOrderGetCurrent() == vpx_ByteOrderBigEndian);
 
 		if( modeString == NULL ) return readResult;		
 		sprintf( modeString, "*** Marten Interpereter is swapping bytes. Interpreter is %s endian.", modeIsBig ? "big" : "little" );
@@ -3769,7 +3363,7 @@ Int4	vpx_ipc_write_byteorder(V_Environment environment,enum whichThread theThrea
 	Int4	block = 'mVPL';
 	gSwapPipeBytes = FALSE;
 	
-	if( gPrintPedanticDebug) printf( "Marten big endian: %s\n", ( CFSwapInt32HostToBig( 'mVPL' ) == block ) ? "Yes" : "No" );
+	if( gPrintPedanticDebug) printf( "Marten big endian: %s\n", ( vpx_SwapInt32HostToBig( 'mVPL' ) == block ) ? "Yes" : "No" );
 	
 	return vpx_ipc_write_block( environment, theThread, writeFileDescriptor, &block, 4 );
 }
@@ -3791,8 +3385,8 @@ Int4	vpx_ipc_write_block(V_Environment environment,enum whichThread theThread,In
 	Nat4	amountWritten = 0;
 	Nat4	amountToWrite = 0;
 	Int4		amount = 0;
-	ThreadID	theThreadID = 0;
-	OSErr		threadError = noErr;
+//	ThreadID	theThreadID = 0;
+//	OSErr		threadError = noErr;
 	Int1	*theBuffer = (Int1 *) block;
 
 /*	
@@ -3837,7 +3431,7 @@ Int4	vpx_ipc_write_block(V_Environment environment,enum whichThread theThread,In
 			} else {
 				amountWritten += amount;
 			}
-			if(environment && environment->interpreterMode == kThread) {
+/*			if(environment && environment->interpreterMode == kThread) {
 				switch(theThread){
 					case kEditor:
 						GetCurrentThread(&theThreadID);
@@ -3856,6 +3450,9 @@ Int4	vpx_ipc_write_block(V_Environment environment,enum whichThread theThread,In
 				
 				}
 			}
+ */
+			VPL_YEILDTOTHREAD( theThread, environment );
+
 		}
 
 
@@ -3870,8 +3467,8 @@ Int4	vpx_ipc_read_block(V_Environment environment,enum whichThread theThread,Int
 	Nat4		amountToRead = 0;
 	Int4		amount = 0;
 	Int1		*tempArchive = (Int1 *) block;
-	ThreadID	theThreadID = 0;
-	OSErr		threadError = noErr;
+//	ThreadID	theThreadID = 0;
+//	OSErr		threadError = noErr;
 /*
 	if(environment && environment->interpreterMode == kThread) {
 		switch(theThread){
@@ -3910,7 +3507,7 @@ Int4	vpx_ipc_read_block(V_Environment environment,enum whichThread theThread,Int
 
 		while(amountRead < totalAmount){
 			amountToRead = totalAmount - amountRead < PIPE_LIMIT ? totalAmount - amountRead : PIPE_LIMIT;
-			if(environment && environment->interpreterMode == kThread) {
+/*			if(environment && environment->interpreterMode == kThread) {
 				switch(theThread){
 					case kEditor:
 						GetCurrentThread(&theThreadID);
@@ -3929,6 +3526,9 @@ Int4	vpx_ipc_read_block(V_Environment environment,enum whichThread theThread,Int
 				
 				}
 			}
+ */
+			VPL_YEILDTOTHREAD( theThread, environment );
+
 			amount = read(readFileDescriptor,tempArchive + amountRead,amountToRead);
 			if(amount < 0) {
 				vpx_IPC_error(environment,"Pipe read error for archive in vpx_ipc_read_archive\n");
@@ -3948,7 +3548,7 @@ Int4	vpx_ipc_read_block(V_Environment environment,enum whichThread theThread,Int
 Int4	vpx_ipc_write_word(V_Environment environment,enum whichThread theThread,Int4 writeFileDescriptor,void* word)
 {
 //	Int4	theWord = * ((Int4 *) word);
-//	Int4	theWord = CFSwapInt32HostToBig(* ((Int4 *) word));
+//	Int4	theWord = vpx_SwapInt32HostToBig(* ((Int4 *) word));
 //	return vpx_ipc_write_swapped_block(environment,theThread,writeFileDescriptor,theWord,4,4);
 	return vpx_ipc_write_swapped_block(environment,theThread,writeFileDescriptor,word,4,4);
 }
@@ -3957,7 +3557,7 @@ Int4	vpx_ipc_read_word(V_Environment environment,enum whichThread theThread,Int4
 {
 	Int4	theWord = 0;
 	Int4	returnValue = vpx_ipc_read_swapped_block(environment,theThread,readFileDescriptor,&theWord,4,4);
-//	*((Int4 *) word) = CFSwapInt32HostToBig(theWord);
+//	*((Int4 *) word) = vpx_SwapInt32HostToBig(theWord);
 	*((Int4 *) word) = theWord;
 	return returnValue;
 //	return vpx_ipc_read_swapped_block(environment,theThread,readFileDescriptor,&word,4,4);
@@ -3997,8 +3597,8 @@ Int4	vpx_ipc_write_archive(V_Environment environment,enum whichThread theThread,
 	Int4	amount = 0;
 	Int1	*theBuffer = (Int1 *) archive;
 	Int4	result = kNOERROR;
-	ThreadID	theThreadID = 0;
-	OSErr		threadError = noErr;
+//	ThreadID	theThreadID = 0;
+//	OSErr		threadError = noErr;
 	
 	if(archive) {
 		if( gPrintPedanticDebug ) printf("The archive: %d\n", (UInt32)archive);
@@ -4019,7 +3619,7 @@ Int4	vpx_ipc_write_archive(V_Environment environment,enum whichThread theThread,
 			} else {
 				amountWritten += amount;
 			}
-			if(environment && environment->interpreterMode == kThread) {
+/*			if(environment && environment->interpreterMode == kThread) {
 				switch(theThread){
 					case kEditor:
 						GetCurrentThread(&theThreadID);
@@ -4038,6 +3638,9 @@ Int4	vpx_ipc_write_archive(V_Environment environment,enum whichThread theThread,
 				
 				}
 			}
+ */
+			VPL_YEILDTOTHREAD( theThread, environment );
+
 		}
 	} else {
 		totalAmount = 0;
@@ -4055,15 +3658,15 @@ Int4	vpx_ipc_read_archive(V_Environment environment,enum whichThread theThread,I
 	Nat4		amountToRead = 0;
 	Int4		amount = 0;
 	Int1		*tempArchive = NULL;
-	ThreadID	theThreadID = 0;
-	OSErr		threadError = noErr;
+//	ThreadID	theThreadID = 0;
+//	OSErr		threadError = noErr;
 
 	vpx_ipc_read_word(environment,theThread,readFileDescriptor,&totalAmount);
 	if(totalAmount) {
 		tempArchive = (Int1 *) X_malloc(totalAmount);
 		while(amountRead < totalAmount){
 			amountToRead = totalAmount - amountRead < PIPE_LIMIT ? totalAmount - amountRead : PIPE_LIMIT;
-			if(environment && environment->interpreterMode == kThread) {
+/*			if(environment && environment->interpreterMode == kThread) {
 				switch(theThread){
 					case kEditor:
 						GetCurrentThread(&theThreadID);
@@ -4082,6 +3685,9 @@ Int4	vpx_ipc_read_archive(V_Environment environment,enum whichThread theThread,I
 				
 				}
 			}
+ */
+			VPL_YEILDTOTHREAD( theThread, environment );
+
 			amount = read(readFileDescriptor,tempArchive + amountRead,amountToRead);
 			if(amount < 0) {
 				vpx_IPC_error(environment,"Pipe read error for archive in vpx_ipc_read_archive\n");
@@ -4158,15 +3764,17 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 	V_Operation					tempOperation = NULL;
 	V_Root						tempRoot = NULL;
 	V_Terminal					tempTerminal = NULL;
-	FSSpec						fileSystemSpec;
-	ProcessSerialNumber			process;
+//	FSSpec						fileSystemSpec;
 	vpl_StringPtr				filePath;
 	
-	OSErr						threadError = noErr;
+//	OSErr						threadError = noErr;
 	
 	Nat4						counter = 0;
 	
+#if __VPL_TRAP_INTERPRETER_SIGNALS__
 	for(counter=1;counter<=32;counter++) signal(counter,interrupt_handler);
+#endif // __VPL_TRAP_INTERPRETER_SIGNALS__
+	
 /*
 	if(signal(SIGABRT,interrupt_handler) == SIG_ERR) printf("Can't catch abort signal!\n");
 	if(signal(SIGFPE,interrupt_handler) == SIG_ERR) printf("Can't catch floating point exception signal!\n");
@@ -4189,13 +3797,11 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 		Nat4	stackResult = 0;
 		V_Stack	stack = initialStack;
 				
-		GetCurrentProcess(&process);
-
 		stackResult = stack_advance(environment,stack);
 		if(stackResult) return kNOERROR;
 
 		interpreterResult = kSuccess;
-		if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+		VPL_YIELDTOEDITOR( environment );
 		vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 		bufferSize = stackResult;
@@ -4227,9 +3833,9 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 		
 	while(command) {
 
-		if( gDrawCommandBadge ) DrawCommandBadge( kvpl_CommandReading, command, environment );
+		if( platformIsCommandBadgeEnabled( environment ) == kTRUE ) platformDrawCommandBadge( kvpl_CommandReading, command, environment );
 		result = vpx_ipc_read_word(environment,kEditor,writeFileDescriptor,&command);
-		if( gDrawCommandBadge ) DrawCommandBadge( kvpl_CommandRunning, command, environment );
+		if( platformIsCommandBadgeEnabled( environment ) == kTRUE ) platformDrawCommandBadge( kvpl_CommandRunning, command, environment );
 		if(result != kNOERROR) break;
 
 		if( gPrintPedanticDebug) printf("The Command is %u\n",command);
@@ -4243,7 +3849,6 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 			#pragma mark ** kCommandEnvironmentProcessSerialNumbers **
 			case kCommandEnvironmentProcessSerialNumbers:
 			{
-				ProcessSerialNumber	process;
 				pid_t				processID = 0;
 				pid_t				EditorProcessID = 0;
 				pid_t				InterpreterProcessID = 0;
@@ -4251,11 +3856,10 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				vpx_ipc_read_word(environment,kEditor,writeFileDescriptor,&processID);
 				EditorProcessID = processID;
 					if( gPrintPedanticDebug ) printf("the Editor ProcessID: %d\n", EditorProcessID );
-				GetCurrentProcess(&process);
-				GetProcessPID(&process,&processID);
+				processID = getpid();
 				InterpreterProcessID = processID;
 				bufferSize = processID;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&bufferSize);
 
 
@@ -4280,7 +3884,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 			case kCommandEnvironmentPostLoad:
 				result = post_load(environment);
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				break;
@@ -4288,7 +3892,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 			#pragma mark ** kCommandEnvironmentGetPostLoad **
 			case kCommandEnvironmentGetPostLoad:
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				bufferSize = environment->postLoad;
@@ -4301,7 +3905,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 
 				environment->postLoad = bufferSize;
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				break;
@@ -4315,12 +3919,15 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 
 				if(stringBuffer) {
 //					result = environment_load_bundles(environment,&fileSystemSpec,stringBuffer);
-					result = environment_load_bundles_path(environment,filePath,stringBuffer);
+//					result = environment_load_bundles_path(environment,filePath,stringBuffer);
+					if( platformLoadLibraryAtPath( stringBuffer, filePath, environment ) == kTRUE )
+						interpreterResult = kSuccess;
+					else
+						interpreterResult = kFailure;
 					X_free(filePath);
 					X_free(stringBuffer);
-					interpreterResult = kSuccess;
 				} else interpreterResult = kFailure;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				break;
@@ -4337,7 +3944,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				vpx_ipc_read_string(environment,kEditor,writeFileDescriptor,&stringBuffer);
 				
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				if(stringBuffer) {
@@ -4376,7 +3983,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 					}
 				}
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				break;
@@ -4385,7 +3992,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 			case kCommandExit:
 				result = destroy_environment(environment,kTRUE,kTRUE); /* Frees the memory */
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				break;
@@ -4396,14 +4003,14 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 
 				if(stringBuffer) {
 					interpreterResult = class_create(environment,stringBuffer,&tempClass);
-					if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+					VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 					outputAddress = (Nat4) tempClass;
 					vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
 					X_free(stringBuffer);
 				} else {
 					interpreterResult = kFailure;
-					if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+					VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 					outputAddress = (Nat4) 0;
 					vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -4417,7 +4024,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				tempClass = (V_Class) bufferSize;
 
 				interpreterResult = class_remove(environment,tempClass);
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				break;
@@ -4435,7 +4042,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 					interpreterResult = class_set(environment,tempClass,NULL);
 				}
 
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				break;
@@ -4455,7 +4062,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 					X_free(secondBuffer);
 				} else interpreterResult = kFailure;
 
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 				outputAddress = (Nat4) tempValue;
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -4471,7 +4078,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				destroy_classAttribute(tempValue,environment);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 			}
 				break;
@@ -4484,7 +4091,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				tempValue->value = unarchive_object(environment,tempValue->valueArchive);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				break;
@@ -4496,7 +4103,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				if( gPrintPedanticDebug ) printf("The V_Value: %d\n", (UInt32)tempValue);
 				
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				if(tempValue->value) {
@@ -4515,7 +4122,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				tempValue = (V_Value) bufferSize;
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				if(environment->postLoad) archiveSize = (Nat4) tempValue->value;
@@ -4541,7 +4148,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				decrement_count(environment,oldValue);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 			}
@@ -4553,14 +4160,14 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 
 				if(stringBuffer) {
 					interpreterResult = method_create(environment,stringBuffer,&tempMethod);
-					if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+					VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 					outputAddress = (Nat4) tempMethod;
 					vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
 					X_free(stringBuffer);
 				} else {
 					interpreterResult = kFailure;
-					if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+					VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 					outputAddress = 0;
 					vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -4574,7 +4181,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				tempMethod = (V_Method) bufferSize;
 
 				interpreterResult = method_remove(environment,tempMethod);
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				break;
@@ -4592,7 +4199,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 					interpreterResult = method_set(environment,tempMethod,NULL);
 				}
 
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				break;
@@ -4607,7 +4214,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				vpx_ipc_read_word(environment,kEditor,writeFileDescriptor,&bufferSize);
 
 				interpreterResult = case_create(environment,tempMethod,index,bufferSize,&tempCase);
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 				outputAddress = (Nat4) tempCase;
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -4624,7 +4231,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				vpx_ipc_read_word(environment,kEditor,writeFileDescriptor,&bufferSize);
 
 				interpreterResult = operation_create(environment,tempCase,index,bufferSize,&tempOperation);
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 				outputAddress = (Nat4) tempOperation;
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -4665,7 +4272,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				vpx_ipc_read_word(environment,kEditor,writeFileDescriptor,&operationValue);
 
 				interpreterResult = operation_set(environment,tempOperation,theType,operationControl,theAction,operationRepeat,secondBuffer,operationInject,operationSuper,operationBreak,operationValue);
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 			}
@@ -4679,7 +4286,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				vpx_ipc_read_word(environment,kEditor,writeFileDescriptor,&index);
 
 				interpreterResult = root_create(environment,tempOperation,index,&tempRoot);
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 				outputAddress = (Nat4) tempRoot;
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -4698,7 +4305,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 
 				tempRoot->mode = theMode;
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 			}
@@ -4712,7 +4319,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				vpx_ipc_read_word(environment,kEditor,writeFileDescriptor,&index);
 
 				interpreterResult = terminal_create(environment,tempOperation,index,&tempTerminal);
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 				outputAddress = (Nat4) tempTerminal;
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -4746,7 +4353,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				vpx_ipc_read_word(environment,kEditor,writeFileDescriptor,&loopRootIndex);
 
 				interpreterResult = terminal_set(environment,tempTerminal,theMode,tempRoot,rootIndex,rootOperation,tempLoopRoot,loopRootIndex);
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 			}
@@ -4762,7 +4369,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 					X_free(stringBuffer);
 				} else interpreterResult = kFailure;
 
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 				outputAddress = (Nat4) tempValue;
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -4775,7 +4382,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				tempValue = (V_Value) bufferSize;
 
 				interpreterResult = persistent_remove(environment,tempValue->objectName);
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				break;
@@ -4784,7 +4391,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 			case kCommandEnvironmentStep:
 				environment->stopNext = kTRUE;
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				break;
@@ -4811,7 +4418,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				decrement_count(environment,(V_Object) inputList);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				outputAddress = (Nat4) stack;
@@ -4834,14 +4441,13 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 
 				if(initialStack) stack = initialStack;
 
-				GetCurrentProcess(&process);
-				SetFrontProcess(&process);
+				platformBringToFront( environment );
 
 				stackResult = stack_advance(environment,stack);
 				if(initialStack && stackResult) return kNOERROR;
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				bufferSize = stackResult;
@@ -4892,7 +4498,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				result = destroy_stack(environment,stack);	
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				if(outputList) {
@@ -4937,7 +4543,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&bufferSize);
@@ -4961,7 +4567,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 			}
@@ -4978,7 +4584,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				theFrame = (V_Frame) bufferSize;
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				if(theFrame->operation) while(theFrame->frameCase->operationsList[counter++] != theFrame->operation){}
@@ -5019,7 +4625,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				result = environment_set_current_operation(environment,theFrame,index,&theBlock,&numberOfFrames);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				bufferSize = numberOfFrames;
@@ -5051,7 +4657,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				else theFrame->stopNow = theState;
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 			}
 				break;
@@ -5072,7 +4678,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 			}
@@ -5111,7 +4717,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				else theObject = NULL;
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				outputAddress = (Nat4) theObject;
@@ -5157,7 +4763,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 			}
@@ -5173,7 +4779,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				theFrame = (V_Frame) bufferSize;
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				outputAddress = (Nat4) theFrame->previousFrame;
@@ -5233,7 +4839,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 				
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&bufferSize);
@@ -5290,7 +4896,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 			}
 				break;
@@ -5344,7 +4950,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				instancesList->use = 0;
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				outputAddress = (Nat4) instancesList;
@@ -5376,7 +4982,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 			}
 				break;
@@ -5394,7 +5000,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&bufferSize);
@@ -5415,7 +5021,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&bufferSize);
@@ -5455,7 +5061,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				bufferSize = counter;
@@ -5479,7 +5085,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				tempObject = (V_Object) bufferSize;
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				theString = object_to_string(tempObject,environment);
@@ -5509,7 +5115,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				tempObject = (V_Object) bufferSize;
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				if(tempObject && tempObject->type == kInstance) {
@@ -5530,7 +5136,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				tempObject = (V_Object) bufferSize;
 				
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				if(tempObject) {
@@ -5580,7 +5186,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 			}
@@ -5598,7 +5204,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				if(tempInstance) tempInstance->use = 0;
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				outputAddress = (Nat4) tempInstance;
@@ -5632,7 +5238,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				if(tempObject) tempObject->use = 0;
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 				outputAddress = (Nat4) tempObject;
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -5664,7 +5270,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				outputAddress = (Nat4) theList;
@@ -5681,7 +5287,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				if(tempObject) tempObject->use--;	//Bug Fix 2007-03-31 Must just decrement the count rather than setting to 0.
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				outputAddress = (Nat4) tempObject;
@@ -5697,7 +5303,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 					if(tempObject) tempObject->use = 0;
 				}
 
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 				outputAddress = (Nat4) tempObject;
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -5711,7 +5317,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				decrement_count(environment,tempObject);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 				break;
 
@@ -5722,7 +5328,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 
 				increment_count(tempObject);
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 				break;
 
@@ -5738,7 +5344,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 
 					if(tempPrimitive != NULL){
 						interpreterResult = kSuccess;	
-						if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+						VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 						outputAddress = tempPrimitive->inarity;
 						vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -5748,7 +5354,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 						vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
 					}else{
 						interpreterResult = kFailure;	
-						if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+						VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 						outputAddress = 0;
 						vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -5760,7 +5366,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 					X_free(stringBuffer);
 				} else {
 						interpreterResult = kFailure;	
-						if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+						VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 						outputAddress = 0;
 						vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -5795,7 +5401,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 						}
 						if(tempProcedure->returnParameter != NULL) procedureOutarity++;
 						interpreterResult = kSuccess;	
-						if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+						VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 						outputAddress = procedureInarity;
 						vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -5803,7 +5409,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 						vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
 					}else{
 						interpreterResult = kFailure;	
-						if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+						VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 						outputAddress = 0;
 						vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -5813,7 +5419,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 					X_free(stringBuffer);
 				} else {
 						interpreterResult = kFailure;	
-						if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+						VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 						outputAddress = 0;
 						vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -5839,7 +5445,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 
 					if(theMethod != NULL){
 						interpreterResult = kSuccess;	
-						if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+						VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 						outputAddress = theMethod->casesList[0]->operationsList[0]->outarity;
 						vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -5861,7 +5467,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 						vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
 					}else{
 						interpreterResult = kFailure;	
-						if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+						VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 						outputAddress = 0;
 						vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -5873,7 +5479,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 					X_free(stringBuffer);
 				} else {
 						interpreterResult = kFailure;	
-						if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+						VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 						outputAddress = 0;
 						vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&outputAddress);
@@ -5896,7 +5502,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				tempList = get_procedure_info(environment,stringBuffer);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				if(tempList) {
@@ -5921,7 +5527,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				tempInfo = get_primitive_info(environment,stringBuffer);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				if(tempInfo) {
@@ -5946,7 +5552,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				tempInfo = get_constant_info(environment,stringBuffer);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				if(tempInfo) {
@@ -5971,7 +5577,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				tempList = get_structure_info(environment,stringBuffer);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				if(tempList) {
@@ -6036,7 +5642,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 			}
@@ -6081,7 +5687,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 				
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 			}
@@ -6126,7 +5732,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 				
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 			}
@@ -6171,7 +5777,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 				
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 			}
@@ -6216,7 +5822,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 				
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 			}
@@ -6231,7 +5837,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				destroy_case(environment,tempCase);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 			}
 				break;
@@ -6248,7 +5854,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				theBlock = operation_destroy(environment,tempOperation,&blockSize);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				bufferSize = blockSize;
@@ -6269,7 +5875,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				destroy_terminal(tempTerminal);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 			}
 				break;
@@ -6283,7 +5889,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				destroy_root(tempRoot);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 			}
 				break;
@@ -6298,7 +5904,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 
 				interpreterResult = class_rename(environment, stringBuffer, secondBuffer);
 
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 			}
 				break;
@@ -6311,7 +5917,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 
 				interpreterResult = method_rename(environment, stringBuffer, secondBuffer);
 
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 				break;
 
@@ -6323,7 +5929,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 
 				interpreterResult = persistent_rename(environment, stringBuffer, secondBuffer);
 
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 				break;
 
@@ -6339,7 +5945,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 
 				interpreterResult = attribute_rename(environment, tempClass, stringBuffer, secondBuffer);
 
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 			}
 				break;
@@ -6365,7 +5971,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 
 				interpreterResult = hasInstances;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 			}
 				break;
@@ -6378,7 +5984,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				tempClass = (V_Class) bufferSize;
 
 				interpreterResult = mark_instances(environment,tempClass);
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 			}
 				break;
@@ -6399,7 +6005,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				environment->lastError = NULL;
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 			}
 				break;
@@ -6410,7 +6016,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				Nat4		numberOfErrors = 0;
 				
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 /*
@@ -6427,7 +6033,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 					numberOfErrors = 5;
 					vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&numberOfErrors);
 
-					vpx_ipc_write_string(environment,kEditor,readFileDescriptor,faultCodes[environment->theFault->theFaultCode]);
+                    //					vpx_ipc_write_string(environment,kEditor,readFileDescriptor,faultCodes[environment->theFault->theFaultCode]);
 
 					vpx_ipc_write_string(environment,kEditor,readFileDescriptor,environment->theFault->primaryString);
 
@@ -6478,7 +6084,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				}
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				bufferSize = numberOfMatches;
@@ -6494,10 +6100,10 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 			#pragma mark ** kCommandEnvironmentResourcesChanged **
 			case kCommandEnvironmentResourcesChanged:
 
-				_CFBundleFlushCaches();						// Core Foundation internal function.
-		
+				platformEnvironmentResourcesChanged( environment );
+				
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				break;
@@ -6511,7 +6117,7 @@ Int4 command_loop(V_Environment environment,V_Stack initialStack)
 				result = environment_abort(environment,&theBlock,&numberOfFrames);
 
 				interpreterResult = kSuccess;
-				if(environment->interpreterMode == kThread) threadError = YieldToThread(environment->editorThreadID);
+				VPL_YIELDTOEDITOR( environment );
 				vpx_ipc_write_word(environment,kEditor,readFileDescriptor,&interpreterResult);
 
 				bufferSize = numberOfFrames;

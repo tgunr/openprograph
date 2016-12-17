@@ -45,8 +45,8 @@ V_List		VPLUISelectList = NULL;
 #define		VPLUIModalWindowSelectListColumn	'SELC'
 #define		VPLUIModalWindowSelectCommandID		'VsOK'
 
-#define		VPLUIBundleIDFramework			CFSTR("com.andescotia.frameworks.martenui.aqua")
-#define		VPLUIBundleIDBundle				CFSTR("com.andescotia.bundles.martenui.aqua")
+#define		VPLUIBundleIDFramework			CFSTR("com.andescotia.frameworks.marten.standardui")
+#define		VPLUIBundleIDBundle				CFSTR("com.andescotia.bundles.marten.standardui")
 
 
 OSStatus VPLUIModalWindowRun( WindowRef inWindow );
@@ -211,8 +211,11 @@ OSStatus CreateRelativeNibRef( CFStringRef theNibName, IBNibRef *theNibRef )
 		CFBundleRef				nibBundle = CFBundleGetBundleWithIdentifier( VPLUIBundleIDFramework );
 		if( nibBundle == NULL )	nibBundle = CFBundleGetBundleWithIdentifier( VPLUIBundleIDBundle );
 		if( nibBundle != NULL )	err = CreateNibReferenceWithCFBundle( nibBundle, VPLUIModalWindowNibName, theNibRef );
-	}
 
+		if(err) 
+			fprintf( stderr, "CreateRelativeNibRef Err:%d haveNib?:%s\n", err, (nibBundle==NULL) ? "No" : "Yes" );
+	}
+	
 	return err;
 }
 
@@ -1104,9 +1107,44 @@ EXIT:
 }
 
 
+Int4 VPLP_ask( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+Int4 VPLP_ask( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive ){
+	return VPLP_ask_2D_value(environment,trigger,primInArity,primOutArity,primitive);
+}
 
+Int4 VPLP_beep( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+Int4 VPLP_beep( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive ){
 
+	Int1			*primName = "beep";
+	Int4			result = kNOERROR;
 
+	vpl_StringPtr	eventName = NULL;
+	
+#ifdef VPL_VERBOSE_ENGINE
+	result = VPLPrimCheckInputArityMax(environment,primName, primInArity, 1 );
+	if( result != kNOERROR ) return result;
+#endif
+	
+	if( primInArity == 1 )
+		result = VPLPrimGetInputObjectString( &eventName, 0, primName, primitive, environment );
+	
+#if defined(BEOS) || defined(HAIKU)
+	if( eventName != NULL )
+		result = system_beep( (const char*)eventName );
+	else
+		result = beep();
+#endif
+	
+#ifdef MACOSX
+	result = AlertSoundPlay();
+#endif
+	
+	if( primOutArity == 1 )
+		VPLPrimSetOutputObjectInteger( environment, primInArity, 0, primitive, result );
+
+	*trigger = kSuccess;	
+	return kNOERROR;
+}
 
 
 
@@ -1115,9 +1153,9 @@ Nat4	loadConstants_VPX_PrimitivesUI(V_Environment environment,char *bundleID)
 {
 #pragma unused(environment)
 #pragma unused(bundleID)
-        
-        return kNOERROR;
-
+	
+	return kNOERROR;
+	
 }
 
 Nat4	loadStructures_VPX_PrimitivesUI(V_Environment environment,char *bundleID);
@@ -1125,9 +1163,9 @@ Nat4	loadStructures_VPX_PrimitivesUI(V_Environment environment,char *bundleID)
 {
 #pragma unused(environment)
 #pragma unused(bundleID)
-        
-        return kNOERROR;
-
+	
+	return kNOERROR;
+	
 }
 
 Nat4	loadProcedures_VPX_PrimitivesUI(V_Environment environment,char *bundleID);
@@ -1135,14 +1173,9 @@ Nat4	loadProcedures_VPX_PrimitivesUI(V_Environment environment,char *bundleID)
 {
 #pragma unused(environment)
 #pragma unused(bundleID)
-        
-        return kNOERROR;
-
-}
-
-Int4 VPLP_ask( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-Int4 VPLP_ask( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive ){
-	return VPLP_ask_2D_value(environment,trigger,primInArity,primOutArity,primitive);
+	
+	return kNOERROR;
+	
 }
 
 Nat4	loadPrimitives_VPX_PrimitivesUI(V_Environment environment,char *bundleID);
@@ -1159,6 +1192,7 @@ Nat4	loadPrimitives_VPX_PrimitivesUI(V_Environment environment,char *bundleID)
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"answer",dictionary,2,1,VPLP_answer)) == NULL) return kERROR;
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"answer-v",dictionary,2,1,VPLP_answer_2D_v)) == NULL) return kERROR;
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"select",dictionary,1,1,VPLP_select)) == NULL) return kERROR;
+		if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"beep",dictionary,0,0,VPLP_beep)) == NULL) return kERROR;
 		}
 		
         return kNOERROR;

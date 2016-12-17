@@ -13,12 +13,12 @@
 #include "VPL_Dictionary.h"
 
 #include <unistd.h>
-
 #ifdef _POSIX_THREADS
 #include <pthread.h>
 static pthread_mutex_t gHeapLock; 
 static pthread_mutex_t gStackLock; 
 static pthread_mutex_t gCallbackLock; 
+static pthread_mutex_t gThreadsLock;
 #endif
 
 enum errorType {
@@ -51,6 +51,7 @@ typedef struct VPL_Frame *V_Frame;
 typedef struct VPL_RootNode *V_RootNode;
 typedef struct VPL_Root *V_Root;
 typedef struct VPL_Method *V_Method;
+typedef struct VPL_ThreadSpace *V_ThreadSpace;
 
 enum opTrigger {
 	kHalt = -1,		/* kHalt signals perform_action to return FALSE, stopping the run loop */
@@ -139,13 +140,31 @@ enum valueNodeType {
 };
 
 typedef struct VPL_Instance *V_Instance;
+typedef struct VPL_CallbackCodeSegment *V_CallbackCodeSegment;
+
+typedef	void (*vpl_WatchpointGetCallbackProc)( const void* userData, const V_Instance thisInstance, const Int1* attributeName, const V_Object attributeValue ); 
+typedef	void (*vpl_WatchpointSetCallbackProc)( const void* userData, const V_Instance thisInstance, const Int1* attributeName, const V_Object attributeValue, const V_Object newValue ); 
+
+typedef struct VPL_WatchpointObserver *V_WatchpointObserver;
+typedef struct VPL_WatchpointObserver
+{
+	V_CallbackCodeSegment	theGetCallback;
+	V_CallbackCodeSegment	theSetCallback;
+	void*					theGetUserData;
+	void*					theSetUserData;
+	
+	V_WatchpointObserver	nextObserver;
+	V_WatchpointObserver	previousObserver;
+} VPL_WatchpointObserver;
 
 typedef struct VPL_WatchpointNode *V_WatchpointNode;
 typedef struct VPL_WatchpointNode
 {
-	V_WatchpointNode	previous;
-	V_WatchpointNode	next;
-	V_Instance			theInstance;
+	V_WatchpointNode		previous;
+	V_WatchpointNode		next;
+	V_Instance				theInstance;
+	Nat4					doFault;
+	V_WatchpointObserver	theObserverList;
 }	VPL_WatchpointNode;
 
 typedef struct VPL_ValueNode *V_ValueNode;
@@ -287,8 +306,6 @@ typedef struct {
 	Nat4 size;
 } VPL_ExtStructure, *V_ExtStructure;
 
-typedef struct VPL_CallbackCodeSegment *V_CallbackCodeSegment;
-
 typedef struct VPL_CallbackCodeSegment
 {
 	Nat4					loadHighAddress;
@@ -306,6 +323,20 @@ typedef struct VPL_CallbackCodeSegment
 	V_CallbackCodeSegment	next;
 	Nat4					use;
 }	VPL_CallbackCodeSegment;
+
+typedef struct VPL_ThreadSpace
+{
+	Nat4					thisThread;
+	V_Fault					theFault;
+	V_ErrorNode				lastError;
+	V_Heap					heap;
+	V_Stack					stack;
+	V_CallbackCodeSegment	segments;
+	Bool					stopNext;
+	V_Environment			threadEnvironment;
+	V_ThreadSpace			previousThread;
+	V_ThreadSpace			nextThread;
+}	VPL_ThreadSpace;
 
 typedef struct VPL_Environment
 {
@@ -341,6 +372,8 @@ typedef struct VPL_Environment
 	Nat4				interpreterThreadID;
 	Nat4				pipeWriteFileDescriptor;
 	Nat4				pipeReadFileDescriptor;
+	
+	V_ThreadSpace		threads;
 }	VPL_Environment;
 
 #ifdef __cplusplus
@@ -359,6 +392,8 @@ V_Environment createEnvironment(void);
 V_Heap createHeap(void);
 Nat4 sort_dictionaries(V_Environment environment );
 
+V_ThreadSpace acquireThread(V_Environment environment);
+	
 #ifdef __cplusplus
 }
 #endif

@@ -623,7 +623,7 @@ Int4 VPLP__28_in_29_( V_Environment environment , enum opTrigger *trigger , Nat4
 	result = VPLPrimCheckInputArityMin(environment,primName, primInArity, 2 );
 	if( result != kNOERROR ) return result;
 
-	result = VPLPrimCheckInputArityMax(environment,primName, primInArity, 3 );
+	result = VPLPrimCheckInputArityMax(environment,primName, primInArity, 2 );
 	if( result != kNOERROR ) return result;
 
 	result = VPLPrimCheckOutputArity(environment,primName, primOutArity, 1 );

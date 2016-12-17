@@ -58,6 +58,8 @@ vpl_StringPtr	VPLObjectTypeToTypeString( vpl_ObjectType aVType );
 vpl_Boolean		VPLObjectGetValueBool( V_Object theVObject );
 vpl_Integer		VPLObjectGetValueInteger( V_Object theVObject );
 vpl_Real		VPLObjectGetValueReal( V_Object theVObject );
+vpl_Integer		VPLObjectCoerceValueInteger( V_Object theVObject, vpl_Status* outStatus );
+vpl_Real		VPLObjectCoerceValueReal( V_Object theVObject, vpl_Status* outStatus );
 vpl_StringPtr	VPLObjectGetValueString( V_Object theVObject );
 vpl_StringPtr	VPLObjectGetValueStringCopy( V_Object theVObject, V_Environment environment );
 vpl_StringPtr	VPLObjectGetExternalBlockName( V_Object theVObject );
@@ -99,6 +101,9 @@ vpl_Status		VPLPrimCheckOutputArityMin(V_Environment environment, vpl_StringPtr 
 vpl_Status		VPLPrimCheckOutputArityMax(V_Environment environment, vpl_StringPtr primName, Nat4 primOutArity, vpl_Arity wantArity );
 
 #pragma mark * Check Input Functions */
+vpl_Status		VPLPrimCheckObjectType( V_Object theObject, vpl_ObjectType theVType, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
+vpl_Status		VPLPrimCheckObjectTypes( V_Object theObject, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment, Nat4 numberOfTypes, ... );
+vpl_Status		VPLPrimCheckListObjectType(  vpl_ObjectType theVType, V_List theList, vpl_ListItemIndex theIndex, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
 vpl_Status		VPLPrimCheckInputObjectType(  vpl_ObjectType theVType, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
 vpl_Status		VPLPrimCheckInputObjectTypes( vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment, Nat4 numberOfTypes, ... );
 
@@ -112,6 +117,7 @@ vpl_Status		VPLPrimGetInputObjectNONE( vpl_Arity theNode, vpl_StringPtr primName
 vpl_Status		VPLPrimGetInputObjectUNDEFINED( vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
 vpl_Status		VPLPrimGetInputObjectBool( vpl_Boolean* theValue, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
 vpl_Status		VPLPrimGetInputObjectInteger( vpl_Integer* theValue, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
+vpl_Status		VPLPrimGetInputObjectIntegerCoerce( vpl_Integer* theValue, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
 vpl_Status		VPLPrimGetInputObjectReal( vpl_Real* theValue, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
 vpl_Status		VPLPrimGetInputObjectRealCoerce( vpl_Real* theValue, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
 vpl_Status		VPLPrimGetInputObjectString( vpl_StringPtr* theString, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
@@ -183,7 +189,7 @@ V_Object				VPLEnvironmentCallbackDispose( V_Environment environment, V_Callback
 V_CallbackCodeSegment	VPLEnvironmentCallbackRetain( V_CallbackCodeSegment theCallback );
 void					VPLEnvironmentCallbackRelease( V_CallbackCodeSegment theCallback );
 
-vpl_StringPtr	VPLStringCoerceEncoding( vpl_StringPtr inString, vpl_StringEncoding inEncoding, vpl_StringEncoding outEncoding, V_Environment environment );
+vpl_StringPtr	VPLStringCoerceEncoding( vpl_StringPtr inString, vpl_StringLen inStringLength, vpl_StringEncoding inEncoding, vpl_StringEncoding outEncoding, V_Environment environment );
 
 #ifdef __cplusplus
 }

@@ -131,6 +131,7 @@ typedef struct VPL_Instance
 	Int1	*name;
 }	VPL_Instance;
 
+/*
 typedef struct
 {
 	Nat2	instanceIndex;
@@ -145,6 +146,25 @@ typedef struct
 	void	*blockPtr;
 	Nat4	levelOfIndirection;
 }	VPL_ExternalBlock, *V_ExternalBlock;
+*/
+
+typedef struct
+{
+	Nat2	instanceIndex;
+	Nat1	system;
+	Nat1	type;
+	Nat4	mark;
+	Nat4	use;
+	V_Object	previous;
+	V_Object	next;
+	Int1	*name;
+	Nat4	size;
+	void	*blockPtr;
+	Nat4	levelOfIndirection;
+	void	*blockFreeProcPtr;
+}	VPL_ExternalBlock, *V_ExternalBlock;
+
+typedef void (*VPL_ExternalBlockFreeProcPtr)(void*);
 
 #ifdef __cplusplus
 extern "C" {

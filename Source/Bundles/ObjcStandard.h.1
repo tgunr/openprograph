@@ -1,0 +1,250 @@
+#include <objc/objc.h>
+#include <objc/objc-class.h>
+
+
+#pragma c99 on
+extern BOOL sel_isMapped(SEL sel);
+extern const char *sel_getName(SEL sel);
+extern SEL sel_getUid(const char *str);
+extern SEL sel_registerName(const char *str);
+extern const char *object_getClassName(id obj);
+extern void *object_getIndexedIvars(id obj);
+extern int objc_sync_enter(id obj);
+extern int objc_sync_exit(id obj);
+extern int objc_sync_wait(id obj, long long milliSecondsMaxWait);
+extern int objc_sync_notify(id obj);
+extern int objc_sync_notifyAll(id obj);
+enum {
+OBJC_SYNC_SUCCESS = 0,
+OBJC_SYNC_NOT_OWNING_THREAD_ERROR = -1,
+OBJC_SYNC_TIMED_OUT = -2,
+OBJC_SYNC_NOT_INITIALIZED = -3
+};
+/*
+typedef struct objc_method *Method;
+struct objc_method {
+SEL method_name;
+char *method_types;
+IMP method_imp;
+};
+struct objc_method_list {
+struct objc_method_list *obsolete;
+int method_count;
+struct objc_method method_list[1];
+};
+struct objc_class {
+struct objc_class *isa;
+struct objc_class *super_class;
+const char *name;
+long version;
+long info;
+long instance_size;
+struct objc_ivar_list *ivars;
+struct objc_method_list **methodLists;
+struct objc_cache *cache;
+struct objc_protocol_list *protocols;
+};
+*/
+//typedef struct objc_category *Category;
+/*
+struct objc_category {
+char *category_name;
+char *class_name;
+struct objc_method_list *instance_methods;
+struct objc_method_list *class_methods;
+struct objc_protocol_list *protocols;
+};
+*/
+//typedef struct objc_ivar *Ivar;
+/*
+struct objc_ivar {
+char *ivar_name;
+char *ivar_type;
+int ivar_offset;
+};
+struct objc_ivar_list {
+int ivar_count;
+struct objc_ivar ivar_list[1];
+};
+*/
+extern Ivar object_setInstanceVariable(id, const char *name, void *);
+extern Ivar object_getInstanceVariable(id, const char *name, void **);
+/*
+typedef Class Protocol;
+struct objc_protocol_list {
+struct objc_protocol_list *next;
+int count;
+Protocol *list[1];
+};
+typedef struct objc_cache * Cache;
+struct objc_cache {
+unsigned int mask;
+unsigned int occupied;
+Method buckets[1];
+};
+*/
+<<<<<<< HEAD
+extern id class_createInstance(Class, size_t idxIvars);
+extern id class_createInstanceFromZone(Class, size_t idxIvars, void *z);
+=======
+extern id class_createInstance(Class, unsigned idxIvars);
+extern id class_createInstanceFromZone(Class, unsigned idxIvars, void *z);
+>>>>>>> f4e21aa7f07c74ecb73db9050eb69c4d4a1d0bf0
+extern void class_setVersion(Class, int);
+extern int class_getVersion(Class);
+extern Ivar class_getInstanceVariable(Class, const char *);
+extern Method class_getInstanceMethod(Class, SEL);
+extern Method class_getClassMethod(Class, SEL);
+extern void class_addMethods(Class, struct objc_method_list *);
+extern void class_removeMethods(Class, struct objc_method_list *);
+extern Class class_poseAs(Class imposter, Class original);
+extern unsigned method_getNumberOfArguments(Method);
+extern unsigned method_getSizeOfArguments(Method);
+extern unsigned method_getArgumentInfo(Method m, int arg, const char **type, int *offset);
+extern struct objc_method_list *class_nextMethodList(Class, void **);
+//typedef void *marg_list;
+extern void objc_exception_throw(id exception);
+extern void objc_exception_try_enter(void *localExceptionData);
+extern void objc_exception_try_exit(void *localExceptionData);
+extern id objc_exception_extract(void *localExceptionData);
+extern int objc_exception_match(Class exceptionClass, id exception);
+typedef struct {
+int version;
+void (*throw_exc)(id);
+void (*try_enter)(void *);
+void (*try_exit)(void *);
+id (*extract)(void *);
+int (*match)(Class, id);
+}
+objc_exception_functions_t;
+extern void objc_exception_get_functions(objc_exception_functions_t *table);
+extern void objc_exception_set_functions(objc_exception_functions_t *table);
+extern long objc_loadModules (
+char *modlist[],
+void *errStream,
+void (*class_callback) (Class, Category),
+struct mach_header **hdr_addr,
+char *debug_file
+);
+extern int objc_loadModule (
+char * moduleName,
+void (*class_callback) (Class, Category),
+int * errorCode);
+extern long objc_unloadModules(
+void *errorStream,
+void (*unloadCallback)(Class, Category)
+);
+extern void objc_register_header_name(
+char *name
+);
+extern void objc_register_header(
+char *name
+);
+//typedef char * va_list;
+<<<<<<< HEAD
+#if 0
+=======
+>>>>>>> f4e21aa7f07c74ecb73db9050eb69c4d4a1d0bf0
+typedef struct objc_symtab *Symtab;
+struct objc_symtab {
+unsigned long sel_ref_cnt;
+SEL *refs;
+unsigned short cls_def_cnt;
+unsigned short cat_def_cnt;
+void *defs[1];
+};
+typedef struct objc_module *Module;
+struct objc_module {
+unsigned long version;
+unsigned long size;
+const char *name;
+Symtab symtab;
+};
+struct objc_super {
+id receiver;
+Class class;
+};
+<<<<<<< HEAD
+#endif
+
+=======
+>>>>>>> f4e21aa7f07c74ecb73db9050eb69c4d4a1d0bf0
+extern id objc_getClass(const char *name);
+extern id objc_getMetaClass(const char *name);
+extern id objc_msgSend(id self, SEL op, ...);
+extern id objc_msgSendSuper(struct objc_super *super, SEL op, ...);
+extern void objc_msgSend_stret(void * stretAddr, id self, SEL op, ...);
+extern void objc_msgSendSuper_stret(void * stretAddr, struct objc_super *super, SEL op, ...);
+<<<<<<< HEAD
+extern id objc_msgSendv(id self, SEL op, size_t arg_size, marg_list arg_frame);
+extern void objc_msgSendv_stret(void * stretAddr, id self, SEL op, size_t arg_size, marg_list arg_frame);
+=======
+extern id objc_msgSendv(id self, SEL op, unsigned arg_size, marg_list arg_frame);
+extern void objc_msgSendv_stret(void * stretAddr, id self, SEL op, unsigned arg_size, marg_list arg_frame);
+>>>>>>> f4e21aa7f07c74ecb73db9050eb69c4d4a1d0bf0
+extern int objc_getClassList(Class *buffer, int bufferLen);
+extern void *objc_getClasses(void);
+extern id objc_lookUpClass(const char *name);
+extern void objc_addClass(Class myClass);
+extern void objc_setClassHandler(int (*)(const char *));
+extern void objc_setMultithreaded (BOOL flag);
+<<<<<<< HEAD
+extern id (*_alloc)(Class, size_t);
+extern id (*_copy)(id, size_t);
+extern id (*_realloc)(id, size_t);
+extern id (*_dealloc)(id);
+extern id (*_zoneAlloc)(Class, size_t, void *);
+extern id (*_zoneRealloc)(id, size_t, void *);
+extern id (*_zoneCopy)(id, size_t, void *);
+=======
+extern id (*_alloc)(Class, unsigned int);
+extern id (*_copy)(id, unsigned int);
+extern id (*_realloc)(id, unsigned int);
+extern id (*_dealloc)(id);
+extern id (*_zoneAlloc)(Class, unsigned int, void *);
+extern id (*_zoneRealloc)(id, unsigned int, void *);
+extern id (*_zoneCopy)(id, unsigned int, void *);
+>>>>>>> f4e21aa7f07c74ecb73db9050eb69c4d4a1d0bf0
+extern void (*_error)(id, const char *, va_list);
+
+/*
+#if defined(__ppc__) || defined(ppc)
+#define marg_prearg_size	128
+#else
+#define marg_prearg_size	0
+#endif
+*/
+
+#undef marg_malloc
+#undef marg_free
+#undef marg_adjustedOffset
+#undef marg_getRef
+#undef marg_getValue
+#undef marg_setValue
+
+typedef struct
+{
+	id		isa;
+	int		marten_instance;
+} objc_idMarten, *ClassMarten;
+
+#define vplSizeOfMartenOBJCInstanceData	0
+
+marg_list* marg_malloc( unsigned int arg_count, int *size );
+void marg_free( marg_list *margs );
+void* marg_getRef( marg_list margs, int offset );
+void* marg_getValue( marg_list margs, int offset );
+void marg_setValue( marg_list margs, int offset, const void* value );
+
+int objc_createClass( const char * name, const char * superclassName, int attCount );
+int class_addOneMethod( Class theClass, Method theMethod );
+int class_addOneMethodName( Class theClass, const char *newName, const char *newTypes, const void *newIMP );
+int class_addOneAttributeName( Class theClass, const char *newName, const char *newTypes, int newOffset );
+
+extern int NSApplicationMain(int argc, const char *argv[]);
+extern void NSApplicationLoad( void );
+
+extern int (*objc_callbackClassHandler)( const char * className );
+
+
+

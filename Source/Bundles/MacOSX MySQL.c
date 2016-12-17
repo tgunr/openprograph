@@ -21,7 +21,7 @@ Nat4	load_MySQL(V_Environment environment)
 	result = load_MySQL_Constants(environment,bundleID);
 	result = load_MySQL_Procedures(environment,bundleID);
 	result = load_MySQL_Structures(environment,bundleID);
-
+	
 	return 0;
 }
 

@@ -160,13 +160,7 @@ extern cgiFormResultType cgiFormFileContentType(
 extern cgiFormResultType cgiFormFileSize(
 	char *name, int *sizeP);
 
-typedef struct cgiFileStruct {
-	FILE *in;
-} cgiFile;
-
 typedef struct cgiFileStruct *cgiFilePtr;
-typedef struct cgiFileStruct cgiFileStruct;
-
 
 extern cgiFormResultType cgiFormFileOpen(
 	char *name, cgiFilePtr *cfpp);

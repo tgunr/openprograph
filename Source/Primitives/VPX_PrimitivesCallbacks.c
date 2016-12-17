@@ -13,6 +13,7 @@
 #elif __GNUC__
 #include <MartenEngine/MartenEngine.h>
 
+/*
 typedef struct VPL_CallbackCodeSegment
 {
 	Nat4					loadHighAddress;
@@ -30,6 +31,7 @@ typedef struct VPL_CallbackCodeSegment
 	V_CallbackCodeSegment	next;
 	Nat4					use;
 }	VPL_CallbackCodeSegment;
+*/
 
 #endif	
 
@@ -176,7 +178,7 @@ Int4 VPLP_system_2D_used( V_Environment environment , enum opTrigger *trigger , 
 Int4 VPLP_system_2D_used( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive )
 {
 	vpl_Status		result = kNOERROR;
-	Int1			*primName = "dispose-callback";
+	Int1			*primName = "system-used";
 	V_Object		block = NULL;
 
 /* Variables to handle inputs */

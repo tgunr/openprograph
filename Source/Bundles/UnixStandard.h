@@ -26,5 +26,7 @@
 #include <string.h>
 #include <time.h>
 
+#include <arpa/inet.h>
+
 #endif /* UNIX_C */
 

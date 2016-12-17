@@ -743,7 +743,7 @@ Int4 VPLP_abs( V_Environment environment , enum opTrigger *trigger , Nat4 primIn
 
 	}else{
 		realValue = ((V_Real) left)->value;
-		outputObject = (V_Object) float_to_real(fabs(realValue),environment);
+		outputObject = (V_Object) float_to_real(fabs(value),environment);
 		VPLPrimSetOutputObject(environment,primInArity,0,primitive,(V_Object) outputObject);
 
 	}
