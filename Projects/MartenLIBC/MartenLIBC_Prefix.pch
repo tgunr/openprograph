@@ -2,14 +2,14 @@
 // Prefix header for all source files of the 'MartenLIBC' target in the 'MartenLIBC' project.
 //
 
-#ifdef __ppc__
-#define MAC_OS_X_VERSION_MIN_REQUIRED 1030
-#define MAC_OS_X_VERSION_MAX_ALLOWED  1040
-#endif
-#ifdef __i386__
-#define MAC_OS_X_VERSION_MIN_REQUIRED 1040
-#define MAC_OS_X_VERSION_MAX_ALLOWED  1040
-#endif
+//#ifdef __ppc__
+//#define MAC_OS_X_VERSION_MIN_REQUIRED 1030
+//#define MAC_OS_X_VERSION_MAX_ALLOWED  1040
+//#endif
+//#ifdef __i386__
+//#define MAC_OS_X_VERSION_MIN_REQUIRED 1040
+//#define MAC_OS_X_VERSION_MAX_ALLOWED  1090
+//#endif
 
 #include "/usr/include/AvailabilityMacros.h"
 

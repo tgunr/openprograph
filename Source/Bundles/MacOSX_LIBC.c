@@ -20,9 +20,9 @@
 	VPL_ExtConstant _P_PGID_C = {"P_PGID",P_PGID,NULL};
 	VPL_ExtConstant _P_PID_C = {"P_PID",P_PID,NULL};
 	VPL_ExtConstant _P_ALL_C = {"P_ALL",P_ALL,NULL};
-	VPL_ExtConstant _OSBigEndian_C = {"OSBigEndian",OSBigEndian,NULL};
-	VPL_ExtConstant _OSLittleEndian_C = {"OSLittleEndian",OSLittleEndian,NULL};
-	VPL_ExtConstant _OSUnknownByteOrder_C = {"OSUnknownByteOrder",OSUnknownByteOrder,NULL};
+//	VPL_ExtConstant _OSBigEndian_C = {"OSBigEndian",OSBigEndian,NULL};
+//	VPL_ExtConstant _OSLittleEndian_C = {"OSLittleEndian",OSLittleEndian,NULL};
+//	VPL_ExtConstant _OSUnknownByteOrder_C = {"OSUnknownByteOrder",OSUnknownByteOrder,NULL};
 
 #if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4
 	VPL_ExtConstant _REG_NOTEOL_C = {"REG_NOTEOL",REG_NOTEOL,NULL};
@@ -62,37 +62,37 @@
 	VPL_ExtStructure _VPXStruct_regmatch_t_S = {"regmatch_t",&_VPXStruct_regmatch_t_1,sizeof(regmatch_t)};
 #endif
 
-	VPL_ExtField _VPXStruct_rpcent_3 = { "r_number",offsetof(struct rpcent,r_number),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
-	VPL_ExtField _VPXStruct_rpcent_2 = { "r_aliases",offsetof(struct rpcent,r_aliases),sizeof(void *),kPointerType,"char",2,1,"T*",&_VPXStruct_rpcent_3};
-	VPL_ExtField _VPXStruct_rpcent_1 = { "r_name",offsetof(struct rpcent,r_name),sizeof(void *),kPointerType,"char",1,1,"T*",&_VPXStruct_rpcent_2};
-	VPL_ExtStructure _VPXStruct_rpcent_S = {"rpcent",&_VPXStruct_rpcent_1,sizeof(struct rpcent)};
+//	VPL_ExtField _VPXStruct_rpcent_3 = { "r_number",offsetof(struct rpcent,r_number),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
+//	VPL_ExtField _VPXStruct_rpcent_2 = { "r_aliases",offsetof(struct rpcent,r_aliases),sizeof(void *),kPointerType,"char",2,1,"T*",&_VPXStruct_rpcent_3};
+//	VPL_ExtField _VPXStruct_rpcent_1 = { "r_name",offsetof(struct rpcent,r_name),sizeof(void *),kPointerType,"char",1,1,"T*",&_VPXStruct_rpcent_2};
+//	VPL_ExtStructure _VPXStruct_rpcent_S = {"rpcent",&_VPXStruct_rpcent_1,sizeof(struct rpcent)};
+//
+//	VPL_ExtField _VPXStruct_addrinfo_8 = { "ai_next",offsetof(struct addrinfo,ai_next),sizeof(void *),kPointerType,"addrinfo",1,32,"T*",NULL};
+//	VPL_ExtField _VPXStruct_addrinfo_7 = { "ai_addr",offsetof(struct addrinfo,ai_addr),sizeof(void *),kPointerType,"sockaddr",1,20,"T*",&_VPXStruct_addrinfo_8};
+//	VPL_ExtField _VPXStruct_addrinfo_6 = { "ai_canonname",offsetof(struct addrinfo,ai_canonname),sizeof(void *),kPointerType,"char",1,1,"T*",&_VPXStruct_addrinfo_7};
+//	VPL_ExtField _VPXStruct_addrinfo_5 = { "ai_addrlen",offsetof(struct addrinfo,ai_addrlen),sizeof(unsigned int),kUnsignedType,"char",1,1,"unsigned int",&_VPXStruct_addrinfo_6};
+//	VPL_ExtField _VPXStruct_addrinfo_4 = { "ai_protocol",offsetof(struct addrinfo,ai_protocol),sizeof(int),kIntType,"char",1,1,"int",&_VPXStruct_addrinfo_5};
+//	VPL_ExtField _VPXStruct_addrinfo_3 = { "ai_socktype",offsetof(struct addrinfo,ai_socktype),sizeof(int),kIntType,"char",1,1,"int",&_VPXStruct_addrinfo_4};
+//	VPL_ExtField _VPXStruct_addrinfo_2 = { "ai_family",offsetof(struct addrinfo,ai_family),sizeof(int),kIntType,"char",1,1,"int",&_VPXStruct_addrinfo_3};
+//	VPL_ExtField _VPXStruct_addrinfo_1 = { "ai_flags",offsetof(struct addrinfo,ai_flags),sizeof(int),kIntType,"char",1,1,"int",&_VPXStruct_addrinfo_2};
+//	VPL_ExtStructure _VPXStruct_addrinfo_S = {"addrinfo",&_VPXStruct_addrinfo_1,sizeof(struct addrinfo)};
 
-	VPL_ExtField _VPXStruct_addrinfo_8 = { "ai_next",offsetof(struct addrinfo,ai_next),sizeof(void *),kPointerType,"addrinfo",1,32,"T*",NULL};
-	VPL_ExtField _VPXStruct_addrinfo_7 = { "ai_addr",offsetof(struct addrinfo,ai_addr),sizeof(void *),kPointerType,"sockaddr",1,20,"T*",&_VPXStruct_addrinfo_8};
-	VPL_ExtField _VPXStruct_addrinfo_6 = { "ai_canonname",offsetof(struct addrinfo,ai_canonname),sizeof(void *),kPointerType,"char",1,1,"T*",&_VPXStruct_addrinfo_7};
-	VPL_ExtField _VPXStruct_addrinfo_5 = { "ai_addrlen",offsetof(struct addrinfo,ai_addrlen),sizeof(unsigned int),kUnsignedType,"char",1,1,"unsigned int",&_VPXStruct_addrinfo_6};
-	VPL_ExtField _VPXStruct_addrinfo_4 = { "ai_protocol",offsetof(struct addrinfo,ai_protocol),sizeof(int),kIntType,"char",1,1,"int",&_VPXStruct_addrinfo_5};
-	VPL_ExtField _VPXStruct_addrinfo_3 = { "ai_socktype",offsetof(struct addrinfo,ai_socktype),sizeof(int),kIntType,"char",1,1,"int",&_VPXStruct_addrinfo_4};
-	VPL_ExtField _VPXStruct_addrinfo_2 = { "ai_family",offsetof(struct addrinfo,ai_family),sizeof(int),kIntType,"char",1,1,"int",&_VPXStruct_addrinfo_3};
-	VPL_ExtField _VPXStruct_addrinfo_1 = { "ai_flags",offsetof(struct addrinfo,ai_flags),sizeof(int),kIntType,"char",1,1,"int",&_VPXStruct_addrinfo_2};
-	VPL_ExtStructure _VPXStruct_addrinfo_S = {"addrinfo",&_VPXStruct_addrinfo_1,sizeof(struct addrinfo)};
+//	VPL_ExtField _VPXStruct_protoent_3 = { "p_proto",offsetof(struct protoent,p_proto),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
+//	VPL_ExtField _VPXStruct_protoent_2 = { "p_aliases",offsetof(struct protoent,p_aliases),sizeof(void *),kPointerType,"char",2,1,"T*",&_VPXStruct_protoent_3};
+//	VPL_ExtField _VPXStruct_protoent_1 = { "p_name",offsetof(struct protoent,p_name),sizeof(void *),kPointerType,"char",1,1,"T*",&_VPXStruct_protoent_2};
+//	VPL_ExtStructure _VPXStruct_protoent_S = {"protoent",&_VPXStruct_protoent_1,sizeof(struct protoent)};
 
-	VPL_ExtField _VPXStruct_protoent_3 = { "p_proto",offsetof(struct protoent,p_proto),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
-	VPL_ExtField _VPXStruct_protoent_2 = { "p_aliases",offsetof(struct protoent,p_aliases),sizeof(void *),kPointerType,"char",2,1,"T*",&_VPXStruct_protoent_3};
-	VPL_ExtField _VPXStruct_protoent_1 = { "p_name",offsetof(struct protoent,p_name),sizeof(void *),kPointerType,"char",1,1,"T*",&_VPXStruct_protoent_2};
-	VPL_ExtStructure _VPXStruct_protoent_S = {"protoent",&_VPXStruct_protoent_1,sizeof(struct protoent)};
+//	VPL_ExtField _VPXStruct_servent_4 = { "s_proto",offsetof(struct servent,s_proto),sizeof(void *),kPointerType,"char",1,1,"T*",NULL};
+//	VPL_ExtField _VPXStruct_servent_3 = { "s_port",offsetof(struct servent,s_port),sizeof(int),kIntType,"char",1,1,"int",&_VPXStruct_servent_4};
+//	VPL_ExtField _VPXStruct_servent_2 = { "s_aliases",offsetof(struct servent,s_aliases),sizeof(void *),kPointerType,"char",2,1,"T*",&_VPXStruct_servent_3};
+//	VPL_ExtField _VPXStruct_servent_1 = { "s_name",offsetof(struct servent,s_name),sizeof(void *),kPointerType,"char",1,1,"T*",&_VPXStruct_servent_2};
+//	VPL_ExtStructure _VPXStruct_servent_S = {"servent",&_VPXStruct_servent_1,sizeof(struct servent)};
 
-	VPL_ExtField _VPXStruct_servent_4 = { "s_proto",offsetof(struct servent,s_proto),sizeof(void *),kPointerType,"char",1,1,"T*",NULL};
-	VPL_ExtField _VPXStruct_servent_3 = { "s_port",offsetof(struct servent,s_port),sizeof(int),kIntType,"char",1,1,"int",&_VPXStruct_servent_4};
-	VPL_ExtField _VPXStruct_servent_2 = { "s_aliases",offsetof(struct servent,s_aliases),sizeof(void *),kPointerType,"char",2,1,"T*",&_VPXStruct_servent_3};
-	VPL_ExtField _VPXStruct_servent_1 = { "s_name",offsetof(struct servent,s_name),sizeof(void *),kPointerType,"char",1,1,"T*",&_VPXStruct_servent_2};
-	VPL_ExtStructure _VPXStruct_servent_S = {"servent",&_VPXStruct_servent_1,sizeof(struct servent)};
-
-	VPL_ExtField _VPXStruct_netent_4 = { "n_net",offsetof(struct netent,n_net),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
-	VPL_ExtField _VPXStruct_netent_3 = { "n_addrtype",offsetof(struct netent,n_addrtype),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct_netent_4};
-	VPL_ExtField _VPXStruct_netent_2 = { "n_aliases",offsetof(struct netent,n_aliases),sizeof(void *),kPointerType,"char",2,1,"T*",&_VPXStruct_netent_3};
-	VPL_ExtField _VPXStruct_netent_1 = { "n_name",offsetof(struct netent,n_name),sizeof(void *),kPointerType,"char",1,1,"T*",&_VPXStruct_netent_2};
-	VPL_ExtStructure _VPXStruct_netent_S = {"netent",&_VPXStruct_netent_1,sizeof(struct netent)};
+//	VPL_ExtField _VPXStruct_netent_4 = { "n_net",offsetof(struct netent,n_net),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
+//	VPL_ExtField _VPXStruct_netent_3 = { "n_addrtype",offsetof(struct netent,n_addrtype),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct_netent_4};
+//	VPL_ExtField _VPXStruct_netent_2 = { "n_aliases",offsetof(struct netent,n_aliases),sizeof(void *),kPointerType,"char",2,1,"T*",&_VPXStruct_netent_3};
+//	VPL_ExtField _VPXStruct_netent_1 = { "n_name",offsetof(struct netent,n_name),sizeof(void *),kPointerType,"char",1,1,"T*",&_VPXStruct_netent_2};
+//	VPL_ExtStructure _VPXStruct_netent_S = {"netent",&_VPXStruct_netent_1,sizeof(struct netent)};
 
 	VPL_ExtField _VPXStruct_hostent_5 = { "h_addr_list",offsetof(struct hostent,h_addr_list),sizeof(void *),kPointerType,"char",2,1,"T*",NULL};
 	VPL_ExtField _VPXStruct_hostent_4 = { "h_length",offsetof(struct hostent,h_length),sizeof(int),kIntType,"char",2,1,"int",&_VPXStruct_hostent_5};

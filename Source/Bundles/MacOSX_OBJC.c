@@ -633,18 +633,18 @@ void marg_setValue( marg_list margs, int offset,  const void* value )
 	VPL_Parameter _object_setInstanceVariable_1 = { kPointerType,4,"objc_object",1,0,&_object_setInstanceVariable_2};
 	VPL_ExtProcedure _object_setInstanceVariable_F = {"object_setInstanceVariable",object_setInstanceVariable,&_object_setInstanceVariable_1,&_object_setInstanceVariable_R};
 
-	VPL_Parameter _objc_sync_notifyAll_R = { kIntType,4,NULL,0,0,NULL};
-	VPL_Parameter _objc_sync_notifyAll_1 = { kPointerType,4,"objc_object",1,0,NULL};
-	VPL_ExtProcedure _objc_sync_notifyAll_F = {"objc_sync_notifyAll",objc_sync_notifyAll,&_objc_sync_notifyAll_1,&_objc_sync_notifyAll_R};
-
-	VPL_Parameter _objc_sync_notify_R = { kIntType,4,NULL,0,0,NULL};
-	VPL_Parameter _objc_sync_notify_1 = { kPointerType,4,"objc_object",1,0,NULL};
-	VPL_ExtProcedure _objc_sync_notify_F = {"objc_sync_notify",objc_sync_notify,&_objc_sync_notify_1,&_objc_sync_notify_R};
-
-	VPL_Parameter _objc_sync_wait_R = { kIntType,4,NULL,0,0,NULL};
-	VPL_Parameter _objc_sync_wait_2 = { kIntType,4,NULL,0,0,NULL};
-	VPL_Parameter _objc_sync_wait_1 = { kPointerType,4,"objc_object",1,0,&_objc_sync_wait_2};
-	VPL_ExtProcedure _objc_sync_wait_F = {"objc_sync_wait",objc_sync_wait,&_objc_sync_wait_1,&_objc_sync_wait_R};
+//	VPL_Parameter _objc_sync_notifyAll_R = { kIntType,4,NULL,0,0,NULL};
+//	VPL_Parameter _objc_sync_notifyAll_1 = { kPointerType,4,"objc_object",1,0,NULL};
+//	VPL_ExtProcedure _objc_sync_notifyAll_F = {"objc_sync_notifyAll",objc_sync_notifyAll,&_objc_sync_notifyAll_1,&_objc_sync_notifyAll_R};
+//
+//	VPL_Parameter _objc_sync_notify_R = { kIntType,4,NULL,0,0,NULL};
+//	VPL_Parameter _objc_sync_notify_1 = { kPointerType,4,"objc_object",1,0,NULL};
+//	VPL_ExtProcedure _objc_sync_notify_F = {"objc_sync_notify",objc_sync_notify,&_objc_sync_notify_1,&_objc_sync_notify_R};
+//
+//	VPL_Parameter _objc_sync_wait_R = { kIntType,4,NULL,0,0,NULL};
+//	VPL_Parameter _objc_sync_wait_2 = { kIntType,4,NULL,0,0,NULL};
+//	VPL_Parameter _objc_sync_wait_1 = { kPointerType,4,"objc_object",1,0,&_objc_sync_wait_2};
+//	VPL_ExtProcedure _objc_sync_wait_F = {"objc_sync_wait",objc_sync_wait,&_objc_sync_wait_1,&_objc_sync_wait_R};
 
 	VPL_Parameter _objc_sync_exit_R = { kIntType,4,NULL,0,0,NULL};
 	VPL_Parameter _objc_sync_exit_1 = { kPointerType,4,"objc_object",1,0,NULL};
@@ -755,9 +755,9 @@ VPL_DictionaryNode VPX_OBJC_Procedures[] =	{
 	{"class_createInstance",&_class_createInstance_F},
 	{"object_getInstanceVariable",&_object_getInstanceVariable_F},
 	{"object_setInstanceVariable",&_object_setInstanceVariable_F},
-	{"objc_sync_notifyAll",&_objc_sync_notifyAll_F},
-	{"objc_sync_notify",&_objc_sync_notify_F},
-	{"objc_sync_wait",&_objc_sync_wait_F},
+//	{"objc_sync_notifyAll",&_objc_sync_notifyAll_F},
+//	{"objc_sync_notify",&_objc_sync_notify_F},
+//	{"objc_sync_wait",&_objc_sync_wait_F},
 	{"objc_sync_exit",&_objc_sync_exit_F},
 	{"objc_sync_enter",&_objc_sync_enter_F},
 	{"object_getIndexedIvars",&_object_getIndexedIvars_F},

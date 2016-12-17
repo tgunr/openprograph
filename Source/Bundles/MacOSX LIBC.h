@@ -1,1 +1,1 @@
-/*		MacOSX LIBC.h	Copyright 2005 Andescotia LLC, All Rights Reserved.	*/#ifndef VPXMARTENLIBC#define VPXMARTENLIBCvoid	init_MartenLibC();Nat4	load_LibC(V_Environment environment);#endif
+/*		MacOSX LIBC.h	Copyright 2005 Andescotia LLC, All Rights Reserved.	*/#include "/usr/include/AvailabilityMacros.h"#include <Carbon/Carbon.h>#include <MartenEngine/MartenEngine.h>#ifndef VPXMARTENLIBC#define VPXMARTENLIBCvoid	init_MartenLibC();Nat4	load_LibC(V_Environment environment);#endif
