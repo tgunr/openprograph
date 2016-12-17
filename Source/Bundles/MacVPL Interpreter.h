@@ -1,0 +1,1 @@
+/*		MacVPL.h	Copyright 2003 Scott B. Anderson, All Rights Reserved.	*/#ifndef VPXMACVPL#define VPXMACVPLNat4	load_Interpreter(V_Environment environment);#endif

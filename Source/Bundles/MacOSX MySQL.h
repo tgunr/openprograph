@@ -1,0 +1,1 @@
+/*		MacOSX MySQL.h	Copyright 2005 Andescotia LLC, All Rights Reserved.	*/#ifdef __MWERKS__#include "VPL_Compiler.h"#endif	#ifndef VPXMYSQL#define VPXMYSQLNat4	load_MySQL(V_Environment environment);#endif

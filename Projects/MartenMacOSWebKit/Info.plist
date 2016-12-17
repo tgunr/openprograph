@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>MartenMacOSWebKit</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.andescotia.frameworks.macos.webkit</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleSignature</key>
+	<string>mVPL</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>MartenItemName</key>
+	<string>MacOS WebKit.framework</string>
+	<key>MartenLibraryID</key>
+	<string>WebKit</string>
+	<key>MartenLinkFrameworks</key>
+	<array>
+		<string>WebKit</string>
+	</array>
+	<key>MartenLinkHeaders</key>
+	<array>
+		<string>#include &lt;WebKit/HIWebView.h&gt;</string>
+		<string>#include &lt;WebKit/CarbonUtils.h&gt;</string>
+	</array>
+	<key>MartenLinkIsPrivate</key>
+	<true/>
+	<key>MartenLoadFunction</key>
+	<string>load_WebKit</string>
+</dict>
+</plist>

@@ -44,7 +44,10 @@ _VPLP_paint_2D_rect
 _VPLP_paint_2D_round_2D_rect
 _VPLP_pt_2D_in_2D_rect
 _VPLP_pt_2D_to_2D_angle
+_VPLP_te_2D_get_2D_text
 _VPLP_test_2D_key
+_VPLP_pascal_2D_to_2D_string
+_VPLP_string_2D_to_2D_pascal
 _VPLP_extract_2D_file_2D_specification
 _VPLP_cnstring_2D_to_2D_exstring
 _VPLP_copy_2D_object
@@ -55,7 +58,6 @@ _VPLP_make_2D_file_2D_specification
 _VPLP_vpx_2D_folder_2D_fsspecs
 _VPLP_vpx_2D_get_2D_folder
 _VPLP_global_2D_to_2D_local
-_VPLP_te_2D_get_2D_text
 _VPLP_close_2D_rgn
 _VPLP_dispose_2D_rgn
 _VPLP_draw_2D_string

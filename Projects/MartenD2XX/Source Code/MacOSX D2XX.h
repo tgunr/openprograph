@@ -1,1 +1,0 @@
-/*		MacOSX D2XX.h	Copyright 2007 PolyMicro Systems, All Rights Reserved.	*/#ifndef VPXD2XX#define VPXD2XXNat4	load_D2XX(V_Environment environment);#endif

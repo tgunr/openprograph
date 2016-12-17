@@ -1,0 +1,1 @@
+/*		MacOSX CGIC.h	Copyright 2004 Scott B. Anderson, All Rights Reserved.	*/#ifndef VPXCGIC#define VPXCGICNat4	load_CGIC(V_Environment environment);#endif

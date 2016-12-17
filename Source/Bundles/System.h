@@ -1,0 +1,1 @@
+/*		MacVPL.h	Copyright 2003 Scott B. Anderson, All Rights Reserved.	*//* #include "VPL_Execution.h" */#ifndef VPXSYSTEM#define VPXSYSTEMNat4	load_System(V_Environment environment);#endif

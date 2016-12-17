@@ -19,6 +19,7 @@
 #include "stddef.h"
 #include "stdarg.h"
 
+#include <Cocoa/Cocoa.h>
 #include <objc/objc.h>
 #include <MartenEngine/MartenEngine.h>
 

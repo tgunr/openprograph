@@ -1,0 +1,1 @@
+/*		MacOSX Postgres.h	Copyright 2004 Scott B. Anderson, All Rights Reserved.	*/#ifndef VPXPOSTGRES#define VPXPOSTGRESNat4	load_Postgres(V_Environment environment);#endif

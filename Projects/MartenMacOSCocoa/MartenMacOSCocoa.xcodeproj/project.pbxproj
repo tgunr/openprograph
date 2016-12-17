@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C3350420AB1F8E900BE2A7F /* MartenMacOSCocoa_Exports.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5C3350410AB1F8E900BE2A7F /* MartenMacOSCocoa_Exports.txt */; };
+		30A60FAA1490464000829505 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A60FA91490464000829505 /* Carbon.framework */; };
+		30A60FB31490467800829505 /* Cocoa_Constants_10_6_8.c in Sources */ = {isa = PBXBuildFile; fileRef = 30A60FB01490467800829505 /* Cocoa_Constants_10_6_8.c */; };
+		30A60FB41490467800829505 /* Cocoa_Procedures_10_6_8.c in Sources */ = {isa = PBXBuildFile; fileRef = 30A60FB11490467800829505 /* Cocoa_Procedures_10_6_8.c */; };
+		30A60FB51490467800829505 /* Cocoa_Structures_10_6_8.c in Sources */ = {isa = PBXBuildFile; fileRef = 30A60FB21490467800829505 /* Cocoa_Structures_10_6_8.c */; };
+		30F1C48B1490814900C37A79 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F1C48A1490814900C37A79 /* OpenGL.framework */; };
 		5C33504B0AB1F92000BE2A7F /* MacOSX OBJC.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C3350470AB1F92000BE2A7F /* MacOSX OBJC.c */; };
 		5C33504D0AB1F92000BE2A7F /* MacOSX_OBJC.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C3350490AB1F92000BE2A7F /* MacOSX_OBJC.c */; };
 		5C33505A0AB1F95100BE2A7F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3350580AB1F95100BE2A7F /* Cocoa.framework */; };
@@ -17,6 +21,11 @@
 
 /* Begin PBXFileReference section */
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		30A60FA91490464000829505 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		30A60FB01490467800829505 /* Cocoa_Constants_10_6_8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Cocoa_Constants_10_6_8.c; path = ../../Source/Bundles/Cocoa_Constants_10_6_8.c; sourceTree = SOURCE_ROOT; };
+		30A60FB11490467800829505 /* Cocoa_Procedures_10_6_8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Cocoa_Procedures_10_6_8.c; path = ../../Source/Bundles/Cocoa_Procedures_10_6_8.c; sourceTree = SOURCE_ROOT; };
+		30A60FB21490467800829505 /* Cocoa_Structures_10_6_8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Cocoa_Structures_10_6_8.c; path = ../../Source/Bundles/Cocoa_Structures_10_6_8.c; sourceTree = SOURCE_ROOT; };
+		30F1C48A1490814900C37A79 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		32BAE0B70371A74B00C91783 /* MartenMacOSCocoa_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MartenMacOSCocoa_Prefix.pch; sourceTree = "<group>"; };
 		5C3350410AB1F8E900BE2A7F /* MartenMacOSCocoa_Exports.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = MartenMacOSCocoa_Exports.txt; sourceTree = "<group>"; };
 		5C3350470AB1F92000BE2A7F /* MacOSX OBJC.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "MacOSX OBJC.c"; path = "../../Source/Bundles/MacOSX OBJC.c"; sourceTree = SOURCE_ROOT; };
@@ -36,6 +45,8 @@
 			files = (
 				5C33505A0AB1F95100BE2A7F /* Cocoa.framework in Frameworks */,
 				5C33505B0AB1F95100BE2A7F /* MartenEngine.framework in Frameworks */,
+				30A60FAA1490464000829505 /* Carbon.framework in Frameworks */,
+				30F1C48B1490814900C37A79 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +75,8 @@
 		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				30F1C48A1490814900C37A79 /* OpenGL.framework */,
+				30A60FA91490464000829505 /* Carbon.framework */,
 				5C3350580AB1F95100BE2A7F /* Cocoa.framework */,
 				5C3350590AB1F95100BE2A7F /* MartenEngine.framework */,
 			);
@@ -95,6 +108,9 @@
 				5C3350470AB1F92000BE2A7F /* MacOSX OBJC.c */,
 				5C3350480AB1F92000BE2A7F /* MacOSX OBJC.h */,
 				5C3350490AB1F92000BE2A7F /* MacOSX_OBJC.c */,
+				30A60FB01490467800829505 /* Cocoa_Constants_10_6_8.c */,
+				30A60FB11490467800829505 /* Cocoa_Procedures_10_6_8.c */,
+				30A60FB21490467800829505 /* Cocoa_Structures_10_6_8.c */,
 				5C33504A0AB1F92000BE2A7F /* ObjcStandard.h */,
 			);
 			name = Primitives;
@@ -138,9 +154,15 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 4FADC24608B4156D00ABE55E /* Build configuration list for PBXProject "MartenMacOSCocoa" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* MartenMacOSCocoa */;
 			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
 			projectDirPath = "";
@@ -157,7 +179,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D07F2C00486CC7A007CD1D0 /* InfoPlist.strings in Resources */,
-				5C3350420AB1F8E900BE2A7F /* MartenMacOSCocoa_Exports.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +201,9 @@
 			files = (
 				5C33504B0AB1F92000BE2A7F /* MacOSX OBJC.c in Sources */,
 				5C33504D0AB1F92000BE2A7F /* MacOSX_OBJC.c in Sources */,
+				30A60FB31490467800829505 /* Cocoa_Constants_10_6_8.c in Sources */,
+				30A60FB41490467800829505 /* Cocoa_Procedures_10_6_8.c in Sources */,
+				30A60FB51490467800829505 /* Cocoa_Structures_10_6_8.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,12 +224,19 @@
 		4FADC24308B4156D00ABE55E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Versions/A/Frameworks\"";
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -215,6 +246,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = MartenMacOSCocoa;
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = YES;
 			};
@@ -223,16 +255,19 @@
 		4FADC24408B4156D00ABE55E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Versions/A/Frameworks\"";
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MartenMacOSCocoa_Prefix.pch;
@@ -241,6 +276,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = MartenMacOSCocoa;
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -248,40 +284,43 @@
 		4FADC24708B4156D00ABE55E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_VERSION = 4.0;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Debug;
 		};
 		4FADC24808B4156D00ABE55E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_VERSION = 4.0;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Release;
 		};
 		5C33503D0AB1F8D100BE2A7F /* Marten Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXPORTED_SYMBOLS_FILE = MartenMacOSCocoa_Exports.txt;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Versions/A/Frameworks\"";
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_SYMBOL_SEPARATION = YES;
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -294,6 +333,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-mmacosx-version-min=10.4";
 				PRODUCT_NAME = MartenMacOSCocoa;
+				SDKROOT = macosx10.8;
 				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -302,15 +342,15 @@
 		5C33503E0AB1F8D100BE2A7F /* Marten Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
-				GCC_VERSION = 4.0;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 				SKIP_INSTALL = YES;
 				SYMROOT = "../( xcbuild )";
 			};

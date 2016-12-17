@@ -1,0 +1,1 @@
+/*		MacOSX UNIX.h	Copyright 2004 Scott B. Anderson, All Rights Reserved.	*/#ifdef __MWERKS__#include "VPL_Compiler.h"#endif	#ifndef VPXUNIX#define VPXUNIXvoid	init_MartenBSD();Nat4	load_UNIX(V_Environment environment);#endif

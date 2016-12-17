@@ -1,1 +1,0 @@
-/*		VPL_Primitives.h	Copyright 2000 Scott B. Anderson, All Rights Reserved.	*/#include "VPX_PrimitivesInterpreter.h"#include "VPX_PrimitivesList.h"#include "VPX_PrimitivesMath.h"#include "VPX_PrimitivesMemory.h"#include "VPX_PrimitivesString.h"#include "VPX_PrimitivesUI.h"#include "VPX_PrimitivesUnixIO.h"#include "VPP_Test_Class_Project.h"

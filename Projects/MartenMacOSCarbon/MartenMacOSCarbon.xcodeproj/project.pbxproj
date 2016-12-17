@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5393F0C9123C878100BCA058 /* MacOSX_Constants_10_6_2.c in Sources */ = {isa = PBXBuildFile; fileRef = 5393F0C6123C878100BCA058 /* MacOSX_Constants_10_6_2.c */; };
+		5393F0CA123C878100BCA058 /* MacOSX_Procedures_10_6_2.c in Sources */ = {isa = PBXBuildFile; fileRef = 5393F0C7123C878100BCA058 /* MacOSX_Procedures_10_6_2.c */; };
+		5393F0CB123C878100BCA058 /* MacOSX_Structures_10_6_2.c in Sources */ = {isa = PBXBuildFile; fileRef = 5393F0C8123C878100BCA058 /* MacOSX_Structures_10_6_2.c */; };
 		5C026E250B4B4F0700F50E55 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C026E240B4B4F0700F50E55 /* CoreServices.framework */; };
-		5C58BC460CD0BDB400D0FE65 /* MacOSX_Procedures_10_X.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C58BC440CD0BDA800D0FE65 /* MacOSX_Procedures_10_X.c */; };
 		5CC793530B4B7A2500BCE9CA /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CF1C610AAF9789000F7FB6 /* IOKit.framework */; };
 		84CF1BB80AAF96AD000F7FB6 /* MacOSX.c in Sources */ = {isa = PBXBuildFile; fileRef = 84CF1BB30AAF96AD000F7FB6 /* MacOSX.c */; };
 		84CF1BB90AAF96AD000F7FB6 /* MacOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 84CF1BB40AAF96AD000F7FB6 /* MacOSX.h */; };
-		84CF1BBA0AAF96AD000F7FB6 /* MacOSX_Constants_10_5_2.c in Sources */ = {isa = PBXBuildFile; fileRef = 84CF1BB50AAF96AD000F7FB6 /* MacOSX_Constants_10_5_2.c */; };
-		84CF1BBC0AAF96AD000F7FB6 /* MacOSX_Structures_10_5_2.c in Sources */ = {isa = PBXBuildFile; fileRef = 84CF1BB70AAF96AD000F7FB6 /* MacOSX_Structures_10_5_2.c */; };
 		84CF1BC30AAF9740000F7FB6 /* MartenEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CF1BC20AAF9740000F7FB6 /* MartenEngine.framework */; };
 		8D07F2BE0486CC7A007CD1D0 /* MartenMacOSCarbon_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32BAE0B70371A74B00C91783 /* MartenMacOSCarbon_Prefix.pch */; };
 		8D07F2C00486CC7A007CD1D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
@@ -24,14 +24,13 @@
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		08FB77AAFE841565C02AAC07 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		32BAE0B70371A74B00C91783 /* MartenMacOSCarbon_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MartenMacOSCarbon_Prefix.pch; sourceTree = "<group>"; };
+		5393F0C6123C878100BCA058 /* MacOSX_Constants_10_6_2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = MacOSX_Constants_10_6_2.c; path = ../../Source/Bundles/MacOSX_Constants_10_6_2.c; sourceTree = SOURCE_ROOT; };
+		5393F0C7123C878100BCA058 /* MacOSX_Procedures_10_6_2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = MacOSX_Procedures_10_6_2.c; path = ../../Source/Bundles/MacOSX_Procedures_10_6_2.c; sourceTree = SOURCE_ROOT; };
+		5393F0C8123C878100BCA058 /* MacOSX_Structures_10_6_2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = MacOSX_Structures_10_6_2.c; path = ../../Source/Bundles/MacOSX_Structures_10_6_2.c; sourceTree = SOURCE_ROOT; };
 		5C026E0E0B4B4D3D00F50E55 /* DiskArbitration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiskArbitration.framework; path = /Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks/DiskArbitration.framework; sourceTree = "<absolute>"; };
 		5C026E240B4B4F0700F50E55 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
-		5C58BC440CD0BDA800D0FE65 /* MacOSX_Procedures_10_X.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = MacOSX_Procedures_10_X.c; sourceTree = "<group>"; };
 		84CF1BB30AAF96AD000F7FB6 /* MacOSX.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = MacOSX.c; path = ../../Source/Bundles/MacOSX.c; sourceTree = SOURCE_ROOT; };
 		84CF1BB40AAF96AD000F7FB6 /* MacOSX.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = MacOSX.h; path = ../../Source/Bundles/MacOSX.h; sourceTree = SOURCE_ROOT; };
-		84CF1BB50AAF96AD000F7FB6 /* MacOSX_Constants_10_5_2.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = MacOSX_Constants_10_5_2.c; path = ../../Source/Bundles/MacOSX_Constants_10_5_2.c; sourceTree = SOURCE_ROOT; };
-		84CF1BB60AAF96AD000F7FB6 /* MacOSX_Procedures_10_4_8.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = MacOSX_Procedures_10_4_8.c; path = ../../Source/Bundles/MacOSX_Procedures_10_4_8.c; sourceTree = SOURCE_ROOT; };
-		84CF1BB70AAF96AD000F7FB6 /* MacOSX_Structures_10_5_2.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = MacOSX_Structures_10_5_2.c; path = ../../Source/Bundles/MacOSX_Structures_10_5_2.c; sourceTree = SOURCE_ROOT; };
 		84CF1BC00AAF96BE000F7FB6 /* MartenMacOSCarbon Exports.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "MartenMacOSCarbon Exports.txt"; sourceTree = SOURCE_ROOT; };
 		84CF1BC20AAF9740000F7FB6 /* MartenEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MartenEngine.framework; path = "../( xcbuild )/Marten Release/MartenEngine.framework"; sourceTree = SOURCE_ROOT; };
 		84CF1C610AAF9789000F7FB6 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
@@ -109,10 +108,9 @@
 			children = (
 				84CF1BB30AAF96AD000F7FB6 /* MacOSX.c */,
 				84CF1BB40AAF96AD000F7FB6 /* MacOSX.h */,
-				84CF1BB50AAF96AD000F7FB6 /* MacOSX_Constants_10_5_2.c */,
-				5C58BC440CD0BDA800D0FE65 /* MacOSX_Procedures_10_X.c */,
-				84CF1BB60AAF96AD000F7FB6 /* MacOSX_Procedures_10_4_8.c */,
-				84CF1BB70AAF96AD000F7FB6 /* MacOSX_Structures_10_5_2.c */,
+				5393F0C6123C878100BCA058 /* MacOSX_Constants_10_6_2.c */,
+				5393F0C7123C878100BCA058 /* MacOSX_Procedures_10_6_2.c */,
+				5393F0C8123C878100BCA058 /* MacOSX_Structures_10_6_2.c */,
 			);
 			name = Primitives;
 			sourceTree = "<group>";
@@ -157,15 +155,14 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 4FADC24608B4156D00ABE55E /* Build configuration list for PBXProject "MartenMacOSCarbon" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				en,
 			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* MartenMacOSCarbon */;
 			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
@@ -204,9 +201,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84CF1BB80AAF96AD000F7FB6 /* MacOSX.c in Sources */,
-				84CF1BBA0AAF96AD000F7FB6 /* MacOSX_Constants_10_5_2.c in Sources */,
-				84CF1BBC0AAF96AD000F7FB6 /* MacOSX_Structures_10_5_2.c in Sources */,
-				5C58BC460CD0BDB400D0FE65 /* MacOSX_Procedures_10_X.c in Sources */,
+				5393F0C9123C878100BCA058 /* MacOSX_Constants_10_6_2.c in Sources */,
+				5393F0CA123C878100BCA058 /* MacOSX_Procedures_10_6_2.c in Sources */,
+				5393F0CB123C878100BCA058 /* MacOSX_Structures_10_6_2.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,10 +224,7 @@
 		4FADC24308B4156D00ABE55E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -258,6 +252,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = MartenMacOSCarbon;
+				SDKROOT = macosx10.8;
 				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = NO;
@@ -267,10 +262,7 @@
 		4FADC24408B4156D00ABE55E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -298,6 +290,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = MartenMacOSCarbon;
+				SDKROOT = macosx10.8;
 				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = NO;
@@ -307,58 +300,50 @@
 		4FADC24708B4156D00ABE55E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_VERSION = 4.0;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Debug;
 		};
 		4FADC24808B4156D00ABE55E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_VERSION = 4.0;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Release;
 		};
 		5CE48FFC0AB0F3950084C34D /* Marten Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXPORTED_SYMBOLS_FILE = "MartenMacOSCarbon Exports.txt";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_2)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SYSTEM_DEVELOPER_DIR)/SDKs/MacOSX10.5.sdk/System/Library/Frameworks\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "\"$(SYSTEM_DEVELOPER_DIR)/SDKs/MacOSX10.5.sdk/System/Library/Frameworks\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = "";
 				FRAMEWORK_VERSION = A;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MartenMacOSCarbon_Prefix.pch;
 				GCC_USE_GCC3_PFE_SUPPORT = NO;
 				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_STYLE = DYNAMIC;
 				MACH_O_TYPE = mh_dylib;
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = MartenMacOSCarbon;
+				SDKROOT = macosx10.8;
 				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -367,11 +352,11 @@
 		5CE48FFD0AB0F3950084C34D /* Marten Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
 				GCC_ENABLE_SYMBOL_SEPARATION = YES;
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PFE_FILE_C_DIALECTS = "c objective-c";
-				GCC_VERSION = 4.0;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = NO;
@@ -379,7 +364,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 				SKIP_INSTALL = YES;
 				SYMROOT = "../( xcbuild )";
 			};

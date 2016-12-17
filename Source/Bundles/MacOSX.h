@@ -1,0 +1,1 @@
+/*		MacOSX.h	Copyright 2003 Scott B. Anderson, All Rights Reserved.	*/#ifndef VPXMACOSX#define VPXMACOSXNat4	load_MacOSX(V_Environment environment);#endif

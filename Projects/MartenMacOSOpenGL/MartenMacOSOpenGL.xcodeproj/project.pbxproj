@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C33500C0AB1F73400BE2A7F /* MartenEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C33500B0AB1F73400BE2A7F /* MartenEngine.framework */; };
+		840DE61A0D04F872001F6D2F /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840DE6190D04F872001F6D2F /* AGL.framework */; };
+		84DD78860D0367EE00D8E0A8 /* MartenMacOSOpenGL_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 84DD78850D0367EE00D8E0A8 /* MartenMacOSOpenGL_Prefix.pch */; };
+		84DD788D0D0367F400D8E0A8 /* MartenMacOSOpenGL_Exports.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84DD788C0D0367F400D8E0A8 /* MartenMacOSOpenGL_Exports.txt */; };
+		84DD788F0D03681000D8E0A8 /* MacOSX OpenGL.c in Sources */ = {isa = PBXBuildFile; fileRef = 84DD788E0D03681000D8E0A8 /* MacOSX OpenGL.c */; };
+		84DD78910D03681700D8E0A8 /* MacOSX OpenGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 84DD78900D03681700D8E0A8 /* MacOSX OpenGL.h */; };
+		84DD78930D03681D00D8E0A8 /* MacOSX_OpenGL.c in Sources */ = {isa = PBXBuildFile; fileRef = 84DD78920D03681D00D8E0A8 /* MacOSX_OpenGL.c */; };
+		84DD79350D03685E00D8E0A8 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DD79330D03685E00D8E0A8 /* GLUT.framework */; };
+		84DD79360D03685E00D8E0A8 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DD79340D03685E00D8E0A8 /* OpenGL.framework */; };
+		8D07F2C00486CC7A007CD1D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
+		8D07F2C40486CC7A007CD1D0 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB77AAFE841565C02AAC07 /* Carbon.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		08FB77AAFE841565C02AAC07 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		5C33500B0AB1F73400BE2A7F /* MartenEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MartenEngine.framework; path = "../( xcbuild )/Marten Release/MartenEngine.framework"; sourceTree = SOURCE_ROOT; };
+		840DE6190D04F872001F6D2F /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
+		84DD78850D0367EE00D8E0A8 /* MartenMacOSOpenGL_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MartenMacOSOpenGL_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		84DD788C0D0367F400D8E0A8 /* MartenMacOSOpenGL_Exports.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = MartenMacOSOpenGL_Exports.txt; sourceTree = SOURCE_ROOT; };
+		84DD788E0D03681000D8E0A8 /* MacOSX OpenGL.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "MacOSX OpenGL.c"; path = "../../Source/Bundles/OpenGL/MacOSX OpenGL.c"; sourceTree = SOURCE_ROOT; };
+		84DD78900D03681700D8E0A8 /* MacOSX OpenGL.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = "MacOSX OpenGL.h"; path = "../../Source/Bundles/OpenGL/MacOSX OpenGL.h"; sourceTree = SOURCE_ROOT; };
+		84DD78920D03681D00D8E0A8 /* MacOSX_OpenGL.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = MacOSX_OpenGL.c; path = ../../Source/Bundles/OpenGL/MacOSX_OpenGL.c; sourceTree = SOURCE_ROOT; };
+		84DD79330D03685E00D8E0A8 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = /System/Library/Frameworks/GLUT.framework; sourceTree = "<absolute>"; };
+		84DD79340D03685E00D8E0A8 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		8D07F2C70486CC7A007CD1D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D07F2C80486CC7A007CD1D0 /* MartenMacOSOpenGL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MartenMacOSOpenGL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D07F2C30486CC7A007CD1D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D07F2C40486CC7A007CD1D0 /* Carbon.framework in Frameworks */,
+				5C33500C0AB1F73400BE2A7F /* MartenEngine.framework in Frameworks */,
+				84DD79350D03685E00D8E0A8 /* GLUT.framework in Frameworks */,
+				84DD79360D03685E00D8E0A8 /* OpenGL.framework in Frameworks */,
+				840DE61A0D04F872001F6D2F /* AGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DDFF38A45A11DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D07F2C80486CC7A007CD1D0 /* MartenMacOSOpenGL.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* MartenMacOSIOKit */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77ACFE841707C02AAC07 /* Source */,
+				089C1665FE841158C02AAC07 /* Resources */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DDFF38A45A11DB9C8B /* Products */,
+			);
+			name = MartenMacOSIOKit;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				5C33500B0AB1F73400BE2A7F /* MartenEngine.framework */,
+				08FB77AAFE841565C02AAC07 /* Carbon.framework */,
+				84DD79330D03685E00D8E0A8 /* GLUT.framework */,
+				84DD79340D03685E00D8E0A8 /* OpenGL.framework */,
+				840DE6190D04F872001F6D2F /* AGL.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D07F2C70486CC7A007CD1D0 /* Info.plist */,
+				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77ACFE841707C02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				84DD78850D0367EE00D8E0A8 /* MartenMacOSOpenGL_Prefix.pch */,
+				84DD788C0D0367F400D8E0A8 /* MartenMacOSOpenGL_Exports.txt */,
+				5C334F610AB1F72000BE2A7F /* Primitives */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		5C334F610AB1F72000BE2A7F /* Primitives */ = {
+			isa = PBXGroup;
+			children = (
+				84DD788E0D03681000D8E0A8 /* MacOSX OpenGL.c */,
+				84DD78900D03681700D8E0A8 /* MacOSX OpenGL.h */,
+				84DD78920D03681D00D8E0A8 /* MacOSX_OpenGL.c */,
+			);
+			name = Primitives;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8D07F2BD0486CC7A007CD1D0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84DD78860D0367EE00D8E0A8 /* MartenMacOSOpenGL_Prefix.pch in Headers */,
+				84DD78910D03681700D8E0A8 /* MacOSX OpenGL.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8D07F2BC0486CC7A007CD1D0 /* MartenMacOSOpenGL Framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FADC24208B4156D00ABE55E /* Build configuration list for PBXNativeTarget "MartenMacOSOpenGL Framework" */;
+			buildPhases = (
+				8D07F2BD0486CC7A007CD1D0 /* Headers */,
+				8D07F2BF0486CC7A007CD1D0 /* Resources */,
+				8D07F2C10486CC7A007CD1D0 /* Sources */,
+				8D07F2C30486CC7A007CD1D0 /* Frameworks */,
+				8D07F2C50486CC7A007CD1D0 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MartenMacOSOpenGL Framework";
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = MartenMacOSIOKit;
+			productReference = 8D07F2C80486CC7A007CD1D0 /* MartenMacOSOpenGL.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 4FADC24608B4156D00ABE55E /* Build configuration list for PBXProject "MartenMacOSOpenGL" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* MartenMacOSIOKit */;
+			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D07F2BC0486CC7A007CD1D0 /* MartenMacOSOpenGL Framework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D07F2BF0486CC7A007CD1D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D07F2C00486CC7A007CD1D0 /* InfoPlist.strings in Resources */,
+				84DD788D0D0367F400D8E0A8 /* MartenMacOSOpenGL_Exports.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		8D07F2C50486CC7A007CD1D0 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D07F2C10486CC7A007CD1D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84DD788F0D03681000D8E0A8 /* MacOSX OpenGL.c in Sources */,
+				84DD78930D03681D00D8E0A8 /* MacOSX_OpenGL.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1667FE841158C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4FADC24308B4156D00ABE55E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXPORTED_SYMBOLS_FILE = MartenMacOSOpenGL_Exports.txt;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MartenMacOSOpenGL_Prefix.pch;
+				GCC_USE_GCC3_PFE_SUPPORT = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = MartenMacOSOpenGL;
+				SDKROOT = macosx10.8;
+				STRIP_INSTALLED_PRODUCT = NO;
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		4FADC24408B4156D00ABE55E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXPORTED_SYMBOLS_FILE = MartenMacOSOpenGL_Exports.txt;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MartenMacOSOpenGL_Prefix.pch;
+				GCC_USE_GCC3_PFE_SUPPORT = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = MartenMacOSOpenGL;
+				SDKROOT = macosx10.8;
+				STRIP_INSTALLED_PRODUCT = NO;
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		4FADC24708B4156D00ABE55E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4FADC24808B4156D00ABE55E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5C334F5C0AB1F70A00BE2A7F /* Marten Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXPORTED_SYMBOLS_FILE = MartenMacOSOpenGL_Exports.txt;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MartenMacOSOpenGL_Prefix.pch;
+				GCC_USE_GCC3_PFE_SUPPORT = NO;
+				INFOPLIST_FILE = Info.plist;
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = MartenMacOSOpenGL;
+				SDKROOT = macosx10.8;
+				STRIP_INSTALLED_PRODUCT = NO;
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = NO;
+			};
+			name = "Marten Release";
+		};
+		5C334F5D0AB1F70A00BE2A7F /* Marten Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SKIP_INSTALL = YES;
+				SYMROOT = "../( xcbuild )";
+			};
+			name = "Marten Release";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FADC24208B4156D00ABE55E /* Build configuration list for PBXNativeTarget "MartenMacOSOpenGL Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FADC24308B4156D00ABE55E /* Debug */,
+				4FADC24408B4156D00ABE55E /* Release */,
+				5C334F5C0AB1F70A00BE2A7F /* Marten Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Marten Release";
+		};
+		4FADC24608B4156D00ABE55E /* Build configuration list for PBXProject "MartenMacOSOpenGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FADC24708B4156D00ABE55E /* Debug */,
+				4FADC24808B4156D00ABE55E /* Release */,
+				5C334F5D0AB1F70A00BE2A7F /* Marten Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Marten Release";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

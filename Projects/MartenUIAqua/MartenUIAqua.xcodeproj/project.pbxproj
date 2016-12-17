@@ -13,7 +13,6 @@
 		84CF1A8F0AAF8E54000F7FB6 /* VPX_PrimitivesGraphics.c in Sources */ = {isa = PBXBuildFile; fileRef = 84CF1A8A0AAF8E54000F7FB6 /* VPX_PrimitivesGraphics.c */; };
 		84CF1A900AAF8E54000F7FB6 /* VPX_PrimitivesUI.c in Sources */ = {isa = PBXBuildFile; fileRef = 84CF1A8B0AAF8E54000F7FB6 /* VPX_PrimitivesUI.c */; };
 		84CF1A960AAF8E60000F7FB6 /* VPXUI.nib in Resources */ = {isa = PBXBuildFile; fileRef = 84CF1A950AAF8E60000F7FB6 /* VPXUI.nib */; };
-		84CF1AA10AAF8E75000F7FB6 /* MartenUIAqua Exports.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84CF1AA00AAF8E75000F7FB6 /* MartenUIAqua Exports.txt */; };
 		84CF1AA30AAF8EDB000F7FB6 /* MartenEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CF1AA20AAF8EDB000F7FB6 /* MartenEngine.framework */; };
 		8D07F2BE0486CC7A007CD1D0 /* MartenUIAqua_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32BAE0B70371A74B00C91783 /* MartenUIAqua_Prefix.pch */; };
 		8D07F2C00486CC7A007CD1D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
@@ -149,9 +148,15 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 4FADC24608B4156D00ABE55E /* Build configuration list for PBXProject "MartenUIAqua" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* MartenUIAqua */;
 			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
 			projectDirPath = "";
@@ -169,7 +174,6 @@
 			files = (
 				8D07F2C00486CC7A007CD1D0 /* InfoPlist.strings in Resources */,
 				84CF1A960AAF8E60000F7FB6 /* VPXUI.nib in Resources */,
-				84CF1AA10AAF8E75000F7FB6 /* MartenUIAqua Exports.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,10 +218,7 @@
 		4FADC24308B4156D00ABE55E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -237,6 +238,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = MartenUIAqua;
+				SDKROOT = macosx10.8;
 				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = NO;
@@ -246,10 +248,7 @@
 		4FADC24408B4156D00ABE55E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -269,6 +268,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = MartenUIAqua;
+				SDKROOT = macosx10.8;
 				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = NO;
@@ -278,32 +278,29 @@
 		4FADC24708B4156D00ABE55E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_VERSION = 4.0;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Debug;
 		};
 		4FADC24808B4156D00ABE55E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_VERSION = 4.0;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Release;
 		};
 		5CE48FCA0AB0E87D0084C34D /* Marten Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -319,6 +316,7 @@
 				LIBRARY_STYLE = DYNAMIC;
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = MartenUIAqua;
+				SDKROOT = macosx10.8;
 				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -327,15 +325,15 @@
 		5CE48FCB0AB0E87D0084C34D /* Marten Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
-				GCC_VERSION = 4.0;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 				SKIP_INSTALL = YES;
 				SYMROOT = "../( xcbuild )";
 			};

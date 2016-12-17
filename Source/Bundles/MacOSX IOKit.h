@@ -1,0 +1,1 @@
+/*		MacOSX IOKit.h	Copyright 2005 Andescotia LLC, All Rights Reserved.	*/#ifdef __MWERKS__#include "VPL_Compiler.h"#endif	#ifndef VPXMACOSXIOKIT#define VPXMACOSXIOKITNat4	load_MacOSX_IOKit(V_Environment environment);#endif

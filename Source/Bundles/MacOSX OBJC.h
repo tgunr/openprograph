@@ -1,0 +1,1 @@
+/*		MacOSX OBJC.h	Copyright 2004 Scott B. Anderson, All Rights Reserved.	*/#ifndef VPXOBJC#define VPXOBJCNat4	load_OBJC(V_Environment environment);#endif

@@ -1,0 +1,1 @@
+/*		MacVPL.h	Copyright 2003 Scott B. Anderson, All Rights Reserved.	*/#ifndef VPXSTANDARD#define VPXSTANDARDNat4	load_Standard(V_Environment environment);#endif
