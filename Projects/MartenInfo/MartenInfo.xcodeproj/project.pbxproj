@@ -11,7 +11,7 @@
 		5C334EAA0AB1EF0D00BE2A7F /* VPX_PrimitivesInfo.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C334EA70AB1EF0D00BE2A7F /* VPX_PrimitivesInfo.c */; };
 		5C334EB20AB1EF5200BE2A7F /* VPXInfo.nib in Resources */ = {isa = PBXBuildFile; fileRef = 5C334EB00AB1EF5200BE2A7F /* VPXInfo.nib */; };
 		5C334EB30AB1EF5200BE2A7F /* martenIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5C334EB10AB1EF5200BE2A7F /* martenIcon.icns */; };
-		5C334EB50AB1EF5F00BE2A7F /* MartenEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C334EB40AB1EF5F00BE2A7F /* MartenEngine.framework */; };
+		75DF82FF156B9244009CD7BD /* MartenEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DF82FE156B9244009CD7BD /* MartenEngine.framework */; };
 		8D07F2C00486CC7A007CD1D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8D07F2C40486CC7A007CD1D0 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB77AAFE841565C02AAC07 /* Carbon.framework */; };
 /* End PBXBuildFile section */
@@ -26,7 +26,7 @@
 		5C334EAB0AB1EF3A00BE2A7F /* MartenInfo_Exports.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = MartenInfo_Exports.txt; sourceTree = "<group>"; };
 		5C334EB00AB1EF5200BE2A7F /* VPXInfo.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = VPXInfo.nib; path = ../../Source/Data/VPXInfo.nib; sourceTree = SOURCE_ROOT; };
 		5C334EB10AB1EF5200BE2A7F /* martenIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = martenIcon.icns; path = ../../Source/Data/martenIcon.icns; sourceTree = SOURCE_ROOT; };
-		5C334EB40AB1EF5F00BE2A7F /* MartenEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MartenEngine.framework; path = "../( xcbuild )/Marten Release/MartenEngine.framework"; sourceTree = SOURCE_ROOT; };
+		75DF82FE156B9244009CD7BD /* MartenEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MartenEngine.framework; path = "../Marten Top/DerivedData/Build/Products/Marten Release/MartenEngine.framework"; sourceTree = "<group>"; };
 		8D07F2C70486CC7A007CD1D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D07F2C80486CC7A007CD1D0 /* MartenInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MartenInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,8 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75DF82FF156B9244009CD7BD /* MartenEngine.framework in Frameworks */,
 				8D07F2C40486CC7A007CD1D0 /* Carbon.framework in Frameworks */,
-				5C334EB50AB1EF5F00BE2A7F /* MartenEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +55,7 @@
 		0867D691FE84028FC02AAC07 /* MartenInfo */ = {
 			isa = PBXGroup;
 			children = (
+				75DF82FE156B9244009CD7BD /* MartenEngine.framework */,
 				08FB77ACFE841707C02AAC07 /* Source */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
@@ -66,7 +67,6 @@
 		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				5C334EB40AB1EF5F00BE2A7F /* MartenEngine.framework */,
 				08FB77AAFE841565C02AAC07 /* Carbon.framework */,
 			);
 			name = "External Frameworks and Libraries";
@@ -141,8 +141,6 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
-			attributes = {
-			};
 			buildConfigurationList = 4FADC24608B4156D00ABE55E /* Build configuration list for PBXProject "MartenInfo" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
@@ -213,6 +211,11 @@
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../Marten Top/DerivedData/Build/Products/Marten Release\"";
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -225,7 +228,6 @@
 				LIBRARY_STYLE = DYNAMIC;
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = MartenInfo;
-				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = YES;
 			};
@@ -234,9 +236,13 @@
 		4FADC24408B4156D00ABE55E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../Marten Top/DerivedData/Build/Products/Marten Release\"";
 				FRAMEWORK_VERSION = A;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
@@ -247,7 +253,6 @@
 				LIBRARY_STYLE = DYNAMIC;
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = MartenInfo;
-				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -255,33 +260,39 @@
 		4FADC24708B4156D00ABE55E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SDKROOT = macosx10.6;
 			};
 			name = Debug;
 		};
 		4FADC24808B4156D00ABE55E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SDKROOT = macosx10.6;
 			};
 			name = Release;
 		};
 		5C334EB80AB1EFDA00BE2A7F /* Marten Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXPORTED_SYMBOLS_FILE = MartenInfo_Exports.txt;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../Marten Top/DerivedData/Build/Products/Marten Release\"";
 				FRAMEWORK_VERSION = A;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -291,7 +302,6 @@
 				LIBRARY_STYLE = DYNAMIC;
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = MartenInfo;
-				SDKROOT = macosx10.8;
 				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -300,7 +310,8 @@
 		5C334EB90AB1EFDA00BE2A7F /* Marten Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -308,9 +319,8 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SDKROOT = macosx10.6;
 				SKIP_INSTALL = YES;
-				SYMROOT = "../( xcbuild )";
 			};
 			name = "Marten Release";
 		};

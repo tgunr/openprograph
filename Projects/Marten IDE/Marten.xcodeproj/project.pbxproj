@@ -29,6 +29,7 @@
 		846EF17B09FE6F1E00A46F3D /* BNDL.icns in Resources */ = {isa = PBXBuildFile; fileRef = 846EF16909FE6F1E00A46F3D /* BNDL.icns */; };
 		846EF17C09FE6F1E00A46F3D /* build.nib in Resources */ = {isa = PBXBuildFile; fileRef = 846EF16A09FE6F1E00A46F3D /* build.nib */; };
 		846EF17D09FE6F1E00A46F3D /* create.nib in Resources */ = {isa = PBXBuildFile; fileRef = 846EF16B09FE6F1E00A46F3D /* create.nib */; };
+		846EF17E09FE6F1E00A46F3D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 846EF16C09FE6F1E00A46F3D /* InfoPlist.strings */; };
 		846EF17F09FE6F1E00A46F3D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 846EF16E09FE6F1E00A46F3D /* Localizable.strings */; };
 		846EF18009FE6F1E00A46F3D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846EF17109FE6F1E00A46F3D /* Info.plist */; };
 		846EF18209FE6F1E00A46F3D /* main.nib in Resources */ = {isa = PBXBuildFile; fileRef = 846EF17309FE6F1E00A46F3D /* main.nib */; };
@@ -61,10 +62,12 @@
 		84B64898096DF85400BEB263 /* HIObject.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B6484D096DF85400BEB263 /* HIObject.inl.c */; };
 		84B64899096DF85400BEB263 /* HIToolbar.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B6484E096DF85400BEB263 /* HIToolbar.inl.c */; };
 		84B6489A096DF85400BEB263 /* HIView Scrollable.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B6484F096DF85400BEB263 /* HIView Scrollable.inl.c */; };
+		84B6489B096DF85400BEB263 /* HIView Test Item.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64850096DF85400BEB263 /* HIView Test Item.inl.c */; };
 		84B6489C096DF85400BEB263 /* HIView.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64851096DF85400BEB263 /* HIView.inl.c */; };
 		84B6489D096DF85400BEB263 /* Icons.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64852096DF85400BEB263 /* Icons.inl.c */; };
 		84B6489E096DF85400BEB263 /* Info Extras.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64853096DF85400BEB263 /* Info Extras.inl.c */; };
 		84B6489F096DF85400BEB263 /* Info Window.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64854096DF85400BEB263 /* Info Window.inl.c */; };
+		84B648A0096DF85400BEB263 /* List HIView.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64855096DF85400BEB263 /* List HIView.inl.c */; };
 		84B648A1096DF85400BEB263 /* List Window.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64856096DF85400BEB263 /* List Window.inl.c */; };
 		84B648A2096DF85400BEB263 /* Media Reference.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64857096DF85400BEB263 /* Media Reference.inl.c */; };
 		84B648A3096DF85400BEB263 /* MyCaseData.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64858096DF85400BEB263 /* MyCaseData.inl.c */; };
@@ -98,6 +101,8 @@
 		84B648BF096DF85400BEB263 /* Project Update Activity.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64874096DF85400BEB263 /* Project Update Activity.inl.c */; };
 		84B648C0096DF85400BEB263 /* Project Window.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64875096DF85400BEB263 /* Project Window.inl.c */; };
 		84B648C1096DF85400BEB263 /* Services.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64876096DF85400BEB263 /* Services.inl.c */; };
+		84B648C2096DF85400BEB263 /* Test Windows.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64877096DF85400BEB263 /* Test Windows.inl.c */; };
+		84B648C3096DF85400BEB263 /* Text Document.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64878096DF85400BEB263 /* Text Document.inl.c */; };
 		84B648C4096DF85400BEB263 /* Value Window.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64879096DF85400BEB263 /* Value Window.inl.c */; };
 		84B648C5096DF85400BEB263 /* VPLCEWindows.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B6487A096DF85400BEB263 /* VPLCEWindows.inl.c */; };
 		84B648C6096DF85400BEB263 /* VPLControls.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B6487B096DF85400BEB263 /* VPLControls.inl.c */; };
@@ -112,8 +117,6 @@
 		84B648CF096DF85400BEB263 /* Workspace.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B64884096DF85400BEB263 /* Workspace.inl.c */; };
 		84B648D5096DF88700BEB263 /* CE IDE Project.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84B648D2096DF88700BEB263 /* CE IDE Project.inl.c */; };
 		84B648D6096DF88700BEB263 /* CE IDE Project.inl.h in Resources */ = {isa = PBXBuildFile; fileRef = 84B648D3096DF88700BEB263 /* CE IDE Project.inl.h */; };
-		84D3B2FF0EF3651D00175DA2 /* About Window.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B2FE0EF3651D00175DA2 /* About Window.inl.c */; };
-		84D3B3010EF3659000175DA2 /* OSA Event.inl.c in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B3000EF3659000175DA2 /* OSA Event.inl.c */; };
 		8D0C4E920486CD37000505A6 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20286C33FDCF999611CA2CEA /* Carbon.framework */; };
 /* End PBXBuildFile section */
 
@@ -155,9 +158,10 @@
 		846EF16909FE6F1E00A46F3D /* BNDL.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = BNDL.icns; sourceTree = "<group>"; };
 		846EF16A09FE6F1E00A46F3D /* build.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = build.nib; sourceTree = "<group>"; };
 		846EF16B09FE6F1E00A46F3D /* create.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = create.nib; sourceTree = "<group>"; };
+		846EF16D09FE6F1E00A46F3D /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		846EF16F09FE6F1E00A46F3D /* English */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		846EF17009FE6F1E00A46F3D /* German */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
-		846EF17109FE6F1E00A46F3D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../Source Marten/Resources/Info.plist"; sourceTree = SOURCE_ROOT; };
+		846EF17109FE6F1E00A46F3D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = Info.plist; path = "../../Source Marten/Resources/Info.plist"; sourceTree = SOURCE_ROOT; };
 		846EF17309FE6F1E00A46F3D /* main.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = main.nib; sourceTree = "<group>"; };
 		846EF17409FE6F1E00A46F3D /* martenIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = martenIcon.icns; sourceTree = "<group>"; };
 		846EF17709FE6F1E00A46F3D /* VPL.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = VPL.icns; sourceTree = "<group>"; };
@@ -188,10 +192,12 @@
 		84B6484D096DF85400BEB263 /* HIObject.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = HIObject.inl.c; path = "../../Source Marten/Sections/HIObject.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B6484E096DF85400BEB263 /* HIToolbar.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = HIToolbar.inl.c; path = "../../Source Marten/Sections/HIToolbar.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B6484F096DF85400BEB263 /* HIView Scrollable.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "HIView Scrollable.inl.c"; path = "../../Source Marten/Sections/HIView Scrollable.inl.c"; sourceTree = SOURCE_ROOT; };
+		84B64850096DF85400BEB263 /* HIView Test Item.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "HIView Test Item.inl.c"; path = "../../Source Marten/Sections/HIView Test Item.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B64851096DF85400BEB263 /* HIView.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = HIView.inl.c; path = "../../Source Marten/Sections/HIView.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B64852096DF85400BEB263 /* Icons.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = Icons.inl.c; path = "../../Source Marten/Sections/Icons.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B64853096DF85400BEB263 /* Info Extras.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "Info Extras.inl.c"; path = "../../Source Marten/Sections/Info Extras.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B64854096DF85400BEB263 /* Info Window.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "Info Window.inl.c"; path = "../../Source Marten/Sections/Info Window.inl.c"; sourceTree = SOURCE_ROOT; };
+		84B64855096DF85400BEB263 /* List HIView.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "List HIView.inl.c"; path = "../../Source Marten/Sections/List HIView.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B64856096DF85400BEB263 /* List Window.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "List Window.inl.c"; path = "../../Source Marten/Sections/List Window.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B64857096DF85400BEB263 /* Media Reference.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "Media Reference.inl.c"; path = "../../Source Marten/Sections/Media Reference.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B64858096DF85400BEB263 /* MyCaseData.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = MyCaseData.inl.c; path = "../../Source Marten/Sections/MyCaseData.inl.c"; sourceTree = SOURCE_ROOT; };
@@ -225,6 +231,8 @@
 		84B64874096DF85400BEB263 /* Project Update Activity.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "Project Update Activity.inl.c"; path = "../../Source Marten/Sections/Project Update Activity.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B64875096DF85400BEB263 /* Project Window.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "Project Window.inl.c"; path = "../../Source Marten/Sections/Project Window.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B64876096DF85400BEB263 /* Services.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = Services.inl.c; path = "../../Source Marten/Sections/Services.inl.c"; sourceTree = SOURCE_ROOT; };
+		84B64877096DF85400BEB263 /* Test Windows.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "Test Windows.inl.c"; path = "../../Source Marten/Sections/Test Windows.inl.c"; sourceTree = SOURCE_ROOT; };
+		84B64878096DF85400BEB263 /* Text Document.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "Text Document.inl.c"; path = "../../Source Marten/Sections/Text Document.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B64879096DF85400BEB263 /* Value Window.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "Value Window.inl.c"; path = "../../Source Marten/Sections/Value Window.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B6487A096DF85400BEB263 /* VPLCEWindows.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = VPLCEWindows.inl.c; path = "../../Source Marten/Sections/VPLCEWindows.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B6487B096DF85400BEB263 /* VPLControls.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = VPLControls.inl.c; path = "../../Source Marten/Sections/VPLControls.inl.c"; sourceTree = SOURCE_ROOT; };
@@ -239,8 +247,6 @@
 		84B64884096DF85400BEB263 /* Workspace.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = Workspace.inl.c; path = "../../Source Marten/Sections/Workspace.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B648D2096DF88700BEB263 /* CE IDE Project.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "CE IDE Project.inl.c"; path = "../../Source Marten/CE IDE Project.inl.c"; sourceTree = SOURCE_ROOT; };
 		84B648D3096DF88700BEB263 /* CE IDE Project.inl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = "CE IDE Project.inl.h"; path = "../../Source Marten/CE IDE Project.inl.h"; sourceTree = SOURCE_ROOT; };
-		84D3B2FE0EF3651D00175DA2 /* About Window.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "About Window.inl.c"; path = "../../Source Marten/Sections/About Window.inl.c"; sourceTree = SOURCE_ROOT; };
-		84D3B3000EF3659000175DA2 /* OSA Event.inl.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = "OSA Event.inl.c"; path = "../../Source Marten/Sections/OSA Event.inl.c"; sourceTree = SOURCE_ROOT; };
 		8D0C4E970486CD37000505A6 /* Marten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -323,6 +329,7 @@
 				846EF19509FE6F8100A46F3D /* Interpreter_d.app */,
 				846EF19909FE6F9800A46F3D /* Icons */,
 				846EF17109FE6F1E00A46F3D /* Info.plist */,
+				846EF16C09FE6F1E00A46F3D /* InfoPlist.strings */,
 				846EF16E09FE6F1E00A46F3D /* Localizable.strings */,
 			);
 			name = Resources;
@@ -346,7 +353,6 @@
 			children = (
 				84B648D3096DF88700BEB263 /* CE IDE Project.inl.h */,
 				84B648D2096DF88700BEB263 /* CE IDE Project.inl.c */,
-				84D3B2FE0EF3651D00175DA2 /* About Window.inl.c */,
 				84B6483A096DF85400BEB263 /* Activity Service.inl.c */,
 				84B6483B096DF85400BEB263 /* Activity Stages.inl.c */,
 				84B6483C096DF85400BEB263 /* Activity Test.inl.c */,
@@ -369,10 +375,12 @@
 				84B6484D096DF85400BEB263 /* HIObject.inl.c */,
 				84B6484E096DF85400BEB263 /* HIToolbar.inl.c */,
 				84B6484F096DF85400BEB263 /* HIView Scrollable.inl.c */,
+				84B64850096DF85400BEB263 /* HIView Test Item.inl.c */,
 				84B64851096DF85400BEB263 /* HIView.inl.c */,
 				84B64852096DF85400BEB263 /* Icons.inl.c */,
 				84B64853096DF85400BEB263 /* Info Extras.inl.c */,
 				84B64854096DF85400BEB263 /* Info Window.inl.c */,
+				84B64855096DF85400BEB263 /* List HIView.inl.c */,
 				84B64856096DF85400BEB263 /* List Window.inl.c */,
 				84B64857096DF85400BEB263 /* Media Reference.inl.c */,
 				840F048909B79F28002F5991 /* MP Task Service.inl.c */,
@@ -397,7 +405,6 @@
 				84B6486A096DF85400BEB263 /* MyUtilities.inl.c */,
 				84B6486B096DF85400BEB263 /* MyValueData.inl.c */,
 				84B6486C096DF85400BEB263 /* Navigation.inl.c */,
-				84D3B3000EF3659000175DA2 /* OSA Event.inl.c */,
 				84B6486D096DF85400BEB263 /* Pasteboard Archive.inl.c */,
 				84B6486E096DF85400BEB263 /* Pasteboard Service.inl.c */,
 				84B6486F096DF85400BEB263 /* Preferences Window.inl.c */,
@@ -408,6 +415,8 @@
 				84B64874096DF85400BEB263 /* Project Update Activity.inl.c */,
 				84B64875096DF85400BEB263 /* Project Window.inl.c */,
 				84B64876096DF85400BEB263 /* Services.inl.c */,
+				84B64877096DF85400BEB263 /* Test Windows.inl.c */,
+				84B64878096DF85400BEB263 /* Text Document.inl.c */,
 				84B64879096DF85400BEB263 /* Value Window.inl.c */,
 				84B6487A096DF85400BEB263 /* VPLCEWindows.inl.c */,
 				84B6487B096DF85400BEB263 /* VPLControls.inl.c */,
@@ -452,11 +461,9 @@
 		20286C28FDCF999611CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 84FC2FE30B0BBEB9001641D8 /* Build configuration list for PBXProject "Marten" */;
-			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			mainGroup = 20286C29FDCF999611CA2CEA /* Marten */;
 			projectDirPath = "";
-			projectRoot = "";
 			targets = (
 				8D0C4E890486CD37000505A6 /* Marten */,
 			);
@@ -473,6 +480,7 @@
 				846EF17B09FE6F1E00A46F3D /* BNDL.icns in Resources */,
 				846EF17C09FE6F1E00A46F3D /* build.nib in Resources */,
 				846EF17D09FE6F1E00A46F3D /* create.nib in Resources */,
+				846EF17E09FE6F1E00A46F3D /* InfoPlist.strings in Resources */,
 				846EF17F09FE6F1E00A46F3D /* Localizable.strings in Resources */,
 				846EF18009FE6F1E00A46F3D /* Info.plist in Resources */,
 				846EF18209FE6F1E00A46F3D /* main.nib in Resources */,
@@ -515,10 +523,12 @@
 				84B64898096DF85400BEB263 /* HIObject.inl.c in Sources */,
 				84B64899096DF85400BEB263 /* HIToolbar.inl.c in Sources */,
 				84B6489A096DF85400BEB263 /* HIView Scrollable.inl.c in Sources */,
+				84B6489B096DF85400BEB263 /* HIView Test Item.inl.c in Sources */,
 				84B6489C096DF85400BEB263 /* HIView.inl.c in Sources */,
 				84B6489D096DF85400BEB263 /* Icons.inl.c in Sources */,
 				84B6489E096DF85400BEB263 /* Info Extras.inl.c in Sources */,
 				84B6489F096DF85400BEB263 /* Info Window.inl.c in Sources */,
+				84B648A0096DF85400BEB263 /* List HIView.inl.c in Sources */,
 				84B648A1096DF85400BEB263 /* List Window.inl.c in Sources */,
 				84B648A2096DF85400BEB263 /* Media Reference.inl.c in Sources */,
 				84B648A3096DF85400BEB263 /* MyCaseData.inl.c in Sources */,
@@ -552,6 +562,8 @@
 				84B648BF096DF85400BEB263 /* Project Update Activity.inl.c in Sources */,
 				84B648C0096DF85400BEB263 /* Project Window.inl.c in Sources */,
 				84B648C1096DF85400BEB263 /* Services.inl.c in Sources */,
+				84B648C2096DF85400BEB263 /* Test Windows.inl.c in Sources */,
+				84B648C3096DF85400BEB263 /* Text Document.inl.c in Sources */,
 				84B648C4096DF85400BEB263 /* Value Window.inl.c in Sources */,
 				84B648C5096DF85400BEB263 /* VPLCEWindows.inl.c in Sources */,
 				84B648C6096DF85400BEB263 /* VPLControls.inl.c in Sources */,
@@ -566,14 +578,20 @@
 				84B648CF096DF85400BEB263 /* Workspace.inl.c in Sources */,
 				84B648D5096DF88700BEB263 /* CE IDE Project.inl.c in Sources */,
 				840F048A09B79F28002F5991 /* MP Task Service.inl.c in Sources */,
-				84D3B2FF0EF3651D00175DA2 /* About Window.inl.c in Sources */,
-				84D3B3010EF3659000175DA2 /* OSA Event.inl.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		846EF16C09FE6F1E00A46F3D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				846EF16D09FE6F1E00A46F3D /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		846EF16E09FE6F1E00A46F3D /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -589,10 +607,19 @@
 		84FC2FE00B0BBEB9001641D8 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					../MartenSystem/build,
+					../MartenInterpreter/build,
+					../MartenMacOSX/build,
+					../MartenStandard/build,
+					../MartenCarbon/build,
+					../MartenEngine/build,
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_2)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "/Users/admin/Projects/VPL/Experimental\\ Engine/XMacVPL\\ 55.08g007/(\\ Xcode\\ Projects\\ )/MartenUnix/build";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "/Users/admin/Projects/VPL/Experimental\\ Engine/XMacVPL\\ 56.03\\ -\\ Primitive\\ Fixes/(\\ Xcode\\ Projects\\ )/MartenInfo/build";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -605,7 +632,14 @@
 				HEADER_SEARCH_PATHS = ../../Source/Compiler;
 				INFOPLIST_FILE = "../../Source Marten/Resources/Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					../MartenSystem/build,
+					../MartenInterpreter/build,
+					../MartenMacOSX/build,
+					../MartenStandard/build,
+					../MartenCarbon/build,
+					../MartenEngine/build,
+				);
 				PREBINDING = NO;
 				PRODUCT_NAME = Marten;
 				WRAPPER_EXTENSION = app;
@@ -616,8 +650,6 @@
 		84FC2FE10B0BBEB9001641D8 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					../MartenSystem/build,
@@ -660,8 +692,6 @@
 		84FC2FE20B0BBEB9001641D8 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				FRAMEWORK_SEARCH_PATHS = (
 					../MartenSystem/build,
 					../MartenInterpreter/build,
@@ -701,27 +731,18 @@
 		84FC2FE40B0BBEB9001641D8 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Development;
 		};
 		84FC2FE50B0BBEB9001641D8 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Deployment;
 		};
 		84FC2FE60B0BBEB9001641D8 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Default;
 		};

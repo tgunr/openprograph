@@ -3,3 +3,60 @@
 //
 
 #include <Carbon/Carbon.h>
+#include "../../Source/Engine/VPL_Compiler.h"
+
+#define __VPL_EDITOR_IS_THREADED__		0
+
+#define __VPL_PLATFORM_DARWIN__			1
+//#define __VPL_PLATFORM_WINDOWS__		0
+//#define __VPL_PLATFORM_LINUX__		0
+//#define __VPL_PLATFORM_HAIKU__		0
+//#define __VPL_PLATFORM_UBUNTU__		0
+
+/*
+#define __VPL_EDITOR_IS_THREADED__		0
+
+#define __VPL_PLATFORM_DARWIN__			1
+//#define __VPL_PLATFORM_WINDOWS__		0
+//#define __VPL_PLATFORM_LINUX__		0
+//#define __VPL_PLATFORM_HAIKU__		0
+//#define __VPL_PLATFORM_UBUNTU__		0
+
+#include "InterpreterPlatform.pch"
+
+//	The following are platform specific defines that may or may not be
+//	set by a specific platform, so these are the default values
+
+//
+#ifndef VPL_YEILDTOTHREAD
+#if __VPL_EDITOR_IS_THREADED__
+#define VPL_YEILDTOTHREAD(t, e)			platformYieldToThread( t, e );
+#else
+#define VPL_YEILDTOTHREAD(t, e)			
+#endif // __VPL_EDITOR_IS_THREADED__
+#endif // VPL_YEILDTOTHREAD
+
+//
+#ifndef VPL_YIELDTOEDITOR
+#if __VPL_EDITOR_IS_THREADED__
+#define VPL_YEILDTOEDITOR(e)			platformYieldToEditor( e );
+#else
+#define VPL_YIELDTOEDITOR(e)			
+#endif // __VPL_EDITOR_IS_THREADED__
+#endif // VPL_YIELDTOEDITOR
+
+//	__VPL_TRAP_INTERPRETER_SIGNALS__ determines if
+//	signal() is called to install interrupt handlers
+//	or whatever platform specific equivalent mechanism
+#ifndef __VPL_TRAP_INTERPRETER_SIGNALS__
+#define __VPL_TRAP_INTERPRETER_SIGNALS__	1
+#endif // __VPL_TRAP_INTERPRETER_SIGNALS__
+
+
+//	__VPL_DISPATCH_USES_FFI__ will automatically substitute
+//	ffi calls for function dispatch and callback mechanisms.
+#ifndef __VPL_DISATCH_USES_FFI__
+#define __VPL_DISATCH_USES_FFI__			1
+#endif // __VPL_DISATCH_USES_FFI__
+
+*/

@@ -116,7 +116,7 @@ void	AMLib_OpenPrivateFrameworks( vpl_AMLib inAMLib )
 				if( workCFString != NULL ) workFunc = CFBundleGetFunctionPointerForName( workBundle, workCFString );
 				if( workFunc != NULL ) workResult = workFunc( inAMLib->environment );
 				
-				printf("MartenLoadFunction returned: %d\n", (int) workResult );
+				printf("MartenLoadFunction returned: %d\n", workResult );
 			}
 		
 		CFShow( workBundle );
