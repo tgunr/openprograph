@@ -1301,66 +1301,6 @@ OUTPUT(0,TERMINAL(1))
 FOOTERSINGLECASEWITHNONE(2)
 }
 
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_POSIX_20_Path_case_1_local_3_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_POSIX_20_Path_case_1_local_3_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(2)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Full_20_POSIX_20_Path,1,1,TERMINAL(0),ROOT(1));
-NEXTCASEONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(1))
-FOOTER(2)
-}
-
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_POSIX_20_Path_case_1_local_3_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_POSIX_20_Path_case_1_local_3_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADERWITHNONE(1)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Release,1,0,TERMINAL(0));
-
-result = kSuccess;
-FAILONSUCCESS
-
-OUTPUT(0,NONE)
-FOOTERWITHNONE(1)
-}
-
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_POSIX_20_Path_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_POSIX_20_Path_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-enum opTrigger outcome = kSuccess;
-if(vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_POSIX_20_Path_case_1_local_3_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
-vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_POSIX_20_Path_case_1_local_3_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
-return outcome;
-}
-
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_POSIX_20_Path(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(3)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Full_20_Path_20_CFURL,1,1,TERMINAL(0),ROOT(1));
-
-result = vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_POSIX_20_Path_case_1_local_3(PARAMETERS,TERMINAL(1),ROOT(2));
-FAILONFAILURE
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Release,1,0,TERMINAL(1));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(2))
-FOOTERSINGLECASE(3)
-}
-
 enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Name(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADER(3)
@@ -2175,128 +2115,6 @@ FAILONFAILURE
 result = kSuccess;
 
 FOOTERSINGLECASE(5)
-}
-
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_2_case_1_local_4_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_2_case_1_local_4_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(6)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_constant(PARAMETERS,"1",ROOT(1));
-
-result = vpx_call_primitive(PARAMETERS,VPLP_suffix,2,2,TERMINAL(0),TERMINAL(1),ROOT(2),ROOT(3));
-
-result = vpx_constant(PARAMETERS,"\"/\"",ROOT(4));
-
-result = vpx_call_primitive(PARAMETERS,VPLP__3D_,2,1,TERMINAL(3),TERMINAL(4),ROOT(5));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(5))
-FOOTERSINGLECASE(6)
-}
-
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_2_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_2_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
-{
-HEADER(4)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_2_case_1_local_4_case_1_local_2(PARAMETERS,TERMINAL(0),ROOT(2));
-
-result = vpx_method_Replace_20_NULL(PARAMETERS,TERMINAL(1),TERMINAL(2),ROOT(3));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(3))
-FOOTERSINGLECASE(4)
-}
-
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
-{
-HEADERWITHNONE(6)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_instantiate(PARAMETERS,kVPXClass_CF_20_URL,1,1,NONE,ROOT(2));
-
-result = vpx_extconstant(PARAMETERS,kCFURLPOSIXPathStyle,ROOT(3));
-
-result = vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_2_case_1_local_4(PARAMETERS,TERMINAL(0),TERMINAL(1),ROOT(4));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Create_20_From_20_File_20_System_20_Path,4,1,TERMINAL(2),TERMINAL(0),TERMINAL(3),TERMINAL(4),ROOT(5));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(5))
-FOOTERSINGLECASEWITHNONE(6)
-}
-
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_3_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_3_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
-{
-HEADER(2)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_New_20_From_20_CFURL,2,0,TERMINAL(0),TERMINAL(1));
-NEXTCASEONFAILURE
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Release,1,0,TERMINAL(1));
-
-result = kSuccess;
-
-FOOTER(2)
-}
-
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_3_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_3_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
-{
-HEADER(2)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Release,1,0,TERMINAL(1));
-
-result = kSuccess;
-FAILONSUCCESS
-
-FOOTER(2)
-}
-
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
-{
-enum opTrigger outcome = kSuccess;
-if(vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_3_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
-vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_3_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1);
-return outcome;
-}
-
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
-{
-HEADER(4)
-INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
-result = kSuccess;
-
-result = vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_2(PARAMETERS,TERMINAL(1),TERMINAL(2),ROOT(3));
-
-result = vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path_case_1_local_3(PARAMETERS,TERMINAL(0),TERMINAL(3));
-FAILONFAILURE
-
-result = kSuccess;
-
-FOOTERSINGLECASE(4)
 }
 
 enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Unicode_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object terminal4);
@@ -7008,8 +6826,8 @@ OUTPUT(0,TERMINAL(3))
 FOOTERSINGLECASE(4)
 }
 
-enum opTrigger vpx_method_MacOS_20_File_20_Iterator_2F7E_FSGetCatalogInfoBulk_case_1_local_14_case_1_local_4_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
-enum opTrigger vpx_method_MacOS_20_File_20_Iterator_2F7E_FSGetCatalogInfoBulk_case_1_local_14_case_1_local_4_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+enum opTrigger vpx_method_MacOS_20_File_20_Iterator_2F7E_FSGetCatalogInfoBulk_case_1_local_14_case_1_local_5_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_MacOS_20_File_20_Iterator_2F7E_FSGetCatalogInfoBulk_case_1_local_14_case_1_local_5_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
 {
 HEADERWITHNONE(4)
 INPUT(0,0)
@@ -7030,8 +6848,8 @@ OUTPUT(0,TERMINAL(3))
 FOOTERSINGLECASEWITHNONE(4)
 }
 
-enum opTrigger vpx_method_MacOS_20_File_20_Iterator_2F7E_FSGetCatalogInfoBulk_case_1_local_14_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_MacOS_20_File_20_Iterator_2F7E_FSGetCatalogInfoBulk_case_1_local_14_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_MacOS_20_File_20_Iterator_2F7E_FSGetCatalogInfoBulk_case_1_local_14_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_MacOS_20_File_20_Iterator_2F7E_FSGetCatalogInfoBulk_case_1_local_14_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADER(6)
 INPUT(0,0)
@@ -7041,7 +6859,7 @@ result = vpx_extget(PARAMETERS,"unicode",1,2,TERMINAL(0),ROOT(1),ROOT(2));
 
 result = vpx_extget(PARAMETERS,"length",1,2,TERMINAL(0),ROOT(3),ROOT(4));
 
-result = vpx_method_MacOS_20_File_20_Iterator_2F7E_FSGetCatalogInfoBulk_case_1_local_14_case_1_local_4_case_1_local_4(PARAMETERS,TERMINAL(2),TERMINAL(4),ROOT(5));
+result = vpx_method_MacOS_20_File_20_Iterator_2F7E_FSGetCatalogInfoBulk_case_1_local_14_case_1_local_5_case_1_local_4(PARAMETERS,TERMINAL(2),TERMINAL(4),ROOT(5));
 
 result = kSuccess;
 
@@ -7061,10 +6879,12 @@ result = vpx_constant(PARAMETERS,"HFSUniStr255",ROOT(2));
 
 result = vpx_method_Block_20_Array_20_To_20_List(PARAMETERS,TERMINAL(0),TERMINAL(1),TERMINAL(2),ROOT(3));
 
+result = vpx_method_Block_20_Free(PARAMETERS,TERMINAL(0));
+
 if( (repeatLimit = vpx_multiplex(1,TERMINAL(3))) ){
 LISTROOTBEGIN(1)
 REPEATBEGINWITHCOUNTER
-result = vpx_method_MacOS_20_File_20_Iterator_2F7E_FSGetCatalogInfoBulk_case_1_local_14_case_1_local_4(PARAMETERS,LIST(3),ROOT(4));
+result = vpx_method_MacOS_20_File_20_Iterator_2F7E_FSGetCatalogInfoBulk_case_1_local_14_case_1_local_5(PARAMETERS,LIST(3),ROOT(4));
 LISTROOT(4,0)
 REPEATFINISH
 LISTROOTFINISH(4,0)
@@ -7072,8 +6892,6 @@ LISTROOTEND
 } else {
 ROOTEMPTY(4)
 }
-
-result = vpx_method_Block_20_Free(PARAMETERS,TERMINAL(0));
 
 result = kSuccess;
 
@@ -9676,10 +9494,6 @@ Nat4	loadUniversals_Media_20_Reference(V_Environment environment)
 	if(result == NULL) return kERROR;
 	vpx_method_initialize(environment,result,vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_Path_20_CFURL,NULL);
 
-	result = method_new("MacOS File Reference/Get Full POSIX Path",environment);
-	if(result == NULL) return kERROR;
-	vpx_method_initialize(environment,result,vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_POSIX_20_Path,NULL);
-
 	result = method_new("MacOS File Reference/Get Name",environment);
 	if(result == NULL) return kERROR;
 	vpx_method_initialize(environment,result,vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Name,NULL);
@@ -9751,10 +9565,6 @@ Nat4	loadUniversals_Media_20_Reference(V_Environment environment)
 	result = method_new("MacOS File Reference/New From Path String",environment);
 	if(result == NULL) return kERROR;
 	vpx_method_initialize(environment,result,vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Path_20_String,NULL);
-
-	result = method_new("MacOS File Reference/New From Full POSIX Path",environment);
-	if(result == NULL) return kERROR;
-	vpx_method_initialize(environment,result,vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path,NULL);
 
 	result = method_new("MacOS File Reference/New From Unicode",environment);
 	if(result == NULL) return kERROR;

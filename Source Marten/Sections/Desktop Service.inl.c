@@ -1718,71 +1718,31 @@ OUTPUT(0,TERMINAL(4))
 FOOTERSINGLECASE(5)
 }
 
-enum opTrigger vpx_method_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_case_1_local_3_case_1_local_6_case_1_local_11_case_1_local_3_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_case_1_local_3_case_1_local_6_case_1_local_11_case_1_local_3_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(4)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_call_primitive(PARAMETERS,VPLP_external_3F_,1,0,TERMINAL(0));
-NEXTCASEONFAILURE
-
-result = vpx_constant(PARAMETERS,"__CFURL",ROOT(1));
-
-result = vpx_call_primitive(PARAMETERS,VPLP_set_2D_external_2D_type,2,1,TERMINAL(0),TERMINAL(1),ROOT(2));
-
-result = vpx_method_CF_20_URL_2F_New(PARAMETERS,TERMINAL(2),ROOT(3));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(3))
-FOOTER(4)
-}
-
-enum opTrigger vpx_method_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_case_1_local_3_case_1_local_6_case_1_local_11_case_1_local_3_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_case_1_local_3_case_1_local_6_case_1_local_11_case_1_local_3_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(1)
-INPUT(0,0)
-result = kSuccess;
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(0))
-FOOTER(1)
-}
-
-enum opTrigger vpx_method_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_case_1_local_3_case_1_local_6_case_1_local_11_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_case_1_local_3_case_1_local_6_case_1_local_11_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-enum opTrigger outcome = kSuccess;
-if(vpx_method_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_case_1_local_3_case_1_local_6_case_1_local_11_case_1_local_3_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
-vpx_method_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_case_1_local_3_case_1_local_6_case_1_local_11_case_1_local_3_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
-return outcome;
-}
-
 enum opTrigger vpx_method_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_case_1_local_3_case_1_local_6_case_1_local_11_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
 enum opTrigger vpx_method_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_case_1_local_3_case_1_local_6_case_1_local_11_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
 {
-HEADERWITHNONE(5)
+HEADERWITHNONE(7)
 INPUT(0,0)
 INPUT(1,1)
 result = kSuccess;
 
-result = vpx_instantiate(PARAMETERS,kVPXClass_Marten_20_Selection_20_PlugIn,1,1,NONE,ROOT(2));
+result = vpx_constant(PARAMETERS,"__CFURL",ROOT(2));
 
-result = vpx_method_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_case_1_local_3_case_1_local_6_case_1_local_11_case_1_local_3(PARAMETERS,TERMINAL(0),ROOT(3));
+result = vpx_call_primitive(PARAMETERS,VPLP_set_2D_external_2D_type,2,1,TERMINAL(0),TERMINAL(2),ROOT(3));
 
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Load_20_Type,3,1,TERMINAL(2),TERMINAL(3),TERMINAL(1),ROOT(4));
+result = vpx_method_CF_20_URL_2F_New(PARAMETERS,TERMINAL(3),ROOT(4));
+
+result = vpx_instantiate(PARAMETERS,kVPXClass_Marten_20_Selection_20_PlugIn,1,1,NONE,ROOT(5));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Load_20_Type,3,1,TERMINAL(5),TERMINAL(4),TERMINAL(1),ROOT(6));
 NEXTCASEONFAILURE
 
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Release,1,0,TERMINAL(3));
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Release,1,0,TERMINAL(4));
 
 result = kSuccess;
 
-OUTPUT(0,TERMINAL(4))
-FOOTERWITHNONE(5)
+OUTPUT(0,TERMINAL(6))
+FOOTERWITHNONE(7)
 }
 
 enum opTrigger vpx_method_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_case_1_local_3_case_1_local_6_case_1_local_11_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);

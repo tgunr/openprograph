@@ -2209,24 +2209,8 @@ result = kSuccess;
 FOOTERSINGLECASE(2)
 }
 
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex);
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex)
-{
-HEADER(1)
-result = kSuccess;
-
-result = vpx_persistent(PARAMETERS,kVPXValue_Case_20_Scroll_20_Wheel_20_Select_3F_,0,1,ROOT(0));
-
-result = vpx_match(PARAMETERS,"TRUE",TERMINAL(0));
-FAILONFAILURE
-
-result = kSuccess;
-
-FOOTERSINGLECASE(1)
-}
-
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3_case_1_local_3_case_1_local_5_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3_case_1_local_3_case_1_local_5_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2_case_1_local_3_case_1_local_5_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2_case_1_local_3_case_1_local_5_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
 {
 HEADER(7)
 INPUT(0,0)
@@ -2247,8 +2231,8 @@ OUTPUT(0,TERMINAL(6))
 FOOTER(7)
 }
 
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3_case_1_local_3_case_1_local_5_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3_case_1_local_3_case_1_local_5_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2_case_1_local_3_case_1_local_5_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2_case_1_local_3_case_1_local_5_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
 {
 HEADER(4)
 INPUT(0,0)
@@ -2264,17 +2248,17 @@ OUTPUT(0,TERMINAL(3))
 FOOTER(4)
 }
 
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3_case_1_local_3_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3_case_1_local_3_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2_case_1_local_3_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2_case_1_local_3_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
 {
 enum opTrigger outcome = kSuccess;
-if(vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3_case_1_local_3_case_1_local_5_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
-vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3_case_1_local_3_case_1_local_5_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0);
+if(vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2_case_1_local_3_case_1_local_5_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
+vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2_case_1_local_3_case_1_local_5_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0);
 return outcome;
 }
 
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1);
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1)
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1);
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0,V_Object *root1)
 {
 HEADER(9)
 INPUT(0,0)
@@ -2287,7 +2271,7 @@ result = vpx_constant(PARAMETERS,"2",ROOT(3));
 
 result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Event_20_Parameter,4,4,TERMINAL(0),TERMINAL(1),TERMINAL(2),TERMINAL(3),ROOT(4),ROOT(5),ROOT(6),ROOT(7));
 
-result = vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3_case_1_local_3_case_1_local_5(PARAMETERS,TERMINAL(4),TERMINAL(7),TERMINAL(3),ROOT(8));
+result = vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2_case_1_local_3_case_1_local_5(PARAMETERS,TERMINAL(4),TERMINAL(7),TERMINAL(3),ROOT(8));
 
 result = kSuccess;
 
@@ -2296,8 +2280,8 @@ OUTPUT(1,TERMINAL(8))
 FOOTERSINGLECASE(9)
 }
 
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADER(5)
 INPUT(0,0)
@@ -2305,7 +2289,7 @@ result = kSuccess;
 
 result = vpx_extconstant(PARAMETERS,kEventParamMouseWheelAxis,ROOT(1));
 
-result = vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3_case_1_local_3(PARAMETERS,TERMINAL(0),TERMINAL(1),ROOT(2),ROOT(3));
+result = vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2_case_1_local_3(PARAMETERS,TERMINAL(0),TERMINAL(1),ROOT(2),ROOT(3));
 
 result = vpx_extmatch(PARAMETERS,noErr,TERMINAL(2));
 FAILONFAILURE
@@ -2318,8 +2302,8 @@ OUTPUT(0,TERMINAL(4))
 FOOTERSINGLECASE(5)
 }
 
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADER(4)
 INPUT(0,0)
@@ -2338,8 +2322,8 @@ OUTPUT(0,TERMINAL(3))
 FOOTERSINGLECASE(4)
 }
 
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADER(4)
 INPUT(0,0)
@@ -2358,8 +2342,8 @@ OUTPUT(0,TERMINAL(3))
 FOOTERSINGLECASE(4)
 }
 
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_6_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3);
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_6_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3)
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_5_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3);
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_5_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3)
 {
 HEADER(10)
 INPUT(0,0)
@@ -2388,8 +2372,8 @@ result = kSuccess;
 FOOTER(10)
 }
 
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_6_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3);
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_6_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3)
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_5_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3);
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_5_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3)
 {
 HEADER(4)
 INPUT(0,0)
@@ -2403,12 +2387,12 @@ result = kSuccess;
 FOOTER(4)
 }
 
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3);
-enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3)
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3);
+enum opTrigger vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3)
 {
 enum opTrigger outcome = kSuccess;
-if(vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_6_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3))
-vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_6_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3);
+if(vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_5_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3))
+vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_5_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3);
 return outcome;
 }
 
@@ -2420,19 +2404,16 @@ INPUT(0,0)
 INPUT(1,1)
 result = kSuccess;
 
-result = vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2(PARAMETERS);
+result = vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_2(PARAMETERS,TERMINAL(1),ROOT(2));
 NEXTCASEONFAILURE
 
-result = vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3(PARAMETERS,TERMINAL(1),ROOT(2));
+result = vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_3(PARAMETERS,TERMINAL(1),ROOT(3));
 NEXTCASEONFAILURE
 
-result = vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_4(PARAMETERS,TERMINAL(1),ROOT(3));
+result = vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_4(PARAMETERS,TERMINAL(1),ROOT(4));
 NEXTCASEONFAILURE
 
-result = vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_5(PARAMETERS,TERMINAL(1),ROOT(4));
-NEXTCASEONFAILURE
-
-result = vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_6(PARAMETERS,TERMINAL(0),TERMINAL(2),TERMINAL(3),TERMINAL(4));
+result = vpx_method_Debug_20_Window_2F_CE_20_Mouse_20_Wheel_20_Moved_case_1_local_5(PARAMETERS,TERMINAL(0),TERMINAL(2),TERMINAL(3),TERMINAL(4));
 
 result = vpx_extconstant(PARAMETERS,noErr,ROOT(5));
 

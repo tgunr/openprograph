@@ -412,7 +412,7 @@ Nat4 VPLU_Debug_20_OSError_universal_load(V_Method method,V_Environment environm
 /* Begin Case */
 	ptrA = case_insert(0,method,environment);
 
-/* Start Operations: { 501 959 }{ 310 299 } */
+/* Start Operations: { 501 959 }{ 267 297 } */
 /* Begin Operation: { 20 20 28 212 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_input_bar(tempOperation,environment);
@@ -492,11 +492,11 @@ Nat4 VPLU_Debug_20_OSError_universal_load(V_Method method,V_Environment environm
 }
 /* End Operation */
 
-/* Begin Operation: { 58 10 74 76 } */
+/* Begin Operation: { 62 82 78 146 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_universal(tempOperation,environment,"\"Check\"");
-/* IO - VPL Terminal : { 53 41 58 46 }*/
-/* IO - VPL Root : { 74 41 79 46 }*/
+/* IO - VPL Terminal : { 57 112 62 117 }*/
+/* IO - VPL Root : { 78 112 83 117 }*/
 	tempTerminal = input_insert(0,tempOperation,environment);
 	tempRoot = output_insert(0,tempOperation,environment);
 /* End Operation */
@@ -507,11 +507,11 @@ Nat4 VPLU_Debug_20_OSError_universal_load(V_Method method,V_Environment environm
 /* IO - VPL Root : { 106 91 111 96 }*/
 /* End Operation */
 
-/* Begin Operation: { 62 82 78 146 } */
+/* Begin Operation: { 58 10 74 76 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_universal(tempOperation,environment,"\"Check\"");
-/* IO - VPL Terminal : { 57 112 62 117 }*/
-/* IO - VPL Root : { 78 112 83 117 }*/
+/* IO - VPL Terminal : { 53 41 58 46 }*/
+/* IO - VPL Root : { 74 41 79 46 }*/
 	tempTerminal = input_insert(0,tempOperation,environment);
 	tempRoot = output_insert(0,tempOperation,environment);
 /* End Operation */
@@ -532,92 +532,7 @@ Nat4 VPLU_Debug_20_OSError_universal_load(V_Method method,V_Environment environm
 	tempTerminal = input_insert(0,tempOperation,environment);
 /* End Operation */
 
-/* Begin Operation: { 227 121 244 185 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_local(tempOperation,environment,"report?");
-/* IO - VPL Terminal : { 221 151 226 156 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-
-	{
-	Int4 result = 0;
-	V_Case ptrA = NULL;
-	V_Terminal tempTerminal = NULL;
-	V_Root tempRoot = NULL;
-	V_Operation localOperation = tempOperation;
-
-/* Start Cases: { 60 60 }{ 200 300 }*/
-/* Begin Case */
-	ptrA = case_insert(0,(V_Method)localOperation,environment);
-	ptrA = case_open(ptrA,localOperation,environment);
-
-/* Start Operations: { 60 60 }{ 248 264 } */
-/* Begin Operation: { 36 36 44 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* IO - VPL Root : { 45 130 50 135 }*/
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 78 62 95 98 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_extmatch(tempOperation,environment,"noErr");
-/* IO - VPL Terminal : { 72 78 77 83 }*/
-	tempOperation = operation_action_to(tempOperation,environment,kTerminate,kSuccess);
-/* End Operation */
-
-/* Begin Operation: { 78 148 95 220 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_primitive(tempOperation,environment,1,0,"integer?");
-/* IO - VPL Terminal : { 72 182 77 187 }*/
-	tempOperation = operation_action_to(tempOperation,environment,kTerminate,kFailure);
-/* End Operation */
-
-/* Begin Operation: { 120 66 137 198 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_universal(tempOperation,environment,"Debug Error String");
-/* IO - VPL Terminal : { 114 130 119 135 }*/
-/* IO - VPL Root : { 138 108 143 113 }*/
-/* IO - VPL Root : { 138 152 143 157 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-	tempRoot = output_insert(0,tempOperation,environment);
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 162 81 179 191 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_universal(tempOperation,environment,"Debug OSError");
-/* IO - VPL Terminal : { 156 108 161 113 }*/
-/* IO - VPL Terminal : { 156 152 161 157 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-	tempTerminal = input_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 204 36 212 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* End Operation */
-
-/* Stop Operations */
-
-/* Begin Connect Operations */
-	result = connect_root_to_terminal(ptrA,1,0,1,1);
-	result = connect_root_to_terminal(ptrA,1,0,1,2);
-	result = connect_root_to_terminal(ptrA,1,0,1,3);
-	result = connect_root_to_terminal(ptrA,1,3,1,4);
-	result = connect_root_to_terminal(ptrA,2,3,2,4);
-/* End Connect Operations */
-
-/* Begin Connect Synchros */
-/* End Connect Synchros */
-
-/* End Case */
-
-/* Stop Cases */
-
-}
-/* End Operation */
-
-/* Begin Operation: { 266 21 274 213 } */
+/* Begin Operation: { 223 21 231 213 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_output_bar(tempOperation,environment);
 /* End Operation */
@@ -626,17 +541,15 @@ Nat4 VPLU_Debug_20_OSError_universal_load(V_Method method,V_Environment environm
 
 /* Begin Connect Operations */
 	result = connect_root_to_terminal(ptrA,2,0,1,1);
-	result = connect_root_to_terminal(ptrA,1,0,1,2);
-	result = connect_root_to_terminal(ptrA,2,0,1,4);
-	result = connect_root_to_terminal(ptrA,1,2,1,5);
+	result = connect_root_to_terminal(ptrA,2,0,1,2);
+	result = connect_root_to_terminal(ptrA,1,0,1,4);
+	result = connect_root_to_terminal(ptrA,1,4,1,5);
 	result = connect_root_to_terminal(ptrA,1,3,2,5);
-	result = connect_root_to_terminal(ptrA,1,4,3,5);
+	result = connect_root_to_terminal(ptrA,1,2,3,5);
 	result = connect_root_to_terminal(ptrA,1,5,1,6);
-	result = connect_root_to_terminal(ptrA,2,0,1,7);
 /* End Connect Operations */
 
 /* Begin Connect Synchros */
-/* Synchro [7 to 6] */
 /* End Connect Synchros */
 
 /* End Case */
@@ -2156,279 +2069,6 @@ Nat4 VPLU_Debug_20_Unimp_universal_load(V_Method method,V_Environment environmen
 }
 
 
-Nat4 VPLU_Debug_20_Error_20_String_universal_load(V_Method method,V_Environment environment);
-Nat4 VPLU_Debug_20_Error_20_String_universal_load(V_Method method,V_Environment environment)
-{
-	Int4 result = 0;
-	V_Case ptrA = NULL;
-	V_Operation tempOperation = NULL;
-	V_Terminal tempTerminal = NULL;
-	V_Root tempRoot = NULL;
-
-/* NULL TEXT VALUE */
-
-/* Begin Case */
-	ptrA = case_insert(0,method,environment);
-
-/* Start Operations: { 60 60 }{ 206 481 } */
-/* Begin Operation: { 36 134 44 326 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* IO - VPL Root : { 45 228 50 233 }*/
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 78 42 95 222 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_extprocedure(tempOperation,environment,1,1,"GetMacOSStatusErrorString");
-/* IO - VPL Terminal : { 72 130 77 135 }*/
-/* IO - VPL Root : { 96 130 101 135 }*/
-/* End Operation */
-
-/* Begin Operation: { 78 239 95 445 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_extprocedure(tempOperation,environment,1,1,"GetMacOSStatusCommentString");
-/* IO - VPL Terminal : { 72 340 77 345 }*/
-/* IO - VPL Root : { 96 340 101 345 }*/
-/* End Operation */
-
-/* Begin Operation: { 120 309 137 375 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_local(tempOperation,environment,"convert");
-/* IO - VPL Terminal : { 114 340 119 345 }*/
-/* IO - VPL Root : { 138 340 143 345 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-	tempRoot = output_insert(0,tempOperation,environment);
-
-	{
-	Int4 result = 0;
-	V_Case ptrA = NULL;
-	V_Terminal tempTerminal = NULL;
-	V_Root tempRoot = NULL;
-	V_Operation localOperation = tempOperation;
-
-/* Start Cases: { 60 60 }{ 200 300 }*/
-/* Begin Case */
-	ptrA = case_insert(0,(V_Method)localOperation,environment);
-	ptrA = case_open(ptrA,localOperation,environment);
-
-/* Start Operations: { 60 60 }{ 210 268 } */
-/* Begin Operation: { 36 36 44 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* IO - VPL Root : { 45 130 50 135 }*/
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 78 49 95 85 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_match(tempOperation,environment,"NULL");
-/* IO - VPL Terminal : { 72 65 77 70 }*/
-	tempOperation = operation_action_to(tempOperation,environment,kNextCase,kSuccess);
-/* End Operation */
-
-/* Begin Operation: { 120 69 137 195 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_primitive(tempOperation,environment,1,1,"pointer-to-string");
-/* IO - VPL Terminal : { 114 130 119 135 }*/
-/* IO - VPL Root : { 138 130 143 135 }*/
-/* End Operation */
-
-/* Begin Operation: { 162 36 170 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* IO - VPL Terminal : { 156 130 161 135 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Stop Operations */
-
-/* Begin Connect Operations */
-	result = connect_root_to_terminal(ptrA,1,0,1,1);
-	result = connect_root_to_terminal(ptrA,1,0,1,2);
-	result = connect_root_to_terminal(ptrA,1,2,1,3);
-/* End Connect Operations */
-
-/* Begin Connect Synchros */
-/* End Connect Synchros */
-
-/* End Case */
-
-/* Begin Case */
-	ptrA = case_insert(0,(V_Method)localOperation,environment);
-	ptrA = case_open(ptrA,localOperation,environment);
-
-/* Start Operations: { 60 60 }{ 164 264 } */
-/* Begin Operation: { 36 36 44 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* IO - VPL Root : { 45 130 50 135 }*/
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 78 120 95 144 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_constant(tempOperation,environment,"\"\"");
-/* IO - VPL Root : { 96 130 101 135 }*/
-/* End Operation */
-
-/* Begin Operation: { 120 36 128 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* IO - VPL Terminal : { 114 130 119 135 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Stop Operations */
-
-/* Begin Connect Operations */
-	result = connect_root_to_terminal(ptrA,1,1,1,2);
-/* End Connect Operations */
-
-/* Begin Connect Synchros */
-/* End Connect Synchros */
-
-/* End Case */
-
-/* Stop Cases */
-
-}
-/* End Operation */
-
-/* Begin Operation: { 120 99 137 165 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_local(tempOperation,environment,"convert");
-/* IO - VPL Terminal : { 114 130 119 135 }*/
-/* IO - VPL Root : { 138 130 143 135 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-	tempRoot = output_insert(0,tempOperation,environment);
-
-	{
-	Int4 result = 0;
-	V_Case ptrA = NULL;
-	V_Terminal tempTerminal = NULL;
-	V_Root tempRoot = NULL;
-	V_Operation localOperation = tempOperation;
-
-/* Start Cases: { 60 60 }{ 200 300 }*/
-/* Begin Case */
-	ptrA = case_insert(0,(V_Method)localOperation,environment);
-	ptrA = case_open(ptrA,localOperation,environment);
-
-/* Start Operations: { 60 60 }{ 210 268 } */
-/* Begin Operation: { 36 36 44 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* IO - VPL Root : { 45 130 50 135 }*/
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 78 49 95 85 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_match(tempOperation,environment,"NULL");
-/* IO - VPL Terminal : { 72 65 77 70 }*/
-	tempOperation = operation_action_to(tempOperation,environment,kNextCase,kSuccess);
-/* End Operation */
-
-/* Begin Operation: { 120 69 137 195 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_primitive(tempOperation,environment,1,1,"pointer-to-string");
-/* IO - VPL Terminal : { 114 130 119 135 }*/
-/* IO - VPL Root : { 138 130 143 135 }*/
-/* End Operation */
-
-/* Begin Operation: { 162 36 170 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* IO - VPL Terminal : { 156 130 161 135 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Stop Operations */
-
-/* Begin Connect Operations */
-	result = connect_root_to_terminal(ptrA,1,0,1,1);
-	result = connect_root_to_terminal(ptrA,1,0,1,2);
-	result = connect_root_to_terminal(ptrA,1,2,1,3);
-/* End Connect Operations */
-
-/* Begin Connect Synchros */
-/* End Connect Synchros */
-
-/* End Case */
-
-/* Begin Case */
-	ptrA = case_insert(0,(V_Method)localOperation,environment);
-	ptrA = case_open(ptrA,localOperation,environment);
-
-/* Start Operations: { 60 60 }{ 210 268 } */
-/* Begin Operation: { 36 36 44 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* IO - VPL Root : { 45 130 50 135 }*/
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 78 78 95 186 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_constant(tempOperation,environment,"\"Unmapped Error\"");
-/* IO - VPL Root : { 96 130 101 135 }*/
-/* End Operation */
-
-/* Begin Operation: { 120 36 128 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* IO - VPL Terminal : { 114 130 119 135 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Stop Operations */
-
-/* Begin Connect Operations */
-	result = connect_root_to_terminal(ptrA,1,1,1,2);
-/* End Connect Operations */
-
-/* Begin Connect Synchros */
-/* End Connect Synchros */
-
-/* End Case */
-
-/* Stop Cases */
-
-}
-/* End Operation */
-
-/* Begin Operation: { 162 115 170 356 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* IO - VPL Terminal : { 156 130 161 135 }*/
-/* IO - VPL Terminal : { 156 340 161 345 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-	tempTerminal = input_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Stop Operations */
-
-/* Begin Connect Operations */
-	result = connect_root_to_terminal(ptrA,1,0,1,1);
-	result = connect_root_to_terminal(ptrA,1,0,1,2);
-	result = connect_root_to_terminal(ptrA,1,2,1,3);
-	result = connect_root_to_terminal(ptrA,1,1,1,4);
-	result = connect_root_to_terminal(ptrA,1,4,1,5);
-	result = connect_root_to_terminal(ptrA,1,3,2,5);
-/* End Connect Operations */
-
-/* Begin Connect Synchros */
-/* End Connect Synchros */
-
-/* End Case */
-
-
-
-	return kNOERROR;
-}
-
-
 Nat4 VPLU_Run_20_Test_20_Tool_universal_load(V_Method method,V_Environment environment);
 Nat4 VPLU_Run_20_Test_20_Tool_universal_load(V_Method method,V_Environment environment)
 {
@@ -2637,198 +2277,6 @@ Nat4 VPLU_Run_20_Test_20_Tool_universal_load(V_Method method,V_Environment envir
 }
 
 
-Nat4 VPLU_Show_20_Error_20_String_universal_load(V_Method method,V_Environment environment);
-Nat4 VPLU_Show_20_Error_20_String_universal_load(V_Method method,V_Environment environment)
-{
-	Int4 result = 0;
-	V_Case ptrA = NULL;
-	V_Operation tempOperation = NULL;
-	V_Terminal tempTerminal = NULL;
-	V_Root tempRoot = NULL;
-
-	method_type_to(method,environment,"Tool");
-
-/* Begin Case */
-	ptrA = case_insert(0,method,environment);
-
-/* Start Operations: { 60 60 }{ 290 281 } */
-/* Begin Operation: { 36 36 44 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 78 44 95 136 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_local(tempOperation,environment,"Get Err Num");
-/* IO - VPL Root : { 96 88 101 93 }*/
-	tempRoot = output_insert(0,tempOperation,environment);
-	tempOperation = operation_action_to(tempOperation,environment,kNextCase,kFailure);
-
-	{
-	Int4 result = 0;
-	V_Case ptrA = NULL;
-	V_Terminal tempTerminal = NULL;
-	V_Root tempRoot = NULL;
-	V_Operation localOperation = tempOperation;
-
-/* Start Cases: { 60 60 }{ 200 300 }*/
-/* Begin Case */
-	ptrA = case_insert(0,(V_Method)localOperation,environment);
-	ptrA = case_open(ptrA,localOperation,environment);
-
-/* Start Operations: { 80 80 }{ 290 264 } */
-/* Begin Operation: { 36 36 44 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 120 126 137 154 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_constant(tempOperation,environment,"-50");
-/* IO - VPL Root : { 138 138 143 143 }*/
-/* End Operation */
-
-/* Begin Operation: { 78 48 95 202 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_constant(tempOperation,environment,"Enter an OS Error number:");
-/* IO - VPL Root : { 96 123 101 128 }*/
-/* End Operation */
-
-/* Begin Operation: { 162 110 179 156 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_primitive(tempOperation,environment,2,1,"ask");
-/* IO - VPL Terminal : { 156 123 161 128 }*/
-/* IO - VPL Terminal : { 156 138 161 143 }*/
-/* IO - VPL Root : { 180 131 185 136 }*/
-/* End Operation */
-
-/* Begin Operation: { 204 50 221 122 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_primitive(tempOperation,environment,1,0,"integer?");
-/* IO - VPL Terminal : { 198 84 203 89 }*/
-	tempOperation = operation_action_to(tempOperation,environment,kFail,kFailure);
-/* End Operation */
-
-/* Begin Operation: { 246 36 254 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* IO - VPL Terminal : { 240 130 245 135 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Stop Operations */
-
-/* Begin Connect Operations */
-	result = connect_root_to_terminal(ptrA,1,2,1,3);
-	result = connect_root_to_terminal(ptrA,1,1,2,3);
-	result = connect_root_to_terminal(ptrA,1,3,1,4);
-	result = connect_root_to_terminal(ptrA,1,3,1,5);
-/* End Connect Operations */
-
-/* Begin Connect Synchros */
-/* End Connect Synchros */
-
-/* End Case */
-
-/* Stop Cases */
-
-}
-/* End Operation */
-
-/* Begin Operation: { 120 113 137 245 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_universal(tempOperation,environment,"Debug Error String");
-/* IO - VPL Terminal : { 114 177 119 182 }*/
-/* IO - VPL Root : { 138 155 143 160 }*/
-/* IO - VPL Root : { 138 199 143 204 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-	tempRoot = output_insert(0,tempOperation,environment);
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 162 53 179 109 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_constant(tempOperation,environment,"\"Error #\"");
-/* IO - VPL Root : { 180 79 185 84 }*/
-/* End Operation */
-
-/* Begin Operation: { 162 127 179 153 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_constant(tempOperation,environment,"\":  \"");
-/* IO - VPL Root : { 180 138 185 143 }*/
-/* End Operation */
-
-/* Begin Operation: { 162 171 192 195 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_constant(tempOperation,environment,"\"\r\"");
-/* IO - VPL Root : { 193 181 198 186 }*/
-/* End Operation */
-
-/* Begin Operation: { 204 68 221 209 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_primitive(tempOperation,environment,7,0,"show");
-/* IO - VPL Terminal : { 198 79 203 84 }*/
-/* IO - VPL Terminal : { 198 88 203 93 }*/
-/* IO - VPL Terminal : { 198 138 203 143 }*/
-/* IO - VPL Terminal : { 198 155 203 160 }*/
-/* IO - VPL Terminal : { 198 171 203 176 }*/
-/* IO - VPL Terminal : { 198 187 203 192 }*/
-/* IO - VPL Terminal : { 198 199 203 204 }*/
-/* End Operation */
-
-/* Begin Operation: { 246 36 254 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* End Operation */
-
-/* Stop Operations */
-
-/* Begin Connect Operations */
-	result = connect_root_to_terminal(ptrA,1,1,1,2);
-	result = connect_root_to_terminal(ptrA,1,3,1,6);
-	result = connect_root_to_terminal(ptrA,1,1,2,6);
-	result = connect_root_to_terminal(ptrA,1,4,3,6);
-	result = connect_root_to_terminal(ptrA,1,2,4,6);
-	result = connect_root_to_terminal(ptrA,1,5,5,6);
-	result = connect_root_to_terminal(ptrA,1,5,6,6);
-	result = connect_root_to_terminal(ptrA,2,2,7,6);
-/* End Connect Operations */
-
-/* Begin Connect Synchros */
-/* End Connect Synchros */
-
-/* End Case */
-
-/* Begin Case */
-	ptrA = case_insert(0,method,environment);
-
-/* Start Operations: { 60 60 }{ 122 264 } */
-/* Begin Operation: { 36 36 44 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 78 36 86 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* End Operation */
-
-/* Stop Operations */
-
-/* Begin Connect Operations */
-/* End Connect Operations */
-
-/* Begin Connect Synchros */
-/* End Connect Synchros */
-
-/* End Case */
-
-
-
-	return kNOERROR;
-}
-
-
 
 
 
@@ -2887,17 +2335,9 @@ Nat4	loadUniversals_Debug(V_Environment environment)
 	if(result == NULL) return kERROR;
 	VPLU_Debug_20_Unimp_universal_load(result,environment);
 
-	result = method_new("Debug Error String",environment);
-	if(result == NULL) return kERROR;
-	VPLU_Debug_20_Error_20_String_universal_load(result,environment);
-
 	result = method_new("Run Test Tool",environment);
 	if(result == NULL) return kERROR;
 	VPLU_Run_20_Test_20_Tool_universal_load(result,environment);
-
-	result = method_new("Show Error String",environment);
-	if(result == NULL) return kERROR;
-	VPLU_Show_20_Error_20_String_universal_load(result,environment);
 
 	return kNOERROR;
 

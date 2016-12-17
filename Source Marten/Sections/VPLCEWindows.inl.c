@@ -1962,30 +1962,6 @@ FOOTER(5)
 enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
 enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
 {
-HEADER(5)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Event_20_Class,1,1,TERMINAL(1),ROOT(2));
-
-result = vpx_match(PARAMETERS,"\'gest\'",TERMINAL(2));
-NEXTCASEONFAILURE
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Event_20_Kind,1,1,TERMINAL(1),ROOT(3));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Gesture_20_Event,3,1,TERMINAL(0),TERMINAL(3),TERMINAL(1),ROOT(4));
-NEXTCASEONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(4))
-FOOTER(5)
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
-{
 HEADER(3)
 INPUT(0,0)
 INPUT(1,1)
@@ -2005,8 +1981,7 @@ enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event(V_Environment env
 enum opTrigger outcome = kSuccess;
 if(vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
 if(vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
-if(vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
-vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_4(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0);
+vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0);
 return outcome;
 }
 
@@ -2082,27 +2057,6 @@ INPUT(1,1)
 INPUT(2,2)
 result = kSuccess;
 
-result = vpx_extmatch(PARAMETERS,kEventMouseScroll,TERMINAL(1));
-NEXTCASEONFAILURE
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Mouse_20_Scrolled,2,1,TERMINAL(0),TERMINAL(2),ROOT(3));
-FAILONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(3))
-FOOTER(4)
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_5(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_5(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
-{
-HEADER(4)
-INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
-result = kSuccess;
-
 result = vpx_call_data_method(PARAMETERS,kVPXMethod_Return_20_Event_20_Not_20_Handled,1,1,TERMINAL(2),ROOT(3));
 
 result = kSuccess;
@@ -2117,8 +2071,7 @@ enum opTrigger outcome = kSuccess;
 if(vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
 if(vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
 if(vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
-if(vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_4(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
-vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_5(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0);
+vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event_case_4(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0);
 return outcome;
 }
 
@@ -2138,21 +2091,6 @@ FOOTERSINGLECASE(3)
 }
 
 enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Wheel_20_Moved(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
-{
-HEADER(3)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Return_20_Event_20_Not_20_Handled,1,1,TERMINAL(1),ROOT(2));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(2))
-FOOTERSINGLECASE(3)
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Scrolled(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
 {
 HEADER(3)
 INPUT(0,0)
@@ -3901,225 +3839,6 @@ result = kSuccess;
 FOOTERSINGLECASE(2)
 }
 
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
-{
-HEADER(4)
-INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
-result = kSuccess;
-
-result = vpx_match(PARAMETERS,"5",TERMINAL(1));
-NEXTCASEONFAILURE
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Swipe_20_Event,2,1,TERMINAL(0),TERMINAL(2),ROOT(3));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(3))
-FOOTER(4)
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
-{
-HEADER(4)
-INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Return_20_Event_20_Not_20_Handled,1,1,TERMINAL(2),ROOT(3));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(3))
-FOOTER(4)
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
-{
-enum opTrigger outcome = kSuccess;
-if(vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
-vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0);
-return outcome;
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0,V_Object *root1);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0,V_Object *root1)
-{
-HEADER(8)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_constant(PARAMETERS,"\'swip\'",ROOT(1));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_EP_20_HIPoint,2,2,TERMINAL(0),TERMINAL(1),ROOT(2),ROOT(3));
-
-result = vpx_match(PARAMETERS,"0",TERMINAL(2));
-FAILONFAILURE
-
-result = vpx_extget(PARAMETERS,"y",1,2,TERMINAL(3),ROOT(4),ROOT(5));
-
-result = vpx_extget(PARAMETERS,"x",1,2,TERMINAL(3),ROOT(6),ROOT(7));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(7))
-OUTPUT(1,TERMINAL(5))
-FOOTERSINGLECASE(8)
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0)
-{
-HEADER(5)
-INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
-INPUT(3,3)
-result = kSuccess;
-
-result = vpx_match(PARAMETERS,"1.0",TERMINAL(2));
-NEXTCASEONFAILURE
-
-result = vpx_match(PARAMETERS,"0.0",TERMINAL(3));
-NEXTCASEONFAILURE
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Swipe_20_Left,2,1,TERMINAL(0),TERMINAL(1),ROOT(4));
-FAILONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(4))
-FOOTER(5)
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0)
-{
-HEADER(5)
-INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
-INPUT(3,3)
-result = kSuccess;
-
-result = vpx_match(PARAMETERS,"-1.0",TERMINAL(2));
-NEXTCASEONFAILURE
-
-result = vpx_match(PARAMETERS,"0.0",TERMINAL(3));
-NEXTCASEONFAILURE
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_CE_20_Swipe_20_Right,2,1,TERMINAL(0),TERMINAL(1),ROOT(4));
-FAILONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(4))
-FOOTER(5)
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0)
-{
-HEADERWITHNONE(4)
-INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
-INPUT(3,3)
-result = kSuccess;
-
-result = kSuccess;
-FAILONSUCCESS
-
-OUTPUT(0,NONE)
-FOOTERWITHNONE(4)
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0)
-{
-enum opTrigger outcome = kSuccess;
-if(vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,root0))
-if(vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,root0))
-vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,root0);
-return outcome;
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
-{
-HEADER(5)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_2(PARAMETERS,TERMINAL(1),ROOT(2),ROOT(3));
-NEXTCASEONFAILURE
-
-result = vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1_local_3(PARAMETERS,TERMINAL(0),TERMINAL(1),TERMINAL(2),TERMINAL(3),ROOT(4));
-NEXTCASEONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(4))
-FOOTER(5)
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
-{
-HEADER(3)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Return_20_Event_20_Not_20_Handled,1,1,TERMINAL(1),ROOT(2));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(2))
-FOOTER(3)
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
-{
-enum opTrigger outcome = kSuccess;
-if(vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
-vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0);
-return outcome;
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Left(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
-{
-HEADERWITHNONE(2)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = kSuccess;
-FAILONSUCCESS
-
-OUTPUT(0,NONE)
-FOOTERSINGLECASEWITHNONE(2)
-}
-
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Right(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
-{
-HEADERWITHNONE(2)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = kSuccess;
-FAILONSUCCESS
-
-OUTPUT(0,NONE)
-FOOTERSINGLECASEWITHNONE(2)
-}
-
 /* Stop Universals */
 
 
@@ -4884,10 +4603,6 @@ Nat4	loadUniversals_VPLCEWindows(V_Environment environment)
 	if(result == NULL) return kERROR;
 	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Wheel_20_Moved,NULL);
 
-	result = method_new("VPLCEWindow/CE Mouse Scrolled",environment);
-	if(result == NULL) return kERROR;
-	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Scrolled,NULL);
-
 	result = method_new("VPLCEWindow/CE Keyboard Event",environment);
 	if(result == NULL) return kERROR;
 	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event,NULL);
@@ -4991,22 +4706,6 @@ Nat4	loadUniversals_VPLCEWindows(V_Environment environment)
 	result = method_new("VPLCEWindow/Open Printing Handler",environment);
 	if(result == NULL) return kERROR;
 	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_Open_20_Printing_20_Handler,NULL);
-
-	result = method_new("VPLCEWindow/CE Gesture Event",environment);
-	if(result == NULL) return kERROR;
-	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event,NULL);
-
-	result = method_new("VPLCEWindow/CE Swipe Event",environment);
-	if(result == NULL) return kERROR;
-	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event,NULL);
-
-	result = method_new("VPLCEWindow/CE Swipe Left",environment);
-	if(result == NULL) return kERROR;
-	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Left,NULL);
-
-	result = method_new("VPLCEWindow/CE Swipe Right",environment);
-	if(result == NULL) return kERROR;
-	vpx_method_initialize(environment,result,vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Right,NULL);
 
 	result = method_new("VPLEvent/Get Active Flag",environment);
 	if(result == NULL) return kERROR;

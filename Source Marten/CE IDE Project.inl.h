@@ -19,7 +19,6 @@ extern Int4 VPLP_create_2D_class( V_Environment environment , enum opTrigger *tr
 extern Int4 VPLP_create_2D_environment( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_create_2D_method( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_create_2D_persistent( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_create_2D_remote_2D_environment( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_dispose_2D_attribute( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_dispose_2D_case( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_dispose_2D_environment( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
@@ -69,7 +68,6 @@ extern Int4 VPLP_order_2D_cases( V_Environment environment , enum opTrigger *tri
 extern Int4 VPLP_order_2D_inputs( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_order_2D_operations( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_order_2D_outputs( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_pipe_2D_request( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_post_2D_load( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_previous_2D_stack( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_remove_2D_class( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
@@ -100,115 +98,6 @@ extern Int4 VPLP_unarchive_2D_value( V_Environment environment , enum opTrigger 
 extern Int4 VPLP_unmark_2D_heap( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_value_2D_to_2D_value( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_marten_2D_info( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_Point_2D_to_2D_list( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_RGB_2D_to_2D_list( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_Rect_2D_to_2D_list( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_answer( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_answer_2D_v( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_ask( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_ask_2D_text( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_ask_2D_value( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_close_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_create_2D_object_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_create_2D_text_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_delete_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_folder_2D_fsspecs( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_get_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_get_2D_folder( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_list_2D_to_2D_Point( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_list_2D_to_2D_RGB( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_list_2D_to_2D_Rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_open_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_put_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_read_2D_buffer( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_read_2D_object( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_read_2D_text( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_select( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_show( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_write_2D_object( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_write_2D_text( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP__22_in_2D_relative_22_( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_RGB_2D_back_2D_color( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_RGB_2D_fore_2D_color( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_clip_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_close_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_cnstring_2D_to_2D_exstring( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_cnstringdec_2D_to_2D_exstring( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_copy_2D_object( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_copy_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_delete_2D_object( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_diff_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_dispose_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_draw_2D_string( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_erase_2D_arc( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_erase_2D_oval( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_erase_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_erase_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_erase_2D_round_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_exstring_2D_to_2D_cnstring( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_exstring_2D_to_2D_cnstringdec( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_exstring_2D_to_2D_instring( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_extract_2D_file_2D_specification( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_flush_2D_front_2D_window( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_frame_2D_arc( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_frame_2D_oval( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_frame_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_frame_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_frame_2D_round_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_get_2D_alist_2D_pref( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_get_2D_font_2D_number( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_get_2D_mouse( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_get_2D_pen_2D_state( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_get_2D_scrap( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_global_2D_to_2D_local( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_inset_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_instring_2D_to_2D_exstring( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_ints_2D_to_2D_Point( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_ints_2D_to_2D_Rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_ints_2D_to_2D_point( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_ints_2D_to_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_inval_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_invert_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_line_2D_to( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_make_2D_file_2D_specification( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_make_2D_icon_2D_content_2D_info( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_move_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_move_2D_to( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_new_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_offset_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_open_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_paint_2D_arc( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_paint_2D_oval( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_paint_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_paint_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_paint_2D_round_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_pascal_2D_to_2D_string( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_pen_2D_drag( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_pen_2D_normal( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_pen_2D_stripe( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_pt_2D_in_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_pt_2D_to_2D_angle( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_put_2D_scrap( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_scan_2D_folder( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_scroll_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_sect_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_sect_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_set_2D_alist_2D_pref( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_set_2D_origin( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_set_2D_pen_2D_state( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_still_2D_down( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_string_2D_to_2D_pascal( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_string_2D_width( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_te_2D_get_2D_text( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_test_2D_key( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_text_2D_face( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_text_2D_font( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_text_2D_size( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_thread_2D_command( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_union_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_valid_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_vpx_2D_folder_2D_fsspecs( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_vpx_2D_get_2D_folder( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP__213D_( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP__22_bytes_22_( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP__22_in_22_( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
@@ -324,7 +213,6 @@ extern Int4 VPLP_lte( V_Environment environment , enum opTrigger *trigger , Nat4
 extern Int4 VPLP_make_2D_external( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_make_2D_list( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_max( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_method_2D_name( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_methods( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_middle( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_min( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
@@ -339,7 +227,6 @@ extern Int4 VPLP_pack( V_Environment environment , enum opTrigger *trigger , Nat
 extern Int4 VPLP_parent( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_persistents( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_pi( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-extern Int4 VPLP_platform( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_plus( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_plus_2D_one( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP_pointer_2D_to_2D_integer( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
@@ -401,6 +288,115 @@ extern Int4 VPLP__C3B7_( V_Environment environment , enum opTrigger *trigger , N
 extern Int4 VPLP__C3B7C3B7_( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP__CF80_( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 extern Int4 VPLP__E289A0_( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP__22_in_2D_relative_22_( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_RGB_2D_back_2D_color( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_RGB_2D_fore_2D_color( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_clip_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_close_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_cnstring_2D_to_2D_exstring( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_cnstringdec_2D_to_2D_exstring( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_copy_2D_object( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_copy_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_delete_2D_object( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_diff_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_dispose_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_draw_2D_string( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_erase_2D_arc( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_erase_2D_oval( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_erase_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_erase_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_erase_2D_round_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_exstring_2D_to_2D_cnstring( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_exstring_2D_to_2D_cnstringdec( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_exstring_2D_to_2D_instring( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_extract_2D_file_2D_specification( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_flush_2D_front_2D_window( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_frame_2D_arc( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_frame_2D_oval( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_frame_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_frame_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_frame_2D_round_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_get_2D_alist_2D_pref( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_get_2D_font_2D_number( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_get_2D_mouse( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_get_2D_pen_2D_state( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_get_2D_scrap( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_global_2D_to_2D_local( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_inset_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_instring_2D_to_2D_exstring( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_ints_2D_to_2D_Point( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_ints_2D_to_2D_Rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_ints_2D_to_2D_point( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_ints_2D_to_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_inval_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_invert_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_line_2D_to( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_make_2D_file_2D_specification( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_make_2D_icon_2D_content_2D_info( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_move_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_move_2D_to( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_new_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_offset_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_open_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_paint_2D_arc( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_paint_2D_oval( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_paint_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_paint_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_paint_2D_round_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_pascal_2D_to_2D_string( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_pen_2D_drag( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_pen_2D_normal( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_pen_2D_stripe( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_pt_2D_in_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_pt_2D_to_2D_angle( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_put_2D_scrap( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_scan_2D_folder( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_scroll_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_sect_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_sect_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_set_2D_alist_2D_pref( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_set_2D_origin( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_set_2D_pen_2D_state( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_still_2D_down( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_string_2D_to_2D_pascal( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_string_2D_width( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_te_2D_get_2D_text( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_test_2D_key( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_text_2D_face( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_text_2D_font( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_text_2D_size( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_thread_2D_command( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_union_2D_rgn( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_valid_2D_rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_vpx_2D_folder_2D_fsspecs( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_vpx_2D_get_2D_folder( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_Point_2D_to_2D_list( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_RGB_2D_to_2D_list( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_Rect_2D_to_2D_list( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_answer( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_answer_2D_v( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_ask( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_ask_2D_text( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_ask_2D_value( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_close_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_create_2D_object_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_create_2D_text_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_delete_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_folder_2D_fsspecs( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_get_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_get_2D_folder( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_list_2D_to_2D_Point( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_list_2D_to_2D_RGB( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_list_2D_to_2D_Rect( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_open_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_put_2D_file( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_read_2D_buffer( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_read_2D_object( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_read_2D_text( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_select( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_show( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_write_2D_object( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
+extern Int4 VPLP_write_2D_text( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 enum opTrigger vpx_method_MAIN(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_Get_20_Application(V_Environment, enum boolType *, Nat4,V_Object *);
 enum opTrigger vpx_method_Quit_20_Application(V_Environment, enum boolType *, Nat4);
@@ -597,9 +593,7 @@ enum opTrigger vpx_method_Debug_20_Verbosity_20_Level_3F_(V_Environment, enum bo
 enum opTrigger vpx_method_Debug_20_Result(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object);
 enum opTrigger vpx_method_Debug_20_Value(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
 enum opTrigger vpx_method_Debug_20_Unimp(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Debug_20_Error_20_String(V_Environment, enum boolType *, Nat4,V_Object,V_Object *,V_Object *);
 enum opTrigger vpx_method_Run_20_Test_20_Tool(V_Environment, enum boolType *, Nat4);
-enum opTrigger vpx_method_Show_20_Error_20_String(V_Environment, enum boolType *, Nat4);
 enum opTrigger vpx_method_Set_20_Cursor(V_Environment, enum boolType *, Nat4,V_Object);
 enum opTrigger vpx_method_Set_20_Arrow_20_Cursor(V_Environment, enum boolType *, Nat4);
 enum opTrigger vpx_method_Get_20_Desktop(V_Environment, enum boolType *, Nat4,V_Object *);
@@ -1343,7 +1337,6 @@ enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_FSSpec(V_Environm
 enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_Path(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_Path_20_CFString(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_Path_20_CFURL(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Full_20_POSIX_20_Path(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Name_20_As_20_String(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Get_20_Name_20_As_20_Unicode(V_Environment, enum boolType *, Nat4,V_Object,V_Object *,V_Object *);
@@ -1362,7 +1355,6 @@ enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_CFURL(V_E
 enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_FSRef(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_FSSpec(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Path_20_String(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Full_20_POSIX_20_Path(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
 enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_New_20_From_20_Unicode(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object,V_Object);
 enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Open(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_MacOS_20_File_20_Reference_2F_Open_20_Update(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
@@ -1956,13 +1948,9 @@ enum opTrigger vpx_method_MacOS_20_Icon_20_Registrar_2F_Get_20_Creator(V_Environ
 enum opTrigger vpx_method_MacOS_20_Icon_20_Registrar_2F_Get_20_Type(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_MacOS_20_Icon_20_Registrar_2F_Get_20_Domain(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_MacOS_20_Icon_20_icns_20_File_20_Registrar_2F_Register_20_Icon(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_MacOS_20_Icon_20_Machine_20_Icon_20_Registrar_2F_Register_20_Icon(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_MacOS_20_Icon_20_Machine_20_Icon_20_Registrar_2F_Find_20_Model_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_MacOS_20_Icon_20_Machine_20_Icon_20_Registrar_2F_Find_20_Model_20_Icon_20_File(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_CFSTR(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_To_20_CFStringRef(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_From_20_CFStringRef(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Transform_20_CFStringRef(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_Create_20_CFStringRef(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_From_20_CFStringRef_20_Encoding(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_To_20_CFString(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
@@ -1995,7 +1983,6 @@ enum opTrigger vpx_method_TEST_20_CFPref_20_Read(V_Environment, enum boolType *,
 enum opTrigger vpx_method_TEST_20_CFPref_20_Sync(V_Environment, enum boolType *, Nat4);
 enum opTrigger vpx_method_To_20_CFType(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_From_20_CFType(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Transform_20_CFType(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_Get_20_CFNullRef(V_Environment, enum boolType *, Nat4,V_Object *);
 enum opTrigger vpx_method_To_20_CFNumberRef(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_From_20_CFNumberRef(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
@@ -2074,7 +2061,6 @@ enum opTrigger vpx_method_CF_20_Data_2F_Get_20_Object(V_Environment, enum boolTy
 enum opTrigger vpx_method_CF_20_Data_2F_Get_20_Text(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_CF_20_Data_2F_Create_20_With_20_String(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
 enum opTrigger vpx_method_CF_20_Data_2F_Get_20_Integer(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *,V_Object *);
-enum opTrigger vpx_method_CF_20_Data_2F_Get_20_Object_20_At(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_CF_20_Date_2F_New(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_CF_20_Date_2F_Get_20_Class_20_Type_20_ID(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_CF_20_Date_2F_Get_20_Absolute_20_Time(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
@@ -2182,7 +2168,6 @@ enum opTrigger vpx_method_CF_20_URL_2F_Create_20_Data_20_And_20_Properties_20_Fr
 enum opTrigger vpx_method_CF_20_URL_2F_Destroy_20_Resource(V_Environment, enum boolType *, Nat4,V_Object,V_Object *,V_Object *);
 enum opTrigger vpx_method_CF_20_URL_2F_Create_20_Property_20_List_20_From_20_XML_20_File(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_CF_20_URL_2F_Write_20_XML_20_File_20_From_20_Property_20_List(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *,V_Object *);
-enum opTrigger vpx_method_CF_20_URL_2F_Get_20_Full_20_POSIX_20_Path(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_CF_20_UUID_2F_New(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_CF_20_UUID_2F_Get_20_Class_20_Type_20_ID(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_CF_20_UUID_2F_Create(V_Environment, enum boolType *, Nat4,V_Object);
@@ -2201,372 +2186,6 @@ enum opTrigger vpx_method_CF_20_Absolute_20_Time_2F_Set_20_Value(V_Environment, 
 enum opTrigger vpx_method_CF_20_Absolute_20_Time_2F_New(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_CF_20_Absolute_20_Time_2F_Get_20_Gregorian_20_Date(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_CF_20_Absolute_20_Time_2F_Create_20_With_20_Now(V_Environment, enum boolType *, Nat4,V_Object *);
-enum opTrigger vpx_method_TEST_20_CFReadStream(V_Environment, enum boolType *, Nat4);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Stream_20_Open(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Stream_20_Close(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Stream_20_Schedule_20_With_20_Run_20_Loop(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Stream_20_Unschedule_20_From_20_Run_20_Loop(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Stream_20_Set_20_Client(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Stream_20_Create_20_For_20_HTTP_20_Request(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Stream_20_Create_20_With_20_URL(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Stream_20_Set_20_Property(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Stream_20_Copy_20_Property(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Stream_20_Get_20_Status(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Stream_20_Read(V_Environment, enum boolType *, Nat4,V_Object,V_Object *,V_Object *);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Stream_20_Read_20_Text(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Stream_20_Get_20_Error(V_Environment, enum boolType *, Nat4,V_Object,V_Object *,V_Object *);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_CFRead_20_Standard_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_CFRead_20_Debug_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Read_20_Bytes(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Install_20_Client_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Install_20_Client_20_Callback_20_With_20_Owner(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Remove_20_Client_20_Callback(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Terminate_20_Download(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Standard_20_Timeout_20_Callback(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Timeout_20_Download(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Initiate_20_Download(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Initiate_20_Download_20_With_20_Owner(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Get_20_Completion_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Set_20_Completion_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Do_20_Completion_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_New(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Read_20_Stream_2F_Get_20_Class_20_Type_20_ID(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Open(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Close(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Schedule_20_With_20_Run_20_Loop(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Unschedule_20_From_20_Run_20_Loop(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Set_20_Client(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Create_20_With_20_Allocated_20_Buffers(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Create_20_With_20_Buffer(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Create_20_With_20_File(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Set_20_Property(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Copy_20_Property(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Get_20_Status(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Write(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Write_20_Text(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Get_20_Error(V_Environment, enum boolType *, Nat4,V_Object,V_Object *,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Stream_20_Can_20_Accept_20_Bytes_3F_(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_CFWrite_20_Standard_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_CFWrite_20_Debug_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Install_20_Client_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Install_20_Client_20_Callback_20_With_20_Owner(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Remove_20_Client_20_Callback(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Get_20_Completion_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Set_20_Completion_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Do_20_Completion_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_New(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Get_20_Class_20_Type_20_ID(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Read_20_Bytes(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Initiate_20_Download(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Initiate_20_Download_20_With_20_Owner(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Terminate_20_Download(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Standard_20_Timeout_20_Callback(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_Write_20_Stream_2F_Timeout_20_Download(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Get_20_CFNetwork_20_Service(V_Environment, enum boolType *, Nat4,V_Object *);
-enum opTrigger vpx_method_CFNetService_20_Set_20_TXT_20_Keys(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_CFNetService_20_Standard_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Set_20_Client(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Unschedule_20_From_20_Run_20_Loop(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Schedule_20_With_20_Run_20_Loop(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Cancel(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Create(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Register(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Resolve(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Get_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Get_20_Domain(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Get_20_Type(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Get_20_Port(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Get_20_Addressing(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Set_20_TXT(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Get_20_TXT(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Set_20_TXT_20_Keys(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Get_20_TXT_20_Keys(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Service_20_Set_20_TXT_20_Data(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Find_20_Service(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Install_20_Client_20_Callback_20_With_20_Owner(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Install_20_Client_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Remove_20_Client_20_Callback(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Get_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Set_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Get_20_Service_20_Type(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Set_20_Service_20_Type(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Get_20_Domain(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Set_20_Domain(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Get_20_Port(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Set_20_Port(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_New(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Get_20_Class_20_Type_20_ID(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_2F_Start_20_Resolving(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Start_20_Resolving_20_Sync(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Start_20_Publishing(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Stop_20_Publishing(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Set_20_Values_20_From_20_Service(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_2F_Make_20_Publish_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_CFNetServiceBrowser_20_Standard_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_Do_20_Notification_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_ServiceBrowser_20_Unschedule_20_From_20_Run_20_Loop(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_ServiceBrowser_20_Schedule_20_With_20_Run_20_Loop(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_ServiceBrowser_20_Create(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_ServiceBrowser_20_Invalidate(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_ServiceBrowser_20_Search_20_For_20_Domains(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_ServiceBrowser_20_Search_20_For_20_Services(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_ServiceBrowser_20_Stop_20_Search(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_New(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_Get_20_Class_20_Type_20_ID(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_Stop_20_Browsing(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_Start_20_Browsing(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_Start_20_Browsing_20_For_20_Services(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_Start_20_Browsing_20_For_20_Domains(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_Get_20_Domain(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_Set_20_Domain(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_Get_20_Service_20_Type(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_Set_20_Service_20_Type(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_CF_20_Last_20_Release(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_Add_20_To_20_Service(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_NetService_20_Browser_2F_Remove_20_From_20_Service(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Open(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Close(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Open_20_Browsers(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Close_20_Browsers(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Add_20_Browser(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Remove_20_Browser(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Open_20_Services(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Close_20_Services(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Find_20_Net_20_Service(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Open_20_Connectors(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Close_20_Connectors(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Get_20_Connectors(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Set_20_Connectors(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Add_20_Connector(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Remove_20_Connector(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Start_20_Server(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CFNetServices_20_Service_2F_Stop_20_Server(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Socket_2F_New(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Get_20_Class_20_Type_20_ID(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Get_20_Callout(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Set_20_Callout(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Socket_2F_CFSocket_20_Standard_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Create(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Create_20_Connected_20_To_20_Socket_20_Signature(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Create_20_With_20_Native(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Create_20_With_20_Socket_20_SIgnature(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Get_20_Native(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Is_20_Valid(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Invalidate(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Create_20_Run_20_Loop_20_Source(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Copy_20_Address(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Copy_20_Peer_20_Address(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Disable_20_Callbacks(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Enable_20_Callbacks(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Get_20_Context(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Get_20_Flags(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Set_20_Flags(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Set_20_Address(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Connect_20_To_20_Address(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Send_20_CFData(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Set_20_Option(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Socket_2F_Socket_20_Schedule_20_With_20_Run_20_Loop(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Socket_2F_Get_20_Callout_20_Owner(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Set_20_Callout_20_Owner(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_CF_20_Socket_2F_Open_20_Callout(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_CF_20_Socket_2F_Dispose(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_CFSocket_20_Standard_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_CFNetService_20_Standard_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_CFNetServiceBrowser_20_Standard_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Get_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Set_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Get_20_Service_20_Type(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Set_20_Service_20_Type(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Get_20_Port(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Set_20_Port(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Get_20_Service(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Set_20_Service(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Get_20_Sockets(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Set_20_Sockets(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Server_20_Create(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Server_20_Connect(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Server_20_Start(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Server_20_Stop(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Get_20_Context_20_Type(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Set_20_Context_20_Type(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Make_20_CFNetService(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Make_20_New_20_Context(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Make_20_Context_20_With_20_Socket(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Make_20_Context_20_With_20_Host(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Make_20_Context_20_With_20_CFNetService(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Get_20_Connections(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Set_20_Connections(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Add_20_Connection(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Remove_20_Connection(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Begin_20_Connection(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_End_20_Connection(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Get_20_Bonjour_20_Service_20_Type(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Get_20_Packet_20_Type(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Set_20_Packet_20_Type(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Get_20_Domain(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Set_20_Domain(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Client_20_Start_20_With_20_Bonjour_20_Name(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Client_20_Start_20_With_20_Host(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Client_20_Stop(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Connector_2F_Client_20_Start_20_Service_20_Browser(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Get_20_In_20_Stream(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Context_2F_Set_20_In_20_Stream(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Get_20_Out_20_Stream(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Context_2F_Set_20_Out_20_Stream(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Get_20_Timeout_20_Timer(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Context_2F_Set_20_Timeout_20_Timer(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Get_20_Timeout_20_Seconds(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Context_2F_Get_20_In_20_Bytes(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Context_2F_Set_20_In_20_Bytes(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Get_20_Out_20_Bytes(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Context_2F_Set_20_Out_20_Bytes(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Start_20_Context(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Stop_20_Context(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Create_20_With_20_Socket_20_IP6_20_Service(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Create_20_With_20_Socket_20_IP4_20_Service(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Create_20_With_20_Socket_20_IP4_20_Address(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Create_20_With_20_Socket_20_Host(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Create_20_With_20_Socket_20_Signature(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Create_20_With_20_Socket(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Create_20_Data(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Open(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Close(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Release(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_CFTimer_20_Timeout(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_CFTimer_20_Tickle_20_Timeout(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_CFRead_20_Standard_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_CFRead_20_Stream_20_Completed(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_CFWrite_20_Standard_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Error_20_Occurred(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Bytes_20_Read(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Read_20_Bytes(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Write_20_Pending(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Write_20_Bytes(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Append_20_Object(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Extract_20_Object(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Context_2F7E_Handle_20_Has_20_Bytes_20_Available(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F7E_Handle_20_Read_20_End_20_Encountered(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F7E_Handle_20_Read_20_Open_20_Completed(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F7E_Handle_20_Read_20_Error_20_Occurred(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F7E_Handle_20_Timeout(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F7E_Handle_20_Can_20_Accept_20_Bytes(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F7E_Handle_20_Write_20_End_20_Encountered(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F7E_Handle_20_Write_20_Open_20_Completed(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F7E_Handle_20_Write_20_Error_20_Occurred(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Get_20_Owner(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_NetService_20_Context_2F_Set_20_Owner(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_NetService_20_Context_2F_Clone(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_CFNetServiceBrowser_20_Standard_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Get_20_Interpreters(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Set_20_Interpreters(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Find_20_Interpreter_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Get_20_Interpreter_20_Display_20_Names(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Get_20_Browser_20_Targets(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Set_20_Browser_20_Targets(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Add_20_Browser_20_Targets(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Inform_20_Browser_20_Target(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Remove_20_Browser_20_Targets(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Merge_20_Results(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Get_20_Known_20_Remotes(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Set_20_Known_20_Remotes(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Open_20_Browsers(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Close_20_Browsers(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Service_2F_Open(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Find_20_Interpreter_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Get_20_Display_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Get_20_Connect_20_Address(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_New_20_From_20_CFNetService(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_New_20_From_20_Text_20_File(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Get_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Set_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Get_20_IP_20_Addresses(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Set_20_IP_20_Addresses(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Get_20_Platform(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Set_20_Platform(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Get_20_Auto_20_Launch_3F_(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Set_20_Auto_20_Launch_3F_(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Clone(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Get_20_Architecture(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Set_20_Architecture(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Get_20_Action_20_Title(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Get_20_Action_20_Phrase(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Is_20_User_20_Specified_3F_(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Find_20_Host_20_IconRef(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Find_20_Host_20_Icon_20_Label(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Interpreter_20_Found(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_Interpreter_20_Removed(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Local_20_Interpreter_2F_Get_20_Action_20_Title(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Local_20_Interpreter_2F_Get_20_Action_20_Phrase(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Local_20_Interpreter_2F_Find_20_Host_20_IconRef(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Local_20_Interpreter_2F_Find_20_Host_20_Icon_20_Label(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Local_20_Interpreter_2F_Interpreter_20_Found(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_User_20_Specified_20_Interpreter_2F_Is_20_User_20_Specified_3F_(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_User_20_Specified_20_Interpreter_2F_Find_20_Host_20_IconRef(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_User_20_Specified_20_Interpreter_2F_Get_20_Action_20_Phrase(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_User_20_Specified_20_Interpreter_2F_Find_20_Host_20_Icon_20_Label(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_mHI_20_Update_20_Hosts(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_CE_20_HICommand_20_Process(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_HIC_20_Cancel(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_HIC_20_Connect(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_HIC_20_Use_20_Local(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_HIC_20_Auto_20_Save(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Get_20_Selected_20_Item(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Set_20_Selected_20_Item(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Set_20_Changes_20_Coming_3F_(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Open(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Open_20_Controls(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Close(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Get_20_Activity(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Set_20_Activity(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Find_20_Items_20_View(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Find_20_Primary_20_Prompt(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Find_20_Action_20_Button(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Find_20_Auto_20_Save_3F_(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Find_20_Spinner(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Get_20_Cancelled_3F_(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Set_20_Cancelled_3F_(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Set_20_Prompt(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Set_20_Action_20_Title(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Get_20_Items(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Set_20_Items(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet_2F_Finish_20_Window(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Hosts_20_View_2F_Control_20_Draw_20_CG(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Hosts_20_View_2F_Get_20_Supported_20_Behaviors(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Hosts_20_View_2F_Add_20_Subview(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Control_20_Draw_20_CG(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Get_20_Icon_20_And_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object *,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Prefers_20_CoreGraphics(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Get_20_Host(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Set_20_Host(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Get_20_Selected_3F_(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Set_20_Selected_3F_(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Get_20_IconRef(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Set_20_IconRef(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Get_20_Label_20_Text(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Set_20_Label_20_Text(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Get_20_Supported_20_Behaviors(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Close(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Control_20_Click(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Get_20_Window(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_View_2F_Update_20_Prompts(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Get_20_ControlRef(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Set_20_Visible_3F_(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_CE_20_Handle_20_Event(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_CE_20_Text_20_Input_20_Event(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_CE_20_Unicode_20_For_20_Key(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Open(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Close(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Save_20_Value(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Initialize_20_Control_20_Events(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Destruct_20_Control_20_Events(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Take_20_Focus(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Get_20_Carbon_20_EventTargetRef(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Get_20_Value(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Set_20_Value(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Get_20_Owner(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Set_20_Owner(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Get_20_Initial_20_Frame(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text_2F_Set_20_Initial_20_Frame(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_New_20_CGPoint(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_New_20_CGSize(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_New_20_CGRect(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object,V_Object *);
@@ -3279,7 +2898,6 @@ enum opTrigger vpx_method_Marten_20_Application_2F_HIC_20_File_20_Build(V_Enviro
 enum opTrigger vpx_method_Marten_20_Application_2F_Get_20_All_20_File_20_Open_20_Types(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_Marten_20_Application_2F_File_20_Open_20_Any_20_Type(V_Environment, enum boolType *, Nat4,V_Object);
 enum opTrigger vpx_method_Marten_20_Application_2F_File_20_Open_20_Any_20_Callback(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Marten_20_Application_2F_File_20_Open_20_Any_20_Completion(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_Marten_20_Application_2F_Display_20_List(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object);
 enum opTrigger vpx_method_Marten_20_Application_2F_Send_20_Refresh(V_Environment, enum boolType *, Nat4,V_Object);
 enum opTrigger vpx_method_Marten_20_Application_2F_Quit(V_Environment, enum boolType *, Nat4,V_Object);
@@ -3335,8 +2953,6 @@ enum opTrigger vpx_method_VPLInfo_20_Window_2F_CE_20_Mouse_20_Moved(V_Environmen
 enum opTrigger vpx_method_VPLInfo_20_Window_2F_HIC_20_Messages(V_Environment, enum boolType *, Nat4,V_Object);
 enum opTrigger vpx_method_VPLInfo_20_Window_2F_HIC_20_Checks(V_Environment, enum boolType *, Nat4,V_Object);
 enum opTrigger vpx_method_VPLInfo_20_Window_2F_Get_20_Creation_20_Attributes(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_VPLInfo_20_Window_2F_CE_20_Swipe_20_Left(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_VPLInfo_20_Window_2F_CE_20_Swipe_20_Right(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_OLD_20_Info_20_Window_2F_Open(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_OLD_20_Info_20_Window_2F_Open_20_Controls(V_Environment, enum boolType *, Nat4,V_Object);
 enum opTrigger vpx_method_OLD_20_Info_20_Window_2F_Find_20_Output_20_Text(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
@@ -3463,10 +3079,6 @@ enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Line_20_Hilite_3F_(V_
 enum opTrigger vpx_method_Preferences_20_Window_2F_HIC_20_Line_20_Hilite_3F_(V_Environment, enum boolType *, Nat4,V_Object);
 enum opTrigger vpx_method_Preferences_20_Window_2F_HIC_20_Recent_20_Projects(V_Environment, enum boolType *, Nat4,V_Object);
 enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Recent_20_Projects(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Scroll_20_Wheel_3F_(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Smooth_20_Scroll_3F_(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Preferences_20_Window_2F_HIC_20_Smooth_20_Scroll_3F_(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Preferences_20_Window_2F_HIC_20_Scroll_20_Wheel_3F_(V_Environment, enum boolType *, Nat4,V_Object);
 enum opTrigger vpx_method_Get_20_Front_20_Project(V_Environment, enum boolType *, Nat4,V_Object *);
 enum opTrigger vpx_method_Front_20_Or_20_New_20_Project(V_Environment, enum boolType *, Nat4,V_Object *);
 enum opTrigger vpx_method_Open_20_Project_20_File(V_Environment, enum boolType *, Nat4,V_Object);
@@ -3601,9 +3213,6 @@ enum opTrigger vpx_method_POAS_20_Load_20_File_2F_Run(V_Environment, enum boolTy
 enum opTrigger vpx_method_POAS_20_Find_20_Files_2F_Run(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_POAS_20_Find_20_Files_2F_Run_20_Begin(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_POAS_20_Find_20_Files_2F_Run_20_End(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_End(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_POAS_20_Read_20_Primitives_2F_Run(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_POAS_20_Read_20_Primitives_2F_Run_20_Begin(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_POAS_20_Read_20_Primitives_2F_Next_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
@@ -3890,8 +3499,6 @@ enum opTrigger vpx_method_Bundle_20_Packager_20_Form_2F_Get_20_Minimum_20_MacOSX
 enum opTrigger vpx_method_Bundle_20_Packager_20_Form_2F_Set_20_Minimum_20_MacOSX(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_Bundle_20_Packager_20_Form_2F_Get_20_Export_20_Level(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_Bundle_20_Packager_20_Form_2F_Set_20_Export_20_Level(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Bundle_20_Packager_20_Form_2F_Open(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Bundle_20_Packager_20_Form_2F_Close(V_Environment, enum boolType *, Nat4,V_Object);
 enum opTrigger vpx_method_MacOS_20_Bundle_20_Form_2F_Find_20_Development_20_Region(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_MacOS_20_Bundle_20_Form_2F_Find_20_Package_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_MacOS_20_Bundle_20_Form_2F_Find_20_PkgInfo_20_Type(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
@@ -3932,7 +3539,6 @@ enum opTrigger vpx_method_MacOS_20_Bundle_20_Form_2F_Get_20_Custom_20_Plist_20_K
 enum opTrigger vpx_method_MacOS_20_Bundle_20_Form_2F_Set_20_Custom_20_Plist_20_Keys(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_MacOS_20_Bundle_20_Form_2F_Get_20_Bundle_20_Icon_20_File(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_MacOS_20_Bundle_20_Form_2F_Set_20_Bundle_20_Icon_20_File(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_MacOS_20_Bundle_20_Form_2F_Open(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_Bundle_20_Packager_20_SDK_20_Service_2F_Get_20_SDKs(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_Bundle_20_Packager_20_SDK_20_Service_2F_Set_20_SDKs(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_Bundle_20_Packager_20_SDK_20_Service_2F_Refresh_20_List(V_Environment, enum boolType *, Nat4,V_Object);
@@ -4264,9 +3870,6 @@ enum opTrigger vpx_method_Primitives_20_Data_2F_Get_20_Link_20_Frameworks(V_Envi
 enum opTrigger vpx_method_Primitives_20_Data_2F_Get_20_Link_20_Headers(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_Primitives_20_Data_2F_Get_20_Link_20_Is_20_Private_3F_(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_Primitives_20_Data_2F_Get_20_Compile_20_Requires_20_ObjC_3F_(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
-enum opTrigger vpx_method_Primitives_20_Data_2F_Install_20_Dependencies(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
-enum opTrigger vpx_method_Primitives_20_Data_2F_Remove_20_Dependencies(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_Primitives_20_Data_2F_Remove_20_Self(V_Environment, enum boolType *, Nat4,V_Object);
 enum opTrigger vpx_method_VPL_20_Data_2F_Get_20_Project_20_Data(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_VPL_20_Data_2F_Get_20_Section_20_Data(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_VPL_20_Data_2F_Get_20_URL(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
@@ -4861,7 +4464,6 @@ enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Handle_20_Event(V_Environment, en
 enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Event(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Moved(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Wheel_20_Moved(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Mouse_20_Scrolled(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Keyboard_20_Event(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Down(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Raw_20_Key_20_Repeat(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
@@ -4888,10 +4490,6 @@ enum opTrigger vpx_method_VPLCEWindow_2F_Get_20_Window_20_Printing_20_Handler(V_
 enum opTrigger vpx_method_VPLCEWindow_2F_Set_20_Window_20_Printing_20_Handler(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_VPLCEWindow_2F_Close_20_Printing_20_Handler(V_Environment, enum boolType *, Nat4,V_Object);
 enum opTrigger vpx_method_VPLCEWindow_2F_Open_20_Printing_20_Handler(V_Environment, enum boolType *, Nat4,V_Object);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Gesture_20_Event(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Event(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Left(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_VPLCEWindow_2F_CE_20_Swipe_20_Right(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_VPLEvent_2F_Get_20_Active_20_Flag(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_VPLEvent_2F_Get_20_Command_20_Key(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
 enum opTrigger vpx_method_VPLEvent_2F_Get_20_Control_20_Key(V_Environment, enum boolType *, Nat4,V_Object,V_Object *);
@@ -5471,9 +5069,6 @@ enum opTrigger vpx_method_Case_20_Window_2F_Get_20_Ideal_20_Size(V_Environment, 
 enum opTrigger vpx_method_Case_20_Window_2F_Get_20_Path_20_List(V_Environment, enum boolType *, Nat4,V_Object,V_Object *,V_Object *);
 enum opTrigger vpx_method_Case_20_Window_2F_Resizing(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_Case_20_Window_2F_CE_20_Window_20_Resize_20_Completed(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Case_20_Window_2F_CE_20_Swipe_20_Left(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Case_20_Window_2F_CE_20_Swipe_20_Right(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
-enum opTrigger vpx_method_Case_20_Window_2F_CE_20_Mouse_20_Scrolled(V_Environment, enum boolType *, Nat4,V_Object,V_Object,V_Object *);
 enum opTrigger vpx_method_Control_20_Item_2F_Extract_20_Data(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_Control_20_Item_2F_Initialize(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
 enum opTrigger vpx_method_Control_20_Item_2F_Set_20_Name(V_Environment, enum boolType *, Nat4,V_Object,V_Object);
@@ -6279,7 +5874,6 @@ kVPXClass_MacOS_20_Icon_20_Service,
 kVPXClass_MacOS_20_Icon_20_Reference,
 kVPXClass_MacOS_20_Icon_20_Registrar,
 kVPXClass_MacOS_20_Icon_20_icns_20_File_20_Registrar,
-kVPXClass_MacOS_20_Icon_20_Machine_20_Icon_20_Registrar,
 kVPXClass_CF_20_Base,
 kVPXClass_CF_20_Array,
 kVPXClass_CF_20_Bag,
@@ -6299,22 +5893,6 @@ kVPXClass_CF_20_UUID,
 kVPXClass_CF_20_XMLNode,
 kVPXClass_CF_20_XMLParser,
 kVPXClass_CF_20_Absolute_20_Time,
-kVPXClass_CF_20_Read_20_Stream,
-kVPXClass_CF_20_Write_20_Stream,
-kVPXClass_CF_20_NetService,
-kVPXClass_CF_20_NetService_20_Browser,
-kVPXClass_CFNetServices_20_Service,
-kVPXClass_CF_20_Socket,
-kVPXClass_NetService_20_Connector,
-kVPXClass_NetService_20_Context,
-kVPXClass_Marten_20_IDE_20_Network_20_Service,
-kVPXClass_Marten_20_IDE_20_Network_20_Interpreter,
-kVPXClass_Marten_20_IDE_20_Network_20_Local_20_Interpreter,
-kVPXClass_Marten_20_IDE_20_Network_20_User_20_Specified_20_Interpreter,
-kVPXClass_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet,
-kVPXClass_Marten_20_IDE_20_Network_20_Hosts_20_View,
-kVPXClass_Marten_20_IDE_20_Network_20_Host_20_Item_20_View,
-kVPXClass_Marten_20_IDE_20_Network_20_Host_20_Item_20_Edit_20_Text,
 kVPXClass_CG_20_Context,
 kVPXClass_CG_20_Path,
 kVPXClass_CG_20_Bitmap_20_Context,
@@ -6384,7 +5962,6 @@ kVPXClass_Project_20_Open_20_Activity,
 kVPXClass_Project_20_File_20_Activity_20_Stage,
 kVPXClass_POAS_20_Load_20_File,
 kVPXClass_POAS_20_Find_20_Files,
-kVPXClass_POAS_20_Find_20_Host,
 kVPXClass_POAS_20_Read_20_Primitives,
 kVPXClass_POAS_20_Read_20_Sections,
 kVPXClass_POAS_20_Open_20_Project,
@@ -6655,12 +6232,8 @@ kVPXMethod_Add_20_Arc_20_Rect,
 kVPXMethod_Add_20_Arc_20_To_20_Point,
 kVPXMethod_Add_20_Architecture,
 kVPXMethod_Add_20_Attachment_20_To_20_Callback,
-kVPXMethod_Add_20_Browser,
-kVPXMethod_Add_20_Browser_20_Targets,
 kVPXMethod_Add_20_Burst,
 kVPXMethod_Add_20_Column_20_Number,
-kVPXMethod_Add_20_Connection,
-kVPXMethod_Add_20_Connector,
 kVPXMethod_Add_20_Content_20_Items,
 kVPXMethod_Add_20_Corners,
 kVPXMethod_Add_20_Current_20_Task,
@@ -6701,7 +6274,6 @@ kVPXMethod_Add_20_Sub_20_Class,
 kVPXMethod_Add_20_Subview,
 kVPXMethod_Add_20_Terminal,
 kVPXMethod_Add_20_To_20_List_20_Data,
-kVPXMethod_Add_20_To_20_Service,
 kVPXMethod_Add_20_Triangle,
 kVPXMethod_Add_20_View,
 kVPXMethod_Add_20_Window,
@@ -6721,7 +6293,6 @@ kVPXMethod_Any_20_Drop_20_Flavors_3F_,
 kVPXMethod_Append,
 kVPXMethod_Append_20_Bytes,
 kVPXMethod_Append_20_Identifier,
-kVPXMethod_Append_20_Object,
 kVPXMethod_Append_20_String,
 kVPXMethod_Append_20_Value,
 kVPXMethod_Archive_20_Postflight,
@@ -6737,7 +6308,6 @@ kVPXMethod_Before_20_Drawing,
 kVPXMethod_Before_20_Drawing_20_CG,
 kVPXMethod_Begin,
 kVPXMethod_Begin_20_CGContext,
-kVPXMethod_Begin_20_Connection,
 kVPXMethod_Begin_20_Document,
 kVPXMethod_Begin_20_For_20_CGrafPort,
 kVPXMethod_Begin_20_Page,
@@ -6760,7 +6330,6 @@ kVPXMethod_Buffer_20_Initialization,
 kVPXMethod_Build_20_Project,
 kVPXMethod_Bulk_20_Pass,
 kVPXMethod_Bundle_20_Primitives,
-kVPXMethod_Bytes_20_Read,
 kVPXMethod_C_20_Action_20_To_20_VPL_20_Action,
 kVPXMethod_C_20_Boolean_20_To_20_VPL_20_Boolean,
 kVPXMethod_C_20_Code_20_Export,
@@ -6831,7 +6400,6 @@ kVPXMethod_CE_20_Control_20_Simulate_20_Hit,
 kVPXMethod_CE_20_Control_20_Text_20_Input,
 kVPXMethod_CE_20_Control_20_Title_20_Changed,
 kVPXMethod_CE_20_Control_20_Value_20_Field_20_Changed,
-kVPXMethod_CE_20_Gesture_20_Event,
 kVPXMethod_CE_20_Get_20_Size_20_Constraints,
 kVPXMethod_CE_20_HICommand_20_Dispatch,
 kVPXMethod_CE_20_HICommand_20_Process,
@@ -6849,7 +6417,6 @@ kVPXMethod_CE_20_Hit,
 kVPXMethod_CE_20_Keyboard_20_Event,
 kVPXMethod_CE_20_Mouse_20_Event,
 kVPXMethod_CE_20_Mouse_20_Moved,
-kVPXMethod_CE_20_Mouse_20_Scrolled,
 kVPXMethod_CE_20_Mouse_20_Wheel_20_Moved,
 kVPXMethod_CE_20_Owning_20_Window_20_Changed,
 kVPXMethod_CE_20_Path_20_Select,
@@ -6860,9 +6427,6 @@ kVPXMethod_CE_20_Scrollable_20_Class_20_Event,
 kVPXMethod_CE_20_Search_20_Field_20_Cancel_20_Clicked,
 kVPXMethod_CE_20_Search_20_Field_20_Event,
 kVPXMethod_CE_20_Service_20_Event,
-kVPXMethod_CE_20_Swipe_20_Event,
-kVPXMethod_CE_20_Swipe_20_Left,
-kVPXMethod_CE_20_Swipe_20_Right,
 kVPXMethod_CE_20_Text_20_Accepted,
 kVPXMethod_CE_20_Text_20_Field_20_Event,
 kVPXMethod_CE_20_Text_20_Input_20_Event,
@@ -6899,21 +6463,10 @@ kVPXMethod_CE_20_Window_20_Get_20_Ideal_20_Size,
 kVPXMethod_CE_20_Window_20_Resize_20_Completed,
 kVPXMethod_CF_20_Last_20_Release,
 kVPXMethod_CF_20_Release,
-kVPXMethod_CFNetService_20_Set_20_TXT_20_Keys,
-kVPXMethod_CFNetService_20_Standard_20_Callback,
-kVPXMethod_CFNetServiceBrowser_20_Standard_20_Callback,
 kVPXMethod_CFPreferences_20_Synchronize,
 kVPXMethod_CFPrefs_20_Get_20_App_20_Value,
 kVPXMethod_CFPrefs_20_Set_20_App_20_Value,
-kVPXMethod_CFRead_20_Debug_20_Callback,
-kVPXMethod_CFRead_20_Standard_20_Callback,
-kVPXMethod_CFRead_20_Stream_20_Completed,
 kVPXMethod_CFSTR,
-kVPXMethod_CFSocket_20_Standard_20_Callback,
-kVPXMethod_CFTimer_20_Tickle_20_Timeout,
-kVPXMethod_CFTimer_20_Timeout,
-kVPXMethod_CFWrite_20_Debug_20_Callback,
-kVPXMethod_CFWrite_20_Standard_20_Callback,
 kVPXMethod_CGPoint_20_In_3F_,
 kVPXMethod_CTM_20_Create,
 kVPXMethod_CTM_20_Select,
@@ -6976,10 +6529,6 @@ kVPXMethod_Click,
 kVPXMethod_Click_20_Content,
 kVPXMethod_Click_20_Control_20_Part,
 kVPXMethod_Click_20_Item,
-kVPXMethod_Client_20_Start_20_Service_20_Browser,
-kVPXMethod_Client_20_Start_20_With_20_Bonjour_20_Name,
-kVPXMethod_Client_20_Start_20_With_20_Host,
-kVPXMethod_Client_20_Stop,
 kVPXMethod_Clone,
 kVPXMethod_Clone_20_Reference,
 kVPXMethod_Close,
@@ -6987,10 +6536,8 @@ kVPXMethod_Close_20_Alias,
 kVPXMethod_Close_20_All,
 kVPXMethod_Close_20_All_20_Windows,
 kVPXMethod_Close_20_Archive,
-kVPXMethod_Close_20_Browsers,
 kVPXMethod_Close_20_Callback,
 kVPXMethod_Close_20_Callbacks,
-kVPXMethod_Close_20_Connectors,
 kVPXMethod_Close_20_Container,
 kVPXMethod_Close_20_Controller,
 kVPXMethod_Close_20_Data,
@@ -7200,12 +6747,6 @@ kVPXMethod_Create_20_With_20_FSRef,
 kVPXMethod_Create_20_With_20_HIView,
 kVPXMethod_Create_20_With_20_Now,
 kVPXMethod_Create_20_With_20_Object,
-kVPXMethod_Create_20_With_20_Socket,
-kVPXMethod_Create_20_With_20_Socket_20_Host,
-kVPXMethod_Create_20_With_20_Socket_20_IP4_20_Address,
-kVPXMethod_Create_20_With_20_Socket_20_IP4_20_Service,
-kVPXMethod_Create_20_With_20_Socket_20_IP6_20_Service,
-kVPXMethod_Create_20_With_20_Socket_20_Signature,
 kVPXMethod_Create_20_With_20_String,
 kVPXMethod_Create_20_With_20_Substring,
 kVPXMethod_Create_20_With_20_UniChar,
@@ -7224,7 +6765,6 @@ kVPXMethod_Dead_20_Case_20_Check,
 kVPXMethod_Debug,
 kVPXMethod_Debug_20_Console,
 kVPXMethod_Debug_20_Detect_20_Verbosity,
-kVPXMethod_Debug_20_Error_20_String,
 kVPXMethod_Debug_20_Finish,
 kVPXMethod_Debug_20_Init,
 kVPXMethod_Debug_20_OSError,
@@ -7313,7 +6853,6 @@ kVPXMethod_Do_20_Click_20_Method,
 kVPXMethod_Do_20_Command_20_ID,
 kVPXMethod_Do_20_Completion,
 kVPXMethod_Do_20_Completion_20_Behavior,
-kVPXMethod_Do_20_Completion_20_Callback,
 kVPXMethod_Do_20_DBCTM_20_Create,
 kVPXMethod_Do_20_DBCTM_20_Select,
 kVPXMethod_Do_20_DBDrag_20_Accept_3F_,
@@ -7325,7 +6864,6 @@ kVPXMethod_Do_20_DBItemNotification_20_With_20_Item,
 kVPXMethod_Do_20_HI_20_Callback,
 kVPXMethod_Do_20_Live_20_Action,
 kVPXMethod_Do_20_Name,
-kVPXMethod_Do_20_Notification_20_Callback,
 kVPXMethod_Do_20_Receive_20_Handler,
 kVPXMethod_Do_20_Scroll_20_Timer_20_Callback,
 kVPXMethod_Do_20_Selector,
@@ -7393,7 +6931,6 @@ kVPXMethod_Element_20_Remove_3F_,
 kVPXMethod_Emit_20_Text,
 kVPXMethod_Enable_20_Control,
 kVPXMethod_End_20_CGContext,
-kVPXMethod_End_20_Connection,
 kVPXMethod_End_20_Document,
 kVPXMethod_End_20_For_20_CGrafPort,
 kVPXMethod_End_20_Page,
@@ -7406,7 +6943,6 @@ kVPXMethod_Erase_20_View_20_CG,
 kVPXMethod_Error,
 kVPXMethod_Error_20_Accept,
 kVPXMethod_Error_20_Debug,
-kVPXMethod_Error_20_Occurred,
 kVPXMethod_Error_3F_,
 kVPXMethod_Escape_20_Text,
 kVPXMethod_Exchange_20_Objects,
@@ -7427,7 +6963,6 @@ kVPXMethod_Extract_20_Data,
 kVPXMethod_Extract_20_Drop_20_Flavors,
 kVPXMethod_Extract_20_Error_3F_,
 kVPXMethod_Extract_20_Form,
-kVPXMethod_Extract_20_Object,
 kVPXMethod_Extract_20_Persistent_20_Data,
 kVPXMethod_Extract_20_Reply,
 kVPXMethod_Extract_20_Result,
@@ -7435,7 +6970,6 @@ kVPXMethod_Fast_20_Quit,
 kVPXMethod_File_20_Delete_20_Resource,
 kVPXMethod_File_20_Import_20_CPX_20_Callback,
 kVPXMethod_File_20_Open_20_Any_20_Callback,
-kVPXMethod_File_20_Open_20_Any_20_Completion,
 kVPXMethod_File_20_Open_20_Any_20_Type,
 kVPXMethod_File_20_Open_20_Application_20_Callback,
 kVPXMethod_File_20_Open_20_Library_20_Callback,
@@ -7453,13 +6987,11 @@ kVPXMethod_Fill_20_Rect,
 kVPXMethod_Fill_20_Rounded_20_Rect,
 kVPXMethod_Finalize_20_Stack,
 kVPXMethod_Find,
-kVPXMethod_Find_20_Action_20_Button,
 kVPXMethod_Find_20_Activity_20_Text,
 kVPXMethod_Find_20_All,
 kVPXMethod_Find_20_All_20_By_20_Type,
 kVPXMethod_Find_20_All_20_Results,
 kVPXMethod_Find_20_Arch_20_Type,
-kVPXMethod_Find_20_Auto_20_Save_3F_,
 kVPXMethod_Find_20_Build_20_Folder,
 kVPXMethod_Find_20_Bundle_20_Group,
 kVPXMethod_Find_20_Bundle_20_Icon_20_File,
@@ -7501,8 +7033,6 @@ kVPXMethod_Find_20_Find_20_Window,
 kVPXMethod_Find_20_Flavor_20_Values_20_For_20_Identifiers,
 kVPXMethod_Find_20_Flavors_20_For_20_UTIs,
 kVPXMethod_Find_20_Folder,
-kVPXMethod_Find_20_Host_20_Icon_20_Label,
-kVPXMethod_Find_20_Host_20_IconRef,
 kVPXMethod_Find_20_ID,
 kVPXMethod_Find_20_ID_20_HIViewRef,
 kVPXMethod_Find_20_IO_20_Item_20_Near,
@@ -7510,12 +7040,10 @@ kVPXMethod_Find_20_Ignore_20_Case_3F_,
 kVPXMethod_Find_20_Initial_20_Window_3F_,
 kVPXMethod_Find_20_Instance,
 kVPXMethod_Find_20_Instance_20_Values,
-kVPXMethod_Find_20_Interpreter_20_Name,
 kVPXMethod_Find_20_Item,
 kVPXMethod_Find_20_Item_20_ID,
 kVPXMethod_Find_20_Item_20_IconRef,
 kVPXMethod_Find_20_Item_20_Name,
-kVPXMethod_Find_20_Items_20_View,
 kVPXMethod_Find_20_Known_20_Item_20_ID,
 kVPXMethod_Find_20_Line_20_Hilite_3F_,
 kVPXMethod_Find_20_List_20_Name,
@@ -7527,11 +7055,8 @@ kVPXMethod_Find_20_Matching_20_Identifier,
 kVPXMethod_Find_20_Media,
 kVPXMethod_Find_20_Methods_20_With_20_Value,
 kVPXMethod_Find_20_Min_20_MacOS,
-kVPXMethod_Find_20_Model_20_Icon_20_File,
-kVPXMethod_Find_20_Model_20_Name,
 kVPXMethod_Find_20_Name,
 kVPXMethod_Find_20_Name_20_Text,
-kVPXMethod_Find_20_Net_20_Service,
 kVPXMethod_Find_20_Next,
 kVPXMethod_Find_20_Nib_20_Window,
 kVPXMethod_Find_20_Operation_20_Parts,
@@ -7571,15 +7096,12 @@ kVPXMethod_Find_20_Run_20_Mode,
 kVPXMethod_Find_20_SDK_20_By_20_Name,
 kVPXMethod_Find_20_SDK_20_Path,
 kVPXMethod_Find_20_SDK_20_Service,
-kVPXMethod_Find_20_Scroll_20_Wheel_3F_,
 kVPXMethod_Find_20_Search_20_Text,
 kVPXMethod_Find_20_Secondary_20_Prompt,
 kVPXMethod_Find_20_Secondary_20_Text,
 kVPXMethod_Find_20_Sections_20_Popup,
 kVPXMethod_Find_20_Service,
 kVPXMethod_Find_20_Service_20_Name,
-kVPXMethod_Find_20_Smooth_20_Scroll_3F_,
-kVPXMethod_Find_20_Spinner,
 kVPXMethod_Find_20_State_20_Disable,
 kVPXMethod_Find_20_State_20_Element_20_Add,
 kVPXMethod_Find_20_State_20_Element_20_Message,
@@ -7644,8 +7166,6 @@ kVPXMethod_Fullfill_20_Promise,
 kVPXMethod_Get_20_AEDesc,
 kVPXMethod_Get_20_Absolute_20_Time,
 kVPXMethod_Get_20_Action,
-kVPXMethod_Get_20_Action_20_Phrase,
-kVPXMethod_Get_20_Action_20_Title,
 kVPXMethod_Get_20_Active_20_Columns,
 kVPXMethod_Get_20_Active_20_Flag,
 kVPXMethod_Get_20_Active_20_Services,
@@ -7669,7 +7189,6 @@ kVPXMethod_Get_20_Animating_3F_,
 kVPXMethod_Get_20_Answer,
 kVPXMethod_Get_20_Application,
 kVPXMethod_Get_20_Application_20_Name,
-kVPXMethod_Get_20_Architecture,
 kVPXMethod_Get_20_Architectures,
 kVPXMethod_Get_20_Archive,
 kVPXMethod_Get_20_Archive_20_Size,
@@ -7679,19 +7198,16 @@ kVPXMethod_Get_20_Attachments,
 kVPXMethod_Get_20_Attribute,
 kVPXMethod_Get_20_Attribute_20_AEDesc,
 kVPXMethod_Get_20_Attributes,
-kVPXMethod_Get_20_Auto_20_Launch_3F_,
 kVPXMethod_Get_20_Banner_20_Text,
 kVPXMethod_Get_20_Base_20_Command_20_ID,
 kVPXMethod_Get_20_Baseline,
 kVPXMethod_Get_20_Block_20_Pages,
 kVPXMethod_Get_20_Block_20_Size,
 kVPXMethod_Get_20_BlockPtr,
-kVPXMethod_Get_20_Bonjour_20_Service_20_Type,
 kVPXMethod_Get_20_Bottom,
 kVPXMethod_Get_20_Bounds,
 kVPXMethod_Get_20_Bounds_20_QD,
 kVPXMethod_Get_20_Breakpoint,
-kVPXMethod_Get_20_Browser_20_Targets,
 kVPXMethod_Get_20_Buffer_20_Size,
 kVPXMethod_Get_20_Build_20_Folder,
 kVPXMethod_Get_20_Build_20_Settings,
@@ -7711,7 +7227,6 @@ kVPXMethod_Get_20_Bytes_20_Read,
 kVPXMethod_Get_20_CF_20_Constant,
 kVPXMethod_Get_20_CF_20_Reference,
 kVPXMethod_Get_20_CFBundleRef,
-kVPXMethod_Get_20_CFNetwork_20_Service,
 kVPXMethod_Get_20_CFNullRef,
 kVPXMethod_Get_20_CGContextRef,
 kVPXMethod_Get_20_CGPathRef,
@@ -7726,10 +7241,7 @@ kVPXMethod_Get_20_Callback_20_Pointer,
 kVPXMethod_Get_20_Callback_20_Result,
 kVPXMethod_Get_20_CallbacksRef,
 kVPXMethod_Get_20_Calling_20_Promise_3F_,
-kVPXMethod_Get_20_Callout,
-kVPXMethod_Get_20_Callout_20_Owner,
 kVPXMethod_Get_20_Canceled_3F_,
-kVPXMethod_Get_20_Cancelled_3F_,
 kVPXMethod_Get_20_Carbon_20_EventTargetRef,
 kVPXMethod_Get_20_Case_20_Dock_20_Orientation,
 kVPXMethod_Get_20_Case_20_Drawer,
@@ -7758,18 +7270,13 @@ kVPXMethod_Get_20_Command_20_Line,
 kVPXMethod_Get_20_Compile_20_Requires_20_ObjC_3F_,
 kVPXMethod_Get_20_Completed_3F_,
 kVPXMethod_Get_20_Completion_20_Behavior,
-kVPXMethod_Get_20_Completion_20_Callback,
 kVPXMethod_Get_20_Component_20_Type,
-kVPXMethod_Get_20_Connect_20_Address,
-kVPXMethod_Get_20_Connections,
-kVPXMethod_Get_20_Connectors,
 kVPXMethod_Get_20_Container,
 kVPXMethod_Get_20_Content,
 kVPXMethod_Get_20_Content_20_HIViewRef,
 kVPXMethod_Get_20_Content_20_List,
 kVPXMethod_Get_20_ContentInfo,
 kVPXMethod_Get_20_Contents_20_Name,
-kVPXMethod_Get_20_Context_20_Type,
 kVPXMethod_Get_20_Contextual_20_Menu_20_Event_3F_,
 kVPXMethod_Get_20_Control_20_Auto_20_Invalidate_20_Flags,
 kVPXMethod_Get_20_Control_20_Bounds_20_QD,
@@ -7952,7 +7459,6 @@ kVPXMethod_Get_20_Front_20_Method,
 kVPXMethod_Get_20_Front_20_Project,
 kVPXMethod_Get_20_Front_20_Window,
 kVPXMethod_Get_20_Front_20_Window_20_Type,
-kVPXMethod_Get_20_Full_20_POSIX_20_Path,
 kVPXMethod_Get_20_Full_20_Path,
 kVPXMethod_Get_20_Full_20_Path_20_CFString,
 kVPXMethod_Get_20_Full_20_Path_20_CFURL,
@@ -7970,20 +7476,15 @@ kVPXMethod_Get_20_HIToolbarItemRef,
 kVPXMethod_Get_20_HIToolbarRef,
 kVPXMethod_Get_20_HIView_20_Class,
 kVPXMethod_Get_20_HIViewRef,
-kVPXMethod_Get_20_Host,
 kVPXMethod_Get_20_ID,
 kVPXMethod_Get_20_IO_20_Value,
-kVPXMethod_Get_20_IP_20_Addresses,
 kVPXMethod_Get_20_Icon,
-kVPXMethod_Get_20_Icon_20_And_20_Name,
 kVPXMethod_Get_20_Icon_20_Reference,
 kVPXMethod_Get_20_IconRef,
 kVPXMethod_Get_20_Ideal_20_Size,
 kVPXMethod_Get_20_Identifier,
 kVPXMethod_Get_20_Identity_20_Name,
 kVPXMethod_Get_20_Idle_20_Action,
-kVPXMethod_Get_20_In_20_Bytes,
-kVPXMethod_Get_20_In_20_Stream,
 kVPXMethod_Get_20_Inarity,
 kVPXMethod_Get_20_Indeterminate_3F_,
 kVPXMethod_Get_20_Index,
@@ -7991,7 +7492,6 @@ kVPXMethod_Get_20_Info,
 kVPXMethod_Get_20_Initial_20_Attributes,
 kVPXMethod_Get_20_Initial_20_Delay,
 kVPXMethod_Get_20_Initial_20_Descriptive_20_Text,
-kVPXMethod_Get_20_Initial_20_Frame,
 kVPXMethod_Get_20_Initial_20_Lists,
 kVPXMethod_Get_20_Initial_20_Menu,
 kVPXMethod_Get_20_Initial_20_Pasteboards,
@@ -8003,8 +7503,6 @@ kVPXMethod_Get_20_Input_20_Specifiers,
 kVPXMethod_Get_20_Instances,
 kVPXMethod_Get_20_Integer,
 kVPXMethod_Get_20_Integer_20_Value,
-kVPXMethod_Get_20_Interpreter_20_Display_20_Names,
-kVPXMethod_Get_20_Interpreters,
 kVPXMethod_Get_20_Item,
 kVPXMethod_Get_20_Item_20_Bounds,
 kVPXMethod_Get_20_Item_20_Helper,
@@ -8024,9 +7522,7 @@ kVPXMethod_Get_20_Known_20_IDs,
 kVPXMethod_Get_20_Known_20_IDs_20_For_20_Type,
 kVPXMethod_Get_20_Known_20_Items,
 kVPXMethod_Get_20_Known_20_Projects,
-kVPXMethod_Get_20_Known_20_Remotes,
 kVPXMethod_Get_20_Label,
-kVPXMethod_Get_20_Label_20_Text,
 kVPXMethod_Get_20_Last_20_Page,
 kVPXMethod_Get_20_Last_20_Subview,
 kVPXMethod_Get_20_Last_20_Subview_20_HIViewRef,
@@ -8087,7 +7583,6 @@ kVPXMethod_Get_20_Next_20_View_20_HIViewRef,
 kVPXMethod_Get_20_Not_20_Saved_3F_,
 kVPXMethod_Get_20_Number_20_Value,
 kVPXMethod_Get_20_Object,
-kVPXMethod_Get_20_Object_20_At,
 kVPXMethod_Get_20_OpaqueControlRef,
 kVPXMethod_Get_20_Operation_20_Arity,
 kVPXMethod_Get_20_Operation_20_Flag,
@@ -8097,8 +7592,6 @@ kVPXMethod_Get_20_Options,
 kVPXMethod_Get_20_Origin,
 kVPXMethod_Get_20_Original_20_Owner,
 kVPXMethod_Get_20_Original_20_Text,
-kVPXMethod_Get_20_Out_20_Bytes,
-kVPXMethod_Get_20_Out_20_Stream,
 kVPXMethod_Get_20_Outarity,
 kVPXMethod_Get_20_Output_20_Count,
 kVPXMethod_Get_20_Output_20_Specifiers,
@@ -8111,7 +7604,6 @@ kVPXMethod_Get_20_Package_20_Info,
 kVPXMethod_Get_20_Package_20_Name,
 kVPXMethod_Get_20_Packager,
 kVPXMethod_Get_20_Packager_20_State,
-kVPXMethod_Get_20_Packet_20_Type,
 kVPXMethod_Get_20_Page_20_Range,
 kVPXMethod_Get_20_Page_20_Setup_20_Done_20_Callback,
 kVPXMethod_Get_20_Parameter,
@@ -8135,7 +7627,6 @@ kVPXMethod_Get_20_Permission,
 kVPXMethod_Get_20_Persistents,
 kVPXMethod_Get_20_PkgInfo_20_Creator,
 kVPXMethod_Get_20_PkgInfo_20_Type,
-kVPXMethod_Get_20_Platform,
 kVPXMethod_Get_20_Plug_20_Ins,
 kVPXMethod_Get_20_Port,
 kVPXMethod_Get_20_Port_20_Bounds,
@@ -8237,15 +7728,11 @@ kVPXMethod_Get_20_Selected_20_Cases,
 kVPXMethod_Get_20_Selected_20_Comments,
 kVPXMethod_Get_20_Selected_20_Files,
 kVPXMethod_Get_20_Selected_20_IO,
-kVPXMethod_Get_20_Selected_20_Item,
 kVPXMethod_Get_20_Selected_20_Local,
 kVPXMethod_Get_20_Selected_20_Operations,
-kVPXMethod_Get_20_Selected_3F_,
 kVPXMethod_Get_20_Sender_20_Only_3F_,
 kVPXMethod_Get_20_Sender_20_Translated_3F_,
-kVPXMethod_Get_20_Service,
 kVPXMethod_Get_20_Service_20_Manager,
-kVPXMethod_Get_20_Service_20_Type,
 kVPXMethod_Get_20_Services,
 kVPXMethod_Get_20_Session,
 kVPXMethod_Get_20_Session_20_Error,
@@ -8257,7 +7744,6 @@ kVPXMethod_Get_20_Short_20_Help_20_Text,
 kVPXMethod_Get_20_Signature,
 kVPXMethod_Get_20_Size,
 kVPXMethod_Get_20_Size_20_Constraints,
-kVPXMethod_Get_20_Sockets,
 kVPXMethod_Get_20_Sort_20_Order,
 kVPXMethod_Get_20_Sortable_3F_,
 kVPXMethod_Get_20_Sorted_20_SDK_20_Names,
@@ -8293,8 +7779,6 @@ kVPXMethod_Get_20_Text_20_Command,
 kVPXMethod_Get_20_The_20_Drag,
 kVPXMethod_Get_20_Theme_20_Brush_20_RGBA,
 kVPXMethod_Get_20_This_20_Case,
-kVPXMethod_Get_20_Timeout_20_Seconds,
-kVPXMethod_Get_20_Timeout_20_Timer,
 kVPXMethod_Get_20_Title,
 kVPXMethod_Get_20_Title_20_CFString,
 kVPXMethod_Get_20_Title_20_Offset,
@@ -8371,14 +7855,12 @@ kVPXMethod_Grow_20_Rectangle,
 kVPXMethod_H_20_Code_20_Footer,
 kVPXMethod_H_20_Code_20_Header,
 kVPXMethod_H_20_File_20_Name,
-kVPXMethod_HIC_20_Auto_20_Save,
 kVPXMethod_HIC_20_Cancel,
 kVPXMethod_HIC_20_Checks,
 kVPXMethod_HIC_20_Classes,
 kVPXMethod_HIC_20_Clear_20_Breakpoints,
 kVPXMethod_HIC_20_Click_20_Marten,
 kVPXMethod_HIC_20_Click_20_Utility,
-kVPXMethod_HIC_20_Connect,
 kVPXMethod_HIC_20_Contents,
 kVPXMethod_HIC_20_Control_20_Change,
 kVPXMethod_HIC_20_Control_20_Reverse,
@@ -8456,15 +7938,12 @@ kVPXMethod_HIC_20_Run_20_Breakpoint,
 kVPXMethod_HIC_20_Run_20_Mode,
 kVPXMethod_HIC_20_Run_20_Tests,
 kVPXMethod_HIC_20_Save_20_As,
-kVPXMethod_HIC_20_Scroll_20_Wheel_3F_,
 kVPXMethod_HIC_20_Search,
 kVPXMethod_HIC_20_Search_20_Apple,
 kVPXMethod_HIC_20_Show_20_Breakpoints,
-kVPXMethod_HIC_20_Smooth_20_Scroll_3F_,
 kVPXMethod_HIC_20_Status_20_File_20_New_3F_,
 kVPXMethod_HIC_20_Toggle_20_Breakpoint,
 kVPXMethod_HIC_20_Type_20_Change,
-kVPXMethod_HIC_20_Use_20_Local,
 kVPXMethod_HIC_20_View_20_Change,
 kVPXMethod_HIC_20_Window_20_Info,
 kVPXMethod_HIC_20_Window_20_New_20_Projects,
@@ -8521,7 +8000,6 @@ kVPXMethod_In_20_Current_20_Stack,
 kVPXMethod_In_20_Last,
 kVPXMethod_In_20_Message_20_Group_3F_,
 kVPXMethod_Increase_20_Length,
-kVPXMethod_Inform_20_Browser_20_Target,
 kVPXMethod_Initial_20_What,
 kVPXMethod_Initial_20_Where,
 kVPXMethod_Initialize,
@@ -8538,8 +8016,6 @@ kVPXMethod_Initialize_20_Toolbar,
 kVPXMethod_Initialize_20_Value,
 kVPXMethod_Initialize_20_View,
 kVPXMethod_Initialize_20_Window_20_Events,
-kVPXMethod_Initiate_20_Download,
-kVPXMethod_Initiate_20_Download_20_With_20_Owner,
 kVPXMethod_Insert_20_Attribute,
 kVPXMethod_Insert_20_Class_20_Attribute,
 kVPXMethod_Insert_20_Root,
@@ -8550,11 +8026,8 @@ kVPXMethod_Inside_20_Sender_20_Window_3F_,
 kVPXMethod_Install,
 kVPXMethod_Install_20_Action_20_Proc,
 kVPXMethod_Install_20_Callback,
-kVPXMethod_Install_20_Client_20_Callback,
-kVPXMethod_Install_20_Client_20_Callback_20_With_20_Owner,
 kVPXMethod_Install_20_Current_20_View,
 kVPXMethod_Install_20_Data,
-kVPXMethod_Install_20_Dependencies,
 kVPXMethod_Install_20_Element,
 kVPXMethod_Install_20_Frames,
 kVPXMethod_Install_20_Handlers,
@@ -8574,8 +8047,6 @@ kVPXMethod_Int,
 kVPXMethod_Integer_20_To_20_Boolean,
 kVPXMethod_Integrate,
 kVPXMethod_Integrate_20_First,
-kVPXMethod_Interpreter_20_Found,
-kVPXMethod_Interpreter_20_Removed,
 kVPXMethod_Ints_20_To_20_Rect,
 kVPXMethod_Invalidate,
 kVPXMethod_Invalidate_20_Auto,
@@ -8603,7 +8074,6 @@ kVPXMethod_Is_20_Rect_3F_,
 kVPXMethod_Is_20_Registered,
 kVPXMethod_Is_20_Tasty_20_Flavor_3F_,
 kVPXMethod_Is_20_Tasty_20_Pasteboard_3F_,
-kVPXMethod_Is_20_User_20_Specified_3F_,
 kVPXMethod_Is_20_Visible_3F_,
 kVPXMethod_Isolate,
 kVPXMethod_Isolate_20_First,
@@ -8652,21 +8122,15 @@ kVPXMethod_Lowercase,
 kVPXMethod_MAIN,
 kVPXMethod_Main,
 kVPXMethod_Make_20_Attribute,
-kVPXMethod_Make_20_CFNetService,
 kVPXMethod_Make_20_Class,
 kVPXMethod_Make_20_Clean,
 kVPXMethod_Make_20_Clone,
-kVPXMethod_Make_20_Context_20_With_20_CFNetService,
-kVPXMethod_Make_20_Context_20_With_20_Host,
-kVPXMethod_Make_20_Context_20_With_20_Socket,
 kVPXMethod_Make_20_Count,
 kVPXMethod_Make_20_Dirty,
 kVPXMethod_Make_20_HIObject_20_Instance,
 kVPXMethod_Make_20_HIView_20_Class,
 kVPXMethod_Make_20_Method,
-kVPXMethod_Make_20_New_20_Context,
 kVPXMethod_Make_20_Persistent,
-kVPXMethod_Make_20_Publish_20_Name,
 kVPXMethod_Make_20_Section_20_Dirty,
 kVPXMethod_Make_20_Terminal,
 kVPXMethod_Mangle_20_Name,
@@ -8677,7 +8141,6 @@ kVPXMethod_Match_20_Identifier_3F_,
 kVPXMethod_Match_20_Type,
 kVPXMethod_Match_20_UTI_3F_,
 kVPXMethod_Measure_20_Text,
-kVPXMethod_Merge_20_Results,
 kVPXMethod_Modifier_20_Key_20_Pressed_3F_,
 kVPXMethod_Modify_20_Value_20_Use,
 kVPXMethod_Mouse_20_Down,
@@ -8760,17 +8223,14 @@ kVPXMethod_New_20_FSSpec,
 kVPXMethod_New_20_Folder_20_FSRef,
 kVPXMethod_New_20_From_20_AEDesc,
 kVPXMethod_New_20_From_20_Alias,
-kVPXMethod_New_20_From_20_CFNetService,
 kVPXMethod_New_20_From_20_CFString,
 kVPXMethod_New_20_From_20_CFURL,
 kVPXMethod_New_20_From_20_FSRef,
 kVPXMethod_New_20_From_20_FSSpec,
-kVPXMethod_New_20_From_20_Full_20_POSIX_20_Path,
 kVPXMethod_New_20_From_20_Identifier,
 kVPXMethod_New_20_From_20_PSN,
 kVPXMethod_New_20_From_20_Path_20_String,
 kVPXMethod_New_20_From_20_Signature,
-kVPXMethod_New_20_From_20_Text_20_File,
 kVPXMethod_New_20_From_20_Unicode,
 kVPXMethod_New_20_Integer_20_Block,
 kVPXMethod_New_20_Integer_20_Block_20_Type,
@@ -8817,16 +8277,13 @@ kVPXMethod_Older_20_Extract_20_Data,
 kVPXMethod_Open,
 kVPXMethod_Open_20_Application_20_File,
 kVPXMethod_Open_20_As_20_Handler,
-kVPXMethod_Open_20_Browsers,
 kVPXMethod_Open_20_Callback,
-kVPXMethod_Open_20_Callout,
 kVPXMethod_Open_20_Case,
 kVPXMethod_Open_20_Case_20_Editor_20_Name,
 kVPXMethod_Open_20_Case_20_Name,
 kVPXMethod_Open_20_Case_20_Number,
 kVPXMethod_Open_20_Case_20_One,
 kVPXMethod_Open_20_Component,
-kVPXMethod_Open_20_Connectors,
 kVPXMethod_Open_20_Container,
 kVPXMethod_Open_20_Control,
 kVPXMethod_Open_20_Controller,
@@ -8956,7 +8413,6 @@ kVPXMethod_Quit_20_Main_20_Event_20_Loop,
 kVPXMethod_Quote_20_String,
 kVPXMethod_Rad_20_To_20_Deg,
 kVPXMethod_Random_20_Between,
-kVPXMethod_Read_20_Bytes,
 kVPXMethod_Read_20_Form_20_For_20_Key,
 kVPXMethod_Read_20_From_20_Fork,
 kVPXMethod_Read_20_Object_20_File,
@@ -8995,19 +8451,12 @@ kVPXMethod_Release_20_IconRef,
 kVPXMethod_Release_20_Path,
 kVPXMethod_Remove_20_Action_20_Proc,
 kVPXMethod_Remove_20_All_20_Items,
-kVPXMethod_Remove_20_Browser,
-kVPXMethod_Remove_20_Browser_20_Targets,
 kVPXMethod_Remove_20_Callback,
-kVPXMethod_Remove_20_Client_20_Callback,
-kVPXMethod_Remove_20_Connection,
-kVPXMethod_Remove_20_Connector,
 kVPXMethod_Remove_20_Content_20_Items,
 kVPXMethod_Remove_20_Current_20_Task,
 kVPXMethod_Remove_20_Data,
-kVPXMethod_Remove_20_Dependencies,
 kVPXMethod_Remove_20_Editor,
 kVPXMethod_Remove_20_Editor_20_Window,
-kVPXMethod_Remove_20_From_20_Service,
 kVPXMethod_Remove_20_From_20_Superview,
 kVPXMethod_Remove_20_Handlers,
 kVPXMethod_Remove_20_Items,
@@ -9095,7 +8544,6 @@ kVPXMethod_Save_20_Project_20_Setting,
 kVPXMethod_Save_20_Projects,
 kVPXMethod_Save_20_String,
 kVPXMethod_Save_20_To_20_History,
-kVPXMethod_Save_20_Value,
 kVPXMethod_Scale_20_CTM,
 kVPXMethod_Schedule_20_Callback,
 kVPXMethod_Scroll_20_Rect,
@@ -9125,37 +8573,8 @@ kVPXMethod_Send_20_Remove_20_Self,
 kVPXMethod_Send_20_States,
 kVPXMethod_Send_20_To_20_All,
 kVPXMethod_Send_20_Wait_20_Reply,
-kVPXMethod_Server_20_Connect,
-kVPXMethod_Server_20_Create,
-kVPXMethod_Server_20_Start,
-kVPXMethod_Server_20_Stop,
-kVPXMethod_Service_20_Cancel,
-kVPXMethod_Service_20_Create,
-kVPXMethod_Service_20_Get_20_Addressing,
-kVPXMethod_Service_20_Get_20_Domain,
-kVPXMethod_Service_20_Get_20_Name,
-kVPXMethod_Service_20_Get_20_Port,
-kVPXMethod_Service_20_Get_20_TXT,
-kVPXMethod_Service_20_Get_20_TXT_20_Keys,
-kVPXMethod_Service_20_Get_20_Type,
-kVPXMethod_Service_20_Register,
-kVPXMethod_Service_20_Resolve,
-kVPXMethod_Service_20_Schedule_20_With_20_Run_20_Loop,
-kVPXMethod_Service_20_Set_20_Client,
-kVPXMethod_Service_20_Set_20_TXT,
-kVPXMethod_Service_20_Set_20_TXT_20_Data,
-kVPXMethod_Service_20_Set_20_TXT_20_Keys,
-kVPXMethod_Service_20_Unschedule_20_From_20_Run_20_Loop,
-kVPXMethod_ServiceBrowser_20_Create,
-kVPXMethod_ServiceBrowser_20_Invalidate,
-kVPXMethod_ServiceBrowser_20_Schedule_20_With_20_Run_20_Loop,
-kVPXMethod_ServiceBrowser_20_Search_20_For_20_Domains,
-kVPXMethod_ServiceBrowser_20_Search_20_For_20_Services,
-kVPXMethod_ServiceBrowser_20_Stop_20_Search,
-kVPXMethod_ServiceBrowser_20_Unschedule_20_From_20_Run_20_Loop,
 kVPXMethod_Set_20_AEDesc,
 kVPXMethod_Set_20_Action,
-kVPXMethod_Set_20_Action_20_Title,
 kVPXMethod_Set_20_Active_3F_,
 kVPXMethod_Set_20_Activity,
 kVPXMethod_Set_20_Activity_20_Name,
@@ -9164,7 +8583,6 @@ kVPXMethod_Set_20_Allocator,
 kVPXMethod_Set_20_Alternate_20_Title,
 kVPXMethod_Set_20_Animating_3F_,
 kVPXMethod_Set_20_Application_20_Name,
-kVPXMethod_Set_20_Architecture,
 kVPXMethod_Set_20_Architectures,
 kVPXMethod_Set_20_Archive,
 kVPXMethod_Set_20_Archive_20_Size,
@@ -9173,12 +8591,10 @@ kVPXMethod_Set_20_Arity,
 kVPXMethod_Set_20_Arrow_20_Cursor,
 kVPXMethod_Set_20_Attachment_20_Value,
 kVPXMethod_Set_20_Attachments,
-kVPXMethod_Set_20_Auto_20_Launch_3F_,
 kVPXMethod_Set_20_Block_20_Pages,
 kVPXMethod_Set_20_BlockPtr,
 kVPXMethod_Set_20_Bounds_20_Origin,
 kVPXMethod_Set_20_Breakpoint,
-kVPXMethod_Set_20_Browser_20_Targets,
 kVPXMethod_Set_20_Buffer_20_Size,
 kVPXMethod_Set_20_Build_20_Folder,
 kVPXMethod_Set_20_Build_20_Settings,
@@ -9198,14 +8614,10 @@ kVPXMethod_Set_20_Callback_20_Method_20_Name,
 kVPXMethod_Set_20_Callback_20_Pointer,
 kVPXMethod_Set_20_Callback_20_Result,
 kVPXMethod_Set_20_Calling_20_Promise_3F_,
-kVPXMethod_Set_20_Callout,
-kVPXMethod_Set_20_Callout_20_Owner,
 kVPXMethod_Set_20_Canceled_3F_,
-kVPXMethod_Set_20_Cancelled_3F_,
 kVPXMethod_Set_20_Canvas_20_Limits,
 kVPXMethod_Set_20_Case_20_Sensitive_3F_,
 kVPXMethod_Set_20_Changed_20_Callback,
-kVPXMethod_Set_20_Changes_20_Coming_3F_,
 kVPXMethod_Set_20_Check_20_Timer,
 kVPXMethod_Set_20_Class,
 kVPXMethod_Set_20_Clean_3F_,
@@ -9214,14 +8626,10 @@ kVPXMethod_Set_20_Command,
 kVPXMethod_Set_20_Command_20_ID,
 kVPXMethod_Set_20_Command_20_Line,
 kVPXMethod_Set_20_Completion_20_Behavior,
-kVPXMethod_Set_20_Completion_20_Callback,
 kVPXMethod_Set_20_Component_20_Type,
-kVPXMethod_Set_20_Connections,
-kVPXMethod_Set_20_Connectors,
 kVPXMethod_Set_20_Content,
 kVPXMethod_Set_20_Content_20_List,
 kVPXMethod_Set_20_Content_20_Size,
-kVPXMethod_Set_20_Context_20_Type,
 kVPXMethod_Set_20_Control_20_Auto_20_Invalidate_20_Flags,
 kVPXMethod_Set_20_Control_20_Bounds_20_QD,
 kVPXMethod_Set_20_Control_20_Data,
@@ -9260,7 +8668,6 @@ kVPXMethod_Set_20_Default_20_Properties,
 kVPXMethod_Set_20_Description,
 kVPXMethod_Set_20_Direct_20_Value,
 kVPXMethod_Set_20_Document_20_Count,
-kVPXMethod_Set_20_Domain,
 kVPXMethod_Set_20_Drag_20_Allowable_20_Actions,
 kVPXMethod_Set_20_Drag_20_CGImage,
 kVPXMethod_Set_20_Drag_20_Drop_20_Action,
@@ -9329,26 +8736,20 @@ kVPXMethod_Set_20_HIObject_20_Reference,
 kVPXMethod_Set_20_HIObjectClassRef,
 kVPXMethod_Set_20_HIObjectRef,
 kVPXMethod_Set_20_HIToolbarRef,
-kVPXMethod_Set_20_Host,
 kVPXMethod_Set_20_ID,
 kVPXMethod_Set_20_IO_20_Value,
-kVPXMethod_Set_20_IP_20_Addresses,
 kVPXMethod_Set_20_Icon,
 kVPXMethod_Set_20_IconRef,
 kVPXMethod_Set_20_Identifier,
 kVPXMethod_Set_20_Idle_20_Action,
 kVPXMethod_Set_20_Image_20_Well_20_From_20_File,
-kVPXMethod_Set_20_In_20_Bytes,
-kVPXMethod_Set_20_In_20_Stream,
 kVPXMethod_Set_20_Indeterminate_3F_,
 kVPXMethod_Set_20_Index,
 kVPXMethod_Set_20_Initial_20_Delay,
-kVPXMethod_Set_20_Initial_20_Frame,
 kVPXMethod_Set_20_Initial_20_Pasteboards,
 kVPXMethod_Set_20_Initial_20_Tasks,
 kVPXMethod_Set_20_Initial_3F_,
 kVPXMethod_Set_20_Instance_20_Attribute,
-kVPXMethod_Set_20_Interpreters,
 kVPXMethod_Set_20_Item,
 kVPXMethod_Set_20_Item_20_Bounds,
 kVPXMethod_Set_20_Item_20_Breakpoint,
@@ -9366,8 +8767,6 @@ kVPXMethod_Set_20_Known_20_Flavors,
 kVPXMethod_Set_20_Known_20_IDs,
 kVPXMethod_Set_20_Known_20_Items,
 kVPXMethod_Set_20_Known_20_Projects,
-kVPXMethod_Set_20_Known_20_Remotes,
-kVPXMethod_Set_20_Label_20_Text,
 kVPXMethod_Set_20_Last_20_Page,
 kVPXMethod_Set_20_Length,
 kVPXMethod_Set_20_Limit_20_UTIs,
@@ -9405,8 +8804,6 @@ kVPXMethod_Set_20_Option,
 kVPXMethod_Set_20_Options,
 kVPXMethod_Set_20_Origin,
 kVPXMethod_Set_20_Original_20_Text,
-kVPXMethod_Set_20_Out_20_Bytes,
-kVPXMethod_Set_20_Out_20_Stream,
 kVPXMethod_Set_20_Output_20_Text,
 kVPXMethod_Set_20_Owner,
 kVPXMethod_Set_20_PMPageFormat,
@@ -9416,7 +8813,6 @@ kVPXMethod_Set_20_Package_20_ID,
 kVPXMethod_Set_20_Package_20_Name,
 kVPXMethod_Set_20_Packager,
 kVPXMethod_Set_20_Packager_20_State,
-kVPXMethod_Set_20_Packet_20_Type,
 kVPXMethod_Set_20_Page_20_Range,
 kVPXMethod_Set_20_Page_20_Setup_20_Done_20_Callback,
 kVPXMethod_Set_20_Parameter,
@@ -9432,7 +8828,6 @@ kVPXMethod_Set_20_Path_20_To_20_Binary,
 kVPXMethod_Set_20_Permission,
 kVPXMethod_Set_20_PkgInfo_20_Creator,
 kVPXMethod_Set_20_PkgInfo_20_Type,
-kVPXMethod_Set_20_Platform,
 kVPXMethod_Set_20_Plug_20_Ins,
 kVPXMethod_Set_20_Popup_20_Selection,
 kVPXMethod_Set_20_Port,
@@ -9503,14 +8898,10 @@ kVPXMethod_Set_20_Selected_20_BackColor,
 kVPXMethod_Set_20_Selected_20_Colors,
 kVPXMethod_Set_20_Selected_20_Files,
 kVPXMethod_Set_20_Selected_20_ForeColor,
-kVPXMethod_Set_20_Selected_20_Item,
-kVPXMethod_Set_20_Selected_3F_,
 kVPXMethod_Set_20_Selection,
 kVPXMethod_Set_20_Sender_20_Only_3F_,
 kVPXMethod_Set_20_Sender_20_Translated_3F_,
-kVPXMethod_Set_20_Service,
 kVPXMethod_Set_20_Service_20_Manager,
-kVPXMethod_Set_20_Service_20_Type,
 kVPXMethod_Set_20_Services,
 kVPXMethod_Set_20_Session,
 kVPXMethod_Set_20_Settings,
@@ -9519,7 +8910,6 @@ kVPXMethod_Set_20_Shell_20_Result,
 kVPXMethod_Set_20_Shell_20_Text,
 kVPXMethod_Set_20_Should_20_Antialias,
 kVPXMethod_Set_20_Size,
-kVPXMethod_Set_20_Sockets,
 kVPXMethod_Set_20_Source_20_Data,
 kVPXMethod_Set_20_Sources,
 kVPXMethod_Set_20_Stack_20_Size,
@@ -9543,7 +8933,6 @@ kVPXMethod_Set_20_Terminal,
 kVPXMethod_Set_20_Text,
 kVPXMethod_Set_20_Text_20_Command,
 kVPXMethod_Set_20_The_20_Drag,
-kVPXMethod_Set_20_Timeout_20_Timer,
 kVPXMethod_Set_20_Title,
 kVPXMethod_Set_20_Toolbar,
 kVPXMethod_Set_20_Total_20_Size,
@@ -9561,7 +8950,6 @@ kVPXMethod_Set_20_Value,
 kVPXMethod_Set_20_Value_20_Address,
 kVPXMethod_Set_20_Value_20_CFType,
 kVPXMethod_Set_20_Values,
-kVPXMethod_Set_20_Values_20_From_20_Service,
 kVPXMethod_Set_20_Verify_20_Reads_3F_,
 kVPXMethod_Set_20_Version,
 kVPXMethod_Set_20_Viewport_20_Origin,
@@ -9604,7 +8992,6 @@ kVPXMethod_Show_20_CTM,
 kVPXMethod_Show_20_Control,
 kVPXMethod_Show_20_Current_20_Operation,
 kVPXMethod_Show_20_Drag_20_Hilite,
-kVPXMethod_Show_20_Error_20_String,
 kVPXMethod_Show_20_Errors,
 kVPXMethod_Show_20_Hilite,
 kVPXMethod_Show_20_Project_20_Info,
@@ -9615,26 +9002,6 @@ kVPXMethod_Simple_20_Value_3F_,
 kVPXMethod_Simulate_20_Click,
 kVPXMethod_Size_20_Control,
 kVPXMethod_Slice_20_String,
-kVPXMethod_Socket_20_Connect_20_To_20_Address,
-kVPXMethod_Socket_20_Copy_20_Address,
-kVPXMethod_Socket_20_Copy_20_Peer_20_Address,
-kVPXMethod_Socket_20_Create,
-kVPXMethod_Socket_20_Create_20_Connected_20_To_20_Socket_20_Signature,
-kVPXMethod_Socket_20_Create_20_Run_20_Loop_20_Source,
-kVPXMethod_Socket_20_Create_20_With_20_Native,
-kVPXMethod_Socket_20_Create_20_With_20_Socket_20_SIgnature,
-kVPXMethod_Socket_20_Disable_20_Callbacks,
-kVPXMethod_Socket_20_Enable_20_Callbacks,
-kVPXMethod_Socket_20_Get_20_Context,
-kVPXMethod_Socket_20_Get_20_Flags,
-kVPXMethod_Socket_20_Get_20_Native,
-kVPXMethod_Socket_20_Invalidate,
-kVPXMethod_Socket_20_Is_20_Valid,
-kVPXMethod_Socket_20_Schedule_20_With_20_Run_20_Loop,
-kVPXMethod_Socket_20_Send_20_CFData,
-kVPXMethod_Socket_20_Set_20_Address,
-kVPXMethod_Socket_20_Set_20_Flags,
-kVPXMethod_Socket_20_Set_20_Option,
 kVPXMethod_Sort_20_Control,
 kVPXMethod_Sort_20_Horizontally,
 kVPXMethod_Sort_20_Instances_20_With_20_Key_20_Method,
@@ -9650,47 +9017,15 @@ kVPXMethod_Stack_20_Opened,
 kVPXMethod_Stack_20_Termination,
 kVPXMethod_Stage_20_For_20_Error,
 kVPXMethod_Standard_20_Drag_20_Input_20_Callback,
-kVPXMethod_Standard_20_Timeout_20_Callback,
-kVPXMethod_Start_20_Browsing,
-kVPXMethod_Start_20_Browsing_20_For_20_Domains,
-kVPXMethod_Start_20_Browsing_20_For_20_Services,
 kVPXMethod_Start_20_Busy,
-kVPXMethod_Start_20_Context,
 kVPXMethod_Start_20_Find,
-kVPXMethod_Start_20_Publishing,
-kVPXMethod_Start_20_Resolving,
-kVPXMethod_Start_20_Resolving_20_Sync,
-kVPXMethod_Start_20_Server,
 kVPXMethod_Start_20_Timer,
 kVPXMethod_State_20_Changed,
 kVPXMethod_Step,
 kVPXMethod_Step_20_Into,
 kVPXMethod_Step_20_Out,
 kVPXMethod_Step_20_Skip,
-kVPXMethod_Stop_20_Browsing,
-kVPXMethod_Stop_20_Context,
-kVPXMethod_Stop_20_Publishing,
-kVPXMethod_Stop_20_Server,
 kVPXMethod_Stop_20_Timer,
-kVPXMethod_Stream_20_Can_20_Accept_20_Bytes_3F_,
-kVPXMethod_Stream_20_Close,
-kVPXMethod_Stream_20_Copy_20_Property,
-kVPXMethod_Stream_20_Create_20_For_20_HTTP_20_Request,
-kVPXMethod_Stream_20_Create_20_With_20_Allocated_20_Buffers,
-kVPXMethod_Stream_20_Create_20_With_20_Buffer,
-kVPXMethod_Stream_20_Create_20_With_20_File,
-kVPXMethod_Stream_20_Create_20_With_20_URL,
-kVPXMethod_Stream_20_Get_20_Error,
-kVPXMethod_Stream_20_Get_20_Status,
-kVPXMethod_Stream_20_Open,
-kVPXMethod_Stream_20_Read,
-kVPXMethod_Stream_20_Read_20_Text,
-kVPXMethod_Stream_20_Schedule_20_With_20_Run_20_Loop,
-kVPXMethod_Stream_20_Set_20_Client,
-kVPXMethod_Stream_20_Set_20_Property,
-kVPXMethod_Stream_20_Unschedule_20_From_20_Run_20_Loop,
-kVPXMethod_Stream_20_Write,
-kVPXMethod_Stream_20_Write_20_Text,
 kVPXMethod_String_20_To_20_Pascal,
 kVPXMethod_Strip_20_Suffix,
 kVPXMethod_Stroke_20_Arc,
@@ -9730,7 +9065,6 @@ kVPXMethod_TEST_20_CFNumber,
 kVPXMethod_TEST_20_CFPref_20_Read,
 kVPXMethod_TEST_20_CFPref_20_Sync,
 kVPXMethod_TEST_20_CFPref_20_Write,
-kVPXMethod_TEST_20_CFReadStream,
 kVPXMethod_TEST_20_CFString_20_1,
 kVPXMethod_TEST_20_CFString_20_2,
 kVPXMethod_TEST_20_CFString_20_3,
@@ -9772,7 +9106,6 @@ kVPXMethod_TIV_20_Config_20_For_20_Mode,
 kVPXMethod_TIV_20_Config_20_For_20_Size,
 kVPXMethod_Tab,
 kVPXMethod_Tab_20_Direction,
-kVPXMethod_Take_20_Focus,
 kVPXMethod_Target,
 kVPXMethod_Target_20_Data,
 kVPXMethod_Target_20_Deferred,
@@ -9782,13 +9115,11 @@ kVPXMethod_Target_20_Text,
 kVPXMethod_Target_20_Value,
 kVPXMethod_Task_20_Postflight,
 kVPXMethod_Task_20_Preflight,
-kVPXMethod_Terminate_20_Download,
 kVPXMethod_Terminate_20_Task,
 kVPXMethod_Test,
 kVPXMethod_Test_20_Attribute_20_Name,
 kVPXMethod_Text_20_To_20_Object,
 kVPXMethod_Tidy,
-kVPXMethod_Timeout_20_Download,
 kVPXMethod_To_20_AEDesc,
 kVPXMethod_To_20_CFBooleanRef,
 kVPXMethod_To_20_CFNumberRef,
@@ -9824,8 +9155,6 @@ kVPXMethod_Toolbar_20_Layout_20_Changed,
 kVPXMethod_Track_20_Control,
 kVPXMethod_Track_20_Drag,
 kVPXMethod_Transform_20_Arity,
-kVPXMethod_Transform_20_CFStringRef,
-kVPXMethod_Transform_20_CFType,
 kVPXMethod_Translate_20_CTM,
 kVPXMethod_Trim,
 kVPXMethod_Trim_20_Projects,
@@ -9888,7 +9217,6 @@ kVPXMethod_Update_20_Operation_20_Types,
 kVPXMethod_Update_20_Owner,
 kVPXMethod_Update_20_Percent,
 kVPXMethod_Update_20_Progress,
-kVPXMethod_Update_20_Prompts,
 kVPXMethod_Update_20_Record,
 kVPXMethod_Update_20_Select_20_Item,
 kVPXMethod_Update_20_Select_20_List,
@@ -9927,9 +9255,7 @@ kVPXMethod_Wait_20_On_20_Queue,
 kVPXMethod_Was_20_Content_20_Hit_3F_,
 kVPXMethod_Was_20_Hit,
 kVPXMethod_WindowRef_20_To_20_Object,
-kVPXMethod_Write_20_Bytes,
 kVPXMethod_Write_20_Data_20_And_20_Properties_20_To_20_Resource,
-kVPXMethod_Write_20_Pending,
 kVPXMethod_Write_20_String,
 kVPXMethod_Write_20_To_20_Fork,
 kVPXMethod_Write_20_XML_20_File_20_From_20_Property_20_List,
@@ -9939,7 +9265,6 @@ kVPXMethod_bit_2D_without,
 kVPXMethod_list_2D_to_2D_CGPoint,
 kVPXMethod_list_2D_to_2D_CGRect,
 kVPXMethod_list_2D_to_2D_CGSize,
-kVPXMethod_mHI_20_Update_20_Hosts,
 kVPXMethod_old_20_Loop_20_Header,
 kVPXMethod_test_2D_bit_3F_,
 kVPXMethod_x_2A_pi,
@@ -9979,15 +9304,6 @@ kVPXMethod__7E_Get_20_Property_20_Flags,
 kVPXMethod__7E_Get_20_Proxy_20_IconRef,
 kVPXMethod__7E_Get_20_Value,
 kVPXMethod__7E_Get_20_View_20_Style,
-kVPXMethod__7E_Handle_20_Can_20_Accept_20_Bytes,
-kVPXMethod__7E_Handle_20_Has_20_Bytes_20_Available,
-kVPXMethod__7E_Handle_20_Read_20_End_20_Encountered,
-kVPXMethod__7E_Handle_20_Read_20_Error_20_Occurred,
-kVPXMethod__7E_Handle_20_Read_20_Open_20_Completed,
-kVPXMethod__7E_Handle_20_Timeout,
-kVPXMethod__7E_Handle_20_Write_20_End_20_Encountered,
-kVPXMethod__7E_Handle_20_Write_20_Error_20_Occurred,
-kVPXMethod__7E_Handle_20_Write_20_Open_20_Completed,
 kVPXMethod__7E_LSCopyItemInfo,
 kVPXMethod__7E_LSOpenFSRef,
 kVPXMethod__7E_Make_20_Initialization_20_Event,
@@ -10042,7 +9358,6 @@ kVPXValue_App_20_Saved_3F_,
 kVPXValue_Apple_20_Event,
 kVPXValue_Application_20_Name,
 kVPXValue_Application_20_Type,
-kVPXValue_Architecture,
 kVPXValue_Architectures,
 kVPXValue_Archive,
 kVPXValue_Archive_20_Size,
@@ -10053,7 +9368,6 @@ kVPXValue_Attribute,
 kVPXValue_Attribute_20_Indices,
 kVPXValue_Attribute_20_Name,
 kVPXValue_Attributes,
-kVPXValue_Auto_20_Launch_3F_,
 kVPXValue_Auto_20_Move_20_Output_20_Bar_3F_,
 kVPXValue_Auto_20_Open_20_Case_20_Drawer_3F_,
 kVPXValue_Base_20_Class_20_ID,
@@ -10064,8 +9378,6 @@ kVPXValue_Block_20_Size,
 kVPXValue_BlockPtr,
 kVPXValue_Breakpoint,
 kVPXValue_Breakpoints,
-kVPXValue_Browser_20_Targets,
-kVPXValue_Browsers,
 kVPXValue_Buffer_20_Size,
 kVPXValue_Build_20_Error,
 kVPXValue_Build_20_Folder,
@@ -10086,18 +9398,12 @@ kVPXValue_Callback_20_Pointer,
 kVPXValue_Callback_20_Result,
 kVPXValue_Callbacks_20_Reference,
 kVPXValue_Calling_20_Promise_3F_,
-kVPXValue_Callout,
-kVPXValue_Callout_20_Owner,
 kVPXValue_Cancel,
 kVPXValue_Canceled_3F_,
-kVPXValue_Cancelled_3F_,
 kVPXValue_Canvas_20_Limits,
 kVPXValue_Case,
-kVPXValue_Case_20_Command_20_Scroll_20_Speed,
-kVPXValue_Case_20_Command_20_Scroll_3F_,
 kVPXValue_Case_20_Dock_20_Side,
 kVPXValue_Case_20_Index,
-kVPXValue_Case_20_Scroll_20_Wheel_20_Select_3F_,
 kVPXValue_Case_20_Sensitive_3F_,
 kVPXValue_Case_20_Stack,
 kVPXValue_Change_20_Selection_3F_,
@@ -10111,7 +9417,6 @@ kVPXValue_Class_20_List,
 kVPXValue_Class_20_Name,
 kVPXValue_Class_20_Name_20_ID,
 kVPXValue_Clean_3F_,
-kVPXValue_Client_20_Callback,
 kVPXValue_Column_20_View,
 kVPXValue_Columns,
 kVPXValue_Command,
@@ -10124,14 +9429,11 @@ kVPXValue_Completion_20_Behavior,
 kVPXValue_Completion_20_Callback,
 kVPXValue_Component_20_Ref,
 kVPXValue_Component_20_Type,
-kVPXValue_Connections,
-kVPXValue_Connectors,
 kVPXValue_Constructor,
 kVPXValue_Container,
 kVPXValue_Container_3F_,
 kVPXValue_Content,
 kVPXValue_Contents_20_Page,
-kVPXValue_Context_20_Type,
 kVPXValue_Contextual_20_Menu_3F_,
 kVPXValue_Control,
 kVPXValue_Control_20_Action,
@@ -10191,7 +9493,6 @@ kVPXValue_Disclosure_20_Column,
 kVPXValue_Display_20_Type,
 kVPXValue_Displaying_20_Results_20_Windows_3F_,
 kVPXValue_Document_20_Count,
-kVPXValue_Domain,
 kVPXValue_Done,
 kVPXValue_Double_20_Down,
 kVPXValue_Drag_20_Input_20_Callback,
@@ -10280,10 +9581,8 @@ kVPXValue_Helper,
 kVPXValue_Helper_20_Name,
 kVPXValue_Highlight,
 kVPXValue_Horizontal_20_Scroll_20_Bar,
-kVPXValue_Host,
 kVPXValue_ID,
 kVPXValue_IO_20_Spacing_20_Buffer,
-kVPXValue_IP_20_Addresses,
 kVPXValue_Icon,
 kVPXValue_Icon_20_Name,
 kVPXValue_Icon_20_Reference,
@@ -10293,18 +9592,14 @@ kVPXValue_Icons,
 kVPXValue_Identifier,
 kVPXValue_Idle_20_Action,
 kVPXValue_Idle_20_Scroll_20_Timer,
-kVPXValue_In_20_Bytes,
 kVPXValue_In_20_Drag_20_Instances,
 kVPXValue_In_20_Drag_20_View_20_Content,
-kVPXValue_In_20_Object_20_Size,
-kVPXValue_In_20_Stream,
 kVPXValue_Inarity,
 kVPXValue_Index,
 kVPXValue_Info_20_Use_20_Web_20_View_3F_,
 kVPXValue_Inherited,
 kVPXValue_Initial_20_Classes,
 kVPXValue_Initial_20_Delay,
-kVPXValue_Initial_20_Frame,
 kVPXValue_Initial_20_Pasteboards,
 kVPXValue_Initial_20_Tasks,
 kVPXValue_Initial_20_View,
@@ -10319,10 +9614,8 @@ kVPXValue_Inset,
 kVPXValue_Instance,
 kVPXValue_Instances,
 kVPXValue_Interpreter_20_Mode,
-kVPXValue_Interpreter_20_Remote_20_Port,
 kVPXValue_Interpreter_20_Thread_3F_,
 kVPXValue_Interpreter_20_Version,
-kVPXValue_Interpreters,
 kVPXValue_Item,
 kVPXValue_Item_20_Callbacks,
 kVPXValue_Item_20_Compare_20_Callback,
@@ -10342,9 +9635,7 @@ kVPXValue_Known_20_Flavors,
 kVPXValue_Known_20_IDs,
 kVPXValue_Known_20_Items,
 kVPXValue_Known_20_Projects,
-kVPXValue_Known_20_Remotes,
 kVPXValue_Label,
-kVPXValue_Label_20_Text,
 kVPXValue_Last_20_Form,
 kVPXValue_Last_20_Height,
 kVPXValue_Last_20_Width,
@@ -10371,7 +9662,6 @@ kVPXValue_Loop_20_Terminals,
 kVPXValue_MP_20_Task,
 kVPXValue_MPTask,
 kVPXValue_Main_20_Thread,
-kVPXValue_Manual_20_Address,
 kVPXValue_Manual_20_Items,
 kVPXValue_Manual_20_Locations,
 kVPXValue_Max,
@@ -10394,7 +9684,6 @@ kVPXValue_Minimum_20_Size,
 kVPXValue_Minimum_20_Size_20_Text,
 kVPXValue_Minimum_20_Width,
 kVPXValue_Modality,
-kVPXValue_Model_20_Name,
 kVPXValue_Name,
 kVPXValue_Nav_20_Class,
 kVPXValue_New_20_Line_20_Char,
@@ -10402,7 +9691,6 @@ kVPXValue_New_20_Line_20_Mode_3F_,
 kVPXValue_Next_20_Handler,
 kVPXValue_Normal_20_Colors,
 kVPXValue_Not_20_Saved_3F_,
-kVPXValue_Notification_20_Callback,
 kVPXValue_Null_20_on_20_Cancel_3F_,
 kVPXValue_Offsets,
 kVPXValue_Old_20_Select_20_List,
@@ -10416,8 +9704,6 @@ kVPXValue_Origin,
 kVPXValue_Original_20_Text,
 kVPXValue_Originator,
 kVPXValue_Other_20_Files,
-kVPXValue_Out_20_Bytes,
-kVPXValue_Out_20_Stream,
 kVPXValue_Outarity,
 kVPXValue_Output_20_Specifiers,
 kVPXValue_Outputs,
@@ -10431,7 +9717,6 @@ kVPXValue_Package_20_ID,
 kVPXValue_Package_20_Name,
 kVPXValue_Packager,
 kVPXValue_Packager_20_State,
-kVPXValue_Packet_20_Type,
 kVPXValue_Page_20_Setup_20_Done_20_Callback,
 kVPXValue_Parameter_20_Strings,
 kVPXValue_Parameters,
@@ -10447,9 +9732,7 @@ kVPXValue_Path_20_To_20_Binary,
 kVPXValue_Permission,
 kVPXValue_PkgInfo_20_Creator,
 kVPXValue_PkgInfo_20_Type,
-kVPXValue_Platform,
 kVPXValue_Plug_20_Ins,
-kVPXValue_Port,
 kVPXValue_Position_20_Mode,
 kVPXValue_Position_20_Offset,
 kVPXValue_Preferred_20_Edge,
@@ -10535,12 +9818,9 @@ kVPXValue_Select_20_List,
 kVPXValue_Selected,
 kVPXValue_Selected_20_Colors,
 kVPXValue_Selected_20_Files,
-kVPXValue_Selected_3F_,
 kVPXValue_Sender_20_Only_3F_,
 kVPXValue_Sender_20_Translated_3F_,
-kVPXValue_Service,
 kVPXValue_Service_20_Manager,
-kVPXValue_Service_20_Type,
 kVPXValue_Services,
 kVPXValue_Session,
 kVPXValue_Settings,
@@ -10552,7 +9832,6 @@ kVPXValue_Shut_20_Down_3F_,
 kVPXValue_Size,
 kVPXValue_Skip_20_Colors,
 kVPXValue_Smart_20_Find_20_States,
-kVPXValue_Sockets,
 kVPXValue_Sort_20_Order,
 kVPXValue_Sortable_3F_,
 kVPXValue_Source_20_Data,
@@ -10602,7 +9881,6 @@ kVPXValue_Tidy_20_Grid_20_V,
 kVPXValue_Tidy_20_Offset_20_H,
 kVPXValue_Tidy_20_Offset_20_V,
 kVPXValue_Time_20_Stamp,
-kVPXValue_Timeout_20_Timer,
 kVPXValue_Timer_20_Reference,
 kVPXValue_Title,
 kVPXValue_Title_20_Offset,

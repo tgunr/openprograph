@@ -4328,7 +4328,6 @@ Nat4 VPLU_EventRef_2F_Get_20_EP_20_QDRect_universal_load(V_Method method,V_Envir
 	tempOperation = operation_to_local(tempOperation,environment,"report");
 /* IO - VPL Terminal : { 147 47 152 52 }*/
 	tempTerminal = input_insert(0,tempOperation,environment);
-	tempOperation = operation_value_to(tempOperation,environment,kDebug);
 
 	{
 	Int4 result = 0;

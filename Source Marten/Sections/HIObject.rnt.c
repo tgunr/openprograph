@@ -1595,7 +1595,7 @@ Nat4 VPLU_HIObject_20_Class_2F_Allocate_20_Base_20_Class_20_ID_universal_load(V_
 /* Begin Case */
 	ptrA = case_insert(0,method,environment);
 
-/* Start Operations: { 138 62 }{ 200 300 } */
+/* Start Operations: { 60 60 }{ 200 300 } */
 /* Begin Operation: { 20 20 28 212 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_input_bar(tempOperation,environment);
@@ -1647,36 +1647,36 @@ Nat4 VPLU_HIObject_20_Class_2F_Make_20_HIObject_20_Instance_universal_load(V_Met
 /* Begin Case */
 	ptrA = case_insert(0,method,environment);
 
-/* Start Operations: { 157 125 }{ 206 264 } */
-/* Begin Operation: { 36 36 44 228 } */
+/* Start Operations: { 157 125 }{ 208 352 } */
+/* Begin Operation: { 20 20 28 212 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* IO - VPL Root : { 45 130 50 135 }*/
+/* IO - VPL Root : { 28 110 33 115 }*/
 	tempRoot = output_insert(0,tempOperation,environment);
 /* End Operation */
 
-/* Begin Operation: { 78 39 95 225 } */
+/* Begin Operation: { 56 29 72 204 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_universal(tempOperation,environment,"/Get HIObject Instance Type");
-/* IO - VPL Terminal : { 72 130 77 135 }*/
-/* IO - VPL Root : { 96 130 101 135 }*/
+/* IO - VPL Terminal : { 51 110 56 115 }*/
+/* IO - VPL Root : { 72 111 77 116 }*/
 	tempTerminal = input_insert(0,tempOperation,environment);
 	tempRoot = output_insert(0,tempOperation,environment);
 /* End Operation */
 
-/* Begin Operation: { 120 87 137 177 } */
+/* Begin Operation: { 106 73 122 154 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_universal(tempOperation,environment,"Make Class");
-/* IO - VPL Terminal : { 114 130 119 135 }*/
-/* IO - VPL Root : { 138 130 143 135 }*/
+/* IO - VPL Terminal : { 101 111 106 116 }*/
+/* IO - VPL Root : { 122 111 127 116 }*/
 	tempTerminal = input_insert(0,tempOperation,environment);
 	tempRoot = output_insert(0,tempOperation,environment);
 /* End Operation */
 
-/* Begin Operation: { 162 36 170 228 } */
+/* Begin Operation: { 151 19 159 211 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* IO - VPL Terminal : { 156 130 161 135 }*/
+/* IO - VPL Terminal : { 146 111 151 116 }*/
 	tempTerminal = input_insert(0,tempOperation,environment);
 /* End Operation */
 
@@ -2684,7 +2684,7 @@ Nat4 VPLU_HIObject_20_Class_2F_CE_20_HIObject_20_Construct_universal_load(V_Meth
 /* Begin Case */
 	ptrA = case_insert(0,method,environment);
 
-/* Start Operations: { 132 374 }{ 392 290 } */
+/* Start Operations: { 345 972 }{ 392 290 } */
 /* Begin Operation: { 20 20 28 212 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_input_bar(tempOperation,environment);
@@ -6279,7 +6279,7 @@ Nat4 VPLU_HIObject_2F_Create_universal_load(V_Method method,V_Environment enviro
 /* Begin Case */
 	ptrA = case_insert(0,method,environment);
 
-/* Start Operations: { 89 331 }{ 200 300 } */
+/* Start Operations: { 60 60 }{ 200 300 } */
 /* Begin Operation: { 20 20 28 212 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_input_bar(tempOperation,environment);
@@ -6468,7 +6468,7 @@ Nat4 VPLU_HIObject_2F_Create_20_Instance_universal_load(V_Method method,V_Enviro
 	ptrA = case_insert(0,(V_Method)localOperation,environment);
 	ptrA = case_open(ptrA,localOperation,environment);
 
-/* Start Operations: { 403 513 }{ 200 300 } */
+/* Start Operations: { 60 60 }{ 200 300 } */
 /* Begin Operation: { 20 20 28 212 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_input_bar(tempOperation,environment);

@@ -4933,7 +4933,7 @@ Nat4 VPLU_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_universal_load(V_Meth
 	ptrA = case_insert(0,(V_Method)localOperation,environment);
 	ptrA = case_open(ptrA,localOperation,environment);
 
-/* Start Operations: { 450 687 }{ 206 355 } */
+/* Start Operations: { 450 687 }{ 290 365 } */
 /* Begin Operation: { 36 36 44 228 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_input_bar(tempOperation,environment);
@@ -4943,52 +4943,10 @@ Nat4 VPLU_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_universal_load(V_Meth
 	tempRoot = output_insert(0,tempOperation,environment);
 /* End Operation */
 
-/* Begin Operation: { 78 39 95 199 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_instance(tempOperation,environment,"Marten Selection PlugIn");
-/* IO - VPL Terminal : { 72 117 77 122 }*/
-/* IO - VPL Root : { 96 117 101 122 }*/
-/* End Operation */
-
-/* Begin Operation: { 78 217 95 265 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_local(tempOperation,environment,"old?");
-/* IO - VPL Terminal : { 72 239 77 244 }*/
-/* IO - VPL Root : { 96 239 101 244 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-	tempRoot = output_insert(0,tempOperation,environment);
-
-	{
-	Int4 result = 0;
-	V_Case ptrA = NULL;
-	V_Terminal tempTerminal = NULL;
-	V_Root tempRoot = NULL;
-	V_Operation localOperation = tempOperation;
-
-/* Start Cases: { 60 60 }{ 200 300 }*/
-/* Begin Case */
-	ptrA = case_insert(0,(V_Method)localOperation,environment);
-	ptrA = case_open(ptrA,localOperation,environment);
-
-/* Start Operations: { 470 707 }{ 248 365 } */
-/* Begin Operation: { 36 36 44 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* IO - VPL Root : { 45 130 50 135 }*/
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 78 48 95 126 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_primitive(tempOperation,environment,1,0,"external?");
-/* IO - VPL Terminal : { 72 85 77 90 }*/
-	tempOperation = operation_action_to(tempOperation,environment,kNextCase,kFailure);
-/* End Operation */
-
-/* Begin Operation: { 78 159 95 213 } */
+/* Begin Operation: { 78 147 95 201 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_constant(tempOperation,environment,"__CFURL");
-/* IO - VPL Root : { 96 184 101 189 }*/
+/* IO - VPL Root : { 96 172 101 177 }*/
 /* End Operation */
 
 /* Begin Operation: { 120 90 137 218 } */
@@ -4999,79 +4957,29 @@ Nat4 VPLU_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_universal_load(V_Meth
 /* IO - VPL Root : { 138 152 143 157 }*/
 /* End Operation */
 
-/* Begin Operation: { 162 106 179 202 } */
+/* Begin Operation: { 162 233 179 329 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_universal(tempOperation,environment,"CF URL/New");
-/* IO - VPL Terminal : { 156 152 161 157 }*/
-/* IO - VPL Root : { 180 152 185 157 }*/
+/* IO - VPL Terminal : { 156 279 161 284 }*/
+/* IO - VPL Root : { 180 279 185 284 }*/
 	tempTerminal = input_insert(0,tempOperation,environment);
 	tempRoot = output_insert(0,tempOperation,environment);
 /* End Operation */
 
-/* Begin Operation: { 204 36 212 228 } */
+/* Begin Operation: { 162 39 179 199 } */
 	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* IO - VPL Terminal : { 198 130 203 135 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
+	tempOperation = operation_to_instance(tempOperation,environment,"Marten Selection PlugIn");
+/* IO - VPL Terminal : { 156 117 161 122 }*/
+/* IO - VPL Root : { 180 117 185 122 }*/
 /* End Operation */
 
-/* Stop Operations */
-
-/* Begin Connect Operations */
-	result = connect_root_to_terminal(ptrA,1,0,1,1);
-	result = connect_root_to_terminal(ptrA,1,0,1,3);
-	result = connect_root_to_terminal(ptrA,1,2,2,3);
-	result = connect_root_to_terminal(ptrA,1,3,1,4);
-	result = connect_root_to_terminal(ptrA,1,4,1,5);
-/* End Connect Operations */
-
-/* Begin Connect Synchros */
-/* End Connect Synchros */
-
-/* End Case */
-
-/* Begin Case */
-	ptrA = case_insert(0,(V_Method)localOperation,environment);
-	ptrA = case_open(ptrA,localOperation,environment);
-
-/* Start Operations: { 470 707 }{ 122 264 } */
-/* Begin Operation: { 36 36 44 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* IO - VPL Root : { 45 130 50 135 }*/
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 78 36 86 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* IO - VPL Terminal : { 72 130 77 135 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Stop Operations */
-
-/* Begin Connect Operations */
-	result = connect_root_to_terminal(ptrA,1,0,1,1);
-/* End Connect Operations */
-
-/* Begin Connect Synchros */
-/* End Connect Synchros */
-
-/* End Case */
-
-/* Stop Cases */
-
-}
-/* End Operation */
-
-/* Begin Operation: { 120 97 137 187 } */
+/* Begin Operation: { 204 97 221 187 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_universal(tempOperation,environment,"/Load Type");
-/* IO - VPL Terminal : { 114 117 119 122 }*/
-/* IO - VPL Terminal : { 114 139 119 144 }*/
-/* IO - VPL Terminal : { 114 161 119 166 }*/
-/* IO - VPL Root : { 138 140 143 145 }*/
+/* IO - VPL Terminal : { 198 117 203 122 }*/
+/* IO - VPL Terminal : { 198 139 203 144 }*/
+/* IO - VPL Terminal : { 198 161 203 166 }*/
+/* IO - VPL Root : { 222 140 227 145 }*/
 	tempTerminal = input_insert(0,tempOperation,environment);
 	tempTerminal = input_insert(0,tempOperation,environment);
 	tempTerminal = input_insert(0,tempOperation,environment);
@@ -5079,17 +4987,17 @@ Nat4 VPLU_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_universal_load(V_Meth
 	tempOperation = operation_action_to(tempOperation,environment,kNextCase,kFailure);
 /* End Operation */
 
-/* Begin Operation: { 120 243 137 319 } */
+/* Begin Operation: { 204 243 221 319 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_universal(tempOperation,environment,"/Release");
-/* IO - VPL Terminal : { 114 279 119 284 }*/
+/* IO - VPL Terminal : { 198 279 203 284 }*/
 	tempTerminal = input_insert(0,tempOperation,environment);
 /* End Operation */
 
-/* Begin Operation: { 162 36 170 228 } */
+/* Begin Operation: { 246 36 254 228 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* IO - VPL Terminal : { 156 140 161 145 }*/
+/* IO - VPL Terminal : { 240 140 245 145 }*/
 	tempTerminal = input_insert(0,tempOperation,environment);
 /* End Operation */
 
@@ -5097,15 +5005,17 @@ Nat4 VPLU_Marten_20_Selection_20_PlugIn_20_Service_2F_Open_universal_load(V_Meth
 
 /* Begin Connect Operations */
 	result = connect_root_to_terminal(ptrA,1,0,1,2);
-	result = connect_root_to_terminal(ptrA,1,1,1,3);
-	result = connect_root_to_terminal(ptrA,1,2,2,3);
-	result = connect_root_to_terminal(ptrA,2,0,3,3);
-	result = connect_root_to_terminal(ptrA,1,2,1,4);
-	result = connect_root_to_terminal(ptrA,1,3,1,5);
+	result = connect_root_to_terminal(ptrA,1,1,2,2);
+	result = connect_root_to_terminal(ptrA,1,2,1,3);
+	result = connect_root_to_terminal(ptrA,1,4,1,5);
+	result = connect_root_to_terminal(ptrA,1,3,2,5);
+	result = connect_root_to_terminal(ptrA,2,0,3,5);
+	result = connect_root_to_terminal(ptrA,1,3,1,6);
+	result = connect_root_to_terminal(ptrA,1,5,1,7);
 /* End Connect Operations */
 
 /* Begin Connect Synchros */
-/* Synchro [4 to 3] */
+/* Synchro [6 to 5] */
 /* End Connect Synchros */
 
 /* End Case */

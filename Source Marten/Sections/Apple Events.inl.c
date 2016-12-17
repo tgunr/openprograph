@@ -1884,62 +1884,10 @@ FOOTER(3)
 enum opTrigger vpx_method_AE_20_Descriptor_2F_From_20_AEDesc_20_Type_case_8(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
 enum opTrigger vpx_method_AE_20_Descriptor_2F_From_20_AEDesc_20_Type_case_8(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
 {
-HEADERWITHNONE(8)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_match(PARAMETERS,"\'bmrk\'",TERMINAL(1));
-NEXTCASEONFAILURE
-
-result = vpx_extconstant(PARAMETERS,typeAlias,ROOT(2));
-
-PUTINTEGER(AECoerceDesc( GETCONSTPOINTER(AEDesc,*,TERMINAL(0)),GETINTEGER(TERMINAL(2)),GETPOINTER(8,AEDesc,*,ROOT(4),NONE)),3);
-result = kSuccess;
-
-result = vpx_match(PARAMETERS,"0",TERMINAL(3));
-FAILONFAILURE
-
-result = vpx_method_From_20_AEDesc(PARAMETERS,TERMINAL(4),ROOT(5));
-FAILONFAILURE
-
-PUTINTEGER(AEDisposeDesc( GETPOINTER(8,AEDesc,*,ROOT(7),TERMINAL(4))),6);
-result = kSuccess;
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(5))
-FOOTERWITHNONE(8)
-}
-
-enum opTrigger vpx_method_AE_20_Descriptor_2F_From_20_AEDesc_20_Type_case_9_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
-enum opTrigger vpx_method_AE_20_Descriptor_2F_From_20_AEDesc_20_Type_case_9_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
-{
-HEADERWITHNONE(4)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_call_primitive(PARAMETERS,VPLP_integer_2D_to_2D_string,1,1,TERMINAL(1),ROOT(2));
-
-result = vpx_constant(PARAMETERS,"Unkown AEDesc Type Request",ROOT(3));
-
-result = vpx_method_Debug_20_Result(PARAMETERS,TERMINAL(0),TERMINAL(3),TERMINAL(2),NONE);
-
-result = kSuccess;
-
-FOOTERSINGLECASEWITHNONE(4)
-}
-
-enum opTrigger vpx_method_AE_20_Descriptor_2F_From_20_AEDesc_20_Type_case_9(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
-enum opTrigger vpx_method_AE_20_Descriptor_2F_From_20_AEDesc_20_Type_case_9(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
-{
 HEADERWITHNONE(2)
 INPUT(0,0)
 INPUT(1,1)
 result = kSuccess;
-
-result = vpx_method_AE_20_Descriptor_2F_From_20_AEDesc_20_Type_case_9_local_2(PARAMETERS,TERMINAL(0),TERMINAL(1));
 
 result = kSuccess;
 FAILONSUCCESS
@@ -1958,8 +1906,7 @@ if(vpx_method_AE_20_Descriptor_2F_From_20_AEDesc_20_Type_case_4(environment, &ou
 if(vpx_method_AE_20_Descriptor_2F_From_20_AEDesc_20_Type_case_5(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
 if(vpx_method_AE_20_Descriptor_2F_From_20_AEDesc_20_Type_case_6(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
 if(vpx_method_AE_20_Descriptor_2F_From_20_AEDesc_20_Type_case_7(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
-if(vpx_method_AE_20_Descriptor_2F_From_20_AEDesc_20_Type_case_8(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
-vpx_method_AE_20_Descriptor_2F_From_20_AEDesc_20_Type_case_9(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0);
+vpx_method_AE_20_Descriptor_2F_From_20_AEDesc_20_Type_case_8(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0);
 return outcome;
 }
 
@@ -2944,10 +2891,10 @@ result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Value,1,1,TERMINAL(0)
 
 result = vpx_get(PARAMETERS,kVPXValue_Apple_20_Event,TERMINAL(1),ROOT(3),ROOT(4));
 
-result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(4));
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Parameter,3,1,TERMINAL(4),TERMINAL(2),NONE,ROOT(5));
 NEXTCASEONFAILURE
 
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Parameter,3,1,TERMINAL(4),TERMINAL(2),NONE,ROOT(5));
+result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(4));
 NEXTCASEONFAILURE
 
 result = kSuccess;

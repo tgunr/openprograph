@@ -1391,6 +1391,8 @@ result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Event_20_Parameter,4,
 
 result = vpx_constant(PARAMETERS,"Rect",ROOT(8));
 
+result = vpx_method_EventRef_2F_Get_20_EP_20_QDRect_case_1_local_6(PARAMETERS,TERMINAL(4));
+
 result = vpx_call_primitive(PARAMETERS,VPLP_set_2D_external_2D_type,2,0,TERMINAL(7),TERMINAL(8));
 
 result = kSuccess;

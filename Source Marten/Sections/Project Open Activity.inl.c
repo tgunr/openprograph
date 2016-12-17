@@ -1264,7 +1264,7 @@ return outcome;
 	Nat4 tempAttribute_Project_20_Open_20_Activity_2F_Progress[] = {
 0000000000, 0X00000104, 0X00000040, 0X0000000B, 0X00000014, 0X00000088, 0X00000120, 0X00000084,
 0X00000100, 0X00000080, 0X000000D8, 0X0000007C, 0X00000078, 0X00000074, 0X00000054, 0X0000005C,
-0XB8000008, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000074, 0X00000008, 0X00000060,
+0XA7000008, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000074, 0X00000008, 0X00000060,
 0X41637469, 0X76697479, 0X2050726F, 0X67726573, 0X73000000, 0X00000094, 0X000000AC, 0X000000C4,
 0X000000EC, 0X0000010C, 0X0000012C, 0000000000, 0000000000, 0X02D30004, 0000000000, 0000000000,
 0000000000, 0000000000, 0000000000, 0X0AC20004, 0000000000, 0000000000, 0000000000, 0000000000,
@@ -1275,32 +1275,31 @@ return outcome;
 0000000000
 	};
 	Nat4 tempAttribute_Project_20_Open_20_Activity_2F_Stages[] = {
-0000000000, 0X000002BC, 0X00000080, 0X0000001B, 0X00000014, 0X00000320, 0X000000CC, 0X000002EC,
-0X000000C8, 0X000002BC, 0X000000C4, 0X00000290, 0X000000C0, 0X0000025C, 0X000000BC, 0X0000022C,
-0X000000B8, 0X000001F8, 0X000000B4, 0X000001C8, 0X000000B0, 0X00000198, 0X000000AC, 0X00000168,
-0X000000A8, 0X0000013C, 0X000000A4, 0X00000110, 0X000000A0, 0X000000E4, 0X0000009C, 0X00000094,
-0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0X0000009C, 0X0000000D, 0X000000D0,
-0X000000FC, 0X00000128, 0X00000154, 0X00000184, 0X000001B4, 0X000001E4, 0X00000218, 0X00000248,
-0X0000027C, 0X000002A8, 0X000002D8, 0X0000030C, 0X023C0006, 0000000000, 0000000000, 0000000000,
-0000000000, 0X000000EC, 0X0E000000, 0X504F4153, 0X204C6F61, 0X64204669, 0X6C650000, 0X023C0006,
-0000000000, 0000000000, 0000000000, 0000000000, 0X00000118, 0X0F000000, 0X504F4153, 0X2046696E,
-0X64204669, 0X6C657300, 0X00000006, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000144,
-0X0E000000, 0X504F4153, 0X2046696E, 0X6420486F, 0X73740000, 0X53650006, 0000000000, 0000000000,
-0000000000, 0000000000, 0X00000170, 0X12000000, 0X504F4153, 0X20526561, 0X64205365, 0X6374696F,
-0X6E730000, 0X021B0006, 0000000000, 0000000000, 0000000000, 0000000000, 0X000001A0, 0X11000000,
-0X504F4153, 0X204F7065, 0X6E205072, 0X6F6A6563, 0X74000000, 0X09F30006, 0000000000, 0000000000,
-0000000000, 0000000000, 0X000001D0, 0X13000000, 0X504F4153, 0X20436F70, 0X79205265, 0X736F7572,
-0X63657300, 0X50720006, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000200, 0X14000000,
-0X504F4153, 0X20526561, 0X64205072, 0X696D6974, 0X69766573, 0000000000, 0X53650006, 0000000000,
-0000000000, 0000000000, 0000000000, 0X00000234, 0X12000000, 0X504F4153, 0X204F7065, 0X6E205365,
-0X6374696F, 0X6E730000, 0X52650006, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000264,
-0X17000000, 0X504F4153, 0X20526573, 0X6F6C7665, 0X20526566, 0X6572656E, 0X63657300, 0X023C0006,
-0000000000, 0000000000, 0000000000, 0000000000, 0X00000298, 0X0E000000, 0X504F4153, 0X20506F73,
-0X74204C6F, 0X61640000, 0X436C0006, 0000000000, 0000000000, 0000000000, 0000000000, 0X000002C4,
-0X13000000, 0X504F4153, 0X20557064, 0X61746520, 0X436C6173, 0X73657300, 0X50650006, 0000000000,
-0000000000, 0000000000, 0000000000, 0X000002F4, 0X17000000, 0X504F4153, 0X20557064, 0X61746520,
-0X50657273, 0X69737465, 0X6E747300, 0X45640006, 0000000000, 0000000000, 0000000000, 0000000000,
-0X00000328, 0X10000000, 0X504F4153, 0X204F7065, 0X6E204564, 0X69746F72, 0000000000
+0000000000, 0X0000028C, 0X00000078, 0X00000019, 0X00000014, 0X000002E8, 0X000000C0, 0X000002B4,
+0X000000BC, 0X00000284, 0X000000B8, 0X00000258, 0X000000B4, 0X00000224, 0X000000B0, 0X000001F4,
+0X000000AC, 0X000001C0, 0X000000A8, 0X00000190, 0X000000A4, 0X00000160, 0X000000A0, 0X00000130,
+0X0000009C, 0X00000104, 0X00000098, 0X000000D8, 0X00000094, 0X0000008C, 0X00000007, 0000000000,
+0000000000, 0000000000, 0000000000, 0X00000094, 0X0000000C, 0X000000C4, 0X000000F0, 0X0000011C,
+0X0000014C, 0X0000017C, 0X000001AC, 0X000001E0, 0X00000210, 0X00000244, 0X00000270, 0X000002A0,
+0X000002D4, 0X023C0006, 0000000000, 0000000000, 0000000000, 0000000000, 0X000000E0, 0X0E000000,
+0X504F4153, 0X204C6F61, 0X64204669, 0X6C650000, 0X023C0006, 0000000000, 0000000000, 0000000000,
+0000000000, 0X0000010C, 0X0F000000, 0X504F4153, 0X2046696E, 0X64204669, 0X6C657300, 0X53650006,
+0000000000, 0000000000, 0000000000, 0000000000, 0X00000138, 0X12000000, 0X504F4153, 0X20526561,
+0X64205365, 0X6374696F, 0X6E730000, 0X021B0006, 0000000000, 0000000000, 0000000000, 0000000000,
+0X00000168, 0X11000000, 0X504F4153, 0X204F7065, 0X6E205072, 0X6F6A6563, 0X74000000, 0X09F30006,
+0000000000, 0000000000, 0000000000, 0000000000, 0X00000198, 0X13000000, 0X504F4153, 0X20436F70,
+0X79205265, 0X736F7572, 0X63657300, 0X50720006, 0000000000, 0000000000, 0000000000, 0000000000,
+0X000001C8, 0X14000000, 0X504F4153, 0X20526561, 0X64205072, 0X696D6974, 0X69766573, 0000000000,
+0X53650006, 0000000000, 0000000000, 0000000000, 0000000000, 0X000001FC, 0X12000000, 0X504F4153,
+0X204F7065, 0X6E205365, 0X6374696F, 0X6E730000, 0X52650006, 0000000000, 0000000000, 0000000000,
+0000000000, 0X0000022C, 0X17000000, 0X504F4153, 0X20526573, 0X6F6C7665, 0X20526566, 0X6572656E,
+0X63657300, 0X023C0006, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000260, 0X0E000000,
+0X504F4153, 0X20506F73, 0X74204C6F, 0X61640000, 0X436C0006, 0000000000, 0000000000, 0000000000,
+0000000000, 0X0000028C, 0X13000000, 0X504F4153, 0X20557064, 0X61746520, 0X436C6173, 0X73657300,
+0X50650006, 0000000000, 0000000000, 0000000000, 0000000000, 0X000002BC, 0X17000000, 0X504F4153,
+0X20557064, 0X61746520, 0X50657273, 0X69737465, 0X6E747300, 0X45640006, 0000000000, 0000000000,
+0000000000, 0000000000, 0X000002F0, 0X10000000, 0X504F4153, 0X204F7065, 0X6E204564, 0X69746F72,
+0000000000
 	};
 	Nat4 tempAttribute_Project_20_Open_20_Activity_2F_Completed_20_Stages[] = {
 0000000000, 0X0000001C, 0X00000014, 0000000000, 0X00000014, 0X00000007, 0000000000, 0000000000,
@@ -1368,18 +1367,6 @@ return outcome;
 	Nat4 tempAttribute_POAS_20_Find_20_Files_2F_Manual_20_Items[] = {
 0000000000, 0X0000001C, 0X00000014, 0000000000, 0X00000014, 0X00000007, 0000000000, 0000000000,
 0000000000, 0000000000, 0000000000, 0000000000
-	};
-	Nat4 tempAttribute_POAS_20_Find_20_Host_2F_Name[] = {
-0000000000, 0X00000028, 0X00000018, 0X00000001, 0X00000014, 0X0000002C, 0X00000006, 0000000000,
-0000000000, 0000000000, 0000000000, 0X00000034, 0X0B000000, 0X53656C65, 0X63742048, 0X6F737400
-	};
-	Nat4 tempAttribute_POAS_20_Find_20_Host_2F_Count_20_Max[] = {
-0000000000, 0X00000018, 0X00000014, 0000000000, 0X00000014, 0X00000004, 0000000000, 0000000000,
-0000000000, 0000000000, 0000000000
-	};
-	Nat4 tempAttribute_POAS_20_Find_20_Host_2F_Count_20_Completed[] = {
-0000000000, 0X00000018, 0X00000014, 0000000000, 0X00000014, 0X00000004, 0000000000, 0000000000,
-0000000000, 0000000000, 0000000000
 	};
 	Nat4 tempAttribute_POAS_20_Read_20_Primitives_2F_Name[] = {
 0000000000, 0X00000030, 0X00000018, 0X00000001, 0X00000014, 0X0000002C, 0X4C690006, 0000000000,
@@ -1682,7 +1669,7 @@ Nat4 VPLC_Project_20_Open_20_Activity_class_load(V_Class tempClass,V_Environment
 {
 	V_Value	tempAttribute = NULL;
 
-/* Start Attributes: { 256 45 }{ 345 419 } */
+/* Start Attributes: { 256 45 }{ 333 396 } */
 	tempAttribute = attribute_add("Name",tempClass,tempAttribute_Project_20_Open_20_Activity_2F_Name,environment);
 	tempAttribute = attribute_add("Canceled?",tempClass,tempAttribute_Project_20_Open_20_Activity_2F_Canceled_3F_,environment);
 	tempAttribute = attribute_add("Completed?",tempClass,tempAttribute_Project_20_Open_20_Activity_2F_Completed_3F_,environment);
@@ -3912,294 +3899,6 @@ FOOTERSINGLECASE(2)
 
 
 
-Nat4 VPLC_POAS_20_Find_20_Host_class_load(V_Class tempClass,V_Environment environment);
-Nat4 VPLC_POAS_20_Find_20_Host_class_load(V_Class tempClass,V_Environment environment)
-{
-	V_Value	tempAttribute = NULL;
-
-/* Start Attributes: { 60 60 }{ 200 300 } */
-	tempAttribute = attribute_add("Name",tempClass,tempAttribute_POAS_20_Find_20_Host_2F_Name,environment);
-	tempAttribute = attribute_add("Activity",tempClass,NULL,environment);
-	tempAttribute = attribute_add("Count Max",tempClass,tempAttribute_POAS_20_Find_20_Host_2F_Count_20_Max,environment);
-	tempAttribute = attribute_add("Count Completed",tempClass,tempAttribute_POAS_20_Find_20_Host_2F_Count_20_Completed,environment);
-	tempAttribute = attribute_add("Window",tempClass,NULL,environment);
-/* Stop Attributes */
-
-	class_superClass_to(tempClass,environment,"Project File Activity Stage");
-	return kNOERROR;
-}
-
-/* Start Universals: { 583 439 }{ 200 300 } */
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
-{
-HEADER(6)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_get(PARAMETERS,kVPXValue_Window,TERMINAL(0),ROOT(2),ROOT(3));
-
-result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(3));
-NEXTCASEONFAILURE
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_WindowRef,1,1,TERMINAL(3),ROOT(4));
-
-result = vpx_match(PARAMETERS,"NULL",TERMINAL(4));
-NEXTCASEONSUCCESS
-
-result = vpx_constant(PARAMETERS,"FALSE",ROOT(5));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(5))
-FOOTER(6)
-}
-
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
-{
-HEADER(3)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_constant(PARAMETERS,"TRUE",ROOT(2));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(2))
-FOOTER(3)
-}
-
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
-{
-enum opTrigger outcome = kSuccess;
-if(vpx_method_POAS_20_Find_20_Host_2F_Run_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
-vpx_method_POAS_20_Find_20_Host_2F_Run_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0);
-return outcome;
-}
-
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
-{
-HEADER(4)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_constant(PARAMETERS,"Remote Debug?",ROOT(2));
-
-result = vpx_method_CFPrefs_20_Get_20_App_20_Value(PARAMETERS,TERMINAL(2),ROOT(3));
-TERMINATEONFAILURE
-
-result = vpx_match(PARAMETERS,"TRUE",TERMINAL(3));
-NEXTCASEONSUCCESS
-
-result = kSuccess;
-
-FOOTER(4)
-}
-
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_2_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0);
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_2_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0)
-{
-HEADER(2)
-result = kSuccess;
-
-result = vpx_constant(PARAMETERS,"Project Settings",ROOT(0));
-
-result = vpx_method_Find_20_Service(PARAMETERS,TERMINAL(0),ROOT(1));
-FAILONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(1))
-FOOTERSINGLECASE(2)
-}
-
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_2_local_10(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_2_local_10(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
-{
-HEADER(3)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Auto_20_Launch_3F_,1,1,TERMINAL(0),ROOT(1));
-
-result = vpx_match(PARAMETERS,"TRUE",TERMINAL(1));
-FAILONFAILURE
-
-result = vpx_extconstant(PARAMETERS,optionKey,ROOT(2));
-
-result = vpx_method_Modifier_20_Key_20_Pressed_3F_(PARAMETERS,TERMINAL(2));
-FAILONSUCCESS
-
-result = kSuccess;
-
-FOOTERSINGLECASE(3)
-}
-
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
-{
-HEADER(9)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Project_20_Helper,1,1,TERMINAL(1),ROOT(2));
-NEXTCASEONFAILURE
-
-result = vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_2_local_3(PARAMETERS,ROOT(3));
-NEXTCASEONFAILURE
-
-result = vpx_constant(PARAMETERS,"remote",ROOT(4));
-
-result = vpx_constant(PARAMETERS,"text",ROOT(5));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Load_20_Project_20_Setting,4,1,TERMINAL(3),TERMINAL(2),TERMINAL(4),TERMINAL(5),ROOT(6));
-NEXTCASEONFAILURE
-
-result = vpx_method_Marten_20_IDE_20_Network_20_Interpreter_2F_New_20_From_20_Text_20_File(PARAMETERS,TERMINAL(6),ROOT(7));
-NEXTCASEONFAILURE
-
-result = vpx_constant(PARAMETERS,"Host",ROOT(8));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Project_20_Setting,4,0,TERMINAL(3),TERMINAL(2),TERMINAL(8),TERMINAL(7));
-
-result = vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_2_local_10(PARAMETERS,TERMINAL(7));
-NEXTCASEONFAILURE
-
-result = kSuccess;
-
-FOOTER(9)
-}
-
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_3_local_5_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_3_local_5_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(2)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Window,1,1,TERMINAL(0),ROOT(1));
-
-result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(1));
-NEXTCASEONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(1))
-FOOTER(2)
-}
-
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_3_local_5_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_3_local_5_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(2)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Begin_20_Window,1,0,TERMINAL(0));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Window,1,1,TERMINAL(0),ROOT(1));
-
-result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(1));
-FAILONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(1))
-FOOTER(2)
-}
-
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_3_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_3_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-enum opTrigger outcome = kSuccess;
-if(vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_3_local_5_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
-vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_3_local_5_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
-return outcome;
-}
-
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
-{
-HEADERWITHNONE(6)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Progress,1,1,TERMINAL(1),ROOT(2));
-
-result = vpx_call_primitive(PARAMETERS,VPLP_instance_3F_,1,0,TERMINAL(2));
-TERMINATEONFAILURE
-
-result = vpx_instantiate(PARAMETERS,kVPXClass_Marten_20_IDE_20_Network_20_Host_20_Select_20_Sheet,1,1,NONE,ROOT(3));
-
-result = vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_3_local_5(PARAMETERS,TERMINAL(2),ROOT(4));
-TERMINATEONFAILURE
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Activity,2,0,TERMINAL(3),TERMINAL(1));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Open,2,0,TERMINAL(3),TERMINAL(4));
-
-result = vpx_set(PARAMETERS,kVPXValue_Window,TERMINAL(0),TERMINAL(3),ROOT(5));
-
-result = kSuccess;
-
-FOOTERWITHNONE(6)
-}
-
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
-{
-enum opTrigger outcome = kSuccess;
-if(vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
-if(vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
-vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1);
-return outcome;
-}
-
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
-{
-HEADER(2)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_call_context_super_method(PARAMETERS,kVPXMethod_Run_20_Begin,2,0,TERMINAL(0),TERMINAL(1));
-
-result = vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin_case_1_local_3(PARAMETERS,TERMINAL(0),TERMINAL(1));
-
-result = kSuccess;
-
-FOOTERSINGLECASE(2)
-}
-
-enum opTrigger vpx_method_POAS_20_Find_20_Host_2F_Run_20_End(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
-{
-HEADER(4)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_call_context_super_method(PARAMETERS,kVPXMethod_Run_20_End,2,0,TERMINAL(0),TERMINAL(1));
-
-result = vpx_constant(PARAMETERS,"NULL",ROOT(2));
-
-result = vpx_set(PARAMETERS,kVPXValue_Window,TERMINAL(0),TERMINAL(2),ROOT(3));
-
-result = kSuccess;
-
-FOOTERSINGLECASE(4)
-}
-
-/* Stop Universals */
-
-
-
 Nat4 VPLC_POAS_20_Read_20_Primitives_class_load(V_Class tempClass,V_Environment environment);
 Nat4 VPLC_POAS_20_Read_20_Primitives_class_load(V_Class tempClass,V_Environment environment)
 {
@@ -4269,7 +3968,7 @@ HEADER(3)
 INPUT(0,0)
 result = kSuccess;
 
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Full_20_POSIX_20_Path,1,1,TERMINAL(0),ROOT(1));
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Full_20_Path,1,1,TERMINAL(0),ROOT(1));
 TERMINATEONFAILURE
 
 result = vpx_constant(PARAMETERS,"Loaded Library",ROOT(2));
@@ -6799,8 +6498,8 @@ Nat4 VPLC_POAS_20_Open_20_Editor_class_load(V_Class tempClass,V_Environment envi
 }
 
 /* Start Universals: { 198 681 }{ 200 300 } */
-enum opTrigger vpx_method_POAS_20_Open_20_Editor_2F_Run_case_1_local_3_case_1_local_3_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0);
-enum opTrigger vpx_method_POAS_20_Open_20_Editor_2F_Run_case_1_local_3_case_1_local_3_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0)
+enum opTrigger vpx_method_POAS_20_Open_20_Editor_2F_Run_case_1_local_3_case_1_local_4_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0);
+enum opTrigger vpx_method_POAS_20_Open_20_Editor_2F_Run_case_1_local_3_case_1_local_4_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0)
 {
 HEADER(2)
 result = kSuccess;
@@ -6816,14 +6515,14 @@ OUTPUT(0,TERMINAL(1))
 FOOTERSINGLECASE(2)
 }
 
-enum opTrigger vpx_method_POAS_20_Open_20_Editor_2F_Run_case_1_local_3_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
-enum opTrigger vpx_method_POAS_20_Open_20_Editor_2F_Run_case_1_local_3_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+enum opTrigger vpx_method_POAS_20_Open_20_Editor_2F_Run_case_1_local_3_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_POAS_20_Open_20_Editor_2F_Run_case_1_local_3_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
 {
 HEADER(2)
 INPUT(0,0)
 result = kSuccess;
 
-result = vpx_method_POAS_20_Open_20_Editor_2F_Run_case_1_local_3_case_1_local_3_case_1_local_2(PARAMETERS,ROOT(1));
+result = vpx_method_POAS_20_Open_20_Editor_2F_Run_case_1_local_3_case_1_local_4_case_1_local_2(PARAMETERS,ROOT(1));
 TERMINATEONFAILURE
 
 result = vpx_call_data_method(PARAMETERS,kVPXMethod_Add_20_Project,2,0,TERMINAL(1),TERMINAL(0));
@@ -6842,9 +6541,9 @@ result = kSuccess;
 
 result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Project_20_Helper,1,1,TERMINAL(0),ROOT(1));
 
-result = vpx_method_POAS_20_Open_20_Editor_2F_Run_case_1_local_3_case_1_local_3(PARAMETERS,TERMINAL(1));
-
 result = vpx_call_data_method(PARAMETERS,kVPXMethod_Open_20_Editor,1,0,TERMINAL(1));
+
+result = vpx_method_POAS_20_Open_20_Editor_2F_Run_case_1_local_3_case_1_local_4(PARAMETERS,TERMINAL(1));
 
 result = kSuccess;
 
@@ -8432,33 +8131,10 @@ OUTPUT(1,TERMINAL(8))
 FOOTERSINGLECASE(9)
 }
 
-enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_14(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
-enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_14(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_15_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_15_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
 {
 HEADERWITHNONE(9)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-GetControlTitle( GETPOINTER(0,OpaqueControlRef,*,ROOT(2),TERMINAL(1)),GETPOINTER(256,unsigned char,*,ROOT(3),NONE));
-result = kSuccess;
-
-result = vpx_method_Get_20_UInt8(PARAMETERS,TERMINAL(3),NONE,ROOT(4),ROOT(5));
-
-result = vpx_call_primitive(PARAMETERS,VPLP_get_2D_text,3,3,TERMINAL(3),TERMINAL(4),TERMINAL(5),ROOT(6),ROOT(7),ROOT(8));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Custom_20_Reply,2,0,TERMINAL(0),TERMINAL(8));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(8))
-FOOTERSINGLECASEWITHNONE(9)
-}
-
-enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_16_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
-enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_16_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
-{
-HEADER(2)
 INPUT(0,0)
 INPUT(1,1)
 result = kSuccess;
@@ -8466,14 +8142,21 @@ result = kSuccess;
 result = vpx_extmatch(PARAMETERS,kControlButtonPart,TERMINAL(1));
 NEXTCASEONFAILURE
 
+GetControlTitle( GETPOINTER(0,OpaqueControlRef,*,ROOT(2),TERMINAL(0)),GETPOINTER(256,unsigned char,*,ROOT(3),NONE));
 result = kSuccess;
 
-OUTPUT(0,TERMINAL(0))
-FOOTER(2)
+result = vpx_method_Get_20_UInt8(PARAMETERS,TERMINAL(3),NONE,ROOT(4),ROOT(5));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_get_2D_text,3,3,TERMINAL(3),TERMINAL(4),TERMINAL(5),ROOT(6),ROOT(7),ROOT(8));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(8))
+FOOTERWITHNONE(9)
 }
 
-enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_16_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
-enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_16_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_15_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_15_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
 {
 HEADER(3)
 INPUT(0,0)
@@ -8488,17 +8171,17 @@ OUTPUT(0,TERMINAL(2))
 FOOTER(3)
 }
 
-enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_16(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
-enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_16(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_15(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_15(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
 {
 enum opTrigger outcome = kSuccess;
-if(vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_16_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
-vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_16_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0);
+if(vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_15_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0))
+vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_15_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,root0);
 return outcome;
 }
 
-enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_17(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
-enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_17(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_16(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_16(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
 {
 HEADER(2)
 INPUT(0,0)
@@ -8521,7 +8204,7 @@ FOOTERSINGLECASE(2)
 enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
 enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
 {
-HEADERWITHNONE(27)
+HEADERWITHNONE(26)
 INPUT(0,0)
 INPUT(1,1)
 INPUT(2,2)
@@ -8555,18 +8238,16 @@ result = vpx_constant(PARAMETERS,"NULL",ROOT(19));
 
 result = vpx_extget(PARAMETERS,"modifiers",1,2,TERMINAL(8),ROOT(20),ROOT(21));
 
-result = vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_14(PARAMETERS,TERMINAL(0),TERMINAL(16),ROOT(22));
-
-PUTINTEGER(HandleControlClick( GETPOINTER(0,OpaqueControlRef,*,ROOT(24),TERMINAL(16)),GETSTRUCTURE(4,Point,TERMINAL(13)),GETINTEGER(TERMINAL(21)),GETPOINTER(0,void,*,ROOT(25),TERMINAL(19))),23);
+PUTINTEGER(HandleControlClick( GETPOINTER(0,OpaqueControlRef,*,ROOT(23),TERMINAL(16)),GETSTRUCTURE(4,Point,TERMINAL(13)),GETINTEGER(TERMINAL(21)),GETPOINTER(0,void,*,ROOT(24),TERMINAL(19))),22);
 result = kSuccess;
 
-result = vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_16(PARAMETERS,TERMINAL(22),TERMINAL(23),ROOT(26));
+result = vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_15(PARAMETERS,TERMINAL(16),TERMINAL(22),ROOT(25));
 
-result = vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_17(PARAMETERS,TERMINAL(0),TERMINAL(26));
+result = vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_1_local_16(PARAMETERS,TERMINAL(0),TERMINAL(25));
 
 result = kSuccess;
 
-FOOTERWITHNONE(27)
+FOOTERWITHNONE(26)
 }
 
 enum opTrigger vpx_method_PFAS_20_Nav_20_Locate_20_Files_20_Dialog_2F_NavCB_20_Event_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
@@ -9935,9 +9616,6 @@ Nat4	loadClasses_Project_20_Open_20_Activity(V_Environment environment)
 	result = class_new("POAS Find Files",environment);
 	if(result == NULL) return kERROR;
 	VPLC_POAS_20_Find_20_Files_class_load(result,environment);
-	result = class_new("POAS Find Host",environment);
-	if(result == NULL) return kERROR;
-	VPLC_POAS_20_Find_20_Host_class_load(result,environment);
 	result = class_new("POAS Read Primitives",environment);
 	if(result == NULL) return kERROR;
 	VPLC_POAS_20_Read_20_Primitives_class_load(result,environment);
@@ -10040,18 +9718,6 @@ Nat4	loadUniversals_Project_20_Open_20_Activity(V_Environment environment)
 	result = method_new("POAS Find Files/Run End",environment);
 	if(result == NULL) return kERROR;
 	vpx_method_initialize(environment,result,vpx_method_POAS_20_Find_20_Files_2F_Run_20_End,NULL);
-
-	result = method_new("POAS Find Host/Run",environment);
-	if(result == NULL) return kERROR;
-	vpx_method_initialize(environment,result,vpx_method_POAS_20_Find_20_Host_2F_Run,NULL);
-
-	result = method_new("POAS Find Host/Run Begin",environment);
-	if(result == NULL) return kERROR;
-	vpx_method_initialize(environment,result,vpx_method_POAS_20_Find_20_Host_2F_Run_20_Begin,NULL);
-
-	result = method_new("POAS Find Host/Run End",environment);
-	if(result == NULL) return kERROR;
-	vpx_method_initialize(environment,result,vpx_method_POAS_20_Find_20_Host_2F_Run_20_End,NULL);
 
 	result = method_new("POAS Read Primitives/Run",environment);
 	if(result == NULL) return kERROR;

@@ -3699,11 +3699,11 @@ Nat4 VPLU_HIView_2F_HIView_20_Set_20_Needs_20_Display_universal_load(V_Method me
 	tempOperation = operation_action_to(tempOperation,environment,kTerminate,kSuccess);
 /* End Operation */
 
-/* Begin Operation: { 55 182 72 282 } */
+/* Begin Operation: { 55 171 71 293 } */
 	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_universal(tempOperation,environment,"Default TRUE");
-/* IO - VPL Terminal : { 49 230 54 235 }*/
-/* IO - VPL Root : { 73 230 78 235 }*/
+	tempOperation = operation_to_universal(tempOperation,environment,"Boolean To Integer");
+/* IO - VPL Terminal : { 50 230 55 235 }*/
+/* IO - VPL Root : { 71 230 76 235 }*/
 	tempTerminal = input_insert(0,tempOperation,environment);
 	tempRoot = output_insert(0,tempOperation,environment);
 /* End Operation */

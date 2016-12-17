@@ -5588,7 +5588,7 @@ LISTROOTEND
 ROOTEMPTY(2)
 }
 
-result = vpx_method_Key_20_Sort_20_Helper_2F_Sort_20_Key_20_Helper_20_List(PARAMETERS,TERMINAL(2),TERMINAL(1),ROOT(3));
+result = vpx_call_context_method(PARAMETERS,kVPXMethod_Sort_20_Key_20_Helper_20_List,2,1,TERMINAL(2),TERMINAL(1),ROOT(3));
 
 result = kSuccess;
 

@@ -1357,7 +1357,7 @@ result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_HIViewRef,1,1,TERMINA
 result = vpx_match(PARAMETERS,"NULL",TERMINAL(2));
 TERMINATEONSUCCESS
 
-result = vpx_method_Default_20_TRUE(PARAMETERS,TERMINAL(1),ROOT(3));
+result = vpx_method_Boolean_20_To_20_Integer(PARAMETERS,TERMINAL(1),ROOT(3));
 
 PUTINTEGER(HIViewSetNeedsDisplay( GETPOINTER(0,OpaqueControlRef,*,ROOT(5),TERMINAL(2)),GETINTEGER(TERMINAL(3))),4);
 result = kSuccess;

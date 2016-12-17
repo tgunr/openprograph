@@ -367,69 +367,6 @@ result = kSuccess;
 FOOTERSINGLECASE(2)
 }
 
-enum opTrigger vpx_method_VPLPrefs_20_Load_case_1_local_14(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex);
-enum opTrigger vpx_method_VPLPrefs_20_Load_case_1_local_14(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex)
-{
-HEADER(2)
-result = kSuccess;
-
-result = vpx_constant(PARAMETERS,"Interpreter Remote Port",ROOT(0));
-
-result = vpx_method_CFPrefs_20_Get_20_App_20_Value(PARAMETERS,TERMINAL(0),ROOT(1));
-TERMINATEONFAILURE
-
-result = vpx_call_primitive(PARAMETERS,VPLP_integer_3F_,1,0,TERMINAL(1));
-TERMINATEONFAILURE
-
-result = vpx_call_inject_persistent(PARAMETERS,INJECT(0),1,0,TERMINAL(1));
-
-result = kSuccess;
-
-FOOTERSINGLECASE(2)
-}
-
-enum opTrigger vpx_method_VPLPrefs_20_Load_case_1_local_15(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex);
-enum opTrigger vpx_method_VPLPrefs_20_Load_case_1_local_15(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex)
-{
-HEADER(2)
-result = kSuccess;
-
-result = vpx_constant(PARAMETERS,"Case Scroll Wheel Select?",ROOT(0));
-
-result = vpx_method_CFPrefs_20_Get_20_App_20_Value(PARAMETERS,TERMINAL(0),ROOT(1));
-TERMINATEONFAILURE
-
-result = vpx_call_primitive(PARAMETERS,VPLP_boolean_3F_,1,0,TERMINAL(1));
-TERMINATEONFAILURE
-
-result = vpx_call_inject_persistent(PARAMETERS,INJECT(0),1,0,TERMINAL(1));
-
-result = kSuccess;
-
-FOOTERSINGLECASE(2)
-}
-
-enum opTrigger vpx_method_VPLPrefs_20_Load_case_1_local_16(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex);
-enum opTrigger vpx_method_VPLPrefs_20_Load_case_1_local_16(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex)
-{
-HEADER(2)
-result = kSuccess;
-
-result = vpx_constant(PARAMETERS,"Case Command Scroll?",ROOT(0));
-
-result = vpx_method_CFPrefs_20_Get_20_App_20_Value(PARAMETERS,TERMINAL(0),ROOT(1));
-TERMINATEONFAILURE
-
-result = vpx_call_primitive(PARAMETERS,VPLP_integer_3F_,1,0,TERMINAL(1));
-TERMINATEONFAILURE
-
-result = vpx_call_inject_persistent(PARAMETERS,INJECT(0),1,0,TERMINAL(1));
-
-result = kSuccess;
-
-FOOTERSINGLECASE(2)
-}
-
 enum opTrigger vpx_method_VPLPrefs_20_Load(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex)
 {
 HEADER(1)
@@ -459,12 +396,6 @@ result = vpx_method_VPLPrefs_20_Load_case_1_local_12(PARAMETERS);
 
 result = vpx_method_VPLPrefs_20_Load_case_1_local_13(PARAMETERS);
 
-result = vpx_method_VPLPrefs_20_Load_case_1_local_14(PARAMETERS);
-
-result = vpx_method_VPLPrefs_20_Load_case_1_local_15(PARAMETERS);
-
-result = vpx_method_VPLPrefs_20_Load_case_1_local_16(PARAMETERS);
-
 result = kSuccess;
 
 FOOTERSINGLECASE(1)
@@ -473,7 +404,7 @@ FOOTERSINGLECASE(1)
 enum opTrigger vpx_method_VPLPrefs_20_Reset_case_1_local_23(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex);
 enum opTrigger vpx_method_VPLPrefs_20_Reset_case_1_local_23(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex)
 {
-HEADER(3)
+HEADER(2)
 result = kSuccess;
 
 result = vpx_constant(PARAMETERS,"FALSE",ROOT(0));
@@ -484,19 +415,15 @@ result = vpx_constant(PARAMETERS,"\"mVPL\"",ROOT(1));
 
 result = vpx_persistent(PARAMETERS,kVPXValue_Text_20_File_20_Creator_20_Code,1,0,TERMINAL(1));
 
-result = vpx_constant(PARAMETERS,"2222",ROOT(2));
-
-result = vpx_persistent(PARAMETERS,kVPXValue_Interpreter_20_Remote_20_Port,1,0,TERMINAL(2));
-
 result = kSuccess;
 
-FOOTERSINGLECASE(3)
+FOOTERSINGLECASE(2)
 }
 
 enum opTrigger vpx_method_VPLPrefs_20_Reset_case_1_local_24(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex);
 enum opTrigger vpx_method_VPLPrefs_20_Reset_case_1_local_24(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex)
 {
-HEADER(4)
+HEADER(2)
 result = kSuccess;
 
 result = vpx_constant(PARAMETERS,"NULL",ROOT(0));
@@ -507,17 +434,9 @@ result = vpx_constant(PARAMETERS,"TRUE",ROOT(1));
 
 result = vpx_persistent(PARAMETERS,kVPXValue_Auto_20_Move_20_Output_20_Bar_3F_,1,0,TERMINAL(1));
 
-result = vpx_constant(PARAMETERS,"TRUE",ROOT(2));
-
-result = vpx_persistent(PARAMETERS,kVPXValue_Case_20_Scroll_20_Wheel_20_Select_3F_,1,0,TERMINAL(2));
-
-result = vpx_persistent(PARAMETERS,kVPXValue_Case_20_Command_20_Scroll_20_Speed,0,1,ROOT(3));
-
-result = vpx_persistent(PARAMETERS,kVPXValue_Case_20_Command_20_Scroll_3F_,1,0,TERMINAL(3));
-
 result = kSuccess;
 
-FOOTERSINGLECASE(4)
+FOOTERSINGLECASE(2)
 }
 
 enum opTrigger vpx_method_VPLPrefs_20_Reset_case_1_local_25(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex);
@@ -686,7 +605,7 @@ Nat4 VPLC_Preferences_20_Window_class_load(V_Class tempClass,V_Environment envir
 	return kNOERROR;
 }
 
-/* Start Universals: { 185 334 }{ 645 320 } */
+/* Start Universals: { 185 334 }{ 609 310 } */
 enum opTrigger vpx_method_Preferences_20_Window_2F_Open_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
 enum opTrigger vpx_method_Preferences_20_Window_2F_Open_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
 {
@@ -965,50 +884,6 @@ result = kSuccess;
 FOOTERSINGLECASE(6)
 }
 
-enum opTrigger vpx_method_Preferences_20_Window_2F_Open_20_Controls_case_1_local_12(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
-enum opTrigger vpx_method_Preferences_20_Window_2F_Open_20_Controls_case_1_local_12(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
-{
-HEADER(4)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Find_20_Scroll_20_Wheel_3F_,1,1,TERMINAL(0),ROOT(1));
-TERMINATEONFAILURE
-
-result = vpx_persistent(PARAMETERS,kVPXValue_Case_20_Scroll_20_Wheel_20_Select_3F_,0,1,ROOT(2));
-
-result = vpx_method_Boolean_20_To_20_Integer(PARAMETERS,TERMINAL(2),ROOT(3));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Control_20_Value,2,0,TERMINAL(1),TERMINAL(3));
-
-result = kSuccess;
-
-FOOTERSINGLECASE(4)
-}
-
-enum opTrigger vpx_method_Preferences_20_Window_2F_Open_20_Controls_case_1_local_13(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
-enum opTrigger vpx_method_Preferences_20_Window_2F_Open_20_Controls_case_1_local_13(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
-{
-HEADER(5)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Find_20_Smooth_20_Scroll_3F_,1,1,TERMINAL(0),ROOT(1));
-TERMINATEONFAILURE
-
-result = vpx_persistent(PARAMETERS,kVPXValue_Case_20_Command_20_Scroll_3F_,0,1,ROOT(2));
-
-result = vpx_method_Integer_20_To_20_Boolean(PARAMETERS,TERMINAL(2),ROOT(3));
-
-result = vpx_method_Boolean_20_To_20_Integer(PARAMETERS,TERMINAL(3),ROOT(4));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Control_20_Value,2,0,TERMINAL(1),TERMINAL(4));
-
-result = kSuccess;
-
-FOOTERSINGLECASE(5)
-}
-
 enum opTrigger vpx_method_Preferences_20_Window_2F_Open_20_Controls(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
 {
 HEADER(1)
@@ -1034,10 +909,6 @@ result = vpx_method_Preferences_20_Window_2F_Open_20_Controls_case_1_local_9(PAR
 result = vpx_method_Preferences_20_Window_2F_Open_20_Controls_case_1_local_10(PARAMETERS,TERMINAL(0));
 
 result = vpx_method_Preferences_20_Window_2F_Open_20_Controls_case_1_local_11(PARAMETERS,TERMINAL(0));
-
-result = vpx_method_Preferences_20_Window_2F_Open_20_Controls_case_1_local_12(PARAMETERS,TERMINAL(0));
-
-result = vpx_method_Preferences_20_Window_2F_Open_20_Controls_case_1_local_13(PARAMETERS,TERMINAL(0));
 
 result = kSuccess;
 
@@ -1368,52 +1239,6 @@ INPUT(2,2)
 INPUT(3,3)
 result = kSuccess;
 
-result = vpx_match(PARAMETERS,"\'PRow\'",TERMINAL(1));
-NEXTCASEONFAILURE
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_HIC_20_Scroll_20_Wheel_3F_,1,0,TERMINAL(0));
-
-result = vpx_extconstant(PARAMETERS,noErr,ROOT(4));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(4))
-FOOTER(5)
-}
-
-enum opTrigger vpx_method_Preferences_20_Window_2F_CE_20_HICommand_20_Process_case_13(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0);
-enum opTrigger vpx_method_Preferences_20_Window_2F_CE_20_HICommand_20_Process_case_13(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0)
-{
-HEADER(5)
-INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
-INPUT(3,3)
-result = kSuccess;
-
-result = vpx_match(PARAMETERS,"\'PRom\'",TERMINAL(1));
-NEXTCASEONFAILURE
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_HIC_20_Smooth_20_Scroll_3F_,1,0,TERMINAL(0));
-
-result = vpx_extconstant(PARAMETERS,noErr,ROOT(4));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(4))
-FOOTER(5)
-}
-
-enum opTrigger vpx_method_Preferences_20_Window_2F_CE_20_HICommand_20_Process_case_14(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0);
-enum opTrigger vpx_method_Preferences_20_Window_2F_CE_20_HICommand_20_Process_case_14(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object terminal3,V_Object *root0)
-{
-HEADER(5)
-INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
-INPUT(3,3)
-result = kSuccess;
-
 result = vpx_call_data_method(PARAMETERS,kVPXMethod_Return_20_Event_20_Not_20_Handled,1,1,TERMINAL(3),ROOT(4));
 
 result = kSuccess;
@@ -1436,9 +1261,7 @@ if(vpx_method_Preferences_20_Window_2F_CE_20_HICommand_20_Process_case_8(environ
 if(vpx_method_Preferences_20_Window_2F_CE_20_HICommand_20_Process_case_9(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,root0))
 if(vpx_method_Preferences_20_Window_2F_CE_20_HICommand_20_Process_case_10(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,root0))
 if(vpx_method_Preferences_20_Window_2F_CE_20_HICommand_20_Process_case_11(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,root0))
-if(vpx_method_Preferences_20_Window_2F_CE_20_HICommand_20_Process_case_12(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,root0))
-if(vpx_method_Preferences_20_Window_2F_CE_20_HICommand_20_Process_case_13(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,root0))
-vpx_method_Preferences_20_Window_2F_CE_20_HICommand_20_Process_case_14(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,root0);
+vpx_method_Preferences_20_Window_2F_CE_20_HICommand_20_Process_case_12(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,terminal3,root0);
 return outcome;
 }
 
@@ -2337,184 +2160,6 @@ vpx_method_Preferences_20_Window_2F_Find_20_Recent_20_Projects_case_3(environmen
 return outcome;
 }
 
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Scroll_20_Wheel_3F__case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Scroll_20_Wheel_3F__case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(3)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_constant(PARAMETERS,"( \'PRow\' 0 )",ROOT(1));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Find_20_Control,2,1,TERMINAL(0),TERMINAL(1),ROOT(2));
-NEXTCASEONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(2))
-FOOTER(3)
-}
-
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Scroll_20_Wheel_3F__case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Scroll_20_Wheel_3F__case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADERWITHNONE(3)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_instantiate(PARAMETERS,kVPXClass_Window_20_Control,1,1,NONE,ROOT(1));
-
-result = vpx_constant(PARAMETERS,"( \'PRow\' 0 )",ROOT(2));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Create_20_From_20_ID,3,0,TERMINAL(1),TERMINAL(0),TERMINAL(2));
-NEXTCASEONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(1))
-FOOTERWITHNONE(3)
-}
-
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Scroll_20_Wheel_3F__case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Scroll_20_Wheel_3F__case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADERWITHNONE(1)
-INPUT(0,0)
-result = kSuccess;
-
-result = kSuccess;
-FAILONSUCCESS
-
-OUTPUT(0,NONE)
-FOOTERWITHNONE(1)
-}
-
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Scroll_20_Wheel_3F_(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-enum opTrigger outcome = kSuccess;
-if(vpx_method_Preferences_20_Window_2F_Find_20_Scroll_20_Wheel_3F__case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
-if(vpx_method_Preferences_20_Window_2F_Find_20_Scroll_20_Wheel_3F__case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
-vpx_method_Preferences_20_Window_2F_Find_20_Scroll_20_Wheel_3F__case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
-return outcome;
-}
-
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Smooth_20_Scroll_3F__case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Smooth_20_Scroll_3F__case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(3)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_constant(PARAMETERS,"( \'PRom\' 0 )",ROOT(1));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Find_20_Control,2,1,TERMINAL(0),TERMINAL(1),ROOT(2));
-NEXTCASEONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(2))
-FOOTER(3)
-}
-
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Smooth_20_Scroll_3F__case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Smooth_20_Scroll_3F__case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADERWITHNONE(3)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_instantiate(PARAMETERS,kVPXClass_Window_20_Control,1,1,NONE,ROOT(1));
-
-result = vpx_constant(PARAMETERS,"( \'PRom\' 0 )",ROOT(2));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Create_20_From_20_ID,3,0,TERMINAL(1),TERMINAL(0),TERMINAL(2));
-NEXTCASEONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(1))
-FOOTERWITHNONE(3)
-}
-
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Smooth_20_Scroll_3F__case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Smooth_20_Scroll_3F__case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADERWITHNONE(1)
-INPUT(0,0)
-result = kSuccess;
-
-result = kSuccess;
-FAILONSUCCESS
-
-OUTPUT(0,NONE)
-FOOTERWITHNONE(1)
-}
-
-enum opTrigger vpx_method_Preferences_20_Window_2F_Find_20_Smooth_20_Scroll_3F_(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-enum opTrigger outcome = kSuccess;
-if(vpx_method_Preferences_20_Window_2F_Find_20_Smooth_20_Scroll_3F__case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
-if(vpx_method_Preferences_20_Window_2F_Find_20_Smooth_20_Scroll_3F__case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
-vpx_method_Preferences_20_Window_2F_Find_20_Smooth_20_Scroll_3F__case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
-return outcome;
-}
-
-enum opTrigger vpx_method_Preferences_20_Window_2F_HIC_20_Smooth_20_Scroll_3F_(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
-{
-HEADER(6)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Find_20_Smooth_20_Scroll_3F_,1,1,TERMINAL(0),ROOT(1));
-TERMINATEONFAILURE
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Control_20_Value,1,1,TERMINAL(1),ROOT(2));
-
-result = vpx_persistent(PARAMETERS,kVPXValue_Case_20_Command_20_Scroll_20_Speed,0,1,ROOT(3));
-
-result = vpx_call_primitive(PARAMETERS,VPLP__2A2A_,2,1,TERMINAL(2),TERMINAL(3),ROOT(4));
-
-result = vpx_persistent(PARAMETERS,kVPXValue_Case_20_Command_20_Scroll_3F_,1,0,TERMINAL(4));
-
-result = vpx_constant(PARAMETERS,"Case Command Scroll?",ROOT(5));
-
-result = vpx_method_CFPrefs_20_Set_20_App_20_Value(PARAMETERS,TERMINAL(5),TERMINAL(4));
-TERMINATEONFAILURE
-
-result = vpx_method_VPLPrefs_20_Sync(PARAMETERS);
-
-result = kSuccess;
-
-FOOTERSINGLECASE(6)
-}
-
-enum opTrigger vpx_method_Preferences_20_Window_2F_HIC_20_Scroll_20_Wheel_3F_(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
-{
-HEADER(5)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Find_20_Scroll_20_Wheel_3F_,1,1,TERMINAL(0),ROOT(1));
-TERMINATEONFAILURE
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Control_20_Value,1,1,TERMINAL(1),ROOT(2));
-
-result = vpx_method_Integer_20_To_20_Boolean(PARAMETERS,TERMINAL(2),ROOT(3));
-
-result = vpx_persistent(PARAMETERS,kVPXValue_Case_20_Scroll_20_Wheel_20_Select_3F_,1,0,TERMINAL(3));
-
-result = vpx_constant(PARAMETERS,"Case Scroll Wheel Select?",ROOT(4));
-
-result = vpx_method_CFPrefs_20_Set_20_App_20_Value(PARAMETERS,TERMINAL(4),TERMINAL(3));
-TERMINATEONFAILURE
-
-result = vpx_method_VPLPrefs_20_Sync(PARAMETERS);
-
-result = kSuccess;
-
-FOOTERSINGLECASE(5)
-}
-
 /* Stop Universals */
 
 
@@ -2654,22 +2299,6 @@ Nat4	loadUniversals_Preferences_20_Window(V_Environment environment)
 	result = method_new("Preferences Window/Find Recent Projects",environment);
 	if(result == NULL) return kERROR;
 	vpx_method_initialize(environment,result,vpx_method_Preferences_20_Window_2F_Find_20_Recent_20_Projects,NULL);
-
-	result = method_new("Preferences Window/Find Scroll Wheel?",environment);
-	if(result == NULL) return kERROR;
-	vpx_method_initialize(environment,result,vpx_method_Preferences_20_Window_2F_Find_20_Scroll_20_Wheel_3F_,NULL);
-
-	result = method_new("Preferences Window/Find Smooth Scroll?",environment);
-	if(result == NULL) return kERROR;
-	vpx_method_initialize(environment,result,vpx_method_Preferences_20_Window_2F_Find_20_Smooth_20_Scroll_3F_,NULL);
-
-	result = method_new("Preferences Window/HIC Smooth Scroll?",environment);
-	if(result == NULL) return kERROR;
-	vpx_method_initialize(environment,result,vpx_method_Preferences_20_Window_2F_HIC_20_Smooth_20_Scroll_3F_,NULL);
-
-	result = method_new("Preferences Window/HIC Scroll Wheel?",environment);
-	if(result == NULL) return kERROR;
-	vpx_method_initialize(environment,result,vpx_method_Preferences_20_Window_2F_HIC_20_Scroll_20_Wheel_3F_,NULL);
 
 	return kNOERROR;
 

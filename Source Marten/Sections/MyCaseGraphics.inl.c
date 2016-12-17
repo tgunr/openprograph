@@ -597,7 +597,7 @@ result = vpx_get(PARAMETERS,kVPXValue_Selected,TERMINAL(3),ROOT(7),ROOT(8));
 result = vpx_match(PARAMETERS,"FALSE",TERMINAL(8));
 NEXTCASEONFAILURE
 
-GetPenState( GETPOINTER(20,PenState,*,ROOT(9),NONE));
+GetPenState( GETPOINTER(24,PenState,*,ROOT(9),NONE));
 result = kSuccess;
 
 result = vpx_method_Set_20_Selected_20_Colors(PARAMETERS,TERMINAL(8));
@@ -709,7 +709,7 @@ result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Rect,1,1,TERMINAL(5),R
 
 result = vpx_get(PARAMETERS,kVPXValue_Selected,TERMINAL(3),ROOT(7),ROOT(8));
 
-GetPenState( GETPOINTER(20,PenState,*,ROOT(9),NONE));
+GetPenState( GETPOINTER(24,PenState,*,ROOT(9),NONE));
 result = kSuccess;
 
 result = vpx_method_Default_20_Graphic_2F_Draw_case_2_local_7(PARAMETERS,TERMINAL(8));
@@ -4281,7 +4281,7 @@ result = vpx_get(PARAMETERS,kVPXValue_Selected,TERMINAL(7),ROOT(11),ROOT(12));
 result = vpx_match(PARAMETERS,"FALSE",TERMINAL(12));
 NEXTCASEONFAILURE
 
-GetPenState( GETPOINTER(20,PenState,*,ROOT(13),NONE));
+GetPenState( GETPOINTER(24,PenState,*,ROOT(13),NONE));
 result = kSuccess;
 
 result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Selected_20_Colors,1,0,TERMINAL(11));
@@ -6579,7 +6579,7 @@ result = vpx_get(PARAMETERS,kVPXValue_Selected,TERMINAL(3),ROOT(7),ROOT(8));
 result = vpx_match(PARAMETERS,"FALSE",TERMINAL(8));
 NEXTCASEONFAILURE
 
-GetPenState( GETPOINTER(20,PenState,*,ROOT(9),NONE));
+GetPenState( GETPOINTER(24,PenState,*,ROOT(9),NONE));
 result = kSuccess;
 
 result = vpx_method_Set_20_Selected_20_Colors(PARAMETERS,TERMINAL(8));
@@ -6691,7 +6691,7 @@ result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Rect,1,1,TERMINAL(5),R
 
 result = vpx_get(PARAMETERS,kVPXValue_Selected,TERMINAL(3),ROOT(7),ROOT(8));
 
-GetPenState( GETPOINTER(20,PenState,*,ROOT(9),NONE));
+GetPenState( GETPOINTER(24,PenState,*,ROOT(9),NONE));
 result = kSuccess;
 
 result = vpx_method_Constant_20_Match_20_Graphic_2F_Draw_case_2_local_7(PARAMETERS,TERMINAL(8));
@@ -6907,7 +6907,7 @@ result = vpx_get(PARAMETERS,kVPXValue_Selected,TERMINAL(3),ROOT(7),ROOT(8));
 result = vpx_match(PARAMETERS,"FALSE",TERMINAL(8));
 NEXTCASEONFAILURE
 
-GetPenState( GETPOINTER(20,PenState,*,ROOT(9),NONE));
+GetPenState( GETPOINTER(24,PenState,*,ROOT(9),NONE));
 result = kSuccess;
 
 result = vpx_method_Set_20_Selected_20_Colors(PARAMETERS,TERMINAL(8));
@@ -7019,7 +7019,7 @@ result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Rect,1,1,TERMINAL(5),R
 
 result = vpx_get(PARAMETERS,kVPXValue_Selected,TERMINAL(3),ROOT(7),ROOT(8));
 
-GetPenState( GETPOINTER(20,PenState,*,ROOT(9),NONE));
+GetPenState( GETPOINTER(24,PenState,*,ROOT(9),NONE));
 result = kSuccess;
 
 result = vpx_method_External_20_CM_20_Graphic_2F_Draw_case_2_local_7(PARAMETERS,TERMINAL(8));
@@ -8005,7 +8005,7 @@ result = vpx_get(PARAMETERS,kVPXValue_Selected,TERMINAL(7),ROOT(11),ROOT(12));
 result = vpx_match(PARAMETERS,"FALSE",TERMINAL(12));
 NEXTCASEONFAILURE
 
-GetPenState( GETPOINTER(20,PenState,*,ROOT(13),NONE));
+GetPenState( GETPOINTER(24,PenState,*,ROOT(13),NONE));
 result = kSuccess;
 
 result = vpx_method_Set_20_Selected_20_Colors(PARAMETERS,TERMINAL(12));

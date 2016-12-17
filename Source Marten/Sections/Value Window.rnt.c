@@ -107,7 +107,7 @@ Copyright: 2002 Scott B. Anderson
 0X000003B4, 0X000003B0, 0X000003A8, 0X00000368, 0X00000340, 0X00000348, 0X00000184, 0X00000180,
 0X000002DC, 0X000002D8, 0X000002D0, 0X0000017C, 0X00000288, 0X00000284, 0X0000027C, 0X00000178,
 0X00000174, 0X0000016C, 0X00000168, 0X000001B8, 0X000001B4, 0X000001B0, 0X000001AC, 0X000001A4,
-0X00000164, 0X00000140, 0X00000148, 0X9F010008, 0000000000, 0000000000, 0000000000, 0000000000,
+0X00000164, 0X00000140, 0X00000148, 0X8D010008, 0000000000, 0000000000, 0000000000, 0000000000,
 0X00000158, 0X0000000E, 0X0000014C, 0X56616C75, 0X65205669, 0X65770000, 0000000000, 0000000000,
 0000000000, 0X00000190, 0X0000021C, 0X00000234, 0000000000, 0X0000024C, 0X00000268, 0X000002BC,
 0X00000310, 0X0000032C, 0000000000, 0X00000794, 0X07210007, 0000000000, 0000000000, 0000000000,
@@ -123,7 +123,7 @@ Copyright: 2002 Scott B. Anderson
 0000000000, 0000000000, 0000000000, 0000000000, 0X000002D8, 0X00000002, 0X000002E0, 0X000002F8,
 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000004, 0000000000,
 0000000000, 0000000000, 0000000000, 0000000000, 0X00000007, 0000000000, 0000000000, 0000000000,
-0000000000, 0000000000, 0000000000, 0X41010008, 0000000000, 0000000000, 0000000000, 0000000000,
+0000000000, 0000000000, 0000000000, 0X2F010008, 0000000000, 0000000000, 0000000000, 0000000000,
 0X0000035C, 0X0000000E, 0X0000034C, 0X56504C53, 0X63726F6C, 0X6C204261, 0X72000000, 0000000000,
 0000000000, 0000000000, 0X00000394, 0X00000420, 0000000000, 0000000000, 0X00000438, 0X00000450,
 0X00000478, 0X00000490, 0X000004A8, 0X000004C0, 0X000004D8, 0X00000007, 0000000000, 0000000000,
@@ -186,7 +186,7 @@ Copyright: 2002 Scott B. Anderson
 0X00000498, 0X00000450, 0X00000434, 0X0000043C, 0X000003D4, 0X000003D0, 0X000003CC, 0X0000039C,
 0X000003A4, 0X00000210, 0X0000020C, 0X0000034C, 0X00000240, 0X00000310, 0X0000023C, 0X000002D4,
 0X00000238, 0X00000298, 0X00000234, 0X00000258, 0X00000230, 0X00000228, 0X00000208, 0X000001D8,
-0X000001E0, 0XAA010008, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000204, 0X00000004,
+0X000001E0, 0X98010008, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000204, 0X00000004,
 0X000001E4, 0X56616C75, 0X65205769, 0X6E646F77, 0X20506173, 0X7465626F, 0X61726420, 0X48616E64,
 0X6C657200, 0000000000, 0X00000214, 0X0000036C, 0X00000388, 0X00000007, 0000000000, 0000000000,
 0000000000, 0000000000, 0X00000230, 0X00000005, 0X00000244, 0X00000284, 0X000002C0, 0X000002FC,
@@ -200,7 +200,7 @@ Copyright: 2002 Scott B. Anderson
 0X72642046, 0X6C61766F, 0X72205472, 0X61736820, 0X4C616265, 0X6C000000, 0X00000006, 0000000000,
 0000000000, 0000000000, 0000000000, 0X00000354, 0X16000000, 0X50617374, 0X65626F61, 0X72642046,
 0X6C61766F, 0X72205465, 0X78740000, 0X00000007, 0000000000, 0000000000, 0000000000, 0000000000,
-0000000000, 0000000000, 0XAB010008, 0000000000, 0000000000, 0000000000, 0000000000, 0X000003C4,
+0000000000, 0000000000, 0X99010008, 0000000000, 0000000000, 0000000000, 0000000000, 0X000003C4,
 0X00000009, 0X000003A8, 0X56616C75, 0X65205769, 0X6E646F77, 0X20447261, 0X67204861, 0X6E646C65,
 0X72000000, 0000000000, 0000000000, 0X000003E8, 0X00000404, 0X00000420, 0X0000073C, 0X000009FC,
 0000000000, 0X00000A18, 0X00000007, 0000000000, 0000000000, 0000000000, 0000000000, 0000000000,
@@ -689,7 +689,7 @@ Copyright: 2002 Scott B. Anderson
 0X00001084, 0X4D61634F, 0X53204963, 0X6F6E2052, 0X65676973, 0X74726172, 0000000000, 0X000010A8,
 0X000010C0, 0X000010D8, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X7464656C,
 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X6D616373, 0X00000004, 0000000000,
-0000000000, 0000000000, 0000000000, 0XFFFF8000, 0XA4010008, 0000000000, 0000000000, 0000000000,
+0000000000, 0000000000, 0000000000, 0XFFFF8000, 0X92010008, 0000000000, 0000000000, 0000000000,
 0000000000, 0X0000112C, 0X00000019, 0X00001110, 0X48495075, 0X73686275, 0X74746F6E, 0X20546F6F,
 0X6C626172, 0X20497465, 0X6D000000, 0X00001190, 0X000011DC, 0X000011F4, 0X0000120C, 0X00001224,
 0X00001244, 0X0000125C, 0000000000, 0000000000, 0000000000, 0000000000, 0000000000, 0X00001274,
@@ -801,7 +801,7 @@ Copyright: 2002 Scott B. Anderson
 0000000000, 0000000000, 0000000000, 0X636E746C, 0X00000004, 0000000000, 0000000000, 0000000000,
 0000000000, 0X0000009A, 0X0B380006, 0000000000, 0000000000, 0000000000, 0000000000, 0X00001EC4,
 0X02000000, 0X4F4B0000, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X6F6B2020,
-0XA4010008, 0000000000, 0000000000, 0000000000, 0000000000, 0X00001F1C, 0X00000019, 0X00001F00,
+0X92010008, 0000000000, 0000000000, 0000000000, 0000000000, 0X00001F1C, 0X00000019, 0X00001F00,
 0X48495075, 0X73686275, 0X74746F6E, 0X20546F6F, 0X6C626172, 0X20497465, 0X6D000000, 0X00001F80,
 0X00001FD0, 0X00001FE8, 0X00002000, 0X00002018, 0X0000203C, 0X00002054, 0000000000, 0000000000,
 0000000000, 0000000000, 0000000000, 0X0000206C, 0000000000, 0X0000270C, 0X00002798, 0X000027EC,
@@ -912,7 +912,7 @@ Copyright: 2002 Scott B. Anderson
 0X00002C68, 0X00000002, 0X00002C70, 0X00002C88, 0X00000004, 0000000000, 0000000000, 0000000000,
 0000000000, 0X636E746C, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X0000009A,
 0X0A940006, 0000000000, 0000000000, 0000000000, 0000000000, 0X00002CBC, 0X06000000, 0X43616E63,
-0X656C0000, 0X0B120004, 0000000000, 0000000000, 0000000000, 0000000000, 0X6E6F7421, 0XA7010008,
+0X656C0000, 0X0B120004, 0000000000, 0000000000, 0000000000, 0000000000, 0X6E6F7421, 0X95010008,
 0000000000, 0000000000, 0000000000, 0000000000, 0X00002D14, 0X0000001A, 0X00002CFC, 0X56616C75,
 0X65205479, 0X70652054, 0X6F6F6C62, 0X61722049, 0X74656D00, 0X00002D7C, 0X00002DC8, 0X00002DE0,
 0X00002DF8, 0X00002E10, 0X00002E34, 0X00002E4C, 0000000000, 0000000000, 0000000000, 0000000000,
@@ -1022,7 +1022,7 @@ Copyright: 2002 Scott B. Anderson
 0000000000, 0X636E746C, 0X00000004, 0000000000, 0000000000, 0000000000, 0000000000, 0X0000009A,
 0X0B3A0004, 0000000000, 0000000000, 0000000000, 0000000000, 0X00001092, 0X00000007, 0000000000,
 0000000000, 0000000000, 0000000000, 0000000000, 0000000000, 0X00000007, 0000000000, 0000000000,
-0000000000, 0000000000, 0000000000, 0000000000, 0XA5010008, 0000000000, 0000000000, 0000000000,
+0000000000, 0000000000, 0000000000, 0000000000, 0X93010008, 0000000000, 0000000000, 0000000000,
 0000000000, 0X00003ACC, 0X00000019, 0X00003AB0, 0X4849506F, 0X70757042, 0X7574746F, 0X6E20546F,
 0X6F6C6261, 0X72204974, 0X656D0000, 0X00003B30, 0X00003B7C, 0X00003B94, 0X00003BAC, 0X00003BC4,
 0X00003BE8, 0X00003C00, 0000000000, 0000000000, 0000000000, 0000000000, 0000000000, 0X00003C18,
@@ -2150,7 +2150,7 @@ Copyright: 2002 Scott B. Anderson
 0X000003DC, 0X00000208, 0X000003AC, 0X00000388, 0X00000390, 0X000002C0, 0X00000358, 0X00000334,
 0X0000033C, 0X000002BC, 0X00000310, 0X000002F8, 0X000002D8, 0X000002E0, 0X000002B8, 0X000002B0,
 0X00000204, 0X0000027C, 0X00000200, 0X00000240, 0X000001F8, 0X000001DC, 0X000001E4, 0X0000017C,
-0X00000178, 0X00000174, 0X00000144, 0X0000014C, 0XAB010008, 0000000000, 0000000000, 0000000000,
+0X00000178, 0X00000174, 0X00000144, 0X0000014C, 0X99010008, 0000000000, 0000000000, 0000000000,
 0000000000, 0X0000016C, 0X00000009, 0X00000150, 0X56616C75, 0X65205769, 0X6E646F77, 0X20447261,
 0X67204861, 0X6E646C65, 0X72000000, 0000000000, 0000000000, 0X00000190, 0X000001AC, 0X000001C8,
 0X000004E4, 0X000007A4, 0000000000, 0000000000, 0X00000007, 0000000000, 0000000000, 0000000000,
@@ -93420,189 +93420,6 @@ Nat4 VPLU_HISearchField_20_Toolbar_20_Item_2F_Get_20_Text_universal_load(V_Metho
 /* Begin Case */
 	ptrA = case_insert(0,method,environment);
 
-/* Start Operations: { 287 926 }{ 374 481 } */
-/* Begin Operation: { 36 36 44 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* IO - VPL Root : { 44 127 49 132 }*/
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 78 108 94 207 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_extconstant(tempOperation,environment,"kControlLabelPart");
-/* IO - VPL Root : { 94 155 99 160 }*/
-/* End Operation */
-
-/* Begin Operation: { 78 223 94 384 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_extconstant(tempOperation,environment,"kControlEditTextCFStringTag");
-/* IO - VPL Root : { 94 301 99 306 }*/
-/* End Operation */
-
-/* Begin Operation: { 162 85 178 227 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_universal(tempOperation,environment,"/Get Control Data Ptr");
-/* IO - VPL Terminal : { 157 111 162 116 }*/
-/* IO - VPL Terminal : { 157 155 162 160 }*/
-/* IO - VPL Terminal : { 157 200 162 205 }*/
-/* IO - VPL Root : { 178 154 183 159 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-	tempTerminal = input_insert(0,tempOperation,environment);
-	tempTerminal = input_insert(0,tempOperation,environment);
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 204 264 220 291 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_match(tempOperation,environment,"NULL");
-/* IO - VPL Terminal : { 199 275 204 280 }*/
-	tempOperation = operation_action_to(tempOperation,environment,kNextCase,kSuccess);
-/* End Operation */
-
-/* Begin Operation: { 120 306 136 369 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_constant(tempOperation,environment,"__CFString");
-/* IO - VPL Root : { 136 335 141 340 }*/
-/* End Operation */
-
-/* Begin Operation: { 204 323 220 445 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_primitive(tempOperation,environment,2,0,"set-external-type");
-/* IO - VPL Terminal : { 199 361 204 366 }*/
-/* IO - VPL Terminal : { 199 401 204 406 }*/
-/* End Operation */
-
-/* Begin Operation: { 204 36 220 154 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_universal(tempOperation,environment,"From CFStringRef");
-/* IO - VPL Terminal : { 199 93 204 98 }*/
-/* IO - VPL Root : { 220 93 225 98 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 288 163 305 221 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_local(tempOperation,environment,"report");
-/* IO - VPL Terminal : { 282 180 287 185 }*/
-/* IO - VPL Terminal : { 282 199 287 204 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-	tempTerminal = input_insert(0,tempOperation,environment);
-
-	{
-	Int4 result = 0;
-	V_Case ptrA = NULL;
-	V_Terminal tempTerminal = NULL;
-	V_Root tempRoot = NULL;
-	V_Operation localOperation = tempOperation;
-
-/* Start Cases: { 60 60 }{ 200 300 }*/
-/* Begin Case */
-	ptrA = case_insert(0,(V_Method)localOperation,environment);
-	ptrA = case_open(ptrA,localOperation,environment);
-
-/* Start Operations: { 60 60 }{ 210 268 } */
-/* Begin Operation: { 36 36 44 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* IO - VPL Root : { 45 98 50 103 }*/
-/* IO - VPL Root : { 45 162 50 167 }*/
-	tempRoot = output_insert(0,tempOperation,environment);
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 65 38 82 130 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_constant(tempOperation,environment,"Coerced String:");
-/* IO - VPL Root : { 83 82 88 87 }*/
-/* End Operation */
-
-/* Begin Operation: { 107 64 124 148 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_primitive(tempOperation,environment,2,0,"log-string");
-/* IO - VPL Terminal : { 101 82 106 87 }*/
-/* IO - VPL Terminal : { 101 104 106 109 }*/
-/* End Operation */
-
-/* Begin Operation: { 107 166 124 236 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_extprocedure(tempOperation,environment,1,0,"CFShow");
-/* IO - VPL Terminal : { 101 199 106 204 }*/
-/* End Operation */
-
-/* Begin Operation: { 162 36 170 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* End Operation */
-
-/* Stop Operations */
-
-/* Begin Connect Operations */
-	result = connect_root_to_terminal(ptrA,1,1,1,2);
-	result = connect_root_to_terminal(ptrA,1,0,2,2);
-	result = connect_root_to_terminal(ptrA,2,0,1,3);
-/* End Connect Operations */
-
-/* Begin Connect Synchros */
-/* End Connect Synchros */
-
-/* End Case */
-
-/* Stop Cases */
-
-}
-/* End Operation */
-
-/* Begin Operation: { 204 170 220 248 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_extprocedure(tempOperation,environment,1,0,"CFRelease");
-/* IO - VPL Terminal : { 199 207 204 212 }*/
-/* End Operation */
-
-/* Begin Operation: { 246 36 262 63 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_match(tempOperation,environment,"NULL");
-/* IO - VPL Terminal : { 241 47 246 52 }*/
-	tempOperation = operation_action_to(tempOperation,environment,kNextCase,kSuccess);
-/* End Operation */
-
-/* Begin Operation: { 330 36 338 228 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* IO - VPL Terminal : { 325 127 330 132 }*/
-	tempTerminal = input_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Stop Operations */
-
-/* Begin Connect Operations */
-	result = connect_root_to_terminal(ptrA,1,0,1,3);
-	result = connect_root_to_terminal(ptrA,1,1,2,3);
-	result = connect_root_to_terminal(ptrA,1,2,3,3);
-	result = connect_root_to_terminal(ptrA,1,3,1,4);
-	result = connect_root_to_terminal(ptrA,1,3,1,6);
-	result = connect_root_to_terminal(ptrA,1,5,2,6);
-	result = connect_root_to_terminal(ptrA,1,3,1,7);
-	result = connect_root_to_terminal(ptrA,1,7,1,8);
-	result = connect_root_to_terminal(ptrA,1,3,2,8);
-	result = connect_root_to_terminal(ptrA,1,3,1,9);
-	result = connect_root_to_terminal(ptrA,1,7,1,10);
-	result = connect_root_to_terminal(ptrA,1,7,1,11);
-/* End Connect Operations */
-
-/* Begin Connect Synchros */
-/* Synchro [7 to 6] */
-/* Synchro [9 to 7] */
-/* Synchro [9 to 8] */
-/* Synchro [10 to 9] */
-/* End Connect Synchros */
-
-/* End Case */
-
-/* Begin Case */
-	ptrA = case_insert(0,method,environment);
-
 /* Start Operations: { 287 926 }{ 289 361 } */
 /* Begin Operation: { 20 20 28 212 } */
 	tempOperation = operation_add(ptrA,environment);
@@ -93668,7 +93485,7 @@ Nat4 VPLU_HISearchField_20_Toolbar_20_Item_2F_Get_20_Text_universal_load(V_Metho
 /* Begin Case */
 	ptrA = case_insert(0,method,environment);
 
-/* Start Operations: { 287 926 }{ 200 300 } */
+/* Start Operations: { 60 60 }{ 200 300 } */
 /* Begin Operation: { 20 20 28 212 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_input_bar(tempOperation,environment);
@@ -93696,6 +93513,114 @@ Nat4 VPLU_HISearchField_20_Toolbar_20_Item_2F_Get_20_Text_universal_load(V_Metho
 /* End Connect Operations */
 
 /* Begin Connect Synchros */
+/* End Connect Synchros */
+
+/* End Case */
+
+/* Begin Case */
+	ptrA = case_insert(0,method,environment);
+
+/* Start Operations: { 226 341 }{ 314 433 } */
+/* Begin Operation: { 20 20 28 212 } */
+	tempOperation = operation_add(ptrA,environment);
+	tempOperation = operation_to_input_bar(tempOperation,environment);
+/* IO - VPL Root : { 28 111 33 116 }*/
+	tempRoot = output_insert(0,tempOperation,environment);
+/* End Operation */
+
+/* Begin Operation: { 42 108 58 207 } */
+	tempOperation = operation_add(ptrA,environment);
+	tempOperation = operation_to_extconstant(tempOperation,environment,"kControlLabelPart");
+/* IO - VPL Root : { 58 155 63 160 }*/
+/* End Operation */
+
+/* Begin Operation: { 82 122 98 283 } */
+	tempOperation = operation_add(ptrA,environment);
+	tempOperation = operation_to_extconstant(tempOperation,environment,"kControlEditTextCFStringTag");
+/* IO - VPL Root : { 98 200 103 205 }*/
+/* End Operation */
+
+/* Begin Operation: { 129 85 145 227 } */
+	tempOperation = operation_add(ptrA,environment);
+	tempOperation = operation_to_universal(tempOperation,environment,"/Get Control Data Ptr");
+/* IO - VPL Terminal : { 124 111 129 116 }*/
+/* IO - VPL Terminal : { 124 155 129 160 }*/
+/* IO - VPL Terminal : { 124 200 129 205 }*/
+/* IO - VPL Root : { 145 154 150 159 }*/
+	tempTerminal = input_insert(0,tempOperation,environment);
+	tempTerminal = input_insert(0,tempOperation,environment);
+	tempTerminal = input_insert(0,tempOperation,environment);
+	tempRoot = output_insert(0,tempOperation,environment);
+/* End Operation */
+
+/* Begin Operation: { 171 189 187 216 } */
+	tempOperation = operation_add(ptrA,environment);
+	tempOperation = operation_to_match(tempOperation,environment,"NULL");
+/* IO - VPL Terminal : { 166 200 171 205 }*/
+	tempOperation = operation_action_to(tempOperation,environment,kNextCase,kSuccess);
+/* End Operation */
+
+/* Begin Operation: { 125 306 141 369 } */
+	tempOperation = operation_add(ptrA,environment);
+	tempOperation = operation_to_constant(tempOperation,environment,"__CFString");
+/* IO - VPL Root : { 141 335 146 340 }*/
+/* End Operation */
+
+/* Begin Operation: { 170 257 186 379 } */
+	tempOperation = operation_add(ptrA,environment);
+	tempOperation = operation_to_primitive(tempOperation,environment,2,0,"set-external-type");
+/* IO - VPL Terminal : { 165 295 170 300 }*/
+/* IO - VPL Terminal : { 165 335 170 340 }*/
+/* End Operation */
+
+/* Begin Operation: { 169 17 185 135 } */
+	tempOperation = operation_add(ptrA,environment);
+	tempOperation = operation_to_universal(tempOperation,environment,"From CFStringRef");
+/* IO - VPL Terminal : { 164 74 169 79 }*/
+/* IO - VPL Root : { 185 74 190 79 }*/
+	tempTerminal = input_insert(0,tempOperation,environment);
+	tempRoot = output_insert(0,tempOperation,environment);
+/* End Operation */
+
+/* Begin Operation: { 206 117 222 195 } */
+	tempOperation = operation_add(ptrA,environment);
+	tempOperation = operation_to_extprocedure(tempOperation,environment,1,0,"CFRelease");
+/* IO - VPL Terminal : { 201 154 206 159 }*/
+/* End Operation */
+
+/* Begin Operation: { 210 26 226 53 } */
+	tempOperation = operation_add(ptrA,environment);
+	tempOperation = operation_to_match(tempOperation,environment,"NULL");
+/* IO - VPL Terminal : { 205 37 210 42 }*/
+	tempOperation = operation_action_to(tempOperation,environment,kNextCase,kSuccess);
+/* End Operation */
+
+/* Begin Operation: { 239 22 247 214 } */
+	tempOperation = operation_add(ptrA,environment);
+	tempOperation = operation_to_output_bar(tempOperation,environment);
+/* IO - VPL Terminal : { 234 113 239 118 }*/
+	tempTerminal = input_insert(0,tempOperation,environment);
+/* End Operation */
+
+/* Stop Operations */
+
+/* Begin Connect Operations */
+	result = connect_root_to_terminal(ptrA,1,0,1,3);
+	result = connect_root_to_terminal(ptrA,1,1,2,3);
+	result = connect_root_to_terminal(ptrA,1,2,3,3);
+	result = connect_root_to_terminal(ptrA,1,3,1,4);
+	result = connect_root_to_terminal(ptrA,1,3,1,6);
+	result = connect_root_to_terminal(ptrA,1,5,2,6);
+	result = connect_root_to_terminal(ptrA,1,3,1,7);
+	result = connect_root_to_terminal(ptrA,1,3,1,8);
+	result = connect_root_to_terminal(ptrA,1,7,1,9);
+	result = connect_root_to_terminal(ptrA,1,7,1,10);
+/* End Connect Operations */
+
+/* Begin Connect Synchros */
+/* Synchro [7 to 6] */
+/* Synchro [8 to 7] */
+/* Synchro [9 to 8] */
 /* End Connect Synchros */
 
 /* End Case */
@@ -96320,7 +96245,34 @@ Nat4 VPLU_HISegmentedView_20_Toolbar_20_Item_2F7E_Create_20_Control_20_Record_un
 	ptrA = case_insert(0,(V_Method)localOperation,environment);
 	ptrA = case_open(ptrA,localOperation,environment);
 
-/* Start Operations: { 624 302 }{ 356 535 } */
+/* Start Operations: { 60 60 }{ 200 300 } */
+/* Begin Operation: { 20 20 28 212 } */
+	tempOperation = operation_add(ptrA,environment);
+	tempOperation = operation_to_input_bar(tempOperation,environment);
+/* IO - VPL Root : { 28 114 33 119 }*/
+	tempRoot = output_insert(0,tempOperation,environment);
+/* End Operation */
+
+/* Begin Operation: { 60 20 68 212 } */
+	tempOperation = operation_add(ptrA,environment);
+	tempOperation = operation_to_output_bar(tempOperation,environment);
+/* End Operation */
+
+/* Stop Operations */
+
+/* Begin Connect Operations */
+/* End Connect Operations */
+
+/* Begin Connect Synchros */
+/* End Connect Synchros */
+
+/* End Case */
+
+/* Begin Case */
+	ptrA = case_insert(0,(V_Method)localOperation,environment);
+	ptrA = case_open(ptrA,localOperation,environment);
+
+/* Start Operations: { 608 448 }{ 356 535 } */
 /* Begin Operation: { 20 20 28 212 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_input_bar(tempOperation,environment);
@@ -96423,33 +96375,6 @@ Nat4 VPLU_HISegmentedView_20_Toolbar_20_Item_2F7E_Create_20_Control_20_Record_un
 
 /* End Case */
 
-/* Begin Case */
-	ptrA = case_insert(0,(V_Method)localOperation,environment);
-	ptrA = case_open(ptrA,localOperation,environment);
-
-/* Start Operations: { 60 60 }{ 200 300 } */
-/* Begin Operation: { 20 20 28 212 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_input_bar(tempOperation,environment);
-/* IO - VPL Root : { 28 114 33 119 }*/
-	tempRoot = output_insert(0,tempOperation,environment);
-/* End Operation */
-
-/* Begin Operation: { 60 20 68 212 } */
-	tempOperation = operation_add(ptrA,environment);
-	tempOperation = operation_to_output_bar(tempOperation,environment);
-/* End Operation */
-
-/* Stop Operations */
-
-/* Begin Connect Operations */
-/* End Connect Operations */
-
-/* Begin Connect Synchros */
-/* End Connect Synchros */
-
-/* End Case */
-
 /* Stop Cases */
 
 }
@@ -96504,7 +96429,7 @@ Nat4 VPLU_HISegmentedView_20_Toolbar_20_Item_2F7E_Create_20_Control_20_Record_un
 /* Begin Case */
 	ptrA = case_insert(0,method,environment);
 
-/* Start Operations: { 592 292 }{ 200 300 } */
+/* Start Operations: { 60 60 }{ 200 300 } */
 /* Begin Operation: { 20 20 28 212 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_input_bar(tempOperation,environment);
@@ -96587,7 +96512,7 @@ Nat4 VPLU_HISegmentedView_20_Toolbar_20_Item_2F_TIV_20_Config_20_For_20_Size_uni
 /* Begin Case */
 	ptrA = case_insert(0,method,environment);
 
-/* Start Operations: { 60 60 }{ 360 463 } */
+/* Start Operations: { 597 1054 }{ 360 463 } */
 /* Begin Operation: { 22 22 30 214 } */
 	tempOperation = operation_add(ptrA,environment);
 	tempOperation = operation_to_input_bar(tempOperation,environment);

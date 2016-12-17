@@ -2669,7 +2669,7 @@ Nat4 VPLC_VPLHIText_20_Editor_class_load(V_Class tempClass,V_Environment environ
 	return kNOERROR;
 }
 
-/* Start Universals: { 364 639 }{ 323 334 } */
+/* Start Universals: { 361 886 }{ 323 334 } */
 enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Activate_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
 enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Activate_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
 {
@@ -2851,47 +2851,8 @@ OUTPUT(0,TERMINAL(3))
 FOOTERSINGLECASE(4)
 }
 
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(3)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_get(PARAMETERS,kVPXValue_Edit_20_Control,TERMINAL(0),ROOT(1),ROOT(2));
-
-result = vpx_match(PARAMETERS,"NULL",TERMINAL(2));
-FAILONSUCCESS
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(2))
-FOOTERSINGLECASE(3)
-}
-
 enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
 enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(5)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_1_local_2(PARAMETERS,TERMINAL(0),ROOT(1));
-NEXTCASEONFAILURE
-
-PUTPOINTER(__CFString,*,HIViewCopyText( GETPOINTER(0,OpaqueControlRef,*,ROOT(3),TERMINAL(1))),2);
-result = kSuccess;
-
-result = vpx_method_Transform_20_CFStringRef(PARAMETERS,TERMINAL(2),ROOT(4));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(4))
-FOOTER(5)
-}
-
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADERWITHNONE(22)
 INPUT(0,0)
@@ -2953,8 +2914,8 @@ OUTPUT(0,TERMINAL(21))
 FOOTERWITHNONE(22)
 }
 
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADERWITHNONE(20)
 INPUT(0,0)
@@ -2997,8 +2958,8 @@ OUTPUT(0,TERMINAL(19))
 FOOTERWITHNONE(20)
 }
 
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADERWITHNONE(24)
 INPUT(0,0)
@@ -3058,8 +3019,8 @@ OUTPUT(0,TERMINAL(23))
 FOOTERWITHNONE(24)
 }
 
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_5(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_5(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADER(2)
 INPUT(0,0)
@@ -3079,8 +3040,7 @@ enum opTrigger outcome = kSuccess;
 if(vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
 if(vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
 if(vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
-if(vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_4(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
-vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_5(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+vpx_method_VPLHIText_20_Editor_2F_Get_20_Text_case_4(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
 return outcome;
 }
 
@@ -3621,8 +3581,8 @@ OUTPUT(0,TERMINAL(3))
 FOOTERSINGLECASE(5)
 }
 
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0)
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0)
 {
 HEADER(3)
 result = kSuccess;
@@ -3639,8 +3599,8 @@ OUTPUT(0,TERMINAL(2))
 FOOTERSINGLECASE(3)
 }
 
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_11_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_11_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_11_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_11_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADER(8)
 INPUT(0,0)
@@ -3663,8 +3623,8 @@ OUTPUT(0,TERMINAL(7))
 FOOTER(8)
 }
 
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_11_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_11_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_11_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_11_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADER(3)
 INPUT(0,0)
@@ -3683,8 +3643,8 @@ OUTPUT(0,TERMINAL(2))
 FOOTER(3)
 }
 
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_11_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_11_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_11_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_11_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADER(2)
 INPUT(0,0)
@@ -3698,18 +3658,18 @@ OUTPUT(0,TERMINAL(1))
 FOOTER(2)
 }
 
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_11(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_11(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_11(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_11(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 enum opTrigger outcome = kSuccess;
-if(vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_11_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
-if(vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_11_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
-vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_11_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
+if(vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_11_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+if(vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_11_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,root0))
+vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_11_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,root0);
 return outcome;
 }
 
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
 HEADER(19)
 INPUT(0,0)
@@ -3723,7 +3683,7 @@ result = vpx_constant(PARAMETERS,"1",ROOT(3));
 
 result = vpx_method_Create_20_Block_20_Type(PARAMETERS,TERMINAL(1),TERMINAL(2),TERMINAL(3),ROOT(4));
 
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_6(PARAMETERS,ROOT(5));
+result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_6(PARAMETERS,ROOT(5));
 
 result = vpx_extset(PARAMETERS,"flags",2,1,TERMINAL(4),TERMINAL(5),ROOT(6));
 
@@ -3733,7 +3693,7 @@ result = vpx_get(PARAMETERS,kVPXValue_Selected,TERMINAL(0),ROOT(8),ROOT(9));
 
 result = vpx_get(PARAMETERS,kVPXValue_Parent,TERMINAL(0),ROOT(10),ROOT(11));
 
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10_case_1_local_11(PARAMETERS,TERMINAL(11),ROOT(12));
+result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13_case_1_local_11(PARAMETERS,TERMINAL(11),ROOT(12));
 
 result = vpx_method_Set_20_Operation_20_Font(PARAMETERS,TERMINAL(12),TERMINAL(7),TERMINAL(9),ROOT(13),ROOT(14));
 
@@ -3749,331 +3709,51 @@ OUTPUT(0,TERMINAL(4))
 FOOTERSINGLECASE(19)
 }
 
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_2(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_19_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_19_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
 {
-HEADER(6)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Content_20_HIViewRef,1,1,TERMINAL(0),ROOT(2));
-
-PUTINTEGER(HIViewAddSubview( GETPOINTER(0,OpaqueControlRef,*,ROOT(4),TERMINAL(2)),GETPOINTER(0,OpaqueControlRef,*,ROOT(5),TERMINAL(1))),3);
-result = kSuccess;
-
-result = kSuccess;
-
-FOOTERSINGLECASE(6)
-}
-
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
-{
-HEADER(6)
+HEADER(1)
 INPUT(0,0)
 result = kSuccess;
 
-result = vpx_constant(PARAMETERS,"TRUE",ROOT(1));
-
-PUTINTEGER(HIViewSetVisible( GETPOINTER(0,OpaqueControlRef,*,ROOT(3),TERMINAL(0)),GETINTEGER(TERMINAL(1))),2);
 result = kSuccess;
 
-PUTINTEGER(EnableControl( GETPOINTER(0,OpaqueControlRef,*,ROOT(5),TERMINAL(0))),4);
-result = kSuccess;
-
-result = kSuccess;
-
-FOOTERSINGLECASE(6)
+FOOTER(1)
 }
 
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_4_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_4_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(6)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_constant(PARAMETERS,"4",ROOT(1));
-
-result = vpx_constant(PARAMETERS,"unisnged int",ROOT(2));
-
-result = vpx_constant(PARAMETERS,"1",ROOT(3));
-
-result = vpx_call_primitive(PARAMETERS,VPLP__2A2A_,2,1,TERMINAL(1),TERMINAL(0),ROOT(4));
-
-result = vpx_method_Create_20_Block_20_Type(PARAMETERS,TERMINAL(2),TERMINAL(4),TERMINAL(3),ROOT(5));
-FAILONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(5))
-FOOTERSINGLECASE(6)
-}
-
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_4_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_4_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
-{
-HEADER(6)
-INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
-result = kSuccess;
-
-result = vpx_constant(PARAMETERS,"4",ROOT(3));
-
-result = vpx_call_primitive(PARAMETERS,VPLP_put_2D_integer,4,2,TERMINAL(0),TERMINAL(1),TERMINAL(3),TERMINAL(2),ROOT(4),ROOT(5));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(5))
-FOOTERSINGLECASE(6)
-}
-
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(5)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_call_primitive(PARAMETERS,VPLP__28_length_29_,1,1,TERMINAL(0),ROOT(1));
-
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_4_case_1_local_3(PARAMETERS,TERMINAL(1),ROOT(2));
-FAILONFAILURE
-
-result = vpx_constant(PARAMETERS,"0",ROOT(3));
-
-if( (repeatLimit = vpx_multiplex(1,TERMINAL(0))) ){
-REPEATBEGINWITHCOUNTER
-LOOPTERMINALBEGIN(1)
-LOOPTERMINAL(0,3,4)
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_4_case_1_local_5(PARAMETERS,TERMINAL(2),LOOP(0),LIST(0),ROOT(4));
-REPEATFINISH
-} else {
-ROOTNULL(4,TERMINAL(3))
-}
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(2))
-FOOTERSINGLECASE(5)
-}
-
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_6_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_6_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(6)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_constant(PARAMETERS,"4",ROOT(1));
-
-result = vpx_constant(PARAMETERS,"unsigned int",ROOT(2));
-
-result = vpx_constant(PARAMETERS,"1",ROOT(3));
-
-result = vpx_call_primitive(PARAMETERS,VPLP__2A2A_,2,1,TERMINAL(1),TERMINAL(0),ROOT(4));
-
-result = vpx_method_Create_20_Block_20_Type(PARAMETERS,TERMINAL(2),TERMINAL(4),TERMINAL(3),ROOT(5));
-FAILONFAILURE
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(5))
-FOOTERSINGLECASE(6)
-}
-
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_6_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_6_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
-{
-HEADER(6)
-INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
-result = kSuccess;
-
-result = vpx_constant(PARAMETERS,"4",ROOT(3));
-
-result = vpx_call_primitive(PARAMETERS,VPLP_put_2D_integer,4,2,TERMINAL(0),TERMINAL(1),TERMINAL(3),TERMINAL(2),ROOT(4),ROOT(5));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(5))
-FOOTERSINGLECASE(6)
-}
-
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_6(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
-{
-HEADER(5)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_call_primitive(PARAMETERS,VPLP__28_length_29_,1,1,TERMINAL(0),ROOT(1));
-
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_6_case_1_local_3(PARAMETERS,TERMINAL(1),ROOT(2));
-FAILONFAILURE
-
-result = vpx_constant(PARAMETERS,"0",ROOT(3));
-
-if( (repeatLimit = vpx_multiplex(1,TERMINAL(0))) ){
-REPEATBEGINWITHCOUNTER
-LOOPTERMINALBEGIN(1)
-LOOPTERMINAL(0,3,4)
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_6_case_1_local_5(PARAMETERS,TERMINAL(2),LOOP(0),LIST(0),ROOT(4));
-REPEATFINISH
-} else {
-ROOTNULL(4,TERMINAL(3))
-}
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(2))
-FOOTERSINGLECASE(5)
-}
-
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_10(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_10(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
-{
-HEADER(2)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_method_Block_20_Free(PARAMETERS,TERMINAL(0));
-
-result = vpx_method_Block_20_Free(PARAMETERS,TERMINAL(1));
-
-result = kSuccess;
-
-FOOTERSINGLECASE(2)
-}
-
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
-{
-HEADER(12)
-INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
-result = kSuccess;
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_TXNObject,1,1,TERMINAL(0),ROOT(3));
-NEXTCASEONFAILURE
-
-result = vpx_method__28_Check_29_(PARAMETERS,TERMINAL(2),ROOT(4));
-
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_4(PARAMETERS,TERMINAL(4),ROOT(5));
-NEXTCASEONFAILURE
-
-result = vpx_method__28_Check_29_(PARAMETERS,TERMINAL(1),ROOT(6));
-
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_6(PARAMETERS,TERMINAL(6),ROOT(7));
-NEXTCASEONFAILURE
-
-result = vpx_call_primitive(PARAMETERS,VPLP__28_length_29_,1,1,TERMINAL(6),ROOT(8));
-
-result = vpx_constant(PARAMETERS,"FALSE",ROOT(9));
-
-PUTINTEGER(TXNSetTXNObjectControls( GETPOINTER(0,OpaqueTXNObject,*,ROOT(11),TERMINAL(3)),GETINTEGER(TERMINAL(9)),GETINTEGER(TERMINAL(8)),GETCONSTPOINTER(unsigned int,*,TERMINAL(7)),GETCONSTPOINTER(TXNControlData,*,TERMINAL(5))),10);
-result = kSuccess;
-
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1_local_10(PARAMETERS,TERMINAL(7),TERMINAL(5));
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(10))
-FOOTER(12)
-}
-
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_19_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_19_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
 {
 HEADER(4)
 INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
 result = kSuccess;
 
-result = vpx_extconstant(PARAMETERS,paramErr,ROOT(3));
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_TXNObject,1,1,TERMINAL(0),ROOT(1));
+TERMINATEONFAILURE
+
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(2));
+
+TXNFocus( GETPOINTER(0,OpaqueTXNObject,*,ROOT(3),TERMINAL(1)),GETINTEGER(TERMINAL(2)));
+result = kSuccess;
 
 result = kSuccess;
 
-OUTPUT(0,TERMINAL(3))
 FOOTER(4)
 }
 
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2,V_Object *root0)
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_19(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_19(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
 {
 enum opTrigger outcome = kSuccess;
-if(vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0))
-vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2,root0);
+if(vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_19_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0))
+vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_19_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0);
 return outcome;
 }
 
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
 {
-HEADER(4)
-INPUT(0,0)
-result = kSuccess;
-
-result = vpx_extconstant(PARAMETERS,kTXNDisableDragAndDrop,ROOT(1));
-
-result = vpx_extconstant(PARAMETERS,kTXNDisableDragAndDropTag,ROOT(2));
-
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5_case_1_local_4(PARAMETERS,TERMINAL(0),TERMINAL(2),TERMINAL(1),ROOT(3));
-
-result = kSuccess;
-
-FOOTERSINGLECASE(4)
-}
-
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
-{
-HEADER(4)
-INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
-result = kSuccess;
-
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_2(PARAMETERS,TERMINAL(1),TERMINAL(2));
-
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_3(PARAMETERS,TERMINAL(2));
-
-result = vpx_set(PARAMETERS,kVPXValue_Edit_20_Control,TERMINAL(0),TERMINAL(2),ROOT(3));
-
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12_case_1_local_5(PARAMETERS,TERMINAL(3));
-
-result = kSuccess;
-
-FOOTERSINGLECASE(4)
-}
-
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
-{
-HEADER(6)
-INPUT(0,0)
-INPUT(1,1)
-result = kSuccess;
-
-result = vpx_extconstant(PARAMETERS,kControlFocusNextPart,ROOT(2));
-
-PUTINTEGER(SetKeyboardFocus( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(4),TERMINAL(0)),GETPOINTER(0,OpaqueControlRef,*,ROOT(5),TERMINAL(1)),GETINTEGER(TERMINAL(2))),3);
-result = kSuccess;
-
-result = kSuccess;
-
-FOOTERSINGLECASE(6)
-}
-
-enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
-{
-HEADERWITHNONE(13)
+HEADERWITHNONE(29)
 INPUT(0,0)
 INPUT(1,1)
 result = kSuccess;
@@ -4084,28 +3764,610 @@ result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Window,1,1,TERMINAL(1
 
 result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Up_20_Drawing,1,0,TERMINAL(3));
 
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_WindowRef,1,1,TERMINAL(3),ROOT(4));
+result = vpx_get(PARAMETERS,kVPXValue_Frame,TERMINAL(1),ROOT(4),ROOT(5));
 
-result = vpx_constant(PARAMETERS,"FALSE",ROOT(5));
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(6));
 
-result = vpx_constant(PARAMETERS,"NULL",ROOT(6));
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Content_20_HIViewRef,1,1,TERMINAL(3),ROOT(7));
 
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Frame_20_In_20_Window,1,1,TERMINAL(1),ROOT(7));
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_WindowRef,1,1,TERMINAL(3),ROOT(8));
 
-result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Rect,1,1,TERMINAL(7),ROOT(8));
+result = vpx_constant(PARAMETERS,"FALSE",ROOT(9));
 
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_10(PARAMETERS,TERMINAL(1),ROOT(9));
+result = vpx_constant(PARAMETERS,"NULL",ROOT(10));
 
-PUTINTEGER(CreateEditUnicodeTextControl( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(11),TERMINAL(4)),GETCONSTPOINTER(Rect,*,TERMINAL(8)),GETCONSTPOINTER(__CFString,*,TERMINAL(6)),GETINTEGER(TERMINAL(5)),GETCONSTPOINTER(ControlFontStyleRec,*,TERMINAL(9)),GETPOINTER(0,OpaqueControlRef,**,ROOT(12),NONE)),10);
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Frame_20_In_20_Window,1,1,TERMINAL(1),ROOT(11));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Rect,1,1,TERMINAL(11),ROOT(12));
+
+result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13(PARAMETERS,TERMINAL(1),ROOT(13));
+
+PUTINTEGER(CreateEditUnicodeTextControl( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(15),TERMINAL(8)),GETCONSTPOINTER(Rect,*,TERMINAL(12)),GETCONSTPOINTER(__CFString,*,TERMINAL(10)),GETINTEGER(TERMINAL(9)),GETCONSTPOINTER(ControlFontStyleRec,*,TERMINAL(13)),GETPOINTER(0,OpaqueControlRef,**,ROOT(16),NONE)),14);
 result = kSuccess;
 
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_12(PARAMETERS,TERMINAL(2),TERMINAL(3),TERMINAL(12));
+PUTINTEGER(HIViewAddSubview( GETPOINTER(0,OpaqueControlRef,*,ROOT(18),TERMINAL(7)),GETPOINTER(0,OpaqueControlRef,*,ROOT(19),TERMINAL(16))),17);
+result = kSuccess;
 
-result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_13(PARAMETERS,TERMINAL(4),TERMINAL(12));
+PUTINTEGER(HIViewSetVisible( GETPOINTER(0,OpaqueControlRef,*,ROOT(21),TERMINAL(16)),GETINTEGER(TERMINAL(6))),20);
+result = kSuccess;
+
+PUTINTEGER(EnableControl( GETPOINTER(0,OpaqueControlRef,*,ROOT(23),TERMINAL(16))),22);
+result = kSuccess;
+
+result = vpx_set(PARAMETERS,kVPXValue_Edit_20_Control,TERMINAL(2),TERMINAL(16),ROOT(24));
+
+result = vpx_method_VPLHIText_20_Editor_2F_Open_case_1_local_19(PARAMETERS,TERMINAL(24));
+
+result = vpx_extconstant(PARAMETERS,kControlFocusNextPart,ROOT(25));
+
+PUTINTEGER(SetKeyboardFocus( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(27),TERMINAL(8)),GETPOINTER(0,OpaqueControlRef,*,ROOT(28),TERMINAL(16)),GETINTEGER(TERMINAL(25))),26);
+result = kSuccess;
 
 result = kSuccess;
 
-FOOTERSINGLECASEWITHNONE(13)
+FOOTERWITHNONE(29)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_2_local_7(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_2_local_7(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0)
+{
+HEADER(5)
+result = kSuccess;
+
+result = vpx_extconstant(PARAMETERS,kOutputTextInUnicodeEncodingBit,ROOT(0));
+
+result = vpx_extconstant(PARAMETERS,kTXNSingleLineOnlyBit,ROOT(1));
+
+result = vpx_extconstant(PARAMETERS,kTXNMonostyledTextBit,ROOT(2));
+
+result = vpx_extconstant(PARAMETERS,kTXNDoFontSubstitutionBit,ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__2B2B_,3,1,TERMINAL(3),TERMINAL(0),TERMINAL(1),ROOT(4));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(4))
+FOOTERSINGLECASE(5)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_2_local_15_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_2_local_15_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTER(1)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_2_local_15_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_2_local_15_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(4)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_TXNObject,1,1,TERMINAL(0),ROOT(1));
+TERMINATEONFAILURE
+
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(2));
+
+TXNFocus( GETPOINTER(0,OpaqueTXNObject,*,ROOT(3),TERMINAL(1)),GETINTEGER(TERMINAL(2)));
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_2_local_15(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_2_local_15(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLHIText_20_Editor_2F_Open_case_2_local_15_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0))
+vpx_method_VPLHIText_20_Editor_2F_Open_case_2_local_15_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADERWITHNONE(24)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_set(PARAMETERS,kVPXValue_Parent,TERMINAL(0),TERMINAL(1),ROOT(2));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Up_20_Drawing,1,0,TERMINAL(1));
+
+result = vpx_get(PARAMETERS,kVPXValue_Frame,TERMINAL(1),ROOT(3),ROOT(4));
+
+result = vpx_constant(PARAMETERS,"0",ROOT(5));
+
+result = vpx_method_list_2D_to_2D_CGRect(PARAMETERS,TERMINAL(4),ROOT(6));
+
+result = vpx_method_VPLHIText_20_Editor_2F_Open_case_2_local_7(PARAMETERS,ROOT(7));
+
+PUTINTEGER(HITextViewCreate( GETCONSTPOINTER(CGRect,*,TERMINAL(6)),GETINTEGER(TERMINAL(5)),GETINTEGER(TERMINAL(7)),GETPOINTER(0,OpaqueControlRef,**,ROOT(9),NONE)),8);
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(10));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Window,1,1,TERMINAL(1),ROOT(11));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Content_20_HIViewRef,1,1,TERMINAL(11),ROOT(12));
+
+PUTINTEGER(HIViewAddSubview( GETPOINTER(0,OpaqueControlRef,*,ROOT(14),TERMINAL(12)),GETPOINTER(0,OpaqueControlRef,*,ROOT(15),TERMINAL(9))),13);
+result = kSuccess;
+
+PUTINTEGER(HIViewSetVisible( GETPOINTER(0,OpaqueControlRef,*,ROOT(17),TERMINAL(9)),GETINTEGER(TERMINAL(10))),16);
+result = kSuccess;
+
+result = vpx_set(PARAMETERS,kVPXValue_Edit_20_Control,TERMINAL(2),TERMINAL(9),ROOT(18));
+
+result = vpx_method_VPLHIText_20_Editor_2F_Open_case_2_local_15(PARAMETERS,TERMINAL(18));
+
+result = vpx_extconstant(PARAMETERS,kControlFocusNextPart,ROOT(19));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_WindowRef,1,1,TERMINAL(11),ROOT(20));
+
+PUTINTEGER(SetKeyboardFocus( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(22),TERMINAL(20)),GETPOINTER(0,OpaqueControlRef,*,ROOT(23),TERMINAL(9)),GETINTEGER(TERMINAL(19))),21);
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERWITHNONE(24)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_10(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_10(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0)
+{
+HEADER(5)
+result = kSuccess;
+
+result = vpx_extconstant(PARAMETERS,kOutputTextInUnicodeEncodingBit,ROOT(0));
+
+result = vpx_extconstant(PARAMETERS,kTXNSingleLineOnlyBit,ROOT(1));
+
+result = vpx_extconstant(PARAMETERS,kTXNMonostyledTextBit,ROOT(2));
+
+result = vpx_extconstant(PARAMETERS,kTXNDoFontSubstitutionBit,ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__2B2B_,3,1,TERMINAL(3),TERMINAL(0),TERMINAL(1),ROOT(4));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(4))
+FOOTERSINGLECASE(5)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_16(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_16(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
+{
+HEADER(13)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_primitive(PARAMETERS,VPLP_Rect_2D_to_2D_list,1,1,TERMINAL(0),ROOT(1));
+
+result = vpx_constant(PARAMETERS,"2",ROOT(2));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_split_2D_nth,2,2,TERMINAL(1),TERMINAL(2),ROOT(3),ROOT(4));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Point,1,1,TERMINAL(3),ROOT(5));
+
+LocalToGlobal( GETPOINTER(4,Point,*,ROOT(6),TERMINAL(5)));
+result = kSuccess;
+
+result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Point,1,1,TERMINAL(4),ROOT(7));
+
+LocalToGlobal( GETPOINTER(4,Point,*,ROOT(8),TERMINAL(7)));
+result = kSuccess;
+
+result = vpx_call_primitive(PARAMETERS,VPLP_Point_2D_to_2D_list,1,1,TERMINAL(6),ROOT(9));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_Point_2D_to_2D_list,1,1,TERMINAL(8),ROOT(10));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__28_join_29_,2,1,TERMINAL(9),TERMINAL(10),ROOT(11));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Rect,1,1,TERMINAL(11),ROOT(12));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(12))
+FOOTERSINGLECASE(13)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_17_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_17_case_1_local_3(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0)
+{
+HEADER(3)
+result = kSuccess;
+
+result = vpx_extconstant(PARAMETERS,kWindowHideOnSuspendAttribute,ROOT(0));
+
+result = vpx_extconstant(PARAMETERS,kWindowIgnoreClicksAttribute,ROOT(1));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__2B2B_,2,1,TERMINAL(0),TERMINAL(1),ROOT(2));
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(2))
+FOOTERSINGLECASE(3)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_17(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_17(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object *root0)
+{
+HEADERWITHNONE(15)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_extconstant(PARAMETERS,kOverlayWindowClass,ROOT(2));
+
+result = vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_17_case_1_local_3(PARAMETERS,ROOT(3));
+
+result = vpx_extconstant(PARAMETERS,kDocumentWindowClass,ROOT(4));
+
+PUTINTEGER(CreateNewWindow( GETINTEGER(TERMINAL(2)),GETINTEGER(TERMINAL(3)),GETCONSTPOINTER(Rect,*,TERMINAL(0)),GETPOINTER(0,OpaqueWindowPtr,**,ROOT(6),NONE)),5);
+result = kSuccess;
+
+result = vpx_extmatch(PARAMETERS,noErr,TERMINAL(5));
+FAILONFAILURE
+
+SetPortWindowPort( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(7),TERMINAL(6)));
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_WindowRef,1,1,TERMINAL(1),ROOT(8));
+
+PUTPOINTER(OpaqueWindowGroupRef,*,GetWindowGroup( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(10),TERMINAL(8))),9);
+result = kSuccess;
+
+PUTINTEGER(SetWindowGroup( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(12),TERMINAL(6)),GETPOINTER(0,OpaqueWindowGroupRef,*,ROOT(13),TERMINAL(9))),11);
+result = kSuccess;
+
+ShowWindow( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(14),TERMINAL(6)));
+result = kSuccess;
+
+result = kSuccess;
+
+OUTPUT(0,TERMINAL(6))
+FOOTERSINGLECASEWITHNONE(15)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(6)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"0.09",ROOT(1));
+
+result = vpx_constant(PARAMETERS,"0.93",ROOT(2));
+
+result = vpx_constant(PARAMETERS,"0.12",ROOT(3));
+
+result = vpx_constant(PARAMETERS,"0.4",ROOT(4));
+
+CGContextSetRGBStrokeColor( GETPOINTER(0,CGContext,*,ROOT(5),TERMINAL(0)),GETREAL(TERMINAL(2)),GETREAL(TERMINAL(1)),GETREAL(TERMINAL(3)),GETREAL(TERMINAL(4)));
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTER(6)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADERWITHNONE(16)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"0.4",ROOT(1));
+
+result = vpx_constant(PARAMETERS,"65535",ROOT(2));
+
+result = vpx_constant(PARAMETERS,"FALSE",ROOT(3));
+
+result = vpx_constant(PARAMETERS,"0",ROOT(4));
+
+result = vpx_extconstant(PARAMETERS,kThemeBrushPrimaryHighlightColor,ROOT(5));
+
+result = vpx_extconstant(PARAMETERS,kThemeBrushAlternatePrimaryHighlightColor,ROOT(6));
+
+result = vpx_extconstant(PARAMETERS,kThemeBrushSecondaryHighlightColor,ROOT(7));
+
+PUTINTEGER(GetThemeBrushAsColor( GETINTEGER(TERMINAL(6)),GETINTEGER(TERMINAL(4)),GETINTEGER(TERMINAL(3)),GETPOINTER(8,RGBColor,*,ROOT(9),NONE)),8);
+result = kSuccess;
+
+result = vpx_call_primitive(PARAMETERS,VPLP_RGB_2D_to_2D_list,1,1,TERMINAL(9),ROOT(10));
+
+if( (repeatLimit = vpx_multiplex(1,TERMINAL(10))) ){
+LISTROOTBEGIN(1)
+REPEATBEGINWITHCOUNTER
+result = vpx_call_primitive(PARAMETERS,VPLP_div,2,1,LIST(10),TERMINAL(2),ROOT(11));
+LISTROOT(11,0)
+REPEATFINISH
+LISTROOTFINISH(11,0)
+LISTROOTEND
+} else {
+ROOTEMPTY(11)
+}
+
+result = vpx_call_primitive(PARAMETERS,VPLP_unpack,1,3,TERMINAL(11),ROOT(12),ROOT(13),ROOT(14));
+
+CGContextSetRGBStrokeColor( GETPOINTER(0,CGContext,*,ROOT(15),TERMINAL(0)),GETREAL(TERMINAL(12)),GETREAL(TERMINAL(13)),GETREAL(TERMINAL(14)),GETREAL(TERMINAL(1)));
+result = kSuccess;
+
+result = vpx_extmatch(PARAMETERS,noErr,TERMINAL(8));
+NEXTCASEONFAILURE
+
+result = kSuccess;
+
+FOOTERWITHNONE(16)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(6)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"0.09",ROOT(1));
+
+result = vpx_constant(PARAMETERS,"0.80",ROOT(2));
+
+result = vpx_constant(PARAMETERS,"0.13",ROOT(3));
+
+result = vpx_constant(PARAMETERS,"0.4",ROOT(4));
+
+CGContextSetRGBStrokeColor( GETPOINTER(0,CGContext,*,ROOT(5),TERMINAL(0)),GETREAL(TERMINAL(1)),GETREAL(TERMINAL(3)),GETREAL(TERMINAL(2)),GETREAL(TERMINAL(4)));
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTER(6)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19_case_4(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(4)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"0.53",ROOT(1));
+
+result = vpx_constant(PARAMETERS,"0.25",ROOT(2));
+
+CGContextSetGrayStrokeColor( GETPOINTER(0,CGContext,*,ROOT(3),TERMINAL(0)),GETREAL(TERMINAL(1)),GETREAL(TERMINAL(2)));
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0))
+if(vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0))
+if(vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0))
+vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19_case_4(environment, &outcome, inputRepeat, contextIndex,terminal0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADERWITHNONE(28)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"0",ROOT(2));
+
+result = vpx_method_Rect_20_Size(PARAMETERS,TERMINAL(0),ROOT(3));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_Point_2D_to_2D_list,1,1,TERMINAL(3),ROOT(4));
+
+if( (repeatLimit = vpx_multiplex(1,TERMINAL(4))) ){
+LISTROOTBEGIN(1)
+REPEATBEGINWITHCOUNTER
+result = vpx_call_primitive(PARAMETERS,VPLP__2B_1,1,1,LIST(4),ROOT(5));
+LISTROOT(5,0)
+REPEATFINISH
+LISTROOTFINISH(5,0)
+LISTROOTEND
+} else {
+ROOTEMPTY(5)
+}
+
+result = vpx_call_primitive(PARAMETERS,VPLP_unpack,1,2,TERMINAL(5),ROOT(6),ROOT(7));
+
+result = vpx_method_New_20_CGRect(PARAMETERS,TERMINAL(2),TERMINAL(2),TERMINAL(7),TERMINAL(6),ROOT(8));
+
+PUTPOINTER(OpaqueGrafPtr,*,GetWindowPort( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(10),TERMINAL(1))),9);
+result = kSuccess;
+
+PUTINTEGER(CreateCGContextForPort( GETPOINTER(0,OpaqueGrafPtr,*,ROOT(12),TERMINAL(9)),GETPOINTER(0,CGContext,**,ROOT(13),NONE)),11);
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"3.0",ROOT(14));
+
+CGContextSetLineWidth( GETPOINTER(0,CGContext,*,ROOT(15),TERMINAL(13)),GETREAL(TERMINAL(14)));
+result = kSuccess;
+
+PUTINTEGER(SyncCGContextOriginWithPort( GETPOINTER(0,CGContext,*,ROOT(17),TERMINAL(13)),GETPOINTER(0,OpaqueGrafPtr,*,ROOT(18),TERMINAL(9))),16);
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"0.0",ROOT(19));
+
+result = vpx_call_primitive(PARAMETERS,VPLP__2D_1,1,1,TERMINAL(6),ROOT(20));
+
+CGContextTranslateCTM( GETPOINTER(0,CGContext,*,ROOT(21),TERMINAL(13)),GETREAL(TERMINAL(19)),GETREAL(TERMINAL(20)));
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"1.0",ROOT(22));
+
+result = vpx_constant(PARAMETERS,"-1.0",ROOT(23));
+
+CGContextScaleCTM( GETPOINTER(0,CGContext,*,ROOT(24),TERMINAL(13)),GETREAL(TERMINAL(22)),GETREAL(TERMINAL(23)));
+result = kSuccess;
+
+result = vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18_case_1_local_19(PARAMETERS,TERMINAL(13));
+
+result = vpx_extconstant(PARAMETERS,kCGLineCapRound,ROOT(25));
+
+CGContextSetLineCap( GETPOINTER(0,CGContext,*,ROOT(26),TERMINAL(13)),GETINTEGER(TERMINAL(25)));
+result = kSuccess;
+
+CGContextRelease( GETPOINTER(0,CGContext,*,ROOT(27),TERMINAL(13)));
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERSINGLECASEWITHNONE(28)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_29_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_29_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(1)
+INPUT(0,0)
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTER(1)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_29_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_29_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+HEADER(4)
+INPUT(0,0)
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_TXNObject,1,1,TERMINAL(0),ROOT(1));
+TERMINATEONFAILURE
+
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(2));
+
+TXNFocus( GETPOINTER(0,OpaqueTXNObject,*,ROOT(3),TERMINAL(1)),GETINTEGER(TERMINAL(2)));
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTER(4)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_29(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_29(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_29_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0))
+vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_29_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0);
+return outcome;
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+HEADERWITHNONE(39)
+INPUT(0,0)
+INPUT(1,1)
+result = kSuccess;
+
+result = vpx_set(PARAMETERS,kVPXValue_Parent,TERMINAL(0),TERMINAL(1),ROOT(2));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Window,1,1,TERMINAL(1),ROOT(3));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Port,1,0,TERMINAL(3));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Set_20_Up_20_Drawing,1,0,TERMINAL(1));
+
+result = vpx_get(PARAMETERS,kVPXValue_Frame,TERMINAL(1),ROOT(4),ROOT(5));
+
+result = vpx_constant(PARAMETERS,"0",ROOT(6));
+
+result = vpx_constant(PARAMETERS,"( 0 0 100 100 )",ROOT(7));
+
+result = vpx_method_list_2D_to_2D_CGRect(PARAMETERS,TERMINAL(7),ROOT(8));
+
+result = vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_10(PARAMETERS,ROOT(9));
+
+PUTINTEGER(HITextViewCreate( GETCONSTPOINTER(CGRect,*,TERMINAL(8)),GETINTEGER(TERMINAL(6)),GETINTEGER(TERMINAL(9)),GETPOINTER(0,OpaqueControlRef,**,ROOT(11),NONE)),10);
+result = kSuccess;
+
+result = vpx_constant(PARAMETERS,"TRUE",ROOT(12));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Content_20_HIViewRef,1,1,TERMINAL(3),ROOT(13));
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Port_20_Bounds,1,1,TERMINAL(3),ROOT(14));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Rect,1,1,TERMINAL(14),ROOT(15));
+
+result = vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_16(PARAMETERS,TERMINAL(15),ROOT(16));
+
+result = vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_17(PARAMETERS,TERMINAL(16),TERMINAL(3),ROOT(17));
+FAILONFAILURE
+
+result = vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_18(PARAMETERS,TERMINAL(16),TERMINAL(17));
+
+PUTINTEGER(CreateRootControl( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(19),TERMINAL(17)),GETPOINTER(0,OpaqueControlRef,**,ROOT(20),NONE)),18);
+result = kSuccess;
+
+result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_WindowRef,1,1,TERMINAL(3),ROOT(21));
+
+result = vpx_constant(PARAMETERS,"FALSE",ROOT(22));
+
+result = vpx_constant(PARAMETERS,"NULL",ROOT(23));
+
+result = vpx_call_primitive(PARAMETERS,VPLP_list_2D_to_2D_Rect,1,1,TERMINAL(5),ROOT(24));
+
+PUTINTEGER(CreateEditUnicodeTextControl( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(26),TERMINAL(21)),GETCONSTPOINTER(Rect,*,TERMINAL(24)),GETCONSTPOINTER(__CFString,*,TERMINAL(23)),GETINTEGER(TERMINAL(22)),GETCONSTPOINTER(ControlFontStyleRec,*,TERMINAL(23)),GETPOINTER(0,OpaqueControlRef,**,ROOT(27),NONE)),25);
+result = kSuccess;
+
+PUTINTEGER(HIViewAddSubview( GETPOINTER(0,OpaqueControlRef,*,ROOT(29),TERMINAL(13)),GETPOINTER(0,OpaqueControlRef,*,ROOT(30),TERMINAL(27))),28);
+result = kSuccess;
+
+PUTINTEGER(HIViewSetVisible( GETPOINTER(0,OpaqueControlRef,*,ROOT(32),TERMINAL(27)),GETINTEGER(TERMINAL(12))),31);
+result = kSuccess;
+
+PUTINTEGER(EnableControl( GETPOINTER(0,OpaqueControlRef,*,ROOT(34),TERMINAL(27))),33);
+result = kSuccess;
+
+result = vpx_set(PARAMETERS,kVPXValue_Edit_20_Control,TERMINAL(2),TERMINAL(27),ROOT(35));
+
+result = vpx_method_VPLHIText_20_Editor_2F_Open_case_3_local_29(PARAMETERS,TERMINAL(35));
+
+result = vpx_set(PARAMETERS,kVPXValue_Window,TERMINAL(35),TERMINAL(17),ROOT(36));
+
+PUTINTEGER(AdvanceKeyboardFocus( GETPOINTER(0,OpaqueWindowPtr,*,ROOT(38),TERMINAL(21))),37);
+result = kSuccess;
+
+result = kSuccess;
+
+FOOTERWITHNONE(39)
+}
+
+enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Open(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
+{
+enum opTrigger outcome = kSuccess;
+if(vpx_method_VPLHIText_20_Editor_2F_Open_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
+if(vpx_method_VPLHIText_20_Editor_2F_Open_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
+vpx_method_VPLHIText_20_Editor_2F_Open_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1);
+return outcome;
 }
 
 enum opTrigger vpx_method_VPLHIText_20_Editor_2F_Draw_20_CG(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)

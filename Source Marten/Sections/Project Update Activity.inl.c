@@ -660,87 +660,58 @@ vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_1_local_3_c
 return outcome;
 }
 
-enum opTrigger vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
-enum opTrigger vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+enum opTrigger vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_1(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
 {
-HEADER(8)
+HEADER(7)
 INPUT(0,0)
 INPUT(1,1)
-INPUT(2,2)
 result = kSuccess;
 
-result = vpx_get(PARAMETERS,kVPXValue_File,TERMINAL(2),ROOT(3),ROOT(4));
+result = vpx_get(PARAMETERS,kVPXValue_File,TERMINAL(1),ROOT(2),ROOT(3));
 
-result = vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_1_local_3(PARAMETERS,TERMINAL(4),ROOT(5),ROOT(6));
+result = vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_1_local_3(PARAMETERS,TERMINAL(3),ROOT(4),ROOT(5));
 NEXTCASEONFAILURE
 
-result = vpx_call_primitive(PARAMETERS,VPLP_open_2D_file,1,1,TERMINAL(5),ROOT(7));
+result = vpx_call_primitive(PARAMETERS,VPLP_open_2D_file,1,1,TERMINAL(4),ROOT(6));
 NEXTCASEONFAILURE
 
-result = vpx_call_primitive(PARAMETERS,VPLP_write_2D_object,2,0,TERMINAL(7),TERMINAL(1));
+result = vpx_call_primitive(PARAMETERS,VPLP_write_2D_object,2,0,TERMINAL(6),TERMINAL(0));
 NEXTCASEONFAILURE
 
-result = vpx_call_primitive(PARAMETERS,VPLP_close_2D_file,1,0,TERMINAL(7));
+result = vpx_call_primitive(PARAMETERS,VPLP_close_2D_file,1,0,TERMINAL(6));
 NEXTCASEONFAILURE
 
 result = kSuccess;
 
-FOOTER(8)
+FOOTER(7)
 }
 
-enum opTrigger vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
-enum opTrigger vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+enum opTrigger vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_2(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
 {
-HEADER(4)
+HEADER(3)
 INPUT(0,0)
 INPUT(1,1)
-INPUT(2,2)
 result = kSuccess;
 
-result = vpx_constant(PARAMETERS,"Couldn\'t update executable!",ROOT(3));
+result = vpx_constant(PARAMETERS,"Couldn\'t update executable!",ROOT(2));
 
-result = vpx_method_Debug_20_Console(PARAMETERS,TERMINAL(3));
+result = vpx_method_Debug_20_Console(PARAMETERS,TERMINAL(2));
 
 result = vpx_method_Beep(PARAMETERS);
 
 result = kSuccess;
 
-FOOTER(4)
+FOOTER(3)
 }
 
-enum opTrigger vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
-enum opTrigger vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_3(V_Environment environment, enum opTrigger *outcome, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
-{
-HEADER(8)
-INPUT(0,0)
-INPUT(1,1)
-INPUT(2,2)
-result = kSuccess;
-
-result = vpx_get(PARAMETERS,kVPXValue_File,TERMINAL(2),ROOT(3),ROOT(4));
-
-result = vpx_method_New_20_FSRef(PARAMETERS,TERMINAL(4),ROOT(5));
-NEXTCASEONFAILURE
-
-result = vpx_constant(PARAMETERS,"Application.vpz",ROOT(6));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Get_20_Bundle_20_Resource_20_FSRef,2,1,TERMINAL(5),TERMINAL(6),ROOT(7));
-NEXTCASEONFAILURE
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Save_20_File,2,0,TERMINAL(0),TERMINAL(7));
-
-result = kSuccess;
-
-FOOTER(8)
-}
-
-enum opTrigger vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2);
-enum opTrigger vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1,V_Object terminal2)
+enum opTrigger vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1);
+enum opTrigger vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object terminal1)
 {
 enum opTrigger outcome = kSuccess;
-if(vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2))
-if(vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2))
-vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_3(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1,terminal2);
+if(vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_1(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1))
+vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11_case_2(environment, &outcome, inputRepeat, contextIndex,terminal0,terminal1);
 return outcome;
 }
 
@@ -771,7 +742,7 @@ result = vpx_set(PARAMETERS,kVPXValue_Environment,TERMINAL(10),TERMINAL(9),ROOT(
 
 result = vpx_set(PARAMETERS,kVPXValue_Parent,TERMINAL(6),TERMINAL(8),ROOT(13));
 
-result = vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11(PARAMETERS,TERMINAL(4),TERMINAL(13),TERMINAL(11));
+result = vpx_method_PUAS_20_Update_20_VPZ_20_File_2F_Run_case_1_local_11(PARAMETERS,TERMINAL(13),TERMINAL(11));
 
 result = vpx_set(PARAMETERS,kVPXValue_Parent,TERMINAL(13),TERMINAL(7),ROOT(14));
 
