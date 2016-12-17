@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -139,6 +139,7 @@
 			dependencies = (
 				5CFDCACA0AB2614100F8B191 /* PBXTargetDependency */,
 				5CFDCACC0AB2614100F8B191 /* PBXTargetDependency */,
+				5CFDCACE0AB2614100F8B191 /* PBXTargetDependency */,
 			);
 			name = "All Universal Frameworks";
 			productName = "All Universal Frameworks";
@@ -592,6 +593,13 @@
 			remoteGlobalIDString = 5CFDCA590AB25EA800F8B191;
 			remoteInfo = "Other MacOS Frameworks";
 		};
+		5CFDCACD0AB2614100F8B191 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CFDCA8F0AB25F8F00F8B191;
+			remoteInfo = "Other 3rdParty Frameworks";
+		};
 		5CFDCAD00AB261CB00F8B191 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5CFDC9480AB258E600F8B191 /* Project object */;
@@ -918,8 +926,11 @@
 /* Begin PBXProject section */
 		5CFDC9480AB258E600F8B191 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 5CFDC9490AB258E600F8B191 /* Build configuration list for PBXProject "Marten Top" */;
-			compatibilityVersion = "Xcode 2.4";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1439,6 +1450,11 @@
 			target = 5CFDCA590AB25EA800F8B191 /* Other MacOS Frameworks */;
 			targetProxy = 5CFDCACB0AB2614100F8B191 /* PBXContainerItemProxy */;
 		};
+		5CFDCACE0AB2614100F8B191 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CFDCA8F0AB25F8F00F8B191 /* Other 3rdParty Frameworks */;
+			targetProxy = 5CFDCACD0AB2614100F8B191 /* PBXContainerItemProxy */;
+		};
 		5CFDCAD10AB261CB00F8B191 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5CFDC9D20AB25AD900F8B191 /* Interpreter */;
@@ -1472,7 +1488,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "All Known Projects";
 				ZERO_LINK = NO;
@@ -1501,7 +1516,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "All Universal";
 				ZERO_LINK = NO;
@@ -1546,7 +1560,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = Core;
 				ZERO_LINK = NO;
@@ -1568,7 +1581,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = Standard;
 				ZERO_LINK = NO;
@@ -1590,7 +1602,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = Interpreter;
 				ZERO_LINK = NO;
@@ -1612,7 +1623,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "IDE Frameworks";
 				ZERO_LINK = NO;
@@ -1634,7 +1644,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "Other MacOS";
 				ZERO_LINK = NO;
@@ -1656,7 +1665,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "Other 3rdParty Frameworks";
 				ZERO_LINK = NO;
@@ -1678,7 +1686,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "PPC Only";
 				ZERO_LINK = NO;
@@ -1700,7 +1707,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "All Universal Frameworks";
 				ZERO_LINK = NO;
@@ -1722,7 +1728,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "Universal IDE";
 				ZERO_LINK = NO;
@@ -1733,7 +1738,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = Core;
 				ZERO_LINK = NO;
@@ -1744,7 +1748,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = Standard;
 				ZERO_LINK = NO;
@@ -1755,7 +1758,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "IDE Frameworks";
 				ZERO_LINK = NO;
@@ -1766,7 +1768,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "Other MacOS";
 				ZERO_LINK = NO;
@@ -1777,7 +1778,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "Other 3rdParty Frameworks";
 				ZERO_LINK = NO;
@@ -1788,7 +1788,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "All Universal Frameworks";
 				ZERO_LINK = NO;
@@ -1799,7 +1798,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "PPC Only";
 				ZERO_LINK = NO;
@@ -1810,7 +1808,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = Interpreter;
 				ZERO_LINK = NO;
@@ -1821,7 +1818,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				PRODUCT_NAME = "Universal IDE";
 				ZERO_LINK = NO;

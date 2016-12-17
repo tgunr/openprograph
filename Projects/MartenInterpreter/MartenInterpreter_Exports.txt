@@ -1,6 +1,5 @@
 _load_Interpreter
 _VPLP_create_2D_environment
-_VPLP_create_2D_remote_2D_environment
 _VPLP_post_2D_load
 _VPLP_load_2D_bundle
 _VPLP_bundle_2D_primitives

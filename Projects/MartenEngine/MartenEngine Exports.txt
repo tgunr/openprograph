@@ -275,8 +275,6 @@ _VPLObjectTypeToTypeString
 _VPLObjectGetValueBool		
 _VPLObjectGetValueInteger		
 _VPLObjectGetValueReal		
-_VPLObjectCoerceValueInteger
-_VPLObjectCoerceValueReal
 _VPLObjectGetValueString		
 _VPLObjectGetValueStringCopy		
 _VPLObjectGetListLength
@@ -307,11 +305,7 @@ _VPLPrimCheckInputArityMax
 _VPLPrimCheckOutputArity		
 _VPLPrimCheckOutputArityMin		
 _VPLPrimCheckOutputArityMax		
-_VPLPrimCheckObjectType
-_VPLPrimCheckObjectTypes
-_VPLPrimCheckListObjectType
-_VPLPrimCheckInputObjectType
-_VPLPrimCheckInputObjectTypes		
+_VPLPrimCheckInputObjectType		
 _VPLPrimGetInputObject		
 _VPLPrimGetInputObjectType		
 _VPLPrimGetInputObjectCheckType		
@@ -319,8 +313,7 @@ _VPLPrimGetInputObjectNULL
 _VPLPrimGetInputObjectNONE		
 _VPLPrimGetInputObjectUNDEFINED		
 _VPLPrimGetInputObjectBool		
-_VPLPrimGetInputObjectInteger	
-_VPLPrimGetInputObjectIntegerCoerce	
+_VPLPrimGetInputObjectInteger		
 _VPLPrimGetInputObjectReal		
 _VPLPrimGetInputObjectRealCoerce		
 _VPLPrimGetInputObjectString		
@@ -410,5 +403,3 @@ _pValueConstantToIndex
 _vpx_class_map
 _vpx_method_map
 _vpx_value_map
-_VPLWatchpointObserverCreate
-_VPLWatchpointObserverRemove

@@ -2,11 +2,4 @@
 // Prefix header for all source files of the 'MartenStandard' target in the 'MartenStandard' project.
 //
 
-#define __VPL_PLATFORM_DARWIN__					1
-#define __VPL_TRAP_INTERPRETER_SIGNALS__		1
-#define _VPL_YIELDTOEDITOR						0
-
 #include <Carbon/Carbon.h>
-
-#include "../../Source/Engine/VPL_Compiler.h"
-#include "InterpreterPipe.h"

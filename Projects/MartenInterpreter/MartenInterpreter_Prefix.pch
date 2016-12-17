@@ -2,15 +2,4 @@
 // Prefix header for all source files of the 'MartenInterpreter' target in the 'MartenInterpreter' project.
 //
 
-#define __VPL_LOAD_WITH_SOCKET__	0
-//#define kVPXIDEServerPort			2222
-
-#define __VPL_PLATFORM_DARWIN__			1
-//#define __VPL_PLATFORM_WINDOWS__		0
-//#define __VPL_PLATFORM_LINUX__		0
-//#define __VPL_PLATFORM_HAIKU__		0
-//#define __VPL_PLATFORM_UBUNTU__		0
-
 #include <Carbon/Carbon.h>
-//#include <MartenEngine/MartenEngine.h>
-#include "../../Source/Engine/VPL_Compiler.h"
