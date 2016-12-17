@@ -30,8 +30,10 @@
 
 #pragma mark --------------- Structures ---------------
 
-	VPL_ExtStructure _cgiFileStruct_S = {"cgiFileStruct",NULL};
-
+	VPL_ExtField _VPXStruct_cgiFileStruct_1 = { "in",offsetof(struct cgiFileStruct,in),sizeof(void *),kPointerType,"__sFILE",1,0,"T*",NULL};
+	VPL_ExtStructure _cgiFileStruct_S = {"cgiFileStruct",&_VPXStruct_cgiFileStruct_1,sizeof(struct cgiFileStruct)};
+	
+/* OLD
 	VPL_ExtField ___sFILE_20 = { "_offset",80,8,kIntType,"NULL",0,0,"long long int",NULL};
 	VPL_ExtField ___sFILE_19 = { "_blksize",76,4,kIntType,"NULL",0,0,"int",&___sFILE_20};
 	VPL_ExtField ___sFILE_18 = { "_lb",68,8,kStructureType,"NULL",0,0,"__sbuf",&___sFILE_19};
@@ -53,12 +55,41 @@
 	VPL_ExtField ___sFILE_2 = { "_r",4,4,kIntType,"void",1,0,"int",&___sFILE_3};
 	VPL_ExtField ___sFILE_1 = { "_p",0,4,kPointerType,"unsigned char",1,1,"T*",&___sFILE_2};
 	VPL_ExtStructure ___sFILE_S = {"__sFILE",&___sFILE_1};
+*/
+	VPL_ExtField _VPXStruct___sFILE_20 = { "_offset",offsetof(struct __sFILE,_offset),sizeof(long long int),kIntType,"NULL",0,0,"long long int",NULL};
+	VPL_ExtField _VPXStruct___sFILE_19 = { "_blksize",offsetof(struct __sFILE,_blksize),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct___sFILE_20};
+	VPL_ExtField _VPXStruct___sFILE_18 = { "_lb",offsetof(struct __sFILE,_lb),sizeof(struct __sbuf),kStructureType,"NULL",0,0,"__sbuf",&_VPXStruct___sFILE_19};
+	VPL_ExtField _VPXStruct___sFILE_17 = { "_nbuf",offsetof(struct __sFILE,_nbuf),sizeof(unsigned char[1]),kPointerType,"unsigned char",0,1,NULL,&_VPXStruct___sFILE_18};
+	VPL_ExtField _VPXStruct___sFILE_16 = { "_ubuf",offsetof(struct __sFILE,_ubuf),sizeof(unsigned char[3]),kPointerType,"unsigned char",0,1,NULL,&_VPXStruct___sFILE_17};
+	VPL_ExtField _VPXStruct___sFILE_15 = { "_ur",offsetof(struct __sFILE,_ur),sizeof(int),kIntType,"unsigned char",0,1,"int",&_VPXStruct___sFILE_16};
+	VPL_ExtField _VPXStruct___sFILE_14 = { "_extra",offsetof(struct __sFILE,_extra),sizeof(void *),kPointerType,"__sFILEX",1,0,"T*",&_VPXStruct___sFILE_15};
+	VPL_ExtField _VPXStruct___sFILE_13 = { "_ub",offsetof(struct __sFILE,_ub),sizeof(struct __sbuf),kStructureType,"__sFILEX",1,0,"__sbuf",&_VPXStruct___sFILE_14};
+	VPL_ExtField _VPXStruct___sFILE_12 = { "_write",offsetof(struct __sFILE,_write),sizeof(void *),kPointerType,"int",1,4,"T*",&_VPXStruct___sFILE_13};
+	VPL_ExtField _VPXStruct___sFILE_11 = { "_seek",offsetof(struct __sFILE,_seek),sizeof(void *),kPointerType,"long long int",1,8,"T*",&_VPXStruct___sFILE_12};
+	VPL_ExtField _VPXStruct___sFILE_10 = { "_read",offsetof(struct __sFILE,_read),sizeof(void *),kPointerType,"int",1,4,"T*",&_VPXStruct___sFILE_11};
+	VPL_ExtField _VPXStruct___sFILE_9 = { "_close",offsetof(struct __sFILE,_close),sizeof(void *),kPointerType,"int",1,4,"T*",&_VPXStruct___sFILE_10};
+	VPL_ExtField _VPXStruct___sFILE_8 = { "_cookie",offsetof(struct __sFILE,_cookie),sizeof(void *),kPointerType,"void",1,0,"T*",&_VPXStruct___sFILE_9};
+	VPL_ExtField _VPXStruct___sFILE_7 = { "_lbfsize",offsetof(struct __sFILE,_lbfsize),sizeof(int),kIntType,"void",1,0,"int",&_VPXStruct___sFILE_8};
+	VPL_ExtField _VPXStruct___sFILE_6 = { "_bf",offsetof(struct __sFILE,_bf),sizeof(struct __sbuf),kStructureType,"void",1,0,"__sbuf",&_VPXStruct___sFILE_7};
+	VPL_ExtField _VPXStruct___sFILE_5 = { "_file",offsetof(struct __sFILE,_file),sizeof(short),kIntType,"void",1,0,"short",&_VPXStruct___sFILE_6};
+	VPL_ExtField _VPXStruct___sFILE_4 = { "_flags",offsetof(struct __sFILE,_flags),sizeof(short),kIntType,"void",1,0,"short",&_VPXStruct___sFILE_5};
+	VPL_ExtField _VPXStruct___sFILE_3 = { "_w",offsetof(struct __sFILE,_w),sizeof(int),kIntType,"void",1,0,"int",&_VPXStruct___sFILE_4};
+	VPL_ExtField _VPXStruct___sFILE_2 = { "_r",offsetof(struct __sFILE,_r),sizeof(int),kIntType,"void",1,0,"int",&_VPXStruct___sFILE_3};
+	VPL_ExtField _VPXStruct___sFILE_1 = { "_p",offsetof(struct __sFILE,_p),sizeof(void *),kPointerType,"unsigned char",1,1,"T*",&_VPXStruct___sFILE_2};
+	VPL_ExtStructure _VPXStruct___sFILE_S = {"__sFILE",&_VPXStruct___sFILE_1,sizeof(struct __sFILE)};
+
 
 	VPL_ExtStructure ___sFILEX_S = {"__sFILEX",NULL};
+/*
 
 	VPL_ExtField ___sbuf_2 = { "_size",4,4,kIntType,"NULL",0,0,"int",NULL};
 	VPL_ExtField ___sbuf_1 = { "_base",0,4,kPointerType,"unsigned char",1,1,"T*",&___sbuf_2};
 	VPL_ExtStructure ___sbuf_S = {"__sbuf",&___sbuf_1};
+*/
+
+	VPL_ExtField _VPXStruct___sbuf_2 = { "_size",offsetof(struct __sbuf,_size),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
+	VPL_ExtField _VPXStruct___sbuf_1 = { "_base",offsetof(struct __sbuf,_base),sizeof(void *),kPointerType,"unsigned char",1,1,"T*",&_VPXStruct___sbuf_2};
+	VPL_ExtStructure _VPXStruct___sbuf_S = {"__sbuf",&_VPXStruct___sbuf_1,sizeof(struct __sbuf)};
 
 	VPL_ExtField _2_2 = { "opaque",4,4,kPointerType,"char",0,1,NULL,NULL};
 	VPL_ExtField _2_1 = { "sig",0,4,kIntType,"char",0,1,"long int",&_2_2};
@@ -382,9 +413,9 @@ VPL_DictionaryNode VPX_CGIC_Constants[] =	{
 
 VPL_DictionaryNode VPX_CGIC_Structures[] =	{
 	{"cgiFileStruct",&_cgiFileStruct_S},
-	{"__sFILE",&___sFILE_S},
+	{"__sFILE",&_VPXStruct___sFILE_S},
 	{"__sFILEX",&___sFILEX_S},
-	{"__sbuf",&___sbuf_S},
+	{"__sbuf",&_VPXStruct___sbuf_S},
 	{"2",&_2_S},
 	{"_opaque_pthread_rwlock_t",&__opaque_pthread_rwlock_t_S},
 	{"_opaque_pthread_rwlockattr_t",&__opaque_pthread_rwlockattr_t_S},

@@ -13,12 +13,14 @@
 
 #pragma mark ---------- Constants Inits ----------
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kICACapabilityMayStoreNewImagesInTempStore_C = {"kICACapabilityMayStoreNewImagesInTempStore",kICACapabilityMayStoreNewImagesInTempStore,NULL};
 	VPL_ExtConstant _kICACapabilityCanCameraUploadData_C = {"kICACapabilityCanCameraUploadData",kICACapabilityCanCameraUploadData,NULL};
 	VPL_ExtConstant _kICACapabilityCanCameraSyncClock_C = {"kICACapabilityCanCameraSyncClock",kICACapabilityCanCameraSyncClock,NULL};
 	VPL_ExtConstant _kICACapabilityCanCameraDeleteAll_C = {"kICACapabilityCanCameraDeleteAll",kICACapabilityCanCameraDeleteAll,NULL};
 	VPL_ExtConstant _kICACapabilityCanCameraDeleteOne_C = {"kICACapabilityCanCameraDeleteOne",kICACapabilityCanCameraDeleteOne,NULL};
 	VPL_ExtConstant _kICACapabilityCanCameraCaptureNewImage_C = {"kICACapabilityCanCameraCaptureNewImage",kICACapabilityCanCameraCaptureNewImage,NULL};
+#endif
 	VPL_ExtConstant _kICAMessageCameraUploadData_C = {"kICAMessageCameraUploadData",kICAMessageCameraUploadData,NULL};
 	VPL_ExtConstant _kICAMessageCameraSyncClock_C = {"kICAMessageCameraSyncClock",kICAMessageCameraSyncClock,NULL};
 	VPL_ExtConstant _kICAMessageCameraDeleteAll_C = {"kICAMessageCameraDeleteAll",kICAMessageCameraDeleteAll,NULL};
@@ -26,9 +28,11 @@
 	VPL_ExtConstant _kICAMessageCameraCaptureNewImage_C = {"kICAMessageCameraCaptureNewImage",kICAMessageCameraCaptureNewImage,NULL};
 	VPL_ExtConstant _kICAPropertyCameraSupportedMessages_C = {"kICAPropertyCameraSupportedMessages",kICAPropertyCameraSupportedMessages,NULL};
 	VPL_ExtConstant _kICAPropertyCameraIcon_C = {"kICAPropertyCameraIcon",kICAPropertyCameraIcon,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kICAPropertyCameraCopyrightInfo_C = {"kICAPropertyCameraCopyrightInfo",kICAPropertyCameraCopyrightInfo,NULL};
 	VPL_ExtConstant _kICAPropertyCameraArtist_C = {"kICAPropertyCameraArtist",kICAPropertyCameraArtist,NULL};
 	VPL_ExtConstant _kICAPropertyCameraUploadURL_C = {"kICAPropertyCameraUploadURL",kICAPropertyCameraUploadURL,NULL};
+#endif
 	VPL_ExtConstant _kICAPropertyCameraFocusMeteringMode_C = {"kICAPropertyCameraFocusMeteringMode",kICAPropertyCameraFocusMeteringMode,NULL};
 	VPL_ExtConstant _kICAPropertyCameraTimelapseInterval_C = {"kICAPropertyCameraTimelapseInterval",kICAPropertyCameraTimelapseInterval,NULL};
 	VPL_ExtConstant _kICAPropertyCameraTimelapseNumber_C = {"kICAPropertyCameraTimelapseNumber",kICAPropertyCameraTimelapseNumber,NULL};
@@ -63,12 +67,16 @@
 	VPL_ExtConstant _kICAFileystemDCF_C = {"kICAFileystemDCF",kICAFileystemDCF,NULL};
 	VPL_ExtConstant _kICAFileystemGenericHierarchical_C = {"kICAFileystemGenericHierarchical",kICAFileystemGenericHierarchical,NULL};
 	VPL_ExtConstant _kICAFileystemGenericFlat_C = {"kICAFileystemGenericFlat",kICAFileystemGenericFlat,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kICAFileystemUndefined_C = {"kICAFileystemUndefined",kICAFileystemUndefined,NULL};
+#endif
 	VPL_ExtConstant _kICAStorageRemovableRAM_C = {"kICAStorageRemovableRAM",kICAStorageRemovableRAM,NULL};
 	VPL_ExtConstant _kICAStorageFixedRAM_C = {"kICAStorageFixedRAM",kICAStorageFixedRAM,NULL};
 	VPL_ExtConstant _kICAStorageRemovableROM_C = {"kICAStorageRemovableROM",kICAStorageRemovableROM,NULL};
 	VPL_ExtConstant _kICAStorageFixedROM_C = {"kICAStorageFixedROM",kICAStorageFixedROM,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kICAStorageUndefined_C = {"kICAStorageUndefined",kICAStorageUndefined,NULL};
+#endif
 	VPL_ExtConstant _kICAPropertyCameraVolumeLabel_C = {"kICAPropertyCameraVolumeLabel",kICAPropertyCameraVolumeLabel,NULL};
 	VPL_ExtConstant _kICAPropertyCameraStorageDescription_C = {"kICAPropertyCameraStorageDescription",kICAPropertyCameraStorageDescription,NULL};
 	VPL_ExtConstant _kICAPropertyCameraFreeSpaceInImages_C = {"kICAPropertyCameraFreeSpaceInImages",kICAPropertyCameraFreeSpaceInImages,NULL};
@@ -88,9 +96,13 @@
 	VPL_ExtConstant _kAddMetaDataToFinderComment_C = {"kAddMetaDataToFinderComment",kAddMetaDataToFinderComment,NULL};
 	VPL_ExtConstant _kCreateCustomIcon_C = {"kCreateCustomIcon",kCreateCustomIcon,NULL};
 	VPL_ExtConstant _kDeleteAfterDownload_C = {"kDeleteAfterDownload",kDeleteAfterDownload,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kICAMessageCameraPassThrough_C = {"kICAMessageCameraPassThrough",kICAMessageCameraPassThrough,NULL};
+#endif
 	VPL_ExtConstant _kICAMessageDeviceYield_C = {"kICAMessageDeviceYield",kICAMessageDeviceYield,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kICAMessageGetEventData_C = {"kICAMessageGetEventData",kICAMessageGetEventData,NULL};
+#endif
 	VPL_ExtConstant _kMessageGetEventData_C = {"kMessageGetEventData",kMessageGetEventData,NULL};
 	VPL_ExtConstant _kICAMessageGetLastButtonPressed_C = {"kICAMessageGetLastButtonPressed",kICAMessageGetLastButtonPressed,NULL};
 	VPL_ExtConstant _kICAMessageCameraReadClock_C = {"kICAMessageCameraReadClock",kICAMessageCameraReadClock,NULL};
@@ -98,25 +110,33 @@
 	VPL_ExtConstant _kICAMessageReset_C = {"kICAMessageReset",kICAMessageReset,NULL};
 	VPL_ExtConstant _kICAMessageDisconnect_C = {"kICAMessageDisconnect",kICAMessageDisconnect,NULL};
 	VPL_ExtConstant _kICAMessageConnect_C = {"kICAMessageConnect",kICAMessageConnect,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kICAThumbnailFormatPNG_C = {"kICAThumbnailFormatPNG",kICAThumbnailFormatPNG,NULL};
+#endif
 	VPL_ExtConstant _kICAThumbnailFormatTIFF_C = {"kICAThumbnailFormatTIFF",kICAThumbnailFormatTIFF,NULL};
 	VPL_ExtConstant _kICAThumbnailFormatJPEG_C = {"kICAThumbnailFormatJPEG",kICAThumbnailFormatJPEG,NULL};
 	VPL_ExtConstant _kICAThumbnailFormatICA_C = {"kICAThumbnailFormatICA",kICAThumbnailFormatICA,NULL};
 	VPL_ExtConstant _kICADownloadAndReturnPathArray_C = {"kICADownloadAndReturnPathArray",kICADownloadAndReturnPathArray,NULL};
 	VPL_ExtConstant _kICAAllowMultipleImages_C = {"kICAAllowMultipleImages",kICAAllowMultipleImages,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kICACameraPassThruNotUsed_C = {"kICACameraPassThruNotUsed",kICACameraPassThruNotUsed,NULL};
 	VPL_ExtConstant _kICACameraPassThruReceive_C = {"kICACameraPassThruReceive",kICACameraPassThruReceive,NULL};
 	VPL_ExtConstant _kICACameraPassThruSend_C = {"kICACameraPassThruSend",kICACameraPassThruSend,NULL};
+#endif
 	VPL_ExtConstant _kICAButtonWeb_C = {"kICAButtonWeb",kICAButtonWeb,NULL};
 	VPL_ExtConstant _kICAButtonEMail_C = {"kICAButtonEMail",kICAButtonEMail,NULL};
 	VPL_ExtConstant _kICAButtonCopy_C = {"kICAButtonCopy",kICAButtonCopy,NULL};
 	VPL_ExtConstant _kICAButtonScan_C = {"kICAButtonScan",kICAButtonScan,NULL};
 	VPL_ExtConstant _kEventClassPTPVendor_C = {"kEventClassPTPVendor",kEventClassPTPVendor,NULL};
 	VPL_ExtConstant _kEventClassPTPStandard_C = {"kEventClassPTPStandard",kEventClassPTPStandard,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kICAEventClassPTPVendor_C = {"kICAEventClassPTPVendor",kICAEventClassPTPVendor,NULL};
 	VPL_ExtConstant _kICAEventClassPTPStandard_C = {"kICAEventClassPTPStandard",kICAEventClassPTPStandard,NULL};
+#endif
 	VPL_ExtConstant _kExtendedNotificationPB_C = {"kExtendedNotificationPB",kExtendedNotificationPB,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kICAExtendedNotificationPB_C = {"kICAExtendedNotificationPB",kICAExtendedNotificationPB,NULL};
+#endif
 	VPL_ExtConstant _kICAEventUnreportedStatus_C = {"kICAEventUnreportedStatus",kICAEventUnreportedStatus,NULL};
 	VPL_ExtConstant _kICAEventCaptureComplete_C = {"kICAEventCaptureComplete",kICAEventCaptureComplete,NULL};
 	VPL_ExtConstant _kICAEventStorageInfoChanged_C = {"kICAEventStorageInfoChanged",kICAEventStorageInfoChanged,NULL};
@@ -140,14 +160,18 @@
 	VPL_ExtConstant _kICATypeString_C = {"kICATypeString",kICATypeString,NULL};
 	VPL_ExtConstant _kICATypeBoolean_C = {"kICATypeBoolean",kICATypeBoolean,NULL};
 	VPL_ExtConstant _kICATypeFixed_C = {"kICATypeFixed",kICATypeFixed,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kICATypeFloat_C = {"kICATypeFloat",kICATypeFloat,NULL};
+#endif
 	VPL_ExtConstant _kICATypeSInt64_C = {"kICATypeSInt64",kICATypeSInt64,NULL};
 	VPL_ExtConstant _kICATypeSInt32_C = {"kICATypeSInt32",kICATypeSInt32,NULL};
 	VPL_ExtConstant _kICATypeSInt16_C = {"kICATypeSInt16",kICATypeSInt16,NULL};
 	VPL_ExtConstant _kICATypeUInt64_C = {"kICATypeUInt64",kICATypeUInt64,NULL};
 	VPL_ExtConstant _kICATypeUInt32_C = {"kICATypeUInt32",kICATypeUInt32,NULL};
 	VPL_ExtConstant _kICATypeUInt16_C = {"kICATypeUInt16",kICATypeUInt16,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kICATypeUInt8_C = {"kICATypeUInt8",kICATypeUInt8,NULL};
+#endif
 	VPL_ExtConstant _kICAPropertyColorSyncProfile_C = {"kICAPropertyColorSyncProfile",kICAPropertyColorSyncProfile,NULL};
 	VPL_ExtConstant _kICAPropertyImageThumbnail_C = {"kICAPropertyImageThumbnail",kICAPropertyImageThumbnail,NULL};
 	VPL_ExtConstant _kICAPropertyImageData_C = {"kICAPropertyImageData",kICAPropertyImageData,NULL};
@@ -181,10 +205,12 @@
 	VPL_ExtConstant _kICADeviceScanner_C = {"kICADeviceScanner",kICADeviceScanner,NULL};
 	VPL_ExtConstant _kICADeviceCamera_C = {"kICADeviceCamera",kICADeviceCamera,NULL};
 	VPL_ExtConstant _kICADevice_C = {"kICADevice",kICADevice,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kICAInvalidSessionErr_C = {"kICAInvalidSessionErr",kICAInvalidSessionErr,NULL};
 	VPL_ExtConstant _kICAExtensionInternalErr_C = {"kICAExtensionInternalErr",kICAExtensionInternalErr,NULL};
 	VPL_ExtConstant _kICAFrameworkInternalErr_C = {"kICAFrameworkInternalErr",kICAFrameworkInternalErr,NULL};
 	VPL_ExtConstant _kICADeviceUnsupportedErr_C = {"kICADeviceUnsupportedErr",kICADeviceUnsupportedErr,NULL};
+#endif
 	VPL_ExtConstant _kICADeviceIOServicePathNotFoundErr_C = {"kICADeviceIOServicePathNotFoundErr",kICADeviceIOServicePathNotFoundErr,NULL};
 	VPL_ExtConstant _kICADeviceGUIDNotFoundErr_C = {"kICADeviceGUIDNotFoundErr",kICADeviceGUIDNotFoundErr,NULL};
 	VPL_ExtConstant _kICADeviceLocationIDNotFoundErr_C = {"kICADeviceLocationIDNotFoundErr",kICADeviceLocationIDNotFoundErr,NULL};
@@ -257,7 +283,9 @@
 	VPL_ExtConstant _kInkWriteInInkAwareAppsOnly_C = {"kInkWriteInInkAwareAppsOnly",kInkWriteInInkAwareAppsOnly,NULL};
 	VPL_ExtConstant _kInkWriteAnywhere_C = {"kInkWriteAnywhere",kInkWriteAnywhere,NULL};
 	VPL_ExtConstant _kInkWriteNowhere_C = {"kInkWriteNowhere",kInkWriteNowhere,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _typeSecIdentityRef_C = {"typeSecIdentityRef",typeSecIdentityRef,NULL};
+#endif
 	VPL_ExtConstant _kUserNameAndPasswordFlag_C = {"kUserNameAndPasswordFlag",kUserNameAndPasswordFlag,NULL};
 	VPL_ExtConstant _kURLAllEventsMask_C = {"kURLAllEventsMask",kURLAllEventsMask,NULL};
 	VPL_ExtConstant _kURLAllNonBufferEventsMask_C = {"kURLAllNonBufferEventsMask",kURLAllNonBufferEventsMask,NULL};
@@ -422,13 +450,17 @@
 	VPL_ExtConstant _eHRScrollbarOn_C = {"eHRScrollbarOn",eHRScrollbarOn,NULL};
 	VPL_ExtConstant _kHRRendererHTML32Type_C = {"kHRRendererHTML32Type",kHRRendererHTML32Type,NULL};
 	VPL_ExtConstant _kFontSelectionQDStyleVersionZero_C = {"kFontSelectionQDStyleVersionZero",kFontSelectionQDStyleVersionZero,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kFontSelectionCoreTextType_C = {"kFontSelectionCoreTextType",kFontSelectionCoreTextType,NULL};
+#endif
 	VPL_ExtConstant _kFontSelectionQDType_C = {"kFontSelectionQDType",kFontSelectionQDType,NULL};
 	VPL_ExtConstant _kFontSelectionATSUIType_C = {"kFontSelectionATSUIType",kFontSelectionATSUIType,NULL};
 	VPL_ExtConstant _fontPanelFontSelectionQDStyleVersionErr_C = {"fontPanelFontSelectionQDStyleVersionErr",fontPanelFontSelectionQDStyleVersionErr,NULL};
 	VPL_ExtConstant _fontPanelSelectionStyleErr_C = {"fontPanelSelectionStyleErr",fontPanelSelectionStyleErr,NULL};
 	VPL_ExtConstant _fontPanelShowErr_C = {"fontPanelShowErr",fontPanelShowErr,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamViewAttributesDictionary_C = {"kEventParamViewAttributesDictionary",kEventParamViewAttributesDictionary,NULL};
+#endif
 	VPL_ExtConstant _kEventParamDictionary_C = {"kEventParamDictionary",kEventParamDictionary,NULL};
 	VPL_ExtConstant _kEventParamFontColor_C = {"kEventParamFontColor",kEventParamFontColor,NULL};
 	VPL_ExtConstant _kEventParamFMFontSize_C = {"kEventParamFMFontSize",kEventParamFMFontSize,NULL};
@@ -436,14 +468,18 @@
 	VPL_ExtConstant _kEventParamFMFontFamily_C = {"kEventParamFMFontFamily",kEventParamFMFontFamily,NULL};
 	VPL_ExtConstant _kEventParamATSUFontSize_C = {"kEventParamATSUFontSize",kEventParamATSUFontSize,NULL};
 	VPL_ExtConstant _kEventParamATSUFontID_C = {"kEventParamATSUFontID",kEventParamATSUFontID,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamCTFontDescriptor_C = {"kEventParamCTFontDescriptor",kEventParamCTFontDescriptor,NULL};
+#endif
 	VPL_ExtConstant _typeFontColor_C = {"typeFontColor",typeFontColor,NULL};
 	VPL_ExtConstant _typeFMFontSize_C = {"typeFMFontSize",typeFMFontSize,NULL};
 	VPL_ExtConstant _typeFMFontStyle_C = {"typeFMFontStyle",typeFMFontStyle,NULL};
 	VPL_ExtConstant _typeFMFontFamily_C = {"typeFMFontFamily",typeFMFontFamily,NULL};
 	VPL_ExtConstant _typeATSUSize_C = {"typeATSUSize",typeATSUSize,NULL};
 	VPL_ExtConstant _typeATSUFontID_C = {"typeATSUFontID",typeATSUFontID,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _typeCTFontDescriptorRef_C = {"typeCTFontDescriptorRef",typeCTFontDescriptorRef,NULL};
+#endif
 	VPL_ExtConstant _kEventFontSelection_C = {"kEventFontSelection",kEventFontSelection,NULL};
 	VPL_ExtConstant _kEventFontPanelClosed_C = {"kEventFontPanelClosed",kEventFontPanelClosed,NULL};
 	VPL_ExtConstant _kHICommandShowHideFontPanel_C = {"kHICommandShowHideFontPanel",kHICommandShowHideFontPanel,NULL};
@@ -472,7 +508,9 @@
 	VPL_ExtConstant _kNavDialogOptionsVersion_C = {"kNavDialogOptionsVersion",kNavDialogOptionsVersion,NULL};
 	VPL_ExtConstant _kNavDialogCreationOptionsVersion_C = {"kNavDialogCreationOptionsVersion",kNavDialogCreationOptionsVersion,NULL};
 	VPL_ExtConstant _kNavReplyRecordVersion_C = {"kNavReplyRecordVersion",kNavReplyRecordVersion,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kNavClientPopupExtensionTag_C = {"kNavClientPopupExtensionTag",kNavClientPopupExtensionTag,NULL};
+#endif
 	VPL_ExtConstant _kNavGenericSignature_C = {"kNavGenericSignature",kNavGenericSignature,NULL};
 	VPL_ExtConstant _kNavMenuItemSpecVersion_C = {"kNavMenuItemSpecVersion",kNavMenuItemSpecVersion,NULL};
 	VPL_ExtConstant _kNavTranslateCopy_C = {"kNavTranslateCopy",kNavTranslateCopy,NULL};
@@ -578,6 +616,7 @@
 	VPL_ExtConstant _kNavSaveChangesOther_C = {"kNavSaveChangesOther",kNavSaveChangesOther,NULL};
 	VPL_ExtConstant _kNavSaveChangesQuittingApplication_C = {"kNavSaveChangesQuittingApplication",kNavSaveChangesQuittingApplication,NULL};
 	VPL_ExtConstant _kNavSaveChangesClosingDocument_C = {"kNavSaveChangesClosingDocument",kNavSaveChangesClosingDocument,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kPMShowPageAttributesPDE_C = {"kPMShowPageAttributesPDE",kPMShowPageAttributesPDE,NULL};
 	VPL_ExtConstant _kPMShowInlineScale_C = {"kPMShowInlineScale",kPMShowInlineScale,NULL};
 	VPL_ExtConstant _kPMShowInlineOrientation_C = {"kPMShowInlineOrientation",kPMShowInlineOrientation,NULL};
@@ -587,6 +626,7 @@
 	VPL_ExtConstant _kPMShowInlineCopies_C = {"kPMShowInlineCopies",kPMShowInlineCopies,NULL};
 	VPL_ExtConstant _kPMShowDefaultInlineItems_C = {"kPMShowDefaultInlineItems",kPMShowDefaultInlineItems,NULL};
 	VPL_ExtConstant _kPMHideInlineItems_C = {"kPMHideInlineItems",kPMHideInlineItems,NULL};
+#endif
 	VPL_ExtConstant _kDigiHubBlankDVD_C = {"kDigiHubBlankDVD",kDigiHubBlankDVD,NULL};
 	VPL_ExtConstant _kDigiHubBlankCD_C = {"kDigiHubBlankCD",kDigiHubBlankCD,NULL};
 	VPL_ExtConstant _kDigiHubVideoDVD_C = {"kDigiHubVideoDVD",kDigiHubVideoDVD,NULL};
@@ -1178,8 +1218,10 @@
 	VPL_ExtConstant _kASDefaultPreferredStackSize_C = {"kASDefaultPreferredStackSize",kASDefaultPreferredStackSize,NULL};
 	VPL_ExtConstant _kASDefaultMinStackSize_C = {"kASDefaultMinStackSize",kASDefaultMinStackSize,NULL};
 	VPL_ExtConstant _kASHasOpenHandler_C = {"kASHasOpenHandler",kASHasOpenHandler,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kASSelectSetSourceAttributes_C = {"kASSelectSetSourceAttributes",kASSelectSetSourceAttributes,NULL};
 	VPL_ExtConstant _kASSelectCopySourceAttributes_C = {"kASSelectCopySourceAttributes",kASSelectCopySourceAttributes,NULL};
+#endif
 	VPL_ExtConstant _kASSelectGetSourceStyleNames_C = {"kASSelectGetSourceStyleNames",kASSelectGetSourceStyleNames,NULL};
 	VPL_ExtConstant _kASSelectGetSourceStyles_C = {"kASSelectGetSourceStyles",kASSelectGetSourceStyles,NULL};
 	VPL_ExtConstant _kASSelectSetSourceStyles_C = {"kASSelectSetSourceStyles",kASSelectSetSourceStyles,NULL};
@@ -1248,13 +1290,17 @@
 	VPL_ExtConstant _kOSASelectSetSendProc_C = {"kOSASelectSetSendProc",kOSASelectSetSendProc,NULL};
 	VPL_ExtConstant _kOSASelectCoerceToDesc_C = {"kOSASelectCoerceToDesc",kOSASelectCoerceToDesc,NULL};
 	VPL_ExtConstant _kOSASelectCoerceFromDesc_C = {"kOSASelectCoerceFromDesc",kOSASelectCoerceFromDesc,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kOSASelectCopySourceString_C = {"kOSASelectCopySourceString",kOSASelectCopySourceString,NULL};
+#endif
 	VPL_ExtConstant _kOSASelectGetSource_C = {"kOSASelectGetSource",kOSASelectGetSource,NULL};
 	VPL_ExtConstant _kOSASelectCopyScript_C = {"kOSASelectCopyScript",kOSASelectCopyScript,NULL};
 	VPL_ExtConstant _kOSASelectCopyID_C = {"kOSASelectCopyID",kOSASelectCopyID,NULL};
 	VPL_ExtConstant _kOSASelectCompile_C = {"kOSASelectCompile",kOSASelectCompile,NULL};
 	VPL_ExtConstant _kOSASelectScriptingComponentName_C = {"kOSASelectScriptingComponentName",kOSASelectScriptingComponentName,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kOSASelectCopyDisplayString_C = {"kOSASelectCopyDisplayString",kOSASelectCopyDisplayString,NULL};
+#endif
 	VPL_ExtConstant _kOSASelectGetActiveProc_C = {"kOSASelectGetActiveProc",kOSASelectGetActiveProc,NULL};
 	VPL_ExtConstant _kOSASelectSetActiveProc_C = {"kOSASelectSetActiveProc",kOSASelectSetActiveProc,NULL};
 	VPL_ExtConstant _kOSASelectGetScriptInfo_C = {"kOSASelectGetScriptInfo",kOSASelectGetScriptInfo,NULL};
@@ -1696,7 +1742,9 @@
 	VPL_ExtConstant _kKeyboardISO_C = {"kKeyboardISO",kKeyboardISO,NULL};
 	VPL_ExtConstant _kKeyboardANSI_C = {"kKeyboardANSI",kKeyboardANSI,NULL};
 	VPL_ExtConstant _kKeyboardJIS_C = {"kKeyboardJIS",kKeyboardJIS,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kUIOptionDisableMenuBarTransparency_C = {"kUIOptionDisableMenuBarTransparency",kUIOptionDisableMenuBarTransparency,NULL};
+#endif
 	VPL_ExtConstant _kUIOptionDisableHide_C = {"kUIOptionDisableHide",kUIOptionDisableHide,NULL};
 	VPL_ExtConstant _kUIOptionDisableSessionTerminate_C = {"kUIOptionDisableSessionTerminate",kUIOptionDisableSessionTerminate,NULL};
 	VPL_ExtConstant _kUIOptionDisableForceQuit_C = {"kUIOptionDisableForceQuit",kUIOptionDisableForceQuit,NULL};
@@ -1814,13 +1862,17 @@
 	VPL_ExtConstant _lDoHAutoscrollBit_C = {"lDoHAutoscrollBit",lDoHAutoscrollBit,NULL};
 	VPL_ExtConstant _lDoVAutoscrollBit_C = {"lDoVAutoscrollBit",lDoVAutoscrollBit,NULL};
 	VPL_ExtConstant _lDrawingModeOffBit_C = {"lDrawingModeOffBit",lDrawingModeOffBit,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamTextLength_C = {"kEventParamTextLength",kEventParamTextLength,NULL};
+#endif
 	VPL_ExtConstant _kControlKindHIGrowBoxView_C = {"kControlKindHIGrowBoxView",kControlKindHIGrowBoxView,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIWindowTitleProxyIconPart_C = {"kHIWindowTitleProxyIconPart",kHIWindowTitleProxyIconPart,NULL};
 	VPL_ExtConstant _kHIWindowDragPart_C = {"kHIWindowDragPart",kHIWindowDragPart,NULL};
 	VPL_ExtConstant _kHIWindowTitleBarPart_C = {"kHIWindowTitleBarPart",kHIWindowTitleBarPart,NULL};
 	VPL_ExtConstant _kControlEditTextSpellCheckAsYouTypeTag_C = {"kControlEditTextSpellCheckAsYouTypeTag",kControlEditTextSpellCheckAsYouTypeTag,NULL};
 	VPL_ExtConstant _kControlEditTextSpellCheckingTag_C = {"kControlEditTextSpellCheckingTag",kControlEditTextSpellCheckingTag,NULL};
+#endif
 	VPL_ExtConstant _kControlEditUnicodeTextPostUpdateProcTag_C = {"kControlEditUnicodeTextPostUpdateProcTag",kControlEditUnicodeTextPostUpdateProcTag,NULL};
 	VPL_ExtConstant _kControlEditTextInsertCFStringRefTag_C = {"kControlEditTextInsertCFStringRefTag",kControlEditTextInsertCFStringRefTag,NULL};
 	VPL_ExtConstant _kControlEditTextInsertTextBufferTag_C = {"kControlEditTextInsertTextBufferTag",kControlEditTextInsertTextBufferTag,NULL};
@@ -1920,8 +1972,10 @@
 	VPL_ExtConstant _kHIScrollViewScrollToBottom_C = {"kHIScrollViewScrollToBottom",kHIScrollViewScrollToBottom,NULL};
 	VPL_ExtConstant _kHIScrollViewScrollToTop_C = {"kHIScrollViewScrollToTop",kHIScrollViewScrollToTop,NULL};
 	VPL_ExtConstant _kHIScrollViewValidOptions_C = {"kHIScrollViewValidOptions",kHIScrollViewValidOptions,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIScrollViewOptionsDisableSmoothScrolling_C = {"kHIScrollViewOptionsDisableSmoothScrolling",kHIScrollViewOptionsDisableSmoothScrolling,NULL};
 	VPL_ExtConstant _kHIScrollViewOptionsFillGrowArea_C = {"kHIScrollViewOptionsFillGrowArea",kHIScrollViewOptionsFillGrowArea,NULL};
+#endif
 	VPL_ExtConstant _kHIScrollViewOptionsAllowGrow_C = {"kHIScrollViewOptionsAllowGrow",kHIScrollViewOptionsAllowGrow,NULL};
 	VPL_ExtConstant _kHIScrollViewOptionsHorizScroll_C = {"kHIScrollViewOptionsHorizScroll",kHIScrollViewOptionsHorizScroll,NULL};
 	VPL_ExtConstant _kHIScrollViewOptionsVertScroll_C = {"kHIScrollViewOptionsVertScroll",kHIScrollViewOptionsVertScroll,NULL};
@@ -2011,9 +2065,11 @@
 	VPL_ExtConstant _kControlIconNoTrackProc_C = {"kControlIconNoTrackProc",kControlIconNoTrackProc,NULL};
 	VPL_ExtConstant _kControlIconProc_C = {"kControlIconProc",kControlIconProc,NULL};
 	VPL_ExtConstant _kHIImageViewImageTag_C = {"kHIImageViewImageTag",kHIImageViewImageTag,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIImageViewAutoTransformOnDeactivate_C = {"kHIImageViewAutoTransformOnDeactivate",kHIImageViewAutoTransformOnDeactivate,NULL};
 	VPL_ExtConstant _kHIImageViewAutoTransformOnDisable_C = {"kHIImageViewAutoTransformOnDisable",kHIImageViewAutoTransformOnDisable,NULL};
 	VPL_ExtConstant _kHIImageViewAutoTransformNone_C = {"kHIImageViewAutoTransformNone",kHIImageViewAutoTransformNone,NULL};
+#endif
 	VPL_ExtConstant _kControlKindHIImageView_C = {"kControlKindHIImageView",kControlKindHIImageView,NULL};
 	VPL_ExtConstant _kControlTriangleLastValueTag_C = {"kControlTriangleLastValueTag",kControlTriangleLastValueTag,NULL};
 	VPL_ExtConstant _kControlKindDisclosureTriangle_C = {"kControlKindDisclosureTriangle",kControlKindDisclosureTriangle,NULL};
@@ -2043,11 +2099,13 @@
 	VPL_ExtConstant _kDataBrowserStopTracking_C = {"kDataBrowserStopTracking",kDataBrowserStopTracking,NULL};
 	VPL_ExtConstant _kDataBrowserNothingHit_C = {"kDataBrowserNothingHit",kDataBrowserNothingHit,NULL};
 	VPL_ExtConstant _kDataBrowserContentHit_C = {"kDataBrowserContentHit",kDataBrowserContentHit,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventDataBrowserDrawCustomItem_C = {"kEventDataBrowserDrawCustomItem",kEventDataBrowserDrawCustomItem,NULL};
 	VPL_ExtConstant _kEventParamDataBrowserItemState_C = {"kEventParamDataBrowserItemState",kEventParamDataBrowserItemState,NULL};
 	VPL_ExtConstant _kEventParamDataBrowserPropertyID_C = {"kEventParamDataBrowserPropertyID",kEventParamDataBrowserPropertyID,NULL};
 	VPL_ExtConstant _kEventParamDataBrowserItemID_C = {"kEventParamDataBrowserItemID",kEventParamDataBrowserItemID,NULL};
 	VPL_ExtConstant _kEventClassDataBrowser_C = {"kEventClassDataBrowser",kEventClassDataBrowser,NULL};
+#endif
 	VPL_ExtConstant _kDataBrowserLatestCallbacks_C = {"kDataBrowserLatestCallbacks",kDataBrowserLatestCallbacks,NULL};
 	VPL_ExtConstant _kDataBrowserMetricLast_C = {"kDataBrowserMetricLast",kDataBrowserMetricLast,NULL};
 	VPL_ExtConstant _kDataBrowserMetricDisclosureColumnPerDepthGap_C = {"kDataBrowserMetricDisclosureColumnPerDepthGap",kDataBrowserMetricDisclosureColumnPerDepthGap,NULL};
@@ -2055,8 +2113,10 @@
 	VPL_ExtConstant _kDataBrowserMetricDisclosureColumnEdgeInset_C = {"kDataBrowserMetricDisclosureColumnEdgeInset",kDataBrowserMetricDisclosureColumnEdgeInset,NULL};
 	VPL_ExtConstant _kDataBrowserMetricIconAndTextGap_C = {"kDataBrowserMetricIconAndTextGap",kDataBrowserMetricIconAndTextGap,NULL};
 	VPL_ExtConstant _kDataBrowserMetricCellContentInset_C = {"kDataBrowserMetricCellContentInset",kDataBrowserMetricCellContentInset,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kDataBrowserAttributeReserveGrowBoxSpace_C = {"kDataBrowserAttributeReserveGrowBoxSpace",kDataBrowserAttributeReserveGrowBoxSpace,NULL};
 	VPL_ExtConstant _kDataBrowserAttributeAutoHideScrollBars_C = {"kDataBrowserAttributeAutoHideScrollBars",kDataBrowserAttributeAutoHideScrollBars,NULL};
+#endif
 	VPL_ExtConstant _kDataBrowserAttributeListViewDrawColumnDividers_C = {"kDataBrowserAttributeListViewDrawColumnDividers",kDataBrowserAttributeListViewDrawColumnDividers,NULL};
 	VPL_ExtConstant _kDataBrowserAttributeListViewAlternatingRowColors_C = {"kDataBrowserAttributeListViewAlternatingRowColors",kDataBrowserAttributeListViewAlternatingRowColors,NULL};
 	VPL_ExtConstant _kDataBrowserAttributeColumnViewResizeWindow_C = {"kDataBrowserAttributeColumnViewResizeWindow",kDataBrowserAttributeColumnViewResizeWindow,NULL};
@@ -2231,11 +2291,15 @@
 	VPL_ExtConstant _kEventComboBoxListItemSelected_C = {"kEventComboBoxListItemSelected",kEventComboBoxListItemSelected,NULL};
 	VPL_ExtConstant _kEventParamComboBoxListSelectedItemIndex_C = {"kEventParamComboBoxListSelectedItemIndex",kEventParamComboBoxListSelectedItemIndex,NULL};
 	VPL_ExtConstant _kEventClassHIComboBox_C = {"kEventClassHIComboBox",kEventClassHIComboBox,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamNSView_C = {"kEventParamNSView",kEventParamNSView,NULL};
 	VPL_ExtConstant _kControlKindHICocoaView_C = {"kControlKindHICocoaView",kControlKindHICocoaView,NULL};
+#endif
 	VPL_ExtConstant _kControlClockAnimatingTag_C = {"kControlClockAnimatingTag",kControlClockAnimatingTag,NULL};
 	VPL_ExtConstant _kControlClockFontStyleTag_C = {"kControlClockFontStyleTag",kControlClockFontStyleTag,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kControlClockAbsoluteTimeTag_C = {"kControlClockAbsoluteTimeTag",kControlClockAbsoluteTimeTag,NULL};
+#endif
 	VPL_ExtConstant _kControlClockLongDateTag_C = {"kControlClockLongDateTag",kControlClockLongDateTag,NULL};
 	VPL_ExtConstant _kControlKindClock_C = {"kControlKindClock",kControlKindClock,NULL};
 	VPL_ExtConstant _kControlClockIsLive_C = {"kControlClockIsLive",kControlClockIsLive,NULL};
@@ -2330,9 +2394,11 @@
 	VPL_ExtConstant _kControlKindCheckBox_C = {"kControlKindCheckBox",kControlKindCheckBox,NULL};
 	VPL_ExtConstant _kControlCheckBoxAutoToggleProc_C = {"kControlCheckBoxAutoToggleProc",kControlCheckBoxAutoToggleProc,NULL};
 	VPL_ExtConstant _kControlCheckBoxProc_C = {"kControlCheckBoxProc",kControlCheckBoxProc,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kControlPushButtonAnimatingTag_C = {"kControlPushButtonAnimatingTag",kControlPushButtonAnimatingTag,NULL};
 	VPL_ExtConstant _kControlPushButtonIconAlignmentTag_C = {"kControlPushButtonIconAlignmentTag",kControlPushButtonIconAlignmentTag,NULL};
 	VPL_ExtConstant _kControlPushButtonContentTag_C = {"kControlPushButtonContentTag",kControlPushButtonContentTag,NULL};
+#endif
 	VPL_ExtConstant _kControlPushButtonCancelTag_C = {"kControlPushButtonCancelTag",kControlPushButtonCancelTag,NULL};
 	VPL_ExtConstant _kControlPushButtonDefaultTag_C = {"kControlPushButtonDefaultTag",kControlPushButtonDefaultTag,NULL};
 	VPL_ExtConstant _kControlKindPushIconButton_C = {"kControlKindPushIconButton",kControlKindPushIconButton,NULL};
@@ -2702,8 +2768,10 @@
 	VPL_ExtConstant _kNeutralScript_C = {"kNeutralScript",kNeutralScript,NULL};
 	VPL_ExtConstant _kUnknownScript_C = {"kUnknownScript",kUnknownScript,NULL};
 	VPL_ExtConstant _kUnknownLanguage_C = {"kUnknownLanguage",kUnknownLanguage,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kTSMDocumentEnabledInputSourcesPropertyTag_C = {"kTSMDocumentEnabledInputSourcesPropertyTag",kTSMDocumentEnabledInputSourcesPropertyTag,NULL};
 	VPL_ExtConstant _kTSMDocumentInputSourceOverridePropertyTag_C = {"kTSMDocumentInputSourceOverridePropertyTag",kTSMDocumentInputSourceOverridePropertyTag,NULL};
+#endif
 	VPL_ExtConstant _kTSMDocumentWindowLevelPropertyTag_C = {"kTSMDocumentWindowLevelPropertyTag",kTSMDocumentWindowLevelPropertyTag,NULL};
 	VPL_ExtConstant _kTSMDocumentInputModePropertyTag_C = {"kTSMDocumentInputModePropertyTag",kTSMDocumentInputModePropertyTag,NULL};
 	VPL_ExtConstant _kTSMDocumentRefconPropertyTag_C = {"kTSMDocumentRefconPropertyTag",kTSMDocumentRefconPropertyTag,NULL};
@@ -2725,7 +2793,9 @@
 	VPL_ExtConstant _kUnicodeDocumentInterfaceType_C = {"kUnicodeDocumentInterfaceType",kUnicodeDocumentInterfaceType,NULL};
 	VPL_ExtConstant _kTSMTEDocumentInterfaceType_C = {"kTSMTEDocumentInterfaceType",kTSMTEDocumentInterfaceType,NULL};
 	VPL_ExtConstant _kTextServiceDocumentInterfaceType_C = {"kTextServiceDocumentInterfaceType",kTextServiceDocumentInterfaceType,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kTSM24Version_C = {"kTSM24Version",kTSM24Version,NULL};
+#endif
 	VPL_ExtConstant _kTSM23Version_C = {"kTSM23Version",kTSM23Version,NULL};
 	VPL_ExtConstant _kTSM22Version_C = {"kTSM22Version",kTSM22Version,NULL};
 	VPL_ExtConstant _kTSM20Version_C = {"kTSM20Version",kTSM20Version,NULL};
@@ -2749,7 +2819,9 @@
 	VPL_ExtConstant _kStdAlertDoNotAnimateOnCancel_C = {"kStdAlertDoNotAnimateOnCancel",kStdAlertDoNotAnimateOnCancel,NULL};
 	VPL_ExtConstant _kStdAlertDoNotAnimateOnDefault_C = {"kStdAlertDoNotAnimateOnDefault",kStdAlertDoNotAnimateOnDefault,NULL};
 	VPL_ExtConstant _kStdAlertDoNotDisposeSheet_C = {"kStdAlertDoNotDisposeSheet",kStdAlertDoNotDisposeSheet,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kStdCFStringAlertVersionTwo_C = {"kStdCFStringAlertVersionTwo",kStdCFStringAlertVersionTwo,NULL};
+#endif
 	VPL_ExtConstant _kStdCFStringAlertVersionOne_C = {"kStdCFStringAlertVersionOne",kStdCFStringAlertVersionOne,NULL};
 	VPL_ExtConstant _kHICommandOther_C = {"kHICommandOther",kHICommandOther,NULL};
 	VPL_ExtConstant _kDialogFontUseThemeFontIDMask_C = {"kDialogFontUseThemeFontIDMask",kDialogFontUseThemeFontIDMask,NULL};
@@ -2765,12 +2837,16 @@
 	VPL_ExtConstant _kDialogFontUseFaceMask_C = {"kDialogFontUseFaceMask",kDialogFontUseFaceMask,NULL};
 	VPL_ExtConstant _kDialogFontUseFontMask_C = {"kDialogFontUseFontMask",kDialogFontUseFontMask,NULL};
 	VPL_ExtConstant _kDialogFontNoFontStyle_C = {"kDialogFontNoFontStyle",kDialogFontNoFontStyle,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kAlertFlagsUseCompositing_C = {"kAlertFlagsUseCompositing",kAlertFlagsUseCompositing,NULL};
+#endif
 	VPL_ExtConstant _kAlertFlagsUseThemeControls_C = {"kAlertFlagsUseThemeControls",kAlertFlagsUseThemeControls,NULL};
 	VPL_ExtConstant _kAlertFlagsAlertIsMovable_C = {"kAlertFlagsAlertIsMovable",kAlertFlagsAlertIsMovable,NULL};
 	VPL_ExtConstant _kAlertFlagsUseControlHierarchy_C = {"kAlertFlagsUseControlHierarchy",kAlertFlagsUseControlHierarchy,NULL};
 	VPL_ExtConstant _kAlertFlagsUseThemeBackground_C = {"kAlertFlagsUseThemeBackground",kAlertFlagsUseThemeBackground,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kDialogFlagsUseCompositing_C = {"kDialogFlagsUseCompositing",kDialogFlagsUseCompositing,NULL};
+#endif
 	VPL_ExtConstant _kDialogFlagsUseThemeControls_C = {"kDialogFlagsUseThemeControls",kDialogFlagsUseThemeControls,NULL};
 	VPL_ExtConstant _kDialogFlagsHandleMovableModal_C = {"kDialogFlagsHandleMovableModal",kDialogFlagsHandleMovableModal,NULL};
 	VPL_ExtConstant _kDialogFlagsUseControlHierarchy_C = {"kDialogFlagsUseControlHierarchy",kDialogFlagsUseControlHierarchy,NULL};
@@ -2852,20 +2928,24 @@
 	VPL_ExtConstant _kHILayoutBindMax_C = {"kHILayoutBindMax",kHILayoutBindMax,NULL};
 	VPL_ExtConstant _kHILayoutBindMin_C = {"kHILayoutBindMin",kHILayoutBindMin,NULL};
 	VPL_ExtConstant _kHILayoutBindNone_C = {"kHILayoutBindNone",kHILayoutBindNone,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIViewFocusWithoutWrapping_C = {"kHIViewFocusWithoutWrapping",kHIViewFocusWithoutWrapping,NULL};
 	VPL_ExtConstant _kHIViewFocusTraditionally_C = {"kHIViewFocusTraditionally",kHIViewFocusTraditionally,NULL};
 	VPL_ExtConstant _kHIViewFocusOnAnyControl_C = {"kHIViewFocusOnAnyControl",kHIViewFocusOnAnyControl,NULL};
+#endif
 	VPL_ExtConstant _kEventControlTrackingAreaExited_C = {"kEventControlTrackingAreaExited",kEventControlTrackingAreaExited,NULL};
 	VPL_ExtConstant _kEventControlTrackingAreaEntered_C = {"kEventControlTrackingAreaEntered",kEventControlTrackingAreaEntered,NULL};
 	VPL_ExtConstant _typeHIViewTrackingAreaRef_C = {"typeHIViewTrackingAreaRef",typeHIViewTrackingAreaRef,NULL};
 	VPL_ExtConstant _kEventParamHIViewTrackingArea_C = {"kEventParamHIViewTrackingArea",kEventParamHIViewTrackingArea,NULL};
 	VPL_ExtConstant _kHIViewKindSignatureApple_C = {"kHIViewKindSignatureApple",kHIViewKindSignatureApple,NULL};
 	VPL_ExtConstant _errNeedsCompositedWindow_C = {"errNeedsCompositedWindow",errNeedsCompositedWindow,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIViewContentNSImage_C = {"kHIViewContentNSImage",kHIViewContentNSImage,NULL};
 	VPL_ExtConstant _kHIViewContentAlertIconType_C = {"kHIViewContentAlertIconType",kHIViewContentAlertIconType,NULL};
 	VPL_ExtConstant _kHIViewContentIconTypeAndCreator_C = {"kHIViewContentIconTypeAndCreator",kHIViewContentIconTypeAndCreator,NULL};
 	VPL_ExtConstant _kHIViewContentImageFile_C = {"kHIViewContentImageFile",kHIViewContentImageFile,NULL};
 	VPL_ExtConstant _kHIViewContentImageResource_C = {"kHIViewContentImageResource",kHIViewContentImageResource,NULL};
+#endif
 	VPL_ExtConstant _kHIViewContentCGImageRef_C = {"kHIViewContentCGImageRef",kHIViewContentCGImageRef,NULL};
 	VPL_ExtConstant _kHIViewContentIconRef_C = {"kHIViewContentIconRef",kHIViewContentIconRef,NULL};
 	VPL_ExtConstant _kHIViewContentIconSuiteRef_C = {"kHIViewContentIconSuiteRef",kHIViewContentIconSuiteRef,NULL};
@@ -2913,23 +2993,31 @@
 	VPL_ExtConstant _kHIViewAttributeSendCommandToUserFocus_C = {"kHIViewAttributeSendCommandToUserFocus",kHIViewAttributeSendCommandToUserFocus,NULL};
 	VPL_ExtConstant _kHIViewZOrderBelow_C = {"kHIViewZOrderBelow",kHIViewZOrderBelow,NULL};
 	VPL_ExtConstant _kHIViewZOrderAbove_C = {"kHIViewZOrderAbove",kHIViewZOrderAbove,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIThemeFocusRingBelow_C = {"kHIThemeFocusRingBelow",kHIThemeFocusRingBelow,NULL};
 	VPL_ExtConstant _kHIThemeFocusRingAbove_C = {"kHIThemeFocusRingAbove",kHIThemeFocusRingAbove,NULL};
 	VPL_ExtConstant _kHIThemeFocusRingOnly_C = {"kHIThemeFocusRingOnly",kHIThemeFocusRingOnly,NULL};
 	VPL_ExtConstant _kHIThemeTextInfoVersionOne_C = {"kHIThemeTextInfoVersionOne",kHIThemeTextInfoVersionOne,NULL};
 	VPL_ExtConstant _kHIThemeTextInfoVersionZero_C = {"kHIThemeTextInfoVersionZero",kHIThemeTextInfoVersionZero,NULL};
 	VPL_ExtConstant _kHIThemeTextBoxOptionEngraved_C = {"kHIThemeTextBoxOptionEngraved",kHIThemeTextBoxOptionEngraved,NULL};
+#endif
 	VPL_ExtConstant _kHIThemeTextBoxOptionStronglyVertical_C = {"kHIThemeTextBoxOptionStronglyVertical",kHIThemeTextBoxOptionStronglyVertical,NULL};
 	VPL_ExtConstant _kHIThemeTextBoxOptionNone_C = {"kHIThemeTextBoxOptionNone",kHIThemeTextBoxOptionNone,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIThemeTextVerticalFlushDefault_C = {"kHIThemeTextVerticalFlushDefault",kHIThemeTextVerticalFlushDefault,NULL};
+#endif
 	VPL_ExtConstant _kHIThemeTextVerticalFlushBottom_C = {"kHIThemeTextVerticalFlushBottom",kHIThemeTextVerticalFlushBottom,NULL};
 	VPL_ExtConstant _kHIThemeTextVerticalFlushCenter_C = {"kHIThemeTextVerticalFlushCenter",kHIThemeTextVerticalFlushCenter,NULL};
 	VPL_ExtConstant _kHIThemeTextVerticalFlushTop_C = {"kHIThemeTextVerticalFlushTop",kHIThemeTextVerticalFlushTop,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIThemeTextHorizontalFlushDefault_C = {"kHIThemeTextHorizontalFlushDefault",kHIThemeTextHorizontalFlushDefault,NULL};
+#endif
 	VPL_ExtConstant _kHIThemeTextHorizontalFlushRight_C = {"kHIThemeTextHorizontalFlushRight",kHIThemeTextHorizontalFlushRight,NULL};
 	VPL_ExtConstant _kHIThemeTextHorizontalFlushCenter_C = {"kHIThemeTextHorizontalFlushCenter",kHIThemeTextHorizontalFlushCenter,NULL};
 	VPL_ExtConstant _kHIThemeTextHorizontalFlushLeft_C = {"kHIThemeTextHorizontalFlushLeft",kHIThemeTextHorizontalFlushLeft,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIThemeTextTruncationDefault_C = {"kHIThemeTextTruncationDefault",kHIThemeTextTruncationDefault,NULL};
+#endif
 	VPL_ExtConstant _kHIThemeTextTruncationEnd_C = {"kHIThemeTextTruncationEnd",kHIThemeTextTruncationEnd,NULL};
 	VPL_ExtConstant _kHIThemeTextTruncationMiddle_C = {"kHIThemeTextTruncationMiddle",kHIThemeTextTruncationMiddle,NULL};
 	VPL_ExtConstant _kHIThemeTextTruncationNone_C = {"kHIThemeTextTruncationNone",kHIThemeTextTruncationNone,NULL};
@@ -3018,13 +3106,17 @@
 	VPL_ExtConstant _kHIHotKeyModeAllDisabledExceptUniversalAccess_C = {"kHIHotKeyModeAllDisabledExceptUniversalAccess",kHIHotKeyModeAllDisabledExceptUniversalAccess,NULL};
 	VPL_ExtConstant _kHIHotKeyModeAllDisabled_C = {"kHIHotKeyModeAllDisabled",kHIHotKeyModeAllDisabled,NULL};
 	VPL_ExtConstant _kHIHotKeyModeAllEnabled_C = {"kHIHotKeyModeAllEnabled",kHIHotKeyModeAllEnabled,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventHotKeyExclusive_C = {"kEventHotKeyExclusive",kEventHotKeyExclusive,NULL};
 	VPL_ExtConstant _kEventHotKeyNoOptions_C = {"kEventHotKeyNoOptions",kEventHotKeyNoOptions,NULL};
+#endif
 	VPL_ExtConstant _kEventSystemUserSessionDeactivated_C = {"kEventSystemUserSessionDeactivated",kEventSystemUserSessionDeactivated,NULL};
 	VPL_ExtConstant _kEventSystemUserSessionActivated_C = {"kEventSystemUserSessionActivated",kEventSystemUserSessionActivated,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventSystemDisplayReconfigured_C = {"kEventSystemDisplayReconfigured",kEventSystemDisplayReconfigured,NULL};
 	VPL_ExtConstant _kEventSystemDisplaysAwake_C = {"kEventSystemDisplaysAwake",kEventSystemDisplaysAwake,NULL};
 	VPL_ExtConstant _kEventSystemDisplaysAsleep_C = {"kEventSystemDisplaysAsleep",kEventSystemDisplaysAsleep,NULL};
+#endif
 	VPL_ExtConstant _kEventSystemTimeDateChanged_C = {"kEventSystemTimeDateChanged",kEventSystemTimeDateChanged,NULL};
 	VPL_ExtConstant _kEventServicePerform_C = {"kEventServicePerform",kEventServicePerform,NULL};
 	VPL_ExtConstant _kEventServiceGetTypes_C = {"kEventServiceGetTypes",kEventServiceGetTypes,NULL};
@@ -3039,7 +3131,9 @@
 	VPL_ExtConstant _kControlBoundsChangePositionChanged_C = {"kControlBoundsChangePositionChanged",kControlBoundsChangePositionChanged,NULL};
 	VPL_ExtConstant _kControlBoundsChangeSizeChanged_C = {"kControlBoundsChangeSizeChanged",kControlBoundsChangeSizeChanged,NULL};
 	VPL_ExtConstant _kEventControlArbitraryMessage_C = {"kEventControlArbitraryMessage",kEventControlArbitraryMessage,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventControlFocusPartChanged_C = {"kEventControlFocusPartChanged",kEventControlFocusPartChanged,NULL};
+#endif
 	VPL_ExtConstant _kEventControlLayoutInfoChanged_C = {"kEventControlLayoutInfoChanged",kEventControlLayoutInfoChanged,NULL};
 	VPL_ExtConstant _kEventControlEnabledStateChanged_C = {"kEventControlEnabledStateChanged",kEventControlEnabledStateChanged,NULL};
 	VPL_ExtConstant _kEventControlHiliteChanged_C = {"kEventControlHiliteChanged",kEventControlHiliteChanged,NULL};
@@ -3082,7 +3176,9 @@
 	VPL_ExtConstant _kEventControlDraw_C = {"kEventControlDraw",kEventControlDraw,NULL};
 	VPL_ExtConstant _kEventControlHitTest_C = {"kEventControlHitTest",kEventControlHitTest,NULL};
 	VPL_ExtConstant _kEventControlSimulateHit_C = {"kEventControlSimulateHit",kEventControlSimulateHit,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventControlOptimalBoundsChanged_C = {"kEventControlOptimalBoundsChanged",kEventControlOptimalBoundsChanged,NULL};
+#endif
 	VPL_ExtConstant _kEventControlGetOptimalBounds_C = {"kEventControlGetOptimalBounds",kEventControlGetOptimalBounds,NULL};
 	VPL_ExtConstant _kEventControlDispose_C = {"kEventControlDispose",kEventControlDispose,NULL};
 	VPL_ExtConstant _kEventControlInitialize_C = {"kEventControlInitialize",kEventControlInitialize,NULL};
@@ -3104,7 +3200,9 @@
 	VPL_ExtConstant _kHICommandRevert_C = {"kHICommandRevert",kHICommandRevert,NULL};
 	VPL_ExtConstant _kHICommandSaveAs_C = {"kHICommandSaveAs",kHICommandSaveAs,NULL};
 	VPL_ExtConstant _kHICommandSave_C = {"kHICommandSave",kHICommandSave,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHICommandCloseFile_C = {"kHICommandCloseFile",kHICommandCloseFile,NULL};
+#endif
 	VPL_ExtConstant _kHICommandClose_C = {"kHICommandClose",kHICommandClose,NULL};
 	VPL_ExtConstant _kHICommandOpen_C = {"kHICommandOpen",kHICommandOpen,NULL};
 	VPL_ExtConstant _kHICommandNew_C = {"kHICommandNew",kHICommandNew,NULL};
@@ -3163,11 +3261,13 @@
 	VPL_ExtConstant _kHIMenuCenterDirection_C = {"kHIMenuCenterDirection",kHIMenuCenterDirection,NULL};
 	VPL_ExtConstant _kHIMenuLeftDirection_C = {"kHIMenuLeftDirection",kHIMenuLeftDirection,NULL};
 	VPL_ExtConstant _kHIMenuRightDirection_C = {"kHIMenuRightDirection",kHIMenuRightDirection,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kMenuContextDontUpdateEnabled_C = {"kMenuContextDontUpdateEnabled",kMenuContextDontUpdateEnabled,NULL};
 	VPL_ExtConstant _kMenuContextDontUpdateIcon_C = {"kMenuContextDontUpdateIcon",kMenuContextDontUpdateIcon,NULL};
 	VPL_ExtConstant _kMenuContextDontUpdateKey_C = {"kMenuContextDontUpdateKey",kMenuContextDontUpdateKey,NULL};
 	VPL_ExtConstant _kMenuContextDontUpdateText_C = {"kMenuContextDontUpdateText",kMenuContextDontUpdateText,NULL};
 	VPL_ExtConstant _kMenuContextInspection_C = {"kMenuContextInspection",kMenuContextInspection,NULL};
+#endif
 	VPL_ExtConstant _kMenuContextCommandIDSearch_C = {"kMenuContextCommandIDSearch",kMenuContextCommandIDSearch,NULL};
 	VPL_ExtConstant _kMenuContextMenuEnabling_C = {"kMenuContextMenuEnabling",kMenuContextMenuEnabling,NULL};
 	VPL_ExtConstant _kMenuContextKeyMatching_C = {"kMenuContextKeyMatching",kMenuContextKeyMatching,NULL};
@@ -3204,12 +3304,16 @@
 	VPL_ExtConstant _kEventWindowFocusDrawer_C = {"kEventWindowFocusDrawer",kEventWindowFocusDrawer,NULL};
 	VPL_ExtConstant _kEventWindowFocusToolbar_C = {"kEventWindowFocusToolbar",kEventWindowFocusToolbar,NULL};
 	VPL_ExtConstant _kEventWindowFocusContent_C = {"kEventWindowFocusContent",kEventWindowFocusContent,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventWindowFocusRestored_C = {"kEventWindowFocusRestored",kEventWindowFocusRestored,NULL};
 	VPL_ExtConstant _kEventWindowFocusLost_C = {"kEventWindowFocusLost",kEventWindowFocusLost,NULL};
+#endif
 	VPL_ExtConstant _kEventWindowFocusRelinquish_C = {"kEventWindowFocusRelinquish",kEventWindowFocusRelinquish,NULL};
 	VPL_ExtConstant _kEventWindowFocusAcquired_C = {"kEventWindowFocusAcquired",kEventWindowFocusAcquired,NULL};
 	VPL_ExtConstant _kEventWindowToolbarSwitchMode_C = {"kEventWindowToolbarSwitchMode",kEventWindowToolbarSwitchMode,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventWindowUpdateDockTile_C = {"kEventWindowUpdateDockTile",kEventWindowUpdateDockTile,NULL};
+#endif
 	VPL_ExtConstant _kEventWindowGetDockTileMenu_C = {"kEventWindowGetDockTileMenu",kEventWindowGetDockTileMenu,NULL};
 	VPL_ExtConstant _kEventWindowHandleContentClick_C = {"kEventWindowHandleContentClick",kEventWindowHandleContentClick,NULL};
 	VPL_ExtConstant _kEventWindowProxyEndDrag_C = {"kEventWindowProxyEndDrag",kEventWindowProxyEndDrag,NULL};
@@ -3217,7 +3321,9 @@
 	VPL_ExtConstant _kEventWindowConstrain_C = {"kEventWindowConstrain",kEventWindowConstrain,NULL};
 	VPL_ExtConstant _kEventWindowGetMaximumSize_C = {"kEventWindowGetMaximumSize",kEventWindowGetMaximumSize,NULL};
 	VPL_ExtConstant _kEventWindowGetMinimumSize_C = {"kEventWindowGetMinimumSize",kEventWindowGetMinimumSize,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventWindowGetIdealStandardState_C = {"kEventWindowGetIdealStandardState",kEventWindowGetIdealStandardState,NULL};
+#endif
 	VPL_ExtConstant _kEventWindowGetIdealSize_C = {"kEventWindowGetIdealSize",kEventWindowGetIdealSize,NULL};
 	VPL_ExtConstant _kEventWindowPathSelect_C = {"kEventWindowPathSelect",kEventWindowPathSelect,NULL};
 	VPL_ExtConstant _kEventWindowContextualMenuSelect_C = {"kEventWindowContextualMenuSelect",kEventWindowContextualMenuSelect,NULL};
@@ -3286,7 +3392,9 @@
 	VPL_ExtConstant _kEventAppFocusNextFloatingWindow_C = {"kEventAppFocusNextFloatingWindow",kEventAppFocusNextFloatingWindow,NULL};
 	VPL_ExtConstant _kEventAppFocusNextDocumentWindow_C = {"kEventAppFocusNextDocumentWindow",kEventAppFocusNextDocumentWindow,NULL};
 	VPL_ExtConstant _kEventAppFocusMenuBar_C = {"kEventAppFocusMenuBar",kEventAppFocusMenuBar,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventAppUpdateDockTile_C = {"kEventAppUpdateDockTile",kEventAppUpdateDockTile,NULL};
+#endif
 	VPL_ExtConstant _kEventAppGetDockTileMenu_C = {"kEventAppGetDockTileMenu",kEventAppGetDockTileMenu,NULL};
 	VPL_ExtConstant _kEventAppActiveWindowChanged_C = {"kEventAppActiveWindowChanged",kEventAppActiveWindowChanged,NULL};
 	VPL_ExtConstant _kEventAppAvailableWindowBoundsChanged_C = {"kEventAppAvailableWindowBoundsChanged",kEventAppAvailableWindowBoundsChanged,NULL};
@@ -3312,7 +3420,9 @@
 	VPL_ExtConstant _kEventRawKeyUp_C = {"kEventRawKeyUp",kEventRawKeyUp,NULL};
 	VPL_ExtConstant _kEventRawKeyRepeat_C = {"kEventRawKeyRepeat",kEventRawKeyRepeat,NULL};
 	VPL_ExtConstant _kEventRawKeyDown_C = {"kEventRawKeyDown",kEventRawKeyDown,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventTextInputIsMouseEventInInlineInputArea_C = {"kEventTextInputIsMouseEventInInlineInputArea",kEventTextInputIsMouseEventInInlineInputArea,NULL};
+#endif
 	VPL_ExtConstant _kEventTextInputFilterText_C = {"kEventTextInputFilterText",kEventTextInputFilterText,NULL};
 	VPL_ExtConstant _kEventTextInputUnicodeText_C = {"kEventTextInputUnicodeText",kEventTextInputUnicodeText,NULL};
 	VPL_ExtConstant _kEventTextInputGetSelectedText_C = {"kEventTextInputGetSelectedText",kEventTextInputGetSelectedText,NULL};
@@ -3323,7 +3433,9 @@
 	VPL_ExtConstant _kEventTextInputUpdateActiveInputArea_C = {"kEventTextInputUpdateActiveInputArea",kEventTextInputUpdateActiveInputArea,NULL};
 	VPL_ExtConstant _kEventTSMDocumentAccessUnlockDocument_C = {"kEventTSMDocumentAccessUnlockDocument",kEventTSMDocumentAccessUnlockDocument,NULL};
 	VPL_ExtConstant _kEventTSMDocumentAccessLockDocument_C = {"kEventTSMDocumentAccessLockDocument",kEventTSMDocumentAccessLockDocument,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventTSMDocumentAccessGetFirstRectForRange_C = {"kEventTSMDocumentAccessGetFirstRectForRange",kEventTSMDocumentAccessGetFirstRectForRange,NULL};
+#endif
 	VPL_ExtConstant _kEventTSMDocumentAccessGetGlyphInfo_C = {"kEventTSMDocumentAccessGetGlyphInfo",kEventTSMDocumentAccessGetGlyphInfo,NULL};
 	VPL_ExtConstant _kEventTSMDocumentAccessGetFont_C = {"kEventTSMDocumentAccessGetFont",kEventTSMDocumentAccessGetFont,NULL};
 	VPL_ExtConstant _kTSMDocAccessEffectiveRangeAttribute_C = {"kTSMDocAccessEffectiveRangeAttribute",kTSMDocAccessEffectiveRangeAttribute,NULL};
@@ -3335,7 +3447,9 @@
 	VPL_ExtConstant _kEventTSMDocumentAccessGetCharactersPtr_C = {"kEventTSMDocumentAccessGetCharactersPtr",kEventTSMDocumentAccessGetCharactersPtr,NULL};
 	VPL_ExtConstant _kEventTSMDocumentAccessGetSelectedRange_C = {"kEventTSMDocumentAccessGetSelectedRange",kEventTSMDocumentAccessGetSelectedRange,NULL};
 	VPL_ExtConstant _kEventTSMDocumentAccessGetLength_C = {"kEventTSMDocumentAccessGetLength",kEventTSMDocumentAccessGetLength,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventMouseScroll_C = {"kEventMouseScroll",kEventMouseScroll,NULL};
+#endif
 	VPL_ExtConstant _kEventMouseWheelMoved_C = {"kEventMouseWheelMoved",kEventMouseWheelMoved,NULL};
 	VPL_ExtConstant _kEventMouseExited_C = {"kEventMouseExited",kEventMouseExited,NULL};
 	VPL_ExtConstant _kEventMouseEntered_C = {"kEventMouseEntered",kEventMouseEntered,NULL};
@@ -3368,14 +3482,20 @@
 	VPL_ExtConstant _kEventClassTextInput_C = {"kEventClassTextInput",kEventClassTextInput,NULL};
 	VPL_ExtConstant _kEventClassKeyboard_C = {"kEventClassKeyboard",kEventClassKeyboard,NULL};
 	VPL_ExtConstant _kEventClassMouse_C = {"kEventClassMouse",kEventClassMouse,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kMouseParamsDragInitiation_C = {"kMouseParamsDragInitiation",kMouseParamsDragInitiation,NULL};
 	VPL_ExtConstant _kMouseParamsClickAndHold_C = {"kMouseParamsClickAndHold",kMouseParamsClickAndHold,NULL};
 	VPL_ExtConstant _kMouseParamsProxyIcon_C = {"kMouseParamsProxyIcon",kMouseParamsProxyIcon,NULL};
+#endif
 	VPL_ExtConstant _kMouseParamsSticky_C = {"kMouseParamsSticky",kMouseParamsSticky,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kTrackMouseLocationOptionIncludeScrollWheel_C = {"kTrackMouseLocationOptionIncludeScrollWheel",kTrackMouseLocationOptionIncludeScrollWheel,NULL};
+#endif
 	VPL_ExtConstant _kTrackMouseLocationOptionDontConsumeMouseUp_C = {"kTrackMouseLocationOptionDontConsumeMouseUp",kTrackMouseLocationOptionDontConsumeMouseUp,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kMouseTrackingScrollWheel_C = {"kMouseTrackingScrollWheel",kMouseTrackingScrollWheel,NULL};
 	VPL_ExtConstant _kMouseTrackingClientEvent_C = {"kMouseTrackingClientEvent",kMouseTrackingClientEvent,NULL};
+#endif
 	VPL_ExtConstant _kMouseTrackingMouseMoved_C = {"kMouseTrackingMouseMoved",kMouseTrackingMouseMoved,NULL};
 	VPL_ExtConstant _kMouseTrackingTimedOut_C = {"kMouseTrackingTimedOut",kMouseTrackingTimedOut,NULL};
 	VPL_ExtConstant _kMouseTrackingUserCancelled_C = {"kMouseTrackingUserCancelled",kMouseTrackingUserCancelled,NULL};
@@ -3385,8 +3505,10 @@
 	VPL_ExtConstant _kMouseTrackingMouseExited_C = {"kMouseTrackingMouseExited",kMouseTrackingMouseExited,NULL};
 	VPL_ExtConstant _kMouseTrackingMouseUp_C = {"kMouseTrackingMouseUp",kMouseTrackingMouseUp,NULL};
 	VPL_ExtConstant _kMouseTrackingMouseDown_C = {"kMouseTrackingMouseDown",kMouseTrackingMouseDown,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamAppleEventReply_C = {"kEventParamAppleEventReply",kEventParamAppleEventReply,NULL};
 	VPL_ExtConstant _kEventParamAppleEvent_C = {"kEventParamAppleEvent",kEventParamAppleEvent,NULL};
+#endif
 	VPL_ExtConstant _typeCFRange_C = {"typeCFRange",typeCFRange,NULL};
 	VPL_ExtConstant _kEventParamAccessibilityEventQueued_C = {"kEventParamAccessibilityEventQueued",kEventParamAccessibilityEventQueued,NULL};
 	VPL_ExtConstant _kEventParamAccessibleActionDescription_C = {"kEventParamAccessibleActionDescription",kEventParamAccessibleActionDescription,NULL};
@@ -3427,7 +3549,9 @@
 	VPL_ExtConstant _typeMenuTrackingMode_C = {"typeMenuTrackingMode",typeMenuTrackingMode,NULL};
 	VPL_ExtConstant _typeMenuCommand_C = {"typeMenuCommand",typeMenuCommand,NULL};
 	VPL_ExtConstant _typeMenuItemIndex_C = {"typeMenuItemIndex",typeMenuItemIndex,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamMenuContextHeight_C = {"kEventParamMenuContextHeight",kEventParamMenuContextHeight,NULL};
+#endif
 	VPL_ExtConstant _kEventParamMenuPopupItem_C = {"kEventParamMenuPopupItem",kEventParamMenuPopupItem,NULL};
 	VPL_ExtConstant _kEventParamParentMenuItem_C = {"kEventParamParentMenuItem",kEventParamParentMenuItem,NULL};
 	VPL_ExtConstant _kEventParamParentMenu_C = {"kEventParamParentMenu",kEventParamParentMenu,NULL};
@@ -3477,7 +3601,9 @@
 	VPL_ExtConstant _kEventParamControlOriginalOwningWindow_C = {"kEventParamControlOriginalOwningWindow",kEventParamControlOriginalOwningWindow,NULL};
 	VPL_ExtConstant _kEventParamControlPartBounds_C = {"kEventParamControlPartBounds",kEventParamControlPartBounds,NULL};
 	VPL_ExtConstant _kEventParamControlFeatures_C = {"kEventParamControlFeatures",kEventParamControlFeatures,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamControlDrawEngraved_C = {"kEventParamControlDrawEngraved",kEventParamControlDrawEngraved,NULL};
+#endif
 	VPL_ExtConstant _kEventParamControlDrawInColor_C = {"kEventParamControlDrawInColor",kEventParamControlDrawInColor,NULL};
 	VPL_ExtConstant _kEventParamControlDrawDepth_C = {"kEventParamControlDrawDepth",kEventParamControlDrawDepth,NULL};
 	VPL_ExtConstant _kEventParamControlDataBufferSize_C = {"kEventParamControlDataBufferSize",kEventParamControlDataBufferSize,NULL};
@@ -3519,7 +3645,9 @@
 	VPL_ExtConstant _kEventParamWindowProxyGWorldPtr_C = {"kEventParamWindowProxyGWorldPtr",kEventParamWindowProxyGWorldPtr,NULL};
 	VPL_ExtConstant _kEventParamWindowModifiedFlag_C = {"kEventParamWindowModifiedFlag",kEventParamWindowModifiedFlag,NULL};
 	VPL_ExtConstant _kEventParamWindowDragHiliteFlag_C = {"kEventParamWindowDragHiliteFlag",kEventParamWindowDragHiliteFlag,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamWindowContentBounds_C = {"kEventParamWindowContentBounds",kEventParamWindowContentBounds,NULL};
+#endif
 	VPL_ExtConstant _kEventParamWindowRegionCode_C = {"kEventParamWindowRegionCode",kEventParamWindowRegionCode,NULL};
 	VPL_ExtConstant _kEventParamClickActivation_C = {"kEventParamClickActivation",kEventParamClickActivation,NULL};
 	VPL_ExtConstant _kEventParamPreviousBounds_C = {"kEventParamPreviousBounds",kEventParamPreviousBounds,NULL};
@@ -3532,15 +3660,21 @@
 	VPL_ExtConstant _kEventParamHICommand_C = {"kEventParamHICommand",kEventParamHICommand,NULL};
 	VPL_ExtConstant _typeGlyphSelector_C = {"typeGlyphSelector",typeGlyphSelector,NULL};
 	VPL_ExtConstant _typeATSFontRef_C = {"typeATSFontRef",typeATSFontRef,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamTSMDocAccessBaselineDelta_C = {"kEventParamTSMDocAccessBaselineDelta",kEventParamTSMDocAccessBaselineDelta,NULL};
+#endif
 	VPL_ExtConstant _kEventParamTSMDocAccessLineBounds_C = {"kEventParamTSMDocAccessLineBounds",kEventParamTSMDocAccessLineBounds,NULL};
 	VPL_ExtConstant _kEventParamTSMDocAccessLockCount_C = {"kEventParamTSMDocAccessLockCount",kEventParamTSMDocAccessLockCount,NULL};
 	VPL_ExtConstant _kEventParamTSMDocAccessReplyATSUGlyphSelector_C = {"kEventParamTSMDocAccessReplyATSUGlyphSelector",kEventParamTSMDocAccessReplyATSUGlyphSelector,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamTSMDocAccessReplyCTGlyphInfoRef_C = {"kEventParamTSMDocAccessReplyCTGlyphInfoRef",kEventParamTSMDocAccessReplyCTGlyphInfoRef,NULL};
+#endif
 	VPL_ExtConstant _kEventParamTSMDocAccessEffectiveRange_C = {"kEventParamTSMDocAccessEffectiveRange",kEventParamTSMDocAccessEffectiveRange,NULL};
 	VPL_ExtConstant _kEventParamTSMDocAccessReplyFontSize_C = {"kEventParamTSMDocAccessReplyFontSize",kEventParamTSMDocAccessReplyFontSize,NULL};
 	VPL_ExtConstant _kEventParamTSMDocAccessReplyATSFont_C = {"kEventParamTSMDocAccessReplyATSFont",kEventParamTSMDocAccessReplyATSFont,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamTSMDocAccessReplyCTFontRef_C = {"kEventParamTSMDocAccessReplyCTFontRef",kEventParamTSMDocAccessReplyCTFontRef,NULL};
+#endif
 	VPL_ExtConstant _kEventParamTSMDocAccessRequestedCharacterAttributes_C = {"kEventParamTSMDocAccessRequestedCharacterAttributes",kEventParamTSMDocAccessRequestedCharacterAttributes,NULL};
 	VPL_ExtConstant _kEventParamTSMDocAccessSendCharactersPtr_C = {"kEventParamTSMDocAccessSendCharactersPtr",kEventParamTSMDocAccessSendCharactersPtr,NULL};
 	VPL_ExtConstant _kEventParamTSMDocAccessSendCharacterRange_C = {"kEventParamTSMDocAccessSendCharacterRange",kEventParamTSMDocAccessSendCharacterRange,NULL};
@@ -3550,7 +3684,9 @@
 	VPL_ExtConstant _kEventParamTSMDocAccessCharacterCount_C = {"kEventParamTSMDocAccessCharacterCount",kEventParamTSMDocAccessCharacterCount,NULL};
 	VPL_ExtConstant _kEventParamTSMDocAccessSendComponentInstance_C = {"kEventParamTSMDocAccessSendComponentInstance",kEventParamTSMDocAccessSendComponentInstance,NULL};
 	VPL_ExtConstant _kEventParamTSMDocAccessSendRefCon_C = {"kEventParamTSMDocAccessSendRefCon",kEventParamTSMDocAccessSendRefCon,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamTextInputSendMouseEvent_C = {"kEventParamTextInputSendMouseEvent",kEventParamTextInputSendMouseEvent,NULL};
+#endif
 	VPL_ExtConstant _kEventParamTextInputSendReplaceRange_C = {"kEventParamTextInputSendReplaceRange",kEventParamTextInputSendReplaceRange,NULL};
 	VPL_ExtConstant _kEventParamTextInputReplyGlyphInfoArray_C = {"kEventParamTextInputReplyGlyphInfoArray",kEventParamTextInputReplyGlyphInfoArray,NULL};
 	VPL_ExtConstant _kEventParamTextInputSendGlyphInfoArray_C = {"kEventParamTextInputSendGlyphInfoArray",kEventParamTextInputSendGlyphInfoArray,NULL};
@@ -3562,8 +3698,10 @@
 	VPL_ExtConstant _kEventParamTextInputReplyShowHide_C = {"kEventParamTextInputReplyShowHide",kEventParamTextInputReplyShowHide,NULL};
 	VPL_ExtConstant _kEventParamTextInputSendShowHide_C = {"kEventParamTextInputSendShowHide",kEventParamTextInputSendShowHide,NULL};
 	VPL_ExtConstant _kEventParamTextInputReplyTextAngle_C = {"kEventParamTextInputReplyTextAngle",kEventParamTextInputReplyTextAngle,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamTextInputReplyATSFont_C = {"kEventParamTextInputReplyATSFont",kEventParamTextInputReplyATSFont,NULL};
 	VPL_ExtConstant _kEventParamTextInputReplyCTFontRef_C = {"kEventParamTextInputReplyCTFontRef",kEventParamTextInputReplyCTFontRef,NULL};
+#endif
 	VPL_ExtConstant _kEventParamTextInputReplyLineAscent_C = {"kEventParamTextInputReplyLineAscent",kEventParamTextInputReplyLineAscent,NULL};
 	VPL_ExtConstant _kEventParamTextInputReplyLineHeight_C = {"kEventParamTextInputReplyLineHeight",kEventParamTextInputReplyLineHeight,NULL};
 	VPL_ExtConstant _kEventParamTextInputReplyPointSize_C = {"kEventParamTextInputReplyPointSize",kEventParamTextInputReplyPointSize,NULL};
@@ -3582,8 +3720,10 @@
 	VPL_ExtConstant _kEventParamTextInputSendClauseRng_C = {"kEventParamTextInputSendClauseRng",kEventParamTextInputSendClauseRng,NULL};
 	VPL_ExtConstant _kEventParamTextInputSendHiliteRng_C = {"kEventParamTextInputSendHiliteRng",kEventParamTextInputSendHiliteRng,NULL};
 	VPL_ExtConstant _kEventParamTextInputSendUpdateRng_C = {"kEventParamTextInputSendUpdateRng",kEventParamTextInputSendUpdateRng,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamTextInputReplyAttributedString_C = {"kEventParamTextInputReplyAttributedString",kEventParamTextInputReplyAttributedString,NULL};
 	VPL_ExtConstant _kEventParamTextInputSendAttributedString_C = {"kEventParamTextInputSendAttributedString",kEventParamTextInputSendAttributedString,NULL};
+#endif
 	VPL_ExtConstant _kEventParamTextInputReplyText_C = {"kEventParamTextInputReplyText",kEventParamTextInputReplyText,NULL};
 	VPL_ExtConstant _kEventParamTextInputSendText_C = {"kEventParamTextInputSendText",kEventParamTextInputSendText,NULL};
 	VPL_ExtConstant _kEventParamTextInputReplySLRec_C = {"kEventParamTextInputReplySLRec",kEventParamTextInputReplySLRec,NULL};
@@ -3605,14 +3745,17 @@
 	VPL_ExtConstant _kEventParamTabletEventType_C = {"kEventParamTabletEventType",kEventParamTabletEventType,NULL};
 	VPL_ExtConstant _kEventParamMouseChord_C = {"kEventParamMouseChord",kEventParamMouseChord,NULL};
 	VPL_ExtConstant _kEventParamMouseDelta_C = {"kEventParamMouseDelta",kEventParamMouseDelta,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamMouseWheelSmoothHorizontalDelta_C = {"kEventParamMouseWheelSmoothHorizontalDelta",kEventParamMouseWheelSmoothHorizontalDelta,NULL};
 	VPL_ExtConstant _kEventParamMouseWheelSmoothVerticalDelta_C = {"kEventParamMouseWheelSmoothVerticalDelta",kEventParamMouseWheelSmoothVerticalDelta,NULL};
+#endif
 	VPL_ExtConstant _kEventParamMouseWheelDelta_C = {"kEventParamMouseWheelDelta",kEventParamMouseWheelDelta,NULL};
 	VPL_ExtConstant _kEventParamMouseWheelAxis_C = {"kEventParamMouseWheelAxis",kEventParamMouseWheelAxis,NULL};
 	VPL_ExtConstant _kEventParamClickCount_C = {"kEventParamClickCount",kEventParamClickCount,NULL};
 	VPL_ExtConstant _kEventParamMouseButton_C = {"kEventParamMouseButton",kEventParamMouseButton,NULL};
 	VPL_ExtConstant _kEventParamWindowMouseLocation_C = {"kEventParamWindowMouseLocation",kEventParamWindowMouseLocation,NULL};
 	VPL_ExtConstant _kEventParamMouseLocation_C = {"kEventParamMouseLocation",kEventParamMouseLocation,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _typeSignedByteOffset_C = {"typeSignedByteOffset",typeSignedByteOffset,NULL};
 	VPL_ExtConstant _typeSignedByteCount_C = {"typeSignedByteCount",typeSignedByteCount,NULL};
 	VPL_ExtConstant _typeByteOffset_C = {"typeByteOffset",typeByteOffset,NULL};
@@ -3630,13 +3773,16 @@
 	VPL_ExtConstant _typeHIPoint72DPIGlobal_C = {"typeHIPoint72DPIGlobal",typeHIPoint72DPIGlobal,NULL};
 	VPL_ExtConstant _typeCGFloat_C = {"typeCGFloat",typeCGFloat,NULL};
 	VPL_ExtConstant _typeCGDisplayID_C = {"typeCGDisplayID",typeCGDisplayID,NULL};
+#endif
 	VPL_ExtConstant _typeGDHandle_C = {"typeGDHandle",typeGDHandle,NULL};
 	VPL_ExtConstant _typeVoidPtr_C = {"typeVoidPtr",typeVoidPtr,NULL};
 	VPL_ExtConstant _typeHIShapeRef_C = {"typeHIShapeRef",typeHIShapeRef,NULL};
 	VPL_ExtConstant _typeHIRect_C = {"typeHIRect",typeHIRect,NULL};
 	VPL_ExtConstant _typeHISize_C = {"typeHISize",typeHISize,NULL};
 	VPL_ExtConstant _typeHIPoint_C = {"typeHIPoint",typeHIPoint,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _typeCGImageRef_C = {"typeCGImageRef",typeCGImageRef,NULL};
+#endif
 	VPL_ExtConstant _typeCGContextRef_C = {"typeCGContextRef",typeCGContextRef,NULL};
 	VPL_ExtConstant _typeCFIndex_C = {"typeCFIndex",typeCFIndex,NULL};
 	VPL_ExtConstant _typeOSStatus_C = {"typeOSStatus",typeOSStatus,NULL};
@@ -3651,7 +3797,9 @@
 	VPL_ExtConstant _kEventParamUserData_C = {"kEventParamUserData",kEventParamUserData,NULL};
 	VPL_ExtConstant _kEventParamIndex_C = {"kEventParamIndex",kEventParamIndex,NULL};
 	VPL_ExtConstant _kEventParamGDevice_C = {"kEventParamGDevice",kEventParamGDevice,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamDisplayDevice_C = {"kEventParamDisplayDevice",kEventParamDisplayDevice,NULL};
+#endif
 	VPL_ExtConstant _kEventParamTransactionID_C = {"kEventParamTransactionID",kEventParamTransactionID,NULL};
 	VPL_ExtConstant _kEventParamReason_C = {"kEventParamReason",kEventParamReason,NULL};
 	VPL_ExtConstant _kEventParamAttributes_C = {"kEventParamAttributes",kEventParamAttributes,NULL};
@@ -3661,7 +3809,9 @@
 	VPL_ExtConstant _kEventParamMutableArray_C = {"kEventParamMutableArray",kEventParamMutableArray,NULL};
 	VPL_ExtConstant _kEventParamDeviceColor_C = {"kEventParamDeviceColor",kEventParamDeviceColor,NULL};
 	VPL_ExtConstant _kEventParamDeviceDepth_C = {"kEventParamDeviceDepth",kEventParamDeviceDepth,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamCGImageRef_C = {"kEventParamCGImageRef",kEventParamCGImageRef,NULL};
+#endif
 	VPL_ExtConstant _kEventParamCGContextRef_C = {"kEventParamCGContextRef",kEventParamCGContextRef,NULL};
 	VPL_ExtConstant _kEventParamAEEventClass_C = {"kEventParamAEEventClass",kEventParamAEEventClass,NULL};
 	VPL_ExtConstant _kEventParamAEEventID_C = {"kEventParamAEEventID",kEventParamAEEventID,NULL};
@@ -3675,8 +3825,10 @@
 	VPL_ExtConstant _kEventParamMenuRef_C = {"kEventParamMenuRef",kEventParamMenuRef,NULL};
 	VPL_ExtConstant _kEventParamGrafPort_C = {"kEventParamGrafPort",kEventParamGrafPort,NULL};
 	VPL_ExtConstant _kEventParamWindowRef_C = {"kEventParamWindowRef",kEventParamWindowRef,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _typeEventTargetOptions_C = {"typeEventTargetOptions",typeEventTargetOptions,NULL};
 	VPL_ExtConstant _kEventParamPostOptions_C = {"kEventParamPostOptions",kEventParamPostOptions,NULL};
+#endif
 	VPL_ExtConstant _typeEventTargetRef_C = {"typeEventTargetRef",typeEventTargetRef,NULL};
 	VPL_ExtConstant _kEventParamPostTarget_C = {"kEventParamPostTarget",kEventParamPostTarget,NULL};
 	VPL_ExtConstant _kWindowGroupAttrZOrderFixed_C = {"kWindowGroupAttrZOrderFixed",kWindowGroupAttrZOrderFixed,NULL};
@@ -3734,9 +3886,11 @@
 	VPL_ExtConstant _kWindowEdgeLeft_C = {"kWindowEdgeLeft",kWindowEdgeLeft,NULL};
 	VPL_ExtConstant _kWindowEdgeTop_C = {"kWindowEdgeTop",kWindowEdgeTop,NULL};
 	VPL_ExtConstant _kWindowEdgeDefault_C = {"kWindowEdgeDefault",kWindowEdgeDefault,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIWindowVisibleInAllSpaces_C = {"kHIWindowVisibleInAllSpaces",kHIWindowVisibleInAllSpaces,NULL};
 	VPL_ExtConstant _kHIWindowMoveToActiveSpace_C = {"kHIWindowMoveToActiveSpace",kHIWindowMoveToActiveSpace,NULL};
 	VPL_ExtConstant _kHIWindowCanJoinAllSpaces_C = {"kHIWindowCanJoinAllSpaces",kHIWindowCanJoinAllSpaces,NULL};
+#endif
 	VPL_ExtConstant _kHIWindowExposeHidden_C = {"kHIWindowExposeHidden",kHIWindowExposeHidden,NULL};
 	VPL_ExtConstant _kWindowLatentVisibleCollapsedGroup_C = {"kWindowLatentVisibleCollapsedGroup",kWindowLatentVisibleCollapsedGroup,NULL};
 	VPL_ExtConstant _kWindowLatentVisibleCollapsedOwner_C = {"kWindowLatentVisibleCollapsedOwner",kWindowLatentVisibleCollapsedOwner,NULL};
@@ -3745,8 +3899,10 @@
 	VPL_ExtConstant _kWindowLatentVisibleSuspend_C = {"kWindowLatentVisibleSuspend",kWindowLatentVisibleSuspend,NULL};
 	VPL_ExtConstant _kWindowLatentVisibleFloater_C = {"kWindowLatentVisibleFloater",kWindowLatentVisibleFloater,NULL};
 	VPL_ExtConstant _kWindowConstrainStandardOptions_C = {"kWindowConstrainStandardOptions",kWindowConstrainStandardOptions,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kWindowConstrainUseSpecifiedBounds_C = {"kWindowConstrainUseSpecifiedBounds",kWindowConstrainUseSpecifiedBounds,NULL};
 	VPL_ExtConstant _kWindowConstrainMoveMinimum_C = {"kWindowConstrainMoveMinimum",kWindowConstrainMoveMinimum,NULL};
+#endif
 	VPL_ExtConstant _kWindowConstrainUseTransitionWindow_C = {"kWindowConstrainUseTransitionWindow",kWindowConstrainUseTransitionWindow,NULL};
 	VPL_ExtConstant _kWindowConstrainCalcOnly_C = {"kWindowConstrainCalcOnly",kWindowConstrainCalcOnly,NULL};
 	VPL_ExtConstant _kWindowConstrainAllowPartial_C = {"kWindowConstrainAllowPartial",kWindowConstrainAllowPartial,NULL};
@@ -3761,10 +3917,14 @@
 	VPL_ExtConstant _kWindowSlideTransitionEffect_C = {"kWindowSlideTransitionEffect",kWindowSlideTransitionEffect,NULL};
 	VPL_ExtConstant _kWindowSheetTransitionEffect_C = {"kWindowSheetTransitionEffect",kWindowSheetTransitionEffect,NULL};
 	VPL_ExtConstant _kWindowZoomTransitionEffect_C = {"kWindowZoomTransitionEffect",kWindowZoomTransitionEffect,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIWindowMenuWindowTag_C = {"kHIWindowMenuWindowTag",kHIWindowMenuWindowTag,NULL};
 	VPL_ExtConstant _kHIWindowMenuCreator_C = {"kHIWindowMenuCreator",kHIWindowMenuCreator,NULL};
+#endif
 	VPL_ExtConstant _kWindowMenuIncludeRotate_C = {"kWindowMenuIncludeRotate",kWindowMenuIncludeRotate,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIWindowIgnoreObscuringWindows_C = {"kHIWindowIgnoreObscuringWindows",kHIWindowIgnoreObscuringWindows,NULL};
+#endif
 	VPL_ExtConstant _kScrollWindowEraseToPortBackground_C = {"kScrollWindowEraseToPortBackground",kScrollWindowEraseToPortBackground,NULL};
 	VPL_ExtConstant _kScrollWindowInvalidate_C = {"kScrollWindowInvalidate",kScrollWindowInvalidate,NULL};
 	VPL_ExtConstant _kScrollWindowNoOptions_C = {"kScrollWindowNoOptions",kScrollWindowNoOptions,NULL};
@@ -3789,12 +3949,14 @@
 	VPL_ExtConstant _kWindowModalityAppModal_C = {"kWindowModalityAppModal",kWindowModalityAppModal,NULL};
 	VPL_ExtConstant _kWindowModalitySystemModal_C = {"kWindowModalitySystemModal",kWindowModalitySystemModal,NULL};
 	VPL_ExtConstant _kWindowModalityNone_C = {"kWindowModalityNone",kWindowModalityNone,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIWindowSharingReadWrite_C = {"kHIWindowSharingReadWrite",kHIWindowSharingReadWrite,NULL};
 	VPL_ExtConstant _kHIWindowSharingReadOnly_C = {"kHIWindowSharingReadOnly",kHIWindowSharingReadOnly,NULL};
 	VPL_ExtConstant _kHIWindowSharingNone_C = {"kHIWindowSharingNone",kHIWindowSharingNone,NULL};
 	VPL_ExtConstant _kHIWindowBackingLocationMainMemory_C = {"kHIWindowBackingLocationMainMemory",kHIWindowBackingLocationMainMemory,NULL};
 	VPL_ExtConstant _kHIWindowBackingLocationVideoMemory_C = {"kHIWindowBackingLocationVideoMemory",kHIWindowBackingLocationVideoMemory,NULL};
 	VPL_ExtConstant _kHIWindowBackingLocationDefault_C = {"kHIWindowBackingLocationDefault",kHIWindowBackingLocationDefault,NULL};
+#endif
 	VPL_ExtConstant _kWindowDefHIView_C = {"kWindowDefHIView",kWindowDefHIView,NULL};
 	VPL_ExtConstant _kWindowDefProcID_C = {"kWindowDefProcID",kWindowDefProcID,NULL};
 	VPL_ExtConstant _kWindowDefObjectClass_C = {"kWindowDefObjectClass",kWindowDefObjectClass,NULL};
@@ -3880,7 +4042,9 @@
 	VPL_ExtConstant _kWindowCenterMainScreen_C = {"kWindowCenterMainScreen",kWindowCenterMainScreen,NULL};
 	VPL_ExtConstant _kWindowDefaultPosition_C = {"kWindowDefaultPosition",kWindowDefaultPosition,NULL};
 	VPL_ExtConstant _kWindowNoPosition_C = {"kWindowNoPosition",kWindowNoPosition,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kWindowOverlayProc_C = {"kWindowOverlayProc",kWindowOverlayProc,NULL};
+#endif
 	VPL_ExtConstant _kWindowSimpleFrameProc_C = {"kWindowSimpleFrameProc",kWindowSimpleFrameProc,NULL};
 	VPL_ExtConstant _kWindowSimpleProc_C = {"kWindowSimpleProc",kWindowSimpleProc,NULL};
 	VPL_ExtConstant _kWindowSheetAlertProc_C = {"kWindowSheetAlertProc",kWindowSheetAlertProc,NULL};
@@ -3962,19 +4126,27 @@
 	VPL_ExtConstant _kWindowStandardHandlerAttribute_C = {"kWindowStandardHandlerAttribute",kWindowStandardHandlerAttribute,NULL};
 	VPL_ExtConstant _kWindowAsyncDragAttribute_C = {"kWindowAsyncDragAttribute",kWindowAsyncDragAttribute,NULL};
 	VPL_ExtConstant _kWindowHideOnSuspendAttribute_C = {"kWindowHideOnSuspendAttribute",kWindowHideOnSuspendAttribute,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kWindowCanBeVisibleWithoutLoginAttribute_C = {"kWindowCanBeVisibleWithoutLoginAttribute",kWindowCanBeVisibleWithoutLoginAttribute,NULL};
+#endif
 	VPL_ExtConstant _kWindowNoShadowAttribute_C = {"kWindowNoShadowAttribute",kWindowNoShadowAttribute,NULL};
 	VPL_ExtConstant _kWindowCompositingAttribute_C = {"kWindowCompositingAttribute",kWindowCompositingAttribute,NULL};
 	VPL_ExtConstant _kWindowOpaqueForEventsAttribute_C = {"kWindowOpaqueForEventsAttribute",kWindowOpaqueForEventsAttribute,NULL};
 	VPL_ExtConstant _kWindowNoActivatesAttribute_C = {"kWindowNoActivatesAttribute",kWindowNoActivatesAttribute,NULL};
 	VPL_ExtConstant _kWindowNoUpdatesAttribute_C = {"kWindowNoUpdatesAttribute",kWindowNoUpdatesAttribute,NULL};
 	VPL_ExtConstant _kWindowDoesNotCycleAttribute_C = {"kWindowDoesNotCycleAttribute",kWindowDoesNotCycleAttribute,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kWindowHasRoundBottomBarCornersAttribute_C = {"kWindowHasRoundBottomBarCornersAttribute",kWindowHasRoundBottomBarCornersAttribute,NULL};
+#endif
 	VPL_ExtConstant _kWindowMetalNoContentSeparatorAttribute_C = {"kWindowMetalNoContentSeparatorAttribute",kWindowMetalNoContentSeparatorAttribute,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kWindowTexturedSquareCornersAttribute_C = {"kWindowTexturedSquareCornersAttribute",kWindowTexturedSquareCornersAttribute,NULL};
+#endif
 	VPL_ExtConstant _kWindowNoTitleBarAttribute_C = {"kWindowNoTitleBarAttribute",kWindowNoTitleBarAttribute,NULL};
 	VPL_ExtConstant _kWindowMetalAttribute_C = {"kWindowMetalAttribute",kWindowMetalAttribute,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kWindowUnifiedTitleAndToolbarAttribute_C = {"kWindowUnifiedTitleAndToolbarAttribute",kWindowUnifiedTitleAndToolbarAttribute,NULL};
+#endif
 	VPL_ExtConstant _kWindowToolbarButtonAttribute_C = {"kWindowToolbarButtonAttribute",kWindowToolbarButtonAttribute,NULL};
 	VPL_ExtConstant _kWindowSideTitlebarAttribute_C = {"kWindowSideTitlebarAttribute",kWindowSideTitlebarAttribute,NULL};
 	VPL_ExtConstant _kWindowResizableAttribute_C = {"kWindowResizableAttribute",kWindowResizableAttribute,NULL};
@@ -3984,6 +4156,7 @@
 	VPL_ExtConstant _kWindowHorizontalZoomAttribute_C = {"kWindowHorizontalZoomAttribute",kWindowHorizontalZoomAttribute,NULL};
 	VPL_ExtConstant _kWindowCloseBoxAttribute_C = {"kWindowCloseBoxAttribute",kWindowCloseBoxAttribute,NULL};
 	VPL_ExtConstant _kWindowNoAttributes_C = {"kWindowNoAttributes",kWindowNoAttributes,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIWindowBitAutoViewDragTracking_C = {"kHIWindowBitAutoViewDragTracking",kHIWindowBitAutoViewDragTracking,NULL};
 	VPL_ExtConstant _kHIWindowBitDoesNotHide_C = {"kHIWindowBitDoesNotHide",kHIWindowBitDoesNotHide,NULL};
 	VPL_ExtConstant _kHIWindowBitNoConstrain_C = {"kHIWindowBitNoConstrain",kHIWindowBitNoConstrain,NULL};
@@ -4014,6 +4187,7 @@
 	VPL_ExtConstant _kHIWindowBitCollapseBox_C = {"kHIWindowBitCollapseBox",kHIWindowBitCollapseBox,NULL};
 	VPL_ExtConstant _kHIWindowBitZoomBox_C = {"kHIWindowBitZoomBox",kHIWindowBitZoomBox,NULL};
 	VPL_ExtConstant _kHIWindowBitCloseBox_C = {"kHIWindowBitCloseBox",kHIWindowBitCloseBox,NULL};
+#endif
 	VPL_ExtConstant _kAllWindowClasses_C = {"kAllWindowClasses",kAllWindowClasses,NULL};
 	VPL_ExtConstant _kDrawerWindowClass_C = {"kDrawerWindowClass",kDrawerWindowClass,NULL};
 	VPL_ExtConstant _kSimpleWindowClass_C = {"kSimpleWindowClass",kSimpleWindowClass,NULL};
@@ -4113,12 +4287,14 @@
 	VPL_ExtConstant _kControlSupportsFocus_C = {"kControlSupportsFocus",kControlSupportsFocus,NULL};
 	VPL_ExtConstant _kControlSupportsEmbedding_C = {"kControlSupportsEmbedding",kControlSupportsEmbedding,NULL};
 	VPL_ExtConstant _kControlSupportsGhosting_C = {"kControlSupportsGhosting",kControlSupportsGhosting,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kControlThemeTextInfoTag_C = {"kControlThemeTextInfoTag",kControlThemeTextInfoTag,NULL};
 	VPL_ExtConstant _kControlThemeTextTruncationTag_C = {"kControlThemeTextTruncationTag",kControlThemeTextTruncationTag,NULL};
 	VPL_ExtConstant _kControlThemeTextVerticalFlushTag_C = {"kControlThemeTextVerticalFlushTag",kControlThemeTextVerticalFlushTag,NULL};
 	VPL_ExtConstant _kControlThemeTextHorizontalFlushTag_C = {"kControlThemeTextHorizontalFlushTag",kControlThemeTextHorizontalFlushTag,NULL};
 	VPL_ExtConstant _kControlThemeTextFontTag_C = {"kControlThemeTextFontTag",kControlThemeTextFontTag,NULL};
 	VPL_ExtConstant _kControlContentTag_C = {"kControlContentTag",kControlContentTag,NULL};
+#endif
 	VPL_ExtConstant _kControlSizeTag_C = {"kControlSizeTag",kControlSizeTag,NULL};
 	VPL_ExtConstant _kControlKindTag_C = {"kControlKindTag",kControlKindTag,NULL};
 	VPL_ExtConstant _kControlKeyFilterTag_C = {"kControlKeyFilterTag",kControlKeyFilterTag,NULL};
@@ -4152,7 +4328,9 @@
 	VPL_ExtConstant _kControlContentPictHandle_C = {"kControlContentPictHandle",kControlContentPictHandle,NULL};
 	VPL_ExtConstant _kControlContentCIconHandle_C = {"kControlContentCIconHandle",kControlContentCIconHandle,NULL};
 	VPL_ExtConstant _kControlContentIconSuiteHandle_C = {"kControlContentIconSuiteHandle",kControlContentIconSuiteHandle,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kControlContentAlertIconRes_C = {"kControlContentAlertIconRes",kControlContentAlertIconRes,NULL};
+#endif
 	VPL_ExtConstant _kControlContentICONRes_C = {"kControlContentICONRes",kControlContentICONRes,NULL};
 	VPL_ExtConstant _kControlContentPictRes_C = {"kControlContentPictRes",kControlContentPictRes,NULL};
 	VPL_ExtConstant _kControlContentCIconRes_C = {"kControlContentCIconRes",kControlContentCIconRes,NULL};
@@ -4422,11 +4600,15 @@
 	VPL_ExtConstant _kHIMenuDismissedBySelection_C = {"kHIMenuDismissedBySelection",kHIMenuDismissedBySelection,NULL};
 	VPL_ExtConstant _kMenuDefClassID_C = {"kMenuDefClassID",kMenuDefClassID,NULL};
 	VPL_ExtConstant _kMenuDefProcPtr_C = {"kMenuDefProcPtr",kMenuDefProcPtr,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kMenuItemDataAllDataVersionThree_C = {"kMenuItemDataAllDataVersionThree",kMenuItemDataAllDataVersionThree,NULL};
+#endif
 	VPL_ExtConstant _kMenuItemDataAllDataVersionTwo_C = {"kMenuItemDataAllDataVersionTwo",kMenuItemDataAllDataVersionTwo,NULL};
 	VPL_ExtConstant _kMenuItemDataAllDataVersionOne_C = {"kMenuItemDataAllDataVersionOne",kMenuItemDataAllDataVersionOne,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kMenuItemDataFont_C = {"kMenuItemDataFont",kMenuItemDataFont,NULL};
 	VPL_ExtConstant _kMenuItemDataAttributedText_C = {"kMenuItemDataAttributedText",kMenuItemDataAttributedText,NULL};
+#endif
 	VPL_ExtConstant _kMenuItemDataCmdVirtualKey_C = {"kMenuItemDataCmdVirtualKey",kMenuItemDataCmdVirtualKey,NULL};
 	VPL_ExtConstant _kMenuItemDataIndent_C = {"kMenuItemDataIndent",kMenuItemDataIndent,NULL};
 	VPL_ExtConstant _kMenuItemDataProperties_C = {"kMenuItemDataProperties",kMenuItemDataProperties,NULL};
@@ -4568,6 +4750,7 @@
 	VPL_ExtConstant _app1Evt_C = {"app1Evt",app1Evt,NULL};
 	VPL_ExtConstant _driverEvt_C = {"driverEvt",driverEvt,NULL};
 	VPL_ExtConstant _networkEvt_C = {"networkEvt",networkEvt,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kVK_JIS_Kana_C = {"kVK_JIS_Kana",kVK_JIS_Kana,NULL};
 	VPL_ExtConstant _kVK_JIS_Eisu_C = {"kVK_JIS_Eisu",kVK_JIS_Eisu,NULL};
 	VPL_ExtConstant _kVK_JIS_KeypadComma_C = {"kVK_JIS_KeypadComma",kVK_JIS_KeypadComma,NULL};
@@ -4686,6 +4869,7 @@
 	VPL_ExtConstant _kVK_ANSI_D_C = {"kVK_ANSI_D",kVK_ANSI_D,NULL};
 	VPL_ExtConstant _kVK_ANSI_S_C = {"kVK_ANSI_S",kVK_ANSI_S,NULL};
 	VPL_ExtConstant _kVK_ANSI_A_C = {"kVK_ANSI_A",kVK_ANSI_A,NULL};
+#endif
 	VPL_ExtConstant _kAppleLogoUnicode_C = {"kAppleLogoUnicode",kAppleLogoUnicode,NULL};
 	VPL_ExtConstant _kBulletUnicode_C = {"kBulletUnicode",kBulletUnicode,NULL};
 	VPL_ExtConstant _kDiamondUnicode_C = {"kDiamondUnicode",kDiamondUnicode,NULL};
@@ -4858,11 +5042,13 @@
 	VPL_ExtConstant _appearanceProcessNotRegisteredErr_C = {"appearanceProcessNotRegisteredErr",appearanceProcessNotRegisteredErr,NULL};
 	VPL_ExtConstant _appearanceProcessRegisteredErr_C = {"appearanceProcessRegisteredErr",appearanceProcessRegisteredErr,NULL};
 	VPL_ExtConstant _appearanceBadBrushIndexErr_C = {"appearanceBadBrushIndexErr",appearanceBadBrushIndexErr,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kThemeMetricTexturedSmallPushButtonHeight_C = {"kThemeMetricTexturedSmallPushButtonHeight",kThemeMetricTexturedSmallPushButtonHeight,NULL};
 	VPL_ExtConstant _kThemeMetricTexturedPushButtonHeight_C = {"kThemeMetricTexturedPushButtonHeight",kThemeMetricTexturedPushButtonHeight,NULL};
 	VPL_ExtConstant _kThemeMetricSeparatorSize_C = {"kThemeMetricSeparatorSize",kThemeMetricSeparatorSize,NULL};
 	VPL_ExtConstant _kThemeMetricButtonRoundedRecessedHeight_C = {"kThemeMetricButtonRoundedRecessedHeight",kThemeMetricButtonRoundedRecessedHeight,NULL};
 	VPL_ExtConstant _kThemeMetricButtonRoundedHeight_C = {"kThemeMetricButtonRoundedHeight",kThemeMetricButtonRoundedHeight,NULL};
+#endif
 	VPL_ExtConstant _kThemeMetricSmallScrollBarMinThumbWidth_C = {"kThemeMetricSmallScrollBarMinThumbWidth",kThemeMetricSmallScrollBarMinThumbWidth,NULL};
 	VPL_ExtConstant _kThemeMetricSmallScrollBarMinThumbHeight_C = {"kThemeMetricSmallScrollBarMinThumbHeight",kThemeMetricSmallScrollBarMinThumbHeight,NULL};
 	VPL_ExtConstant _kThemeMetricScrollBarMinThumbWidth_C = {"kThemeMetricScrollBarMinThumbWidth",kThemeMetricScrollBarMinThumbWidth,NULL};
@@ -5141,7 +5327,9 @@
 	VPL_ExtConstant _kThemeNoSounds_C = {"kThemeNoSounds",kThemeNoSounds,NULL};
 	VPL_ExtConstant _kThemeAdornmentShadowOnly_C = {"kThemeAdornmentShadowOnly",kThemeAdornmentShadowOnly,NULL};
 	VPL_ExtConstant _kThemeAdornmentNoShadow_C = {"kThemeAdornmentNoShadow",kThemeAdornmentNoShadow,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kThemeAdornmentArrowRightArrow_C = {"kThemeAdornmentArrowRightArrow",kThemeAdornmentArrowRightArrow,NULL};
+#endif
 	VPL_ExtConstant _kThemeAdornmentArrowUpArrow_C = {"kThemeAdornmentArrowUpArrow",kThemeAdornmentArrowUpArrow,NULL};
 	VPL_ExtConstant _kThemeAdornmentArrowDoubleArrow_C = {"kThemeAdornmentArrowDoubleArrow",kThemeAdornmentArrowDoubleArrow,NULL};
 	VPL_ExtConstant _kThemeAdornmentArrowDownArrow_C = {"kThemeAdornmentArrowDownArrow",kThemeAdornmentArrowDownArrow,NULL};
@@ -5252,7 +5440,9 @@
 	VPL_ExtConstant _kThemeWindowHasVerticalZoom_C = {"kThemeWindowHasVerticalZoom",kThemeWindowHasVerticalZoom,NULL};
 	VPL_ExtConstant _kThemeWindowHasHorizontalZoom_C = {"kThemeWindowHasHorizontalZoom",kThemeWindowHasHorizontalZoom,NULL};
 	VPL_ExtConstant _kThemeWindowHasGrow_C = {"kThemeWindowHasGrow",kThemeWindowHasGrow,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kThemeTrackHideTrack_C = {"kThemeTrackHideTrack",kThemeTrackHideTrack,NULL};
+#endif
 	VPL_ExtConstant _kThemeTrackHasFocus_C = {"kThemeTrackHasFocus",kThemeTrackHasFocus,NULL};
 	VPL_ExtConstant _kThemeTrackNoScrollBarArrows_C = {"kThemeTrackNoScrollBarArrows",kThemeTrackNoScrollBarArrows,NULL};
 	VPL_ExtConstant _kThemeTrackThumbRgnIsNotGhost_C = {"kThemeTrackThumbRgnIsNotGhost",kThemeTrackThumbRgnIsNotGhost,NULL};
@@ -5321,7 +5511,9 @@
 	VPL_ExtConstant _kThemeTabNonFrontPressed_C = {"kThemeTabNonFrontPressed",kThemeTabNonFrontPressed,NULL};
 	VPL_ExtConstant _kThemeTabNonFront_C = {"kThemeTabNonFront",kThemeTabNonFront,NULL};
 	VPL_ExtConstant _kPublicThemeFontCount_C = {"kPublicThemeFontCount",kPublicThemeFontCount,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kThemeSpecifiedFont_C = {"kThemeSpecifiedFont",kThemeSpecifiedFont,NULL};
+#endif
 	VPL_ExtConstant _kThemeCurrentPortFont_C = {"kThemeCurrentPortFont",kThemeCurrentPortFont,NULL};
 	VPL_ExtConstant _kThemeMiniSystemFont_C = {"kThemeMiniSystemFont",kThemeMiniSystemFont,NULL};
 	VPL_ExtConstant _kThemeToolbarFont_C = {"kThemeToolbarFont",kThemeToolbarFont,NULL};
@@ -5550,7 +5742,9 @@
 	VPL_ExtConstant _kThemeBrushAlertBackgroundActive_C = {"kThemeBrushAlertBackgroundActive",kThemeBrushAlertBackgroundActive,NULL};
 	VPL_ExtConstant _kThemeBrushDialogBackgroundInactive_C = {"kThemeBrushDialogBackgroundInactive",kThemeBrushDialogBackgroundInactive,NULL};
 	VPL_ExtConstant _kThemeBrushDialogBackgroundActive_C = {"kThemeBrushDialogBackgroundActive",kThemeBrushDialogBackgroundActive,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kAppearanceRegionToolbarButton_C = {"kAppearanceRegionToolbarButton",kAppearanceRegionToolbarButton,NULL};
+#endif
 	VPL_ExtConstant _kAppearanceRegionContent_C = {"kAppearanceRegionContent",kAppearanceRegionContent,NULL};
 	VPL_ExtConstant _kAppearanceRegionStructure_C = {"kAppearanceRegionStructure",kAppearanceRegionStructure,NULL};
 	VPL_ExtConstant _kAppearanceRegionTitleProxyIcon_C = {"kAppearanceRegionTitleProxyIcon",kAppearanceRegionTitleProxyIcon,NULL};
@@ -5582,12 +5776,15 @@
 	VPL_ExtConstant _kAESystemFontChanged_C = {"kAESystemFontChanged",kAESystemFontChanged,NULL};
 	VPL_ExtConstant _kAEAppearanceChanged_C = {"kAEAppearanceChanged",kAEAppearanceChanged,NULL};
 	VPL_ExtConstant _kAppearanceEventClass_C = {"kAppearanceEventClass",kAppearanceEventClass,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIArchiveDecodingForEditor_C = {"kHIArchiveDecodingForEditor",kHIArchiveDecodingForEditor,NULL};
+#endif
 	VPL_ExtConstant _kHIArchiveDecodeSuperclassForUnregisteredObjects_C = {"kHIArchiveDecodeSuperclassForUnregisteredObjects",kHIArchiveDecodeSuperclassForUnregisteredObjects,NULL};
 	VPL_ExtConstant _hiArchiveHIObjectIgnoresArchivingErr_C = {"hiArchiveHIObjectIgnoresArchivingErr",hiArchiveHIObjectIgnoresArchivingErr,NULL};
 	VPL_ExtConstant _hiArchiveEncodingCompleteErr_C = {"hiArchiveEncodingCompleteErr",hiArchiveEncodingCompleteErr,NULL};
 	VPL_ExtConstant _hiArchiveKeyNotAvailableErr_C = {"hiArchiveKeyNotAvailableErr",hiArchiveKeyNotAvailableErr,NULL};
 	VPL_ExtConstant _hiArchiveTypeMismatchErr_C = {"hiArchiveTypeMismatchErr",hiArchiveTypeMismatchErr,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIDelegateAfter_C = {"kHIDelegateAfter",kHIDelegateAfter,NULL};
 	VPL_ExtConstant _kHIDelegateBefore_C = {"kHIDelegateBefore",kHIDelegateBefore,NULL};
 	VPL_ExtConstant _kHIDelegateAll_C = {"kHIDelegateAll",kHIDelegateAll,NULL};
@@ -5603,6 +5800,7 @@
 	VPL_ExtConstant _kEventClassDelegate_C = {"kEventClassDelegate",kEventClassDelegate,NULL};
 	VPL_ExtConstant _kEventHIObjectGetInitParameters_C = {"kEventHIObjectGetInitParameters",kEventHIObjectGetInitParameters,NULL};
 	VPL_ExtConstant _kEventHIObjectCreatedFromArchive_C = {"kEventHIObjectCreatedFromArchive",kEventHIObjectCreatedFromArchive,NULL};
+#endif
 	VPL_ExtConstant _kEventHIObjectEncode_C = {"kEventHIObjectEncode",kEventHIObjectEncode,NULL};
 	VPL_ExtConstant _kEventHIObjectPrintDebugInfo_C = {"kEventHIObjectPrintDebugInfo",kEventHIObjectPrintDebugInfo,NULL};
 	VPL_ExtConstant _kEventHIObjectIsEqual_C = {"kEventHIObjectIsEqual",kEventHIObjectIsEqual,NULL};
@@ -5610,17 +5808,21 @@
 	VPL_ExtConstant _kEventHIObjectInitialize_C = {"kEventHIObjectInitialize",kEventHIObjectInitialize,NULL};
 	VPL_ExtConstant _kEventHIObjectConstruct_C = {"kEventHIObjectConstruct",kEventHIObjectConstruct,NULL};
 	VPL_ExtConstant _typeHIObjectRef_C = {"typeHIObjectRef",typeHIObjectRef,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kEventParamInitParameters_C = {"kEventParamInitParameters",kEventParamInitParameters,NULL};
 	VPL_ExtConstant _kEventParamDecodingForEditor_C = {"kEventParamDecodingForEditor",kEventParamDecodingForEditor,NULL};
 	VPL_ExtConstant _kEventParamAfterDelegates_C = {"kEventParamAfterDelegates",kEventParamAfterDelegates,NULL};
 	VPL_ExtConstant _kEventParamBeforeDelegates_C = {"kEventParamBeforeDelegates",kEventParamBeforeDelegates,NULL};
+#endif
 	VPL_ExtConstant _kEventParamHIArchive_C = {"kEventParamHIArchive",kEventParamHIArchive,NULL};
 	VPL_ExtConstant _kEventParamHIObjectInstance_C = {"kEventParamHIObjectInstance",kEventParamHIObjectInstance,NULL};
 	VPL_ExtConstant _kEventClassHIObject_C = {"kEventClassHIObject",kEventClassHIObject,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIClassOptionSingleton_C = {"kHIClassOptionSingleton",kHIClassOptionSingleton,NULL};
 	VPL_ExtConstant _hiObjectDelegateNotFoundErr_C = {"hiObjectDelegateNotFoundErr",hiObjectDelegateNotFoundErr,NULL};
 	VPL_ExtConstant _hiObjectDelegateAlreadyExistsErr_C = {"hiObjectDelegateAlreadyExistsErr",hiObjectDelegateAlreadyExistsErr,NULL};
 	VPL_ExtConstant _hiObjectCannotSubclassSingletonErr_C = {"hiObjectCannotSubclassSingletonErr",hiObjectCannotSubclassSingletonErr,NULL};
+#endif
 	VPL_ExtConstant _hiObjectClassIsAbstractErr_C = {"hiObjectClassIsAbstractErr",hiObjectClassIsAbstractErr,NULL};
 	VPL_ExtConstant _hiObjectClassHasSubclassesErr_C = {"hiObjectClassHasSubclassesErr",hiObjectClassHasSubclassesErr,NULL};
 	VPL_ExtConstant _hiObjectClassHasInstancesErr_C = {"hiObjectClassHasInstancesErr",hiObjectClassHasInstancesErr,NULL};
@@ -5639,8 +5841,10 @@
 	VPL_ExtConstant _kEventPriorityHigh_C = {"kEventPriorityHigh",kEventPriorityHigh,NULL};
 	VPL_ExtConstant _kEventPriorityStandard_C = {"kEventPriorityStandard",kEventPriorityStandard,NULL};
 	VPL_ExtConstant _kEventPriorityLow_C = {"kEventPriorityLow",kEventPriorityLow,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _typeCTGlyphInfoRef_C = {"typeCTGlyphInfoRef",typeCTGlyphInfoRef,NULL};
 	VPL_ExtConstant _typeCTFontRef_C = {"typeCTFontRef",typeCTFontRef,NULL};
+#endif
 	VPL_ExtConstant _typeDragRef_C = {"typeDragRef",typeDragRef,NULL};
 	VPL_ExtConstant _kEventParamDragRef_C = {"kEventParamDragRef",kEventParamDragRef,NULL};
 	VPL_ExtConstant _kEventParamDirectObject_C = {"kEventParamDirectObject",kEventParamDirectObject,NULL};
@@ -5670,6 +5874,7 @@
 	VPL_ExtConstant _kCGImageStatusUnknownType_C = {"kCGImageStatusUnknownType",kCGImageStatusUnknownType,NULL};
 	VPL_ExtConstant _kCGImageStatusInvalidData_C = {"kCGImageStatusInvalidData",kCGImageStatusInvalidData,NULL};
 	VPL_ExtConstant _kCGImageStatusUnexpectedEOF_C = {"kCGImageStatusUnexpectedEOF",kCGImageStatusUnexpectedEOF,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCTUnderlinePatternDashDotDot_C = {"kCTUnderlinePatternDashDotDot",kCTUnderlinePatternDashDotDot,NULL};
 	VPL_ExtConstant _kCTUnderlinePatternDashDot_C = {"kCTUnderlinePatternDashDot",kCTUnderlinePatternDashDot,NULL};
 	VPL_ExtConstant _kCTUnderlinePatternDash_C = {"kCTUnderlinePatternDash",kCTUnderlinePatternDash,NULL};
@@ -5829,21 +6034,26 @@
 	VPL_ExtConstant _kCTFontBoldTrait_C = {"kCTFontBoldTrait",kCTFontBoldTrait,NULL};
 	VPL_ExtConstant _kCTFontItalicTrait_C = {"kCTFontItalicTrait",kCTFontItalicTrait,NULL};
 	VPL_ExtConstant _kCTFontClassMaskShift_C = {"kCTFontClassMaskShift",kCTFontClassMaskShift,NULL};
+#endif
 	VPL_ExtConstant _kFemale_C = {"kFemale",kFemale,NULL};
 	VPL_ExtConstant _kMale_C = {"kMale",kMale,NULL};
 	VPL_ExtConstant _kNeuter_C = {"kNeuter",kNeuter,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kAudioUnitProperty_SpeechChannel_C = {"kAudioUnitProperty_SpeechChannel",kAudioUnitProperty_SpeechChannel,NULL};
 	VPL_ExtConstant _kAudioUnitProperty_Voice_C = {"kAudioUnitProperty_Voice",kAudioUnitProperty_Voice,NULL};
 	VPL_ExtConstant _kAudioUnitSubType_SpeechSynthesis_C = {"kAudioUnitSubType_SpeechSynthesis",kAudioUnitSubType_SpeechSynthesis,NULL};
+#endif
 	VPL_ExtConstant _soVoiceFile_C = {"soVoiceFile",soVoiceFile,NULL};
 	VPL_ExtConstant _soVoiceDescription_C = {"soVoiceDescription",soVoiceDescription,NULL};
 	VPL_ExtConstant _modeLiteral_C = {"modeLiteral",modeLiteral,NULL};
 	VPL_ExtConstant _modeNormal_C = {"modeNormal",modeNormal,NULL};
 	VPL_ExtConstant _modePhonemes_C = {"modePhonemes",modePhonemes,NULL};
 	VPL_ExtConstant _modeText_C = {"modeText",modeText,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kSpeechSentenceBoundary_C = {"kSpeechSentenceBoundary",kSpeechSentenceBoundary,NULL};
 	VPL_ExtConstant _kSpeechWordBoundary_C = {"kSpeechWordBoundary",kSpeechWordBoundary,NULL};
 	VPL_ExtConstant _kSpeechImmediateBoundary_C = {"kSpeechImmediateBoundary",kSpeechImmediateBoundary,NULL};
+#endif
 	VPL_ExtConstant _soOutputToFileWithCFURL_C = {"soOutputToFileWithCFURL",soOutputToFileWithCFURL,NULL};
 	VPL_ExtConstant _soSoundOutput_C = {"soSoundOutput",soSoundOutput,NULL};
 	VPL_ExtConstant _soSynthExtension_C = {"soSynthExtension",soSynthExtension,NULL};
@@ -6104,9 +6314,11 @@
 	VPL_ExtConstant _kPMBlackAndWhite_C = {"kPMBlackAndWhite",kPMBlackAndWhite,NULL};
 	VPL_ExtConstant _kPMLocked_C = {"kPMLocked",kPMLocked,NULL};
 	VPL_ExtConstant _kSizeOfTPrint_C = {"kSizeOfTPrint",kSizeOfTPrint,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kPMDataFormatXMLCompressed_C = {"kPMDataFormatXMLCompressed",kPMDataFormatXMLCompressed,NULL};
 	VPL_ExtConstant _kPMDataFormatXMLMinimal_C = {"kPMDataFormatXMLMinimal",kPMDataFormatXMLMinimal,NULL};
 	VPL_ExtConstant _kPMDataFormatXMLDefault_C = {"kPMDataFormatXMLDefault",kPMDataFormatXMLDefault,NULL};
+#endif
 	VPL_ExtConstant _kPMUnlocked_C = {"kPMUnlocked",kPMUnlocked,NULL};
 	VPL_ExtConstant _kPMPrintAllPages_C = {"kPMPrintAllPages",kPMPrintAllPages,NULL};
 	VPL_ExtConstant _kPMInvalidPreset_C = {"kPMInvalidPreset",kPMInvalidPreset,NULL};
@@ -6198,7 +6410,9 @@
 	VPL_ExtConstant _kAXValueCGSizeType_C = {"kAXValueCGSizeType",kAXValueCGSizeType,NULL};
 	VPL_ExtConstant _kAXValueCGPointType_C = {"kAXValueCGPointType",kAXValueCGPointType,NULL};
 	VPL_ExtConstant _kAXCopyMultipleAttributeOptionStopOnError_C = {"kAXCopyMultipleAttributeOptionStopOnError",kAXCopyMultipleAttributeOptionStopOnError,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kAXErrorNotEnoughPrecision_C = {"kAXErrorNotEnoughPrecision",kAXErrorNotEnoughPrecision,NULL};
+#endif
 	VPL_ExtConstant _kAXErrorParameterizedAttributeUnsupported_C = {"kAXErrorParameterizedAttributeUnsupported",kAXErrorParameterizedAttributeUnsupported,NULL};
 	VPL_ExtConstant _kAXErrorNoValue_C = {"kAXErrorNoValue",kAXErrorNoValue,NULL};
 	VPL_ExtConstant _kAXErrorAPIDisabled_C = {"kAXErrorAPIDisabled",kAXErrorAPIDisabled,NULL};
@@ -6217,8 +6431,10 @@
 	VPL_ExtConstant _kTranslationFileTranslation_C = {"kTranslationFileTranslation",kTranslationFileTranslation,NULL};
 	VPL_ExtConstant _kTranslationDataTranslation_C = {"kTranslationDataTranslation",kTranslationDataTranslation,NULL};
 	VPL_ExtConstant _badTranslationRefErr_C = {"badTranslationRefErr",badTranslationRefErr,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kPasteboardStandardLocationUnknown_C = {"kPasteboardStandardLocationUnknown",kPasteboardStandardLocationUnknown,NULL};
 	VPL_ExtConstant _kPasteboardStandardLocationTrash_C = {"kPasteboardStandardLocationTrash",kPasteboardStandardLocationTrash,NULL};
+#endif
 	VPL_ExtConstant _kPasteboardFlavorPromised_C = {"kPasteboardFlavorPromised",kPasteboardFlavorPromised,NULL};
 	VPL_ExtConstant _kPasteboardFlavorSystemTranslated_C = {"kPasteboardFlavorSystemTranslated",kPasteboardFlavorSystemTranslated,NULL};
 	VPL_ExtConstant _kPasteboardFlavorRequestOnly_C = {"kPasteboardFlavorRequestOnly",kPasteboardFlavorRequestOnly,NULL};
@@ -6460,6 +6676,7 @@
 	VPL_ExtConstant _kAlignTop_C = {"kAlignTop",kAlignTop,NULL};
 	VPL_ExtConstant _kAlignVerticalCenter_C = {"kAlignVerticalCenter",kAlignVerticalCenter,NULL};
 	VPL_ExtConstant _kAlignNone_C = {"kAlignNone",kAlignNone,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHIShapeParseFromBottomRight_C = {"kHIShapeParseFromBottomRight",kHIShapeParseFromBottomRight,NULL};
 	VPL_ExtConstant _kHIShapeParseFromTopLeft_C = {"kHIShapeParseFromTopLeft",kHIShapeParseFromTopLeft,NULL};
 	VPL_ExtConstant _kHIShapeParseFromRight_C = {"kHIShapeParseFromRight",kHIShapeParseFromRight,NULL};
@@ -6469,6 +6686,7 @@
 	VPL_ExtConstant _kHIShapeEnumerateTerminate_C = {"kHIShapeEnumerateTerminate",kHIShapeEnumerateTerminate,NULL};
 	VPL_ExtConstant _kHIShapeEnumerateRect_C = {"kHIShapeEnumerateRect",kHIShapeEnumerateRect,NULL};
 	VPL_ExtConstant _kHIShapeEnumerateInit_C = {"kHIShapeEnumerateInit",kHIShapeEnumerateInit,NULL};
+#endif
 	VPL_ExtConstant _kATSUDirectDataLayoutRecordATSLayoutRecordCurrent_C = {"kATSUDirectDataLayoutRecordATSLayoutRecordCurrent",kATSUDirectDataLayoutRecordATSLayoutRecordCurrent,NULL};
 	VPL_ExtConstant _kATSUDirectDataLayoutRecordATSLayoutRecordVersion1_C = {"kATSUDirectDataLayoutRecordATSLayoutRecordVersion1",kATSUDirectDataLayoutRecordATSLayoutRecordVersion1,NULL};
 	VPL_ExtConstant _kATSUDirectDataStyleSettingATSUStyleSettingRefArray_C = {"kATSUDirectDataStyleSettingATSUStyleSettingRefArray",kATSUDirectDataStyleSettingATSUStyleSettingRefArray,NULL};
@@ -7465,8 +7683,10 @@
 	VPL_ExtConstant _kCMFloatBitmapFlagsAlphaPremul_C = {"kCMFloatBitmapFlagsAlphaPremul",kCMFloatBitmapFlagsAlphaPremul,NULL};
 	VPL_ExtConstant _kCMFloatBitmapFlagsAlpha_C = {"kCMFloatBitmapFlagsAlpha",kCMFloatBitmapFlagsAlpha,NULL};
 	VPL_ExtConstant _kCMFloatBitmapFlagsNone_C = {"kCMFloatBitmapFlagsNone",kCMFloatBitmapFlagsNone,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _cmTextureRGBtoRGBXFloat32_C = {"cmTextureRGBtoRGBXFloat32",cmTextureRGBtoRGBXFloat32,NULL};
 	VPL_ExtConstant _cmTextureRGBtoRGBX16_C = {"cmTextureRGBtoRGBX16",cmTextureRGBtoRGBX16,NULL};
+#endif
 	VPL_ExtConstant _cmTextureRGBtoRGBX8_C = {"cmTextureRGBtoRGBX8",cmTextureRGBtoRGBX8,NULL};
 	VPL_ExtConstant _cmProfileIterateDataVersion3_C = {"cmProfileIterateDataVersion3",cmProfileIterateDataVersion3,NULL};
 	VPL_ExtConstant _cmProfileIterateDataVersion2_C = {"cmProfileIterateDataVersion2",cmProfileIterateDataVersion2,NULL};
@@ -7884,6 +8104,7 @@
 	VPL_ExtConstant _cmVonKriesChromaticAdaptation_C = {"cmVonKriesChromaticAdaptation",cmVonKriesChromaticAdaptation,NULL};
 	VPL_ExtConstant _cmLinearChromaticAdaptation_C = {"cmLinearChromaticAdaptation",cmLinearChromaticAdaptation,NULL};
 	VPL_ExtConstant _cmUseDefaultChromaticAdaptation_C = {"cmUseDefaultChromaticAdaptation",cmUseDefaultChromaticAdaptation,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCGWindowImageOnlyShadows_C = {"kCGWindowImageOnlyShadows",kCGWindowImageOnlyShadows,NULL};
 	VPL_ExtConstant _kCGWindowImageShouldBeOpaque_C = {"kCGWindowImageShouldBeOpaque",kCGWindowImageShouldBeOpaque,NULL};
 	VPL_ExtConstant _kCGWindowImageBoundsIgnoreFraming_C = {"kCGWindowImageBoundsIgnoreFraming",kCGWindowImageBoundsIgnoreFraming,NULL};
@@ -7900,6 +8121,7 @@
 	VPL_ExtConstant _kCGWindowSharingReadWrite_C = {"kCGWindowSharingReadWrite",kCGWindowSharingReadWrite,NULL};
 	VPL_ExtConstant _kCGWindowSharingReadOnly_C = {"kCGWindowSharingReadOnly",kCGWindowSharingReadOnly,NULL};
 	VPL_ExtConstant _kCGWindowSharingNone_C = {"kCGWindowSharingNone",kCGWindowSharingNone,NULL};
+#endif
 	VPL_ExtConstant _kCGNumberOfWindowLevelKeys_C = {"kCGNumberOfWindowLevelKeys",kCGNumberOfWindowLevelKeys,NULL};
 	VPL_ExtConstant _kCGAssistiveTechHighWindowLevelKey_C = {"kCGAssistiveTechHighWindowLevelKey",kCGAssistiveTechHighWindowLevelKey,NULL};
 	VPL_ExtConstant _kCGCursorWindowLevelKey_C = {"kCGCursorWindowLevelKey",kCGCursorWindowLevelKey,NULL};
@@ -7926,7 +8148,9 @@
 	VPL_ExtConstant _kCGEventSourceStateCombinedSessionState_C = {"kCGEventSourceStateCombinedSessionState",kCGEventSourceStateCombinedSessionState,NULL};
 	VPL_ExtConstant _kCGEventSourceStatePrivate_C = {"kCGEventSourceStatePrivate",kCGEventSourceStatePrivate,NULL};
 	VPL_ExtConstant _kCGEventTapOptionListenOnly_C = {"kCGEventTapOptionListenOnly",kCGEventTapOptionListenOnly,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCGEventTapOptionDefault_C = {"kCGEventTapOptionDefault",kCGEventTapOptionDefault,NULL};
+#endif
 	VPL_ExtConstant _kCGTailAppendEventTap_C = {"kCGTailAppendEventTap",kCGTailAppendEventTap,NULL};
 	VPL_ExtConstant _kCGHeadInsertEventTap_C = {"kCGHeadInsertEventTap",kCGHeadInsertEventTap,NULL};
 	VPL_ExtConstant _kCGAnnotatedSessionEventTap_C = {"kCGAnnotatedSessionEventTap",kCGAnnotatedSessionEventTap,NULL};
@@ -7935,7 +8159,9 @@
 	VPL_ExtConstant _kCGEventMouseSubtypeTabletProximity_C = {"kCGEventMouseSubtypeTabletProximity",kCGEventMouseSubtypeTabletProximity,NULL};
 	VPL_ExtConstant _kCGEventMouseSubtypeTabletPoint_C = {"kCGEventMouseSubtypeTabletPoint",kCGEventMouseSubtypeTabletPoint,NULL};
 	VPL_ExtConstant _kCGEventMouseSubtypeDefault_C = {"kCGEventMouseSubtypeDefault",kCGEventMouseSubtypeDefault,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCGScrollWheelEventIsContinuous_C = {"kCGScrollWheelEventIsContinuous",kCGScrollWheelEventIsContinuous,NULL};
+#endif
 	VPL_ExtConstant _kCGEventSourceStateID_C = {"kCGEventSourceStateID",kCGEventSourceStateID,NULL};
 	VPL_ExtConstant _kCGEventSourceGroupID_C = {"kCGEventSourceGroupID",kCGEventSourceGroupID,NULL};
 	VPL_ExtConstant _kCGEventSourceUserID_C = {"kCGEventSourceUserID",kCGEventSourceUserID,NULL};
@@ -7968,12 +8194,14 @@
 	VPL_ExtConstant _kCGTabletEventPointY_C = {"kCGTabletEventPointY",kCGTabletEventPointY,NULL};
 	VPL_ExtConstant _kCGTabletEventPointX_C = {"kCGTabletEventPointX",kCGTabletEventPointX,NULL};
 	VPL_ExtConstant _kCGScrollWheelEventInstantMouser_C = {"kCGScrollWheelEventInstantMouser",kCGScrollWheelEventInstantMouser,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCGScrollWheelEventPointDeltaAxis3_C = {"kCGScrollWheelEventPointDeltaAxis3",kCGScrollWheelEventPointDeltaAxis3,NULL};
 	VPL_ExtConstant _kCGScrollWheelEventPointDeltaAxis2_C = {"kCGScrollWheelEventPointDeltaAxis2",kCGScrollWheelEventPointDeltaAxis2,NULL};
 	VPL_ExtConstant _kCGScrollWheelEventPointDeltaAxis1_C = {"kCGScrollWheelEventPointDeltaAxis1",kCGScrollWheelEventPointDeltaAxis1,NULL};
 	VPL_ExtConstant _kCGScrollWheelEventFixedPtDeltaAxis3_C = {"kCGScrollWheelEventFixedPtDeltaAxis3",kCGScrollWheelEventFixedPtDeltaAxis3,NULL};
 	VPL_ExtConstant _kCGScrollWheelEventFixedPtDeltaAxis2_C = {"kCGScrollWheelEventFixedPtDeltaAxis2",kCGScrollWheelEventFixedPtDeltaAxis2,NULL};
 	VPL_ExtConstant _kCGScrollWheelEventFixedPtDeltaAxis1_C = {"kCGScrollWheelEventFixedPtDeltaAxis1",kCGScrollWheelEventFixedPtDeltaAxis1,NULL};
+#endif
 	VPL_ExtConstant _kCGScrollWheelEventDeltaAxis3_C = {"kCGScrollWheelEventDeltaAxis3",kCGScrollWheelEventDeltaAxis3,NULL};
 	VPL_ExtConstant _kCGScrollWheelEventDeltaAxis2_C = {"kCGScrollWheelEventDeltaAxis2",kCGScrollWheelEventDeltaAxis2,NULL};
 	VPL_ExtConstant _kCGScrollWheelEventDeltaAxis1_C = {"kCGScrollWheelEventDeltaAxis1",kCGScrollWheelEventDeltaAxis1,NULL};
@@ -8016,8 +8244,10 @@
 	VPL_ExtConstant _kCGEventFlagMaskControl_C = {"kCGEventFlagMaskControl",kCGEventFlagMaskControl,NULL};
 	VPL_ExtConstant _kCGEventFlagMaskShift_C = {"kCGEventFlagMaskShift",kCGEventFlagMaskShift,NULL};
 	VPL_ExtConstant _kCGEventFlagMaskAlphaShift_C = {"kCGEventFlagMaskAlphaShift",kCGEventFlagMaskAlphaShift,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCGScrollEventUnitLine_C = {"kCGScrollEventUnitLine",kCGScrollEventUnitLine,NULL};
 	VPL_ExtConstant _kCGScrollEventUnitPixel_C = {"kCGScrollEventUnitPixel",kCGScrollEventUnitPixel,NULL};
+#endif
 	VPL_ExtConstant _kCGMouseButtonCenter_C = {"kCGMouseButtonCenter",kCGMouseButtonCenter,NULL};
 	VPL_ExtConstant _kCGMouseButtonRight_C = {"kCGMouseButtonRight",kCGMouseButtonRight,NULL};
 	VPL_ExtConstant _kCGMouseButtonLeft_C = {"kCGMouseButtonLeft",kCGMouseButtonLeft,NULL};
@@ -8047,8 +8277,10 @@
 	VPL_ExtConstant _kDisplaySubPixelLayoutUndefined_C = {"kDisplaySubPixelLayoutUndefined",kDisplaySubPixelLayoutUndefined,NULL};
 	VPL_ExtConstant _kDisplayProductIDGeneric_C = {"kDisplayProductIDGeneric",kDisplayProductIDGeneric,NULL};
 	VPL_ExtConstant _kDisplayVendorIDUnknown_C = {"kDisplayVendorIDUnknown",kDisplayVendorIDUnknown,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kIOHibernatePreviewUpdates_C = {"kIOHibernatePreviewUpdates",kIOHibernatePreviewUpdates,NULL};
 	VPL_ExtConstant _kIOHibernatePreviewActive_C = {"kIOHibernatePreviewActive",kIOHibernatePreviewActive,NULL};
+#endif
 	VPL_ExtConstant _kIOTimingIDVESA_1360x768_60hz_C = {"kIOTimingIDVESA_1360x768_60hz",kIOTimingIDVESA_1360x768_60hz,NULL};
 	VPL_ExtConstant _kIOTimingIDVESA_848x480_60hz_C = {"kIOTimingIDVESA_848x480_60hz",kIOTimingIDVESA_848x480_60hz,NULL};
 	VPL_ExtConstant _kIOTimingIDApple_0x0_0hz_Offline_C = {"kIOTimingIDApple_0x0_0hz_Offline",kIOTimingIDApple_0x0_0hz_Offline,NULL};
@@ -8217,9 +8449,13 @@
 	VPL_ExtConstant _kDisplayModeDefaultFlag_C = {"kDisplayModeDefaultFlag",kDisplayModeDefaultFlag,NULL};
 	VPL_ExtConstant _kDisplayModeSafeFlag_C = {"kDisplayModeSafeFlag",kDisplayModeSafeFlag,NULL};
 	VPL_ExtConstant _kDisplayModeValidFlag_C = {"kDisplayModeValidFlag",kDisplayModeValidFlag,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kDisplayModeValidForMirroringFlag_C = {"kDisplayModeValidForMirroringFlag",kDisplayModeValidForMirroringFlag,NULL};
+#endif
 	VPL_ExtConstant _kDisplayModeTelevisionFlag_C = {"kDisplayModeTelevisionFlag",kDisplayModeTelevisionFlag,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kDisplayModeValidateAgainstDisplay_C = {"kDisplayModeValidateAgainstDisplay",kDisplayModeValidateAgainstDisplay,NULL};
+#endif
 	VPL_ExtConstant _kDisplayModeNotGraphicsQualityFlag_C = {"kDisplayModeNotGraphicsQualityFlag",kDisplayModeNotGraphicsQualityFlag,NULL};
 	VPL_ExtConstant _kDisplayModeStretchedFlag_C = {"kDisplayModeStretchedFlag",kDisplayModeStretchedFlag,NULL};
 	VPL_ExtConstant _kDisplayModeNotPresetFlag_C = {"kDisplayModeNotPresetFlag",kDisplayModeNotPresetFlag,NULL};
@@ -8231,8 +8467,10 @@
 	VPL_ExtConstant _kDisplayModeNeverShowFlag_C = {"kDisplayModeNeverShowFlag",kDisplayModeNeverShowFlag,NULL};
 	VPL_ExtConstant _kDisplayModeAlwaysShowFlag_C = {"kDisplayModeAlwaysShowFlag",kDisplayModeAlwaysShowFlag,NULL};
 	VPL_ExtConstant _kDisplayModeSafetyFlags_C = {"kDisplayModeSafetyFlags",kDisplayModeSafetyFlags,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kIORGBSignedFloatingPointPixels_C = {"kIORGBSignedFloatingPointPixels",kIORGBSignedFloatingPointPixels,NULL};
 	VPL_ExtConstant _kIORGBSignedDirectPixels_C = {"kIORGBSignedDirectPixels",kIORGBSignedDirectPixels,NULL};
+#endif
 	VPL_ExtConstant _kIOMonoInverseDirectPixels_C = {"kIOMonoInverseDirectPixels",kIOMonoInverseDirectPixels,NULL};
 	VPL_ExtConstant _kIOMonoDirectPixels_C = {"kIOMonoDirectPixels",kIOMonoDirectPixels,NULL};
 	VPL_ExtConstant _kIORGBDirectPixels_C = {"kIORGBDirectPixels",kIORGBDirectPixels,NULL};
@@ -8250,7 +8488,9 @@
 	VPL_ExtConstant _kCGScreenUpdateOperationReducedDirtyRectangleCount_C = {"kCGScreenUpdateOperationReducedDirtyRectangleCount",kCGScreenUpdateOperationReducedDirtyRectangleCount,NULL};
 	VPL_ExtConstant _kCGScreenUpdateOperationMove_C = {"kCGScreenUpdateOperationMove",kCGScreenUpdateOperationMove,NULL};
 	VPL_ExtConstant _kCGScreenUpdateOperationRefresh_C = {"kCGScreenUpdateOperationRefresh",kCGScreenUpdateOperationRefresh,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCGDisplayDesktopShapeChangedFlag_C = {"kCGDisplayDesktopShapeChangedFlag",kCGDisplayDesktopShapeChangedFlag,NULL};
+#endif
 	VPL_ExtConstant _kCGDisplayUnMirrorFlag_C = {"kCGDisplayUnMirrorFlag",kCGDisplayUnMirrorFlag,NULL};
 	VPL_ExtConstant _kCGDisplayMirrorFlag_C = {"kCGDisplayMirrorFlag",kCGDisplayMirrorFlag,NULL};
 	VPL_ExtConstant _kCGDisplayDisabledFlag_C = {"kCGDisplayDisabledFlag",kCGDisplayDisabledFlag,NULL};
@@ -8267,7 +8507,9 @@
 	VPL_ExtConstant _kCGCaptureNoFill_C = {"kCGCaptureNoFill",kCGCaptureNoFill,NULL};
 	VPL_ExtConstant _kCGCaptureNoOptions_C = {"kCGCaptureNoOptions",kCGCaptureNoOptions,NULL};
 	VPL_ExtConstant _kCGErrorLast_C = {"kCGErrorLast",kCGErrorLast,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCGErrorRetryRegistration_C = {"kCGErrorRetryRegistration",kCGErrorRetryRegistration,NULL};
+#endif
 	VPL_ExtConstant _kCGErrorForkFailed_C = {"kCGErrorForkFailed",kCGErrorForkFailed,NULL};
 	VPL_ExtConstant _kCGErrorClassicApplicationsMustBeLaunchedByClassic_C = {"kCGErrorClassicApplicationsMustBeLaunchedByClassic",kCGErrorClassicApplicationsMustBeLaunchedByClassic,NULL};
 	VPL_ExtConstant _kCGErrorApplicationCanOnlyBeRunInOneSessionAtATime_C = {"kCGErrorApplicationCanOnlyBeRunInOneSessionAtATime",kCGErrorApplicationCanOnlyBeRunInOneSessionAtATime,NULL};
@@ -8290,6 +8532,7 @@
 	VPL_ExtConstant _kCGErrorFailure_C = {"kCGErrorFailure",kCGErrorFailure,NULL};
 	VPL_ExtConstant _kCGErrorFirst_C = {"kCGErrorFirst",kCGErrorFirst,NULL};
 	VPL_ExtConstant _kCGErrorSuccess_C = {"kCGErrorSuccess",kCGErrorSuccess,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCGBlendModePlusLighter_C = {"kCGBlendModePlusLighter",kCGBlendModePlusLighter,NULL};
 	VPL_ExtConstant _kCGBlendModePlusDarker_C = {"kCGBlendModePlusDarker",kCGBlendModePlusDarker,NULL};
 	VPL_ExtConstant _kCGBlendModeXOR_C = {"kCGBlendModeXOR",kCGBlendModeXOR,NULL};
@@ -8302,6 +8545,7 @@
 	VPL_ExtConstant _kCGBlendModeSourceIn_C = {"kCGBlendModeSourceIn",kCGBlendModeSourceIn,NULL};
 	VPL_ExtConstant _kCGBlendModeCopy_C = {"kCGBlendModeCopy",kCGBlendModeCopy,NULL};
 	VPL_ExtConstant _kCGBlendModeClear_C = {"kCGBlendModeClear",kCGBlendModeClear,NULL};
+#endif
 	VPL_ExtConstant _kCGBlendModeLuminosity_C = {"kCGBlendModeLuminosity",kCGBlendModeLuminosity,NULL};
 	VPL_ExtConstant _kCGBlendModeColor_C = {"kCGBlendModeColor",kCGBlendModeColor,NULL};
 	VPL_ExtConstant _kCGBlendModeSaturation_C = {"kCGBlendModeSaturation",kCGBlendModeSaturation,NULL};
@@ -8381,8 +8625,10 @@
 	VPL_ExtConstant _kCGImageAlphaPremultipliedFirst_C = {"kCGImageAlphaPremultipliedFirst",kCGImageAlphaPremultipliedFirst,NULL};
 	VPL_ExtConstant _kCGImageAlphaPremultipliedLast_C = {"kCGImageAlphaPremultipliedLast",kCGImageAlphaPremultipliedLast,NULL};
 	VPL_ExtConstant _kCGImageAlphaNone_C = {"kCGImageAlphaNone",kCGImageAlphaNone,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCGGradientDrawsAfterEndLocation_C = {"kCGGradientDrawsAfterEndLocation",kCGGradientDrawsAfterEndLocation,NULL};
 	VPL_ExtConstant _kCGGradientDrawsBeforeStartLocation_C = {"kCGGradientDrawsBeforeStartLocation",kCGGradientDrawsBeforeStartLocation,NULL};
+#endif
 	VPL_ExtConstant _CGGlyphMax_C = {"CGGlyphMax",CGGlyphMax,NULL};
 	VPL_ExtConstant _CGGlyphMin_C = {"CGGlyphMin",CGGlyphMin,NULL};
 	VPL_ExtConstant _kCGGlyphMax_C = {"kCGGlyphMax",kCGGlyphMax,NULL};
@@ -8394,6 +8640,7 @@
 	VPL_ExtConstant _kCGPatternTilingConstantSpacing_C = {"kCGPatternTilingConstantSpacing",kCGPatternTilingConstantSpacing,NULL};
 	VPL_ExtConstant _kCGPatternTilingConstantSpacingMinimalDistortion_C = {"kCGPatternTilingConstantSpacingMinimalDistortion",kCGPatternTilingConstantSpacingMinimalDistortion,NULL};
 	VPL_ExtConstant _kCGPatternTilingNoDistortion_C = {"kCGPatternTilingNoDistortion",kCGPatternTilingNoDistortion,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCGColorSpaceModelPattern_C = {"kCGColorSpaceModelPattern",kCGColorSpaceModelPattern,NULL};
 	VPL_ExtConstant _kCGColorSpaceModelIndexed_C = {"kCGColorSpaceModelIndexed",kCGColorSpaceModelIndexed,NULL};
 	VPL_ExtConstant _kCGColorSpaceModelDeviceN_C = {"kCGColorSpaceModelDeviceN",kCGColorSpaceModelDeviceN,NULL};
@@ -8402,6 +8649,7 @@
 	VPL_ExtConstant _kCGColorSpaceModelRGB_C = {"kCGColorSpaceModelRGB",kCGColorSpaceModelRGB,NULL};
 	VPL_ExtConstant _kCGColorSpaceModelMonochrome_C = {"kCGColorSpaceModelMonochrome",kCGColorSpaceModelMonochrome,NULL};
 	VPL_ExtConstant _kCGColorSpaceModelUnknown_C = {"kCGColorSpaceModelUnknown",kCGColorSpaceModelUnknown,NULL};
+#endif
 	VPL_ExtConstant _kCGRenderingIntentSaturation_C = {"kCGRenderingIntentSaturation",kCGRenderingIntentSaturation,NULL};
 	VPL_ExtConstant _kCGRenderingIntentPerceptual_C = {"kCGRenderingIntentPerceptual",kCGRenderingIntentPerceptual,NULL};
 	VPL_ExtConstant _kCGRenderingIntentRelativeColorimetric_C = {"kCGRenderingIntentRelativeColorimetric",kCGRenderingIntentRelativeColorimetric,NULL};
@@ -8432,16 +8680,20 @@
 	VPL_ExtConstant _type1StreamType_C = {"type1StreamType",type1StreamType,NULL};
 	VPL_ExtConstant _truetypeStreamType_C = {"truetypeStreamType",truetypeStreamType,NULL};
 	VPL_ExtConstant _cexec68K_C = {"cexec68K",cexec68K,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kATSFontAutoActivationAsk_C = {"kATSFontAutoActivationAsk",kATSFontAutoActivationAsk,NULL};
 	VPL_ExtConstant _kATSFontAutoActivationEnabled_C = {"kATSFontAutoActivationEnabled",kATSFontAutoActivationEnabled,NULL};
 	VPL_ExtConstant _kATSFontAutoActivationDisabled_C = {"kATSFontAutoActivationDisabled",kATSFontAutoActivationDisabled,NULL};
 	VPL_ExtConstant _kATSFontAutoActivationDefault_C = {"kATSFontAutoActivationDefault",kATSFontAutoActivationDefault,NULL};
+#endif
 	VPL_ExtConstant _kATSQueryActivateFontMessage_C = {"kATSQueryActivateFontMessage",kATSQueryActivateFontMessage,NULL};
 	VPL_ExtConstant _kATSFontNotifyActionDirectoriesChanged_C = {"kATSFontNotifyActionDirectoriesChanged",kATSFontNotifyActionDirectoriesChanged,NULL};
 	VPL_ExtConstant _kATSFontNotifyActionFontsChanged_C = {"kATSFontNotifyActionFontsChanged",kATSFontNotifyActionFontsChanged,NULL};
 	VPL_ExtConstant _kATSFontNotifyOptionReceiveWhileSuspended_C = {"kATSFontNotifyOptionReceiveWhileSuspended",kATSFontNotifyOptionReceiveWhileSuspended,NULL};
 	VPL_ExtConstant _kATSFontNotifyOptionDefault_C = {"kATSFontNotifyOptionDefault",kATSFontNotifyOptionDefault,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kATSFileReferenceFilterSelector_C = {"kATSFileReferenceFilterSelector",kATSFileReferenceFilterSelector,NULL};
+#endif
 	VPL_ExtConstant _kATSFontFilterSelectorFontApplierFunction_C = {"kATSFontFilterSelectorFontApplierFunction",kATSFontFilterSelectorFontApplierFunction,NULL};
 	VPL_ExtConstant _kATSFontFilterSelectorFontFamilyApplierFunction_C = {"kATSFontFilterSelectorFontFamilyApplierFunction",kATSFontFilterSelectorFontFamilyApplierFunction,NULL};
 	VPL_ExtConstant _kATSFontFilterSelectorFontFamily_C = {"kATSFontFilterSelectorFontFamily",kATSFontFilterSelectorFontFamily,NULL};
@@ -8452,12 +8704,18 @@
 	VPL_ExtConstant _kATSOptionFlagsUnRestrictedScope_C = {"kATSOptionFlagsUnRestrictedScope",kATSOptionFlagsUnRestrictedScope,NULL};
 	VPL_ExtConstant _kATSOptionFlagsDefaultScope_C = {"kATSOptionFlagsDefaultScope",kATSOptionFlagsDefaultScope,NULL};
 	VPL_ExtConstant _kATSOptionFlagsIterationScopeMask_C = {"kATSOptionFlagsIterationScopeMask",kATSOptionFlagsIterationScopeMask,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kATSOptionFlagsIncludeDisabledMask_C = {"kATSOptionFlagsIncludeDisabledMask",kATSOptionFlagsIncludeDisabledMask,NULL};
+#endif
 	VPL_ExtConstant _kATSOptionFlagsIterateByPrecedenceMask_C = {"kATSOptionFlagsIterateByPrecedenceMask",kATSOptionFlagsIterateByPrecedenceMask,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kATSOptionFlagsRecordPersistently_C = {"kATSOptionFlagsRecordPersistently",kATSOptionFlagsRecordPersistently,NULL};
+#endif
 	VPL_ExtConstant _kATSOptionFlagsDoNotNotify_C = {"kATSOptionFlagsDoNotNotify",kATSOptionFlagsDoNotNotify,NULL};
 	VPL_ExtConstant _kATSOptionFlagsProcessSubdirectories_C = {"kATSOptionFlagsProcessSubdirectories",kATSOptionFlagsProcessSubdirectories,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kATSOptionFlagsActivateDisabled_C = {"kATSOptionFlagsActivateDisabled",kATSOptionFlagsActivateDisabled,NULL};
+#endif
 	VPL_ExtConstant _kATSFontContextLocal_C = {"kATSFontContextLocal",kATSFontContextLocal,NULL};
 	VPL_ExtConstant _kATSFontContextGlobal_C = {"kATSFontContextGlobal",kATSFontContextGlobal,NULL};
 	VPL_ExtConstant _kATSFontContextUnspecified_C = {"kATSFontContextUnspecified",kATSFontContextUnspecified,NULL};
@@ -8490,11 +8748,13 @@
 	VPL_ExtConstant _sizeof_sfntNameRecord_C = {"sizeof_sfntNameRecord",sizeof_sfntNameRecord,NULL};
 	VPL_ExtConstant _kFontNoNameCode_C = {"kFontNoNameCode",kFontNoNameCode,NULL};
 	VPL_ExtConstant _kFontLastReservedName_C = {"kFontLastReservedName",kFontLastReservedName,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kFontPostScriptCIDName_C = {"kFontPostScriptCIDName",kFontPostScriptCIDName,NULL};
 	VPL_ExtConstant _kFontSampleTextName_C = {"kFontSampleTextName",kFontSampleTextName,NULL};
 	VPL_ExtConstant _kFontMacCompatibleFullName_C = {"kFontMacCompatibleFullName",kFontMacCompatibleFullName,NULL};
 	VPL_ExtConstant _kFontPreferredSubfamilyName_C = {"kFontPreferredSubfamilyName",kFontPreferredSubfamilyName,NULL};
 	VPL_ExtConstant _kFontPreferredFamilyName_C = {"kFontPreferredFamilyName",kFontPreferredFamilyName,NULL};
+#endif
 	VPL_ExtConstant _kFontLicenseInfoURLName_C = {"kFontLicenseInfoURLName",kFontLicenseInfoURLName,NULL};
 	VPL_ExtConstant _kFontLicenseDescriptionName_C = {"kFontLicenseDescriptionName",kFontLicenseDescriptionName,NULL};
 	VPL_ExtConstant _kFontDesignerURLName_C = {"kFontDesignerURLName",kFontDesignerURLName,NULL};
@@ -8755,7 +9015,9 @@
 	VPL_ExtConstant _kATSFontFormatUnspecified_C = {"kATSFontFormatUnspecified",kATSFontFormatUnspecified,NULL};
 	VPL_ExtConstant _kFMPostScriptFontTechnology_C = {"kFMPostScriptFontTechnology",kFMPostScriptFontTechnology,NULL};
 	VPL_ExtConstant _kFMTrueTypeFontTechnology_C = {"kFMTrueTypeFontTechnology",kFMTrueTypeFontTechnology,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kFMFontFileRefFilterSelector_C = {"kFMFontFileRefFilterSelector",kFMFontFileRefFilterSelector,NULL};
+#endif
 	VPL_ExtConstant _kFMFontDirectoryFilterSelector_C = {"kFMFontDirectoryFilterSelector",kFMFontDirectoryFilterSelector,NULL};
 	VPL_ExtConstant _kFMFontCallbackFilterSelector_C = {"kFMFontCallbackFilterSelector",kFMFontCallbackFilterSelector,NULL};
 	VPL_ExtConstant _kFMFontFamilyCallbackFilterSelector_C = {"kFMFontFamilyCallbackFilterSelector",kFMFontFamilyCallbackFilterSelector,NULL};
@@ -9159,6 +9421,7 @@
 	VPL_ExtConstant _kSKIndexVector_C = {"kSKIndexVector",kSKIndexVector,NULL};
 	VPL_ExtConstant _kSKIndexInverted_C = {"kSKIndexInverted",kSKIndexInverted,NULL};
 	VPL_ExtConstant _kSKIndexUnknown_C = {"kSKIndexUnknown",kSKIndexUnknown,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kLSSharedFileListDoNotMountVolumes_C = {"kLSSharedFileListDoNotMountVolumes",kLSSharedFileListDoNotMountVolumes,NULL};
 	VPL_ExtConstant _kLSSharedFileListNoUserInteraction_C = {"kLSSharedFileListNoUserInteraction",kLSSharedFileListNoUserInteraction,NULL};
 	VPL_ExtConstant _kTryAuthenticate_C = {"kTryAuthenticate",kTryAuthenticate,NULL};
@@ -11087,6 +11350,7 @@
 	VPL_ExtConstant _CSSM_ERRORCODE_CUSTOM_OFFSET_C = {"CSSM_ERRORCODE_CUSTOM_OFFSET",CSSM_ERRORCODE_CUSTOM_OFFSET,NULL};
 	VPL_ExtConstant _CSSM_ERRORCODE_MODULE_EXTENT_C = {"CSSM_ERRORCODE_MODULE_EXTENT",CSSM_ERRORCODE_MODULE_EXTENT,NULL};
 	VPL_ExtConstant _CSSM_BASE_ERROR_C = {"CSSM_BASE_ERROR",CSSM_BASE_ERROR,NULL};
+#endif
 	VPL_ExtConstant _kLSLaunchHasUntrustedContents_C = {"kLSLaunchHasUntrustedContents",kLSLaunchHasUntrustedContents,NULL};
 	VPL_ExtConstant _kLSLaunchAndHideOthers_C = {"kLSLaunchAndHideOthers",kLSLaunchAndHideOthers,NULL};
 	VPL_ExtConstant _kLSLaunchAndHide_C = {"kLSLaunchAndHide",kLSLaunchAndHide,NULL};
@@ -11161,8 +11425,10 @@
 	VPL_ExtConstant _kLSNotInitializedErr_C = {"kLSNotInitializedErr",kLSNotInitializedErr,NULL};
 	VPL_ExtConstant _kLSNotAnApplicationErr_C = {"kLSNotAnApplicationErr",kLSNotAnApplicationErr,NULL};
 	VPL_ExtConstant _kLSUnknownErr_C = {"kLSUnknownErr",kLSUnknownErr,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kLSAttributeNotSettableErr_C = {"kLSAttributeNotSettableErr",kLSAttributeNotSettableErr,NULL};
 	VPL_ExtConstant _kLSAttributeNotFoundErr_C = {"kLSAttributeNotFoundErr",kLSAttributeNotFoundErr,NULL};
+#endif
 	VPL_ExtConstant _kLSExecutableIncorrectFormat_C = {"kLSExecutableIncorrectFormat",kLSExecutableIncorrectFormat,NULL};
 	VPL_ExtConstant _kLSAppInTrashErr_C = {"kLSAppInTrashErr",kLSAppInTrashErr,NULL};
 	VPL_ExtConstant _kIconServicesCatalogInfoMask_C = {"kIconServicesCatalogInfoMask",kIconServicesCatalogInfoMask,NULL};
@@ -11448,6 +11714,7 @@
 	VPL_ExtConstant _kCFHostReachability_C = {"kCFHostReachability",kCFHostReachability,NULL};
 	VPL_ExtConstant _kCFHostNames_C = {"kCFHostNames",kCFHostNames,NULL};
 	VPL_ExtConstant _kCFHostAddresses_C = {"kCFHostAddresses",kCFHostAddresses,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCFErrorHTTPBadProxyCredentials_C = {"kCFErrorHTTPBadProxyCredentials",kCFErrorHTTPBadProxyCredentials,NULL};
 	VPL_ExtConstant _kCFErrorHTTPProxyConnectionFailure_C = {"kCFErrorHTTPProxyConnectionFailure",kCFErrorHTTPProxyConnectionFailure,NULL};
 	VPL_ExtConstant _kCFErrorHTTPBadURL_C = {"kCFErrorHTTPBadURL",kCFErrorHTTPBadURL,NULL};
@@ -11479,6 +11746,7 @@
 	VPL_ExtConstant _kCFSOCKSErrorUnknownClientVersion_C = {"kCFSOCKSErrorUnknownClientVersion",kCFSOCKSErrorUnknownClientVersion,NULL};
 	VPL_ExtConstant _kCFHostErrorUnknown_C = {"kCFHostErrorUnknown",kCFHostErrorUnknown,NULL};
 	VPL_ExtConstant _kCFHostErrorHostNotFound_C = {"kCFHostErrorHostNotFound",kCFHostErrorHostNotFound,NULL};
+#endif
 	VPL_ExtConstant _kAnyAuthType_C = {"kAnyAuthType",kAnyAuthType,NULL};
 	VPL_ExtConstant _kAnyProtocol_C = {"kAnyProtocol",kAnyProtocol,NULL};
 	VPL_ExtConstant _kAnyPort_C = {"kAnyPort",kAnyPort,NULL};
@@ -12897,6 +13165,7 @@
 	VPL_ExtConstant _kHuge1BitMask_C = {"kHuge1BitMask",kHuge1BitMask,NULL};
 	VPL_ExtConstant _kThumbnail8BitMask_C = {"kThumbnail8BitMask",kThumbnail8BitMask,NULL};
 	VPL_ExtConstant _kThumbnail32BitData_C = {"kThumbnail32BitData",kThumbnail32BitData,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kIconServices512PixelDataARGB_C = {"kIconServices512PixelDataARGB",kIconServices512PixelDataARGB,NULL};
 	VPL_ExtConstant _kIconServices256PixelDataARGB_C = {"kIconServices256PixelDataARGB",kIconServices256PixelDataARGB,NULL};
 	VPL_ExtConstant _kIconServices128PixelDataARGB_C = {"kIconServices128PixelDataARGB",kIconServices128PixelDataARGB,NULL};
@@ -12993,6 +13262,7 @@
 	VPL_ExtConstant _errSecAuthFailed_C = {"errSecAuthFailed",errSecAuthFailed,NULL};
 	VPL_ExtConstant _errSecReadOnly_C = {"errSecReadOnly",errSecReadOnly,NULL};
 	VPL_ExtConstant _errSecNotAvailable_C = {"errSecNotAvailable",errSecNotAvailable,NULL};
+#endif
 	VPL_ExtConstant _kDriveSetupHFSSignature_C = {"kDriveSetupHFSSignature",kDriveSetupHFSSignature,NULL};
 	VPL_ExtConstant _kATAPIDriverSignature_C = {"kATAPIDriverSignature",kATAPIDriverSignature,NULL};
 	VPL_ExtConstant _kSCSICDDriverSignature_C = {"kSCSICDDriverSignature",kSCSICDDriverSignature,NULL};
@@ -13075,8 +13345,10 @@
 	VPL_ExtConstant _kAEScriptingSizeResource_C = {"kAEScriptingSizeResource",kAEScriptingSizeResource,NULL};
 	VPL_ExtConstant _kAETerminologyExtension_C = {"kAETerminologyExtension",kAETerminologyExtension,NULL};
 	VPL_ExtConstant _kAEUserTerminology_C = {"kAEUserTerminology",kAEUserTerminology,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _keyAELaunchedAsServiceItem_C = {"keyAELaunchedAsServiceItem",keyAELaunchedAsServiceItem,NULL};
 	VPL_ExtConstant _keyAELaunchedAsLogInItem_C = {"keyAELaunchedAsLogInItem",keyAELaunchedAsLogInItem,NULL};
+#endif
 	VPL_ExtConstant _eF15Key_C = {"eF15Key",eF15Key,NULL};
 	VPL_ExtConstant _eF14Key_C = {"eF14Key",eF14Key,NULL};
 	VPL_ExtConstant _eF13Key_C = {"eF13Key",eF13Key,NULL};
@@ -13426,7 +13698,9 @@
 	VPL_ExtConstant _typeLongFixedPoint_C = {"typeLongFixedPoint",typeLongFixedPoint,NULL};
 	VPL_ExtConstant _typeLongFixed_C = {"typeLongFixed",typeLongFixed,NULL};
 	VPL_ExtConstant _typeISO8601DateTime_C = {"typeISO8601DateTime",typeISO8601DateTime,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _typeCFAbsoluteTime_C = {"typeCFAbsoluteTime",typeCFAbsoluteTime,NULL};
+#endif
 	VPL_ExtConstant _typeLongDateTime_C = {"typeLongDateTime",typeLongDateTime,NULL};
 	VPL_ExtConstant _typeIntlWritingCode_C = {"typeIntlWritingCode",typeIntlWritingCode,NULL};
 	VPL_ExtConstant _typeIntlText_C = {"typeIntlText",typeIntlText,NULL};
@@ -14029,16 +14303,20 @@
 	VPL_ExtConstant _typeMachPort_C = {"typeMachPort",typeMachPort,NULL};
 	VPL_ExtConstant _typeKernelProcessID_C = {"typeKernelProcessID",typeKernelProcessID,NULL};
 	VPL_ExtConstant _typeCFTypeRef_C = {"typeCFTypeRef",typeCFTypeRef,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _typeCFBooleanRef_C = {"typeCFBooleanRef",typeCFBooleanRef,NULL};
 	VPL_ExtConstant _typeCFNumberRef_C = {"typeCFNumberRef",typeCFNumberRef,NULL};
+#endif
 	VPL_ExtConstant _typeCFMutableDictionaryRef_C = {"typeCFMutableDictionaryRef",typeCFMutableDictionaryRef,NULL};
 	VPL_ExtConstant _typeCFDictionaryRef_C = {"typeCFDictionaryRef",typeCFDictionaryRef,NULL};
 	VPL_ExtConstant _typeCFMutableArrayRef_C = {"typeCFMutableArrayRef",typeCFMutableArrayRef,NULL};
 	VPL_ExtConstant _typeCFArrayRef_C = {"typeCFArrayRef",typeCFArrayRef,NULL};
 	VPL_ExtConstant _typeCFMutableStringRef_C = {"typeCFMutableStringRef",typeCFMutableStringRef,NULL};
 	VPL_ExtConstant _typeCFStringRef_C = {"typeCFStringRef",typeCFStringRef,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _typeCFMutableAttributedStringRef_C = {"typeCFMutableAttributedStringRef",typeCFMutableAttributedStringRef,NULL};
 	VPL_ExtConstant _typeCFAttributedStringRef_C = {"typeCFAttributedStringRef",typeCFAttributedStringRef,NULL};
+#endif
 	VPL_ExtConstant _typeFSS_C = {"typeFSS",typeFSS,NULL};
 	VPL_ExtConstant _typeNull_C = {"typeNull",typeNull,NULL};
 	VPL_ExtConstant _typeApplicationURL_C = {"typeApplicationURL",typeApplicationURL,NULL};
@@ -14077,11 +14355,15 @@
 	VPL_ExtConstant _type128BitFloatingPoint_C = {"type128BitFloatingPoint",type128BitFloatingPoint,NULL};
 	VPL_ExtConstant _typeIEEE64BitFloatingPoint_C = {"typeIEEE64BitFloatingPoint",typeIEEE64BitFloatingPoint,NULL};
 	VPL_ExtConstant _typeIEEE32BitFloatingPoint_C = {"typeIEEE32BitFloatingPoint",typeIEEE32BitFloatingPoint,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _typeUInt64_C = {"typeUInt64",typeUInt64,NULL};
+#endif
 	VPL_ExtConstant _typeSInt64_C = {"typeSInt64",typeSInt64,NULL};
 	VPL_ExtConstant _typeUInt32_C = {"typeUInt32",typeUInt32,NULL};
 	VPL_ExtConstant _typeSInt32_C = {"typeSInt32",typeSInt32,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _typeUInt16_C = {"typeUInt16",typeUInt16,NULL};
+#endif
 	VPL_ExtConstant _typeSInt16_C = {"typeSInt16",typeSInt16,NULL};
 	VPL_ExtConstant _typeUTF8Text_C = {"typeUTF8Text",typeUTF8Text,NULL};
 	VPL_ExtConstant _typeUTF16ExternalRepresentation_C = {"typeUTF16ExternalRepresentation",typeUTF16ExternalRepresentation,NULL};
@@ -14092,6 +14374,7 @@
 	VPL_ExtConstant _typeStyledUnicodeText_C = {"typeStyledUnicodeText",typeStyledUnicodeText,NULL};
 	VPL_ExtConstant _typeChar_C = {"typeChar",typeChar,NULL};
 	VPL_ExtConstant _typeBoolean_C = {"typeBoolean",typeBoolean,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kFSEventStreamEventIdSinceNow_C = {"kFSEventStreamEventIdSinceNow",kFSEventStreamEventIdSinceNow,NULL};
 	VPL_ExtConstant _kFSEventStreamEventFlagUnmount_C = {"kFSEventStreamEventFlagUnmount",kFSEventStreamEventFlagUnmount,NULL};
 	VPL_ExtConstant _kFSEventStreamEventFlagMount_C = {"kFSEventStreamEventFlagMount",kFSEventStreamEventFlagMount,NULL};
@@ -14106,6 +14389,7 @@
 	VPL_ExtConstant _kFSEventStreamCreateFlagNoDefer_C = {"kFSEventStreamCreateFlagNoDefer",kFSEventStreamCreateFlagNoDefer,NULL};
 	VPL_ExtConstant _kFSEventStreamCreateFlagUseCFTypes_C = {"kFSEventStreamCreateFlagUseCFTypes",kFSEventStreamCreateFlagUseCFTypes,NULL};
 	VPL_ExtConstant _kFSEventStreamCreateFlagNone_C = {"kFSEventStreamCreateFlagNone",kFSEventStreamCreateFlagNone,NULL};
+#endif
 	VPL_ExtConstant _kTECPluginDispatchTableCurrentVersion_C = {"kTECPluginDispatchTableCurrentVersion",kTECPluginDispatchTableCurrentVersion,NULL};
 	VPL_ExtConstant _kTECPluginDispatchTableVersion1_2_C = {"kTECPluginDispatchTableVersion1_2",kTECPluginDispatchTableVersion1_2,NULL};
 	VPL_ExtConstant _kTECPluginDispatchTableVersion1_1_C = {"kTECPluginDispatchTableVersion1_1",kTECPluginDispatchTableVersion1_1,NULL};
@@ -14195,12 +14479,14 @@
 	VPL_ExtConstant _kHFSPlusAttrExtents_C = {"kHFSPlusAttrExtents",kHFSPlusAttrExtents,NULL};
 	VPL_ExtConstant _kHFSPlusAttrForkData_C = {"kHFSPlusAttrForkData",kHFSPlusAttrForkData,NULL};
 	VPL_ExtConstant _kHFSPlusAttrInlineData_C = {"kHFSPlusAttrInlineData",kHFSPlusAttrInlineData,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHFSHasChildLinkMask_C = {"kHFSHasChildLinkMask",kHFSHasChildLinkMask,NULL};
 	VPL_ExtConstant _kHFSHasChildLinkBit_C = {"kHFSHasChildLinkBit",kHFSHasChildLinkBit,NULL};
 	VPL_ExtConstant _kHFSHasLinkChainMask_C = {"kHFSHasLinkChainMask",kHFSHasLinkChainMask,NULL};
 	VPL_ExtConstant _kHFSHasLinkChainBit_C = {"kHFSHasLinkChainBit",kHFSHasLinkChainBit,NULL};
 	VPL_ExtConstant _kHFSHasFolderCountMask_C = {"kHFSHasFolderCountMask",kHFSHasFolderCountMask,NULL};
 	VPL_ExtConstant _kHFSHasFolderCountBit_C = {"kHFSHasFolderCountBit",kHFSHasFolderCountBit,NULL};
+#endif
 	VPL_ExtConstant _kHFSHasSecurityMask_C = {"kHFSHasSecurityMask",kHFSHasSecurityMask,NULL};
 	VPL_ExtConstant _kHFSHasSecurityBit_C = {"kHFSHasSecurityBit",kHFSHasSecurityBit,NULL};
 	VPL_ExtConstant _kHFSHasAttributesMask_C = {"kHFSHasAttributesMask",kHFSHasAttributesMask,NULL};
@@ -14220,7 +14506,9 @@
 	VPL_ExtConstant _kHFSFirstUserCatalogNodeID_C = {"kHFSFirstUserCatalogNodeID",kHFSFirstUserCatalogNodeID,NULL};
 	VPL_ExtConstant _kHFSBogusExtentFileID_C = {"kHFSBogusExtentFileID",kHFSBogusExtentFileID,NULL};
 	VPL_ExtConstant _kHFSRepairCatalogFileID_C = {"kHFSRepairCatalogFileID",kHFSRepairCatalogFileID,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kHFSAttributeDataFileID_C = {"kHFSAttributeDataFileID",kHFSAttributeDataFileID,NULL};
+#endif
 	VPL_ExtConstant _kHFSAttributesFileID_C = {"kHFSAttributesFileID",kHFSAttributesFileID,NULL};
 	VPL_ExtConstant _kHFSStartupFileID_C = {"kHFSStartupFileID",kHFSStartupFileID,NULL};
 	VPL_ExtConstant _kHFSAllocationFileID_C = {"kHFSAllocationFileID",kHFSAllocationFileID,NULL};
@@ -14234,8 +14522,10 @@
 	VPL_ExtConstant _kHFSPlusMaxFileNameChars_C = {"kHFSPlusMaxFileNameChars",kHFSPlusMaxFileNameChars,NULL};
 	VPL_ExtConstant _kHFSMaxFileNameChars_C = {"kHFSMaxFileNameChars",kHFSMaxFileNameChars,NULL};
 	VPL_ExtConstant _kHFSMaxVolumeNameChars_C = {"kHFSMaxVolumeNameChars",kHFSMaxVolumeNameChars,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kSymLinkCreator_C = {"kSymLinkCreator",kSymLinkCreator,NULL};
 	VPL_ExtConstant _kSymLinkFileType_C = {"kSymLinkFileType",kSymLinkFileType,NULL};
+#endif
 	VPL_ExtConstant _kHFSPlusCreator_C = {"kHFSPlusCreator",kHFSPlusCreator,NULL};
 	VPL_ExtConstant _kHardLinkFileType_C = {"kHardLinkFileType",kHardLinkFileType,NULL};
 	VPL_ExtConstant _kFSKMountVersion_C = {"kFSKMountVersion",kFSKMountVersion,NULL};
@@ -14357,8 +14647,10 @@
 	VPL_ExtConstant _kMPSemaphoreInfoVersion_C = {"kMPSemaphoreInfoVersion",kMPSemaphoreInfoVersion,NULL};
 	VPL_ExtConstant _kMPQueueInfoVersion_C = {"kMPQueueInfoVersion",kMPQueueInfoVersion,NULL};
 	VPL_ExtConstant _kTMTaskActive_C = {"kTMTaskActive",kTMTaskActive,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kScreenSaversFolderType_C = {"kScreenSaversFolderType",kScreenSaversFolderType,NULL};
 	VPL_ExtConstant _kWidgetsFolderType_C = {"kWidgetsFolderType",kWidgetsFolderType,NULL};
+#endif
 	VPL_ExtConstant _kPreferencePanesFolderType_C = {"kPreferencePanesFolderType",kPreferencePanesFolderType,NULL};
 	VPL_ExtConstant _kLogsFolderType_C = {"kLogsFolderType",kLogsFolderType,NULL};
 	VPL_ExtConstant _kDictionariesFolderType_C = {"kDictionariesFolderType",kDictionariesFolderType,NULL};
@@ -14468,6 +14760,7 @@
 	VPL_ExtConstant _kTextEncodingsFolderType_C = {"kTextEncodingsFolderType",kTextEncodingsFolderType,NULL};
 	VPL_ExtConstant _kApplicationSupportFolderType_C = {"kApplicationSupportFolderType",kApplicationSupportFolderType,NULL};
 	VPL_ExtConstant _kColorSyncProfilesFolderType_C = {"kColorSyncProfilesFolderType",kColorSyncProfilesFolderType,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kDownloadsFolderType_C = {"kDownloadsFolderType",kDownloadsFolderType,NULL};
 	VPL_ExtConstant _kiMovieSoundEffectsFolderType_C = {"kiMovieSoundEffectsFolderType",kiMovieSoundEffectsFolderType,NULL};
 	VPL_ExtConstant _kiMoviePlugInsFolderType_C = {"kiMoviePlugInsFolderType",kiMoviePlugInsFolderType,NULL};
@@ -14482,6 +14775,7 @@
 	VPL_ExtConstant _kInputManagersFolderType_C = {"kInputManagersFolderType",kInputManagersFolderType,NULL};
 	VPL_ExtConstant _kSpotlightMetadataCacheFolderType_C = {"kSpotlightMetadataCacheFolderType",kSpotlightMetadataCacheFolderType,NULL};
 	VPL_ExtConstant _kSpotlightImportersFolderType_C = {"kSpotlightImportersFolderType",kSpotlightImportersFolderType,NULL};
+#endif
 	VPL_ExtConstant _kSpotlightSavedSearchesFolderType_C = {"kSpotlightSavedSearchesFolderType",kSpotlightSavedSearchesFolderType,NULL};
 	VPL_ExtConstant _kAutosaveInformationFolderType_C = {"kAutosaveInformationFolderType",kAutosaveInformationFolderType,NULL};
 	VPL_ExtConstant _kAutomatorWorkflowsFolderType_C = {"kAutomatorWorkflowsFolderType",kAutomatorWorkflowsFolderType,NULL};
@@ -14558,7 +14852,9 @@
 	VPL_ExtConstant _kDontCreateFolder_C = {"kDontCreateFolder",kDontCreateFolder,NULL};
 	VPL_ExtConstant _kCreateFolder_C = {"kCreateFolder",kCreateFolder,NULL};
 	VPL_ExtConstant _kLastDomainConstant_C = {"kLastDomainConstant",kLastDomainConstant,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kFolderManagerLastDomain_C = {"kFolderManagerLastDomain",kFolderManagerLastDomain,NULL};
+#endif
 	VPL_ExtConstant _kClassicDomain_C = {"kClassicDomain",kClassicDomain,NULL};
 	VPL_ExtConstant _kUserDomain_C = {"kUserDomain",kUserDomain,NULL};
 	VPL_ExtConstant _kNetworkDomain_C = {"kNetworkDomain",kNetworkDomain,NULL};
@@ -14948,8 +15244,10 @@
 	VPL_ExtConstant _platformSunOSintel_C = {"platformSunOSintel",platformSunOSintel,NULL};
 	VPL_ExtConstant _platformSunOSsparc_C = {"platformSunOSsparc",platformSunOSsparc,NULL};
 	VPL_ExtConstant _platformIRIXmips_C = {"platformIRIXmips",platformIRIXmips,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _platformX86_64NativeEntryPoint_C = {"platformX86_64NativeEntryPoint",platformX86_64NativeEntryPoint,NULL};
 	VPL_ExtConstant _platformPowerPC64NativeEntryPoint_C = {"platformPowerPC64NativeEntryPoint",platformPowerPC64NativeEntryPoint,NULL};
+#endif
 	VPL_ExtConstant _platformIA32NativeEntryPoint_C = {"platformIA32NativeEntryPoint",platformIA32NativeEntryPoint,NULL};
 	VPL_ExtConstant _platformPowerPCNativeEntryPoint_C = {"platformPowerPCNativeEntryPoint",platformPowerPCNativeEntryPoint,NULL};
 	VPL_ExtConstant _platformWin32_C = {"platformWin32",platformWin32,NULL};
@@ -15157,12 +15455,14 @@
 	VPL_ExtConstant _kFNDirectoryModifiedMessage_C = {"kFNDirectoryModifiedMessage",kFNDirectoryModifiedMessage,NULL};
 	VPL_ExtConstant _kFSPathMakeRefDoNotFollowLeafSymlink_C = {"kFSPathMakeRefDoNotFollowLeafSymlink",kFSPathMakeRefDoNotFollowLeafSymlink,NULL};
 	VPL_ExtConstant _kFSPathMakeRefDefaultOptions_C = {"kFSPathMakeRefDefaultOptions",kFSPathMakeRefDefaultOptions,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kFSReplaceObjectDoNotCheckObjectWriteAccess_C = {"kFSReplaceObjectDoNotCheckObjectWriteAccess",kFSReplaceObjectDoNotCheckObjectWriteAccess,NULL};
 	VPL_ExtConstant _kFSReplaceObjectPreservePermissionInfo_C = {"kFSReplaceObjectPreservePermissionInfo",kFSReplaceObjectPreservePermissionInfo,NULL};
 	VPL_ExtConstant _kFSReplaceObjectReplacePermissionInfo_C = {"kFSReplaceObjectReplacePermissionInfo",kFSReplaceObjectReplacePermissionInfo,NULL};
 	VPL_ExtConstant _kFSReplaceObjectSaveOriginalAsABackup_C = {"kFSReplaceObjectSaveOriginalAsABackup",kFSReplaceObjectSaveOriginalAsABackup,NULL};
 	VPL_ExtConstant _kFSReplaceObjectReplaceMetadata_C = {"kFSReplaceObjectReplaceMetadata",kFSReplaceObjectReplaceMetadata,NULL};
 	VPL_ExtConstant _kFSReplaceObjectDefaultOptions_C = {"kFSReplaceObjectDefaultOptions",kFSReplaceObjectDefaultOptions,NULL};
+#endif
 	VPL_ExtConstant _kSmall8BitIconSize_C = {"kSmall8BitIconSize",kSmall8BitIconSize,NULL};
 	VPL_ExtConstant _kSmall4BitIconSize_C = {"kSmall4BitIconSize",kSmall4BitIconSize,NULL};
 	VPL_ExtConstant _kSmallIconSize_C = {"kSmallIconSize",kSmallIconSize,NULL};
@@ -15416,8 +15716,10 @@
 	VPL_ExtConstant _fsRtParID_C = {"fsRtParID",fsRtParID,NULL};
 	VPL_ExtConstant _fsWrDenyPerm_C = {"fsWrDenyPerm",fsWrDenyPerm,NULL};
 	VPL_ExtConstant _fsRdDenyPerm_C = {"fsRdDenyPerm",fsRdDenyPerm,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _fsWrAccessPerm_C = {"fsWrAccessPerm",fsWrAccessPerm,NULL};
 	VPL_ExtConstant _fsRdAccessPerm_C = {"fsRdAccessPerm",fsRdAccessPerm,NULL};
+#endif
 	VPL_ExtConstant _fsRdWrShPerm_C = {"fsRdWrShPerm",fsRdWrShPerm,NULL};
 	VPL_ExtConstant _fsRdWrPerm_C = {"fsRdWrPerm",fsRdWrPerm,NULL};
 	VPL_ExtConstant _fsWrPerm_C = {"fsWrPerm",fsWrPerm,NULL};
@@ -15427,8 +15729,10 @@
 	VPL_ExtConstant _kIORegistryIterateRecursively_C = {"kIORegistryIterateRecursively",kIORegistryIterateRecursively,NULL};
 	VPL_ExtConstant _kOSAsyncRefSize_C = {"kOSAsyncRefSize",kOSAsyncRefSize,NULL};
 	VPL_ExtConstant _kOSAsyncRefCount_C = {"kOSAsyncRefCount",kOSAsyncRefCount,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kOSAsyncRef64Size_C = {"kOSAsyncRef64Size",kOSAsyncRef64Size,NULL};
 	VPL_ExtConstant _kOSAsyncRef64Count_C = {"kOSAsyncRef64Count",kOSAsyncRef64Count,NULL};
+#endif
 	VPL_ExtConstant _kIOInterestCalloutCount_C = {"kIOInterestCalloutCount",kIOInterestCalloutCount,NULL};
 	VPL_ExtConstant _kIOInterestCalloutServiceIndex_C = {"kIOInterestCalloutServiceIndex",kIOInterestCalloutServiceIndex,NULL};
 	VPL_ExtConstant _kIOInterestCalloutRefconIndex_C = {"kIOInterestCalloutRefconIndex",kIOInterestCalloutRefconIndex,NULL};
@@ -15459,7 +15763,9 @@
 	VPL_ExtConstant _kMillisecondScale_C = {"kMillisecondScale",kMillisecondScale,NULL};
 	VPL_ExtConstant _kMicrosecondScale_C = {"kMicrosecondScale",kMicrosecondScale,NULL};
 	VPL_ExtConstant _kNanosecondScale_C = {"kNanosecondScale",kNanosecondScale,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kIOMap64Bit_C = {"kIOMap64Bit",kIOMap64Bit,NULL};
+#endif
 	VPL_ExtConstant _kIOMapUnique_C = {"kIOMapUnique",kIOMapUnique,NULL};
 	VPL_ExtConstant _kIOMapReference_C = {"kIOMapReference",kIOMapReference,NULL};
 	VPL_ExtConstant _kIOMapStatic_C = {"kIOMapStatic",kIOMapStatic,NULL};
@@ -16511,7 +16817,9 @@
 	VPL_ExtConstant _gestaltCPUPentiumPro_C = {"gestaltCPUPentiumPro",gestaltCPUPentiumPro,NULL};
 	VPL_ExtConstant _gestaltCPUPentium_C = {"gestaltCPUPentium",gestaltCPUPentium,NULL};
 	VPL_ExtConstant _gestaltCPU486_C = {"gestaltCPU486",gestaltCPU486,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _gestaltCPU970MP_C = {"gestaltCPU970MP",gestaltCPU970MP,NULL};
+#endif
 	VPL_ExtConstant _gestaltCPU970FX_C = {"gestaltCPU970FX",gestaltCPU970FX,NULL};
 	VPL_ExtConstant _gestaltCPU970_C = {"gestaltCPU970",gestaltCPU970,NULL};
 	VPL_ExtConstant _gestaltCPU750FX_C = {"gestaltCPU750FX",gestaltCPU750FX,NULL};
@@ -17027,7 +17335,9 @@
 	VPL_ExtConstant _kTextEncodingGBK_95_C = {"kTextEncodingGBK_95",kTextEncodingGBK_95,NULL};
 	VPL_ExtConstant _kTextEncodingGB_2312_80_C = {"kTextEncodingGB_2312_80",kTextEncodingGB_2312_80,NULL};
 	VPL_ExtConstant _kTextEncodingJIS_X0213_MenKuTen_C = {"kTextEncodingJIS_X0213_MenKuTen",kTextEncodingJIS_X0213_MenKuTen,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kTextEncodingShiftJIS_X0213_C = {"kTextEncodingShiftJIS_X0213",kTextEncodingShiftJIS_X0213,NULL};
+#endif
 	VPL_ExtConstant _kTextEncodingJIS_C6226_78_C = {"kTextEncodingJIS_C6226_78",kTextEncodingJIS_C6226_78,NULL};
 	VPL_ExtConstant _kTextEncodingJIS_X0212_90_C = {"kTextEncodingJIS_X0212_90",kTextEncodingJIS_X0212_90,NULL};
 	VPL_ExtConstant _kTextEncodingJIS_X0208_90_C = {"kTextEncodingJIS_X0208_90",kTextEncodingJIS_X0208_90,NULL};
@@ -17081,7 +17391,9 @@
 	VPL_ExtConstant _kTextEncodingISOLatin3_C = {"kTextEncodingISOLatin3",kTextEncodingISOLatin3,NULL};
 	VPL_ExtConstant _kTextEncodingISOLatin2_C = {"kTextEncodingISOLatin2",kTextEncodingISOLatin2,NULL};
 	VPL_ExtConstant _kTextEncodingISOLatin1_C = {"kTextEncodingISOLatin1",kTextEncodingISOLatin1,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kTextEncodingUnicodeV5_0_C = {"kTextEncodingUnicodeV5_0",kTextEncodingUnicodeV5_0,NULL};
+#endif
 	VPL_ExtConstant _kTextEncodingUnicodeV4_0_C = {"kTextEncodingUnicodeV4_0",kTextEncodingUnicodeV4_0,NULL};
 	VPL_ExtConstant _kTextEncodingUnicodeV3_2_C = {"kTextEncodingUnicodeV3_2",kTextEncodingUnicodeV3_2,NULL};
 	VPL_ExtConstant _kTextEncodingUnicodeV3_1_C = {"kTextEncodingUnicodeV3_1",kTextEncodingUnicodeV3_1,NULL};
@@ -17143,11 +17455,14 @@
 	VPL_ExtConstant _kTextEncodingMacChineseTrad_C = {"kTextEncodingMacChineseTrad",kTextEncodingMacChineseTrad,NULL};
 	VPL_ExtConstant _kTextEncodingMacJapanese_C = {"kTextEncodingMacJapanese",kTextEncodingMacJapanese,NULL};
 	VPL_ExtConstant _kTextEncodingMacRoman_C = {"kTextEncodingMacRoman",kTextEncodingMacRoman,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kTextFlushLeft_C = {"kTextFlushLeft",kTextFlushLeft,NULL};
 	VPL_ExtConstant _kTextFlushRight_C = {"kTextFlushRight",kTextFlushRight,NULL};
 	VPL_ExtConstant _kTextCenter_C = {"kTextCenter",kTextCenter,NULL};
 	VPL_ExtConstant _kTextFlushDefault_C = {"kTextFlushDefault",kTextFlushDefault,NULL};
+#endif
 	VPL_ExtConstant _kUTCDefaultOptions_C = {"kUTCDefaultOptions",kUTCDefaultOptions,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kPOSIXErrorEOPNOTSUPP_C = {"kPOSIXErrorEOPNOTSUPP",kPOSIXErrorEOPNOTSUPP,NULL};
 	VPL_ExtConstant _kPOSIXErrorETIME_C = {"kPOSIXErrorETIME",kPOSIXErrorETIME,NULL};
 	VPL_ExtConstant _kPOSIXErrorEPROTO_C = {"kPOSIXErrorEPROTO",kPOSIXErrorEPROTO,NULL};
@@ -17251,6 +17566,7 @@
 	VPL_ExtConstant _kPOSIXErrorENOENT_C = {"kPOSIXErrorENOENT",kPOSIXErrorENOENT,NULL};
 	VPL_ExtConstant _kPOSIXErrorEPERM_C = {"kPOSIXErrorEPERM",kPOSIXErrorEPERM,NULL};
 	VPL_ExtConstant _kPOSIXErrorBase_C = {"kPOSIXErrorBase",kPOSIXErrorBase,NULL};
+#endif
 	VPL_ExtConstant _dsMixedModeFailure_C = {"dsMixedModeFailure",dsMixedModeFailure,NULL};
 	VPL_ExtConstant _dsBadLibrary_C = {"dsBadLibrary",dsBadLibrary,NULL};
 	VPL_ExtConstant _exUserBreak_C = {"exUserBreak",exUserBreak,NULL};
@@ -20146,6 +20462,7 @@
 	VPL_ExtConstant _kVariableLengthArray_C = {"kVariableLengthArray",kVariableLengthArray,NULL};
 	VPL_ExtConstant _kNilOptions_C = {"kNilOptions",kNilOptions,NULL};
 	VPL_ExtConstant _noErr_C = {"noErr",noErr,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCFStringTokenizerTokenIsCJWordMask_C = {"kCFStringTokenizerTokenIsCJWordMask",kCFStringTokenizerTokenIsCJWordMask,NULL};
 	VPL_ExtConstant _kCFStringTokenizerTokenHasNonLettersMask_C = {"kCFStringTokenizerTokenHasNonLettersMask",kCFStringTokenizerTokenHasNonLettersMask,NULL};
 	VPL_ExtConstant _kCFStringTokenizerTokenHasHasNumbersMask_C = {"kCFStringTokenizerTokenHasHasNumbersMask",kCFStringTokenizerTokenHasHasNumbersMask,NULL};
@@ -20160,6 +20477,7 @@
 	VPL_ExtConstant _kCFStringTokenizerUnitParagraph_C = {"kCFStringTokenizerUnitParagraph",kCFStringTokenizerUnitParagraph,NULL};
 	VPL_ExtConstant _kCFStringTokenizerUnitSentence_C = {"kCFStringTokenizerUnitSentence",kCFStringTokenizerUnitSentence,NULL};
 	VPL_ExtConstant _kCFStringTokenizerUnitWord_C = {"kCFStringTokenizerUnitWord",kCFStringTokenizerUnitWord,NULL};
+#endif
 	VPL_ExtConstant _kCFNotificationPostToAllSessions_C = {"kCFNotificationPostToAllSessions",kCFNotificationPostToAllSessions,NULL};
 	VPL_ExtConstant _kCFNotificationDeliverImmediately_C = {"kCFNotificationDeliverImmediately",kCFNotificationDeliverImmediately,NULL};
 	VPL_ExtConstant _CFNotificationSuspensionBehaviorDeliverImmediately_C = {"CFNotificationSuspensionBehaviorDeliverImmediately",CFNotificationSuspensionBehaviorDeliverImmediately,NULL};
@@ -20233,7 +20551,9 @@
 	VPL_ExtConstant _kCFURLUnknownSchemeError_C = {"kCFURLUnknownSchemeError",kCFURLUnknownSchemeError,NULL};
 	VPL_ExtConstant _kCFURLUnknownError_C = {"kCFURLUnknownError",kCFURLUnknownError,NULL};
 	VPL_ExtConstant _kCFStringEncodingShiftJIS_X0213_00_C = {"kCFStringEncodingShiftJIS_X0213_00",kCFStringEncodingShiftJIS_X0213_00,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCFStringEncodingShiftJIS_X0213_C = {"kCFStringEncodingShiftJIS_X0213",kCFStringEncodingShiftJIS_X0213,NULL};
+#endif
 	VPL_ExtConstant _kCFStringEncodingEBCDIC_CP037_C = {"kCFStringEncodingEBCDIC_CP037",kCFStringEncodingEBCDIC_CP037,NULL};
 	VPL_ExtConstant _kCFStringEncodingEBCDIC_US_C = {"kCFStringEncodingEBCDIC_US",kCFStringEncodingEBCDIC_US,NULL};
 	VPL_ExtConstant _kCFStringEncodingNextStepJapanese_C = {"kCFStringEncodingNextStepJapanese",kCFStringEncodingNextStepJapanese,NULL};
@@ -20415,8 +20735,10 @@
 	VPL_ExtConstant _kCFNumberFormatterDecimalStyle_C = {"kCFNumberFormatterDecimalStyle",kCFNumberFormatterDecimalStyle,NULL};
 	VPL_ExtConstant _kCFNumberFormatterNoStyle_C = {"kCFNumberFormatterNoStyle",kCFNumberFormatterNoStyle,NULL};
 	VPL_ExtConstant _kCFNumberMaxType_C = {"kCFNumberMaxType",kCFNumberMaxType,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCFNumberCGFloatType_C = {"kCFNumberCGFloatType",kCFNumberCGFloatType,NULL};
 	VPL_ExtConstant _kCFNumberNSIntegerType_C = {"kCFNumberNSIntegerType",kCFNumberNSIntegerType,NULL};
+#endif
 	VPL_ExtConstant _kCFNumberCFIndexType_C = {"kCFNumberCFIndexType",kCFNumberCFIndexType,NULL};
 	VPL_ExtConstant _kCFNumberDoubleType_C = {"kCFNumberDoubleType",kCFNumberDoubleType,NULL};
 	VPL_ExtConstant _kCFNumberFloatType_C = {"kCFNumberFloatType",kCFNumberFloatType,NULL};
@@ -20436,8 +20758,10 @@
 	VPL_ExtConstant _kCFMessagePortReceiveTimeout_C = {"kCFMessagePortReceiveTimeout",kCFMessagePortReceiveTimeout,NULL};
 	VPL_ExtConstant _kCFMessagePortSendTimeout_C = {"kCFMessagePortSendTimeout",kCFMessagePortSendTimeout,NULL};
 	VPL_ExtConstant _kCFMessagePortSuccess_C = {"kCFMessagePortSuccess",kCFMessagePortSuccess,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCFFileDescriptorWriteCallBack_C = {"kCFFileDescriptorWriteCallBack",kCFFileDescriptorWriteCallBack,NULL};
 	VPL_ExtConstant _kCFFileDescriptorReadCallBack_C = {"kCFFileDescriptorReadCallBack",kCFFileDescriptorReadCallBack,NULL};
+#endif
 	VPL_ExtConstant _kCFRunLoopAllActivities_C = {"kCFRunLoopAllActivities",kCFRunLoopAllActivities,NULL};
 	VPL_ExtConstant _kCFRunLoopExit_C = {"kCFRunLoopExit",kCFRunLoopExit,NULL};
 	VPL_ExtConstant _kCFRunLoopAfterWaiting_C = {"kCFRunLoopAfterWaiting",kCFRunLoopAfterWaiting,NULL};
@@ -20465,10 +20789,12 @@
 	VPL_ExtConstant _kCFCalendarUnitMonth_C = {"kCFCalendarUnitMonth",kCFCalendarUnitMonth,NULL};
 	VPL_ExtConstant _kCFCalendarUnitYear_C = {"kCFCalendarUnitYear",kCFCalendarUnitYear,NULL};
 	VPL_ExtConstant _kCFCalendarUnitEra_C = {"kCFCalendarUnitEra",kCFCalendarUnitEra,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCFTimeZoneNameStyleShortDaylightSaving_C = {"kCFTimeZoneNameStyleShortDaylightSaving",kCFTimeZoneNameStyleShortDaylightSaving,NULL};
 	VPL_ExtConstant _kCFTimeZoneNameStyleDaylightSaving_C = {"kCFTimeZoneNameStyleDaylightSaving",kCFTimeZoneNameStyleDaylightSaving,NULL};
 	VPL_ExtConstant _kCFTimeZoneNameStyleShortStandard_C = {"kCFTimeZoneNameStyleShortStandard",kCFTimeZoneNameStyleShortStandard,NULL};
 	VPL_ExtConstant _kCFTimeZoneNameStyleStandard_C = {"kCFTimeZoneNameStyleStandard",kCFTimeZoneNameStyleStandard,NULL};
+#endif
 	VPL_ExtConstant _kCFGregorianAllUnits_C = {"kCFGregorianAllUnits",kCFGregorianAllUnits,NULL};
 	VPL_ExtConstant _kCFGregorianUnitsSeconds_C = {"kCFGregorianUnitsSeconds",kCFGregorianUnitsSeconds,NULL};
 	VPL_ExtConstant _kCFGregorianUnitsMinutes_C = {"kCFGregorianUnitsMinutes",kCFGregorianUnitsMinutes,NULL};
@@ -20482,10 +20808,12 @@
 	VPL_ExtConstant _OSBigEndian_C = {"OSBigEndian",OSBigEndian,NULL};
 	VPL_ExtConstant _OSLittleEndian_C = {"OSLittleEndian",OSLittleEndian,NULL};
 	VPL_ExtConstant _OSUnknownByteOrder_C = {"OSUnknownByteOrder",OSUnknownByteOrder,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCFBundleExecutableArchitecturePPC64_C = {"kCFBundleExecutableArchitecturePPC64",kCFBundleExecutableArchitecturePPC64,NULL};
 	VPL_ExtConstant _kCFBundleExecutableArchitectureX86_64_C = {"kCFBundleExecutableArchitectureX86_64",kCFBundleExecutableArchitectureX86_64,NULL};
 	VPL_ExtConstant _kCFBundleExecutableArchitecturePPC_C = {"kCFBundleExecutableArchitecturePPC",kCFBundleExecutableArchitecturePPC,NULL};
 	VPL_ExtConstant _kCFBundleExecutableArchitectureI386_C = {"kCFBundleExecutableArchitectureI386",kCFBundleExecutableArchitectureI386,NULL};
+#endif
 	VPL_ExtConstant _kCFURLComponentFragment_C = {"kCFURLComponentFragment",kCFURLComponentFragment,NULL};
 	VPL_ExtConstant _kCFURLComponentQuery_C = {"kCFURLComponentQuery",kCFURLComponentQuery,NULL};
 	VPL_ExtConstant _kCFURLComponentParameterString_C = {"kCFURLComponentParameterString",kCFURLComponentParameterString,NULL};
@@ -20505,9 +20833,11 @@
 	VPL_ExtConstant _kCFStringNormalizationFormC_C = {"kCFStringNormalizationFormC",kCFStringNormalizationFormC,NULL};
 	VPL_ExtConstant _kCFStringNormalizationFormKD_C = {"kCFStringNormalizationFormKD",kCFStringNormalizationFormKD,NULL};
 	VPL_ExtConstant _kCFStringNormalizationFormD_C = {"kCFStringNormalizationFormD",kCFStringNormalizationFormD,NULL};
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtConstant _kCFCompareForcedOrdering_C = {"kCFCompareForcedOrdering",kCFCompareForcedOrdering,NULL};
 	VPL_ExtConstant _kCFCompareWidthInsensitive_C = {"kCFCompareWidthInsensitive",kCFCompareWidthInsensitive,NULL};
 	VPL_ExtConstant _kCFCompareDiacriticInsensitive_C = {"kCFCompareDiacriticInsensitive",kCFCompareDiacriticInsensitive,NULL};
+#endif
 	VPL_ExtConstant _kCFCompareNumerically_C = {"kCFCompareNumerically",kCFCompareNumerically,NULL};
 	VPL_ExtConstant _kCFCompareLocalized_C = {"kCFCompareLocalized",kCFCompareLocalized,NULL};
 	VPL_ExtConstant _kCFCompareNonliteral_C = {"kCFCompareNonliteral",kCFCompareNonliteral,NULL};
@@ -20559,12 +20889,14 @@
 #pragma mark ---------- Constants Array -----------
 
 VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kICACapabilityMayStoreNewImagesInTempStore", &_kICACapabilityMayStoreNewImagesInTempStore_C},
 	{"kICACapabilityCanCameraUploadData", &_kICACapabilityCanCameraUploadData_C},
 	{"kICACapabilityCanCameraSyncClock", &_kICACapabilityCanCameraSyncClock_C},
 	{"kICACapabilityCanCameraDeleteAll", &_kICACapabilityCanCameraDeleteAll_C},
 	{"kICACapabilityCanCameraDeleteOne", &_kICACapabilityCanCameraDeleteOne_C},
 	{"kICACapabilityCanCameraCaptureNewImage", &_kICACapabilityCanCameraCaptureNewImage_C},
+#endif
 	{"kICAMessageCameraUploadData", &_kICAMessageCameraUploadData_C},
 	{"kICAMessageCameraSyncClock", &_kICAMessageCameraSyncClock_C},
 	{"kICAMessageCameraDeleteAll", &_kICAMessageCameraDeleteAll_C},
@@ -20572,9 +20904,11 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kICAMessageCameraCaptureNewImage", &_kICAMessageCameraCaptureNewImage_C},
 	{"kICAPropertyCameraSupportedMessages", &_kICAPropertyCameraSupportedMessages_C},
 	{"kICAPropertyCameraIcon", &_kICAPropertyCameraIcon_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kICAPropertyCameraCopyrightInfo", &_kICAPropertyCameraCopyrightInfo_C},
 	{"kICAPropertyCameraArtist", &_kICAPropertyCameraArtist_C},
 	{"kICAPropertyCameraUploadURL", &_kICAPropertyCameraUploadURL_C},
+#endif
 	{"kICAPropertyCameraFocusMeteringMode", &_kICAPropertyCameraFocusMeteringMode_C},
 	{"kICAPropertyCameraTimelapseInterval", &_kICAPropertyCameraTimelapseInterval_C},
 	{"kICAPropertyCameraTimelapseNumber", &_kICAPropertyCameraTimelapseNumber_C},
@@ -20609,12 +20943,16 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kICAFileystemDCF", &_kICAFileystemDCF_C},
 	{"kICAFileystemGenericHierarchical", &_kICAFileystemGenericHierarchical_C},
 	{"kICAFileystemGenericFlat", &_kICAFileystemGenericFlat_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kICAFileystemUndefined", &_kICAFileystemUndefined_C},
+#endif
 	{"kICAStorageRemovableRAM", &_kICAStorageRemovableRAM_C},
 	{"kICAStorageFixedRAM", &_kICAStorageFixedRAM_C},
 	{"kICAStorageRemovableROM", &_kICAStorageRemovableROM_C},
 	{"kICAStorageFixedROM", &_kICAStorageFixedROM_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kICAStorageUndefined", &_kICAStorageUndefined_C},
+#endif
 	{"kICAPropertyCameraVolumeLabel", &_kICAPropertyCameraVolumeLabel_C},
 	{"kICAPropertyCameraStorageDescription", &_kICAPropertyCameraStorageDescription_C},
 	{"kICAPropertyCameraFreeSpaceInImages", &_kICAPropertyCameraFreeSpaceInImages_C},
@@ -20634,9 +20972,13 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kAddMetaDataToFinderComment", &_kAddMetaDataToFinderComment_C},
 	{"kCreateCustomIcon", &_kCreateCustomIcon_C},
 	{"kDeleteAfterDownload", &_kDeleteAfterDownload_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kICAMessageCameraPassThrough", &_kICAMessageCameraPassThrough_C},
+#endif
 	{"kICAMessageDeviceYield", &_kICAMessageDeviceYield_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kICAMessageGetEventData", &_kICAMessageGetEventData_C},
+#endif
 	{"kMessageGetEventData", &_kMessageGetEventData_C},
 	{"kICAMessageGetLastButtonPressed", &_kICAMessageGetLastButtonPressed_C},
 	{"kICAMessageCameraReadClock", &_kICAMessageCameraReadClock_C},
@@ -20644,25 +20986,33 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kICAMessageReset", &_kICAMessageReset_C},
 	{"kICAMessageDisconnect", &_kICAMessageDisconnect_C},
 	{"kICAMessageConnect", &_kICAMessageConnect_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kICAThumbnailFormatPNG", &_kICAThumbnailFormatPNG_C},
+#endif
 	{"kICAThumbnailFormatTIFF", &_kICAThumbnailFormatTIFF_C},
 	{"kICAThumbnailFormatJPEG", &_kICAThumbnailFormatJPEG_C},
 	{"kICAThumbnailFormatICA", &_kICAThumbnailFormatICA_C},
 	{"kICADownloadAndReturnPathArray", &_kICADownloadAndReturnPathArray_C},
 	{"kICAAllowMultipleImages", &_kICAAllowMultipleImages_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kICACameraPassThruNotUsed", &_kICACameraPassThruNotUsed_C},
 	{"kICACameraPassThruReceive", &_kICACameraPassThruReceive_C},
 	{"kICACameraPassThruSend", &_kICACameraPassThruSend_C},
+#endif
 	{"kICAButtonWeb", &_kICAButtonWeb_C},
 	{"kICAButtonEMail", &_kICAButtonEMail_C},
 	{"kICAButtonCopy", &_kICAButtonCopy_C},
 	{"kICAButtonScan", &_kICAButtonScan_C},
 	{"kEventClassPTPVendor", &_kEventClassPTPVendor_C},
 	{"kEventClassPTPStandard", &_kEventClassPTPStandard_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kICAEventClassPTPVendor", &_kICAEventClassPTPVendor_C},
 	{"kICAEventClassPTPStandard", &_kICAEventClassPTPStandard_C},
+#endif
 	{"kExtendedNotificationPB", &_kExtendedNotificationPB_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kICAExtendedNotificationPB", &_kICAExtendedNotificationPB_C},
+#endif
 	{"kICAEventUnreportedStatus", &_kICAEventUnreportedStatus_C},
 	{"kICAEventCaptureComplete", &_kICAEventCaptureComplete_C},
 	{"kICAEventStorageInfoChanged", &_kICAEventStorageInfoChanged_C},
@@ -20686,14 +21036,18 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kICATypeString", &_kICATypeString_C},
 	{"kICATypeBoolean", &_kICATypeBoolean_C},
 	{"kICATypeFixed", &_kICATypeFixed_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kICATypeFloat", &_kICATypeFloat_C},
+#endif
 	{"kICATypeSInt64", &_kICATypeSInt64_C},
 	{"kICATypeSInt32", &_kICATypeSInt32_C},
 	{"kICATypeSInt16", &_kICATypeSInt16_C},
 	{"kICATypeUInt64", &_kICATypeUInt64_C},
 	{"kICATypeUInt32", &_kICATypeUInt32_C},
 	{"kICATypeUInt16", &_kICATypeUInt16_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kICATypeUInt8", &_kICATypeUInt8_C},
+#endif
 	{"kICAPropertyColorSyncProfile", &_kICAPropertyColorSyncProfile_C},
 	{"kICAPropertyImageThumbnail", &_kICAPropertyImageThumbnail_C},
 	{"kICAPropertyImageData", &_kICAPropertyImageData_C},
@@ -20727,10 +21081,12 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kICADeviceScanner", &_kICADeviceScanner_C},
 	{"kICADeviceCamera", &_kICADeviceCamera_C},
 	{"kICADevice", &_kICADevice_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kICAInvalidSessionErr", &_kICAInvalidSessionErr_C},
 	{"kICAExtensionInternalErr", &_kICAExtensionInternalErr_C},
 	{"kICAFrameworkInternalErr", &_kICAFrameworkInternalErr_C},
 	{"kICADeviceUnsupportedErr", &_kICADeviceUnsupportedErr_C},
+#endif
 	{"kICADeviceIOServicePathNotFoundErr", &_kICADeviceIOServicePathNotFoundErr_C},
 	{"kICADeviceGUIDNotFoundErr", &_kICADeviceGUIDNotFoundErr_C},
 	{"kICADeviceLocationIDNotFoundErr", &_kICADeviceLocationIDNotFoundErr_C},
@@ -20803,7 +21159,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kInkWriteInInkAwareAppsOnly", &_kInkWriteInInkAwareAppsOnly_C},
 	{"kInkWriteAnywhere", &_kInkWriteAnywhere_C},
 	{"kInkWriteNowhere", &_kInkWriteNowhere_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"typeSecIdentityRef", &_typeSecIdentityRef_C},
+#endif
 	{"kUserNameAndPasswordFlag", &_kUserNameAndPasswordFlag_C},
 	{"kURLAllEventsMask", &_kURLAllEventsMask_C},
 	{"kURLAllNonBufferEventsMask", &_kURLAllNonBufferEventsMask_C},
@@ -20968,13 +21326,17 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"eHRScrollbarOn", &_eHRScrollbarOn_C},
 	{"kHRRendererHTML32Type", &_kHRRendererHTML32Type_C},
 	{"kFontSelectionQDStyleVersionZero", &_kFontSelectionQDStyleVersionZero_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kFontSelectionCoreTextType", &_kFontSelectionCoreTextType_C},
+#endif
 	{"kFontSelectionQDType", &_kFontSelectionQDType_C},
 	{"kFontSelectionATSUIType", &_kFontSelectionATSUIType_C},
 	{"fontPanelFontSelectionQDStyleVersionErr", &_fontPanelFontSelectionQDStyleVersionErr_C},
 	{"fontPanelSelectionStyleErr", &_fontPanelSelectionStyleErr_C},
 	{"fontPanelShowErr", &_fontPanelShowErr_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamViewAttributesDictionary", &_kEventParamViewAttributesDictionary_C},
+#endif
 	{"kEventParamDictionary", &_kEventParamDictionary_C},
 	{"kEventParamFontColor", &_kEventParamFontColor_C},
 	{"kEventParamFMFontSize", &_kEventParamFMFontSize_C},
@@ -20982,14 +21344,18 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventParamFMFontFamily", &_kEventParamFMFontFamily_C},
 	{"kEventParamATSUFontSize", &_kEventParamATSUFontSize_C},
 	{"kEventParamATSUFontID", &_kEventParamATSUFontID_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamCTFontDescriptor", &_kEventParamCTFontDescriptor_C},
+#endif
 	{"typeFontColor", &_typeFontColor_C},
 	{"typeFMFontSize", &_typeFMFontSize_C},
 	{"typeFMFontStyle", &_typeFMFontStyle_C},
 	{"typeFMFontFamily", &_typeFMFontFamily_C},
 	{"typeATSUSize", &_typeATSUSize_C},
 	{"typeATSUFontID", &_typeATSUFontID_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"typeCTFontDescriptorRef", &_typeCTFontDescriptorRef_C},
+#endif
 	{"kEventFontSelection", &_kEventFontSelection_C},
 	{"kEventFontPanelClosed", &_kEventFontPanelClosed_C},
 	{"kHICommandShowHideFontPanel", &_kHICommandShowHideFontPanel_C},
@@ -21018,7 +21384,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kNavDialogOptionsVersion", &_kNavDialogOptionsVersion_C},
 	{"kNavDialogCreationOptionsVersion", &_kNavDialogCreationOptionsVersion_C},
 	{"kNavReplyRecordVersion", &_kNavReplyRecordVersion_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kNavClientPopupExtensionTag", &_kNavClientPopupExtensionTag_C},
+#endif
 	{"kNavGenericSignature", &_kNavGenericSignature_C},
 	{"kNavMenuItemSpecVersion", &_kNavMenuItemSpecVersion_C},
 	{"kNavTranslateCopy", &_kNavTranslateCopy_C},
@@ -21124,6 +21492,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kNavSaveChangesOther", &_kNavSaveChangesOther_C},
 	{"kNavSaveChangesQuittingApplication", &_kNavSaveChangesQuittingApplication_C},
 	{"kNavSaveChangesClosingDocument", &_kNavSaveChangesClosingDocument_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kPMShowPageAttributesPDE", &_kPMShowPageAttributesPDE_C},
 	{"kPMShowInlineScale", &_kPMShowInlineScale_C},
 	{"kPMShowInlineOrientation", &_kPMShowInlineOrientation_C},
@@ -21133,6 +21502,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kPMShowInlineCopies", &_kPMShowInlineCopies_C},
 	{"kPMShowDefaultInlineItems", &_kPMShowDefaultInlineItems_C},
 	{"kPMHideInlineItems", &_kPMHideInlineItems_C},
+#endif
 	{"kDigiHubBlankDVD", &_kDigiHubBlankDVD_C},
 	{"kDigiHubBlankCD", &_kDigiHubBlankCD_C},
 	{"kDigiHubVideoDVD", &_kDigiHubVideoDVD_C},
@@ -21724,8 +22094,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kASDefaultPreferredStackSize", &_kASDefaultPreferredStackSize_C},
 	{"kASDefaultMinStackSize", &_kASDefaultMinStackSize_C},
 	{"kASHasOpenHandler", &_kASHasOpenHandler_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kASSelectSetSourceAttributes", &_kASSelectSetSourceAttributes_C},
 	{"kASSelectCopySourceAttributes", &_kASSelectCopySourceAttributes_C},
+#endif
 	{"kASSelectGetSourceStyleNames", &_kASSelectGetSourceStyleNames_C},
 	{"kASSelectGetSourceStyles", &_kASSelectGetSourceStyles_C},
 	{"kASSelectSetSourceStyles", &_kASSelectSetSourceStyles_C},
@@ -21794,13 +22166,17 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kOSASelectSetSendProc", &_kOSASelectSetSendProc_C},
 	{"kOSASelectCoerceToDesc", &_kOSASelectCoerceToDesc_C},
 	{"kOSASelectCoerceFromDesc", &_kOSASelectCoerceFromDesc_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kOSASelectCopySourceString", &_kOSASelectCopySourceString_C},
+#endif
 	{"kOSASelectGetSource", &_kOSASelectGetSource_C},
 	{"kOSASelectCopyScript", &_kOSASelectCopyScript_C},
 	{"kOSASelectCopyID", &_kOSASelectCopyID_C},
 	{"kOSASelectCompile", &_kOSASelectCompile_C},
 	{"kOSASelectScriptingComponentName", &_kOSASelectScriptingComponentName_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kOSASelectCopyDisplayString", &_kOSASelectCopyDisplayString_C},
+#endif
 	{"kOSASelectGetActiveProc", &_kOSASelectGetActiveProc_C},
 	{"kOSASelectSetActiveProc", &_kOSASelectSetActiveProc_C},
 	{"kOSASelectGetScriptInfo", &_kOSASelectGetScriptInfo_C},
@@ -22242,7 +22618,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kKeyboardISO", &_kKeyboardISO_C},
 	{"kKeyboardANSI", &_kKeyboardANSI_C},
 	{"kKeyboardJIS", &_kKeyboardJIS_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kUIOptionDisableMenuBarTransparency", &_kUIOptionDisableMenuBarTransparency_C},
+#endif
 	{"kUIOptionDisableHide", &_kUIOptionDisableHide_C},
 	{"kUIOptionDisableSessionTerminate", &_kUIOptionDisableSessionTerminate_C},
 	{"kUIOptionDisableForceQuit", &_kUIOptionDisableForceQuit_C},
@@ -22360,13 +22738,17 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"lDoHAutoscrollBit", &_lDoHAutoscrollBit_C},
 	{"lDoVAutoscrollBit", &_lDoVAutoscrollBit_C},
 	{"lDrawingModeOffBit", &_lDrawingModeOffBit_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamTextLength", &_kEventParamTextLength_C},
+#endif
 	{"kControlKindHIGrowBoxView", &_kControlKindHIGrowBoxView_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIWindowTitleProxyIconPart", &_kHIWindowTitleProxyIconPart_C},
 	{"kHIWindowDragPart", &_kHIWindowDragPart_C},
 	{"kHIWindowTitleBarPart", &_kHIWindowTitleBarPart_C},
 	{"kControlEditTextSpellCheckAsYouTypeTag", &_kControlEditTextSpellCheckAsYouTypeTag_C},
 	{"kControlEditTextSpellCheckingTag", &_kControlEditTextSpellCheckingTag_C},
+#endif
 	{"kControlEditUnicodeTextPostUpdateProcTag", &_kControlEditUnicodeTextPostUpdateProcTag_C},
 	{"kControlEditTextInsertCFStringRefTag", &_kControlEditTextInsertCFStringRefTag_C},
 	{"kControlEditTextInsertTextBufferTag", &_kControlEditTextInsertTextBufferTag_C},
@@ -22466,8 +22848,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kHIScrollViewScrollToBottom", &_kHIScrollViewScrollToBottom_C},
 	{"kHIScrollViewScrollToTop", &_kHIScrollViewScrollToTop_C},
 	{"kHIScrollViewValidOptions", &_kHIScrollViewValidOptions_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIScrollViewOptionsDisableSmoothScrolling", &_kHIScrollViewOptionsDisableSmoothScrolling_C},
 	{"kHIScrollViewOptionsFillGrowArea", &_kHIScrollViewOptionsFillGrowArea_C},
+#endif
 	{"kHIScrollViewOptionsAllowGrow", &_kHIScrollViewOptionsAllowGrow_C},
 	{"kHIScrollViewOptionsHorizScroll", &_kHIScrollViewOptionsHorizScroll_C},
 	{"kHIScrollViewOptionsVertScroll", &_kHIScrollViewOptionsVertScroll_C},
@@ -22557,9 +22941,11 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kControlIconNoTrackProc", &_kControlIconNoTrackProc_C},
 	{"kControlIconProc", &_kControlIconProc_C},
 	{"kHIImageViewImageTag", &_kHIImageViewImageTag_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIImageViewAutoTransformOnDeactivate", &_kHIImageViewAutoTransformOnDeactivate_C},
 	{"kHIImageViewAutoTransformOnDisable", &_kHIImageViewAutoTransformOnDisable_C},
 	{"kHIImageViewAutoTransformNone", &_kHIImageViewAutoTransformNone_C},
+#endif
 	{"kControlKindHIImageView", &_kControlKindHIImageView_C},
 	{"kControlTriangleLastValueTag", &_kControlTriangleLastValueTag_C},
 	{"kControlKindDisclosureTriangle", &_kControlKindDisclosureTriangle_C},
@@ -22589,11 +22975,13 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kDataBrowserStopTracking", &_kDataBrowserStopTracking_C},
 	{"kDataBrowserNothingHit", &_kDataBrowserNothingHit_C},
 	{"kDataBrowserContentHit", &_kDataBrowserContentHit_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventDataBrowserDrawCustomItem", &_kEventDataBrowserDrawCustomItem_C},
 	{"kEventParamDataBrowserItemState", &_kEventParamDataBrowserItemState_C},
 	{"kEventParamDataBrowserPropertyID", &_kEventParamDataBrowserPropertyID_C},
 	{"kEventParamDataBrowserItemID", &_kEventParamDataBrowserItemID_C},
 	{"kEventClassDataBrowser", &_kEventClassDataBrowser_C},
+#endif
 	{"kDataBrowserLatestCallbacks", &_kDataBrowserLatestCallbacks_C},
 	{"kDataBrowserMetricLast", &_kDataBrowserMetricLast_C},
 	{"kDataBrowserMetricDisclosureColumnPerDepthGap", &_kDataBrowserMetricDisclosureColumnPerDepthGap_C},
@@ -22601,8 +22989,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kDataBrowserMetricDisclosureColumnEdgeInset", &_kDataBrowserMetricDisclosureColumnEdgeInset_C},
 	{"kDataBrowserMetricIconAndTextGap", &_kDataBrowserMetricIconAndTextGap_C},
 	{"kDataBrowserMetricCellContentInset", &_kDataBrowserMetricCellContentInset_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kDataBrowserAttributeReserveGrowBoxSpace", &_kDataBrowserAttributeReserveGrowBoxSpace_C},
 	{"kDataBrowserAttributeAutoHideScrollBars", &_kDataBrowserAttributeAutoHideScrollBars_C},
+#endif
 	{"kDataBrowserAttributeListViewDrawColumnDividers", &_kDataBrowserAttributeListViewDrawColumnDividers_C},
 	{"kDataBrowserAttributeListViewAlternatingRowColors", &_kDataBrowserAttributeListViewAlternatingRowColors_C},
 	{"kDataBrowserAttributeColumnViewResizeWindow", &_kDataBrowserAttributeColumnViewResizeWindow_C},
@@ -22777,11 +23167,15 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventComboBoxListItemSelected", &_kEventComboBoxListItemSelected_C},
 	{"kEventParamComboBoxListSelectedItemIndex", &_kEventParamComboBoxListSelectedItemIndex_C},
 	{"kEventClassHIComboBox", &_kEventClassHIComboBox_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamNSView", &_kEventParamNSView_C},
 	{"kControlKindHICocoaView", &_kControlKindHICocoaView_C},
+#endif
 	{"kControlClockAnimatingTag", &_kControlClockAnimatingTag_C},
 	{"kControlClockFontStyleTag", &_kControlClockFontStyleTag_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kControlClockAbsoluteTimeTag", &_kControlClockAbsoluteTimeTag_C},
+#endif
 	{"kControlClockLongDateTag", &_kControlClockLongDateTag_C},
 	{"kControlKindClock", &_kControlKindClock_C},
 	{"kControlClockIsLive", &_kControlClockIsLive_C},
@@ -22876,9 +23270,11 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kControlKindCheckBox", &_kControlKindCheckBox_C},
 	{"kControlCheckBoxAutoToggleProc", &_kControlCheckBoxAutoToggleProc_C},
 	{"kControlCheckBoxProc", &_kControlCheckBoxProc_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kControlPushButtonAnimatingTag", &_kControlPushButtonAnimatingTag_C},
 	{"kControlPushButtonIconAlignmentTag", &_kControlPushButtonIconAlignmentTag_C},
 	{"kControlPushButtonContentTag", &_kControlPushButtonContentTag_C},
+#endif
 	{"kControlPushButtonCancelTag", &_kControlPushButtonCancelTag_C},
 	{"kControlPushButtonDefaultTag", &_kControlPushButtonDefaultTag_C},
 	{"kControlKindPushIconButton", &_kControlKindPushIconButton_C},
@@ -23248,8 +23644,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kNeutralScript", &_kNeutralScript_C},
 	{"kUnknownScript", &_kUnknownScript_C},
 	{"kUnknownLanguage", &_kUnknownLanguage_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kTSMDocumentEnabledInputSourcesPropertyTag", &_kTSMDocumentEnabledInputSourcesPropertyTag_C},
 	{"kTSMDocumentInputSourceOverridePropertyTag", &_kTSMDocumentInputSourceOverridePropertyTag_C},
+#endif
 	{"kTSMDocumentWindowLevelPropertyTag", &_kTSMDocumentWindowLevelPropertyTag_C},
 	{"kTSMDocumentInputModePropertyTag", &_kTSMDocumentInputModePropertyTag_C},
 	{"kTSMDocumentRefconPropertyTag", &_kTSMDocumentRefconPropertyTag_C},
@@ -23271,7 +23669,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kUnicodeDocumentInterfaceType", &_kUnicodeDocumentInterfaceType_C},
 	{"kTSMTEDocumentInterfaceType", &_kTSMTEDocumentInterfaceType_C},
 	{"kTextServiceDocumentInterfaceType", &_kTextServiceDocumentInterfaceType_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kTSM24Version", &_kTSM24Version_C},
+#endif
 	{"kTSM23Version", &_kTSM23Version_C},
 	{"kTSM22Version", &_kTSM22Version_C},
 	{"kTSM20Version", &_kTSM20Version_C},
@@ -23295,7 +23695,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kStdAlertDoNotAnimateOnCancel", &_kStdAlertDoNotAnimateOnCancel_C},
 	{"kStdAlertDoNotAnimateOnDefault", &_kStdAlertDoNotAnimateOnDefault_C},
 	{"kStdAlertDoNotDisposeSheet", &_kStdAlertDoNotDisposeSheet_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kStdCFStringAlertVersionTwo", &_kStdCFStringAlertVersionTwo_C},
+#endif
 	{"kStdCFStringAlertVersionOne", &_kStdCFStringAlertVersionOne_C},
 	{"kHICommandOther", &_kHICommandOther_C},
 	{"kDialogFontUseThemeFontIDMask", &_kDialogFontUseThemeFontIDMask_C},
@@ -23311,12 +23713,16 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kDialogFontUseFaceMask", &_kDialogFontUseFaceMask_C},
 	{"kDialogFontUseFontMask", &_kDialogFontUseFontMask_C},
 	{"kDialogFontNoFontStyle", &_kDialogFontNoFontStyle_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kAlertFlagsUseCompositing", &_kAlertFlagsUseCompositing_C},
+#endif
 	{"kAlertFlagsUseThemeControls", &_kAlertFlagsUseThemeControls_C},
 	{"kAlertFlagsAlertIsMovable", &_kAlertFlagsAlertIsMovable_C},
 	{"kAlertFlagsUseControlHierarchy", &_kAlertFlagsUseControlHierarchy_C},
 	{"kAlertFlagsUseThemeBackground", &_kAlertFlagsUseThemeBackground_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kDialogFlagsUseCompositing", &_kDialogFlagsUseCompositing_C},
+#endif
 	{"kDialogFlagsUseThemeControls", &_kDialogFlagsUseThemeControls_C},
 	{"kDialogFlagsHandleMovableModal", &_kDialogFlagsHandleMovableModal_C},
 	{"kDialogFlagsUseControlHierarchy", &_kDialogFlagsUseControlHierarchy_C},
@@ -23398,20 +23804,24 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kHILayoutBindMax", &_kHILayoutBindMax_C},
 	{"kHILayoutBindMin", &_kHILayoutBindMin_C},
 	{"kHILayoutBindNone", &_kHILayoutBindNone_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIViewFocusWithoutWrapping", &_kHIViewFocusWithoutWrapping_C},
 	{"kHIViewFocusTraditionally", &_kHIViewFocusTraditionally_C},
 	{"kHIViewFocusOnAnyControl", &_kHIViewFocusOnAnyControl_C},
+#endif
 	{"kEventControlTrackingAreaExited", &_kEventControlTrackingAreaExited_C},
 	{"kEventControlTrackingAreaEntered", &_kEventControlTrackingAreaEntered_C},
 	{"typeHIViewTrackingAreaRef", &_typeHIViewTrackingAreaRef_C},
 	{"kEventParamHIViewTrackingArea", &_kEventParamHIViewTrackingArea_C},
 	{"kHIViewKindSignatureApple", &_kHIViewKindSignatureApple_C},
 	{"errNeedsCompositedWindow", &_errNeedsCompositedWindow_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIViewContentNSImage", &_kHIViewContentNSImage_C},
 	{"kHIViewContentAlertIconType", &_kHIViewContentAlertIconType_C},
 	{"kHIViewContentIconTypeAndCreator", &_kHIViewContentIconTypeAndCreator_C},
 	{"kHIViewContentImageFile", &_kHIViewContentImageFile_C},
 	{"kHIViewContentImageResource", &_kHIViewContentImageResource_C},
+#endif
 	{"kHIViewContentCGImageRef", &_kHIViewContentCGImageRef_C},
 	{"kHIViewContentIconRef", &_kHIViewContentIconRef_C},
 	{"kHIViewContentIconSuiteRef", &_kHIViewContentIconSuiteRef_C},
@@ -23459,23 +23869,31 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kHIViewAttributeSendCommandToUserFocus", &_kHIViewAttributeSendCommandToUserFocus_C},
 	{"kHIViewZOrderBelow", &_kHIViewZOrderBelow_C},
 	{"kHIViewZOrderAbove", &_kHIViewZOrderAbove_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIThemeFocusRingBelow", &_kHIThemeFocusRingBelow_C},
 	{"kHIThemeFocusRingAbove", &_kHIThemeFocusRingAbove_C},
 	{"kHIThemeFocusRingOnly", &_kHIThemeFocusRingOnly_C},
 	{"kHIThemeTextInfoVersionOne", &_kHIThemeTextInfoVersionOne_C},
 	{"kHIThemeTextInfoVersionZero", &_kHIThemeTextInfoVersionZero_C},
 	{"kHIThemeTextBoxOptionEngraved", &_kHIThemeTextBoxOptionEngraved_C},
+#endif
 	{"kHIThemeTextBoxOptionStronglyVertical", &_kHIThemeTextBoxOptionStronglyVertical_C},
 	{"kHIThemeTextBoxOptionNone", &_kHIThemeTextBoxOptionNone_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIThemeTextVerticalFlushDefault", &_kHIThemeTextVerticalFlushDefault_C},
+#endif
 	{"kHIThemeTextVerticalFlushBottom", &_kHIThemeTextVerticalFlushBottom_C},
 	{"kHIThemeTextVerticalFlushCenter", &_kHIThemeTextVerticalFlushCenter_C},
 	{"kHIThemeTextVerticalFlushTop", &_kHIThemeTextVerticalFlushTop_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIThemeTextHorizontalFlushDefault", &_kHIThemeTextHorizontalFlushDefault_C},
+#endif
 	{"kHIThemeTextHorizontalFlushRight", &_kHIThemeTextHorizontalFlushRight_C},
 	{"kHIThemeTextHorizontalFlushCenter", &_kHIThemeTextHorizontalFlushCenter_C},
 	{"kHIThemeTextHorizontalFlushLeft", &_kHIThemeTextHorizontalFlushLeft_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIThemeTextTruncationDefault", &_kHIThemeTextTruncationDefault_C},
+#endif
 	{"kHIThemeTextTruncationEnd", &_kHIThemeTextTruncationEnd_C},
 	{"kHIThemeTextTruncationMiddle", &_kHIThemeTextTruncationMiddle_C},
 	{"kHIThemeTextTruncationNone", &_kHIThemeTextTruncationNone_C},
@@ -23564,13 +23982,17 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kHIHotKeyModeAllDisabledExceptUniversalAccess", &_kHIHotKeyModeAllDisabledExceptUniversalAccess_C},
 	{"kHIHotKeyModeAllDisabled", &_kHIHotKeyModeAllDisabled_C},
 	{"kHIHotKeyModeAllEnabled", &_kHIHotKeyModeAllEnabled_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventHotKeyExclusive", &_kEventHotKeyExclusive_C},
 	{"kEventHotKeyNoOptions", &_kEventHotKeyNoOptions_C},
+#endif
 	{"kEventSystemUserSessionDeactivated", &_kEventSystemUserSessionDeactivated_C},
 	{"kEventSystemUserSessionActivated", &_kEventSystemUserSessionActivated_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventSystemDisplayReconfigured", &_kEventSystemDisplayReconfigured_C},
 	{"kEventSystemDisplaysAwake", &_kEventSystemDisplaysAwake_C},
 	{"kEventSystemDisplaysAsleep", &_kEventSystemDisplaysAsleep_C},
+#endif
 	{"kEventSystemTimeDateChanged", &_kEventSystemTimeDateChanged_C},
 	{"kEventServicePerform", &_kEventServicePerform_C},
 	{"kEventServiceGetTypes", &_kEventServiceGetTypes_C},
@@ -23585,7 +24007,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kControlBoundsChangePositionChanged", &_kControlBoundsChangePositionChanged_C},
 	{"kControlBoundsChangeSizeChanged", &_kControlBoundsChangeSizeChanged_C},
 	{"kEventControlArbitraryMessage", &_kEventControlArbitraryMessage_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventControlFocusPartChanged", &_kEventControlFocusPartChanged_C},
+#endif
 	{"kEventControlLayoutInfoChanged", &_kEventControlLayoutInfoChanged_C},
 	{"kEventControlEnabledStateChanged", &_kEventControlEnabledStateChanged_C},
 	{"kEventControlHiliteChanged", &_kEventControlHiliteChanged_C},
@@ -23628,7 +24052,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventControlDraw", &_kEventControlDraw_C},
 	{"kEventControlHitTest", &_kEventControlHitTest_C},
 	{"kEventControlSimulateHit", &_kEventControlSimulateHit_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventControlOptimalBoundsChanged", &_kEventControlOptimalBoundsChanged_C},
+#endif
 	{"kEventControlGetOptimalBounds", &_kEventControlGetOptimalBounds_C},
 	{"kEventControlDispose", &_kEventControlDispose_C},
 	{"kEventControlInitialize", &_kEventControlInitialize_C},
@@ -23650,7 +24076,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kHICommandRevert", &_kHICommandRevert_C},
 	{"kHICommandSaveAs", &_kHICommandSaveAs_C},
 	{"kHICommandSave", &_kHICommandSave_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHICommandCloseFile", &_kHICommandCloseFile_C},
+#endif
 	{"kHICommandClose", &_kHICommandClose_C},
 	{"kHICommandOpen", &_kHICommandOpen_C},
 	{"kHICommandNew", &_kHICommandNew_C},
@@ -23709,11 +24137,13 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kHIMenuCenterDirection", &_kHIMenuCenterDirection_C},
 	{"kHIMenuLeftDirection", &_kHIMenuLeftDirection_C},
 	{"kHIMenuRightDirection", &_kHIMenuRightDirection_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kMenuContextDontUpdateEnabled", &_kMenuContextDontUpdateEnabled_C},
 	{"kMenuContextDontUpdateIcon", &_kMenuContextDontUpdateIcon_C},
 	{"kMenuContextDontUpdateKey", &_kMenuContextDontUpdateKey_C},
 	{"kMenuContextDontUpdateText", &_kMenuContextDontUpdateText_C},
 	{"kMenuContextInspection", &_kMenuContextInspection_C},
+#endif
 	{"kMenuContextCommandIDSearch", &_kMenuContextCommandIDSearch_C},
 	{"kMenuContextMenuEnabling", &_kMenuContextMenuEnabling_C},
 	{"kMenuContextKeyMatching", &_kMenuContextKeyMatching_C},
@@ -23750,12 +24180,16 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventWindowFocusDrawer", &_kEventWindowFocusDrawer_C},
 	{"kEventWindowFocusToolbar", &_kEventWindowFocusToolbar_C},
 	{"kEventWindowFocusContent", &_kEventWindowFocusContent_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventWindowFocusRestored", &_kEventWindowFocusRestored_C},
 	{"kEventWindowFocusLost", &_kEventWindowFocusLost_C},
+#endif
 	{"kEventWindowFocusRelinquish", &_kEventWindowFocusRelinquish_C},
 	{"kEventWindowFocusAcquired", &_kEventWindowFocusAcquired_C},
 	{"kEventWindowToolbarSwitchMode", &_kEventWindowToolbarSwitchMode_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventWindowUpdateDockTile", &_kEventWindowUpdateDockTile_C},
+#endif
 	{"kEventWindowGetDockTileMenu", &_kEventWindowGetDockTileMenu_C},
 	{"kEventWindowHandleContentClick", &_kEventWindowHandleContentClick_C},
 	{"kEventWindowProxyEndDrag", &_kEventWindowProxyEndDrag_C},
@@ -23763,7 +24197,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventWindowConstrain", &_kEventWindowConstrain_C},
 	{"kEventWindowGetMaximumSize", &_kEventWindowGetMaximumSize_C},
 	{"kEventWindowGetMinimumSize", &_kEventWindowGetMinimumSize_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventWindowGetIdealStandardState", &_kEventWindowGetIdealStandardState_C},
+#endif
 	{"kEventWindowGetIdealSize", &_kEventWindowGetIdealSize_C},
 	{"kEventWindowPathSelect", &_kEventWindowPathSelect_C},
 	{"kEventWindowContextualMenuSelect", &_kEventWindowContextualMenuSelect_C},
@@ -23832,7 +24268,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventAppFocusNextFloatingWindow", &_kEventAppFocusNextFloatingWindow_C},
 	{"kEventAppFocusNextDocumentWindow", &_kEventAppFocusNextDocumentWindow_C},
 	{"kEventAppFocusMenuBar", &_kEventAppFocusMenuBar_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventAppUpdateDockTile", &_kEventAppUpdateDockTile_C},
+#endif
 	{"kEventAppGetDockTileMenu", &_kEventAppGetDockTileMenu_C},
 	{"kEventAppActiveWindowChanged", &_kEventAppActiveWindowChanged_C},
 	{"kEventAppAvailableWindowBoundsChanged", &_kEventAppAvailableWindowBoundsChanged_C},
@@ -23858,7 +24296,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventRawKeyUp", &_kEventRawKeyUp_C},
 	{"kEventRawKeyRepeat", &_kEventRawKeyRepeat_C},
 	{"kEventRawKeyDown", &_kEventRawKeyDown_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventTextInputIsMouseEventInInlineInputArea", &_kEventTextInputIsMouseEventInInlineInputArea_C},
+#endif
 	{"kEventTextInputFilterText", &_kEventTextInputFilterText_C},
 	{"kEventTextInputUnicodeText", &_kEventTextInputUnicodeText_C},
 	{"kEventTextInputGetSelectedText", &_kEventTextInputGetSelectedText_C},
@@ -23869,7 +24309,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventTextInputUpdateActiveInputArea", &_kEventTextInputUpdateActiveInputArea_C},
 	{"kEventTSMDocumentAccessUnlockDocument", &_kEventTSMDocumentAccessUnlockDocument_C},
 	{"kEventTSMDocumentAccessLockDocument", &_kEventTSMDocumentAccessLockDocument_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventTSMDocumentAccessGetFirstRectForRange", &_kEventTSMDocumentAccessGetFirstRectForRange_C},
+#endif
 	{"kEventTSMDocumentAccessGetGlyphInfo", &_kEventTSMDocumentAccessGetGlyphInfo_C},
 	{"kEventTSMDocumentAccessGetFont", &_kEventTSMDocumentAccessGetFont_C},
 	{"kTSMDocAccessEffectiveRangeAttribute", &_kTSMDocAccessEffectiveRangeAttribute_C},
@@ -23881,7 +24323,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventTSMDocumentAccessGetCharactersPtr", &_kEventTSMDocumentAccessGetCharactersPtr_C},
 	{"kEventTSMDocumentAccessGetSelectedRange", &_kEventTSMDocumentAccessGetSelectedRange_C},
 	{"kEventTSMDocumentAccessGetLength", &_kEventTSMDocumentAccessGetLength_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventMouseScroll", &_kEventMouseScroll_C},
+#endif
 	{"kEventMouseWheelMoved", &_kEventMouseWheelMoved_C},
 	{"kEventMouseExited", &_kEventMouseExited_C},
 	{"kEventMouseEntered", &_kEventMouseEntered_C},
@@ -23914,14 +24358,20 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventClassTextInput", &_kEventClassTextInput_C},
 	{"kEventClassKeyboard", &_kEventClassKeyboard_C},
 	{"kEventClassMouse", &_kEventClassMouse_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kMouseParamsDragInitiation", &_kMouseParamsDragInitiation_C},
 	{"kMouseParamsClickAndHold", &_kMouseParamsClickAndHold_C},
 	{"kMouseParamsProxyIcon", &_kMouseParamsProxyIcon_C},
+#endif
 	{"kMouseParamsSticky", &_kMouseParamsSticky_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kTrackMouseLocationOptionIncludeScrollWheel", &_kTrackMouseLocationOptionIncludeScrollWheel_C},
+#endif
 	{"kTrackMouseLocationOptionDontConsumeMouseUp", &_kTrackMouseLocationOptionDontConsumeMouseUp_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kMouseTrackingScrollWheel", &_kMouseTrackingScrollWheel_C},
 	{"kMouseTrackingClientEvent", &_kMouseTrackingClientEvent_C},
+#endif
 	{"kMouseTrackingMouseMoved", &_kMouseTrackingMouseMoved_C},
 	{"kMouseTrackingTimedOut", &_kMouseTrackingTimedOut_C},
 	{"kMouseTrackingUserCancelled", &_kMouseTrackingUserCancelled_C},
@@ -23931,8 +24381,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kMouseTrackingMouseExited", &_kMouseTrackingMouseExited_C},
 	{"kMouseTrackingMouseUp", &_kMouseTrackingMouseUp_C},
 	{"kMouseTrackingMouseDown", &_kMouseTrackingMouseDown_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamAppleEventReply", &_kEventParamAppleEventReply_C},
 	{"kEventParamAppleEvent", &_kEventParamAppleEvent_C},
+#endif
 	{"typeCFRange", &_typeCFRange_C},
 	{"kEventParamAccessibilityEventQueued", &_kEventParamAccessibilityEventQueued_C},
 	{"kEventParamAccessibleActionDescription", &_kEventParamAccessibleActionDescription_C},
@@ -23973,7 +24425,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"typeMenuTrackingMode", &_typeMenuTrackingMode_C},
 	{"typeMenuCommand", &_typeMenuCommand_C},
 	{"typeMenuItemIndex", &_typeMenuItemIndex_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamMenuContextHeight", &_kEventParamMenuContextHeight_C},
+#endif
 	{"kEventParamMenuPopupItem", &_kEventParamMenuPopupItem_C},
 	{"kEventParamParentMenuItem", &_kEventParamParentMenuItem_C},
 	{"kEventParamParentMenu", &_kEventParamParentMenu_C},
@@ -24023,7 +24477,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventParamControlOriginalOwningWindow", &_kEventParamControlOriginalOwningWindow_C},
 	{"kEventParamControlPartBounds", &_kEventParamControlPartBounds_C},
 	{"kEventParamControlFeatures", &_kEventParamControlFeatures_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamControlDrawEngraved", &_kEventParamControlDrawEngraved_C},
+#endif
 	{"kEventParamControlDrawInColor", &_kEventParamControlDrawInColor_C},
 	{"kEventParamControlDrawDepth", &_kEventParamControlDrawDepth_C},
 	{"kEventParamControlDataBufferSize", &_kEventParamControlDataBufferSize_C},
@@ -24065,7 +24521,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventParamWindowProxyGWorldPtr", &_kEventParamWindowProxyGWorldPtr_C},
 	{"kEventParamWindowModifiedFlag", &_kEventParamWindowModifiedFlag_C},
 	{"kEventParamWindowDragHiliteFlag", &_kEventParamWindowDragHiliteFlag_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamWindowContentBounds", &_kEventParamWindowContentBounds_C},
+#endif
 	{"kEventParamWindowRegionCode", &_kEventParamWindowRegionCode_C},
 	{"kEventParamClickActivation", &_kEventParamClickActivation_C},
 	{"kEventParamPreviousBounds", &_kEventParamPreviousBounds_C},
@@ -24078,15 +24536,21 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventParamHICommand", &_kEventParamHICommand_C},
 	{"typeGlyphSelector", &_typeGlyphSelector_C},
 	{"typeATSFontRef", &_typeATSFontRef_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamTSMDocAccessBaselineDelta", &_kEventParamTSMDocAccessBaselineDelta_C},
+#endif
 	{"kEventParamTSMDocAccessLineBounds", &_kEventParamTSMDocAccessLineBounds_C},
 	{"kEventParamTSMDocAccessLockCount", &_kEventParamTSMDocAccessLockCount_C},
 	{"kEventParamTSMDocAccessReplyATSUGlyphSelector", &_kEventParamTSMDocAccessReplyATSUGlyphSelector_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamTSMDocAccessReplyCTGlyphInfoRef", &_kEventParamTSMDocAccessReplyCTGlyphInfoRef_C},
+#endif
 	{"kEventParamTSMDocAccessEffectiveRange", &_kEventParamTSMDocAccessEffectiveRange_C},
 	{"kEventParamTSMDocAccessReplyFontSize", &_kEventParamTSMDocAccessReplyFontSize_C},
 	{"kEventParamTSMDocAccessReplyATSFont", &_kEventParamTSMDocAccessReplyATSFont_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamTSMDocAccessReplyCTFontRef", &_kEventParamTSMDocAccessReplyCTFontRef_C},
+#endif
 	{"kEventParamTSMDocAccessRequestedCharacterAttributes", &_kEventParamTSMDocAccessRequestedCharacterAttributes_C},
 	{"kEventParamTSMDocAccessSendCharactersPtr", &_kEventParamTSMDocAccessSendCharactersPtr_C},
 	{"kEventParamTSMDocAccessSendCharacterRange", &_kEventParamTSMDocAccessSendCharacterRange_C},
@@ -24096,7 +24560,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventParamTSMDocAccessCharacterCount", &_kEventParamTSMDocAccessCharacterCount_C},
 	{"kEventParamTSMDocAccessSendComponentInstance", &_kEventParamTSMDocAccessSendComponentInstance_C},
 	{"kEventParamTSMDocAccessSendRefCon", &_kEventParamTSMDocAccessSendRefCon_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamTextInputSendMouseEvent", &_kEventParamTextInputSendMouseEvent_C},
+#endif
 	{"kEventParamTextInputSendReplaceRange", &_kEventParamTextInputSendReplaceRange_C},
 	{"kEventParamTextInputReplyGlyphInfoArray", &_kEventParamTextInputReplyGlyphInfoArray_C},
 	{"kEventParamTextInputSendGlyphInfoArray", &_kEventParamTextInputSendGlyphInfoArray_C},
@@ -24108,8 +24574,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventParamTextInputReplyShowHide", &_kEventParamTextInputReplyShowHide_C},
 	{"kEventParamTextInputSendShowHide", &_kEventParamTextInputSendShowHide_C},
 	{"kEventParamTextInputReplyTextAngle", &_kEventParamTextInputReplyTextAngle_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamTextInputReplyATSFont", &_kEventParamTextInputReplyATSFont_C},
 	{"kEventParamTextInputReplyCTFontRef", &_kEventParamTextInputReplyCTFontRef_C},
+#endif
 	{"kEventParamTextInputReplyLineAscent", &_kEventParamTextInputReplyLineAscent_C},
 	{"kEventParamTextInputReplyLineHeight", &_kEventParamTextInputReplyLineHeight_C},
 	{"kEventParamTextInputReplyPointSize", &_kEventParamTextInputReplyPointSize_C},
@@ -24128,8 +24596,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventParamTextInputSendClauseRng", &_kEventParamTextInputSendClauseRng_C},
 	{"kEventParamTextInputSendHiliteRng", &_kEventParamTextInputSendHiliteRng_C},
 	{"kEventParamTextInputSendUpdateRng", &_kEventParamTextInputSendUpdateRng_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamTextInputReplyAttributedString", &_kEventParamTextInputReplyAttributedString_C},
 	{"kEventParamTextInputSendAttributedString", &_kEventParamTextInputSendAttributedString_C},
+#endif
 	{"kEventParamTextInputReplyText", &_kEventParamTextInputReplyText_C},
 	{"kEventParamTextInputSendText", &_kEventParamTextInputSendText_C},
 	{"kEventParamTextInputReplySLRec", &_kEventParamTextInputReplySLRec_C},
@@ -24151,14 +24621,17 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventParamTabletEventType", &_kEventParamTabletEventType_C},
 	{"kEventParamMouseChord", &_kEventParamMouseChord_C},
 	{"kEventParamMouseDelta", &_kEventParamMouseDelta_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamMouseWheelSmoothHorizontalDelta", &_kEventParamMouseWheelSmoothHorizontalDelta_C},
 	{"kEventParamMouseWheelSmoothVerticalDelta", &_kEventParamMouseWheelSmoothVerticalDelta_C},
+#endif
 	{"kEventParamMouseWheelDelta", &_kEventParamMouseWheelDelta_C},
 	{"kEventParamMouseWheelAxis", &_kEventParamMouseWheelAxis_C},
 	{"kEventParamClickCount", &_kEventParamClickCount_C},
 	{"kEventParamMouseButton", &_kEventParamMouseButton_C},
 	{"kEventParamWindowMouseLocation", &_kEventParamWindowMouseLocation_C},
 	{"kEventParamMouseLocation", &_kEventParamMouseLocation_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"typeSignedByteOffset", &_typeSignedByteOffset_C},
 	{"typeSignedByteCount", &_typeSignedByteCount_C},
 	{"typeByteOffset", &_typeByteOffset_C},
@@ -24176,13 +24649,16 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"typeHIPoint72DPIGlobal", &_typeHIPoint72DPIGlobal_C},
 	{"typeCGFloat", &_typeCGFloat_C},
 	{"typeCGDisplayID", &_typeCGDisplayID_C},
+#endif
 	{"typeGDHandle", &_typeGDHandle_C},
 	{"typeVoidPtr", &_typeVoidPtr_C},
 	{"typeHIShapeRef", &_typeHIShapeRef_C},
 	{"typeHIRect", &_typeHIRect_C},
 	{"typeHISize", &_typeHISize_C},
 	{"typeHIPoint", &_typeHIPoint_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"typeCGImageRef", &_typeCGImageRef_C},
+#endif
 	{"typeCGContextRef", &_typeCGContextRef_C},
 	{"typeCFIndex", &_typeCFIndex_C},
 	{"typeOSStatus", &_typeOSStatus_C},
@@ -24197,7 +24673,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventParamUserData", &_kEventParamUserData_C},
 	{"kEventParamIndex", &_kEventParamIndex_C},
 	{"kEventParamGDevice", &_kEventParamGDevice_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamDisplayDevice", &_kEventParamDisplayDevice_C},
+#endif
 	{"kEventParamTransactionID", &_kEventParamTransactionID_C},
 	{"kEventParamReason", &_kEventParamReason_C},
 	{"kEventParamAttributes", &_kEventParamAttributes_C},
@@ -24207,7 +24685,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventParamMutableArray", &_kEventParamMutableArray_C},
 	{"kEventParamDeviceColor", &_kEventParamDeviceColor_C},
 	{"kEventParamDeviceDepth", &_kEventParamDeviceDepth_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamCGImageRef", &_kEventParamCGImageRef_C},
+#endif
 	{"kEventParamCGContextRef", &_kEventParamCGContextRef_C},
 	{"kEventParamAEEventClass", &_kEventParamAEEventClass_C},
 	{"kEventParamAEEventID", &_kEventParamAEEventID_C},
@@ -24221,8 +24701,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventParamMenuRef", &_kEventParamMenuRef_C},
 	{"kEventParamGrafPort", &_kEventParamGrafPort_C},
 	{"kEventParamWindowRef", &_kEventParamWindowRef_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"typeEventTargetOptions", &_typeEventTargetOptions_C},
 	{"kEventParamPostOptions", &_kEventParamPostOptions_C},
+#endif
 	{"typeEventTargetRef", &_typeEventTargetRef_C},
 	{"kEventParamPostTarget", &_kEventParamPostTarget_C},
 	{"kWindowGroupAttrZOrderFixed", &_kWindowGroupAttrZOrderFixed_C},
@@ -24280,9 +24762,11 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kWindowEdgeLeft", &_kWindowEdgeLeft_C},
 	{"kWindowEdgeTop", &_kWindowEdgeTop_C},
 	{"kWindowEdgeDefault", &_kWindowEdgeDefault_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIWindowVisibleInAllSpaces", &_kHIWindowVisibleInAllSpaces_C},
 	{"kHIWindowMoveToActiveSpace", &_kHIWindowMoveToActiveSpace_C},
 	{"kHIWindowCanJoinAllSpaces", &_kHIWindowCanJoinAllSpaces_C},
+#endif
 	{"kHIWindowExposeHidden", &_kHIWindowExposeHidden_C},
 	{"kWindowLatentVisibleCollapsedGroup", &_kWindowLatentVisibleCollapsedGroup_C},
 	{"kWindowLatentVisibleCollapsedOwner", &_kWindowLatentVisibleCollapsedOwner_C},
@@ -24291,8 +24775,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kWindowLatentVisibleSuspend", &_kWindowLatentVisibleSuspend_C},
 	{"kWindowLatentVisibleFloater", &_kWindowLatentVisibleFloater_C},
 	{"kWindowConstrainStandardOptions", &_kWindowConstrainStandardOptions_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kWindowConstrainUseSpecifiedBounds", &_kWindowConstrainUseSpecifiedBounds_C},
 	{"kWindowConstrainMoveMinimum", &_kWindowConstrainMoveMinimum_C},
+#endif
 	{"kWindowConstrainUseTransitionWindow", &_kWindowConstrainUseTransitionWindow_C},
 	{"kWindowConstrainCalcOnly", &_kWindowConstrainCalcOnly_C},
 	{"kWindowConstrainAllowPartial", &_kWindowConstrainAllowPartial_C},
@@ -24307,10 +24793,14 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kWindowSlideTransitionEffect", &_kWindowSlideTransitionEffect_C},
 	{"kWindowSheetTransitionEffect", &_kWindowSheetTransitionEffect_C},
 	{"kWindowZoomTransitionEffect", &_kWindowZoomTransitionEffect_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIWindowMenuWindowTag", &_kHIWindowMenuWindowTag_C},
 	{"kHIWindowMenuCreator", &_kHIWindowMenuCreator_C},
+#endif
 	{"kWindowMenuIncludeRotate", &_kWindowMenuIncludeRotate_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIWindowIgnoreObscuringWindows", &_kHIWindowIgnoreObscuringWindows_C},
+#endif
 	{"kScrollWindowEraseToPortBackground", &_kScrollWindowEraseToPortBackground_C},
 	{"kScrollWindowInvalidate", &_kScrollWindowInvalidate_C},
 	{"kScrollWindowNoOptions", &_kScrollWindowNoOptions_C},
@@ -24335,12 +24825,14 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kWindowModalityAppModal", &_kWindowModalityAppModal_C},
 	{"kWindowModalitySystemModal", &_kWindowModalitySystemModal_C},
 	{"kWindowModalityNone", &_kWindowModalityNone_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIWindowSharingReadWrite", &_kHIWindowSharingReadWrite_C},
 	{"kHIWindowSharingReadOnly", &_kHIWindowSharingReadOnly_C},
 	{"kHIWindowSharingNone", &_kHIWindowSharingNone_C},
 	{"kHIWindowBackingLocationMainMemory", &_kHIWindowBackingLocationMainMemory_C},
 	{"kHIWindowBackingLocationVideoMemory", &_kHIWindowBackingLocationVideoMemory_C},
 	{"kHIWindowBackingLocationDefault", &_kHIWindowBackingLocationDefault_C},
+#endif
 	{"kWindowDefHIView", &_kWindowDefHIView_C},
 	{"kWindowDefProcID", &_kWindowDefProcID_C},
 	{"kWindowDefObjectClass", &_kWindowDefObjectClass_C},
@@ -24426,7 +24918,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kWindowCenterMainScreen", &_kWindowCenterMainScreen_C},
 	{"kWindowDefaultPosition", &_kWindowDefaultPosition_C},
 	{"kWindowNoPosition", &_kWindowNoPosition_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kWindowOverlayProc", &_kWindowOverlayProc_C},
+#endif
 	{"kWindowSimpleFrameProc", &_kWindowSimpleFrameProc_C},
 	{"kWindowSimpleProc", &_kWindowSimpleProc_C},
 	{"kWindowSheetAlertProc", &_kWindowSheetAlertProc_C},
@@ -24508,19 +25002,27 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kWindowStandardHandlerAttribute", &_kWindowStandardHandlerAttribute_C},
 	{"kWindowAsyncDragAttribute", &_kWindowAsyncDragAttribute_C},
 	{"kWindowHideOnSuspendAttribute", &_kWindowHideOnSuspendAttribute_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kWindowCanBeVisibleWithoutLoginAttribute", &_kWindowCanBeVisibleWithoutLoginAttribute_C},
+#endif
 	{"kWindowNoShadowAttribute", &_kWindowNoShadowAttribute_C},
 	{"kWindowCompositingAttribute", &_kWindowCompositingAttribute_C},
 	{"kWindowOpaqueForEventsAttribute", &_kWindowOpaqueForEventsAttribute_C},
 	{"kWindowNoActivatesAttribute", &_kWindowNoActivatesAttribute_C},
 	{"kWindowNoUpdatesAttribute", &_kWindowNoUpdatesAttribute_C},
 	{"kWindowDoesNotCycleAttribute", &_kWindowDoesNotCycleAttribute_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kWindowHasRoundBottomBarCornersAttribute", &_kWindowHasRoundBottomBarCornersAttribute_C},
+#endif
 	{"kWindowMetalNoContentSeparatorAttribute", &_kWindowMetalNoContentSeparatorAttribute_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kWindowTexturedSquareCornersAttribute", &_kWindowTexturedSquareCornersAttribute_C},
+#endif
 	{"kWindowNoTitleBarAttribute", &_kWindowNoTitleBarAttribute_C},
 	{"kWindowMetalAttribute", &_kWindowMetalAttribute_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kWindowUnifiedTitleAndToolbarAttribute", &_kWindowUnifiedTitleAndToolbarAttribute_C},
+#endif
 	{"kWindowToolbarButtonAttribute", &_kWindowToolbarButtonAttribute_C},
 	{"kWindowSideTitlebarAttribute", &_kWindowSideTitlebarAttribute_C},
 	{"kWindowResizableAttribute", &_kWindowResizableAttribute_C},
@@ -24530,6 +25032,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kWindowHorizontalZoomAttribute", &_kWindowHorizontalZoomAttribute_C},
 	{"kWindowCloseBoxAttribute", &_kWindowCloseBoxAttribute_C},
 	{"kWindowNoAttributes", &_kWindowNoAttributes_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIWindowBitAutoViewDragTracking", &_kHIWindowBitAutoViewDragTracking_C},
 	{"kHIWindowBitDoesNotHide", &_kHIWindowBitDoesNotHide_C},
 	{"kHIWindowBitNoConstrain", &_kHIWindowBitNoConstrain_C},
@@ -24560,6 +25063,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kHIWindowBitCollapseBox", &_kHIWindowBitCollapseBox_C},
 	{"kHIWindowBitZoomBox", &_kHIWindowBitZoomBox_C},
 	{"kHIWindowBitCloseBox", &_kHIWindowBitCloseBox_C},
+#endif
 	{"kAllWindowClasses", &_kAllWindowClasses_C},
 	{"kDrawerWindowClass", &_kDrawerWindowClass_C},
 	{"kSimpleWindowClass", &_kSimpleWindowClass_C},
@@ -24659,12 +25163,14 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kControlSupportsFocus", &_kControlSupportsFocus_C},
 	{"kControlSupportsEmbedding", &_kControlSupportsEmbedding_C},
 	{"kControlSupportsGhosting", &_kControlSupportsGhosting_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kControlThemeTextInfoTag", &_kControlThemeTextInfoTag_C},
 	{"kControlThemeTextTruncationTag", &_kControlThemeTextTruncationTag_C},
 	{"kControlThemeTextVerticalFlushTag", &_kControlThemeTextVerticalFlushTag_C},
 	{"kControlThemeTextHorizontalFlushTag", &_kControlThemeTextHorizontalFlushTag_C},
 	{"kControlThemeTextFontTag", &_kControlThemeTextFontTag_C},
 	{"kControlContentTag", &_kControlContentTag_C},
+#endif
 	{"kControlSizeTag", &_kControlSizeTag_C},
 	{"kControlKindTag", &_kControlKindTag_C},
 	{"kControlKeyFilterTag", &_kControlKeyFilterTag_C},
@@ -24698,7 +25204,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kControlContentPictHandle", &_kControlContentPictHandle_C},
 	{"kControlContentCIconHandle", &_kControlContentCIconHandle_C},
 	{"kControlContentIconSuiteHandle", &_kControlContentIconSuiteHandle_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kControlContentAlertIconRes", &_kControlContentAlertIconRes_C},
+#endif
 	{"kControlContentICONRes", &_kControlContentICONRes_C},
 	{"kControlContentPictRes", &_kControlContentPictRes_C},
 	{"kControlContentCIconRes", &_kControlContentCIconRes_C},
@@ -24968,11 +25476,15 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kHIMenuDismissedBySelection", &_kHIMenuDismissedBySelection_C},
 	{"kMenuDefClassID", &_kMenuDefClassID_C},
 	{"kMenuDefProcPtr", &_kMenuDefProcPtr_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kMenuItemDataAllDataVersionThree", &_kMenuItemDataAllDataVersionThree_C},
+#endif
 	{"kMenuItemDataAllDataVersionTwo", &_kMenuItemDataAllDataVersionTwo_C},
 	{"kMenuItemDataAllDataVersionOne", &_kMenuItemDataAllDataVersionOne_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kMenuItemDataFont", &_kMenuItemDataFont_C},
 	{"kMenuItemDataAttributedText", &_kMenuItemDataAttributedText_C},
+#endif
 	{"kMenuItemDataCmdVirtualKey", &_kMenuItemDataCmdVirtualKey_C},
 	{"kMenuItemDataIndent", &_kMenuItemDataIndent_C},
 	{"kMenuItemDataProperties", &_kMenuItemDataProperties_C},
@@ -25114,6 +25626,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"app1Evt", &_app1Evt_C},
 	{"driverEvt", &_driverEvt_C},
 	{"networkEvt", &_networkEvt_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kVK_JIS_Kana", &_kVK_JIS_Kana_C},
 	{"kVK_JIS_Eisu", &_kVK_JIS_Eisu_C},
 	{"kVK_JIS_KeypadComma", &_kVK_JIS_KeypadComma_C},
@@ -25232,6 +25745,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kVK_ANSI_D", &_kVK_ANSI_D_C},
 	{"kVK_ANSI_S", &_kVK_ANSI_S_C},
 	{"kVK_ANSI_A", &_kVK_ANSI_A_C},
+#endif
 	{"kAppleLogoUnicode", &_kAppleLogoUnicode_C},
 	{"kBulletUnicode", &_kBulletUnicode_C},
 	{"kDiamondUnicode", &_kDiamondUnicode_C},
@@ -25404,11 +25918,13 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"appearanceProcessNotRegisteredErr", &_appearanceProcessNotRegisteredErr_C},
 	{"appearanceProcessRegisteredErr", &_appearanceProcessRegisteredErr_C},
 	{"appearanceBadBrushIndexErr", &_appearanceBadBrushIndexErr_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kThemeMetricTexturedSmallPushButtonHeight", &_kThemeMetricTexturedSmallPushButtonHeight_C},
 	{"kThemeMetricTexturedPushButtonHeight", &_kThemeMetricTexturedPushButtonHeight_C},
 	{"kThemeMetricSeparatorSize", &_kThemeMetricSeparatorSize_C},
 	{"kThemeMetricButtonRoundedRecessedHeight", &_kThemeMetricButtonRoundedRecessedHeight_C},
 	{"kThemeMetricButtonRoundedHeight", &_kThemeMetricButtonRoundedHeight_C},
+#endif
 	{"kThemeMetricSmallScrollBarMinThumbWidth", &_kThemeMetricSmallScrollBarMinThumbWidth_C},
 	{"kThemeMetricSmallScrollBarMinThumbHeight", &_kThemeMetricSmallScrollBarMinThumbHeight_C},
 	{"kThemeMetricScrollBarMinThumbWidth", &_kThemeMetricScrollBarMinThumbWidth_C},
@@ -25687,7 +26203,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kThemeNoSounds", &_kThemeNoSounds_C},
 	{"kThemeAdornmentShadowOnly", &_kThemeAdornmentShadowOnly_C},
 	{"kThemeAdornmentNoShadow", &_kThemeAdornmentNoShadow_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kThemeAdornmentArrowRightArrow", &_kThemeAdornmentArrowRightArrow_C},
+#endif
 	{"kThemeAdornmentArrowUpArrow", &_kThemeAdornmentArrowUpArrow_C},
 	{"kThemeAdornmentArrowDoubleArrow", &_kThemeAdornmentArrowDoubleArrow_C},
 	{"kThemeAdornmentArrowDownArrow", &_kThemeAdornmentArrowDownArrow_C},
@@ -25798,7 +26316,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kThemeWindowHasVerticalZoom", &_kThemeWindowHasVerticalZoom_C},
 	{"kThemeWindowHasHorizontalZoom", &_kThemeWindowHasHorizontalZoom_C},
 	{"kThemeWindowHasGrow", &_kThemeWindowHasGrow_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kThemeTrackHideTrack", &_kThemeTrackHideTrack_C},
+#endif
 	{"kThemeTrackHasFocus", &_kThemeTrackHasFocus_C},
 	{"kThemeTrackNoScrollBarArrows", &_kThemeTrackNoScrollBarArrows_C},
 	{"kThemeTrackThumbRgnIsNotGhost", &_kThemeTrackThumbRgnIsNotGhost_C},
@@ -25867,7 +26387,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kThemeTabNonFrontPressed", &_kThemeTabNonFrontPressed_C},
 	{"kThemeTabNonFront", &_kThemeTabNonFront_C},
 	{"kPublicThemeFontCount", &_kPublicThemeFontCount_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kThemeSpecifiedFont", &_kThemeSpecifiedFont_C},
+#endif
 	{"kThemeCurrentPortFont", &_kThemeCurrentPortFont_C},
 	{"kThemeMiniSystemFont", &_kThemeMiniSystemFont_C},
 	{"kThemeToolbarFont", &_kThemeToolbarFont_C},
@@ -26096,7 +26618,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kThemeBrushAlertBackgroundActive", &_kThemeBrushAlertBackgroundActive_C},
 	{"kThemeBrushDialogBackgroundInactive", &_kThemeBrushDialogBackgroundInactive_C},
 	{"kThemeBrushDialogBackgroundActive", &_kThemeBrushDialogBackgroundActive_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kAppearanceRegionToolbarButton", &_kAppearanceRegionToolbarButton_C},
+#endif
 	{"kAppearanceRegionContent", &_kAppearanceRegionContent_C},
 	{"kAppearanceRegionStructure", &_kAppearanceRegionStructure_C},
 	{"kAppearanceRegionTitleProxyIcon", &_kAppearanceRegionTitleProxyIcon_C},
@@ -26128,12 +26652,15 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kAESystemFontChanged", &_kAESystemFontChanged_C},
 	{"kAEAppearanceChanged", &_kAEAppearanceChanged_C},
 	{"kAppearanceEventClass", &_kAppearanceEventClass_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIArchiveDecodingForEditor", &_kHIArchiveDecodingForEditor_C},
+#endif
 	{"kHIArchiveDecodeSuperclassForUnregisteredObjects", &_kHIArchiveDecodeSuperclassForUnregisteredObjects_C},
 	{"hiArchiveHIObjectIgnoresArchivingErr", &_hiArchiveHIObjectIgnoresArchivingErr_C},
 	{"hiArchiveEncodingCompleteErr", &_hiArchiveEncodingCompleteErr_C},
 	{"hiArchiveKeyNotAvailableErr", &_hiArchiveKeyNotAvailableErr_C},
 	{"hiArchiveTypeMismatchErr", &_hiArchiveTypeMismatchErr_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIDelegateAfter", &_kHIDelegateAfter_C},
 	{"kHIDelegateBefore", &_kHIDelegateBefore_C},
 	{"kHIDelegateAll", &_kHIDelegateAll_C},
@@ -26149,6 +26676,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventClassDelegate", &_kEventClassDelegate_C},
 	{"kEventHIObjectGetInitParameters", &_kEventHIObjectGetInitParameters_C},
 	{"kEventHIObjectCreatedFromArchive", &_kEventHIObjectCreatedFromArchive_C},
+#endif
 	{"kEventHIObjectEncode", &_kEventHIObjectEncode_C},
 	{"kEventHIObjectPrintDebugInfo", &_kEventHIObjectPrintDebugInfo_C},
 	{"kEventHIObjectIsEqual", &_kEventHIObjectIsEqual_C},
@@ -26156,17 +26684,21 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventHIObjectInitialize", &_kEventHIObjectInitialize_C},
 	{"kEventHIObjectConstruct", &_kEventHIObjectConstruct_C},
 	{"typeHIObjectRef", &_typeHIObjectRef_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kEventParamInitParameters", &_kEventParamInitParameters_C},
 	{"kEventParamDecodingForEditor", &_kEventParamDecodingForEditor_C},
 	{"kEventParamAfterDelegates", &_kEventParamAfterDelegates_C},
 	{"kEventParamBeforeDelegates", &_kEventParamBeforeDelegates_C},
+#endif
 	{"kEventParamHIArchive", &_kEventParamHIArchive_C},
 	{"kEventParamHIObjectInstance", &_kEventParamHIObjectInstance_C},
 	{"kEventClassHIObject", &_kEventClassHIObject_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIClassOptionSingleton", &_kHIClassOptionSingleton_C},
 	{"hiObjectDelegateNotFoundErr", &_hiObjectDelegateNotFoundErr_C},
 	{"hiObjectDelegateAlreadyExistsErr", &_hiObjectDelegateAlreadyExistsErr_C},
 	{"hiObjectCannotSubclassSingletonErr", &_hiObjectCannotSubclassSingletonErr_C},
+#endif
 	{"hiObjectClassIsAbstractErr", &_hiObjectClassIsAbstractErr_C},
 	{"hiObjectClassHasSubclassesErr", &_hiObjectClassHasSubclassesErr_C},
 	{"hiObjectClassHasInstancesErr", &_hiObjectClassHasInstancesErr_C},
@@ -26185,8 +26717,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kEventPriorityHigh", &_kEventPriorityHigh_C},
 	{"kEventPriorityStandard", &_kEventPriorityStandard_C},
 	{"kEventPriorityLow", &_kEventPriorityLow_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"typeCTGlyphInfoRef", &_typeCTGlyphInfoRef_C},
 	{"typeCTFontRef", &_typeCTFontRef_C},
+#endif
 	{"typeDragRef", &_typeDragRef_C},
 	{"kEventParamDragRef", &_kEventParamDragRef_C},
 	{"kEventParamDirectObject", &_kEventParamDirectObject_C},
@@ -26216,6 +26750,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCGImageStatusUnknownType", &_kCGImageStatusUnknownType_C},
 	{"kCGImageStatusInvalidData", &_kCGImageStatusInvalidData_C},
 	{"kCGImageStatusUnexpectedEOF", &_kCGImageStatusUnexpectedEOF_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCTUnderlinePatternDashDotDot", &_kCTUnderlinePatternDashDotDot_C},
 	{"kCTUnderlinePatternDashDot", &_kCTUnderlinePatternDashDot_C},
 	{"kCTUnderlinePatternDash", &_kCTUnderlinePatternDash_C},
@@ -26375,21 +26910,26 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCTFontBoldTrait", &_kCTFontBoldTrait_C},
 	{"kCTFontItalicTrait", &_kCTFontItalicTrait_C},
 	{"kCTFontClassMaskShift", &_kCTFontClassMaskShift_C},
+#endif
 	{"kFemale", &_kFemale_C},
 	{"kMale", &_kMale_C},
 	{"kNeuter", &_kNeuter_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kAudioUnitProperty_SpeechChannel", &_kAudioUnitProperty_SpeechChannel_C},
 	{"kAudioUnitProperty_Voice", &_kAudioUnitProperty_Voice_C},
 	{"kAudioUnitSubType_SpeechSynthesis", &_kAudioUnitSubType_SpeechSynthesis_C},
+#endif
 	{"soVoiceFile", &_soVoiceFile_C},
 	{"soVoiceDescription", &_soVoiceDescription_C},
 	{"modeLiteral", &_modeLiteral_C},
 	{"modeNormal", &_modeNormal_C},
 	{"modePhonemes", &_modePhonemes_C},
 	{"modeText", &_modeText_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kSpeechSentenceBoundary", &_kSpeechSentenceBoundary_C},
 	{"kSpeechWordBoundary", &_kSpeechWordBoundary_C},
 	{"kSpeechImmediateBoundary", &_kSpeechImmediateBoundary_C},
+#endif
 	{"soOutputToFileWithCFURL", &_soOutputToFileWithCFURL_C},
 	{"soSoundOutput", &_soSoundOutput_C},
 	{"soSynthExtension", &_soSynthExtension_C},
@@ -26650,9 +27190,11 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kPMBlackAndWhite", &_kPMBlackAndWhite_C},
 	{"kPMLocked", &_kPMLocked_C},
 	{"kSizeOfTPrint", &_kSizeOfTPrint_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kPMDataFormatXMLCompressed", &_kPMDataFormatXMLCompressed_C},
 	{"kPMDataFormatXMLMinimal", &_kPMDataFormatXMLMinimal_C},
 	{"kPMDataFormatXMLDefault", &_kPMDataFormatXMLDefault_C},
+#endif
 	{"kPMUnlocked", &_kPMUnlocked_C},
 	{"kPMPrintAllPages", &_kPMPrintAllPages_C},
 	{"kPMInvalidPreset", &_kPMInvalidPreset_C},
@@ -26744,7 +27286,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kAXValueCGSizeType", &_kAXValueCGSizeType_C},
 	{"kAXValueCGPointType", &_kAXValueCGPointType_C},
 	{"kAXCopyMultipleAttributeOptionStopOnError", &_kAXCopyMultipleAttributeOptionStopOnError_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kAXErrorNotEnoughPrecision", &_kAXErrorNotEnoughPrecision_C},
+#endif
 	{"kAXErrorParameterizedAttributeUnsupported", &_kAXErrorParameterizedAttributeUnsupported_C},
 	{"kAXErrorNoValue", &_kAXErrorNoValue_C},
 	{"kAXErrorAPIDisabled", &_kAXErrorAPIDisabled_C},
@@ -26763,8 +27307,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kTranslationFileTranslation", &_kTranslationFileTranslation_C},
 	{"kTranslationDataTranslation", &_kTranslationDataTranslation_C},
 	{"badTranslationRefErr", &_badTranslationRefErr_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kPasteboardStandardLocationUnknown", &_kPasteboardStandardLocationUnknown_C},
 	{"kPasteboardStandardLocationTrash", &_kPasteboardStandardLocationTrash_C},
+#endif
 	{"kPasteboardFlavorPromised", &_kPasteboardFlavorPromised_C},
 	{"kPasteboardFlavorSystemTranslated", &_kPasteboardFlavorSystemTranslated_C},
 	{"kPasteboardFlavorRequestOnly", &_kPasteboardFlavorRequestOnly_C},
@@ -27006,6 +27552,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kAlignTop", &_kAlignTop_C},
 	{"kAlignVerticalCenter", &_kAlignVerticalCenter_C},
 	{"kAlignNone", &_kAlignNone_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHIShapeParseFromBottomRight", &_kHIShapeParseFromBottomRight_C},
 	{"kHIShapeParseFromTopLeft", &_kHIShapeParseFromTopLeft_C},
 	{"kHIShapeParseFromRight", &_kHIShapeParseFromRight_C},
@@ -27015,6 +27562,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kHIShapeEnumerateTerminate", &_kHIShapeEnumerateTerminate_C},
 	{"kHIShapeEnumerateRect", &_kHIShapeEnumerateRect_C},
 	{"kHIShapeEnumerateInit", &_kHIShapeEnumerateInit_C},
+#endif
 	{"kATSUDirectDataLayoutRecordATSLayoutRecordCurrent", &_kATSUDirectDataLayoutRecordATSLayoutRecordCurrent_C},
 	{"kATSUDirectDataLayoutRecordATSLayoutRecordVersion1", &_kATSUDirectDataLayoutRecordATSLayoutRecordVersion1_C},
 	{"kATSUDirectDataStyleSettingATSUStyleSettingRefArray", &_kATSUDirectDataStyleSettingATSUStyleSettingRefArray_C},
@@ -28011,8 +28559,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCMFloatBitmapFlagsAlphaPremul", &_kCMFloatBitmapFlagsAlphaPremul_C},
 	{"kCMFloatBitmapFlagsAlpha", &_kCMFloatBitmapFlagsAlpha_C},
 	{"kCMFloatBitmapFlagsNone", &_kCMFloatBitmapFlagsNone_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"cmTextureRGBtoRGBXFloat32", &_cmTextureRGBtoRGBXFloat32_C},
 	{"cmTextureRGBtoRGBX16", &_cmTextureRGBtoRGBX16_C},
+#endif
 	{"cmTextureRGBtoRGBX8", &_cmTextureRGBtoRGBX8_C},
 	{"cmProfileIterateDataVersion3", &_cmProfileIterateDataVersion3_C},
 	{"cmProfileIterateDataVersion2", &_cmProfileIterateDataVersion2_C},
@@ -28430,6 +28980,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"cmVonKriesChromaticAdaptation", &_cmVonKriesChromaticAdaptation_C},
 	{"cmLinearChromaticAdaptation", &_cmLinearChromaticAdaptation_C},
 	{"cmUseDefaultChromaticAdaptation", &_cmUseDefaultChromaticAdaptation_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCGWindowImageOnlyShadows", &_kCGWindowImageOnlyShadows_C},
 	{"kCGWindowImageShouldBeOpaque", &_kCGWindowImageShouldBeOpaque_C},
 	{"kCGWindowImageBoundsIgnoreFraming", &_kCGWindowImageBoundsIgnoreFraming_C},
@@ -28446,6 +28997,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCGWindowSharingReadWrite", &_kCGWindowSharingReadWrite_C},
 	{"kCGWindowSharingReadOnly", &_kCGWindowSharingReadOnly_C},
 	{"kCGWindowSharingNone", &_kCGWindowSharingNone_C},
+#endif
 	{"kCGNumberOfWindowLevelKeys", &_kCGNumberOfWindowLevelKeys_C},
 	{"kCGAssistiveTechHighWindowLevelKey", &_kCGAssistiveTechHighWindowLevelKey_C},
 	{"kCGCursorWindowLevelKey", &_kCGCursorWindowLevelKey_C},
@@ -28472,7 +29024,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCGEventSourceStateCombinedSessionState", &_kCGEventSourceStateCombinedSessionState_C},
 	{"kCGEventSourceStatePrivate", &_kCGEventSourceStatePrivate_C},
 	{"kCGEventTapOptionListenOnly", &_kCGEventTapOptionListenOnly_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCGEventTapOptionDefault", &_kCGEventTapOptionDefault_C},
+#endif
 	{"kCGTailAppendEventTap", &_kCGTailAppendEventTap_C},
 	{"kCGHeadInsertEventTap", &_kCGHeadInsertEventTap_C},
 	{"kCGAnnotatedSessionEventTap", &_kCGAnnotatedSessionEventTap_C},
@@ -28481,7 +29035,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCGEventMouseSubtypeTabletProximity", &_kCGEventMouseSubtypeTabletProximity_C},
 	{"kCGEventMouseSubtypeTabletPoint", &_kCGEventMouseSubtypeTabletPoint_C},
 	{"kCGEventMouseSubtypeDefault", &_kCGEventMouseSubtypeDefault_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCGScrollWheelEventIsContinuous", &_kCGScrollWheelEventIsContinuous_C},
+#endif
 	{"kCGEventSourceStateID", &_kCGEventSourceStateID_C},
 	{"kCGEventSourceGroupID", &_kCGEventSourceGroupID_C},
 	{"kCGEventSourceUserID", &_kCGEventSourceUserID_C},
@@ -28514,12 +29070,14 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCGTabletEventPointY", &_kCGTabletEventPointY_C},
 	{"kCGTabletEventPointX", &_kCGTabletEventPointX_C},
 	{"kCGScrollWheelEventInstantMouser", &_kCGScrollWheelEventInstantMouser_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCGScrollWheelEventPointDeltaAxis3", &_kCGScrollWheelEventPointDeltaAxis3_C},
 	{"kCGScrollWheelEventPointDeltaAxis2", &_kCGScrollWheelEventPointDeltaAxis2_C},
 	{"kCGScrollWheelEventPointDeltaAxis1", &_kCGScrollWheelEventPointDeltaAxis1_C},
 	{"kCGScrollWheelEventFixedPtDeltaAxis3", &_kCGScrollWheelEventFixedPtDeltaAxis3_C},
 	{"kCGScrollWheelEventFixedPtDeltaAxis2", &_kCGScrollWheelEventFixedPtDeltaAxis2_C},
 	{"kCGScrollWheelEventFixedPtDeltaAxis1", &_kCGScrollWheelEventFixedPtDeltaAxis1_C},
+#endif
 	{"kCGScrollWheelEventDeltaAxis3", &_kCGScrollWheelEventDeltaAxis3_C},
 	{"kCGScrollWheelEventDeltaAxis2", &_kCGScrollWheelEventDeltaAxis2_C},
 	{"kCGScrollWheelEventDeltaAxis1", &_kCGScrollWheelEventDeltaAxis1_C},
@@ -28562,8 +29120,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCGEventFlagMaskControl", &_kCGEventFlagMaskControl_C},
 	{"kCGEventFlagMaskShift", &_kCGEventFlagMaskShift_C},
 	{"kCGEventFlagMaskAlphaShift", &_kCGEventFlagMaskAlphaShift_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCGScrollEventUnitLine", &_kCGScrollEventUnitLine_C},
 	{"kCGScrollEventUnitPixel", &_kCGScrollEventUnitPixel_C},
+#endif
 	{"kCGMouseButtonCenter", &_kCGMouseButtonCenter_C},
 	{"kCGMouseButtonRight", &_kCGMouseButtonRight_C},
 	{"kCGMouseButtonLeft", &_kCGMouseButtonLeft_C},
@@ -28593,8 +29153,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kDisplaySubPixelLayoutUndefined", &_kDisplaySubPixelLayoutUndefined_C},
 	{"kDisplayProductIDGeneric", &_kDisplayProductIDGeneric_C},
 	{"kDisplayVendorIDUnknown", &_kDisplayVendorIDUnknown_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kIOHibernatePreviewUpdates", &_kIOHibernatePreviewUpdates_C},
 	{"kIOHibernatePreviewActive", &_kIOHibernatePreviewActive_C},
+#endif
 	{"kIOTimingIDVESA_1360x768_60hz", &_kIOTimingIDVESA_1360x768_60hz_C},
 	{"kIOTimingIDVESA_848x480_60hz", &_kIOTimingIDVESA_848x480_60hz_C},
 	{"kIOTimingIDApple_0x0_0hz_Offline", &_kIOTimingIDApple_0x0_0hz_Offline_C},
@@ -28763,9 +29325,13 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kDisplayModeDefaultFlag", &_kDisplayModeDefaultFlag_C},
 	{"kDisplayModeSafeFlag", &_kDisplayModeSafeFlag_C},
 	{"kDisplayModeValidFlag", &_kDisplayModeValidFlag_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kDisplayModeValidForMirroringFlag", &_kDisplayModeValidForMirroringFlag_C},
+#endif
 	{"kDisplayModeTelevisionFlag", &_kDisplayModeTelevisionFlag_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kDisplayModeValidateAgainstDisplay", &_kDisplayModeValidateAgainstDisplay_C},
+#endif
 	{"kDisplayModeNotGraphicsQualityFlag", &_kDisplayModeNotGraphicsQualityFlag_C},
 	{"kDisplayModeStretchedFlag", &_kDisplayModeStretchedFlag_C},
 	{"kDisplayModeNotPresetFlag", &_kDisplayModeNotPresetFlag_C},
@@ -28777,8 +29343,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kDisplayModeNeverShowFlag", &_kDisplayModeNeverShowFlag_C},
 	{"kDisplayModeAlwaysShowFlag", &_kDisplayModeAlwaysShowFlag_C},
 	{"kDisplayModeSafetyFlags", &_kDisplayModeSafetyFlags_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kIORGBSignedFloatingPointPixels", &_kIORGBSignedFloatingPointPixels_C},
 	{"kIORGBSignedDirectPixels", &_kIORGBSignedDirectPixels_C},
+#endif
 	{"kIOMonoInverseDirectPixels", &_kIOMonoInverseDirectPixels_C},
 	{"kIOMonoDirectPixels", &_kIOMonoDirectPixels_C},
 	{"kIORGBDirectPixels", &_kIORGBDirectPixels_C},
@@ -28796,7 +29364,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCGScreenUpdateOperationReducedDirtyRectangleCount", &_kCGScreenUpdateOperationReducedDirtyRectangleCount_C},
 	{"kCGScreenUpdateOperationMove", &_kCGScreenUpdateOperationMove_C},
 	{"kCGScreenUpdateOperationRefresh", &_kCGScreenUpdateOperationRefresh_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCGDisplayDesktopShapeChangedFlag", &_kCGDisplayDesktopShapeChangedFlag_C},
+#endif
 	{"kCGDisplayUnMirrorFlag", &_kCGDisplayUnMirrorFlag_C},
 	{"kCGDisplayMirrorFlag", &_kCGDisplayMirrorFlag_C},
 	{"kCGDisplayDisabledFlag", &_kCGDisplayDisabledFlag_C},
@@ -28813,7 +29383,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCGCaptureNoFill", &_kCGCaptureNoFill_C},
 	{"kCGCaptureNoOptions", &_kCGCaptureNoOptions_C},
 	{"kCGErrorLast", &_kCGErrorLast_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCGErrorRetryRegistration", &_kCGErrorRetryRegistration_C},
+#endif
 	{"kCGErrorForkFailed", &_kCGErrorForkFailed_C},
 	{"kCGErrorClassicApplicationsMustBeLaunchedByClassic", &_kCGErrorClassicApplicationsMustBeLaunchedByClassic_C},
 	{"kCGErrorApplicationCanOnlyBeRunInOneSessionAtATime", &_kCGErrorApplicationCanOnlyBeRunInOneSessionAtATime_C},
@@ -28836,6 +29408,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCGErrorFailure", &_kCGErrorFailure_C},
 	{"kCGErrorFirst", &_kCGErrorFirst_C},
 	{"kCGErrorSuccess", &_kCGErrorSuccess_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCGBlendModePlusLighter", &_kCGBlendModePlusLighter_C},
 	{"kCGBlendModePlusDarker", &_kCGBlendModePlusDarker_C},
 	{"kCGBlendModeXOR", &_kCGBlendModeXOR_C},
@@ -28848,6 +29421,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCGBlendModeSourceIn", &_kCGBlendModeSourceIn_C},
 	{"kCGBlendModeCopy", &_kCGBlendModeCopy_C},
 	{"kCGBlendModeClear", &_kCGBlendModeClear_C},
+#endif
 	{"kCGBlendModeLuminosity", &_kCGBlendModeLuminosity_C},
 	{"kCGBlendModeColor", &_kCGBlendModeColor_C},
 	{"kCGBlendModeSaturation", &_kCGBlendModeSaturation_C},
@@ -28927,8 +29501,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCGImageAlphaPremultipliedFirst", &_kCGImageAlphaPremultipliedFirst_C},
 	{"kCGImageAlphaPremultipliedLast", &_kCGImageAlphaPremultipliedLast_C},
 	{"kCGImageAlphaNone", &_kCGImageAlphaNone_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCGGradientDrawsAfterEndLocation", &_kCGGradientDrawsAfterEndLocation_C},
 	{"kCGGradientDrawsBeforeStartLocation", &_kCGGradientDrawsBeforeStartLocation_C},
+#endif
 	{"CGGlyphMax", &_CGGlyphMax_C},
 	{"CGGlyphMin", &_CGGlyphMin_C},
 	{"kCGGlyphMax", &_kCGGlyphMax_C},
@@ -28940,6 +29516,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCGPatternTilingConstantSpacing", &_kCGPatternTilingConstantSpacing_C},
 	{"kCGPatternTilingConstantSpacingMinimalDistortion", &_kCGPatternTilingConstantSpacingMinimalDistortion_C},
 	{"kCGPatternTilingNoDistortion", &_kCGPatternTilingNoDistortion_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCGColorSpaceModelPattern", &_kCGColorSpaceModelPattern_C},
 	{"kCGColorSpaceModelIndexed", &_kCGColorSpaceModelIndexed_C},
 	{"kCGColorSpaceModelDeviceN", &_kCGColorSpaceModelDeviceN_C},
@@ -28948,6 +29525,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCGColorSpaceModelRGB", &_kCGColorSpaceModelRGB_C},
 	{"kCGColorSpaceModelMonochrome", &_kCGColorSpaceModelMonochrome_C},
 	{"kCGColorSpaceModelUnknown", &_kCGColorSpaceModelUnknown_C},
+#endif
 	{"kCGRenderingIntentSaturation", &_kCGRenderingIntentSaturation_C},
 	{"kCGRenderingIntentPerceptual", &_kCGRenderingIntentPerceptual_C},
 	{"kCGRenderingIntentRelativeColorimetric", &_kCGRenderingIntentRelativeColorimetric_C},
@@ -28978,16 +29556,20 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"type1StreamType", &_type1StreamType_C},
 	{"truetypeStreamType", &_truetypeStreamType_C},
 	{"cexec68K", &_cexec68K_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kATSFontAutoActivationAsk", &_kATSFontAutoActivationAsk_C},
 	{"kATSFontAutoActivationEnabled", &_kATSFontAutoActivationEnabled_C},
 	{"kATSFontAutoActivationDisabled", &_kATSFontAutoActivationDisabled_C},
 	{"kATSFontAutoActivationDefault", &_kATSFontAutoActivationDefault_C},
+#endif
 	{"kATSQueryActivateFontMessage", &_kATSQueryActivateFontMessage_C},
 	{"kATSFontNotifyActionDirectoriesChanged", &_kATSFontNotifyActionDirectoriesChanged_C},
 	{"kATSFontNotifyActionFontsChanged", &_kATSFontNotifyActionFontsChanged_C},
 	{"kATSFontNotifyOptionReceiveWhileSuspended", &_kATSFontNotifyOptionReceiveWhileSuspended_C},
 	{"kATSFontNotifyOptionDefault", &_kATSFontNotifyOptionDefault_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kATSFileReferenceFilterSelector", &_kATSFileReferenceFilterSelector_C},
+#endif
 	{"kATSFontFilterSelectorFontApplierFunction", &_kATSFontFilterSelectorFontApplierFunction_C},
 	{"kATSFontFilterSelectorFontFamilyApplierFunction", &_kATSFontFilterSelectorFontFamilyApplierFunction_C},
 	{"kATSFontFilterSelectorFontFamily", &_kATSFontFilterSelectorFontFamily_C},
@@ -28998,12 +29580,18 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kATSOptionFlagsUnRestrictedScope", &_kATSOptionFlagsUnRestrictedScope_C},
 	{"kATSOptionFlagsDefaultScope", &_kATSOptionFlagsDefaultScope_C},
 	{"kATSOptionFlagsIterationScopeMask", &_kATSOptionFlagsIterationScopeMask_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kATSOptionFlagsIncludeDisabledMask", &_kATSOptionFlagsIncludeDisabledMask_C},
+#endif
 	{"kATSOptionFlagsIterateByPrecedenceMask", &_kATSOptionFlagsIterateByPrecedenceMask_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kATSOptionFlagsRecordPersistently", &_kATSOptionFlagsRecordPersistently_C},
+#endif
 	{"kATSOptionFlagsDoNotNotify", &_kATSOptionFlagsDoNotNotify_C},
 	{"kATSOptionFlagsProcessSubdirectories", &_kATSOptionFlagsProcessSubdirectories_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kATSOptionFlagsActivateDisabled", &_kATSOptionFlagsActivateDisabled_C},
+#endif
 	{"kATSFontContextLocal", &_kATSFontContextLocal_C},
 	{"kATSFontContextGlobal", &_kATSFontContextGlobal_C},
 	{"kATSFontContextUnspecified", &_kATSFontContextUnspecified_C},
@@ -29036,11 +29624,13 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"sizeof_sfntNameRecord", &_sizeof_sfntNameRecord_C},
 	{"kFontNoNameCode", &_kFontNoNameCode_C},
 	{"kFontLastReservedName", &_kFontLastReservedName_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kFontPostScriptCIDName", &_kFontPostScriptCIDName_C},
 	{"kFontSampleTextName", &_kFontSampleTextName_C},
 	{"kFontMacCompatibleFullName", &_kFontMacCompatibleFullName_C},
 	{"kFontPreferredSubfamilyName", &_kFontPreferredSubfamilyName_C},
 	{"kFontPreferredFamilyName", &_kFontPreferredFamilyName_C},
+#endif
 	{"kFontLicenseInfoURLName", &_kFontLicenseInfoURLName_C},
 	{"kFontLicenseDescriptionName", &_kFontLicenseDescriptionName_C},
 	{"kFontDesignerURLName", &_kFontDesignerURLName_C},
@@ -29301,7 +29891,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kATSFontFormatUnspecified", &_kATSFontFormatUnspecified_C},
 	{"kFMPostScriptFontTechnology", &_kFMPostScriptFontTechnology_C},
 	{"kFMTrueTypeFontTechnology", &_kFMTrueTypeFontTechnology_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kFMFontFileRefFilterSelector", &_kFMFontFileRefFilterSelector_C},
+#endif
 	{"kFMFontDirectoryFilterSelector", &_kFMFontDirectoryFilterSelector_C},
 	{"kFMFontCallbackFilterSelector", &_kFMFontCallbackFilterSelector_C},
 	{"kFMFontFamilyCallbackFilterSelector", &_kFMFontFamilyCallbackFilterSelector_C},
@@ -29705,6 +30297,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kSKIndexVector", &_kSKIndexVector_C},
 	{"kSKIndexInverted", &_kSKIndexInverted_C},
 	{"kSKIndexUnknown", &_kSKIndexUnknown_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kLSSharedFileListDoNotMountVolumes", &_kLSSharedFileListDoNotMountVolumes_C},
 	{"kLSSharedFileListNoUserInteraction", &_kLSSharedFileListNoUserInteraction_C},
 	{"kTryAuthenticate", &_kTryAuthenticate_C},
@@ -31633,6 +32226,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"CSSM_ERRORCODE_CUSTOM_OFFSET", &_CSSM_ERRORCODE_CUSTOM_OFFSET_C},
 	{"CSSM_ERRORCODE_MODULE_EXTENT", &_CSSM_ERRORCODE_MODULE_EXTENT_C},
 	{"CSSM_BASE_ERROR", &_CSSM_BASE_ERROR_C},
+#endif
 	{"kLSLaunchHasUntrustedContents", &_kLSLaunchHasUntrustedContents_C},
 	{"kLSLaunchAndHideOthers", &_kLSLaunchAndHideOthers_C},
 	{"kLSLaunchAndHide", &_kLSLaunchAndHide_C},
@@ -31707,8 +32301,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kLSNotInitializedErr", &_kLSNotInitializedErr_C},
 	{"kLSNotAnApplicationErr", &_kLSNotAnApplicationErr_C},
 	{"kLSUnknownErr", &_kLSUnknownErr_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kLSAttributeNotSettableErr", &_kLSAttributeNotSettableErr_C},
 	{"kLSAttributeNotFoundErr", &_kLSAttributeNotFoundErr_C},
+#endif
 	{"kLSExecutableIncorrectFormat", &_kLSExecutableIncorrectFormat_C},
 	{"kLSAppInTrashErr", &_kLSAppInTrashErr_C},
 	{"kIconServicesCatalogInfoMask", &_kIconServicesCatalogInfoMask_C},
@@ -31994,6 +32590,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCFHostReachability", &_kCFHostReachability_C},
 	{"kCFHostNames", &_kCFHostNames_C},
 	{"kCFHostAddresses", &_kCFHostAddresses_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCFErrorHTTPBadProxyCredentials", &_kCFErrorHTTPBadProxyCredentials_C},
 	{"kCFErrorHTTPProxyConnectionFailure", &_kCFErrorHTTPProxyConnectionFailure_C},
 	{"kCFErrorHTTPBadURL", &_kCFErrorHTTPBadURL_C},
@@ -32025,6 +32622,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCFSOCKSErrorUnknownClientVersion", &_kCFSOCKSErrorUnknownClientVersion_C},
 	{"kCFHostErrorUnknown", &_kCFHostErrorUnknown_C},
 	{"kCFHostErrorHostNotFound", &_kCFHostErrorHostNotFound_C},
+#endif
 	{"kAnyAuthType", &_kAnyAuthType_C},
 	{"kAnyProtocol", &_kAnyProtocol_C},
 	{"kAnyPort", &_kAnyPort_C},
@@ -32651,6 +33249,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kHuge1BitMask", &_kHuge1BitMask_C},
 	{"kThumbnail8BitMask", &_kThumbnail8BitMask_C},
 	{"kThumbnail32BitData", &_kThumbnail32BitData_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kIconServices512PixelDataARGB", &_kIconServices512PixelDataARGB_C},
 	{"kIconServices256PixelDataARGB", &_kIconServices256PixelDataARGB_C},
 	{"kIconServices128PixelDataARGB", &_kIconServices128PixelDataARGB_C},
@@ -32747,6 +33346,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"errSecAuthFailed", &_errSecAuthFailed_C},
 	{"errSecReadOnly", &_errSecReadOnly_C},
 	{"errSecNotAvailable", &_errSecNotAvailable_C},
+#endif
 	{"kDriveSetupHFSSignature", &_kDriveSetupHFSSignature_C},
 	{"kATAPIDriverSignature", &_kATAPIDriverSignature_C},
 	{"kSCSICDDriverSignature", &_kSCSICDDriverSignature_C},
@@ -32829,8 +33429,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kAEScriptingSizeResource", &_kAEScriptingSizeResource_C},
 	{"kAETerminologyExtension", &_kAETerminologyExtension_C},
 	{"kAEUserTerminology", &_kAEUserTerminology_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"keyAELaunchedAsServiceItem", &_keyAELaunchedAsServiceItem_C},
 	{"keyAELaunchedAsLogInItem", &_keyAELaunchedAsLogInItem_C},
+#endif
 	{"eF15Key", &_eF15Key_C},
 	{"eF14Key", &_eF14Key_C},
 	{"eF13Key", &_eF13Key_C},
@@ -33180,7 +33782,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"typeLongFixedPoint", &_typeLongFixedPoint_C},
 	{"typeLongFixed", &_typeLongFixed_C},
 	{"typeISO8601DateTime", &_typeISO8601DateTime_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"typeCFAbsoluteTime", &_typeCFAbsoluteTime_C},
+#endif
 	{"typeLongDateTime", &_typeLongDateTime_C},
 	{"typeIntlWritingCode", &_typeIntlWritingCode_C},
 	{"typeIntlText", &_typeIntlText_C},
@@ -33783,16 +34387,20 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"typeMachPort", &_typeMachPort_C},
 	{"typeKernelProcessID", &_typeKernelProcessID_C},
 	{"typeCFTypeRef", &_typeCFTypeRef_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"typeCFBooleanRef", &_typeCFBooleanRef_C},
 	{"typeCFNumberRef", &_typeCFNumberRef_C},
+#endif
 	{"typeCFMutableDictionaryRef", &_typeCFMutableDictionaryRef_C},
 	{"typeCFDictionaryRef", &_typeCFDictionaryRef_C},
 	{"typeCFMutableArrayRef", &_typeCFMutableArrayRef_C},
 	{"typeCFArrayRef", &_typeCFArrayRef_C},
 	{"typeCFMutableStringRef", &_typeCFMutableStringRef_C},
 	{"typeCFStringRef", &_typeCFStringRef_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"typeCFMutableAttributedStringRef", &_typeCFMutableAttributedStringRef_C},
 	{"typeCFAttributedStringRef", &_typeCFAttributedStringRef_C},
+#endif
 	{"typeFSS", &_typeFSS_C},
 	{"typeNull", &_typeNull_C},
 	{"typeApplicationURL", &_typeApplicationURL_C},
@@ -33831,11 +34439,15 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"type128BitFloatingPoint", &_type128BitFloatingPoint_C},
 	{"typeIEEE64BitFloatingPoint", &_typeIEEE64BitFloatingPoint_C},
 	{"typeIEEE32BitFloatingPoint", &_typeIEEE32BitFloatingPoint_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"typeUInt64", &_typeUInt64_C},
+#endif
 	{"typeSInt64", &_typeSInt64_C},
 	{"typeUInt32", &_typeUInt32_C},
 	{"typeSInt32", &_typeSInt32_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"typeUInt16", &_typeUInt16_C},
+#endif
 	{"typeSInt16", &_typeSInt16_C},
 	{"typeUTF8Text", &_typeUTF8Text_C},
 	{"typeUTF16ExternalRepresentation", &_typeUTF16ExternalRepresentation_C},
@@ -33846,6 +34458,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"typeStyledUnicodeText", &_typeStyledUnicodeText_C},
 	{"typeChar", &_typeChar_C},
 	{"typeBoolean", &_typeBoolean_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kFSEventStreamEventIdSinceNow", &_kFSEventStreamEventIdSinceNow_C},
 	{"kFSEventStreamEventFlagUnmount", &_kFSEventStreamEventFlagUnmount_C},
 	{"kFSEventStreamEventFlagMount", &_kFSEventStreamEventFlagMount_C},
@@ -33860,6 +34473,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kFSEventStreamCreateFlagNoDefer", &_kFSEventStreamCreateFlagNoDefer_C},
 	{"kFSEventStreamCreateFlagUseCFTypes", &_kFSEventStreamCreateFlagUseCFTypes_C},
 	{"kFSEventStreamCreateFlagNone", &_kFSEventStreamCreateFlagNone_C},
+#endif
 	{"kTECPluginDispatchTableCurrentVersion", &_kTECPluginDispatchTableCurrentVersion_C},
 	{"kTECPluginDispatchTableVersion1_2", &_kTECPluginDispatchTableVersion1_2_C},
 	{"kTECPluginDispatchTableVersion1_1", &_kTECPluginDispatchTableVersion1_1_C},
@@ -33949,12 +34563,14 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kHFSPlusAttrExtents", &_kHFSPlusAttrExtents_C},
 	{"kHFSPlusAttrForkData", &_kHFSPlusAttrForkData_C},
 	{"kHFSPlusAttrInlineData", &_kHFSPlusAttrInlineData_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHFSHasChildLinkMask", &_kHFSHasChildLinkMask_C},
 	{"kHFSHasChildLinkBit", &_kHFSHasChildLinkBit_C},
 	{"kHFSHasLinkChainMask", &_kHFSHasLinkChainMask_C},
 	{"kHFSHasLinkChainBit", &_kHFSHasLinkChainBit_C},
 	{"kHFSHasFolderCountMask", &_kHFSHasFolderCountMask_C},
 	{"kHFSHasFolderCountBit", &_kHFSHasFolderCountBit_C},
+#endif
 	{"kHFSHasSecurityMask", &_kHFSHasSecurityMask_C},
 	{"kHFSHasSecurityBit", &_kHFSHasSecurityBit_C},
 	{"kHFSHasAttributesMask", &_kHFSHasAttributesMask_C},
@@ -33974,7 +34590,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kHFSFirstUserCatalogNodeID", &_kHFSFirstUserCatalogNodeID_C},
 	{"kHFSBogusExtentFileID", &_kHFSBogusExtentFileID_C},
 	{"kHFSRepairCatalogFileID", &_kHFSRepairCatalogFileID_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kHFSAttributeDataFileID", &_kHFSAttributeDataFileID_C},
+#endif
 	{"kHFSAttributesFileID", &_kHFSAttributesFileID_C},
 	{"kHFSStartupFileID", &_kHFSStartupFileID_C},
 	{"kHFSAllocationFileID", &_kHFSAllocationFileID_C},
@@ -33988,8 +34606,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kHFSPlusMaxFileNameChars", &_kHFSPlusMaxFileNameChars_C},
 	{"kHFSMaxFileNameChars", &_kHFSMaxFileNameChars_C},
 	{"kHFSMaxVolumeNameChars", &_kHFSMaxVolumeNameChars_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kSymLinkCreator", &_kSymLinkCreator_C},
 	{"kSymLinkFileType", &_kSymLinkFileType_C},
+#endif
 	{"kHFSPlusCreator", &_kHFSPlusCreator_C},
 	{"kHardLinkFileType", &_kHardLinkFileType_C},
 	{"kFSKMountVersion", &_kFSKMountVersion_C},
@@ -34111,8 +34731,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kMPSemaphoreInfoVersion", &_kMPSemaphoreInfoVersion_C},
 	{"kMPQueueInfoVersion", &_kMPQueueInfoVersion_C},
 	{"kTMTaskActive", &_kTMTaskActive_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kScreenSaversFolderType", &_kScreenSaversFolderType_C},
 	{"kWidgetsFolderType", &_kWidgetsFolderType_C},
+#endif
 	{"kPreferencePanesFolderType", &_kPreferencePanesFolderType_C},
 	{"kLogsFolderType", &_kLogsFolderType_C},
 	{"kDictionariesFolderType", &_kDictionariesFolderType_C},
@@ -34222,6 +34844,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kTextEncodingsFolderType", &_kTextEncodingsFolderType_C},
 	{"kApplicationSupportFolderType", &_kApplicationSupportFolderType_C},
 	{"kColorSyncProfilesFolderType", &_kColorSyncProfilesFolderType_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kDownloadsFolderType", &_kDownloadsFolderType_C},
 	{"kiMovieSoundEffectsFolderType", &_kiMovieSoundEffectsFolderType_C},
 	{"kiMoviePlugInsFolderType", &_kiMoviePlugInsFolderType_C},
@@ -34236,6 +34859,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kInputManagersFolderType", &_kInputManagersFolderType_C},
 	{"kSpotlightMetadataCacheFolderType", &_kSpotlightMetadataCacheFolderType_C},
 	{"kSpotlightImportersFolderType", &_kSpotlightImportersFolderType_C},
+#endif
 	{"kSpotlightSavedSearchesFolderType", &_kSpotlightSavedSearchesFolderType_C},
 	{"kAutosaveInformationFolderType", &_kAutosaveInformationFolderType_C},
 	{"kAutomatorWorkflowsFolderType", &_kAutomatorWorkflowsFolderType_C},
@@ -34312,7 +34936,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kDontCreateFolder", &_kDontCreateFolder_C},
 	{"kCreateFolder", &_kCreateFolder_C},
 	{"kLastDomainConstant", &_kLastDomainConstant_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kFolderManagerLastDomain", &_kFolderManagerLastDomain_C},
+#endif
 	{"kClassicDomain", &_kClassicDomain_C},
 	{"kUserDomain", &_kUserDomain_C},
 	{"kNetworkDomain", &_kNetworkDomain_C},
@@ -34702,8 +35328,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"platformSunOSintel", &_platformSunOSintel_C},
 	{"platformSunOSsparc", &_platformSunOSsparc_C},
 	{"platformIRIXmips", &_platformIRIXmips_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"platformX86_64NativeEntryPoint", &_platformX86_64NativeEntryPoint_C},
 	{"platformPowerPC64NativeEntryPoint", &_platformPowerPC64NativeEntryPoint_C},
+#endif
 	{"platformIA32NativeEntryPoint", &_platformIA32NativeEntryPoint_C},
 	{"platformPowerPCNativeEntryPoint", &_platformPowerPCNativeEntryPoint_C},
 	{"platformWin32", &_platformWin32_C},
@@ -34911,12 +35539,14 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kFNDirectoryModifiedMessage", &_kFNDirectoryModifiedMessage_C},
 	{"kFSPathMakeRefDoNotFollowLeafSymlink", &_kFSPathMakeRefDoNotFollowLeafSymlink_C},
 	{"kFSPathMakeRefDefaultOptions", &_kFSPathMakeRefDefaultOptions_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kFSReplaceObjectDoNotCheckObjectWriteAccess", &_kFSReplaceObjectDoNotCheckObjectWriteAccess_C},
 	{"kFSReplaceObjectPreservePermissionInfo", &_kFSReplaceObjectPreservePermissionInfo_C},
 	{"kFSReplaceObjectReplacePermissionInfo", &_kFSReplaceObjectReplacePermissionInfo_C},
 	{"kFSReplaceObjectSaveOriginalAsABackup", &_kFSReplaceObjectSaveOriginalAsABackup_C},
 	{"kFSReplaceObjectReplaceMetadata", &_kFSReplaceObjectReplaceMetadata_C},
 	{"kFSReplaceObjectDefaultOptions", &_kFSReplaceObjectDefaultOptions_C},
+#endif
 	{"kSmall8BitIconSize", &_kSmall8BitIconSize_C},
 	{"kSmall4BitIconSize", &_kSmall4BitIconSize_C},
 	{"kSmallIconSize", &_kSmallIconSize_C},
@@ -35170,8 +35800,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"fsRtParID", &_fsRtParID_C},
 	{"fsWrDenyPerm", &_fsWrDenyPerm_C},
 	{"fsRdDenyPerm", &_fsRdDenyPerm_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"fsWrAccessPerm", &_fsWrAccessPerm_C},
 	{"fsRdAccessPerm", &_fsRdAccessPerm_C},
+#endif
 	{"fsRdWrShPerm", &_fsRdWrShPerm_C},
 	{"fsRdWrPerm", &_fsRdWrPerm_C},
 	{"fsWrPerm", &_fsWrPerm_C},
@@ -35181,8 +35813,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kIORegistryIterateRecursively", &_kIORegistryIterateRecursively_C},
 	{"kOSAsyncRefSize", &_kOSAsyncRefSize_C},
 	{"kOSAsyncRefCount", &_kOSAsyncRefCount_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kOSAsyncRef64Size", &_kOSAsyncRef64Size_C},
 	{"kOSAsyncRef64Count", &_kOSAsyncRef64Count_C},
+#endif
 	{"kIOInterestCalloutCount", &_kIOInterestCalloutCount_C},
 	{"kIOInterestCalloutServiceIndex", &_kIOInterestCalloutServiceIndex_C},
 	{"kIOInterestCalloutRefconIndex", &_kIOInterestCalloutRefconIndex_C},
@@ -35213,7 +35847,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kMillisecondScale", &_kMillisecondScale_C},
 	{"kMicrosecondScale", &_kMicrosecondScale_C},
 	{"kNanosecondScale", &_kNanosecondScale_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kIOMap64Bit", &_kIOMap64Bit_C},
+#endif
 	{"kIOMapUnique", &_kIOMapUnique_C},
 	{"kIOMapReference", &_kIOMapReference_C},
 	{"kIOMapStatic", &_kIOMapStatic_C},
@@ -36265,7 +36901,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"gestaltCPUPentiumPro", &_gestaltCPUPentiumPro_C},
 	{"gestaltCPUPentium", &_gestaltCPUPentium_C},
 	{"gestaltCPU486", &_gestaltCPU486_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"gestaltCPU970MP", &_gestaltCPU970MP_C},
+#endif
 	{"gestaltCPU970FX", &_gestaltCPU970FX_C},
 	{"gestaltCPU970", &_gestaltCPU970_C},
 	{"gestaltCPU750FX", &_gestaltCPU750FX_C},
@@ -36781,7 +37419,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kTextEncodingGBK_95", &_kTextEncodingGBK_95_C},
 	{"kTextEncodingGB_2312_80", &_kTextEncodingGB_2312_80_C},
 	{"kTextEncodingJIS_X0213_MenKuTen", &_kTextEncodingJIS_X0213_MenKuTen_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kTextEncodingShiftJIS_X0213", &_kTextEncodingShiftJIS_X0213_C},
+#endif
 	{"kTextEncodingJIS_C6226_78", &_kTextEncodingJIS_C6226_78_C},
 	{"kTextEncodingJIS_X0212_90", &_kTextEncodingJIS_X0212_90_C},
 	{"kTextEncodingJIS_X0208_90", &_kTextEncodingJIS_X0208_90_C},
@@ -36835,7 +37475,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kTextEncodingISOLatin3", &_kTextEncodingISOLatin3_C},
 	{"kTextEncodingISOLatin2", &_kTextEncodingISOLatin2_C},
 	{"kTextEncodingISOLatin1", &_kTextEncodingISOLatin1_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kTextEncodingUnicodeV5_0", &_kTextEncodingUnicodeV5_0_C},
+#endif
 	{"kTextEncodingUnicodeV4_0", &_kTextEncodingUnicodeV4_0_C},
 	{"kTextEncodingUnicodeV3_2", &_kTextEncodingUnicodeV3_2_C},
 	{"kTextEncodingUnicodeV3_1", &_kTextEncodingUnicodeV3_1_C},
@@ -36897,11 +37539,14 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kTextEncodingMacChineseTrad", &_kTextEncodingMacChineseTrad_C},
 	{"kTextEncodingMacJapanese", &_kTextEncodingMacJapanese_C},
 	{"kTextEncodingMacRoman", &_kTextEncodingMacRoman_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kTextFlushLeft", &_kTextFlushLeft_C},
 	{"kTextFlushRight", &_kTextFlushRight_C},
 	{"kTextCenter", &_kTextCenter_C},
 	{"kTextFlushDefault", &_kTextFlushDefault_C},
+#endif
 	{"kUTCDefaultOptions", &_kUTCDefaultOptions_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kPOSIXErrorEOPNOTSUPP", &_kPOSIXErrorEOPNOTSUPP_C},
 	{"kPOSIXErrorETIME", &_kPOSIXErrorETIME_C},
 	{"kPOSIXErrorEPROTO", &_kPOSIXErrorEPROTO_C},
@@ -37005,6 +37650,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kPOSIXErrorENOENT", &_kPOSIXErrorENOENT_C},
 	{"kPOSIXErrorEPERM", &_kPOSIXErrorEPERM_C},
 	{"kPOSIXErrorBase", &_kPOSIXErrorBase_C},
+#endif
 	{"dsMixedModeFailure", &_dsMixedModeFailure_C},
 	{"dsBadLibrary", &_dsBadLibrary_C},
 	{"exUserBreak", &_exUserBreak_C},
@@ -39900,6 +40546,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kVariableLengthArray", &_kVariableLengthArray_C},
 	{"kNilOptions", &_kNilOptions_C},
 	{"noErr", &_noErr_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCFStringTokenizerTokenIsCJWordMask", &_kCFStringTokenizerTokenIsCJWordMask_C},
 	{"kCFStringTokenizerTokenHasNonLettersMask", &_kCFStringTokenizerTokenHasNonLettersMask_C},
 	{"kCFStringTokenizerTokenHasHasNumbersMask", &_kCFStringTokenizerTokenHasHasNumbersMask_C},
@@ -39914,6 +40561,7 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCFStringTokenizerUnitParagraph", &_kCFStringTokenizerUnitParagraph_C},
 	{"kCFStringTokenizerUnitSentence", &_kCFStringTokenizerUnitSentence_C},
 	{"kCFStringTokenizerUnitWord", &_kCFStringTokenizerUnitWord_C},
+#endif
 	{"kCFNotificationPostToAllSessions", &_kCFNotificationPostToAllSessions_C},
 	{"kCFNotificationDeliverImmediately", &_kCFNotificationDeliverImmediately_C},
 	{"CFNotificationSuspensionBehaviorDeliverImmediately", &_CFNotificationSuspensionBehaviorDeliverImmediately_C},
@@ -39987,7 +40635,9 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCFURLUnknownSchemeError", &_kCFURLUnknownSchemeError_C},
 	{"kCFURLUnknownError", &_kCFURLUnknownError_C},
 	{"kCFStringEncodingShiftJIS_X0213_00", &_kCFStringEncodingShiftJIS_X0213_00_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCFStringEncodingShiftJIS_X0213", &_kCFStringEncodingShiftJIS_X0213_C},
+#endif
 	{"kCFStringEncodingEBCDIC_CP037", &_kCFStringEncodingEBCDIC_CP037_C},
 	{"kCFStringEncodingEBCDIC_US", &_kCFStringEncodingEBCDIC_US_C},
 	{"kCFStringEncodingNextStepJapanese", &_kCFStringEncodingNextStepJapanese_C},
@@ -40169,8 +40819,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCFNumberFormatterDecimalStyle", &_kCFNumberFormatterDecimalStyle_C},
 	{"kCFNumberFormatterNoStyle", &_kCFNumberFormatterNoStyle_C},
 	{"kCFNumberMaxType", &_kCFNumberMaxType_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCFNumberCGFloatType", &_kCFNumberCGFloatType_C},
 	{"kCFNumberNSIntegerType", &_kCFNumberNSIntegerType_C},
+#endif
 	{"kCFNumberCFIndexType", &_kCFNumberCFIndexType_C},
 	{"kCFNumberDoubleType", &_kCFNumberDoubleType_C},
 	{"kCFNumberFloatType", &_kCFNumberFloatType_C},
@@ -40190,8 +40842,10 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCFMessagePortReceiveTimeout", &_kCFMessagePortReceiveTimeout_C},
 	{"kCFMessagePortSendTimeout", &_kCFMessagePortSendTimeout_C},
 	{"kCFMessagePortSuccess", &_kCFMessagePortSuccess_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCFFileDescriptorWriteCallBack", &_kCFFileDescriptorWriteCallBack_C},
 	{"kCFFileDescriptorReadCallBack", &_kCFFileDescriptorReadCallBack_C},
+#endif
 	{"kCFRunLoopAllActivities", &_kCFRunLoopAllActivities_C},
 	{"kCFRunLoopExit", &_kCFRunLoopExit_C},
 	{"kCFRunLoopAfterWaiting", &_kCFRunLoopAfterWaiting_C},
@@ -40219,10 +40873,12 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCFCalendarUnitMonth", &_kCFCalendarUnitMonth_C},
 	{"kCFCalendarUnitYear", &_kCFCalendarUnitYear_C},
 	{"kCFCalendarUnitEra", &_kCFCalendarUnitEra_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCFTimeZoneNameStyleShortDaylightSaving", &_kCFTimeZoneNameStyleShortDaylightSaving_C},
 	{"kCFTimeZoneNameStyleDaylightSaving", &_kCFTimeZoneNameStyleDaylightSaving_C},
 	{"kCFTimeZoneNameStyleShortStandard", &_kCFTimeZoneNameStyleShortStandard_C},
 	{"kCFTimeZoneNameStyleStandard", &_kCFTimeZoneNameStyleStandard_C},
+#endif
 	{"kCFGregorianAllUnits", &_kCFGregorianAllUnits_C},
 	{"kCFGregorianUnitsSeconds", &_kCFGregorianUnitsSeconds_C},
 	{"kCFGregorianUnitsMinutes", &_kCFGregorianUnitsMinutes_C},
@@ -40233,10 +40889,12 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"CFByteOrderBigEndian", &_CFByteOrderBigEndian_C},
 	{"CFByteOrderLittleEndian", &_CFByteOrderLittleEndian_C},
 	{"CFByteOrderUnknown", &_CFByteOrderUnknown_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCFBundleExecutableArchitecturePPC64", &_kCFBundleExecutableArchitecturePPC64_C},
 	{"kCFBundleExecutableArchitectureX86_64", &_kCFBundleExecutableArchitectureX86_64_C},
 	{"kCFBundleExecutableArchitecturePPC", &_kCFBundleExecutableArchitecturePPC_C},
 	{"kCFBundleExecutableArchitectureI386", &_kCFBundleExecutableArchitectureI386_C},
+#endif
 	{"OSBigEndian", &_OSBigEndian_C},
 	{"OSLittleEndian", &_OSLittleEndian_C},
 	{"OSUnknownByteOrder", &_OSUnknownByteOrder_C},
@@ -40259,9 +40917,11 @@ VPL_DictionaryNode VPX_MacOSX_Constants[] =	{
 	{"kCFStringNormalizationFormC", &_kCFStringNormalizationFormC_C},
 	{"kCFStringNormalizationFormKD", &_kCFStringNormalizationFormKD_C},
 	{"kCFStringNormalizationFormD", &_kCFStringNormalizationFormD_C},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"kCFCompareForcedOrdering", &_kCFCompareForcedOrdering_C},
 	{"kCFCompareWidthInsensitive", &_kCFCompareWidthInsensitive_C},
 	{"kCFCompareDiacriticInsensitive", &_kCFCompareDiacriticInsensitive_C},
+#endif
 	{"kCFCompareNumerically", &_kCFCompareNumerically_C},
 	{"kCFCompareLocalized", &_kCFCompareLocalized_C},
 	{"kCFCompareNonliteral", &_kCFCompareNonliteral_C},

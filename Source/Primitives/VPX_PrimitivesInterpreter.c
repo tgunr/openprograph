@@ -4,21 +4,13 @@
 	Copyright 2004 Scott B. Anderson, All Rights Reserved.
 	
 */
-//#ifdef __MWERKS__
-//#include "VPL_Compiler.h"
-//#elif __GNUC__
-//#include "../../Source/Engine/VPL_Compiler.h"
-//#endif
-
+#ifdef __MWERKS__
+#include "VPL_Compiler.h"
+#elif __GNUC__
+#include "../../Source/Engine/VPL_Compiler.h"
+#endif	
 #include "InterpreterRoutines.h"
 #include "FSCopyObject.h"
-#include "InterpreterSocket.h"
-
-#if __VPL_LOAD_WITH_SOCKET__
-
-#include "InterpreterSocket.h"
-
-#endif	//	__VPL_LOAD_WITH_SOCKET__
 
 Int4	gWriteFileDescriptor = 0;
 Int4	gReadFileDescriptor = 0;
@@ -84,7 +76,6 @@ Int4 VPLP_create_2D_environment( V_Environment environment , enum opTrigger *tri
 		if( result != kNOERROR ) return result;
 
 		if(createExecutable == kFALSE) FSpMakeFSRef(fsspec,&newRef);
-#if !__VPL_LOAD_WITH_SOCKET__
 		else {
 //    		Int1		*applicationName = (Int1 *) X_malloc((fsspec->name[0]+1)*sizeof(Int1));
     		Int4		theNumberOfBytes = 0;
@@ -95,7 +86,6 @@ Int4 VPLP_create_2D_environment( V_Environment environment , enum opTrigger *tri
 			CFBundleRef	mainBundle = CFBundleGetMainBundle();
 			CFURLRef	theURLRef = CFBundleCopyResourceURL(mainBundle,CFSTR("Interpreter_d.app"),NULL,NULL);
 			Boolean		isGood = CFURLGetFSRef(theURLRef,&inRef);
-
 
 			osErr = FSpCreate(fsspec,'iVPL','APPL',smSystemScript);
 			osErr = FSpMakeFSRef(fsspec,&newRef);
@@ -243,11 +233,10 @@ Int4 VPLP_create_2D_environment( V_Environment environment , enum opTrigger *tri
 					}
 				}
 			}
-			osErr = FSClose(refNum);			
-		}
-#endif	// !__VPL_LOAD_WITH_SOCKET__
+			osErr = FSClose(refNum);
 
-#if !__VPL_LOAD_WITH_SOCKET__
+		}
+
 		myLSpec.appRef = &newRef;
 		myLSpec.numDocs = 0;
 		myLSpec.itemRefs = NULL;
@@ -279,25 +268,8 @@ Int4 VPLP_create_2D_environment( V_Environment environment , enum opTrigger *tri
 			*trigger = kFailure;	
 			return kNOERROR;
 		}
-#endif	// !__VPL_LOAD_WITH_SOCKET__
-
-#if __VPL_LOAD_WITH_SOCKET__
 		
-//		result = VPLOpenHostSocket( kVPXIDEServerPort, (int*)&theWriteFileDescriptor, (int*)&theReadFileDescriptor, environment );
-		result = VPLOpenClientSocket( "192.168.1.77", kVPXIDEServerPort, (int*)&theWriteFileDescriptor, (int*)&theReadFileDescriptor, environment );
-		if( result != 0 ) {
-			perror("Open Host Socket Failure");
-			*trigger = kFailure;
-			return kNOERROR;
-		}
-		
-#endif	// __VPL_LOAD_WITH_SOCKET__
-		
-		
-	
 	 } else {
-		 printf("Thread Process?\n");
-		 
 		ThreadID	theThreadID = 0;
 		ThreadEntryUPP	theThreadEntryUPP = NULL;
 		int			pipeError = 0;
@@ -325,13 +297,8 @@ Int4 VPLP_create_2D_environment( V_Environment environment , enum opTrigger *tri
 		
 	 }
 
-/* Byte Order Command */
-	{
-		vpx_ipc_write_byteorder(theEnvironment,kInterpreter,theWriteFileDescriptor);
-	}
 
 /* Interpreter Command */
-#if !__VPL_LOAD_WITH_SOCKET__
 	{
 		OSErr				threadError = noErr;
 		Nat4				bufferSize = 0;
@@ -339,8 +306,10 @@ Int4 VPLP_create_2D_environment( V_Environment environment , enum opTrigger *tri
 		pid_t				processID = 0;
 		pid_t				EditorProcessID = 0;
 		pid_t				InterpreterProcessID = 0;
-		Nat4				command = kCommandEnvironmentProcessSerialNumbers;
 		
+		vpx_ipc_write_byteorder(theEnvironment,kInterpreter,theWriteFileDescriptor);
+
+		Nat4	command = kCommandEnvironmentProcessSerialNumbers;
 		vpx_ipc_write_word(theEnvironment,kInterpreter,theWriteFileDescriptor,&command);
 		
 		GetCurrentProcess(&process);
@@ -374,8 +343,7 @@ Int4 VPLP_create_2D_environment( V_Environment environment , enum opTrigger *tri
 			theReadFileDescriptor = open(theReadFifoName,O_RDONLY);
 		}
 	}
-#endif	// __VPL_LOAD_WITH_SOCKET__
-	
+
 		outputObject = (V_Object) int_to_integer((Nat4) theEnvironment,environment);
 		VPLPrimSetOutputObject(environment,primInArity,0,primitive, (V_Object) outputObject);
 
@@ -406,67 +374,6 @@ Int4 VPLP_create_2D_environment( V_Environment environment , enum opTrigger *tri
 
 	return kNOERROR;
 }
-
-Int4 VPLP_create_2D_remote_2D_environment( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-Int4 VPLP_create_2D_remote_2D_environment( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive )
-{
-	V_Object			outputObject = NULL;
-	V_Environment		theEnvironment = NULL;
-	Int4				theWriteFileDescriptor = 0;
-	Int4				theReadFileDescriptor = 0;
-	
-	Int4				result = 0;
-	Int1*				primName = "create-remote-environment";
-	vpl_Boolean			createExecutable = kFALSE;
-	vpl_StringPtr		theRemoteAddress = NULL;	//	"192.168.1.77";
-	vpl_Integer			theRemotePort = 0;			//	kVPXIDEServerPort;
-	
-#ifdef VPL_VERBOSE_ENGINE
-	result = VPLPrimCheckInputArity(environment,primName, primInArity, 3 );
-	if( result != kNOERROR ) return result;
-	
-	result = VPLPrimCheckOutputArity(environment,primName, primOutArity, 3 );
-	if( result != kNOERROR ) return result;
-#endif
-	
-	VPLPrimGetInputObjectString( &theRemoteAddress, 0, primName, primitive, environment );
-	if( result != kNOERROR ) return result;
-
-	VPLPrimGetInputObjectInteger( (vpl_Integer*)&theRemotePort, 1, primName, primitive, environment );
-	if( result != kNOERROR ) return result;
-
-	VPLPrimGetInputObjectBool( &createExecutable, 2, primName, primitive, environment );
-	if( result != kNOERROR ) return result;
-	
-//	fprintf( stderr, "create-remote-environment on host: %s, port: %d\n", theRemoteAddress, theRemotePort );
-	
-//	result = VPLOpenHostSocket( kVPXIDEServerPort, (int*)&theWriteFileDescriptor, (int*)&theReadFileDescriptor, environment );
-	result = VPLOpenClientSocket( theRemoteAddress, (unsigned short int)theRemotePort, (int*)&theWriteFileDescriptor, (int*)&theReadFileDescriptor, environment );
-	if( result != 0 ) {
-		perror("Open Host Socket Failure");
-		*trigger = kFailure;
-		return kNOERROR;
-	}
-		
-	/* Byte Order Command */
-	{
-		vpx_ipc_write_byteorder(theEnvironment,kInterpreter,theWriteFileDescriptor);
-	}
-	
-	outputObject = (V_Object) int_to_integer((Nat4) theEnvironment,environment);
-	VPLPrimSetOutputObject(environment,primInArity,0,primitive, (V_Object) outputObject);
-	
-	outputObject = (V_Object) int_to_integer(theWriteFileDescriptor,environment);
-	VPLPrimSetOutputObject(environment,primInArity,1,primitive, (V_Object) outputObject);
-	
-	outputObject = (V_Object) int_to_integer(theReadFileDescriptor,environment);
-	VPLPrimSetOutputObject(environment,primInArity,2,primitive, (V_Object) outputObject);
-		
-	*trigger = kSuccess;	
-	
-	return kNOERROR;
-}
-
 
 Int4 VPLP_post_2D_load( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 Int4 VPLP_post_2D_load( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive )
@@ -1114,84 +1021,6 @@ Int4 VPLP_abort_2D_processing( V_Environment environment , enum opTrigger *trigg
 	}
 /* End Interpreter Command */
 
-	return kNOERROR;
-}
-
-Int4 VPLP_pipe_2D_request( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-Int4 VPLP_pipe_2D_request( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive )
-{
-	vpl_Integer		interpreterEnvironment = 0;
-	Int1			*primName = "pipe-request";
-	vpl_Integer		theWriteDescriptor = 0;
-	vpl_Integer		theReadDescriptor = 0;
-	Int4 			result = 0;
-	
-	/* Variables to handle inputs */
-	
-	vpl_StringPtr	commandName = NULL;
-	vpl_StringPtr	commandParam = NULL;
-	vpl_StringPtr	commandReply = NULL;
-	Int4			commandStatus = -1;
-	
-	/* Variables to handle internal processing */
-	
-	/* Variables to handle output processing */
-	
-#ifdef VPL_VERBOSE_ENGINE
-	result = VPLPrimCheckInputArity(environment,primName, primInArity, 5 );
-	if( result != kNOERROR ) return result;
-	
-	result = VPLPrimCheckOutputArity(environment,primName, primOutArity, 2 );
-	if( result != kNOERROR ) return result;
-#endif
-	
-	VPLPrimGetInputObjectInteger( &interpreterEnvironment, 0, primName, primitive, environment );
-	if( result != kNOERROR ) return result;
-	
-	VPLPrimGetInputObjectInteger( &theWriteDescriptor, 1, primName, primitive, environment );
-	if( result != kNOERROR ) return result;
-	
-	VPLPrimGetInputObjectInteger( &theReadDescriptor, 2, primName, primitive, environment );
-	if( result != kNOERROR ) return result;
-	
-	VPLPrimGetInputObjectString( &commandName, 3, primName, primitive, environment );
-	if( result != kNOERROR ) return result;
-	
-	VPLPrimGetInputObjectString( &commandParam, 4, primName, primitive, environment );
-	if( result != kNOERROR ) return result;
-	
-	/* Interpreter Command */
-	if(theReadDescriptor)
-	{
-		OSErr	threadError = noErr;
-		
-		Int4 interpreterResult = 0;
-		Nat4 command = kCommandExecutePipeRequest;
-		vpx_ipc_write_word((V_Environment) interpreterEnvironment,kInterpreter,theWriteDescriptor,&command);
-				
-		vpx_ipc_write_string((V_Environment) interpreterEnvironment,kInterpreter,theWriteDescriptor,commandName);
-		
-		vpx_ipc_write_string((V_Environment) interpreterEnvironment,kInterpreter,theWriteDescriptor,commandParam);
-		
-		
-		vpx_ipc_read_word((V_Environment) interpreterEnvironment,kInterpreter,theReadDescriptor,&interpreterResult);
-		
-		vpx_ipc_read_word((V_Environment) interpreterEnvironment,kInterpreter,theReadDescriptor,&commandStatus);
-		VPLPrimSetOutputObjectInteger(environment,primInArity,0,primitive,commandStatus);
-
-		vpx_ipc_read_string((V_Environment) interpreterEnvironment,kInterpreter,theReadDescriptor,&commandReply);
-		if(commandReply) {
-			VPLPrimSetOutputObjectStringCopy(environment,primInArity,1,primitive,commandReply);
-			free(commandReply);
-		} else {
-			VPLPrimSetOutputObjectStringCopy(environment,primInArity,1,primitive,"");
-		}
-		
-		*trigger = interpreterResult;	
-		if((V_Environment) interpreterEnvironment && ((V_Environment) interpreterEnvironment)->interpreterMode == kThread) threadError = YieldToThread(((V_Environment) interpreterEnvironment)->interpreterThreadID);
-	}
-	/* End Interpreter Command */
-	
 	return kNOERROR;
 }
 
@@ -8500,7 +8329,6 @@ Nat4	loadPrimitives_VPX_PrimitivesInterpreter(V_Environment environment,char *bu
         V_Dictionary	dictionary = environment->externalPrimitivesTable;
 
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"create-environment",dictionary,3,6,VPLP_create_2D_environment)) == NULL) return kERROR;
-		if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"create-remote-environment",dictionary,3,3,VPLP_create_2D_remote_2D_environment)) == NULL) return kERROR;
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"post-load",dictionary,3,0,VPLP_post_2D_load)) == NULL) return kERROR;
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"load-bundle",dictionary,5,0,VPLP_load_2D_bundle)) == NULL) return kERROR;
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"bundle-primitives",dictionary,4,1,VPLP_bundle_2D_primitives)) == NULL) return kERROR;
@@ -8516,7 +8344,6 @@ Nat4	loadPrimitives_VPX_PrimitivesInterpreter(V_Environment environment,char *bu
 
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"resources-changed",dictionary,3,0,VPLP_resources_2D_changed)) == NULL) return kERROR;
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"abort-processing",dictionary,3,1,VPLP_abort_2D_processing)) == NULL) return kERROR;
-		if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"pipe-request",dictionary,5,2,VPLP_pipe_2D_request)) == NULL) return kERROR;
 
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"get-debug-window",dictionary,4,1,VPLP_get_2D_debug_2D_window)) == NULL) return kERROR;
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"set-debug-window",dictionary,5,0,VPLP_set_2D_debug_2D_window)) == NULL) return kERROR;

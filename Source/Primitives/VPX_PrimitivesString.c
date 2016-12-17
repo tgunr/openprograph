@@ -14,8 +14,6 @@
 #include "VPL_Errors.h"
 #elif __GNUC__
 #include <MartenEngine/MartenEngine.h>
-
-/*
 typedef union {
 	long inputInt;
 	float inputFloat;
@@ -25,7 +23,6 @@ typedef union {
 typedef struct {
 	V_Input *inputs;
 } VPL_InputList, *V_InputList;
-*/
 
 #endif	
 

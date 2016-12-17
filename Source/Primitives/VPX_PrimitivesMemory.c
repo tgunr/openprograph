@@ -563,73 +563,6 @@ Int4 VPLP_set_2D_external_2D_type( V_Environment environment , enum opTrigger *t
 	return kNOERROR;
 }
 
-Int4 VPLP_set_2D_external_2D_destructor( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-Int4 VPLP_set_2D_external_2D_destructor( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive )
-{
-	V_ExternalBlock	theExtBlock = NULL;
-	void*			theNewFunc = NULL;
-	vpl_StringPtr	theFuncName = NULL;
-	
-	Int1			*primName = "set-external-destructor";
-	Int4			result = kNOERROR;
-	
-#ifdef VPL_VERBOSE_ENGINE
-	result = VPLPrimCheckInputArity( environment, primName, primInArity, 2 );
-	if( result != kNOERROR ) return result;
-	
-	result = VPLPrimCheckOutputArityMin(environment,primName, primOutArity, 0 );
-	if( result != kNOERROR ) return result;
-	
-	result = VPLPrimCheckOutputArityMax(environment,primName, primOutArity, 1 );
-	if( result != kNOERROR ) return result;
-	
-	result = VPLPrimCheckInputObjectType( kExternalBlock, 0, primName, primitive, environment );
-	if( result != kNOERROR ) return result;
-	
-#endif
-	
-	theExtBlock = (V_ExternalBlock)VPLPrimGetInputObject( 0, primitive, environment );
-	
-	if( theExtBlock->system & kSystemReservedC ) {
-		if( theExtBlock->blockFreeProcPtr != NULL ) {
-			VPLEnvironmentCallbackRelease( theExtBlock->blockFreeProcPtr );
-			theExtBlock->blockFreeProcPtr = NULL;
-		}
-		theExtBlock->system = theExtBlock->system | !kSystemReservedC;
-	}
-	
-	if( VPLPrimGetInputObjectType(kString, 1, primitive, environment) == kNOERROR ) 
-	{
-		V_ExtProcedure	theProcEntry = NULL;
-		
-		result = VPLPrimGetInputObjectString( &theFuncName, 1, primName, primitive, environment );
-		if( result != kNOERROR ) return result;
-
-		theProcEntry = get_extProcedure( environment->externalProceduresTable, theFuncName );
-		if( theProcEntry ) theNewFunc = theProcEntry->functionPtr;
-		// log theFuncName wasn't found?
-		if( theNewFunc == NULL ) return kWRONGINPUTTYPE;
-	} else {
-		if( VPLPrimGetInputObjectType(kExternalBlock, 1, primitive, environment) == kNOERROR ) {
-			result = VPLPrimGetInputObjectEBlockPtrCoerce( &theNewFunc, NULL, 1, primName, primitive, environment );
-			if( result != kNOERROR ) return result;
-			
-			theExtBlock->system = theExtBlock->system | kSystemReservedC;
-			VPLEnvironmentCallbackRetain( theNewFunc );
-		}
-	}
-	
-	if( theExtBlock )
-		theExtBlock->blockFreeProcPtr = theNewFunc;
-	
-	if(primOutArity == 1)
-		VPLPrimSetOutputObjectFromInputObject( environment, primInArity, 0, primitive, 0, NULL );
-	
-	*trigger = kSuccess;	
-	return kNOERROR;
-}
-
-
 Int4 VPLP_get_2D_integer( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
 Int4 VPLP_get_2D_integer( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive )
 {
@@ -998,12 +931,13 @@ Int4 VPLP_get_2D_text( V_Environment environment , enum opTrigger *trigger , Nat
 	theBuffer = (Nat4)blockData + theOffset;			// should check if theBuffer is within theOffset + theSize
 	
 	theString = (vpl_StringPtr) X_malloc( (theSize + 1)*vpl_CharSize );
-	theString[theSize] = vpl_StringTerminator;
+	theString[theSize] = 0;
 	
-	memmove( theString, (const void*)theBuffer, theSize );
-	
-	outString = VPLStringCoerceEncoding( theString, theSize, theEncoding, vpl_Default_StringEncoding, environment );
+	for( counter = 0; counter<theSize; counter++, theBuffer++ )
+		theString[counter] = *((vpl_StringPtr)theBuffer);
 
+	outString = VPLStringCoerceEncoding( theString, theEncoding, vpl_Default_StringEncoding, environment );
+	
 	X_free( theString );
 
 	theOffset += theSize;
@@ -1035,7 +969,6 @@ Int4 VPLP_put_2D_text( V_Environment environment , enum opTrigger *trigger , Nat
 	Nat4			counter = 0;
 	vpl_StringPtr	theString = "";
 	vpl_StringPtr	outString = "";
-	vpl_Integer		outSize = 0;
 
 	vpl_StringEncoding	theEncoding = vpl_Default_StringEncoding;		// kCFStringEncodingUTF8;
 
@@ -1089,43 +1022,21 @@ Int4 VPLP_put_2D_text( V_Environment environment , enum opTrigger *trigger , Nat
 		if( result != kNOERROR ) return result;
 	}
 	
-	// check if theString is within theSize 
-	// theString is a copy so we can futz with it
-	
-	if( theSize > strlen( theString ) ) theSize = strlen( theString );
+	// should check if theString is within theSize 
+
 	if( theSize < 1 ) theSize = strlen( theString );
-	if( theSize < strlen( theString ) ) theString[ theSize ] = '\0';			
+	if( theSize < strlen( theString ) ) theString[ theSize ] = '\0';
 
 	// convert 
 	
-//#ifdef CARBON
-#if 0
-	{
-		CFIndex			bufferSize = 0;
-		CFIndex			charCount = 0;
-		CFStringRef		convertString = NULL;
-		Boolean			goodCoerce = false;
-
-		theBuffer = (Nat4)blockData + theOffset;
-
-		convertString = (CFStringRef)CFStringCreateWithBytesNoCopy( kCFAllocatorDefault, (UInt8*)theString, theSize, vpl_Default_StringEncoding, FALSE, kCFAllocatorNull );
-		if( convertString != NULL ) {
-			bufferSize = CFStringGetMaximumSizeForEncoding( CFStringGetLength( convertString ), theEncoding );
-			charCount = CFStringGetBytes( convertString, CFRangeMake(0, theSize), theEncoding, 0, FALSE, (UInt8*)theBuffer, bufferSize, (CFIndex*)&outSize );
-			CFRelease( convertString );
-		}
-		theOffset += outSize;
-		X_free( theString );
-	}
-#else
-	outString = VPLStringCoerceEncoding( theString, theSize, vpl_Default_StringEncoding, theEncoding, environment );
+	outString = VPLStringCoerceEncoding( theString, vpl_Default_StringEncoding, theEncoding, environment );
 	
 	X_free( theString );
 
 	theBuffer = (Nat4)blockData;
 	
 	if( outString != NULL ) {
-		theSize = strlen( outString );		// theSize now changes to fit the encoding - NOTE THIS CODE WILL FAIL TO SUPPORT WIDE ENCODINGS!
+		theSize = strlen( outString );		// theSize now changes to fit the encoding
 		theBuffer += theOffset;				// should check if theBuffer is within theOffset + theSize
 			
 		for( counter = 0; counter<theSize; counter++, theBuffer++ )
@@ -1135,7 +1046,6 @@ Int4 VPLP_put_2D_text( V_Environment environment , enum opTrigger *trigger , Nat
 		
 		X_free( outString );
 	}
-#endif // CARBON
 	
 	VPLPrimSetOutputObjectFromInputObject( environment, primInArity, 0, primitive, 0, NULL );
 	VPLPrimSetOutputObjectInteger( environment, primInArity, 1, primitive, theOffset );
@@ -1451,7 +1361,6 @@ Nat4	loadPrimitives_VPX_PrimitivesMemory(V_Environment environment,char *bundleI
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"to-pointer",dictionary,1,1,VPLP_to_2D_pointer)) == NULL) return kERROR;
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"from-pointer",dictionary,1,1,VPLP_from_2D_pointer)) == NULL) return kERROR;
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"set-external-type",dictionary,2,1,VPLP_set_2D_external_2D_type)) == NULL) return kERROR;
-		if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"set-external-destructor",dictionary,2,1,VPLP_set_2D_external_2D_destructor)) == NULL) return kERROR;
 
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"get-integer",dictionary,3,3,VPLP_get_2D_integer)) == NULL) return kERROR;
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"put-integer",dictionary,4,2,VPLP_put_2D_integer)) == NULL) return kERROR;

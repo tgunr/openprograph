@@ -942,7 +942,6 @@ V_ExternalBlock create_externalBlock( Int1 *name,Nat4 size, V_Environment enviro
 	ptrA->name = new_string(name,environment);
 	ptrA->size = size;
 	ptrA->levelOfIndirection = 0;
-	ptrA->blockFreeProcPtr = NULL;
 
 	return ptrA;
 }
@@ -1014,7 +1013,6 @@ V_ExternalBlock create_externalBlock_level( Int1 *name, Nat4 size, Nat4 level, v
 	ptrA->size = size;
 	ptrA->levelOfIndirection = level;
 	ptrA->blockPtr = outputPtr;
-	ptrA->blockFreeProcPtr = NULL;
 	
 	ptrA->system |= sysFlags;
 //	printf("block basic create!  System:%d\n", ptrA->system);
@@ -1316,33 +1314,18 @@ This interruption would leave OBJECTA->previous corrupted.
 					ptrB->blockPtr = NULL;
 //					printf("block escalated free!  System:%d\n", ptrB->system);
 				} else {
-					
-					VPL_ExternalBlockFreeProcPtr	theFree = ptrB->blockFreeProcPtr;
-					void*							theBrave = NULL;
-					Bool							freeFree = ptrB->system & kSystemReservedC;
-					V_CallbackCodeSegment			theFreeCG = (V_CallbackCodeSegment)ptrB->blockFreeProcPtr;
-
-#if __VPL_DISPATCH_USES_FFI__
-					if( freeFree )
-						theFree = (VPL_ExternalBlockFreeProcPtr)theFreeCG->ffiseg_closure;
-#endif
 					if(ptrB->system & kSystemIndirection) {						// was kSystemReservedA
 						if(ptrB->blockPtr != NULL) {
 							switch( ptrB->levelOfIndirection ) {
 								case 2:
-									theBrave = (Nat4*)*(**(Nat4 ***)ptrB->blockPtr);
 									if( (**(Nat4 **)ptrB->blockPtr) ) X_free((Nat4*)**(Nat4 **)ptrB->blockPtr);
 //									printf("handle level free\n");
 //									**(Nat4 **)ptrB->blockPtr = NULL;
 								case 1:
-									if( theBrave == NULL ) theBrave = (Nat4*)*(*(Nat4 **)ptrB->blockPtr);
 									if( (*(Nat4 *)ptrB->blockPtr) ) X_free((Nat4*)*(Nat4 *)ptrB->blockPtr);
 //									printf("pointer level free\n");
 //									*(Nat4 *)ptrB->blockPtr = NULL;
 								default:
-									if( theBrave == NULL ) theBrave = (Nat4*)*((Nat4 *)ptrB->blockPtr);
-									if( theFree && theBrave ) theFree( theBrave );
-									if( theFree && freeFree ) VPLEnvironmentCallbackRelease( theFreeCG );
 									X_free(ptrB->blockPtr);
 //									printf("block level free\n");
 									ptrB->blockPtr = NULL;
@@ -1350,12 +1333,8 @@ This interruption would leave OBJECTA->previous corrupted.
 							}
 						}
 					} else if(ptrB->blockPtr != NULL) {
-						if( theBrave == NULL ) theBrave = (Nat4*)*((Nat4 *)ptrB->blockPtr);
-						if( theFree && theBrave ) theFree( theBrave );
-						if( theFree && freeFree ) VPLEnvironmentCallbackRelease( theFreeCG );
 						X_free(ptrB->blockPtr);
 //						printf("block basic free!  System:%d\n", ptrB->system);
-						ptrB->blockPtr = NULL;
 					}
 				}
 			}else if(ptrO->type == kInstance){
@@ -1461,6 +1440,7 @@ which would leave both PTRA and PTRB pointing to OBJECT but the HEAP only pointi
 		
 */
 	
+
 #ifdef _POSIX_THREADS
 	pthread_mutex_lock(&gHeapLock);
 #endif
@@ -1469,6 +1449,7 @@ which would leave both PTRA and PTRB pointing to OBJECT but the HEAP only pointi
 	ptrA->next = (V_Object) heap;
 	if(heap->previous != NULL) heap->previous->next = ptrA;
 	heap->previous = ptrA;
+
 
 #ifdef _POSIX_THREADS
 	pthread_mutex_unlock(&gHeapLock);

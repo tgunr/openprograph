@@ -26,7 +26,7 @@
 
 	VPL_Parameter _net_safe_read_R = { kUnsignedType,4,NULL,0,0,NULL};
 	VPL_Parameter _net_safe_read_1 = { kPointerType,1044,"st_mysql",1,0,NULL};
-	VPL_ExtProcedure _net_safe_read_F = {"net_safe_read",NULL,&_net_safe_read_1,&_net_safe_read_R};
+	VPL_ExtProcedure _net_safe_read_F = {"net_safe_read",net_safe_read,&_net_safe_read_1,&_net_safe_read_R};
 
 	VPL_Parameter _mysql_close_1 = { kPointerType,1044,"st_mysql",1,0,NULL};
 	VPL_ExtProcedure _mysql_close_F = {"mysql_close",mysql_close,&_mysql_close_1,NULL};
@@ -794,6 +794,8 @@
 	VPL_Parameter _my_net_init_1 = { kPointerType,620,"st_net",1,0,&_my_net_init_2};
 	VPL_ExtProcedure _my_net_init_F = {"my_net_init",my_net_init,&_my_net_init_1,&_my_net_init_R};
 
+// Not available in Mac OS X 10.6
+#if 0
 	VPL_Parameter _ntohs_R = { kUnsignedType,2,NULL,0,0,NULL};
 	VPL_ExtProcedure _ntohs_F = {"ntohs",ntohs,NULL,&_ntohs_R};
 
@@ -805,7 +807,7 @@
 
 	VPL_Parameter _htonl_R = { kUnsignedType,4,NULL,0,0,NULL};
 	VPL_ExtProcedure _htonl_F = {"htonl",htonl,NULL,&_htonl_R};
-
+#endif
 
 
 VPL_DictionaryNode VPX_MySQL_Procedures[] =	{
@@ -975,10 +977,10 @@ VPL_DictionaryNode VPX_MySQL_Procedures[] =	{
 	{"net_end",&_net_end_F},
 	{"my_net_local_init",&_my_net_local_init_F},
 	{"my_net_init",&_my_net_init_F},
-	{"ntohs",&_ntohs_F},
-	{"ntohl",&_ntohl_F},
-	{"htons",&_htons_F},
-	{"htonl",&_htonl_F},
+//	{"ntohs",&_ntohs_F},
+//	{"ntohl",&_ntohl_F},
+//	{"htons",&_htons_F},
+//	{"htonl",&_htonl_F},
 };
 
 Nat4	VPX_MySQL_Procedures_Number = 170;

@@ -129,6 +129,8 @@ enum {
 	kvpl_CommandReading,
 };
 
+void EnableCommandBadge( Boolean drawBadge );
+
 Int4 attribute_offset( V_Class tempClass , Int1 *tempOString );
 
 Int4 environment_set_current_operation(V_Environment environment,V_Frame theFrame,Nat4 index,Nat4** theBlock,Nat4* theNumberOfFrames);
@@ -162,11 +164,11 @@ enum opTrigger persistent_create(V_Environment environment, Int1 *persistentName
 enum opTrigger persistent_remove(V_Environment environment, Int1 *persistentName);
 enum opTrigger persistent_rename(V_Environment environment, Int1 *oldName, Int1 *provisionalName);
 
-//OSErr FindApplicationPackageDirectory(short *theVRefNum, long *theParID);
-//OSErr CreateBundleFromFSSpec(FSSpec *theSpec, CFBundleRef *theBundle);
-//enum opTrigger environment_load_bundles(V_Environment environment, FSSpec *fsspec, Int1 *newString);
-//OSErr CreateBundleFromFilePath(vpl_StringPtr thePath, CFBundleRef *theBundle);
-//enum opTrigger environment_load_bundles_path(V_Environment environment, vpl_StringPtr filePath, Int1 *newString);
+OSErr FindApplicationPackageDirectory(short *theVRefNum, long *theParID);
+OSErr CreateBundleFromFSSpec(FSSpec *theSpec, CFBundleRef *theBundle);
+enum opTrigger environment_load_bundles(V_Environment environment, FSSpec *fsspec, Int1 *newString);
+OSErr CreateBundleFromFilePath(vpl_StringPtr thePath, CFBundleRef *theBundle);
+enum opTrigger environment_load_bundles_path(V_Environment environment, vpl_StringPtr filePath, Int1 *newString);
 enum opTrigger stack_create(V_Environment environment, Int1* theMethod, V_List inputList,V_Stack *stack,V_List *outputList);
 Nat4 user_cancel(void);
 Nat4 stack_advance(V_Environment environment, V_Stack stack);

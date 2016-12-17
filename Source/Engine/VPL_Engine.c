@@ -2045,6 +2045,7 @@ which would leave stackZ pointing to non-existent stackB and stackC pointing bac
 		
 */
 	
+
 #ifdef _POSIX_THREADS
 	pthread_mutex_lock(&gStackLock);
 #endif
@@ -2058,6 +2059,7 @@ which would leave stackZ pointing to non-existent stackB and stackC pointing bac
 	if(environment->stack == stack){
 				environment->stack = ( V_Stack) stack->nextStack;
 	}
+
 
 #ifdef _POSIX_THREADS
 	pthread_mutex_unlock(&gStackLock);
@@ -2219,11 +2221,11 @@ Int4 destroy_environment(V_Environment environment, Bool printFlag, Bool interpr
 	}
 */
 	X_free(environment);
+
 #ifdef _POSIX_THREADS
 	pthread_mutex_destroy(&gHeapLock);
 	pthread_mutex_destroy(&gStackLock);
 	pthread_mutex_destroy(&gCallbackLock);
-	pthread_mutex_destroy(&gThreadsLock);
 #endif
 	return result;
 }

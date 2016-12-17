@@ -253,13 +253,14 @@
 	VPL_ExtField _VPXStruct_ICAMessage_5 = { "messageType",offsetof(struct ICAMessage,messageType),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_ICAMessage_4};
 	VPL_ExtStructure _VPXStruct_ICAMessage_S = {"ICAMessage",&_VPXStruct_ICAMessage_5,sizeof(struct ICAMessage)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_ICACopyObjectDataPB_1 = { "data",offsetof(struct ICACopyObjectDataPB,data),sizeof(void *),kPointerType,"__CFData",2,0,"T*",NULL};
 	VPL_ExtField _VPXStruct_ICACopyObjectDataPB_2 = { "requestedSize",offsetof(struct ICACopyObjectDataPB,requestedSize),sizeof(unsigned long),kUnsignedType,"NULL",0,0,"unsigned long",&_VPXStruct_ICACopyObjectDataPB_1};
 	VPL_ExtField _VPXStruct_ICACopyObjectDataPB_3 = { "startByte",offsetof(struct ICACopyObjectDataPB,startByte),sizeof(unsigned long),kUnsignedType,"NULL",0,0,"unsigned long",&_VPXStruct_ICACopyObjectDataPB_2};
 	VPL_ExtField _VPXStruct_ICACopyObjectDataPB_4 = { "object",offsetof(struct ICACopyObjectDataPB,object),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_ICACopyObjectDataPB_3};
 	VPL_ExtField _VPXStruct_ICACopyObjectDataPB_5 = { "header",offsetof(struct ICACopyObjectDataPB,header),sizeof(struct ICAHeader),kStructureType,"NULL",0,0,"ICAHeader",&_VPXStruct_ICACopyObjectDataPB_4};
 	VPL_ExtStructure _VPXStruct_ICACopyObjectDataPB_S = {"ICACopyObjectDataPB",&_VPXStruct_ICACopyObjectDataPB_5,sizeof(struct ICACopyObjectDataPB)};
-
+#endif
 	VPL_ExtField _VPXStruct_ICACopyObjectThumbnailPB_1 = { "thumbnailData",offsetof(struct ICACopyObjectThumbnailPB,thumbnailData),sizeof(void *),kPointerType,"__CFData",2,0,"T*",NULL};
 	VPL_ExtField _VPXStruct_ICACopyObjectThumbnailPB_2 = { "thumbnailFormat",offsetof(struct ICACopyObjectThumbnailPB,thumbnailFormat),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_ICACopyObjectThumbnailPB_1};
 	VPL_ExtField _VPXStruct_ICACopyObjectThumbnailPB_3 = { "object",offsetof(struct ICACopyObjectThumbnailPB,object),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_ICACopyObjectThumbnailPB_2};
@@ -275,6 +276,7 @@
 	VPL_ExtField _VPXStruct_ICAGetDeviceListPB_2 = { "header",offsetof(struct ICAGetDeviceListPB,header),sizeof(struct ICAHeader),kStructureType,"NULL",0,0,"ICAHeader",&_VPXStruct_ICAGetDeviceListPB_1};
 	VPL_ExtStructure _VPXStruct_ICAGetDeviceListPB_S = {"ICAGetDeviceListPB",&_VPXStruct_ICAGetDeviceListPB_2,sizeof(struct ICAGetDeviceListPB)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_ICASendNotificationPB_1 = { "replyCode",offsetof(struct ICASendNotificationPB,replyCode),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
 	VPL_ExtField _VPXStruct_ICASendNotificationPB_2 = { "notificationDictionary",offsetof(struct ICASendNotificationPB,notificationDictionary),sizeof(void *),kPointerType,"__CFDictionary",1,0,"T*",&_VPXStruct_ICASendNotificationPB_1};
 	VPL_ExtField _VPXStruct_ICASendNotificationPB_3 = { "header",offsetof(struct ICASendNotificationPB,header),sizeof(struct ICAHeader),kStructureType,"NULL",0,0,"ICAHeader",&_VPXStruct_ICASendNotificationPB_2};
@@ -286,6 +288,7 @@
 	VPL_ExtField _VPXStruct_ICARegisterForEventNotificationPB_4 = { "objectOfInterest",offsetof(struct ICARegisterForEventNotificationPB,objectOfInterest),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_ICARegisterForEventNotificationPB_3};
 	VPL_ExtField _VPXStruct_ICARegisterForEventNotificationPB_5 = { "header",offsetof(struct ICARegisterForEventNotificationPB,header),sizeof(struct ICAHeader),kStructureType,"NULL",0,0,"ICAHeader",&_VPXStruct_ICARegisterForEventNotificationPB_4};
 	VPL_ExtStructure _VPXStruct_ICARegisterForEventNotificationPB_S = {"ICARegisterForEventNotificationPB",&_VPXStruct_ICARegisterForEventNotificationPB_5,sizeof(struct ICARegisterForEventNotificationPB)};
+#endif
 
 	VPL_ExtField _VPXStruct_ICAImportImagePB_1 = { "importedImages",offsetof(struct ICAImportImagePB,importedImages),sizeof(void *),kPointerType,"__CFArray",2,0,"T*",NULL};
 	VPL_ExtField _VPXStruct_ICAImportImagePB_2 = { "filterProc",offsetof(struct ICAImportImagePB,filterProc),sizeof(void *),kPointerType,"unsigned char",1,1,"T*",&_VPXStruct_ICAImportImagePB_1};
@@ -299,6 +302,7 @@
 	VPL_ExtField _VPXStruct_ICAHeader_2 = { "err",offsetof(struct ICAHeader,err),sizeof(short),kIntType,"NULL",0,0,"short",&_VPXStruct_ICAHeader_1};
 	VPL_ExtStructure _VPXStruct_ICAHeader_S = {"ICAHeader",&_VPXStruct_ICAHeader_2,sizeof(struct ICAHeader)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_ICAPTPEventDataset_1 = { "params",offsetof(struct ICAPTPEventDataset,params),sizeof(unsigned int[3]),kPointerType,"unsigned int",0,4,NULL,NULL};
 	VPL_ExtField _VPXStruct_ICAPTPEventDataset_2 = { "transactionID",offsetof(struct ICAPTPEventDataset,transactionID),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_ICAPTPEventDataset_1};
 	VPL_ExtField _VPXStruct_ICAPTPEventDataset_3 = { "eventCode",offsetof(struct ICAPTPEventDataset,eventCode),sizeof(unsigned short),kUnsignedType,"NULL",0,0,"unsigned short",&_VPXStruct_ICAPTPEventDataset_2};
@@ -316,6 +320,7 @@
 	VPL_ExtField _VPXStruct_ICAPTPPassThroughPB_8 = { "resultCode",offsetof(struct ICAPTPPassThroughPB,resultCode),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_ICAPTPPassThroughPB_7};
 	VPL_ExtField _VPXStruct_ICAPTPPassThroughPB_9 = { "commandCode",offsetof(struct ICAPTPPassThroughPB,commandCode),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_ICAPTPPassThroughPB_8};
 	VPL_ExtStructure _VPXStruct_ICAPTPPassThroughPB_S = {"ICAPTPPassThroughPB",&_VPXStruct_ICAPTPPassThroughPB_9,sizeof(struct ICAPTPPassThroughPB)};
+#endif
 
 	VPL_ExtField _VPXStruct_InkPoint_1 = { "keyModifiers",offsetof(struct InkPoint,keyModifiers),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
 	VPL_ExtField _VPXStruct_InkPoint_2 = { "tabletPointData",offsetof(struct InkPoint,tabletPointData),sizeof(struct TabletPointRec),kStructureType,"NULL",0,0,"TabletPointRec",&_VPXStruct_InkPoint_1};
@@ -936,7 +941,11 @@
 	VPL_ExtField _VPXStruct_DataBrowserListViewColumnDesc_2 = { "propertyDesc",offsetof(struct DataBrowserListViewColumnDesc,propertyDesc),sizeof(struct DataBrowserPropertyDesc),kStructureType,"NULL",0,0,"DataBrowserPropertyDesc",&_VPXStruct_DataBrowserListViewColumnDesc_1};
 	VPL_ExtStructure _VPXStruct_DataBrowserListViewColumnDesc_S = {"DataBrowserListViewColumnDesc",&_VPXStruct_DataBrowserListViewColumnDesc_2,sizeof(struct DataBrowserListViewColumnDesc)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_DataBrowserListViewHeaderDesc_1 = { "btnContentInfo",offsetof(struct DataBrowserListViewHeaderDesc,btnContentInfo),sizeof(struct ControlImageContentInfo),kStructureType,"NULL",0,0,"ControlImageContentInfo",NULL};
+#else
+	VPL_ExtField _VPXStruct_DataBrowserListViewHeaderDesc_1 = { "btnContentInfo",offsetof(struct DataBrowserListViewHeaderDesc,btnContentInfo),sizeof(struct ControlButtonContentInfo),kStructureType,"NULL",0,0,"ControlButtonContentInfo",NULL};
+#endif
 	VPL_ExtField _VPXStruct_DataBrowserListViewHeaderDesc_2 = { "btnFontStyle",offsetof(struct DataBrowserListViewHeaderDesc,btnFontStyle),sizeof(struct ControlFontStyleRec),kStructureType,"NULL",0,0,"ControlFontStyleRec",&_VPXStruct_DataBrowserListViewHeaderDesc_1};
 	VPL_ExtField _VPXStruct_DataBrowserListViewHeaderDesc_3 = { "initialOrder",offsetof(struct DataBrowserListViewHeaderDesc,initialOrder),sizeof(unsigned short),kUnsignedType,"NULL",0,0,"unsigned short",&_VPXStruct_DataBrowserListViewHeaderDesc_2};
 	VPL_ExtField _VPXStruct_DataBrowserListViewHeaderDesc_4 = { "titleString",offsetof(struct DataBrowserListViewHeaderDesc,titleString),sizeof(void *),kPointerType,"__CFString",1,0,"T*",&_VPXStruct_DataBrowserListViewHeaderDesc_3};
@@ -987,12 +996,18 @@
 	VPL_ExtField _VPXStruct_TXNCarbonEventInfo_4 = { "useCarbonEvents",offsetof(struct TXNCarbonEventInfo,useCarbonEvents),sizeof(unsigned char),kUnsignedType,"NULL",0,0,"unsigned char",&_VPXStruct_TXNCarbonEventInfo_3};
 	VPL_ExtStructure _VPXStruct_TXNCarbonEventInfo_S = {"TXNCarbonEventInfo",&_VPXStruct_TXNCarbonEventInfo_4,sizeof(struct TXNCarbonEventInfo)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_TXNBackground_1 = { "bg",offsetof(struct TXNBackground,bg),sizeof(struct TXNBackgroundData),kStructureType,"NULL",0,0,"TXNBackgroundData",NULL};
 	VPL_ExtField _VPXStruct_TXNBackground_2 = { "bgType",offsetof(struct TXNBackground,bgType),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_TXNBackground_1};
+#else
+	VPL_ExtField _VPXStruct_TXNBackground_2 = { "bgType",offsetof(struct TXNBackground,bgType),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
+#endif
 	VPL_ExtStructure _VPXStruct_TXNBackground_S = {"TXNBackground",&_VPXStruct_TXNBackground_2,sizeof(struct TXNBackground)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_TXNBackgroundData_1 = { "color",offsetof(struct TXNBackgroundData,color),sizeof(struct RGBColor),kStructureType,"NULL",0,0,"RGBColor",NULL};
 	VPL_ExtStructure _VPXStruct_TXNBackgroundData_S = {"TXNBackgroundData",&_VPXStruct_TXNBackgroundData_1,sizeof(struct TXNBackgroundData)};
+#endif
 
 	VPL_ExtField _VPXStruct_TXNMacOSPreferredFontDescription_1 = { "fontStyle",offsetof(struct TXNMacOSPreferredFontDescription,fontStyle),sizeof(unsigned char),kUnsignedType,"NULL",0,0,"unsigned char",NULL};
 	VPL_ExtField _VPXStruct_TXNMacOSPreferredFontDescription_2 = { "encoding",offsetof(struct TXNMacOSPreferredFontDescription,encoding),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_TXNMacOSPreferredFontDescription_1};
@@ -1087,8 +1102,12 @@
 
 	VPL_ExtStructure _VPXStruct_OpaqueTSMDocumentID_S = {"OpaqueTSMDocumentID",NULL,0};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_AlertStdCFStringAlertParamRec_1 = { "icon",offsetof(struct AlertStdCFStringAlertParamRec,icon),sizeof(void *),kPointerType,"OpaqueIconRef",1,0,"T*",NULL};
 	VPL_ExtField _VPXStruct_AlertStdCFStringAlertParamRec_2 = { "flags",offsetof(struct AlertStdCFStringAlertParamRec,flags),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_AlertStdCFStringAlertParamRec_1};
+#else
+	VPL_ExtField _VPXStruct_AlertStdCFStringAlertParamRec_2 = { "flags",offsetof(struct AlertStdCFStringAlertParamRec,flags),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
+#endif
 	VPL_ExtField _VPXStruct_AlertStdCFStringAlertParamRec_3 = { "position",offsetof(struct AlertStdCFStringAlertParamRec,position),sizeof(unsigned short),kUnsignedType,"NULL",0,0,"unsigned short",&_VPXStruct_AlertStdCFStringAlertParamRec_2};
 	VPL_ExtField _VPXStruct_AlertStdCFStringAlertParamRec_4 = { "cancelButton",offsetof(struct AlertStdCFStringAlertParamRec,cancelButton),sizeof(short),kIntType,"NULL",0,0,"short",&_VPXStruct_AlertStdCFStringAlertParamRec_3};
 	VPL_ExtField _VPXStruct_AlertStdCFStringAlertParamRec_5 = { "defaultButton",offsetof(struct AlertStdCFStringAlertParamRec,defaultButton),sizeof(short),kIntType,"NULL",0,0,"short",&_VPXStruct_AlertStdCFStringAlertParamRec_4};
@@ -1189,9 +1208,11 @@
 	VPL_ExtField _VPXStruct_ControlButtonContentInfo_2 = { "contentType",offsetof(ControlButtonContentInfo,contentType),sizeof(short),kIntType,"NULL",0,0,"short",&_VPXStruct_ControlButtonContentInfo_1};
 	VPL_ExtStructure _VPXStruct_ControlButtonContentInfo_S = {"ControlButtonContentInfo",&_VPXStruct_ControlButtonContentInfo_2,sizeof(ControlButtonContentInfo)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_HITypeAndCreator_1 = { "creator",offsetof(struct HITypeAndCreator,creator),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
 	VPL_ExtField _VPXStruct_HITypeAndCreator_2 = { "type",offsetof(struct HITypeAndCreator,type),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_HITypeAndCreator_1};
 	VPL_ExtStructure _VPXStruct_HITypeAndCreator_S = {"HITypeAndCreator",&_VPXStruct_HITypeAndCreator_2,sizeof(struct HITypeAndCreator)};
+#endif
 
 	VPL_ExtField _VPXStruct_HIViewFrameMetrics_1 = { "right",offsetof(struct HIViewFrameMetrics,right),sizeof(float),kFloatType,"NULL",0,0,"float",NULL};
 	VPL_ExtField _VPXStruct_HIViewFrameMetrics_2 = { "bottom",offsetof(struct HIViewFrameMetrics,bottom),sizeof(float),kFloatType,"NULL",0,0,"float",&_VPXStruct_HIViewFrameMetrics_1};
@@ -1199,9 +1220,13 @@
 	VPL_ExtField _VPXStruct_HIViewFrameMetrics_4 = { "top",offsetof(struct HIViewFrameMetrics,top),sizeof(float),kFloatType,"NULL",0,0,"float",&_VPXStruct_HIViewFrameMetrics_3};
 	VPL_ExtStructure _VPXStruct_HIViewFrameMetrics_S = {"HIViewFrameMetrics",&_VPXStruct_HIViewFrameMetrics_4,sizeof(struct HIViewFrameMetrics)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_HIThemeTextInfo_1 = { "font",offsetof(struct HIThemeTextInfo,font),sizeof(void *),kPointerType,"__CTFont",1,0,"T*",NULL};
 	VPL_ExtField _VPXStruct_HIThemeTextInfo_2 = { "filler1",offsetof(struct HIThemeTextInfo,filler1),sizeof(unsigned char),kUnsignedType,"NULL",0,0,"unsigned char",&_VPXStruct_HIThemeTextInfo_1};
 	VPL_ExtField _VPXStruct_HIThemeTextInfo_3 = { "truncationHappened",offsetof(struct HIThemeTextInfo,truncationHappened),sizeof(unsigned char),kUnsignedType,"NULL",0,0,"unsigned char",&_VPXStruct_HIThemeTextInfo_2};
+#else
+	VPL_ExtField _VPXStruct_HIThemeTextInfo_3 = { "truncationHappened",offsetof(struct HIThemeTextInfo,truncationHappened),sizeof(unsigned char),kUnsignedType,"NULL",0,0,"unsigned char",NULL};
+#endif
 	VPL_ExtField _VPXStruct_HIThemeTextInfo_4 = { "truncationMaxLines",offsetof(struct HIThemeTextInfo,truncationMaxLines),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_HIThemeTextInfo_3};
 	VPL_ExtField _VPXStruct_HIThemeTextInfo_5 = { "truncationPosition",offsetof(struct HIThemeTextInfo,truncationPosition),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_HIThemeTextInfo_4};
 	VPL_ExtField _VPXStruct_HIThemeTextInfo_6 = { "options",offsetof(struct HIThemeTextInfo,options),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_HIThemeTextInfo_5};
@@ -1477,11 +1502,13 @@
 	VPL_ExtField _VPXStruct_SetupWindowProxyDragImageRec_3 = { "imageGWorld",offsetof(struct SetupWindowProxyDragImageRec,imageGWorld),sizeof(void *),kPointerType,"OpaqueGrafPtr",1,0,"T*",&_VPXStruct_SetupWindowProxyDragImageRec_2};
 	VPL_ExtStructure _VPXStruct_SetupWindowProxyDragImageRec_S = {"SetupWindowProxyDragImageRec",&_VPXStruct_SetupWindowProxyDragImageRec_3,sizeof(struct SetupWindowProxyDragImageRec)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_HIContentBorderMetrics_1 = { "right",offsetof(struct HIContentBorderMetrics,right),sizeof(float),kFloatType,"NULL",0,0,"float",NULL};
 	VPL_ExtField _VPXStruct_HIContentBorderMetrics_2 = { "bottom",offsetof(struct HIContentBorderMetrics,bottom),sizeof(float),kFloatType,"NULL",0,0,"float",&_VPXStruct_HIContentBorderMetrics_1};
 	VPL_ExtField _VPXStruct_HIContentBorderMetrics_3 = { "left",offsetof(struct HIContentBorderMetrics,left),sizeof(float),kFloatType,"NULL",0,0,"float",&_VPXStruct_HIContentBorderMetrics_2};
 	VPL_ExtField _VPXStruct_HIContentBorderMetrics_4 = { "top",offsetof(struct HIContentBorderMetrics,top),sizeof(float),kFloatType,"NULL",0,0,"float",&_VPXStruct_HIContentBorderMetrics_3};
 	VPL_ExtStructure _VPXStruct_HIContentBorderMetrics_S = {"HIContentBorderMetrics",&_VPXStruct_HIContentBorderMetrics_4,sizeof(struct HIContentBorderMetrics)};
+#endif
 
 	VPL_ExtField _VPXStruct_TransitionWindowOptions_1 = { "userData",offsetof(struct TransitionWindowOptions,userData),sizeof(void *),kPointerType,"void",1,0,"T*",NULL};
 	VPL_ExtField _VPXStruct_TransitionWindowOptions_2 = { "window",offsetof(struct TransitionWindowOptions,window),sizeof(void *),kPointerType,"OpaqueWindowPtr",1,0,"T*",&_VPXStruct_TransitionWindowOptions_1};
@@ -1574,9 +1601,15 @@
 	VPL_ExtField _VPXStruct_ControlFontStyleRec_8 = { "flags",offsetof(struct ControlFontStyleRec,flags),sizeof(short),kIntType,"NULL",0,0,"short",&_VPXStruct_ControlFontStyleRec_7};
 	VPL_ExtStructure _VPXStruct_ControlFontStyleRec_S = {"ControlFontStyleRec",&_VPXStruct_ControlFontStyleRec_8,sizeof(struct ControlFontStyleRec)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_ControlImageContentInfo_1 = { "u",offsetof(struct ControlImageContentInfo,u),sizeof(2236),kStructureType,"NULL",0,0,"2236",NULL};
 	VPL_ExtField _VPXStruct_ControlImageContentInfo_2 = { "contentType",offsetof(struct ControlImageContentInfo,contentType),sizeof(short),kIntType,"NULL",0,0,"short",&_VPXStruct_ControlImageContentInfo_1};
 	VPL_ExtStructure _VPXStruct_ControlImageContentInfo_S = {"ControlImageContentInfo",&_VPXStruct_ControlImageContentInfo_2,sizeof(struct ControlImageContentInfo)};
+#else
+	VPL_ExtField _VPXStruct_ControlImageContentInfo_1 = { "u",offsetof(struct ControlButtonContentInfo,u),sizeof(2236),kStructureType,"NULL",0,0,"2236",NULL};
+	VPL_ExtField _VPXStruct_ControlImageContentInfo_2 = { "contentType",offsetof(struct ControlButtonContentInfo,contentType),sizeof(short),kIntType,"NULL",0,0,"short",&_VPXStruct_ControlImageContentInfo_1};
+	VPL_ExtStructure _VPXStruct_ControlImageContentInfo_S = {"ControlImageContentInfo",&_VPXStruct_ControlImageContentInfo_2,sizeof(struct ControlButtonContentInfo)};
+#endif
 
 	VPL_ExtField _VPXStruct_CtlCTab_1 = { "ctTable",offsetof(struct CtlCTab,ctTable),sizeof(ColorSpec[4]),kPointerType,"ColorSpec",0,12,NULL,NULL};
 	VPL_ExtField _VPXStruct_CtlCTab_2 = { "ctSize",offsetof(struct CtlCTab,ctSize),sizeof(short),kIntType,"NULL",0,0,"short",&_VPXStruct_CtlCTab_1};
@@ -1735,9 +1768,13 @@
 	VPL_ExtField _VPXStruct_MenuDefSpec_2 = { "defType",offsetof(struct MenuDefSpec,defType),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_MenuDefSpec_1};
 	VPL_ExtStructure _VPXStruct_MenuDefSpec_S = {"MenuDefSpec",&_VPXStruct_MenuDefSpec_2,sizeof(struct MenuDefSpec)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_MenuItemDataRec_1 = { "font",offsetof(struct MenuItemDataRec,font),sizeof(void *),kPointerType,"__CTFont",1,0,"T*",NULL};
 	VPL_ExtField _VPXStruct_MenuItemDataRec_2 = { "attributedText",offsetof(struct MenuItemDataRec,attributedText),sizeof(void *),kPointerType,"__CFAttributedString",1,0,"T*",&_VPXStruct_MenuItemDataRec_1};
 	VPL_ExtField _VPXStruct_MenuItemDataRec_3 = { "cmdVirtualKey",offsetof(struct MenuItemDataRec,cmdVirtualKey),sizeof(unsigned short),kUnsignedType,"NULL",0,0,"unsigned short",&_VPXStruct_MenuItemDataRec_2};
+#else
+	VPL_ExtField _VPXStruct_MenuItemDataRec_3 = { "cmdVirtualKey",offsetof(struct MenuItemDataRec,cmdVirtualKey),sizeof(unsigned short),kUnsignedType,"NULL",0,0,"unsigned short",NULL};
+#endif
 	VPL_ExtField _VPXStruct_MenuItemDataRec_4 = { "indent",offsetof(struct MenuItemDataRec,indent),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_MenuItemDataRec_3};
 	VPL_ExtField _VPXStruct_MenuItemDataRec_5 = { "properties",offsetof(struct MenuItemDataRec,properties),sizeof(void *),kPointerType,"OpaqueCollection",1,0,"T*",&_VPXStruct_MenuItemDataRec_4};
 	VPL_ExtField _VPXStruct_MenuItemDataRec_6 = { "cfText",offsetof(struct MenuItemDataRec,cfText),sizeof(void *),kPointerType,"__CFString",1,0,"T*",&_VPXStruct_MenuItemDataRec_5};
@@ -1878,10 +1915,12 @@
 
 	VPL_ExtStructure _VPXStruct___CTRun_S = {"__CTRun",NULL,0};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_CTParagraphStyleSetting_1 = { "value",offsetof(struct CTParagraphStyleSetting,value),sizeof(void *),kPointerType,"void",1,0,"T*",NULL};
 	VPL_ExtField _VPXStruct_CTParagraphStyleSetting_2 = { "valueSize",offsetof(struct CTParagraphStyleSetting,valueSize),sizeof(unsigned long),kUnsignedType,"NULL",0,0,"unsigned long",&_VPXStruct_CTParagraphStyleSetting_1};
 	VPL_ExtField _VPXStruct_CTParagraphStyleSetting_3 = { "spec",offsetof(struct CTParagraphStyleSetting,spec),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_CTParagraphStyleSetting_2};
 	VPL_ExtStructure _VPXStruct_CTParagraphStyleSetting_S = {"CTParagraphStyleSetting",&_VPXStruct_CTParagraphStyleSetting_3,sizeof(struct CTParagraphStyleSetting)};
+#endif
 
 	VPL_ExtStructure _VPXStruct___CTParagraphStyle_S = {"__CTParagraphStyle",NULL,0};
 
@@ -4154,6 +4193,7 @@
 	VPL_ExtField _VPXStruct_CGDataProviderCallbacks_4 = { "getBytes",offsetof(struct CGDataProviderCallbacks,getBytes),sizeof(void *),kPointerType,"unsigned long",1,4,"T*",&_VPXStruct_CGDataProviderCallbacks_3};
 	VPL_ExtStructure _VPXStruct_CGDataProviderCallbacks_S = {"CGDataProviderCallbacks",&_VPXStruct_CGDataProviderCallbacks_4,sizeof(struct CGDataProviderCallbacks)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_CGDataProviderDirectCallbacks_1 = { "releaseInfo",offsetof(struct CGDataProviderDirectCallbacks,releaseInfo),sizeof(void *),kPointerType,"void",1,0,"T*",NULL};
 	VPL_ExtField _VPXStruct_CGDataProviderDirectCallbacks_2 = { "getBytesAtPosition",offsetof(struct CGDataProviderDirectCallbacks,getBytesAtPosition),sizeof(void *),kPointerType,"unsigned long",1,4,"T*",&_VPXStruct_CGDataProviderDirectCallbacks_1};
 	VPL_ExtField _VPXStruct_CGDataProviderDirectCallbacks_3 = { "releaseBytePointer",offsetof(struct CGDataProviderDirectCallbacks,releaseBytePointer),sizeof(void *),kPointerType,"void",1,0,"T*",&_VPXStruct_CGDataProviderDirectCallbacks_2};
@@ -4167,6 +4207,7 @@
 	VPL_ExtField _VPXStruct_CGDataProviderSequentialCallbacks_4 = { "getBytes",offsetof(struct CGDataProviderSequentialCallbacks,getBytes),sizeof(void *),kPointerType,"unsigned long",1,4,"T*",&_VPXStruct_CGDataProviderSequentialCallbacks_3};
 	VPL_ExtField _VPXStruct_CGDataProviderSequentialCallbacks_5 = { "version",offsetof(struct CGDataProviderSequentialCallbacks,version),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_CGDataProviderSequentialCallbacks_4};
 	VPL_ExtStructure _VPXStruct_CGDataProviderSequentialCallbacks_S = {"CGDataProviderSequentialCallbacks",&_VPXStruct_CGDataProviderSequentialCallbacks_5,sizeof(struct CGDataProviderSequentialCallbacks)};
+#endif
 
 	VPL_ExtStructure _VPXStruct_CGDataProvider_S = {"CGDataProvider",NULL,0};
 
@@ -4861,6 +4902,7 @@
 
 	VPL_ExtStructure _VPXStruct_SSLContext_S = {"SSLContext",NULL,0};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_SecKeyImportExportParameters_1 = { "keyAttributes",offsetof(SecKeyImportExportParameters,keyAttributes),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
 	VPL_ExtField _VPXStruct_SecKeyImportExportParameters_2 = { "keyUsage",offsetof(SecKeyImportExportParameters,keyUsage),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_SecKeyImportExportParameters_1};
 	VPL_ExtField _VPXStruct_SecKeyImportExportParameters_3 = { "accessRef",offsetof(SecKeyImportExportParameters,accessRef),sizeof(void *),kPointerType,"OpaqueSecAccessRef",1,0,"T*",&_VPXStruct_SecKeyImportExportParameters_2};
@@ -4870,9 +4912,11 @@
 	VPL_ExtField _VPXStruct_SecKeyImportExportParameters_7 = { "flags",offsetof(SecKeyImportExportParameters,flags),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_SecKeyImportExportParameters_6};
 	VPL_ExtField _VPXStruct_SecKeyImportExportParameters_8 = { "version",offsetof(SecKeyImportExportParameters,version),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_SecKeyImportExportParameters_7};
 	VPL_ExtStructure _VPXStruct_SecKeyImportExportParameters_S = {"SecKeyImportExportParameters",&_VPXStruct_SecKeyImportExportParameters_8,sizeof(SecKeyImportExportParameters)};
+#endif
 
 	VPL_ExtStructure _VPXStruct_OpaquePolicySearchRef_S = {"OpaquePolicySearchRef",NULL,0};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_SecKeychainCallbackInfo_1 = { "pid",offsetof(struct SecKeychainCallbackInfo,pid),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
 	VPL_ExtField _VPXStruct_SecKeychainCallbackInfo_2 = { "keychain",offsetof(struct SecKeychainCallbackInfo,keychain),sizeof(void *),kPointerType,"OpaqueSecKeychainRef",1,0,"T*",&_VPXStruct_SecKeychainCallbackInfo_1};
 	VPL_ExtField _VPXStruct_SecKeychainCallbackInfo_3 = { "item",offsetof(struct SecKeychainCallbackInfo,item),sizeof(void *),kPointerType,"OpaqueSecKeychainItemRef",1,0,"T*",&_VPXStruct_SecKeychainCallbackInfo_2};
@@ -5945,6 +5989,7 @@
 	VPL_ExtField _VPXStruct_cssm_data_1 = { "Data",offsetof(struct cssm_data,Data),sizeof(void *),kPointerType,"unsigned char",1,1,"T*",NULL};
 	VPL_ExtField _VPXStruct_cssm_data_2 = { "Length",offsetof(struct cssm_data,Length),sizeof(unsigned long),kUnsignedType,"NULL",0,0,"unsigned long",&_VPXStruct_cssm_data_1};
 	VPL_ExtStructure _VPXStruct_cssm_data_S = {"cssm_data",&_VPXStruct_cssm_data_2,sizeof(struct cssm_data)};
+#endif
 
 	VPL_ExtField _VPXStruct_LSApplicationParameters_1 = { "initialEvent",offsetof(struct LSApplicationParameters,initialEvent),sizeof(void *),kPointerType,"AEDesc",1,8,"T*",NULL};
 	VPL_ExtField _VPXStruct_LSApplicationParameters_2 = { "argv",offsetof(struct LSApplicationParameters,argv),sizeof(void *),kPointerType,"__CFArray",1,0,"T*",&_VPXStruct_LSApplicationParameters_1};
@@ -6817,6 +6862,7 @@
 	VPL_ExtField _VPXStruct_IconFamilyElement_3 = { "elementType",offsetof(struct IconFamilyElement,elementType),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_IconFamilyElement_2};
 	VPL_ExtStructure _VPXStruct_IconFamilyElement_S = {"IconFamilyElement",&_VPXStruct_IconFamilyElement_3,sizeof(struct IconFamilyElement)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_CSIdentityQueryClientContext_1 = { "receiveEvent",offsetof(struct CSIdentityQueryClientContext,receiveEvent),sizeof(void *),kPointerType,"void",1,0,"T*",NULL};
 	VPL_ExtField _VPXStruct_CSIdentityQueryClientContext_2 = { "copyInfoDescription",offsetof(struct CSIdentityQueryClientContext,copyInfoDescription),sizeof(void *),kPointerType,"__CFString",2,0,"T*",&_VPXStruct_CSIdentityQueryClientContext_1};
 	VPL_ExtField _VPXStruct_CSIdentityQueryClientContext_3 = { "releaseInfo",offsetof(struct CSIdentityQueryClientContext,releaseInfo),sizeof(void *),kPointerType,"void",1,0,"T*",&_VPXStruct_CSIdentityQueryClientContext_2};
@@ -6856,6 +6902,7 @@
 	VPL_ExtField _VPXStruct_SecKeychainAttributeInfo_2 = { "tag",offsetof(struct SecKeychainAttributeInfo,tag),sizeof(void *),kPointerType,"unsigned int",1,4,"T*",&_VPXStruct_SecKeychainAttributeInfo_1};
 	VPL_ExtField _VPXStruct_SecKeychainAttributeInfo_3 = { "count",offsetof(struct SecKeychainAttributeInfo,count),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_SecKeychainAttributeInfo_2};
 	VPL_ExtStructure _VPXStruct_SecKeychainAttributeInfo_S = {"SecKeychainAttributeInfo",&_VPXStruct_SecKeychainAttributeInfo_3,sizeof(struct SecKeychainAttributeInfo)};
+#endif
 
 	VPL_ExtStructure _VPXStruct_OpaqueSecPasswordRef_S = {"OpaqueSecPasswordRef",NULL,0};
 
@@ -6996,12 +7043,14 @@
 
 	VPL_ExtStructure _VPXStruct_OpaqueAEDataStorageType_S = {"OpaqueAEDataStorageType",NULL,0};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_FSEventStreamContext_1 = { "copyDescription",offsetof(struct FSEventStreamContext,copyDescription),sizeof(void *),kPointerType,"__CFString",2,0,"T*",NULL};
 	VPL_ExtField _VPXStruct_FSEventStreamContext_2 = { "release",offsetof(struct FSEventStreamContext,release),sizeof(void *),kPointerType,"void",1,0,"T*",&_VPXStruct_FSEventStreamContext_1};
 	VPL_ExtField _VPXStruct_FSEventStreamContext_3 = { "retain",offsetof(struct FSEventStreamContext,retain),sizeof(void *),kPointerType,"void",2,0,"T*",&_VPXStruct_FSEventStreamContext_2};
 	VPL_ExtField _VPXStruct_FSEventStreamContext_4 = { "info",offsetof(struct FSEventStreamContext,info),sizeof(void *),kPointerType,"void",1,0,"T*",&_VPXStruct_FSEventStreamContext_3};
 	VPL_ExtField _VPXStruct_FSEventStreamContext_5 = { "version",offsetof(struct FSEventStreamContext,version),sizeof(long int),kIntType,"NULL",0,0,"long int",&_VPXStruct_FSEventStreamContext_4};
 	VPL_ExtStructure _VPXStruct_FSEventStreamContext_S = {"FSEventStreamContext",&_VPXStruct_FSEventStreamContext_5,sizeof(struct FSEventStreamContext)};
+#endif
 
 	VPL_ExtStructure _VPXStruct___FSEventStream_S = {"__FSEventStream",NULL,0};
 
@@ -7373,10 +7422,14 @@
 	VPL_ExtField _VPXStruct_HFSCatalogThread_4 = { "recordType",offsetof(struct HFSCatalogThread,recordType),sizeof(short),kIntType,"NULL",0,0,"short",&_VPXStruct_HFSCatalogThread_3};
 	VPL_ExtStructure _VPXStruct_HFSCatalogThread_S = {"HFSCatalogThread",&_VPXStruct_HFSCatalogThread_4,sizeof(struct HFSCatalogThread)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_HFSPlusCatalogFile_1 = { "resourceFork",offsetof(struct HFSPlusCatalogFile,resourceFork),sizeof(struct HFSPlusForkData),kStructureType,"NULL",0,0,"HFSPlusForkData",NULL};
 	VPL_ExtField _VPXStruct_HFSPlusCatalogFile_2 = { "dataFork",offsetof(struct HFSPlusCatalogFile,dataFork),sizeof(struct HFSPlusForkData),kStructureType,"NULL",0,0,"HFSPlusForkData",&_VPXStruct_HFSPlusCatalogFile_1};
 	VPL_ExtField _VPXStruct_HFSPlusCatalogFile_3 = { "reserved2",offsetof(struct HFSPlusCatalogFile,reserved2),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_HFSPlusCatalogFile_2};
 	VPL_ExtField _VPXStruct_HFSPlusCatalogFile_4 = { "textEncoding",offsetof(struct HFSPlusCatalogFile,textEncoding),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_HFSPlusCatalogFile_3};
+#else
+	VPL_ExtField _VPXStruct_HFSPlusCatalogFile_4 = { "textEncoding",offsetof(struct HFSPlusCatalogFile,textEncoding),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
+#endif
 	VPL_ExtField _VPXStruct_HFSPlusCatalogFile_5 = { "finderInfo",offsetof(struct HFSPlusCatalogFile,finderInfo),sizeof(struct FndrOpaqueInfo),kStructureType,"NULL",0,0,"FndrOpaqueInfo",&_VPXStruct_HFSPlusCatalogFile_4};
 	VPL_ExtField _VPXStruct_HFSPlusCatalogFile_6 = { "userInfo",offsetof(struct HFSPlusCatalogFile,userInfo),sizeof(struct FndrFileInfo),kStructureType,"NULL",0,0,"FndrFileInfo",&_VPXStruct_HFSPlusCatalogFile_5};
 	VPL_ExtField _VPXStruct_HFSPlusCatalogFile_7 = { "bsdInfo",offsetof(struct HFSPlusCatalogFile,bsdInfo),sizeof(struct HFSPlusBSDInfo),kStructureType,"NULL",0,0,"HFSPlusBSDInfo",&_VPXStruct_HFSPlusCatalogFile_6};
@@ -7412,8 +7465,12 @@
 	VPL_ExtField _VPXStruct_HFSCatalogFile_19 = { "recordType",offsetof(struct HFSCatalogFile,recordType),sizeof(short),kIntType,"NULL",0,0,"short",&_VPXStruct_HFSCatalogFile_18};
 	VPL_ExtStructure _VPXStruct_HFSCatalogFile_S = {"HFSCatalogFile",&_VPXStruct_HFSCatalogFile_19,sizeof(struct HFSCatalogFile)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_HFSPlusCatalogFolder_1 = { "folderCount",offsetof(struct HFSPlusCatalogFolder,folderCount),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
 	VPL_ExtField _VPXStruct_HFSPlusCatalogFolder_2 = { "textEncoding",offsetof(struct HFSPlusCatalogFolder,textEncoding),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_HFSPlusCatalogFolder_1};
+#else
+	VPL_ExtField _VPXStruct_HFSPlusCatalogFolder_2 = { "textEncoding",offsetof(struct HFSPlusCatalogFolder,textEncoding),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
+#endif
 	VPL_ExtField _VPXStruct_HFSPlusCatalogFolder_3 = { "finderInfo",offsetof(struct HFSPlusCatalogFolder,finderInfo),sizeof(struct FndrOpaqueInfo),kStructureType,"NULL",0,0,"FndrOpaqueInfo",&_VPXStruct_HFSPlusCatalogFolder_2};
 	VPL_ExtField _VPXStruct_HFSPlusCatalogFolder_4 = { "userInfo",offsetof(struct HFSPlusCatalogFolder,userInfo),sizeof(struct FndrDirInfo),kStructureType,"NULL",0,0,"FndrDirInfo",&_VPXStruct_HFSPlusCatalogFolder_3};
 	VPL_ExtField _VPXStruct_HFSPlusCatalogFolder_5 = { "bsdInfo",offsetof(struct HFSPlusCatalogFolder,bsdInfo),sizeof(struct HFSPlusBSDInfo),kStructureType,"NULL",0,0,"HFSPlusBSDInfo",&_VPXStruct_HFSPlusCatalogFolder_4};
@@ -9122,6 +9179,7 @@
 	VPL_ExtField _VPXStruct_OSNotificationHeader_4 = { "size",offsetof(struct OSNotificationHeader,size),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_OSNotificationHeader_3};
 	VPL_ExtStructure _VPXStruct_OSNotificationHeader_S = {"OSNotificationHeader",&_VPXStruct_OSNotificationHeader_4,sizeof(struct OSNotificationHeader)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_IOServiceInterestContent64_1 = { "messageArgument",offsetof(struct IOServiceInterestContent64,messageArgument),sizeof(unsigned int[1]),kPointerType,"unsigned int",0,4,NULL,NULL};
 	VPL_ExtField _VPXStruct_IOServiceInterestContent64_2 = { "messageType",offsetof(struct IOServiceInterestContent64,messageType),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_IOServiceInterestContent64_1};
 	VPL_ExtStructure _VPXStruct_IOServiceInterestContent64_S = {"IOServiceInterestContent64",&_VPXStruct_IOServiceInterestContent64_2,sizeof(struct IOServiceInterestContent64)};
@@ -9131,14 +9189,17 @@
 	VPL_ExtField _VPXStruct_OSNotificationHeader64_3 = { "type",offsetof(struct OSNotificationHeader64,type),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_OSNotificationHeader64_2};
 	VPL_ExtField _VPXStruct_OSNotificationHeader64_4 = { "size",offsetof(struct OSNotificationHeader64,size),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_OSNotificationHeader64_3};
 	VPL_ExtStructure _VPXStruct_OSNotificationHeader64_S = {"OSNotificationHeader64",&_VPXStruct_OSNotificationHeader64_4,sizeof(struct OSNotificationHeader64)};
+#endif
 
 	VPL_ExtField _VPXStruct_IONamedValue_1 = { "name",offsetof(IONamedValue,name),sizeof(void *),kPointerType,"char",1,1,"T*",NULL};
 	VPL_ExtField _VPXStruct_IONamedValue_2 = { "value",offsetof(IONamedValue,value),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct_IONamedValue_1};
 	VPL_ExtStructure _VPXStruct_IONamedValue_S = {"IONamedValue",&_VPXStruct_IONamedValue_2,sizeof(IONamedValue)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_IOAddressRange_1 = { "length",offsetof(IOAddressRange,length),sizeof(unsigned long long),kUnsignedType,"NULL",0,0,"unsigned long long",NULL};
 	VPL_ExtField _VPXStruct_IOAddressRange_2 = { "address",offsetof(IOAddressRange,address),sizeof(unsigned long long),kUnsignedType,"NULL",0,0,"unsigned long long",&_VPXStruct_IOAddressRange_1};
 	VPL_ExtStructure _VPXStruct_IOAddressRange_S = {"IOAddressRange",&_VPXStruct_IOAddressRange_2,sizeof(IOAddressRange)};
+#endif
 
 	VPL_ExtField _VPXStruct_IOVirtualRange_1 = { "length",offsetof(IOVirtualRange,length),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
 	VPL_ExtField _VPXStruct_IOVirtualRange_2 = { "address",offsetof(IOVirtualRange,address),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_IOVirtualRange_1};
@@ -9183,6 +9244,7 @@
 	VPL_ExtField _VPXStruct_mach_vm_read_entry_2 = { "address",offsetof(struct mach_vm_read_entry,address),sizeof(unsigned long long),kUnsignedType,"NULL",0,0,"unsigned long long",&_VPXStruct_mach_vm_read_entry_1};
 	VPL_ExtStructure _VPXStruct_mach_vm_read_entry_S = {"mach_vm_read_entry",&_VPXStruct_mach_vm_read_entry_2,sizeof(struct mach_vm_read_entry)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_vm_region_submap_short_info_64_1 = { "user_wired_count",offsetof(struct vm_region_submap_short_info_64,user_wired_count),sizeof(unsigned short),kUnsignedType,"NULL",0,0,"unsigned short",NULL};
 	VPL_ExtField _VPXStruct_vm_region_submap_short_info_64_2 = { "object_id",offsetof(struct vm_region_submap_short_info_64,object_id),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_vm_region_submap_short_info_64_1};
 	VPL_ExtField _VPXStruct_vm_region_submap_short_info_64_3 = { "behavior",offsetof(struct vm_region_submap_short_info_64,behavior),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct_vm_region_submap_short_info_64_2};
@@ -9197,6 +9259,7 @@
 	VPL_ExtField _VPXStruct_vm_region_submap_short_info_64_12 = { "max_protection",offsetof(struct vm_region_submap_short_info_64,max_protection),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct_vm_region_submap_short_info_64_11};
 	VPL_ExtField _VPXStruct_vm_region_submap_short_info_64_13 = { "protection",offsetof(struct vm_region_submap_short_info_64,protection),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct_vm_region_submap_short_info_64_12};
 	VPL_ExtStructure _VPXStruct_vm_region_submap_short_info_64_S = {"vm_region_submap_short_info_64",&_VPXStruct_vm_region_submap_short_info_64_13,sizeof(struct vm_region_submap_short_info_64)};
+#endif
 
 	VPL_ExtField _VPXStruct_vm_region_submap_info_64_1 = { "user_wired_count",offsetof(struct vm_region_submap_info_64,user_wired_count),sizeof(unsigned short),kUnsignedType,"NULL",0,0,"unsigned short",NULL};
 	VPL_ExtField _VPXStruct_vm_region_submap_info_64_2 = { "object_id",offsetof(struct vm_region_submap_info_64,object_id),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_vm_region_submap_info_64_1};
@@ -9279,8 +9342,10 @@
 	VPL_ExtField _VPXStruct_mach_timespec_2 = { "tv_sec",offsetof(struct mach_timespec,tv_sec),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_mach_timespec_1};
 	VPL_ExtStructure _VPXStruct_mach_timespec_S = {"mach_timespec",&_VPXStruct_mach_timespec_2,sizeof(struct mach_timespec)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_thread_affinity_policy_1 = { "affinity_tag",offsetof(struct thread_affinity_policy,affinity_tag),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
 	VPL_ExtStructure _VPXStruct_thread_affinity_policy_S = {"thread_affinity_policy",&_VPXStruct_thread_affinity_policy_1,sizeof(struct thread_affinity_policy)};
+#endif
 
 	VPL_ExtField _VPXStruct_thread_precedence_policy_1 = { "importance",offsetof(struct thread_precedence_policy,importance),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
 	VPL_ExtStructure _VPXStruct_thread_precedence_policy_S = {"thread_precedence_policy",&_VPXStruct_thread_precedence_policy_1,sizeof(struct thread_precedence_policy)};
@@ -9310,11 +9375,13 @@
 	VPL_ExtField _VPXStruct_task_category_policy_1 = { "role",offsetof(struct task_category_policy,role),sizeof(task_role_t),kEnumType,"NULL",0,0,"task_role",NULL};
 	VPL_ExtStructure _VPXStruct_task_category_policy_S = {"task_category_policy",&_VPXStruct_task_category_policy_1,sizeof(struct task_category_policy)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_task_affinity_tag_info_1 = { "task_count",offsetof(struct task_affinity_tag_info,task_count),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
 	VPL_ExtField _VPXStruct_task_affinity_tag_info_2 = { "max",offsetof(struct task_affinity_tag_info,max),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct_task_affinity_tag_info_1};
 	VPL_ExtField _VPXStruct_task_affinity_tag_info_3 = { "min",offsetof(struct task_affinity_tag_info,min),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct_task_affinity_tag_info_2};
 	VPL_ExtField _VPXStruct_task_affinity_tag_info_4 = { "set_count",offsetof(struct task_affinity_tag_info,set_count),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct_task_affinity_tag_info_3};
 	VPL_ExtStructure _VPXStruct_task_affinity_tag_info_S = {"task_affinity_tag_info",&_VPXStruct_task_affinity_tag_info_4,sizeof(struct task_affinity_tag_info)};
+#endif
 
 	VPL_ExtField _VPXStruct_task_absolutetime_info_1 = { "threads_system",offsetof(struct task_absolutetime_info,threads_system),sizeof(unsigned long long),kUnsignedType,"NULL",0,0,"unsigned long long",NULL};
 	VPL_ExtField _VPXStruct_task_absolutetime_info_2 = { "threads_user",offsetof(struct task_absolutetime_info,threads_user),sizeof(unsigned long long),kUnsignedType,"NULL",0,0,"unsigned long long",&_VPXStruct_task_absolutetime_info_1};
@@ -9543,8 +9610,12 @@
 	VPL_ExtField _VPXStruct_time_value_2 = { "seconds",offsetof(struct time_value,seconds),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct_time_value_1};
 	VPL_ExtStructure _VPXStruct_time_value_S = {"time_value",&_VPXStruct_time_value_2,sizeof(struct time_value)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_vm_statistics_1 = { "speculative_count",offsetof(struct vm_statistics,speculative_count),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
 	VPL_ExtField _VPXStruct_vm_statistics_2 = { "purges",offsetof(struct vm_statistics,purges),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_vm_statistics_1};
+#else
+	VPL_ExtField _VPXStruct_vm_statistics_2 = { "purges",offsetof(struct vm_statistics,purges),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
+#endif
 	VPL_ExtField _VPXStruct_vm_statistics_3 = { "purgeable_count",offsetof(struct vm_statistics,purgeable_count),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_vm_statistics_2};
 	VPL_ExtField _VPXStruct_vm_statistics_4 = { "hits",offsetof(struct vm_statistics,hits),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_vm_statistics_3};
 	VPL_ExtField _VPXStruct_vm_statistics_5 = { "lookups",offsetof(struct vm_statistics,lookups),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_vm_statistics_4};
@@ -9567,6 +9638,7 @@
 	VPL_ExtField _VPXStruct_mach_msg_empty_send_t_1 = { "header",offsetof(mach_msg_empty_send_t,header),sizeof(mach_msg_header_t),kStructureType,"NULL",0,0,"mach_msg_header_t",NULL};
 	VPL_ExtStructure _VPXStruct_mach_msg_empty_send_t_S = {"mach_msg_empty_send_t",&_VPXStruct_mach_msg_empty_send_t_1,sizeof(mach_msg_empty_send_t)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_mach_msg_mac_trailer_t_1 = { "msgh_ad",offsetof(mach_msg_mac_trailer_t,msgh_ad),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
 	VPL_ExtField _VPXStruct_mach_msg_mac_trailer_t_2 = { "msgh_labels",offsetof(mach_msg_mac_trailer_t,msgh_labels),sizeof(msg_labels_t),kStructureType,"NULL",0,0,"msg_labels_t",&_VPXStruct_mach_msg_mac_trailer_t_1};
 	VPL_ExtField _VPXStruct_mach_msg_mac_trailer_t_3 = { "msgh_audit",offsetof(mach_msg_mac_trailer_t,msgh_audit),sizeof(audit_token_t),kStructureType,"NULL",0,0,"audit_token_t",&_VPXStruct_mach_msg_mac_trailer_t_2};
@@ -9578,6 +9650,7 @@
 
 	VPL_ExtField _VPXStruct_msg_labels_t_1 = { "sender",offsetof(msg_labels_t,sender),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
 	VPL_ExtStructure _VPXStruct_msg_labels_t_S = {"msg_labels_t",&_VPXStruct_msg_labels_t_1,sizeof(msg_labels_t)};
+#endif
 
 	VPL_ExtField _VPXStruct_mach_msg_audit_trailer_t_1 = { "msgh_audit",offsetof(mach_msg_audit_trailer_t,msgh_audit),sizeof(audit_token_t),kStructureType,"NULL",0,0,"audit_token_t",NULL};
 	VPL_ExtField _VPXStruct_mach_msg_audit_trailer_t_2 = { "msgh_sender",offsetof(mach_msg_audit_trailer_t,msgh_sender),sizeof(security_token_t),kStructureType,"NULL",0,0,"security_token_t",&_VPXStruct_mach_msg_audit_trailer_t_1};
@@ -10452,12 +10525,14 @@
 	VPL_ExtField _VPXStruct_CFRunLoopSourceContext1_9 = { "version",offsetof(CFRunLoopSourceContext1,version),sizeof(long int),kIntType,"NULL",0,0,"long int",&_VPXStruct_CFRunLoopSourceContext1_8};
 	VPL_ExtStructure _VPXStruct_CFRunLoopSourceContext1_S = {"CFRunLoopSourceContext1",&_VPXStruct_CFRunLoopSourceContext1_9,sizeof(CFRunLoopSourceContext1)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct_CFFileDescriptorContext_1 = { "copyDescription",offsetof(CFFileDescriptorContext,copyDescription),sizeof(void *),kPointerType,"__CFString",2,0,"T*",NULL};
 	VPL_ExtField _VPXStruct_CFFileDescriptorContext_2 = { "release",offsetof(CFFileDescriptorContext,release),sizeof(void *),kPointerType,"void",1,0,"T*",&_VPXStruct_CFFileDescriptorContext_1};
 	VPL_ExtField _VPXStruct_CFFileDescriptorContext_3 = { "retain",offsetof(CFFileDescriptorContext,retain),sizeof(void *),kPointerType,"void",2,0,"T*",&_VPXStruct_CFFileDescriptorContext_2};
 	VPL_ExtField _VPXStruct_CFFileDescriptorContext_4 = { "info",offsetof(CFFileDescriptorContext,info),sizeof(void *),kPointerType,"void",1,0,"T*",&_VPXStruct_CFFileDescriptorContext_3};
 	VPL_ExtField _VPXStruct_CFFileDescriptorContext_5 = { "version",offsetof(CFFileDescriptorContext,version),sizeof(long int),kIntType,"NULL",0,0,"long int",&_VPXStruct_CFFileDescriptorContext_4};
 	VPL_ExtStructure _VPXStruct_CFFileDescriptorContext_S = {"CFFileDescriptorContext",&_VPXStruct_CFFileDescriptorContext_5,sizeof(CFFileDescriptorContext)};
+#endif
 
 	VPL_ExtStructure _VPXStruct___CFFileDescriptor_S = {"__CFFileDescriptor",NULL,0};
 
@@ -10712,8 +10787,12 @@
 	VPL_ExtField _VPXStruct___sigaction_u_2 = { "__sa_handler",offsetof(union __sigaction_u,__sa_handler),sizeof(void *),kPointerType,"void",1,0,"T*",&_VPXStruct___sigaction_u_1};
 	VPL_ExtStructure _VPXStruct___sigaction_u_S = {"__sigaction_u",&_VPXStruct___sigaction_u_2,sizeof(union __sigaction_u)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct___siginfo_1 = { "__pad",offsetof(struct __siginfo,__pad),sizeof(unsigned long[7]),kPointerType,"unsigned long",0,4,NULL,NULL};
 	VPL_ExtField _VPXStruct___siginfo_2 = { "si_band",offsetof(struct __siginfo,si_band),sizeof(long int),kIntType,"NULL",0,0,"long int",&_VPXStruct___siginfo_1};
+#else
+	VPL_ExtField _VPXStruct___siginfo_2 = { "si_band",offsetof(struct __siginfo,si_band),sizeof(long int),kIntType,"NULL",0,0,"long int",NULL};
+#endif
 	VPL_ExtField _VPXStruct___siginfo_3 = { "si_value",offsetof(struct __siginfo,si_value),sizeof(union sigval),kStructureType,"NULL",0,0,"sigval",&_VPXStruct___siginfo_2};
 	VPL_ExtField _VPXStruct___siginfo_4 = { "si_addr",offsetof(struct __siginfo,si_addr),sizeof(void *),kPointerType,"void",1,0,"T*",&_VPXStruct___siginfo_3};
 	VPL_ExtField _VPXStruct___siginfo_5 = { "si_status",offsetof(struct __siginfo,si_status),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct___siginfo_4};
@@ -10965,9 +11044,13 @@
 	VPL_ExtField _VPXStruct_lconv_24 = { "decimal_point",offsetof(struct lconv,decimal_point),sizeof(void *),kPointerType,"char",1,1,"T*",&_VPXStruct_lconv_23};
 	VPL_ExtStructure _VPXStruct_lconv_S = {"lconv",&_VPXStruct_lconv_24,sizeof(struct lconv)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct__RuneLocale_1 = { "__charclasses",offsetof(_RuneLocale,__charclasses),sizeof(void *),kPointerType,"_RuneCharClass",1,32,"T*",NULL};
 	VPL_ExtField _VPXStruct__RuneLocale_2 = { "__ncharclasses",offsetof(_RuneLocale,__ncharclasses),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct__RuneLocale_1};
 	VPL_ExtField _VPXStruct__RuneLocale_3 = { "__variable_len",offsetof(_RuneLocale,__variable_len),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct__RuneLocale_2};
+#else
+	VPL_ExtField _VPXStruct__RuneLocale_3 = { "__variable_len",offsetof(_RuneLocale,__variable_len),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
+#endif
 	VPL_ExtField _VPXStruct__RuneLocale_4 = { "__variable",offsetof(_RuneLocale,__variable),sizeof(void *),kPointerType,"void",1,0,"T*",&_VPXStruct__RuneLocale_3};
 	VPL_ExtField _VPXStruct__RuneLocale_5 = { "__mapupper_ext",offsetof(_RuneLocale,__mapupper_ext),sizeof(_RuneRange),kStructureType,"NULL",0,0,"_RuneRange",&_VPXStruct__RuneLocale_4};
 	VPL_ExtField _VPXStruct__RuneLocale_6 = { "__maplower_ext",offsetof(_RuneLocale,__maplower_ext),sizeof(_RuneRange),kStructureType,"NULL",0,0,"_RuneRange",&_VPXStruct__RuneLocale_5};
@@ -10982,9 +11065,11 @@
 	VPL_ExtField _VPXStruct__RuneLocale_15 = { "__magic",offsetof(_RuneLocale,__magic),sizeof(char[8]),kPointerType,"char",0,1,NULL,&_VPXStruct__RuneLocale_14};
 	VPL_ExtStructure _VPXStruct__RuneLocale_S = {"_RuneLocale",&_VPXStruct__RuneLocale_15,sizeof(_RuneLocale)};
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	VPL_ExtField _VPXStruct__RuneCharClass_1 = { "__mask",offsetof(_RuneCharClass,__mask),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
 	VPL_ExtField _VPXStruct__RuneCharClass_2 = { "__name",offsetof(_RuneCharClass,__name),sizeof(char[14]),kPointerType,"char",0,1,NULL,&_VPXStruct__RuneCharClass_1};
 	VPL_ExtStructure _VPXStruct__RuneCharClass_S = {"_RuneCharClass",&_VPXStruct__RuneCharClass_2,sizeof(_RuneCharClass)};
+#endif
 
 	VPL_ExtField _VPXStruct__RuneRange_1 = { "__ranges",offsetof(_RuneRange,__ranges),sizeof(void *),kPointerType,"_RuneEntry",1,16,"T*",NULL};
 	VPL_ExtField _VPXStruct__RuneRange_2 = { "__nranges",offsetof(_RuneRange,__nranges),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct__RuneRange_1};
@@ -11084,16 +11169,22 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"ICADownloadFilePB",&_VPXStruct_ICADownloadFilePB_S},
 	{"ICAObjectSendMessagePB",&_VPXStruct_ICAObjectSendMessagePB_S},
 	{"ICAMessage",&_VPXStruct_ICAMessage_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"ICACopyObjectDataPB",&_VPXStruct_ICACopyObjectDataPB_S},
+#endif
 	{"ICACopyObjectThumbnailPB",&_VPXStruct_ICACopyObjectThumbnailPB_S},
 	{"ICACopyObjectPropertyDictionaryPB",&_VPXStruct_ICACopyObjectPropertyDictionaryPB_S},
 	{"ICAGetDeviceListPB",&_VPXStruct_ICAGetDeviceListPB_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"ICASendNotificationPB",&_VPXStruct_ICASendNotificationPB_S},
 	{"ICARegisterForEventNotificationPB",&_VPXStruct_ICARegisterForEventNotificationPB_S},
+#endif
 	{"ICAImportImagePB",&_VPXStruct_ICAImportImagePB_S},
 	{"ICAHeader",&_VPXStruct_ICAHeader_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"ICAPTPEventDataset",&_VPXStruct_ICAPTPEventDataset_S},
 	{"ICAPTPPassThroughPB",&_VPXStruct_ICAPTPPassThroughPB_S},
+#endif
 	{"InkPoint",&_VPXStruct_InkPoint_S},
 	{"OpaqueInkStrokeRef",&_VPXStruct_OpaqueInkStrokeRef_S},
 	{"OpaqueInkTextRef",&_VPXStruct_OpaqueInkTextRef_S},
@@ -11192,7 +11283,9 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"OpaqueTXNFontMenuObject",&_VPXStruct_OpaqueTXNFontMenuObject_S},
 	{"TXNCarbonEventInfo",&_VPXStruct_TXNCarbonEventInfo_S},
 	{"TXNBackground",&_VPXStruct_TXNBackground_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"TXNBackgroundData",&_VPXStruct_TXNBackgroundData_S},
+#endif
 	{"TXNMacOSPreferredFontDescription",&_VPXStruct_TXNMacOSPreferredFontDescription_S},
 	{"TXNMatchTextRecord",&_VPXStruct_TXNMatchTextRecord_S},
 	{"TXNTypeAttributes",&_VPXStruct_TXNTypeAttributes_S},
@@ -11227,7 +11320,9 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"HIViewKind",&_VPXStruct_HIViewKind_S},
 	{"HIViewContentInfo",&_VPXStruct_HIViewContentInfo_S},
 	{"ControlButtonContentInfo",&_VPXStruct_ControlButtonContentInfo_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"HITypeAndCreator",&_VPXStruct_HITypeAndCreator_S},
+#endif
 	{"HIViewFrameMetrics",&_VPXStruct_HIViewFrameMetrics_S},
 	{"HIThemeTextInfo",&_VPXStruct_HIThemeTextInfo_S},
 	{"HIThemeSegmentDrawInfo",&_VPXStruct_HIThemeSegmentDrawInfo_S},
@@ -11274,7 +11369,9 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"GetGrowImageRegionRec",&_VPXStruct_GetGrowImageRegionRec_S},
 	{"MeasureWindowTitleRec",&_VPXStruct_MeasureWindowTitleRec_S},
 	{"SetupWindowProxyDragImageRec",&_VPXStruct_SetupWindowProxyDragImageRec_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"HIContentBorderMetrics",&_VPXStruct_HIContentBorderMetrics_S},
+#endif
 	{"TransitionWindowOptions",&_VPXStruct_TransitionWindowOptions_S},
 	{"OpaqueWindowGroupRef",&_VPXStruct_OpaqueWindowGroupRef_S},
 	{"WindowDefSpec",&_VPXStruct_WindowDefSpec_S},
@@ -11349,7 +11446,9 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"CGImageSource",&_VPXStruct_CGImageSource_S},
 	{"__CTTextTab",&_VPXStruct___CTTextTab_S},
 	{"__CTRun",&_VPXStruct___CTRun_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"CTParagraphStyleSetting",&_VPXStruct_CTParagraphStyleSetting_S},
+#endif
 	{"__CTParagraphStyle",&_VPXStruct___CTParagraphStyle_S},
 	{"__CTGlyphInfo",&_VPXStruct___CTGlyphInfo_S},
 	{"__CTFramesetter",&_VPXStruct___CTFramesetter_S},
@@ -11701,8 +11800,10 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"CGPattern",&_VPXStruct_CGPattern_S},
 	{"CGDataProviderDirectAccessCallbacks",&_VPXStruct_CGDataProviderDirectAccessCallbacks_S},
 	{"CGDataProviderCallbacks",&_VPXStruct_CGDataProviderCallbacks_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"CGDataProviderDirectCallbacks",&_VPXStruct_CGDataProviderDirectCallbacks_S},
 	{"CGDataProviderSequentialCallbacks",&_VPXStruct_CGDataProviderSequentialCallbacks_S},
+#endif
 	{"CGDataProvider",&_VPXStruct_CGDataProvider_S},
 	{"CGColorSpace",&_VPXStruct_CGColorSpace_S},
 	{"CGColor",&_VPXStruct_CGColor_S},
@@ -11838,8 +11939,11 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"OpaqueLSSharedFileListItemRef",&_VPXStruct_OpaqueLSSharedFileListItemRef_S},
 	{"OpaqueLSSharedFileListRef",&_VPXStruct_OpaqueLSSharedFileListRef_S},
 	{"SSLContext",&_VPXStruct_SSLContext_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"SecKeyImportExportParameters",&_VPXStruct_SecKeyImportExportParameters_S},
+#endif
 	{"OpaquePolicySearchRef",&_VPXStruct_OpaquePolicySearchRef_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"SecKeychainCallbackInfo",&_VPXStruct_SecKeychainCallbackInfo_S},
 	{"SecKeychainSettings",&_VPXStruct_SecKeychainSettings_S},
 	{"OpaqueSecIdentitySearchRef",&_VPXStruct_OpaqueSecIdentitySearchRef_S},
@@ -12006,6 +12110,7 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"cssm_version",&_VPXStruct_cssm_version_S},
 	{"cssm_guid",&_VPXStruct_cssm_guid_S},
 	{"cssm_data",&_VPXStruct_cssm_data_S},
+#endif
 	{"LSApplicationParameters",&_VPXStruct_LSApplicationParameters_S},
 	{"LSLaunchURLSpec",&_VPXStruct_LSLaunchURLSpec_S},
 	{"LSLaunchFSRefSpec",&_VPXStruct_LSLaunchFSRefSpec_S},
@@ -12058,6 +12163,7 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"WSClientContext",&_VPXStruct_WSClientContext_S},
 	{"IconFamilyResource",&_VPXStruct_IconFamilyResource_S},
 	{"IconFamilyElement",&_VPXStruct_IconFamilyElement_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"CSIdentityQueryClientContext",&_VPXStruct_CSIdentityQueryClientContext_S},
 	{"CSIdentityClientContext",&_VPXStruct_CSIdentityClientContext_S},
 	{"__CSIdentityQuery",&_VPXStruct___CSIdentityQuery_S},
@@ -12067,6 +12173,7 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"AuthorizationItem",&_VPXStruct_AuthorizationItem_S},
 	{"AuthorizationOpaqueRef",&_VPXStruct_AuthorizationOpaqueRef_S},
 	{"SecKeychainAttributeInfo",&_VPXStruct_SecKeychainAttributeInfo_S},
+#endif
 	{"OpaqueSecPasswordRef",&_VPXStruct_OpaqueSecPasswordRef_S},
 	{"OpaqueSecTrustRef",&_VPXStruct_OpaqueSecTrustRef_S},
 	{"OpaqueSecKeyRef",&_VPXStruct_OpaqueSecKeyRef_S},
@@ -12098,7 +12205,9 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"AEKeyDesc",&_VPXStruct_AEKeyDesc_S},
 	{"AEDesc",&_VPXStruct_AEDesc_S},
 	{"OpaqueAEDataStorageType",&_VPXStruct_OpaqueAEDataStorageType_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"FSEventStreamContext",&_VPXStruct_FSEventStreamContext_S},
+#endif
 	{"__FSEventStream",&_VPXStruct___FSEventStream_S},
 	{"TECPluginDispatchTable",&_VPXStruct_TECPluginDispatchTable_S},
 	{"TECSnifferContextRec",&_VPXStruct_TECSnifferContextRec_S},
@@ -12328,10 +12437,14 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"IOAsyncCompletionContent",&_VPXStruct_IOAsyncCompletionContent_S},
 	{"IOServiceInterestContent",&_VPXStruct_IOServiceInterestContent_S},
 	{"OSNotificationHeader",&_VPXStruct_OSNotificationHeader_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"IOServiceInterestContent64",&_VPXStruct_IOServiceInterestContent64_S},
 	{"OSNotificationHeader64",&_VPXStruct_OSNotificationHeader64_S},
+#endif
 	{"IONamedValue",&_VPXStruct_IONamedValue_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"IOAddressRange",&_VPXStruct_IOAddressRange_S},
+#endif
 	{"IOVirtualRange",&_VPXStruct_IOVirtualRange_S},
 	{"kmod_generic_cmd",&_VPXStruct_kmod_generic_cmd_S},
 	{"kmod_load_with_dependencies_cmd",&_VPXStruct_kmod_load_with_dependencies_cmd_S},
@@ -12340,7 +12453,9 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"kmod_reference",&_VPXStruct_kmod_reference_S},
 	{"vm_read_entry",&_VPXStruct_vm_read_entry_S},
 	{"mach_vm_read_entry",&_VPXStruct_mach_vm_read_entry_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"vm_region_submap_short_info_64",&_VPXStruct_vm_region_submap_short_info_64_S},
+#endif
 	{"vm_region_submap_info_64",&_VPXStruct_vm_region_submap_info_64_S},
 	{"vm_region_submap_info",&_VPXStruct_vm_region_submap_info_S},
 	{"vm_region_top_info",&_VPXStruct_vm_region_top_info_S},
@@ -12348,14 +12463,18 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"vm_region_basic_info",&_VPXStruct_vm_region_basic_info_S},
 	{"vm_region_basic_info_64",&_VPXStruct_vm_region_basic_info_64_S},
 	{"mach_timespec",&_VPXStruct_mach_timespec_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"thread_affinity_policy",&_VPXStruct_thread_affinity_policy_S},
+#endif
 	{"thread_precedence_policy",&_VPXStruct_thread_precedence_policy_S},
 	{"thread_time_constraint_policy",&_VPXStruct_thread_time_constraint_policy_S},
 	{"thread_extended_policy",&_VPXStruct_thread_extended_policy_S},
 	{"thread_standard_policy",&_VPXStruct_thread_standard_policy_S},
 	{"thread_basic_info",&_VPXStruct_thread_basic_info_S},
 	{"task_category_policy",&_VPXStruct_task_category_policy_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"task_affinity_tag_info",&_VPXStruct_task_affinity_tag_info_S},
+#endif
 	{"task_absolutetime_info",&_VPXStruct_task_absolutetime_info_S},
 	{"task_thread_times_info",&_VPXStruct_task_thread_times_info_S},
 	{"task_events_info",&_VPXStruct_task_events_info_S},
@@ -12391,8 +12510,10 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"vm_statistics",&_VPXStruct_vm_statistics_S},
 	{"mach_msg_empty_rcv_t",&_VPXStruct_mach_msg_empty_rcv_t_S},
 	{"mach_msg_empty_send_t",&_VPXStruct_mach_msg_empty_send_t_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"mach_msg_mac_trailer_t",&_VPXStruct_mach_msg_mac_trailer_t_S},
 	{"msg_labels_t",&_VPXStruct_msg_labels_t_S},
+#endif
 	{"mach_msg_audit_trailer_t",&_VPXStruct_mach_msg_audit_trailer_t_S},
 	{"audit_token_t",&_VPXStruct_audit_token_t_S},
 	{"mach_msg_security_trailer_t",&_VPXStruct_mach_msg_security_trailer_t_S},
@@ -12526,7 +12647,9 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"mach_port_limits",&_VPXStruct_mach_port_limits_S},
 	{"mach_port_status",&_VPXStruct_mach_port_status_S},
 	{"CFRunLoopSourceContext1",&_VPXStruct_CFRunLoopSourceContext1_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"CFFileDescriptorContext",&_VPXStruct_CFFileDescriptorContext_S},
+#endif
 	{"__CFFileDescriptor",&_VPXStruct___CFFileDescriptor_S},
 	{"CFRunLoopTimerContext",&_VPXStruct_CFRunLoopTimerContext_S},
 	{"CFRunLoopObserverContext",&_VPXStruct_CFRunLoopObserverContext_S},
@@ -12585,7 +12708,9 @@ VPL_DictionaryNode VPX_MacOSX_Structures[] =	{
 	{"sigevent",&_VPXStruct_sigevent_S},
 	{"lconv",&_VPXStruct_lconv_S},
 	{"_RuneLocale",&_VPXStruct__RuneLocale_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4 
 	{"_RuneCharClass",&_VPXStruct__RuneCharClass_S},
+#endif
 	{"_RuneRange",&_VPXStruct__RuneRange_S},
 	{"_RuneEntry",&_VPXStruct__RuneEntry_S},
 	{"_opaque_pthread_t",&_VPXStruct__opaque_pthread_t_S},

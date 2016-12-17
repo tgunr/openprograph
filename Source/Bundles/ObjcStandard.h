@@ -83,8 +83,8 @@ unsigned int occupied;
 Method buckets[1];
 };
 */
-extern id class_createInstance(Class, unsigned idxIvars);
-extern id class_createInstanceFromZone(Class, unsigned idxIvars, void *z);
+extern id class_createInstance(Class, size_t idxIvars);
+extern id class_createInstanceFromZone(Class, size_t idxIvars, void *z);
 extern void class_setVersion(Class, int);
 extern int class_getVersion(Class);
 extern Ivar class_getInstanceVariable(Class, const char *);
@@ -136,6 +136,7 @@ extern void objc_register_header(
 char *name
 );
 //typedef char * va_list;
+#if 0
 typedef struct objc_symtab *Symtab;
 struct objc_symtab {
 unsigned long sel_ref_cnt;
@@ -155,27 +156,29 @@ struct objc_super {
 id receiver;
 Class class;
 };
+#endif
+
 extern id objc_getClass(const char *name);
 extern id objc_getMetaClass(const char *name);
 extern id objc_msgSend(id self, SEL op, ...);
 extern id objc_msgSendSuper(struct objc_super *super, SEL op, ...);
 extern void objc_msgSend_stret(void * stretAddr, id self, SEL op, ...);
 extern void objc_msgSendSuper_stret(void * stretAddr, struct objc_super *super, SEL op, ...);
-extern id objc_msgSendv(id self, SEL op, unsigned arg_size, marg_list arg_frame);
-extern void objc_msgSendv_stret(void * stretAddr, id self, SEL op, unsigned arg_size, marg_list arg_frame);
+extern id objc_msgSendv(id self, SEL op, size_t arg_size, marg_list arg_frame);
+extern void objc_msgSendv_stret(void * stretAddr, id self, SEL op, size_t arg_size, marg_list arg_frame);
 extern int objc_getClassList(Class *buffer, int bufferLen);
 extern void *objc_getClasses(void);
 extern id objc_lookUpClass(const char *name);
 extern void objc_addClass(Class myClass);
 extern void objc_setClassHandler(int (*)(const char *));
 extern void objc_setMultithreaded (BOOL flag);
-extern id (*_alloc)(Class, unsigned int);
-extern id (*_copy)(id, unsigned int);
-extern id (*_realloc)(id, unsigned int);
+extern id (*_alloc)(Class, size_t);
+extern id (*_copy)(id, size_t);
+extern id (*_realloc)(id, size_t);
 extern id (*_dealloc)(id);
-extern id (*_zoneAlloc)(Class, unsigned int, void *);
-extern id (*_zoneRealloc)(id, unsigned int, void *);
-extern id (*_zoneCopy)(id, unsigned int, void *);
+extern id (*_zoneAlloc)(Class, size_t, void *);
+extern id (*_zoneRealloc)(id, size_t, void *);
+extern id (*_zoneCopy)(id, size_t, void *);
 extern void (*_error)(id, const char *, va_list);
 
 /*

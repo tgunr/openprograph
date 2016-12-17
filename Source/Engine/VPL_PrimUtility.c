@@ -177,41 +177,13 @@ vpl_Integer		VPLObjectGetValueInteger( V_Object theVObject )
 
 	return theValue;
 }
+
 vpl_Real		VPLObjectGetValueReal( V_Object theVObject )
 {
 	vpl_Real	theValue = 0.0;
 
 	if( VPLObjectGetType(theVObject) == kReal ) theValue = ((V_Real) theVObject)->value; 
 
-	return theValue;
-}
-
-vpl_Integer		VPLObjectCoerceValueInteger( V_Object theVObject, vpl_Status* outStatus )
-{
-	vpl_Status	theStatus = kNOERROR;
-	vpl_Integer	theValue = 0;
-	
-	if( VPLObjectGetType(theVObject) == kInteger ) theValue = ((V_Integer) theVObject)->value;
-	else if( VPLObjectGetType(theVObject) == kReal ) theValue = (vpl_Integer)((V_Real) theVObject)->value;
-	else if( VPLObjectGetType(theVObject) == kBoolean ) theValue = (vpl_Integer)((V_Boolean) theVObject)->value;
-	else if( VPLObjectGetType(theVObject) == kExternalBlock ) theValue = (vpl_Integer)((V_ExternalBlock) theVObject)->blockPtr;
-	else theStatus = kIncorrectType;
-
-	if( outStatus ) *outStatus = theStatus;
-	return theValue;
-}
-
-vpl_Real		VPLObjectCoerceValueReal( V_Object theVObject, vpl_Status* outStatus )
-{
-	vpl_Status	theStatus = kNOERROR;
-	vpl_Real	theValue = 0.0;
-	
-	if( VPLObjectGetType(theVObject) == kInteger ) theValue = (vpl_Real)((V_Integer) theVObject)->value;
-	else if( VPLObjectGetType(theVObject) == kReal ) theValue = ((V_Real) theVObject)->value;
-	else if( VPLObjectGetType(theVObject) == kBoolean ) theValue = (vpl_Real)((V_Boolean) theVObject)->value;
-	else theStatus = kIncorrectType;
-	
-	if( outStatus ) *outStatus = theStatus;
 	return theValue;
 }
 
@@ -498,6 +470,7 @@ vpl_Status		VPLPrimRecordObjectTypeError( vpl_ObjectType gotType, vpl_ObjectType
 	vpl_StringPtr	moduleName = NULL;
 	vpl_StringPtr	tempString = vpl_EmptyString;
 
+	if(primName == NULL) primName = "NULL Operation name";
 	tempString = X_malloc( strlen( primName ) + 255 );
 	if (tempString != NULL) {
 		sprintf( tempString, "%s: input %d type mismatch: requires %s got %s", primName, (int) theNode, VPLObjectTypeToTypeString(wantType), VPLObjectTypeToTypeString(gotType) );
@@ -680,10 +653,13 @@ vpl_Status		VPLPrimCheckOutputArityMax(V_Environment environment, vpl_StringPtr 
 	return err;
 }
 
-vpl_Status		VPLPrimCheckObjectType( V_Object theObject, vpl_ObjectType theVType, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment )
+vpl_Status		VPLPrimCheckInputObjectType(  vpl_ObjectType theVType, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment )
 {
 	vpl_ObjectType	theFoundType = 0;
-		
+	V_Object		theObject = NULL;
+	
+	theObject = VPLPrimGetInputObject( theNode, primitive, environment );
+	
 	theFoundType = VPLObjectGetType(theObject);
 	
 	if(theFoundType == theVType) return kNOERROR;
@@ -705,27 +681,10 @@ vpl_Status		VPLPrimCheckObjectType( V_Object theObject, vpl_ObjectType theVType,
 
 }
 
-vpl_Status		VPLPrimCheckInputObjectType( vpl_ObjectType theVType, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment )
-{
-	V_Object		theObject = NULL;
-	
-	theObject = VPLPrimGetInputObject( theNode, primitive, environment );
-	
-	return VPLPrimCheckObjectType( theObject, theVType, theNode, primName, primitive, environment );
-}
-
-vpl_Status		VPLPrimCheckListObjectType(  vpl_ObjectType theVType, V_List theList, vpl_ListItemIndex theIndex, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment )
-{
-	V_Object		theObject = NULL;
-	
-	theObject = VPLObjectGetListItem( (V_Object)theList, theIndex );
-	
-	return VPLPrimCheckObjectType( theObject, theVType, (vpl_Arity)theIndex, primName, primitive, environment );
-}
-
-vpl_Status		VPLPrimCheckObjectTypes( V_Object theObject, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment, Nat4 numberOfTypes, ... )
+vpl_Status		VPLPrimCheckInputObjectTypes( vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment, Nat4 numberOfTypes, ... )
 {
 	vpl_ObjectType	theFoundType = 0;
+	V_Object		theObject = NULL;
 	Nat4			counter = 0;
 	Bool			isOK = FALSE;
 	vpl_ObjectType	theVType = kObject;
@@ -736,6 +695,8 @@ vpl_Status		VPLPrimCheckObjectTypes( V_Object theObject, vpl_Arity theNode, vpl_
 
 	va_start(argList,numberOfTypes);
 
+	theObject = VPLPrimGetInputObject( theNode, primitive, environment );
+	
 	theFoundType = VPLObjectGetType(theObject);
 	
 	expectedTypes = new_string("",environment);
@@ -771,56 +732,6 @@ vpl_Status		VPLPrimCheckObjectTypes( V_Object theObject, vpl_Arity theNode, vpl_
 
 }
 
-vpl_Status		VPLPrimCheckInputObjectTypes( vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment, Nat4 numberOfTypes, ... )
-{
-	vpl_ObjectType	theFoundType = 0;
-	V_Object		theObject = NULL;	
-	Nat4			counter = 0;
-	Bool			isOK = FALSE;
-	vpl_ObjectType	theVType = kObject;
-	Int1			*expectedTypes = NULL;
-	Int1			*tempString = NULL;
-	
-	va_list			argList;
-	
-	va_start(argList,numberOfTypes);
-	
-	theObject = VPLPrimGetInputObject( theNode, primitive, environment );
-	
-	theFoundType = VPLObjectGetType(theObject);
-	
-	expectedTypes = new_string("",environment);
-	for(counter = 0; counter < numberOfTypes; counter++){
-		theVType = va_arg(argList,vpl_ObjectType);
-		if(theFoundType  == theVType) isOK =  TRUE;
-		else {
-			tempString = new_cat_string(expectedTypes,":",environment);
-			X_free(expectedTypes);
-			expectedTypes = new_cat_string(tempString,VPLTypeToString(theVType),environment);
-			X_free(tempString);
-		}
-	}
-	va_end(argList);
-	
-	if(isOK == TRUE) {
-		X_free(expectedTypes);
-		return kNOERROR;
-	} else {
-		Int1	*terminalIndex =integer2string( theNode + 1 );
-		Int1	*foundType = VPLTypeToString(theFoundType);
-		
-		record_fault(environment,
-					 kIncorrectType,			// Fault Code
-					 primName,				// Primary String - usually primitive name
-					 terminalIndex,			// Terminal Index = theNode + 1
-					 expectedTypes,			// Expected Type
-					 foundType);				// Found Type
-		X_free(terminalIndex);
-		X_free(expectedTypes);
-		return VPLPrimRecordObjectTypeError( theFoundType, theVType, theNode++, primName, primitive, environment );
-	}
-	
-}
 
 
 #pragma mark * Input Get Functions *
@@ -932,36 +843,18 @@ vpl_Status		VPLPrimGetInputObjectReal( vpl_Real* theValue, vpl_Arity theNode, vp
 	return err;
 }
 
-vpl_Status		VPLPrimGetInputObjectIntegerCoerce( vpl_Integer* theValue, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment )
-{
-#pragma unused(primName)
-	
-	vpl_Status		theStatus = kNOERROR;
-	V_Object		theVObject = NULL;
-	
-	theVObject = VPLPrimGetInputObject(theNode,primitive,environment);
-	*theValue = VPLObjectCoerceValueInteger( theVObject, &theStatus );
-	
-	if( theStatus != kNOERROR )
-		theStatus = VPLPrimCheckInputObjectType( kInteger, theNode, primName, primitive, environment );
-	
-	return theStatus;
-}
-
 vpl_Status		VPLPrimGetInputObjectRealCoerce( vpl_Real* theValue, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment )
 {
 #pragma unused(primName)
 
-	vpl_Status		theStatus = kNOERROR;
 	V_Object		theVObject = NULL;
 
 	theVObject = VPLPrimGetInputObject(theNode,primitive,environment);
-	*theValue = VPLObjectCoerceValueReal( theVObject, &theStatus );
-	
-	if( theStatus != kNOERROR )
-		theStatus = VPLPrimCheckInputObjectType( kReal, theNode, primName, primitive, environment );
-	
-	return theStatus;
+	if(theVObject->type == kInteger) *theValue = ((V_Integer) theVObject)->value;
+	else if(theVObject->type == kReal) *theValue = ((V_Real) theVObject)->value;
+	else return kIncorrectType;
+
+	return kNOERROR;
 }
 
 vpl_Status		VPLPrimGetInputObjectString( vpl_StringPtr* theString, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment )
@@ -1450,45 +1343,29 @@ vpl_Status		VPLEnvironmentLookupExternalBlockSize( vpl_StringPtr theBlockName, v
 	return kNOERROR;
 }
 
-vpl_StringPtr VPLStringCoerceEncoding( vpl_StringPtr inString, vpl_StringLen inStringLength, vpl_StringEncoding inEncoding, vpl_StringEncoding outEncoding, V_Environment environment )
+vpl_StringPtr VPLStringCoerceEncoding( vpl_StringPtr inString, vpl_StringEncoding inEncoding, vpl_StringEncoding outEncoding, V_Environment environment )
 {
 #ifdef CARBON
 	CFIndex			bufferSize = 0;
 	CFStringRef		convertString = NULL;
 	Boolean			goodCoerce = false;
-	vpl_StringPtr	wideString = NULL;
 	vpl_StringPtr	outString = NULL;
 #endif
 
-//	if( inEncoding == outEncoding ) return new_string( inString, environment );
+	if( inEncoding == outEncoding ) return new_string( inString, environment );
 
-	if( inEncoding == outEncoding ) 
-	{
-		vpl_StringPtr	copyString = NULL;
-		
-		copyString = (vpl_StringPtr) malloc( inStringLength + 1 );
-		if( copyString ) {
-			copyString[inStringLength] = vpl_StringTerminator;
-			memmove( copyString, inString, inStringLength );
-		}
-		return copyString;
-	}
-	
 #ifdef CARBON
-	convertString = CFStringCreateWithBytes( kCFAllocatorDefault, (UInt8*)inString, inStringLength, inEncoding, FALSE );
+	convertString = CFStringCreateWithCString( kCFAllocatorDefault, inString, inEncoding );
 	if( convertString == NULL ) return (vpl_StringPtr)NULL;
 		
-	bufferSize = CFStringGetMaximumSizeForEncoding( CFStringGetLength( convertString ), outEncoding );
-	wideString = (vpl_StringPtr)X_calloc( 1, bufferSize + 1 );
-	wideString[ bufferSize ] = vpl_StringTerminator;
+	bufferSize = CFStringGetMaximumSizeForEncoding( CFStringGetLength( convertString ), outEncoding ) + 1;
+	outString = (vpl_StringPtr)X_malloc( bufferSize );
+	outString[ bufferSize ] = vpl_StringTerminator;
 	
-	goodCoerce = CFStringGetCString( convertString, (char*)wideString, bufferSize, outEncoding );
+	goodCoerce = CFStringGetCString( convertString, (char*)outString, bufferSize, outEncoding );
 	if( !goodCoerce ) {
-		X_free( wideString );
+		X_free( outString );
 		outString = NULL;
-	} else {
-		X_realloc( wideString, 1, strlen(wideString) + 1 );
-		outString = wideString;
 	}
 	
 	CFRelease( convertString );
@@ -1497,9 +1374,4 @@ vpl_StringPtr VPLStringCoerceEncoding( vpl_StringPtr inString, vpl_StringLen inS
 	return new_string( inString, environment );
 #endif
 }
-
-
-
-
-
 

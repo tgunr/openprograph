@@ -24,7 +24,7 @@
 	VPL_ExtConstant _OSLittleEndian_C = {"OSLittleEndian",OSLittleEndian,NULL};
 	VPL_ExtConstant _OSUnknownByteOrder_C = {"OSUnknownByteOrder",OSUnknownByteOrder,NULL};
 
-
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4
 	VPL_ExtConstant _REG_NOTEOL_C = {"REG_NOTEOL",REG_NOTEOL,NULL};
 	VPL_ExtConstant _REG_NOTBOL_C = {"REG_NOTBOL",REG_NOTBOL,NULL};
 	VPL_ExtConstant _REG_BADRPT_C = {"REG_BADRPT",REG_BADRPT,NULL};
@@ -45,10 +45,12 @@
 	VPL_ExtConstant _REG_NOSUB_C = {"REG_NOSUB",REG_NOSUB,NULL};
 	VPL_ExtConstant _REG_ICASE_C = {"REG_ICASE",REG_ICASE,NULL};
 	VPL_ExtConstant _REG_EXTENDED_C = {"REG_EXTENDED",REG_EXTENDED,NULL};
+#endif
 
 
 #pragma mark --------------- Structures ---------------
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4
 	VPL_ExtField _VPXStruct_regex_t_4 = { "re_g",offsetof(regex_t,re_g),sizeof(void*),kPointerType,"void",1,0,"unsigned int",NULL};
 	VPL_ExtField _VPXStruct_regex_t_3 = { "re_endp",offsetof(regex_t,re_endp),sizeof(void*),kPointerType,"char",1,1,"char",&_VPXStruct_regex_t_4};
 	VPL_ExtField _VPXStruct_regex_t_2 = { "re_nsub",offsetof(regex_t,re_nsub),sizeof(size_t),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_regex_t_3};
@@ -58,7 +60,7 @@
 	VPL_ExtField _VPXStruct_regmatch_t_2 = { "rm_eo",offsetof(regmatch_t,rm_eo),sizeof(regoff_t),kIntType,"NULL",0,0,"int",NULL};
 	VPL_ExtField _VPXStruct_regmatch_t_1 = { "rm_so",offsetof(regmatch_t,rm_so),sizeof(regoff_t),kIntType,"NULL",0,0,"int",&_VPXStruct_regmatch_t_2};
 	VPL_ExtStructure _VPXStruct_regmatch_t_S = {"regmatch_t",&_VPXStruct_regmatch_t_1,sizeof(regmatch_t)};
-
+#endif
 
 	VPL_ExtField _VPXStruct_rpcent_3 = { "r_number",offsetof(struct rpcent,r_number),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
 	VPL_ExtField _VPXStruct_rpcent_2 = { "r_aliases",offsetof(struct rpcent,r_aliases),sizeof(void *),kPointerType,"char",2,1,"T*",&_VPXStruct_rpcent_3};
@@ -247,7 +249,8 @@
 	VPL_ExtField _VPXStruct_vfsidctl_2 = { "vc_fsid",offsetof(struct vfsidctl,vc_fsid),sizeof(struct fsid),kStructureType,"void",1,0,"fsid",&_VPXStruct_vfsidctl_3};
 	VPL_ExtField _VPXStruct_vfsidctl_1 = { "vc_vers",offsetof(struct vfsidctl,vc_vers),sizeof(int),kIntType,"void",1,0,"int",&_VPXStruct_vfsidctl_2};
 	VPL_ExtStructure _VPXStruct_vfsidctl_S = {"vfsidctl",&_VPXStruct_vfsidctl_1,sizeof(struct vfsidctl)};
-
+//Not Available in Mac OS X 10.6
+#if 0
 	VPL_ExtField _VPXStruct_vfsconf_7 = { "vfc_next",offsetof(struct vfsconf,vfc_next),sizeof(void *),kPointerType,"vfsconf",1,40,"T*",NULL};
 	VPL_ExtField _VPXStruct_vfsconf_6 = { "vfc_mountroot",offsetof(struct vfsconf,vfc_mountroot),sizeof(void *),kPointerType,"int",1,4,"T*",&_VPXStruct_vfsconf_7};
 	VPL_ExtField _VPXStruct_vfsconf_5 = { "vfc_flags",offsetof(struct vfsconf,vfc_flags),sizeof(int),kIntType,"int",1,4,"int",&_VPXStruct_vfsconf_6};
@@ -256,6 +259,7 @@
 	VPL_ExtField _VPXStruct_vfsconf_2 = { "vfc_name",offsetof(struct vfsconf,vfc_name),sizeof(char[15]),kPointerType,"char",0,1,NULL,&_VPXStruct_vfsconf_3};
 	VPL_ExtField _VPXStruct_vfsconf_1 = { "vfc_vfsops",offsetof(struct vfsconf,vfc_vfsops),sizeof(void *),kPointerType,"vfsops",1,0,"T*",&_VPXStruct_vfsconf_2};
 	VPL_ExtStructure _VPXStruct_vfsconf_S = {"vfsconf",&_VPXStruct_vfsconf_1,sizeof(struct vfsconf)};
+#endif
 
 //	VPL_ExtField _VPXStruct_vfs_attr_26 = { "f_carbon_fsid",offsetof(struct vfs_attr,f_carbon_fsid),sizeof(unsigned short),kUnsignedType,"NULL",0,0,"unsigned short",NULL};
 //	VPL_ExtField _VPXStruct_vfs_attr_25 = { "f_signature",offsetof(struct vfs_attr,f_signature),sizeof(unsigned short),kUnsignedType,"NULL",0,0,"unsigned short",&_VPXStruct_vfs_attr_26};
@@ -405,6 +409,8 @@
 	VPL_ExtField _VPXStruct_audit_fstat_1 = { "af_filesz",offsetof(struct audit_fstat,af_filesz),sizeof(unsigned long long),kUnsignedType,"NULL",0,0,"unsigned long long",&_VPXStruct_audit_fstat_2};
 	VPL_ExtStructure _VPXStruct_audit_fstat_S = {"audit_fstat",&_VPXStruct_audit_fstat_1,sizeof(struct audit_fstat)};
 
+//Not Available in Mac OS X 10.6
+#if 0
 	VPL_ExtField _VPXStruct_audit_stat_14 = { "as_memused",offsetof(struct audit_stat,as_memused),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",NULL};
 	VPL_ExtField _VPXStruct_audit_stat_13 = { "as_totalsize",offsetof(struct audit_stat,as_totalsize),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct_audit_stat_14};
 	VPL_ExtField _VPXStruct_audit_stat_12 = { "as_dropped",offsetof(struct audit_stat,as_dropped),sizeof(int),kIntType,"NULL",0,0,"int",&_VPXStruct_audit_stat_13};
@@ -420,7 +426,7 @@
 	VPL_ExtField _VPXStruct_audit_stat_2 = { "as_numevent",offsetof(struct audit_stat,as_numevent),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_audit_stat_3};
 	VPL_ExtField _VPXStruct_audit_stat_1 = { "as_version",offsetof(struct audit_stat,as_version),sizeof(unsigned int),kUnsignedType,"NULL",0,0,"unsigned int",&_VPXStruct_audit_stat_2};
 	VPL_ExtStructure _VPXStruct_audit_stat_S = {"audit_stat",&_VPXStruct_audit_stat_1,sizeof(struct audit_stat)};
-
+#endif
 	VPL_ExtField _VPXStruct_au_qctrl_5 = { "aq_minfree",offsetof(struct au_qctrl,aq_minfree),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
 	VPL_ExtField _VPXStruct_au_qctrl_4 = { "aq_delay",offsetof(struct au_qctrl,aq_delay),sizeof(unsigned long),kUnsignedType,"NULL",0,0,"unsigned long",&_VPXStruct_au_qctrl_5};
 	VPL_ExtField _VPXStruct_au_qctrl_3 = { "aq_bufsz",offsetof(struct au_qctrl,aq_bufsz),sizeof(unsigned long),kUnsignedType,"NULL",0,0,"unsigned long",&_VPXStruct_au_qctrl_4};
@@ -428,6 +434,8 @@
 	VPL_ExtField _VPXStruct_au_qctrl_1 = { "aq_hiwater",offsetof(struct au_qctrl,aq_hiwater),sizeof(unsigned long),kUnsignedType,"NULL",0,0,"unsigned long",&_VPXStruct_au_qctrl_2};
 	VPL_ExtStructure _VPXStruct_au_qctrl_S = {"au_qctrl",&_VPXStruct_au_qctrl_1,sizeof(struct au_qctrl)};
 
+//Not Available in Mac OS X 10.6
+#if 0
 	VPL_ExtField _VPXStruct_au_record_5 = { "len",offsetof(struct au_record,len),sizeof(unsigned long),kUnsignedType,"NULL",0,0,"unsigned long",NULL};
 	VPL_ExtField _VPXStruct_au_record_4 = { "data",offsetof(struct au_record,data),sizeof(void *),kPointerType,"unsigned char",1,1,"T*",&_VPXStruct_au_record_5};
 	VPL_ExtField _VPXStruct_au_record_2 = { "desc",offsetof(struct au_record,desc),sizeof(int),kIntType,"unsigned char",1,1,"int",&_VPXStruct_au_record_4};
@@ -437,6 +445,7 @@
 	VPL_ExtField _VPXStruct_au_token_2 = { "len",offsetof(struct au_token,len),sizeof(unsigned long),kUnsignedType,"NULL",0,0,"unsigned long",NULL};
 	VPL_ExtField _VPXStruct_au_token_1 = { "t_data",offsetof(struct au_token,t_data),sizeof(void *),kPointerType,"unsigned char",1,1,"T*",&_VPXStruct_au_token_2};
 	VPL_ExtStructure _VPXStruct_au_token_S = {"au_token",&_VPXStruct_au_token_1,sizeof(struct au_token)};
+#endif
 
 	VPL_ExtField _VPXStruct_auditpinfo_addr_5 = { "ap_asid",offsetof(struct auditpinfo_addr,ap_asid),sizeof(int),kIntType,"NULL",0,0,"int",NULL};
 	VPL_ExtField _VPXStruct_auditpinfo_addr_4 = { "ap_termid",offsetof(struct auditpinfo_addr,ap_termid),sizeof(struct au_tid_addr),kStructureType,"NULL",0,0,"au_tid_addr",&_VPXStruct_auditpinfo_addr_5};
@@ -737,6 +746,7 @@
 
 #pragma mark --------------- Procedures ---------------
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4
 	VPL_Parameter _regcomp_R = { kIntType,4,NULL,0,0,NULL};
 	VPL_Parameter _regcomp_3 = { kIntType,4,NULL,0,0,NULL};
 	VPL_Parameter _regcomp_2 = { kPointerType,1,"char",1,1,&_regcomp_3};
@@ -760,7 +770,7 @@
 
 	VPL_Parameter _regfree_1 = { kPointerType, sizeof(regex_t),"regex_t",1,0,NULL};
 	VPL_ExtProcedure _regfree_F = {"regfree",regfree,&_regfree_1,NULL};
-
+#endif
 
 	VPL_Parameter _sig_t_1 = { kIntType,4,NULL,0,0,NULL};
 	VPL_ExtProcedure _sig_t_F = {"sig_t",NULL,&_sig_t_1,NULL};
@@ -2752,6 +2762,8 @@
 	VPL_Parameter _signal_1 = { kIntType,4,NULL,0,0,&_signal_2};
 	VPL_ExtProcedure _signal_F = {"signal",signal,&_signal_1,&_signal_R};
 
+//Not Available in Mac OS X 10.6
+#if 0
 	VPL_Parameter _htonl_R = { kUnsignedType,4,NULL,0,0,NULL};
 	VPL_Parameter _htonl_1 = { kUnsignedType,4,NULL,0,0,NULL};
 	VPL_ExtProcedure _htonl_F = {"htonl",htonl,&_htonl_1,&_htonl_R};
@@ -2770,6 +2782,7 @@
 	VPL_Parameter _ntohs_1 = { kUnsignedType,2,NULL,0,0,NULL};
 //	VPL_ExtProcedure _ntohs_F = {"ntohs",NULL,&_ntohs_1,&_ntohs_R};
 	VPL_ExtProcedure _ntohs_F = {"ntohs",ntohs,&_ntohs_1,&_ntohs_R};
+#endif
 
 	VPL_Parameter _write_R = { kIntType,4,NULL,0,0,NULL};
 	VPL_Parameter _write_3 = { kUnsignedType,4,NULL,0,0,NULL};
@@ -3495,6 +3508,7 @@ VPL_DictionaryNode VPX_LIBC_Constants[] =	{
 	{"OSLittleEndian", &_OSLittleEndian_C},
 	{"OSUnknownByteOrder", &_OSUnknownByteOrder_C},
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4
 	{"REG_NOTEOL", &_REG_NOTEOL_C},
 	{"REG_NOTBOL", &_REG_NOTBOL_C},
 	{"REG_BADRPT", &_REG_BADRPT_C},
@@ -3515,7 +3529,7 @@ VPL_DictionaryNode VPX_LIBC_Constants[] =	{
 	{"REG_NOSUB", &_REG_NOSUB_C},
 	{"REG_ICASE", &_REG_ICASE_C},
 	{"REG_EXTENDED", &_REG_EXTENDED_C},
-
+#endif
 };
 
 VPL_DictionaryNode VPX_LIBC_Structures[] =	{
@@ -3548,7 +3562,7 @@ VPL_DictionaryNode VPX_LIBC_Structures[] =	{
 	{"fhandle",&_VPXStruct_fhandle_S},
 	{"vfsquery",&_VPXStruct_vfsquery_S},
 	{"vfsidctl",&_VPXStruct_vfsidctl_S},
-	{"vfsconf",&_VPXStruct_vfsconf_S},
+//	{"vfsconf",&_VPXStruct_vfsconf_S},
 //	{"vfs_attr",&_VPXStruct_vfs_attr_S},
 	{"vfsstatfs",&_VPXStruct_vfsstatfs_S},
 	{"statfs",&_VPXStruct_statfs_S},
@@ -3566,10 +3580,10 @@ VPL_DictionaryNode VPX_LIBC_Structures[] =	{
 	{"ucred",&_VPXStruct_ucred_S},
 	{"au_evclass_map",&_VPXStruct_au_evclass_map_S},
 	{"audit_fstat",&_VPXStruct_audit_fstat_S},
-	{"audit_stat",&_VPXStruct_audit_stat_S},
+//	{"audit_stat",&_VPXStruct_audit_stat_S},
 	{"au_qctrl",&_VPXStruct_au_qctrl_S},
-	{"au_record",&_VPXStruct_au_record_S},
-	{"au_token",&_VPXStruct_au_token_S},
+//	{"au_record",&_VPXStruct_au_record_S},
+//	{"au_token",&_VPXStruct_au_token_S},
 	{"auditpinfo_addr",&_VPXStruct_auditpinfo_addr_S},
 	{"auditpinfo",&_VPXStruct_auditpinfo_S},
 	{"auditinfo_addr",&_VPXStruct_auditinfo_addr_S},
@@ -3619,9 +3633,10 @@ VPL_DictionaryNode VPX_LIBC_Structures[] =	{
 	{"_opaque_pthread_attr_t",&_VPXStruct__opaque_pthread_attr_t_S},
 	{"__darwin_pthread_handler_rec",&_VPXStruct___darwin_pthread_handler_rec_S},
 	{"terminos",&_VPXStruct_termios_S},
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4
 	{"regmatch_t",&_VPXStruct_regmatch_t_S},
 	{"regex_t",&_VPXStruct_regex_t_S},
-
+#endif
 };
 
 VPL_DictionaryNode VPX_LIBC_Procedures[] =	{
@@ -4028,10 +4043,10 @@ VPL_DictionaryNode VPX_LIBC_Procedures[] =	{
 	{"bsd_signal",&_bsd_signal_F},
 	{"raise",&_raise_F},
 	{"signal",&_signal_F},
-	{"htonl",&_htonl_F},
-	{"ntohl",&_ntohl_F},
-	{"htons",&_htons_F},
-	{"ntohs",&_ntohs_F},
+//	{"htonl",&_htonl_F},
+//	{"ntohl",&_ntohl_F},
+//	{"htons",&_htons_F},
+//	{"ntohs",&_ntohs_F},
 	{"write",&_write_F},
 	{"vfork",&_vfork_F},
 	{"usleep",&_usleep_F},
@@ -4184,20 +4199,26 @@ VPL_DictionaryNode VPX_LIBC_Procedures[] =	{
 	{"fclose",&_fclose_F},
 	{"clearerr",&_clearerr_F},
 	{"forkpty",&_forkpty_F},
-
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4
 	{"regfree",&_regfree_F},
 	{"regexec",&_regexec_F},
 	{"regerror",&_regerror_F},
 	{"regcomp",&_regcomp_F},
-
+#endif
 
 };
 
 #pragma mark ### Counts ###
 
+#if MACOSX_DEPLOYMENT_TARGET > MAC_OS_X_VERSION_10_4
 Nat4	VPX_LIBC_Constants_Number = 14 + 20;
-Nat4	VPX_LIBC_Structures_Number = 99 + 1 + 2 - 5;			// ( 5 removed for 10.6:  vfs_attr, omsghdr, osockaddr, sigcontext, ucontext64 )
-Nat4	VPX_LIBC_Procedures_Number = 558 - 1 + 1 + 4;
+Nat4	VPX_LIBC_Structures_Number = 99 + 1 + 2 - 9;			// ( 9 removed for 10.6:  vfs_attr, omsghdr, osockaddr, sigcontext, ucontext64 )
+Nat4	VPX_LIBC_Procedures_Number = 559 + 4 - 5;
+#else
+Nat4	VPX_LIBC_Constants_Number = 14;
+Nat4	VPX_LIBC_Structures_Number = 99 + 1 - 5;			// ( 5 removed for 10.6:  vfs_attr, omsghdr, osockaddr, sigcontext, ucontext64 )
+Nat4	VPX_LIBC_Procedures_Number = 558 - 1 + 1;
+#endif
 
 #pragma export on
 

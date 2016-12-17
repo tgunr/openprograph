@@ -19,11 +19,11 @@ void VPLEnvironmentCallbackRelease( V_CallbackCodeSegment theCallback )
 	if( theCallback ) {
 		theCallback->use--;
 		if( theCallback->use <= 0 ) {
-
+					
 #ifdef _POSIX_THREADS
-			pthread_mutex_lock(&gCallbackLock);
+	pthread_mutex_lock(&gCallbackLock);
 #endif
-			
+
 			previous = theCallback->previous;
 			next = theCallback->next;
 			theObject = theCallback->object;						// I feel like we should clear theObject->system, but I suppose not.
@@ -45,7 +45,7 @@ void VPLEnvironmentCallbackRelease( V_CallbackCodeSegment theCallback )
 			if((environment != NULL ) && (environment->segments == theCallback)) environment->segments = next;
 
 #ifdef _POSIX_THREADS
-			pthread_mutex_unlock(&gCallbackLock);
+	pthread_mutex_unlock(&gCallbackLock);
 #endif
 			MakeDataExecutable( theCallback, 0 );					// I doubt this is necessary, but I doubt it hurts.
 			
@@ -68,8 +68,6 @@ V_CallbackCodeSegment VPLEnvironmentCallbackCreate( V_Environment environment, v
 	if( environment->callbackHandler == NULL ) return NULL;
 	if( theMethodName == NULL ) return NULL;
 	if( theTypeName == NULL ) return NULL;
-
-	currentSegment = environment->segments;
 
 	structure = VPXMALLOC( 1, VPL_CallbackCodeSegment );
 	if(structure == NULL) return NULL;
@@ -95,6 +93,12 @@ V_CallbackCodeSegment VPLEnvironmentCallbackCreate( V_Environment environment, v
 		return NULL;
 	}
 
+#ifdef _POSIX_THREADS
+	pthread_mutex_lock(&gCallbackLock);
+#endif
+
+	currentSegment = environment->segments;
+
 	if(currentSegment == NULL){
 		structure->previous = NULL;
 		structure->next = NULL;
@@ -107,6 +111,10 @@ V_CallbackCodeSegment VPLEnvironmentCallbackCreate( V_Environment environment, v
 		structure->previous = currentSegment;
 		structure->next = NULL;
 	}
+
+#ifdef _POSIX_THREADS
+	pthread_mutex_unlock(&gCallbackLock);
+#endif
 
 #if __i386__
 	theSegmentCounter = 0;

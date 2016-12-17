@@ -1290,11 +1290,11 @@ cgiFormResultType cgiFormFileSize(
 		return cgiFormSuccess;
 	}
 }
-
+/*
 typedef struct cgiFileStruct {
 	FILE *in;
 } cgiFile;
-
+*/
 cgiFormResultType cgiFormFileOpen(
 	char *name, cgiFilePtr *cfpp)
 {

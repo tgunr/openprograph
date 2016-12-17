@@ -1,1 +1,0 @@
-/*		ABI.h	Copyright 2005 Andescotia LLC, All Rights Reserved.	*/#ifdef __MWERKS__#include "VPL_Compiler.h"#endif	#ifndef VPXABI#define VPXABINat4	load_Bioinfo(V_Environment environment);#endif

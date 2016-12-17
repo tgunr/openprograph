@@ -3794,6 +3794,9 @@
 	VPL_Parameter _glPointParameteriNV_1 = { kUnsignedType,4,NULL,0,0,&_glPointParameteriNV_2};
 	VPL_ExtProcedure _glPointParameteriNV_F = {"glPointParameteriNV",glPointParameteriNV,&_glPointParameteriNV_1,NULL};
 
+
+// Not available in Mac OS X 10.6
+#if 0
 	VPL_Parameter _glGetCombinerStageParameterfvNV_3 = { kPointerType,4,"float",1,0,NULL};
 	VPL_Parameter _glGetCombinerStageParameterfvNV_2 = { kUnsignedType,4,NULL,0,0,&_glGetCombinerStageParameterfvNV_3};
 	VPL_Parameter _glGetCombinerStageParameterfvNV_1 = { kUnsignedType,4,NULL,0,0,&_glGetCombinerStageParameterfvNV_2};
@@ -3881,6 +3884,7 @@
 	VPL_Parameter _glCombinerParameterfvNV_2 = { kPointerType,4,"float",1,1,NULL};
 	VPL_Parameter _glCombinerParameterfvNV_1 = { kUnsignedType,4,NULL,0,0,&_glCombinerParameterfvNV_2};
 	VPL_ExtProcedure _glCombinerParameterfvNV_F = {"glCombinerParameterfvNV",glCombinerParameterfvNV,&_glCombinerParameterfvNV_1,NULL};
+#endif
 
 	VPL_Parameter _glPNTrianglesfATIX_2 = { kFloatType,4,NULL,0,0,NULL};
 	VPL_Parameter _glPNTrianglesfATIX_1 = { kUnsignedType,4,NULL,0,0,&_glPNTrianglesfATIX_2};
@@ -4290,6 +4294,8 @@
 	VPL_Parameter _glLockArraysEXT_1 = { kIntType,4,NULL,0,0,&_glLockArraysEXT_2};
 	VPL_ExtProcedure _glLockArraysEXT_F = {"glLockArraysEXT",glLockArraysEXT,&_glLockArraysEXT_1,NULL};
 
+// Not available in Mac OS X 10.6
+#if 0
 	VPL_Parameter _glGetColorTableParameterfvEXT_3 = { kPointerType,4,"float",1,0,NULL};
 	VPL_Parameter _glGetColorTableParameterfvEXT_2 = { kUnsignedType,4,NULL,0,0,&_glGetColorTableParameterfvEXT_3};
 	VPL_Parameter _glGetColorTableParameterfvEXT_1 = { kUnsignedType,4,NULL,0,0,&_glGetColorTableParameterfvEXT_2};
@@ -4321,6 +4327,7 @@
 	VPL_Parameter _glColorTableEXT_2 = { kUnsignedType,4,NULL,0,0,&_glColorTableEXT_3};
 	VPL_Parameter _glColorTableEXT_1 = { kUnsignedType,4,NULL,0,0,&_glColorTableEXT_2};
 	VPL_ExtProcedure _glColorTableEXT_F = {"glColorTableEXT",glColorTableEXT,&_glColorTableEXT_1,NULL};
+#endif
 
 	VPL_Parameter _glBlendEquationEXT_1 = { kUnsignedType,4,NULL,0,0,NULL};
 	VPL_ExtProcedure _glBlendEquationEXT_F = {"glBlendEquationEXT",glBlendEquationEXT,&_glBlendEquationEXT_1,NULL};
@@ -6136,21 +6143,6 @@ VPL_DictionaryNode VPX_OpenGL_Procedures[] =	{
 	{"glAccum",&_glAccum_F},
 	{"glPointParameterivNV",&_glPointParameterivNV_F},
 	{"glPointParameteriNV",&_glPointParameteriNV_F},
-	{"glGetCombinerStageParameterfvNV",&_glGetCombinerStageParameterfvNV_F},
-	{"glCombinerStageParameterfvNV",&_glCombinerStageParameterfvNV_F},
-	{"glGetFinalCombinerInputParameterivNV",&_glGetFinalCombinerInputParameterivNV_F},
-	{"glGetFinalCombinerInputParameterfvNV",&_glGetFinalCombinerInputParameterfvNV_F},
-	{"glGetCombinerOutputParameterivNV",&_glGetCombinerOutputParameterivNV_F},
-	{"glGetCombinerOutputParameterfvNV",&_glGetCombinerOutputParameterfvNV_F},
-	{"glGetCombinerInputParameterivNV",&_glGetCombinerInputParameterivNV_F},
-	{"glGetCombinerInputParameterfvNV",&_glGetCombinerInputParameterfvNV_F},
-	{"glFinalCombinerInputNV",&_glFinalCombinerInputNV_F},
-	{"glCombinerOutputNV",&_glCombinerOutputNV_F},
-	{"glCombinerInputNV",&_glCombinerInputNV_F},
-	{"glCombinerParameteriNV",&_glCombinerParameteriNV_F},
-	{"glCombinerParameterivNV",&_glCombinerParameterivNV_F},
-	{"glCombinerParameterfNV",&_glCombinerParameterfNV_F},
-	{"glCombinerParameterfvNV",&_glCombinerParameterfvNV_F},
 	{"glPNTrianglesfATIX",&_glPNTrianglesfATIX_F},
 	{"glPNTrianglesiATIX",&_glPNTrianglesiATIX_F},
 	{"glStencilFuncSeparateATI",&_glStencilFuncSeparateATI_F},
@@ -6238,11 +6230,6 @@ VPL_DictionaryNode VPX_OpenGL_Procedures[] =	{
 	{"glDrawRangeElementsEXT",&_glDrawRangeElementsEXT_F},
 	{"glUnlockArraysEXT",&_glUnlockArraysEXT_F},
 	{"glLockArraysEXT",&_glLockArraysEXT_F},
-	{"glGetColorTableParameterfvEXT",&_glGetColorTableParameterfvEXT_F},
-	{"glGetColorTableParameterivEXT",&_glGetColorTableParameterivEXT_F},
-	{"glGetColorTableEXT",&_glGetColorTableEXT_F},
-	{"glColorSubTableEXT",&_glColorSubTableEXT_F},
-	{"glColorTableEXT",&_glColorTableEXT_F},
 	{"glBlendEquationEXT",&_glBlendEquationEXT_F},
 	{"glBlendColorEXT",&_glBlendColorEXT_F},
 	{"glDrawBuffersARB",&_glDrawBuffersARB_F},
@@ -6448,7 +6435,7 @@ VPL_DictionaryNode VPX_OpenGL_Procedures[] =	{
 
 //Nat4	VPX_OpenGL_Constants_Number = 0;
 Nat4	VPX_OpenGL_Structures_Number = 9;
-Nat4	VPX_OpenGL_Procedures_Number = 1132;
+Nat4	VPX_OpenGL_Procedures_Number = 1112;
 
 #pragma export on
 

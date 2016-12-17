@@ -430,7 +430,6 @@ typedef struct
 	Nat4	size;
 	void	*blockPtr;
 	Nat4	levelOfIndirection;
-	void	*blockFreeProcPtr;
 }	VPL_ExternalBlock, *V_ExternalBlock;
 
 typedef		V_Object	*vpl_VObjectArray;
@@ -445,39 +444,7 @@ typedef struct VPL_Value
 	V_Object		value;
 }	VPL_Value;
 
-typedef	void (*vpl_WatchpointGetCallbackProc)( const void* userData, const V_Instance thisInstance, const Int1* attributeName, const V_Object attributeValue ); 
-typedef	void (*vpl_WatchpointSetCallbackProc)( const void* userData, const V_Instance thisInstance, const Int1* attributeName, const V_Object attributeValue, const V_Object newValue ); 
 
-	typedef	void *(vpl_WatchpointSetCallbackProc0)( void );
-	typedef	void (*vpl_WatchpointSetCallbackProc1)( void* userData );
-	typedef	void (*vpl_WatchpointSetCallbackProc2)( void* userData, V_Instance thisInstance );
-	typedef	void (*vpl_WatchpointSetCallbackProc3)( void* userData, V_Instance thisInstance, Int1* attributeName );
-	typedef	void (*vpl_WatchpointSetCallbackProc4)( void* userData, V_Instance thisInstance, Int1* attributeName, V_Object attributeValue );
-	typedef	void (*vpl_WatchpointSetCallbackProc5)( void* userData, V_Instance thisInstance, Int1* attributeName, V_Object attributeValue, V_Object newValue );
-	
-typedef struct VPL_WatchpointObserver *V_WatchpointObserver;
-typedef struct VPL_WatchpointObserver
-{
-	V_CallbackCodeSegment	theGetCallback;
-	V_CallbackCodeSegment	theSetCallback;
-	void*					theGetUserData;
-	void*					theSetUserData;
-	
-	V_WatchpointObserver	nextObserver;
-	V_WatchpointObserver	previousObserver;
-} VPL_WatchpointObserver;
-
-typedef struct VPL_WatchpointNode *V_WatchpointNode;
-typedef struct VPL_WatchpointNode
-{
-	V_WatchpointNode		previous;
-	V_WatchpointNode		next;
-	V_Instance				theInstance;
-	Nat4					doFault;
-	V_WatchpointObserver	theObserverList;
-}	VPL_WatchpointNode;
-
-	
 typedef struct VPL_Environment
 {
 	V_Fault				theFault;
@@ -561,6 +528,7 @@ outputList = (V_List)create_list(1,environment);spawnPtr = environment->stackSpa
 
 #define HEADER(x) 	Nat4 repeatLimit = 0; enum boolType	repeat = kFALSE; Nat4 counter = 0;  Bool nextCase = kFALSE; enum opTrigger theOutcome = kSuccess; enum opTrigger result = kSuccess; Nat4 contextClassIndex = contextIndex; V_Object root[x]; for(counter=0;counter<x;counter++) root[counter] = NULL; counter = 0;
 #define HEADERWITHNONE(x) 	Nat4 repeatLimit = 0; enum boolType	repeat = kFALSE; Nat4 counter = 0;  Bool nextCase = kFALSE; enum opTrigger theOutcome = kSuccess; enum opTrigger result = kSuccess; Nat4 contextClassIndex = contextIndex; V_Object vpx_none = NULL; V_Object	root[x]; for(counter=0;counter<x;counter++) root[counter] = NULL; counter = 0; vpx_none = (V_Object) create_none(environment);
+#define CLASSCONTEXT(x) 	contextIndex = pClassConstantToIndex[kVPXClass_ ## x];
 
 #define DECREMENT(x) 	for(counter=0;counter<x;counter++) decrement_count(environment,root[counter]); counter = 0;
 #define FOOTER(x) 	THEFINISH: DECREMENT(x) *outcome = theOutcome; return nextCase;
@@ -637,8 +605,6 @@ vpl_StringPtr	VPLObjectTypeToTypeString( vpl_ObjectType aVType );
 vpl_Boolean		VPLObjectGetValueBool( V_Object theVObject );
 vpl_Integer		VPLObjectGetValueInteger( V_Object theVObject );
 vpl_Real		VPLObjectGetValueReal( V_Object theVObject );
-vpl_Integer		VPLObjectCoerceValueInteger( V_Object theVObject, vpl_Status* outStatus );
-vpl_Real		VPLObjectCoerceValueReal( V_Object theVObject, vpl_Status* outStatus );
 vpl_StringPtr	VPLObjectGetValueString( V_Object theVObject );
 vpl_StringPtr	VPLObjectGetValueStringCopy( V_Object theVObject, V_Environment environment );
 vpl_StringPtr	VPLObjectGetExternalBlockName( V_Object theVObject );
@@ -678,9 +644,6 @@ vpl_Status		VPLPrimCheckOutputArityMin(V_Environment environment, vpl_StringPtr 
 vpl_Status		VPLPrimCheckOutputArityMax(V_Environment environment, vpl_StringPtr primName, Nat4 primOutArity, vpl_Arity wantArity );
 
 #pragma mark * Check Input Functions *
-vpl_Status		VPLPrimCheckObjectType( V_Object theObject, vpl_ObjectType theVType, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
-vpl_Status		VPLPrimCheckObjectTypes( V_Object theObject, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment, Nat4 numberOfTypes, ... );
-vpl_Status		VPLPrimCheckListObjectType(  vpl_ObjectType theVType, V_List theList, vpl_ListItemIndex theIndex, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
 vpl_Status		VPLPrimCheckInputObjectType(  vpl_ObjectType theVType, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
 vpl_Status		VPLPrimCheckInputObjectTypes( vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment, Nat4 numberOfTypes, ... );
 
@@ -695,7 +658,6 @@ vpl_Status		VPLPrimGetInputObjectUNDEFINED( vpl_Arity theNode, vpl_StringPtr pri
 vpl_Status		VPLPrimGetInputObjectBool( vpl_Boolean* theValue, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
 vpl_Status		VPLPrimGetInputObjectInteger( vpl_Integer* theValue, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
 vpl_Status		VPLPrimGetInputObjectReal( vpl_Real* theValue, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
-vpl_Status		VPLPrimGetInputObjectRealCoerce( vpl_Real* theValue, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
 vpl_Status		VPLPrimGetInputObjectString( vpl_StringPtr* theString, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
 vpl_Status		VPLPrimGetInputObjectStringCopy( vpl_StringPtr* theString, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
 vpl_Status		VPLPrimGetInputObjectStringCoerceCopy( vpl_StringPtr* theString, vpl_Arity theNode, vpl_StringPtr primName, vpl_PrimitiveInputs primitive, V_Environment environment );
@@ -745,7 +707,7 @@ V_Object		VPLEnvironmentCallbackDispose( V_Environment environment, V_CallbackCo
 V_CallbackCodeSegment	VPLEnvironmentCallbackRetain( V_CallbackCodeSegment theCallback );
 void					VPLEnvironmentCallbackRelease( V_CallbackCodeSegment theCallback );
 
-vpl_StringPtr	VPLStringCoerceEncoding( vpl_StringPtr inString, vpl_StringLen inStringLength, vpl_StringEncoding inEncoding, vpl_StringEncoding outEncoding, V_Environment environment );
+vpl_StringPtr	VPLStringCoerceEncoding( vpl_StringPtr inString, vpl_StringEncoding inEncoding, vpl_StringEncoding outEncoding, V_Environment environment );
 
 #pragma mark * Engine Functions *
 
@@ -890,16 +852,6 @@ Real10 vpx_get_real(V_Object object);
 Int4 vpx_get_integer(V_Object object);
 void *vpx_get_none_pointer(V_Environment environment,Nat4 size,Int1 *type,Int1* level,V_Object *object);
 
-V_WatchpointNode	VPLWatchpointFind( V_Environment environment, V_Instance watchInstance, vpl_StringPtr watchAttribute );
-Int4				VPLWatchpointCreate( V_Environment environment, V_Instance watchInstance, vpl_StringPtr watchAttribute, Nat4 recordFault, V_WatchpointNode* newWatchpoint );
-void				VPLWatchpointDispose( V_WatchpointNode oldWatchpoint );
-Nat4				VPLWatchpointGetRecordFault( V_WatchpointNode watchNode );
-void				VPLWatchpointChangeRecordFault( V_WatchpointNode watchNode, Nat4 recordFault );
-Nat4				VPLWatchpointObserverCreate( V_Environment environment, V_Instance watchInstance, vpl_StringPtr watchAttribute, V_CallbackCodeSegment getCallback, void* getUserData, V_CallbackCodeSegment setCallback, void* setUserData, V_WatchpointObserver* newObserver );
-Nat4				VPLWatchpointObserverRemove( V_Environment environment, V_Instance watchInstance, vpl_StringPtr watchAttribute, V_WatchpointObserver watchObserver );
-void				VPLWatchpointObserverChangeGetCallback( V_WatchpointObserver watchObserver, V_CallbackCodeSegment getCallback, void* getUserData );
-void				VPLWatchpointObserverChangeSetCallback( V_WatchpointObserver watchObserver, V_CallbackCodeSegment setCallback, void* setUserData );
-	
 #ifdef __cplusplus
 }
 #endif

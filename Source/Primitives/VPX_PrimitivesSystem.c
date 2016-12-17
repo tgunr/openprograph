@@ -8,16 +8,11 @@
 //#include <stdio.h>
 //#include <string.h>
 //#include <math.h>
-
-//	This is for uname() in platform
-#include <sys/utsname.h>
-
 #ifdef __MWERKS__
 #include "VPL_Compiler.h"
 #elif __GNUC__
 #include <MartenEngine/MartenEngine.h>
 
-/*
 typedef struct VPL_Heap
 {
 	Nat2	instanceIndex;
@@ -30,8 +25,8 @@ typedef struct VPL_Heap
 	Nat4	listLength;
 	Nat4	maxLength;
 }	VPL_Heap;
-*/
-extern void *get_node( V_Dictionary dictionary, Int1 *name );
+
+void *get_node( V_Dictionary dictionary, Int1 *name );
 #endif	
 
 
@@ -571,7 +566,7 @@ V_List create_list_of_children(V_Environment environment,vpl_StringPtr theBaseNa
 	}
 
 */
-	
+
 	theNode = find_node(theDict,theBaseName);
 	if(theNode) {
 		theClass = (V_Class) theNode->object;
@@ -586,7 +581,7 @@ V_List create_list_of_children(V_Environment environment,vpl_StringPtr theBaseNa
 	} else {
 		theList = create_list(0, environment );
 	}
-	
+
 	return theList;
 }
 
@@ -762,66 +757,6 @@ Int4 VPLP_parent( V_Environment environment , enum opTrigger *trigger , Nat4 pri
 	return result;
 }
 
-Int4 VPLP_method_2D_name( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-Int4 VPLP_method_2D_name( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive )
-{
-	Int1		*primName = "method-name";
-	Nat4		result = kNOERROR;
-	
-	Int1*		methodName = NULL;
-		
-	methodName = (Int1*)full_name( (V_Operation)NULL, environment );
-	
-	if( methodName != NULL ) VPLPrimSetOutputObjectStringCopy( environment, primInArity, 0, primitive, methodName );
-	else VPLPrimSetOutputObjectNULL( environment, primInArity, 0, primitive );
-	
-	*trigger = kSuccess;	
-	return result;
-}
-
-Int4 VPLP_platform( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-Int4 VPLP_platform( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive ){
-	
-	Int1*				primName = "platform";
-	Int4				result = kNOERROR;
-	struct utsname		localNames;
-	
-	result = uname( &localNames );
-	
-	if( result == 0 )
-		VPLPrimSetOutputObjectStringCopy( environment, primInArity, 0, primitive, localNames.sysname );
-	else
-		VPLPrimSetOutputObjectNULL( environment, primInArity, 0, primitive );
-	
-	*trigger = kSuccess;	
-	return kNOERROR;
-}
-
-Int4 VPLP_get_2D_loop_2D_info( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive );
-Int4 VPLP_get_2D_loop_2D_info( V_Environment environment , enum opTrigger *trigger , Nat4 primInArity , Nat4 primOutArity , vpl_PrimitiveInputs primitive ){
-	
-	Int1*				primName = "get-loop-info";
-	Int4				result = kNOERROR;
-	
-	V_Frame				thisFrame = environment->stack->currentFrame;
-	V_Operation			thisOperation = thisFrame->operation;;
-	Nat4				repeatCount = 0;
-	Nat1				isFinished = 0;
-
-#ifdef VPL_VERBOSE_ENGINE
-
-	result = VPLPrimCheckOutputArity(environment,primName, primOutArity, 2 );
-	if( result != kNOERROR ) return result;
-
-#endif
-	
-	VPLPrimSetOutputObjectBool( environment, primInArity, 0, primitive, isFinished );
-	VPLPrimSetOutputObjectInteger( environment, primInArity, 1, primitive, repeatCount);
-	
-	*trigger = kSuccess;	
-	return kNOERROR;
-}
-
 Nat4	loadConstants_VPX_PrimitivesSystem(V_Environment environment,char *bundleID);
 Nat4	loadConstants_VPX_PrimitivesSystem(V_Environment environment,char *bundleID)
 {
@@ -870,9 +805,6 @@ Nat4	loadPrimitives_VPX_PrimitivesSystem(V_Environment environment,char *bundleI
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"methods",dictionary,1,1,VPLP_methods)) == NULL) return kERROR;
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"persistents",dictionary,0,1,VPLP_persistents)) == NULL) return kERROR;
         if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"parent",dictionary,1,1,VPLP_parent)) == NULL) return kERROR;
-        if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"method-name",dictionary,0,1,VPLP_method_2D_name)) == NULL) return kERROR;
-		if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"platform",dictionary,0,1,VPLP_platform)) == NULL) return kERROR;
-		if((result = extPrimitive_new(bundleID,kContinueOnSuccess,"get-loop-info",dictionary,0,2,VPLP_get_2D_loop_2D_info)) == NULL) return kERROR;
 
         return kNOERROR;
 

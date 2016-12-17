@@ -9,9 +9,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-Int4	execute_watchpoint_get( V_Environment environment, vpl_StringPtr moduleName, V_ClassEntry thisClass, V_Instance thisInstance, Nat4 attIndex, V_Object attributeValue );
-Int4	execute_watchpoint_set( V_Environment environment, vpl_StringPtr moduleName, V_ClassEntry thisClass, V_Instance thisInstance, Nat4 attIndex, V_Object newValue );
-
 Int4 attribute_offset( V_Class tempClass , Int1 *tempOString )
 {
 	V_Dictionary		tempDictionary = NULL;
@@ -80,8 +77,6 @@ Int4 execute_get( V_Environment environment,V_Stack stack)
 		if(theClassIndex != -1){
 			theClassEntry = environment->classIndexTable->classes[theClassIndex];
 			if(theClassEntry->values[currentOperation->columnIndex]) {
-				
-				/*
 				V_WatchpointNode	tempWatchpointNode = theClassEntry->values[currentOperation->columnIndex]->watchpointList;
 				
 				if(!environment->compiled && !environment->stopNext && theClassIndex != (Nat4) -1){
@@ -93,18 +88,13 @@ Int4 execute_get( V_Environment environment,V_Stack stack)
 						tempWatchpointNode = tempWatchpointNode->previous;
 					}
 				}
-				 */
-				
+
 				if(theClassEntry->values[currentOperation->columnIndex]->type == kAttributeNode){
 					counter = theClassEntry->values[currentOperation->columnIndex]->attributeOffset;
 					tempObject = tempInstance->objectList[counter];
 				} else {
 					tempObject = theClassEntry->values[currentOperation->columnIndex]->value->value;
 				}
-				
-				counter = execute_watchpoint_get( environment, moduleName, theClassEntry, tempInstance, currentOperation->columnIndex, tempObject );
-				if (counter == kHalt) return kHalt;
-
 				increment_count(tempObject);
 				X_set_frame_root_object(environment,currentFrame,1,tempObject);
 			
@@ -118,7 +108,7 @@ Int4 execute_get( V_Environment environment,V_Stack stack)
 /*----------*/
 	
 	if(currentOperation->inject == 0){
-		record_error("obtain_universal: Non-inject operation!",tempOString,kERROR,environment);
+		record_error("get: Non-inject operation! Current Operation Column Index not set",tempOString,kERROR,environment);
 	}
 	if( possibleInstance->type == kInstance){
 		tempInstance = (V_Instance) possibleInstance;
@@ -186,16 +176,16 @@ Int4 execute_get( V_Environment environment,V_Stack stack)
 				return kHalt;
 			}
 		}
-		if(possibleInstance->type != kInstance){
+		if(environment->compiled && possibleInstance->type != kInstance){
 				record_error("get: Attribute: ",tempOString,kERROR,environment);
-				record_error("get: Attribute not found for instance: ",tempClassName,kERROR,environment);
-				record_error("get: Attribute not found in module: ",moduleName,kERROR,environment);
+				record_error("get: Attempted to get attribute as default for instance: ",tempClassName,kERROR,environment);
+				record_error("get: Attribute not fetched in module since running compiled: ",moduleName,kERROR,environment);
 				record_fault(environment,kIncorrectType,"Instance","NULL",primName,moduleName);
 				X_free(tempOString);
 				return kHalt;
 		}
 		tempDictionary = tempClass->attributes;
-		if(tempDictionary != NULL && tempDictionary->numberOfNodes != tempInstance->listLength){
+		if(possibleInstance->type == kInstance && tempDictionary != NULL && tempDictionary->numberOfNodes != tempInstance->listLength){
 			record_error("get: Attribute: ",tempOString,kERROR,environment);
 			record_error("get: Attribute out of range for: ",tempClassName,kERROR,environment);
 			record_error("get: Attribute out of range in module: ",moduleName,kERROR,environment);
@@ -222,15 +212,25 @@ Int4 execute_get( V_Environment environment,V_Stack stack)
 			}	
 		}
 		
-		tempObject = tempInstance->objectList[counter];
-		increment_count(tempObject);
-		X_set_frame_root_object(environment,currentFrame,1,tempObject);
+		if(possibleInstance->type == kInstance){
+			tempObject = tempInstance->objectList[counter];
+			increment_count(tempObject);
+			X_set_frame_root_object(environment,currentFrame,1,tempObject);
+		} else {
+			V_DictionaryNode	tempNode = NULL;
+			V_Value				tempValue = NULL;
+			tempNode = tempDictionary->nodes[counter];
+			tempValue = (V_Value) tempNode->object;
+			tempObject = tempValue->value;
+			increment_count(tempObject);
+			X_set_frame_root_object(environment,currentFrame,1,tempObject);
+		}
 		
 		increment_count(possibleInstance);
 		X_set_frame_root_object(environment,currentFrame,0,possibleInstance);
 
 		return kSuccess;
-	}else{
+	}else{ // tempClass == NULL
 		record_error("get: Class not found: ",moduleName,kERROR,environment);
 		return record_fault(environment,kNonexistentClass,tempClassName,"NULL",primName,moduleName);
 	}
@@ -289,10 +289,7 @@ Int4 execute_set( V_Environment environment,V_Stack stack)
 		} else theClassIndex = -1;
 		if(theClassIndex != -1){
 			theClassEntry = environment->classIndexTable->classes[theClassIndex];
-			
 			if(theClassEntry && theClassEntry->values[currentOperation->columnIndex]) {
-			/*
-			
 				V_WatchpointNode	tempWatchpointNode = theClassEntry->values[currentOperation->columnIndex]->watchpointList;
 				
 				if(!environment->compiled && !environment->stopNext){
@@ -304,11 +301,7 @@ Int4 execute_set( V_Environment environment,V_Stack stack)
 						tempWatchpointNode = tempWatchpointNode->previous;
 					}
 				}
-			*/
 
-				counter = execute_watchpoint_set( environment, moduleName, theClassEntry, tempInstance, currentOperation->columnIndex, tempObject );
-				if (counter == kHalt) return kHalt;
-			
 				if(theClassEntry->values[currentOperation->columnIndex]->type == kAttributeNode){
 					counter = theClassEntry->values[currentOperation->columnIndex]->attributeOffset;
 					previousObject = tempInstance->objectList[counter];
@@ -332,7 +325,7 @@ Int4 execute_set( V_Environment environment,V_Stack stack)
 /*----------*/
 
 	if(currentOperation->inject == 0){
-		record_error("obtain_universal: Non-inject operation!",tempOString,kERROR,environment);
+		record_error("set: Non-inject operation! Current Operation Column Index not set",tempOString,kERROR,environment);
 	}
 	if( possibleInstance->type == kInstance){
 		tempInstance = (V_Instance) possibleInstance;
@@ -401,16 +394,16 @@ Int4 execute_set( V_Environment environment,V_Stack stack)
 				return kHalt;
 			}
 		}
-		if(possibleInstance->type != kInstance){
+		if(environment->compiled && possibleInstance->type != kInstance){
 				record_error("set: Attribute: ",tempOString,kERROR,environment);
-				record_error("set: Attribute not found for instance: ",tempClassName,kERROR,environment);
-				record_error("set: Attribute not found in module: ",moduleName,kERROR,environment);
+				record_error("set: Attempted to set attribute as default for instance: ",tempClassName,kERROR,environment);
+				record_error("set: Attribute not set in module since running compiled: ",moduleName,kERROR,environment);
 				record_fault(environment,kIncorrectType,"Instance","NULL",primName,moduleName);
 				X_free(tempOString);
 				return kHalt;
 		}
 		tempDictionary = tempClass->attributes;
-		if(tempDictionary != NULL && tempDictionary->numberOfNodes != tempInstance->listLength){
+		if(possibleInstance->type == kInstance && tempDictionary != NULL && tempDictionary->numberOfNodes != tempInstance->listLength){
 			record_error("set: Attribute: ",tempOString,kERROR,environment);
 			record_error("set: Attribute out of range for: ",tempClassName,kERROR,environment);
 			record_error("set: Attribute out of range in module: ",moduleName,kERROR,environment);
@@ -437,16 +430,27 @@ Int4 execute_set( V_Environment environment,V_Stack stack)
 			}	
 		}
 
-		previousObject = tempInstance->objectList[counter];
-		increment_count(tempObject);
-		decrement_count(environment,previousObject);
-		tempInstance->objectList[counter] = tempObject;
+		if(possibleInstance->type == kInstance){
+			previousObject = tempInstance->objectList[counter];
+			increment_count(tempObject);
+			decrement_count(environment,previousObject);
+			tempInstance->objectList[counter] = tempObject;
+		} else {
+			V_DictionaryNode	tempNode = NULL;
+			V_Value				tempValue = NULL;
+			tempNode = tempDictionary->nodes[counter];
+			tempValue = (V_Value) tempNode->object;
+			previousObject = tempValue->value;
+			increment_count(tempObject);
+			decrement_count(environment,previousObject);
+			tempValue->value = tempObject;
+		}
 
 		increment_count(possibleInstance);
 		X_set_frame_root_object(environment,currentFrame,0,possibleInstance);
 
 		return kSuccess;	
-	}else{
+	}else{ // tempClass == NULL
 		record_error("set: Class not found: ",moduleName,kERROR,environment);
 		return record_fault(environment,kNonexistentClass,tempClassName,"NULL",primName,moduleName);
 	}
@@ -893,8 +897,6 @@ Int4 execute_extset( V_Environment environment,V_Stack stack)
 	}
 }
 
-#pragma mark ## execute_extprocedure setup ##
-
 long ExternalDummyCall(	long intA, long intB, long intc, long intd, long inte, long intf, long intg, long inth,
 						long int1, long int2, long int3, long int4, long int5, long int6, long int7, long int8,
 						long int9, long int10, long int11, long int12, long int13, long int14, long int15, long int16);
@@ -911,8 +913,6 @@ long ExternalDummyCall(	long intA, long intB, long intc, long intd, long inte, l
 	return result;
 	
 }
-
-#pragma mark ## x86 execute_extprocedure ##
 
 #if __i386__
 Int4 execute_extprocedure( V_Environment environment,V_Stack stack)
@@ -1423,8 +1423,6 @@ Int4 execute_extprocedure( V_Environment environment,V_Stack stack)
 	return kSuccess;
 }
 #endif
-
-#pragma mark ## ppc execute_extprocedure ##
 
 #if __ppc__
 Int4 execute_extprocedure( V_Environment environment,V_Stack stack)
@@ -2280,84 +2278,7 @@ Int1 *full_name( V_Operation operation , V_Environment environment )
 #pragma unused(environment)
 #pragma unused(operation)
 
-	Int1		*fullName = "Method Name Not Implemented!";
-
-	V_Frame		thisFrame = NULL;
-	V_Operation	thisOperation = operation;
-	V_Method	thisMethod = NULL;
-	Int1*		thisCaseName = NULL;
-	Int1*		theFrameMethodName = NULL;
-	Int1*		theOpMethodName = NULL;
-	Bool		isByFrame = (operation == NULL);
-	Bool		isTopCase = TRUE;
-	Int1		thisCase = 0;
-	Int1		caseCount = 0;
-	Int1		loop;
-	
-	thisFrame = environment->stack->currentFrame;
-	thisOperation = thisFrame->operation;
-	operation = thisOperation;
-	
-	isByFrame = FALSE;
-	
-	fprintf( stderr, "Traversing by %s\n", (isByFrame ? "Frame" : "Operation") );
-	
-	if( isByFrame ) {
-		thisFrame = environment->stack->currentFrame;
-		theFrameMethodName = thisFrame->methodName;
-		thisOperation = thisFrame->operation;
-	}
-
-	thisMethod = thisOperation->owner->parentMethod;
-	theOpMethodName = thisMethod->objectName;
-		
-	if( isByFrame ) thisCaseName = theFrameMethodName;
-	else thisCaseName = theOpMethodName;
-	
-	fprintf( stderr, "Operation Case Name: %s\n", thisCaseName );
-
-	// Find top, count, and case number
-
-	while( thisCaseName != NULL ) {
-		if( isByFrame ) thisMethod = thisFrame->frameCase->parentMethod;
-		else thisMethod = thisOperation->owner->parentMethod;
-		if( thisMethod != NULL ) {
-			isTopCase = (thisMethod->columnIndex > 0);
-			caseCount = thisMethod->numberOfCases;
-			for( loop=0; loop<caseCount; loop++ )
-				if( thisMethod->casesList[loop] == thisFrame->frameCase ) {
-					thisCase = loop + 1;
-					break;
-				}
-		} else {
-			isTopCase = TRUE;
-			thisCase = 0;
-			caseCount = 0;
-			break;
-		}
-		
-		fprintf( stderr, "\tFrame %s: %s %i:%i\n", (isTopCase ? "Method" : "Local"), thisCaseName, thisCase, caseCount );
-		fprintf( stderr, "\tFrame Count: %i, Finished: %s\n", thisFrame->repeatCounter, (thisFrame->stopNext) ? "Yes" : "No" );
-
-		if( isByFrame ) {
-			thisFrame = thisFrame->previousFrame;
-			if( thisFrame != NULL ) thisCaseName = thisFrame->methodName;
-		} else {
-			if( isTopCase ) thisCaseName = NULL;
-			else {
-				if( thisOperation->owner != NULL ) thisOperation = (V_Operation)((V_Operation)thisMethod)->owner->parentMethod;
-				if( thisOperation != NULL ) thisCaseName = thisOperation->objectName;
-				else thisCaseName = NULL;
-			}
-		}
-	}
-
-
-//	if( theFrameMethodName != NULL ) fullName = theFrameMethodName;
-//	else if( theOpMethodName != NULL ) fullName = theOpMethodName;
-
-	if( theOpMethodName != NULL ) fullName = theOpMethodName;
-
+	Int1		*fullName = "FullName";
 	return fullName;
 }
 
@@ -3284,341 +3205,6 @@ Int4 execute_evaluate( V_Environment environment,V_Stack stack)
 	return kSuccess;
 
 }
-
-
-#pragma mark ## watchpoint implementations ##
-
-Int4	execute_watchpoint_get( V_Environment environment, vpl_StringPtr moduleName, V_ClassEntry thisClass, V_Instance thisInstance, Nat4 attIndex, V_Object attributeValue )
-{
-	Int4			outStatus = kNoAction;
-	V_ValueNode		attNode = thisClass->values[attIndex];
-	
-	if( attNode ) {
-		V_WatchpointNode		tempWatchpointNode = attNode->watchpointList;
-		V_WatchpointNode		foundWatchpointNode = NULL;
-		Nat4					theClassIndex = thisInstance->instanceIndex;
-		V_WatchpointObserver	workObserver = NULL;
-		
-		while( (foundWatchpointNode == NULL) && (tempWatchpointNode != NULL) ) 
-		{
-			if( tempWatchpointNode->theInstance == thisInstance )
-				foundWatchpointNode = tempWatchpointNode;
-			else
-				tempWatchpointNode = tempWatchpointNode->previous;
-		}
-		
-		if (foundWatchpointNode == NULL) return outStatus;
-		
-		workObserver = foundWatchpointNode->theObserverList;
-		
-		if( workObserver != NULL ) {
-			/* Do Observer Get Callback */
-			
-			Int1*							theAttName = thisClass->theClass->attributes->nodes[attIndex]->name;
-			void*							theUserData = NULL;
-			void (*theProc)(const void*, const V_Instance, const char*, const V_Object);
-			
-			while (workObserver != NULL)
-			{
-				theUserData = workObserver->theGetUserData;
-
-#if __VPL_DISPATCH_USES_FFI__
-				theProc = (void*)workObserver->theGetCallback->ffiseg_closure;
-#else
-				theProc = (void*)workObserver->theGetCallback;
-#endif
-				if( theProc )
-					theProc( theUserData, thisInstance, theAttName, attributeValue );
-				
-				workObserver = workObserver->nextObserver;
-			}
-	
-			outStatus = kSuccess;
-		} 
-		
-		if(foundWatchpointNode->doFault && !environment->compiled && !environment->stopNext && theClassIndex != (Nat4) -1) {
-			record_fault(environment,kWatchpoint,"NULL","NULL","NULL",moduleName);
-			outStatus = kHalt;
-		}
-	}
-	
-	return outStatus;
-}
-
-Int4	execute_watchpoint_set( V_Environment environment, vpl_StringPtr moduleName, V_ClassEntry thisClass, V_Instance thisInstance, Nat4 attIndex, V_Object newValue )
-{
-	Int4			outStatus = kNoAction;
-	V_ValueNode		attNode = thisClass->values[attIndex];
-	
-	if( attNode ) {
-		V_WatchpointNode		tempWatchpointNode = attNode->watchpointList;
-		V_WatchpointNode		foundWatchpointNode = NULL;
-		Nat4					theClassIndex = thisInstance->instanceIndex;
-		V_WatchpointObserver	workObserver = NULL;
-		
-		while( (foundWatchpointNode == NULL) && (tempWatchpointNode != NULL) )
-		{
-			if( tempWatchpointNode->theInstance == thisInstance )
-				foundWatchpointNode = tempWatchpointNode;
-			else
-				tempWatchpointNode = tempWatchpointNode->previous;
-		}
-		
-		if (foundWatchpointNode == NULL) return outStatus;
-		
-		workObserver = foundWatchpointNode->theObserverList;
-		
-		if( workObserver != NULL ) {
-			/* Do Observer Set Callback */
-			
-			Int1*								theAttName = thisClass->theClass->attributes->nodes[attIndex]->name;
-			V_Object							theAttValue = thisInstance->objectList[attIndex];
-			const void*							theUserData = NULL;
-			void (*theProc)(const void*, const V_Instance, const char*, const V_Object, const V_Object);
-			
-			while (workObserver != NULL)
-			{
-				theUserData = workObserver->theSetUserData;
-
-#if __VPL_DISPATCH_USES_FFI__
-				theProc = (void*)workObserver->theGetCallback->ffiseg_closure;
-#else
-				theProc = (void*)workObserver->theSetCallback;
-#endif				
-				//fprintf(stdout, "call observer instance: %p, att: %s\n\tgetCB: %p, getD: %p\n\tsetCB: %p, setD: %p\n",
-				//		thisInstance, theAttName, NULL, NULL, theProc, theUserData );
-
-				if( theProc )
-					theProc( theUserData, thisInstance, theAttName, theAttValue, newValue );
-				
-				workObserver = workObserver->nextObserver;
-			}
-			
-			outStatus = kSuccess;
-		} 
-		
-		if(foundWatchpointNode->doFault && !environment->compiled && !environment->stopNext && theClassIndex != (Nat4) -1) {
-			record_fault(environment,kWatchpoint,"NULL","NULL","NULL",moduleName);
-			outStatus = kHalt;
-		}
-	}
-	
-	return outStatus;
-}
-
-#pragma mark ## watchpoint utilities ##
-
-V_WatchpointNode	VPLWatchpointFind( V_Environment environment, V_Instance watchInstance, vpl_StringPtr watchAttribute )
-{
-	Nat4				thisClassIndex = watchInstance->instanceIndex;
-	V_ClassEntry		thisClassEntry = environment->classIndexTable->classes[thisClassIndex];
-	Int4				thisAttributeOffset = attribute_offset( thisClassEntry->theClass, watchAttribute );
-	V_WatchpointNode	thisWatchpointNode = NULL;
-	
-	if( thisAttributeOffset == -1 ) return thisWatchpointNode;
-	
-	thisWatchpointNode = thisClassEntry->values[thisAttributeOffset]->watchpointList;
-	
-	return thisWatchpointNode;
-}	
-
-Int4	VPLWatchpointCreate( V_Environment environment, V_Instance watchInstance, vpl_StringPtr watchAttribute, Nat4 recordFault, V_WatchpointNode* newWatchpoint )
-{
-	Int4				outStatus = kERROR;
-	
-	Nat4				thisClassIndex = watchInstance->instanceIndex;
-	V_ClassEntry		thisClassEntry = environment->classIndexTable->classes[thisClassIndex];
-	Int4				thisAttributeOffset = attribute_offset( thisClassEntry->theClass, watchAttribute );
-	V_WatchpointNode	tempWatchpointNode = NULL;
-	V_WatchpointNode	newWatchpointNode = NULL;
-	
-	if( thisAttributeOffset == -1 ) return kWRONGINPUTTYPE;
-	
-	tempWatchpointNode = thisClassEntry->values[thisAttributeOffset]->watchpointList;
-	
-	if( tempWatchpointNode ) {
-		tempWatchpointNode->doFault = recordFault;
-		if( newWatchpoint ) *newWatchpoint = tempWatchpointNode;
-		return kNOERROR;
-	}
-	
-	newWatchpointNode = (V_WatchpointNode)X_malloc(sizeof(VPL_WatchpointNode));
-	if( newWatchpointNode ) {
-		newWatchpointNode->theInstance = watchInstance;
-		newWatchpointNode->doFault = recordFault;
-		newWatchpointNode->theObserverList = NULL;
-		newWatchpointNode->previous = NULL;
-		
-		if(tempWatchpointNode) {
-			newWatchpointNode->next = tempWatchpointNode;
-			tempWatchpointNode->previous = newWatchpointNode;
-		} else
-			newWatchpointNode->next = NULL;
-		
-		thisClassEntry->values[thisAttributeOffset]->watchpointList = newWatchpointNode;
-		
-		if( newWatchpoint )
-			*newWatchpoint = newWatchpointNode;
-		
-		outStatus = kNOERROR;
-	}
-	
-	return outStatus;
-}
-
-void	VPLWatchpointDispose( V_WatchpointNode oldWatchpoint )
-{
-	Int4					outStatus = kWRONGINPUTTYPE;
-	V_WatchpointNode		workNode = oldWatchpoint;
-	V_WatchpointNode		freeNode = oldWatchpoint;
-	V_WatchpointObserver	workObserver = NULL;
-	V_WatchpointObserver	freeObserver = NULL;
-	
-	if( oldWatchpoint ) {
-		while(workNode) 							/* release the nodes */
-		{
-			freeNode = workNode;
-			workObserver = freeNode->theObserverList;
-			
-			while(workObserver){
-				freeObserver = workObserver;
-				if( freeObserver->theGetCallback )
-					VPLEnvironmentCallbackRelease( freeObserver->theGetCallback );
-				if( workObserver->theSetCallback )
-					VPLEnvironmentCallbackRelease( freeObserver->theSetCallback );
-
-				workObserver = freeObserver->nextObserver;
-				X_free( freeObserver );
-			}
-			
-			workNode = freeNode->next;
-			X_free( freeNode );
-		}
-		
-		X_free( oldWatchpoint );
-		outStatus = kNOERROR;
-	}
-	
-	return;
-}
-
-Nat4	VPLWatchpointGetRecordFault( V_WatchpointNode watchNode )
-{
-	Nat4	recordFault = 0;
-	
-	if( watchNode )	recordFault = watchNode->doFault;
-	
-	return recordFault;
-}
-
-void	VPLWatchpointChangeRecordFault( V_WatchpointNode watchNode, Nat4 recordFault )
-{
-	if( watchNode )
-		watchNode->doFault = recordFault;
-	return;
-}	
-
-Nat4	VPLWatchpointObserverCreate( V_Environment environment, V_Instance watchInstance, vpl_StringPtr watchAttribute,
-									V_CallbackCodeSegment getCallback, void* getUserData, 
-									V_CallbackCodeSegment setCallback, void* setUserData,
-									V_WatchpointObserver* newObserver ) 
-{
-	Nat4					outStatus = kERROR;
-	
-	V_WatchpointNode		watchNode = VPLWatchpointFind( environment, watchInstance, watchAttribute );
-	V_WatchpointObserver	watchObserver = NULL;
-	V_WatchpointObserver	previousObserver = NULL;
-	
-	if (!watchNode) {
-		outStatus = VPLWatchpointCreate( environment, watchInstance, watchAttribute, 0, &watchNode );
-		if( outStatus != kNOERROR ) return outStatus;
-	} else 
-		previousObserver = watchNode->theObserverList;
-	
-	watchObserver = (V_WatchpointObserver)X_malloc(sizeof(VPL_WatchpointObserver));
-	if( watchObserver ) 
-	{
-		watchObserver->theGetCallback = getCallback;
-		watchObserver->theGetUserData = getUserData;
-		watchObserver->theSetCallback = setCallback;
-		watchObserver->theSetUserData = setUserData;
-		
-		if( watchObserver->theGetCallback )
-			VPLEnvironmentCallbackRetain( watchObserver->theGetCallback );
-		if( watchObserver->theSetCallback )
-			VPLEnvironmentCallbackRetain( watchObserver->theSetCallback );
-
-		watchObserver->nextObserver = previousObserver;
-		watchObserver->previousObserver = NULL;
-		
-		watchNode->theObserverList = watchObserver;
-		
-		if( newObserver ) *newObserver = watchObserver;
-		outStatus = kNOERROR;
-	}
-
-	return outStatus;	
-}
-
-Nat4	VPLWatchpointObserverRemove( V_Environment environment, V_Instance watchInstance, vpl_StringPtr watchAttribute, V_WatchpointObserver watchObserver )
-{
-	Nat4					outStatus = kERROR;
-	V_WatchpointNode		watchNode = VPLWatchpointFind( environment, watchInstance, watchAttribute );
-	V_WatchpointObserver	theNextOb = NULL;
-	V_WatchpointObserver	theLastOb = NULL;
-	
-	if (watchNode && watchObserver) {
-		theNextOb = watchObserver->nextObserver;
-		theLastOb = watchObserver->previousObserver;
-		
-		if( watchNode->theObserverList == watchObserver )
-			watchNode->theObserverList = theNextOb;
-		else if( theLastOb ) {
-			theLastOb->nextObserver = theNextOb;
-			if( theNextOb )
-				theNextOb->previousObserver = theLastOb;
-		}
-		
-		if( watchObserver->theGetCallback )
-			VPLEnvironmentCallbackRelease( watchObserver->theGetCallback );
-		if( watchObserver->theSetCallback )
-			VPLEnvironmentCallbackRelease( watchObserver->theSetCallback );
-		
-		X_free( watchObserver );
-		
-		outStatus = kNOERROR;
-	}
-	
-	return outStatus;	
-}
-
-void	VPLWatchpointObserverChangeGetCallback( V_WatchpointObserver watchObserver, V_CallbackCodeSegment getCallback, void* getUserData )
-{
-	if( watchObserver )
-	{
-		if( watchObserver->theGetCallback )
-			VPLEnvironmentCallbackRelease( watchObserver->theGetCallback );
-		
-		watchObserver->theGetCallback = getCallback;
-		watchObserver->theGetUserData = getUserData;
-	}
-	return;
-}	
-
-void	VPLWatchpointObserverChangeSetCallback( V_WatchpointObserver watchObserver, V_CallbackCodeSegment setCallback, void* setUserData )
-{
-	if( watchObserver )
-	{
-		if( watchObserver->theSetCallback )
-			VPLEnvironmentCallbackRelease( watchObserver->theSetCallback );
-		
-		watchObserver->theSetCallback = setCallback;
-		watchObserver->theSetUserData = setUserData;
-	}
-	return;
-}	
-
-
 
 
 
