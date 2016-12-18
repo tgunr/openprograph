@@ -17,8 +17,8 @@
 		5C5FB16A0AB205660000990E /* VPX_PrimitivesMacTextEdit.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FB15D0AB205660000990E /* VPX_PrimitivesMacTextEdit.c */; };
 		5C5FB16B0AB205660000990E /* VPX_PrimitivesMacWindows.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FB15E0AB205660000990E /* VPX_PrimitivesMacWindows.c */; };
 		5C5FB16C0AB205660000990E /* System_10_2.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FB15F0AB205660000990E /* System_10_2.c */; };
-		5C5FB1700AB205850000990E /* MartenEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5FB16F0AB205850000990E /* MartenEngine.framework */; };
 		5C5FB2130AB2061D0000990E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5FB20D0AB205C10000990E /* Carbon.framework */; };
+		75A14CB11E06FF63007E8CE5 /* MartenEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A14CB01E06FF63007E8CE5 /* MartenEngine.framework */; };
 		8D07F2C00486CC7A007CD1D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +39,8 @@
 		5C5FB15F0AB205660000990E /* System_10_2.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = System_10_2.c; path = ../../Source/Bundles/System_10_2.c; sourceTree = SOURCE_ROOT; };
 		5C5FB1600AB205660000990E /* System_10_2.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = System_10_2.h; path = ../../Source/Bundles/System_10_2.h; sourceTree = SOURCE_ROOT; };
 		5C5FB16E0AB2056F0000990E /* MartenSystem_Exports.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = MartenSystem_Exports.txt; sourceTree = "<group>"; };
-		5C5FB16F0AB205850000990E /* MartenEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MartenEngine.framework; path = "../( xcbuild )/Marten Release/MartenEngine.framework"; sourceTree = SOURCE_ROOT; };
 		5C5FB20D0AB205C10000990E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		75A14CB01E06FF63007E8CE5 /* MartenEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MartenEngine.framework; path = "../( xcbuild )/Debug/MartenEngine.framework"; sourceTree = "<group>"; };
 		8D07F2C70486CC7A007CD1D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D07F2C80486CC7A007CD1D0 /* MartenSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MartenSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C5FB1700AB205850000990E /* MartenEngine.framework in Frameworks */,
+				75A14CB11E06FF63007E8CE5 /* MartenEngine.framework in Frameworks */,
 				5C5FB2130AB2061D0000990E /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +73,7 @@
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DDFF38A45A11DB9C8B /* Products */,
+				75A14CAF1E06FF63007E8CE5 /* Frameworks */,
 			);
 			name = MartenSystem;
 			sourceTree = "<group>";
@@ -81,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				5C5FB20D0AB205C10000990E /* Carbon.framework */,
-				5C5FB16F0AB205850000990E /* MartenEngine.framework */,
 			);
 			name = "External Frameworks and Libraries";
 			sourceTree = "<group>";
@@ -125,6 +125,14 @@
 			name = Primitives;
 			sourceTree = "<group>";
 		};
+		75A14CAF1E06FF63007E8CE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75A14CB01E06FF63007E8CE5 /* MartenEngine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -163,9 +171,15 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 4FADC24608B4156D00ABE55E /* Build configuration list for PBXProject "MartenSystem" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* MartenSystem */;
 			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
 			projectDirPath = "";
@@ -232,40 +246,29 @@
 		4FADC24308B4156D00ABE55E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
-				COPY_PHASE_STRIP = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				EXPORTED_SYMBOLS_FILE = MartenSystem_Exports.txt;
 				FRAMEWORK_VERSION = A;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = MartenSystem_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				LIBRARY_STYLE = DYNAMIC;
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = MartenSystem;
 				WRAPPER_EXTENSION = framework;
-				ZERO_LINK = YES;
 			};
 			name = Debug;
 		};
 		4FADC24408B4156D00ABE55E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				EXPORTED_SYMBOLS_FILE = MartenSystem_Exports.txt;
 				FRAMEWORK_VERSION = A;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = MartenSystem_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				LIBRARY_STYLE = DYNAMIC;
@@ -278,46 +281,47 @@
 		4FADC24708B4156D00ABE55E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MartenSystem_Prefix.pch;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SDKROOT = macosx10.6;
+				SYMROOT = "../( xcbuild )";
 			};
 			name = Debug;
 		};
 		4FADC24808B4156D00ABE55E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MartenSystem_Prefix.pch;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SDKROOT = macosx10.6;
+				SYMROOT = "../( xcbuild )";
 			};
 			name = Release;
 		};
 		5C5FB14D0AB2055C0000990E /* Marten Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
-				COPY_PHASE_STRIP = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXPORTED_SYMBOLS_FILE = MartenSystem_Exports.txt;
 				FRAMEWORK_VERSION = A;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = MartenSystem_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				LIBRARY_STYLE = DYNAMIC;
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = MartenSystem;
-				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = "Marten Release";
@@ -325,16 +329,18 @@
 		5C5FB14E0AB2055C0000990E /* Marten Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MartenSystem_Prefix.pch;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SDKROOT = macosx10.6;
 				SKIP_INSTALL = YES;
 				SYMROOT = "../( xcbuild )";
 			};

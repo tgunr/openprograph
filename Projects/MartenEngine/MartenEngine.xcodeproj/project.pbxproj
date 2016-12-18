@@ -368,6 +368,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
+				SYMROOT = "../( xcbuild )";
 			};
 			name = Debug;
 		};
@@ -375,6 +377,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
+				SYMROOT = "../( xcbuild )";
 			};
 			name = Release;
 		};
@@ -406,6 +410,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
+				SYMROOT = "../( xcbuild )";
 				VERSIONING_SYSTEM = "";
 			};
 			name = "Marten Release";

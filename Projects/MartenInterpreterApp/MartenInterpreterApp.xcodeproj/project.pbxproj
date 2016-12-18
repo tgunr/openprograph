@@ -43,8 +43,8 @@
 		5CCBDAE20AB213E400420D9F /* Interpreter.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = Interpreter.c; path = ../../Source/Interpreter/Interpreter.c; sourceTree = SOURCE_ROOT; };
 		5CCBDAE30AB213E500420D9F /* InterpreterRoutines.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = InterpreterRoutines.c; path = ../../Source/Interpreter/InterpreterRoutines.c; sourceTree = SOURCE_ROOT; };
 		5CCBDAE60AB213F800420D9F /* Application.vpz */ = {isa = PBXFileReference; lastKnownFileType = file; name = Application.vpz; path = "( Interpreter vpz Project )/Info App.app/Contents/Resources/Application.vpz"; sourceTree = "<group>"; };
-		5CCBDAE70AB213F800420D9F /* MartenInfo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MartenInfo.framework; path = "../( xcbuild )/Marten Release/MartenInfo.framework"; sourceTree = SOURCE_ROOT; };
-		5CCBDAEF0AB2143C00420D9F /* MartenEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MartenEngine.framework; path = "../( xcbuild )/Marten Release/MartenEngine.framework"; sourceTree = SOURCE_ROOT; };
+		5CCBDAE70AB213F800420D9F /* MartenInfo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MartenInfo.framework; path = "../( xcbuild )/Debug/MartenInfo.framework"; sourceTree = SOURCE_ROOT; };
+		5CCBDAEF0AB2143C00420D9F /* MartenEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MartenEngine.framework; path = "../( xcbuild )/Debug/MartenEngine.framework"; sourceTree = SOURCE_ROOT; };
 		8D0C4E960486CD37000505A6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D0C4E970486CD37000505A6 /* Interpreter_d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interpreter_d.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -234,10 +234,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../( xcbuild )/Marten Release\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -259,10 +255,6 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../( xcbuild )/Marten Release\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
@@ -280,10 +272,6 @@
 		5C1E87FE0D5AA0D100AF2F2E /* Marten Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../( xcbuild )/Marten Release\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -363,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
@@ -375,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(BUILD_DIR)/$(CONFIGURATION)\"";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
