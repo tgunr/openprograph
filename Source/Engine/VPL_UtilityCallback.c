@@ -54,7 +54,7 @@ void VPLEnvironmentCallbackRelease( V_CallbackCodeSegment theCallback )
 	}
 }
 
-V_CallbackCodeSegment VPLEnvironmentCallbackCreate( V_Environment environment, vpl_StringPtr theMethodName, vpl_StringPtr theTypeName, V_Object theObject, Bool isListInputs )
+V_CallbackCodeSegment VPLEnvironmentCallbackCreate( V_Environment environment, vpl_StringPtr theMethodName, vpl_StringPtr theTypeName, V_Object theObject, V_Bool isListInputs )
 {
 	/* Variables to handle internal processing */
 

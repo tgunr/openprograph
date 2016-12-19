@@ -64,7 +64,7 @@ typedef struct
 	Nat4	use;
 	V_Object	previous;
 	V_Object	next;
-	Bool	value;
+	V_Bool	value;
 }	VPL_Boolean, *V_Boolean;
 
 typedef struct
@@ -152,14 +152,14 @@ extern "C" {
 
 Int1 *left_justify( Int1 *string );
 
-Bool object_identity( V_Object objectA , V_Object objectB );
-Bool boolean_identity( V_Boolean objectA , V_Boolean objectB );
-Bool integer_identity( V_Integer objectA , V_Integer objectB );
-Bool real_identity( V_Real objectA , V_Real objectB );
-Bool string_identity( V_String stringA , V_String stringB );
-Bool list_identity( V_List listA , V_List listB );
-Bool instance_identity( V_Instance instanceA , V_Instance instanceB );
-Bool external_identity( V_ExternalBlock objectA , V_ExternalBlock objectB );
+V_Bool object_identity( V_Object objectA , V_Object objectB );
+V_Bool boolean_identity( V_Boolean objectA , V_Boolean objectB );
+V_Bool integer_identity( V_Integer objectA , V_Integer objectB );
+V_Bool real_identity( V_Real objectA , V_Real objectB );
+V_Bool string_identity( V_String stringA , V_String stringB );
+V_Bool list_identity( V_List listA , V_List listB );
+V_Bool instance_identity( V_Instance instanceA , V_Instance instanceB );
+V_Bool external_identity( V_ExternalBlock objectA , V_ExternalBlock objectB );
 
 Int4 object_compare( V_Object objectA , V_Object objectB , Int1 *attribute, V_Environment environment);
 

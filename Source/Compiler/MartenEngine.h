@@ -40,7 +40,7 @@ typedef unsigned short		Nat2;			/* natural 2 byte */
 typedef unsigned long		Nat4;			/* natural 4 byte */
 typedef float			Real4;			/* real 4 byte */
 typedef double			Real10;			/* real 10 byte */
-typedef Nat2			Bool;			/* boolean 2 byte */
+typedef Nat2			V_Bool;			/* boolean 2 byte */
 
 #pragma mark * General types *
 
@@ -53,7 +53,7 @@ typedef		Nat4		vpl_StringLen;
 typedef		Int1		vpl_Char;
 typedef		Int4		vpl_Integer;
 typedef		Real10		vpl_Real;
-typedef		Bool		vpl_Boolean;
+typedef		V_Bool		vpl_Boolean;
 typedef		void*		vpl_BlockPtr;
 typedef		Nat4		vpl_BlockSize;
 typedef		Nat4		vpl_BlockLevel;
@@ -350,7 +350,7 @@ typedef struct
 	Nat4	use;
 	V_Object	previous;
 	V_Object	next;
-	Bool	value;
+	V_Bool	value;
 }	VPL_Boolean, *V_Boolean;
 
 typedef struct
@@ -469,11 +469,11 @@ typedef struct VPL_Environment
 	void				*stackSpawner;
 	Int1				*interpreterCallbackHandler;
 	V_CallbackCodeSegment	segments;
-	Bool				stopNext;
-	Bool				postLoad;
-	Bool				compiled;
-	Bool				logging;
-	Bool				profiling;
+	V_Bool				stopNext;
+	V_Bool				postLoad;
+	V_Bool				compiled;
+	V_Bool				logging;
+	V_Bool				profiling;
 	enum interpreterModeType	interpreterMode;
 	Nat4				editorThreadID;
 	Nat4				interpreterThreadID;
@@ -526,8 +526,8 @@ outputList = (V_List)create_list(1,environment);spawnPtr = environment->stackSpa
 #define LOOPTERMINAL(x,y,z) if(counter) input[x] = (Nat4)z; else input[x] = (Nat4)y;
 #define LISTROOT(x,y) rootNode[y] = vpx_create_listRootNode(environment,rootNode[y],root[x]);
 
-#define HEADER(x) 	Nat4 repeatLimit = 0; enum boolType	repeat = kFALSE; Nat4 counter = 0;  Bool nextCase = kFALSE; enum opTrigger theOutcome = kSuccess; enum opTrigger result = kSuccess; Nat4 contextClassIndex = contextIndex; V_Object root[x]; for(counter=0;counter<x;counter++) root[counter] = NULL; counter = 0;
-#define HEADERWITHNONE(x) 	Nat4 repeatLimit = 0; enum boolType	repeat = kFALSE; Nat4 counter = 0;  Bool nextCase = kFALSE; enum opTrigger theOutcome = kSuccess; enum opTrigger result = kSuccess; Nat4 contextClassIndex = contextIndex; V_Object vpx_none = NULL; V_Object	root[x]; for(counter=0;counter<x;counter++) root[counter] = NULL; counter = 0; vpx_none = (V_Object) create_none(environment);
+#define HEADER(x) 	Nat4 repeatLimit = 0; enum boolType	repeat = kFALSE; Nat4 counter = 0;  V_Bool nextCase = kFALSE; enum opTrigger theOutcome = kSuccess; enum opTrigger result = kSuccess; Nat4 contextClassIndex = contextIndex; V_Object root[x]; for(counter=0;counter<x;counter++) root[counter] = NULL; counter = 0;
+#define HEADERWITHNONE(x) 	Nat4 repeatLimit = 0; enum boolType	repeat = kFALSE; Nat4 counter = 0;  V_Bool nextCase = kFALSE; enum opTrigger theOutcome = kSuccess; enum opTrigger result = kSuccess; Nat4 contextClassIndex = contextIndex; V_Object vpx_none = NULL; V_Object	root[x]; for(counter=0;counter<x;counter++) root[counter] = NULL; counter = 0; vpx_none = (V_Object) create_none(environment);
 #define CLASSCONTEXT(x) 	contextIndex = pClassConstantToIndex[kVPXClass_ ## x];
 
 #define DECREMENT(x) 	for(counter=0;counter<x;counter++) decrement_count(environment,root[counter]); counter = 0;
@@ -702,7 +702,7 @@ vpl_Status		VPLEnvironmentMain( V_Environment theEnv, vpl_StringPtr mainMethod, 
 //vpl_BlockSize	VPLEnvironmentLookupExternalBlockSize( vpl_StringPtr theBlockName, vpl_StringPtr* outBlockActualName, vpl_BlockLevel* outBlockLevel, V_Environment environment );
 vpl_Status		VPLEnvironmentLookupExternalBlockSize( vpl_StringPtr theBlockName, vpl_StringPtr* outBlockActualName, vpl_BlockLevel* outBlockLevel, vpl_BlockSize* outBlockSize, vpl_BlockSize* outBlockCount, V_Environment environment );
 
-void *			VPLEnvironmentCallbackCreate( V_Environment environment, vpl_StringPtr theMethodName, vpl_StringPtr theTypeName, V_Object theObject, Bool isListInputs );
+void *			VPLEnvironmentCallbackCreate( V_Environment environment, vpl_StringPtr theMethodName, vpl_StringPtr theTypeName, V_Object theObject, V_Bool isListInputs );
 V_Object		VPLEnvironmentCallbackDispose( V_Environment environment, V_CallbackCodeSegment structure );
 V_CallbackCodeSegment	VPLEnvironmentCallbackRetain( V_CallbackCodeSegment theCallback );
 void					VPLEnvironmentCallbackRelease( V_CallbackCodeSegment theCallback );
@@ -716,7 +716,7 @@ V_ExtProcedure get_extProcedure( V_Dictionary ptrT, Int1 *name );
 V_ExtConstant get_extConstant( V_Dictionary ptrT, Int1 *name );
 V_ExtStructure get_extStructure( V_Dictionary ptrT, Int1 *name );
 
-Bool object_identity( V_Object objectA , V_Object objectB );
+V_Bool object_identity( V_Object objectA , V_Object objectB );
 Int4 object_compare( V_Object objectA , V_Object objectB , Int1 *attribute, V_Environment environment);
 
 Int1 *object_to_string( V_Object object , V_Environment environment );
@@ -725,7 +725,7 @@ V_Undefined create_undefined(V_Environment environment);
 V_None create_none(V_Environment environment);
 
 V_Boolean create_boolean( Int1 *string , V_Environment environment );
-V_Boolean bool_to_boolean( Bool aValue, V_Environment environment );
+V_Boolean bool_to_boolean( V_Bool aValue, V_Environment environment );
 
 V_Integer create_integer( Int1 *string , V_Environment environment );
 V_Integer int_to_integer( Int4 value , V_Environment environment );
@@ -783,11 +783,11 @@ V_Operation operation_to_extget(V_Operation operation,V_Environment environment,
 V_Operation operation_to_extset(V_Operation operation,V_Environment environment,Int1 *name);
 V_Operation operation_to_extprocedure(V_Operation operation,V_Environment environment,Nat4 inarity,Nat4 outarity,Int1 *function);
 
-V_Operation operation_repeat_to(V_Operation operation,V_Environment environment,Bool mode);
-V_Operation operation_super_to(V_Operation operation,V_Environment environment,Bool mode);
-V_Operation operation_breakpoint_to(V_Operation operation,V_Environment environment,Bool mode);
+V_Operation operation_repeat_to(V_Operation operation,V_Environment environment,V_Bool mode);
+V_Operation operation_super_to(V_Operation operation,V_Environment environment,V_Bool mode);
+V_Operation operation_breakpoint_to(V_Operation operation,V_Environment environment,V_Bool mode);
 V_Operation operation_value_to(V_Operation operation,V_Environment environment,enum opValueType mode);
-V_Operation operation_action_to(V_Operation operation,V_Environment environment,Nat2 action,Bool trigger);
+V_Operation operation_action_to(V_Operation operation,V_Environment environment,Nat2 action,V_Bool trigger);
 V_Operation operation_inject_to(V_Operation operation,V_Environment environment,Nat4 index);
 V_Operation operation_input_to(V_Operation operation,V_Environment environment,Nat4 index,Nat4 mode);
 V_Operation operation_output_to(V_Operation operation,V_Environment environment,Nat4 index,Nat4 mode);

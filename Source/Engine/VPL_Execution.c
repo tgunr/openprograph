@@ -475,8 +475,8 @@ Int4 execute_extget( V_Environment environment,V_Stack stack)
 	Int1		*tempAString = NULL;
 	Nat4		pointer = 0;
 	vpl_Integer		inputOffset = 0;
-	Bool		modeArray = kFALSE;
-	Bool		modeAddress = kFALSE;
+	V_Bool		modeArray = kFALSE;
+	V_Bool		modeAddress = kFALSE;
 	enum parameterType	effectiveType = kIntType;
 
 	Int1	*moduleName = module_name(currentOperation,environment);
@@ -664,7 +664,7 @@ Int4 execute_extset( V_Environment environment,V_Stack stack)
 	Nat4		pointer = 0;
 	void		*voidPointer = NULL;
 	vpl_Integer		inputOffset = 0;
-	Bool		modeArray = kFALSE;
+	V_Bool		modeArray = kFALSE;
 	enum parameterType	effectiveType = kIntType;
 
 	Int1	*moduleName = module_name(currentOperation,environment);

@@ -178,7 +178,7 @@ vpl_Status		VPLEnvironmentMain( V_Environment theEnv, vpl_StringPtr mainMethod, 
 //vpl_BlockSize VPLEnvironmentLookupExternalBlockSize( vpl_StringPtr theBlockName, vpl_StringPtr* outBlockActualName, vpl_BlockLevel* outBlockLevel, V_Environment environment );
 vpl_Status		VPLEnvironmentLookupExternalBlockSize( vpl_StringPtr theBlockName, vpl_StringPtr* outBlockActualName, vpl_BlockLevel* outBlockLevel, vpl_BlockSize* outBlockSize, vpl_BlockSize* outBlockCount, V_Environment environment );
 
-V_CallbackCodeSegment	VPLEnvironmentCallbackCreate( V_Environment environment, vpl_StringPtr theMethodName, vpl_StringPtr theTypeName, V_Object theObject, Bool isListInputs );
+V_CallbackCodeSegment	VPLEnvironmentCallbackCreate( V_Environment environment, vpl_StringPtr theMethodName, vpl_StringPtr theTypeName, V_Object theObject, V_Bool isListInputs );
 V_Object				VPLEnvironmentCallbackDispose( V_Environment environment, V_CallbackCodeSegment structure );
 V_CallbackCodeSegment	VPLEnvironmentCallbackRetain( V_CallbackCodeSegment theCallback );
 void					VPLEnvironmentCallbackRelease( V_CallbackCodeSegment theCallback );

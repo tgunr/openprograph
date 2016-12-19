@@ -686,7 +686,7 @@ vpl_Status		VPLPrimCheckInputObjectTypes( vpl_Arity theNode, vpl_StringPtr primN
 	vpl_ObjectType	theFoundType = 0;
 	V_Object		theObject = NULL;
 	Nat4			counter = 0;
-	Bool			isOK = FALSE;
+	V_Bool			isOK = FALSE;
 	vpl_ObjectType	theVType = kObject;
 	Int1			*expectedTypes = NULL;
 	Int1			*tempString = NULL;

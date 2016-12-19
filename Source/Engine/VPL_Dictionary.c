@@ -13,7 +13,7 @@
 
 Nat4	gMemoryRangeStart = 0;
 Nat4	gMemoryRangeStop = 0;
-Bool	gMemoryRangeCheck = kFALSE;
+V_Bool	gMemoryRangeCheck = kFALSE;
 
 inline void *X_malloc(Nat4 size)
 {

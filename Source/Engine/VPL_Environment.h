@@ -331,11 +331,11 @@ typedef struct VPL_Environment
 	void				*stackSpawner;
 	Int1				*interpreterCallbackHandler;
 	V_CallbackCodeSegment	segments;
-	Bool				stopNext;
-	Bool				postLoad;
-	Bool				compiled;
-	Bool				logging;
-	Bool				profiling;
+	V_Bool				stopNext;
+	V_Bool				postLoad;
+	V_Bool				compiled;
+	V_Bool				logging;
+	V_Bool				profiling;
 	Nat4				interpreterMode;
 	Nat4				editorThreadID;
 	Nat4				interpreterThreadID;

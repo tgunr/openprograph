@@ -2079,7 +2079,7 @@ which would leave stackZ pointing to non-existent stackB and stackC pointing bac
 	return kNOERROR;
 }
 
-Int4 destroy_environment(V_Environment environment, Bool printFlag, Bool interpreterFlag)
+Int4 destroy_environment(V_Environment environment, V_Bool printFlag, V_Bool interpreterFlag)
 {
 	Nat4		finalHeapSize = 0;
 	Int4		result = 0;

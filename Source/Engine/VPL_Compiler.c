@@ -337,8 +337,8 @@ enum opTrigger vpx_extget(V_Environment environment, enum boolType *repeat, Nat4
 	Int1		*tempAString = NULL;
 	Nat4		pointer = 0;
 	vpl_Integer		inputOffset = 0;
-	Bool		modeArray = kFALSE;
-	Bool		modeAddress = kFALSE;
+	V_Bool		modeArray = kFALSE;
+	V_Bool		modeAddress = kFALSE;
 	enum parameterType	effectiveType = kIntType;
 
 
@@ -494,7 +494,7 @@ enum opTrigger vpx_extset(V_Environment environment, enum boolType *repeat, Nat4
 	Nat4		pointer = 0;
 	void		*voidPointer = NULL;
 	vpl_Integer		inputOffset = 0;
-	Bool		modeArray = kFALSE;
+	V_Bool		modeArray = kFALSE;
 	enum parameterType	effectiveType = kIntType;
 
 	Nat4			counter = 0;
@@ -671,7 +671,7 @@ V_EvalTokenList	vpx_parse_string(V_Environment environment,V_Object inputArray[]
 	Int4				theIntegerValue = 0;
 	Real10				theRealValue = 0.0;
 	Int1*				tempPad = NULL;
-	Bool				isReal = kFALSE;
+	V_Bool				isReal = kFALSE;
 	V_Object			tempObject = NULL;
 	
 	memset(scratchPad,0,stringLength);

@@ -274,7 +274,7 @@ V_ClassEntry VPL_classEntry_create(V_Environment environment,V_Class theClass,Na
 	return theClassEntry;
 }
 
-Nat4 VPL_get_class_index(V_Environment environment,Int1* className,Bool valid)
+Nat4 VPL_get_class_index(V_Environment environment,Int1* className,V_Bool valid)
 {
 	V_Dictionary		dictionary = environment->classTable;
 	V_Class				tempClass = NULL;
@@ -443,7 +443,7 @@ V_Class class_unarchive(V_Class inputClass,V_Environment environment)
 Int4 rename_instances(V_Environment environment,Int1 *oldName,Int1 *newName)
 {
 	V_Instance	theInstance = NULL;
-	Bool		didMark = kFALSE;
+	V_Bool		didMark = kFALSE;
 	Nat4		oldCounter = 0;
 	Nat4		oldLength = 0;
 	V_Object	*oldObjectList = NULL;
@@ -495,7 +495,7 @@ Int4 reorder_instances(V_Environment environment,V_Dictionary oldAttributes,V_Cl
 	V_Object	*oldObjectList = NULL;
 	V_Object	currentObject = environment->heap->previous;
 	Int1		*tempAttributeName = NULL;
-	Bool		didMark = kFALSE;
+	V_Bool		didMark = kFALSE;
 
 	if(!environment->postLoad) return kNOERROR;
 //LOCKHEAP

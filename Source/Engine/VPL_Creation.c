@@ -203,13 +203,13 @@ V_Object string_to_object( Int1 *tempString , V_Environment environment )
 	Nat4		counter = 0;
 	Nat4		mode = 0;
 	char		tempChar = '\0';
-	Bool		stringStart = kFALSE;
+	V_Bool		stringStart = kFALSE;
 	Nat4		tempCharCode = 0;
 	Nat4		tempCodeCount = 0;
 	Int4		tempInteger = 0;
 	Int4		checkInteger = 0;
 	Int4		integerBase = 10;
-	Bool		wentMinus = kFALSE;
+	V_Bool		wentMinus = kFALSE;
 	Nat4		hashPosition = 0;
 
 	if(tempString == NULL) return NULL;
@@ -822,7 +822,7 @@ V_Boolean create_boolean( Int1 *string, V_Environment environment )
 	return ptrA;
 }
 
-V_Boolean bool_to_boolean( Bool aValue, V_Environment environment )
+V_Boolean bool_to_boolean( V_Bool aValue, V_Environment environment )
 {
 	V_Boolean ptrA = VPXMALLOC(1,VPL_Boolean);
 	if(ptrA == NULL) {
@@ -967,7 +967,7 @@ V_ExternalBlock pointer_to_block( Int1 *name, Nat4 size , Nat4 level , Nat4 temp
 }
 
 
-V_ExternalBlock create_externalBlock_level( Int1 *name, Nat4 size, Nat4 level, void *dataPtr, Bool escalated, V_Environment environment )
+V_ExternalBlock create_externalBlock_level( Int1 *name, Nat4 size, Nat4 level, void *dataPtr, V_Bool escalated, V_Environment environment )
 {
 	Nat4	*outputPtr;
 	Nat4	*blockPtr;
