@@ -1,15 +1,29 @@
 import Foundation
 
-typealias Int1 = Int8   // integer 1 byte
-typealias Int2 = Int16  // integer 2 byte
-typealias Int4 = Int32  // integer 4 byte
-typealias IntL = Int64  // integer 8 byte
-typealias Nat1 = UInt8  // natural 1 byte
-typealias Nat2 = UInt16 // natural 2 byte
-typealias Nat4 = UInt32 // natural 4 byte
-typealias Real4 = Float32   // real 4 byte
-typealias Real10 = Double   // real 10 byte
-typealias vBool = Int2       // boolean 2 byte
+//  Converted with Swiftify v1.0.6193 - https://objectivec2swift.com/
+/* integer 1 byte */
+typealias Int1 = Int8
+/* integer 2 byte */
+typealias Int2 = Int16
+/* integer 4 byte */
+typealias Int4 = Int32
+/* natural 1 byte */
+typealias Nat1 = UInt8
+/* natural 2 byte */
+typealias Nat2 = UInt16
+/* natural 4 byte */
+typealias Nat4 = UInt32
+/* real 4 byte */
+typealias Real4 = Float
+/* real 10 byte */
+typealias Real10 = Double
+/* boolean 2 byte */
+//typealias VPLBool = Nat2
+//
+//enum boolType : Int {
+//    case kFALSE = 0
+//    case kTRUE = 1
+//}
 
 typealias vpl_Status = Int4
 typealias vpl_Arity = Nat4
@@ -20,7 +34,7 @@ typealias vpl_StringLen = Nat4
 typealias vpl_Char = Int1
 typealias vpl_Integer = Int4
 typealias vpl_Real = Real10
-typealias vpl_Boolean = Bool
+typealias vpl_Boolean = Int2
 typealias vpl_BlockPtr = Void
 typealias vpl_BlockSize = Nat4
 typealias vpl_BlockLevel = Nat4

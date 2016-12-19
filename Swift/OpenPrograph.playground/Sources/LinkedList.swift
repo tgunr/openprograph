@@ -13,7 +13,7 @@ public class LinkedList<T> {
     
     fileprivate var head: Node?
     
-    public var isEmpty: Bool {
+    public var isEmpty: Swift.Bool {
         return head == nil
     }
     
@@ -171,7 +171,7 @@ extension LinkedList {
         return result
     }
     
-    public func filter(predicate: (T) -> Bool) -> LinkedList<T> {
+    public func filter(predicate: (T) -> Swift.Bool) -> LinkedList<T> {
         let result = LinkedList<T>()
         var node = head
         while node != nil {

@@ -26,44 +26,44 @@ enum interpreterModeType {
 };
 
 typealias V_Environment = VPL_Environment
-typealias V_Object = VPL_Object
+//typealias V_Object = VPL_Object
 //typealias V_List = VPL_List
 //typealias V_Case = VPL_Case
 //typealias V_Operation = VPL_Operation
-typealias V_Stack = VPL_Stack
-typealias V_ErrorNode = VPL_ErrorNode
-typealias V_Frame = VPL_Frame
-typealias V_RootNode = VPL_RootNode
+//typealias V_Stack = VPL_Stack
+//typealias V_ErrorNode = VPL_ErrorNode
+//typealias V_Frame = VPL_Frame
+//typealias V_RootNode = VPL_RootNode
 //typealias V_Root = VPL_Root
 //typealias V_Method = VPL_Method
 //typealias V_ThreadSpace = VPL_ThreadSpace
 
-enum opTrigger {
-	case kHalt = -1     // kHalt signals perform_action to return FALSE, stopping the run loop */
-	case kNoAction = 0	// kNoAction must be zero for quick tests of methodSuccess */
-	case kFailure = 1	// kFailure must be aligned (+1) with kFALSE for match execution */
-	case kSuccess = 2	// kSuccess must be aligned (+1) with kTRUE  for match execution
-                                                };
+//enum opTrigger {
+//	case kHalt = -1     // kHalt signals perform_action to return FALSE, stopping the run loop */
+//	case kNoAction = 0	// kNoAction must be zero for quick tests of methodSuccess */
+//	case kFailure = 1	// kFailure must be aligned (+1) with kFALSE for match execution */
+//	case kSuccess = 2	// kSuccess must be aligned (+1) with kTRUE  for match execution
+//                                                };
 
-enum faultCode {
-	case kUnknownFault = 0
-	case kNonexistentClass
-	case kNonexistentMethod
-	case kNonexistentPersistent
-	case kNonexistentAttribute
-	case kNonexistentPrimitive
-	case kNonexistentConstant
-	case kNonexistentField
-	case kNonexistentProcedure
-	case kIncorrectInarity
-	case kIncorrectOutarity
-	case kIncorrectType
-	case kIncorrectCases
-	case kIncorrectListInput
-	case kNoControl
-	case kWatchpoint
-	case kSignalInterrupt
-}
+//enum faultCode {
+//	case kUnknownFault = 0
+//	case kNonexistentClass
+//	case kNonexistentMethod
+//	case kNonexistentPersistent
+//	case kNonexistentAttribute
+//	case kNonexistentPrimitive
+//	case kNonexistentConstant
+//	case kNonexistentField
+//	case kNonexistentProcedure
+//	case kIncorrectInarity
+//	case kIncorrectOutarity
+//	case kIncorrectType
+//	case kIncorrectCases
+//	case kIncorrectListInput
+//	case kNoControl
+//	case kWatchpoint
+//	case kSignalInterrupt
+//}
 
 typealias V_Fault = VPL_Fault
 
@@ -76,15 +76,15 @@ struct VPL_Fault {
     var moduleName: Int1
 }
 
-class VPL_Object: LinkedList<V_Object> {
-	var instanceIndex: Nat2?
-	var system: Nat1?
-	var type: Nat1?
-    var mark: Nat4?
-    var	use: Nat4?
-//    var previous: V_Object?
-//    var next: V_Object
-}
+//class VPL_Object: LinkedList<V_Object> {
+//	var instanceIndex: Nat2?
+//	var system: Nat1?
+//	var type: Nat1?
+//    var mark: Nat4?
+//    var	use: Nat4?
+////    var previous: V_Object?
+////    var next: V_Object
+//}
 
 class VPL_PointerLocation: LinkedList<VPL_PointerLocation> {
 	var pointerLocation: Int1?
@@ -248,9 +248,9 @@ class VPL_Parameter: LinkedList<VPL_Parameter> {
 
 struct VPL_Environment {
 	var theFault: V_Fault
-	var lastError: V_ErrorNode
+//	var lastError: V_ErrorNode
 //	var heap: V_Heap
-	var stack: V_Stack
+//	var stack: V_Stack
 	var classTable: VPL_Dictionary
 	var universalsTable: VPL_Dictionary
 	var persistentsTable: VPL_Dictionary

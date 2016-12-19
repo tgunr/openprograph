@@ -1,4 +1,7 @@
 import AppKit
+import PlaygroundSupport
+
+let pgc = PlaygroundPage.current
 
 func test1 () {
     let screens = NSScreen.screens()

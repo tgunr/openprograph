@@ -8,31 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		7540714C1D3FF56B00A4723C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540714B1D3FF56B00A4723C /* AppDelegate.swift */; };
-		754071511D3FF56B00A4723C /* Prograph2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7540714F1D3FF56B00A4723C /* Prograph2.xcdatamodeld */; };
 		754071561D3FF56B00A4723C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754071541D3FF56B00A4723C /* Main.storyboard */; };
 		758481051DFE45C400385E05 /* PGObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758481041DFE45C400385E05 /* PGObject.swift */; };
 		758481071DFE45E100385E05 /* PGObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758481061DFE45E100385E05 /* PGObjectView.swift */; };
 		758481081DFE463900385E05 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F8B4E1DFE423700C537CC /* Extensions.swift */; };
 		75A983311DFC86DF0098429F /* ObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A983301DFC86DF0098429F /* ObjectViewController.swift */; };
+		75E5C7221E0734610030DA0F /* PGEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E5C7211E0734610030DA0F /* PGEnvironment.swift */; };
+		75E5C7241E0734670030DA0F /* PGHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E5C7231E0734670030DA0F /* PGHeap.swift */; };
+		75E5C7261E0734A80030DA0F /* PGTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E5C7251E0734A80030DA0F /* PGTypes.swift */; };
+		75E5C7271E0735C60030DA0F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751F8B501DFE450800C537CC /* LinkedList.swift */; };
+		75E5C73B1E081C8A0030DA0F /* IDE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E5C73A1E081C8A0030DA0F /* IDE.swift */; };
+		75E5C73D1E08212A0030DA0F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E5C73C1E08212A0030DA0F /* Global.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7514B4FF1DF3F4C000ED5CF7 /* Prograph2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prograph2-Bridging-Header.h"; sourceTree = "<group>"; };
-		751F8B4C1DFE418E00C537CC /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sources; path = OpenPrograph.playground/Sources; sourceTree = "<group>"; };
+		7514B4FF1DF3F4C000ED5CF7 /* OpenPrograph-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OpenPrograph-Bridging-Header.h"; path = "../OpenPrograph/OpenPrograph-Bridging-Header.h"; sourceTree = "<group>"; };
 		751F8B4E1DFE423700C537CC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = OpenPrograph.playground/Sources/Extensions.swift; sourceTree = "<group>"; };
 		751F8B501DFE450800C537CC /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedList.swift; path = OpenPrograph.playground/Sources/LinkedList.swift; sourceTree = "<group>"; };
 		754071481D3FF56B00A4723C /* OpenPrograph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenPrograph.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7540714B1D3FF56B00A4723C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		754071501D3FF56B00A4723C /* Prograph2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Prograph2.xcdatamodel; sourceTree = "<group>"; };
+		7540714B1D3FF56B00A4723C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../OpenPrograph/AppDelegate.swift; sourceTree = "<group>"; };
 		754071551D3FF56B00A4723C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		754071571D3FF56B00A4723C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		754071601D3FF56B00A4723C /* OpenPrographTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPrographTests.swift; sourceTree = "<group>"; };
-		754071621D3FF56B00A4723C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7540716B1D3FF56B00A4723C /* OpenPrographUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPrographUITests.swift; sourceTree = "<group>"; };
-		7540716D1D3FF56B00A4723C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		754071571D3FF56B00A4723C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../OpenPrograph/Info.plist; sourceTree = "<group>"; };
+		754071601D3FF56B00A4723C /* OpenPrographTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpenPrographTests.swift; path = ../OpenPrographTests/OpenPrographTests.swift; sourceTree = "<group>"; };
+		754071621D3FF56B00A4723C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../OpenPrographTests/Info.plist; sourceTree = "<group>"; };
+		7540716B1D3FF56B00A4723C /* OpenPrographUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpenPrographUITests.swift; path = ../OpenPrographUITests/OpenPrographUITests.swift; sourceTree = "<group>"; };
+		7540716D1D3FF56B00A4723C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../OpenPrographUITests/Info.plist; sourceTree = "<group>"; };
 		758481041DFE45C400385E05 /* PGObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PGObject.swift; path = OpenPrograph.playground/Sources/PGObject.swift; sourceTree = "<group>"; };
 		758481061DFE45E100385E05 /* PGObjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PGObjectView.swift; path = OpenPrograph.playground/Sources/PGObjectView.swift; sourceTree = "<group>"; };
-		75A983301DFC86DF0098429F /* ObjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObjectViewController.swift; path = Prograph2/ObjectViewController.swift; sourceTree = SOURCE_ROOT; };
+		75A983301DFC86DF0098429F /* ObjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObjectViewController.swift; path = OpenPrograph/ObjectViewController.swift; sourceTree = SOURCE_ROOT; };
+		75E5C71F1E0734530030DA0F /* PGDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PGDictionary.swift; path = OpenPrograph.playground/Sources/PGDictionary.swift; sourceTree = "<group>"; };
+		75E5C7211E0734610030DA0F /* PGEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PGEnvironment.swift; path = OpenPrograph.playground/Sources/PGEnvironment.swift; sourceTree = "<group>"; };
+		75E5C7231E0734670030DA0F /* PGHeap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PGHeap.swift; path = OpenPrograph.playground/Sources/PGHeap.swift; sourceTree = "<group>"; };
+		75E5C7251E0734A80030DA0F /* PGTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PGTypes.swift; path = OpenPrograph.playground/Sources/PGTypes.swift; sourceTree = "<group>"; };
+		75E5C73A1E081C8A0030DA0F /* IDE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IDE.swift; path = OpenPrograph/IDE/IDE.swift; sourceTree = SOURCE_ROOT; };
+		75E5C73C1E08212A0030DA0F /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = OpenPrograph/Global.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +65,14 @@
 		7540713F1D3FF56B00A4723C = {
 			isa = PBXGroup;
 			children = (
+				75E5C7251E0734A80030DA0F /* PGTypes.swift */,
 				751F8B4E1DFE423700C537CC /* Extensions.swift */,
 				751F8B501DFE450800C537CC /* LinkedList.swift */,
+				75E5C71F1E0734530030DA0F /* PGDictionary.swift */,
+				75E5C7211E0734610030DA0F /* PGEnvironment.swift */,
+				75E5C7231E0734670030DA0F /* PGHeap.swift */,
 				758481041DFE45C400385E05 /* PGObject.swift */,
 				758481061DFE45E100385E05 /* PGObjectView.swift */,
-				751F8B4C1DFE418E00C537CC /* Sources */,
 				7540714A1D3FF56B00A4723C /* OpenPrograph */,
 				7540715F1D3FF56B00A4723C /* OpenPrographTests */,
 				7540716A1D3FF56B00A4723C /* OpenPrographUITests */,
@@ -84,8 +96,9 @@
 				7540714B1D3FF56B00A4723C /* AppDelegate.swift */,
 				754071541D3FF56B00A4723C /* Main.storyboard */,
 				754071571D3FF56B00A4723C /* Info.plist */,
-				7540714F1D3FF56B00A4723C /* Prograph2.xcdatamodeld */,
-				7514B4FF1DF3F4C000ED5CF7 /* Prograph2-Bridging-Header.h */,
+				7514B4FF1DF3F4C000ED5CF7 /* OpenPrograph-Bridging-Header.h */,
+				75E5C73A1E081C8A0030DA0F /* IDE.swift */,
+				75E5C73C1E08212A0030DA0F /* Global.swift */,
 			);
 			name = OpenPrograph;
 			path = Prograph2;
@@ -185,9 +198,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7540714C1D3FF56B00A4723C /* AppDelegate.swift in Sources */,
+				75E5C7271E0735C60030DA0F /* LinkedList.swift in Sources */,
+				75E5C73B1E081C8A0030DA0F /* IDE.swift in Sources */,
+				75E5C7241E0734670030DA0F /* PGHeap.swift in Sources */,
 				758481071DFE45E100385E05 /* PGObjectView.swift in Sources */,
-				754071511D3FF56B00A4723C /* Prograph2.xcdatamodeld in Sources */,
+				75E5C7221E0734610030DA0F /* PGEnvironment.swift in Sources */,
 				75A983311DFC86DF0098429F /* ObjectViewController.swift in Sources */,
+				75E5C73D1E08212A0030DA0F /* Global.swift in Sources */,
+				75E5C7261E0734A80030DA0F /* PGTypes.swift in Sources */,
 				758481051DFE45C400385E05 /* PGObject.swift in Sources */,
 				758481081DFE463900385E05 /* Extensions.swift in Sources */,
 			);
@@ -202,6 +220,7 @@
 				754071551D3FF56B00A4723C /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../OpenPrograph;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -232,6 +251,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Projects/( xcbuild )/Debug\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -278,6 +298,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Projects/( xcbuild )/Debug\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -296,12 +317,12 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Prograph2/Info.plist;
+				INFOPLIST_FILE = OpenPrograph/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.polymicro.Prograph2;
+				PRODUCT_BUNDLE_IDENTIFIER = net.polymicro.OpenPrograph;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.12;
-				SWIFT_OBJC_BRIDGING_HEADER = "Prograph2/Prograph2-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenPrograph/OpenPrograph-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -312,12 +333,12 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Prograph2/Info.plist;
+				INFOPLIST_FILE = OpenPrograph/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.polymicro.Prograph2;
+				PRODUCT_BUNDLE_IDENTIFIER = net.polymicro.OpenPrograph;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx10.12;
-				SWIFT_OBJC_BRIDGING_HEADER = "Prograph2/Prograph2-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenPrograph/OpenPrograph-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -344,19 +365,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		7540714F1D3FF56B00A4723C /* Prograph2.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				754071501D3FF56B00A4723C /* Prograph2.xcdatamodel */,
-			);
-			currentVersion = 754071501D3FF56B00A4723C /* Prograph2.xcdatamodel */;
-			path = Prograph2.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 754071401D3FF56B00A4723C /* Project object */;
 }
