@@ -10,24 +10,52 @@ Copyright: 2004 Andescotia LLC
 
 enum opTrigger vpx_method_MAIN(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object terminal0,V_Object *root0)
 {
-HEADER(4)
-INPUT(0,0)
-result = kSuccess;
+//HEADER(4)
+//#define HEADER(x) 	Nat4 repeatLimit = 0; enum boolType	repeat = kFALSE; Nat4 counter = 0;  Bool nextCase = kFALSE; enum opTrigger theOutcome = kSuccess; enum opTrigger result = kSuccess; Nat4 contextClassIndex = contextIndex; V_Object root[x]; for(counter=0;counter<x;counter++) root[counter] = NULL; counter = 0;
+    Nat4 repeatLimit = 0;
+    enum boolType	repeat = kFALSE;
+    Nat4 counter = 0;
+    Bool nextCase = kFALSE;
+    enum opTrigger theOutcome = kSuccess;
+    enum opTrigger result = kSuccess;
+    Nat4 contextClassIndex = contextIndex;
+    V_Object root[4];
+    for(counter=0;counter<4;counter++) {
+        root[counter] = NULL;
+    }
+    counter = 0;
 
-result = vpx_method_Debug_20_Init(PARAMETERS);
+//INPUT(0,0)
+//#define INPUT(x,y) root[x] = vpx_increment_count(terminal ## y);
+    root[0] = vpx_increment_count(terminal0);
+    
+    result = kSuccess;
+    
+    result = vpx_method_Debug_20_Init(PARAMETERS);
+    
+    result = vpx_persistent(PARAMETERS,kVPXValue_The_20_Application,0,1,ROOT(1));
+    
+    result = vpx_method_Make_20_Class(PARAMETERS,TERMINAL(1),ROOT(2));
+    
+    result = vpx_call_data_method(PARAMETERS,kVPXMethod_Main,2,1,TERMINAL(2),TERMINAL(0),ROOT(3));
+    
+    result = vpx_method_Debug_20_Finish(PARAMETERS);
+    
+    result = kSuccess;
+    
+    //OUTPUT(0,TERMINAL(3))
+    //#define OUTPUT(x,y) decrement_count(environment,*root ## x); *root ## x = vpx_increment_count(y);
+    decrement_count(environment,*root0);
+    *root0 = vpx_increment_count(3);
 
-result = vpx_persistent(PARAMETERS,kVPXValue_The_20_Application,0,1,ROOT(1));
-
-result = vpx_method_Make_20_Class(PARAMETERS,TERMINAL(1),ROOT(2));
-
-result = vpx_call_data_method(PARAMETERS,kVPXMethod_Main,2,1,TERMINAL(2),TERMINAL(0),ROOT(3));
-
-result = vpx_method_Debug_20_Finish(PARAMETERS);
-
-result = kSuccess;
-
-OUTPUT(0,TERMINAL(3))
-FOOTERSINGLECASE(4)
+//FOOTERSINGLECASE(4)
+//#define DECREMENT(x) 	for(counter=0;counter<x;counter++) decrement_count(environment,root[counter]); counter = 0;
+//#define FOOTERSINGLECASE(x) 	THEFINISH: DECREMENT(x) return theOutcome;
+    for(counter=0;counter<4;counter++) {
+        decrement_count(environment,root[counter]);
+    }
+    counter = 0;
+    return theOutcome;
 }
 
 enum opTrigger vpx_method_Get_20_Application(V_Environment environment, enum boolType *inputRepeat, Nat4 contextIndex,V_Object *root0)
